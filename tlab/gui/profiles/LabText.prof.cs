@@ -140,6 +140,7 @@ singleton GuiControlProfile(ToolsTextBaseA : ToolsTextBase)
    fontType = "Gotham Bold";
 };
 
+
 singleton GuiControlProfile(ToolsTextBaseA_S1 : ToolsTextBaseA)
 {
    fontType = "Gotham Book";
