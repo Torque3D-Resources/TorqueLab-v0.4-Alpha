@@ -24,7 +24,7 @@
    profile = "ToolsWindowProfile_Dark";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -61,7 +61,7 @@
       profile = "ToolsTabBookProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "EditorTabBook";
@@ -87,7 +87,7 @@
          profile = "ToolsPanelDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -117,7 +117,7 @@
             profile = "ToolsScrollProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -153,10 +153,10 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "DropDownTextEditCtrl";
@@ -185,7 +185,7 @@
                      visible = "1";
                      active = "1";
                      command = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor::onNewEmitter();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "PopupMenu";
@@ -215,7 +215,7 @@
                      visible = "1";
                      active = "1";
                      altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "TextEdit";
@@ -242,7 +242,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -269,7 +269,7 @@
                         visible = "1";
                         active = "1";
                         command = "PE_EmitterEditor.saveEmitter(  ); PE_ParticleEditor.saveParticle( PE_ParticleEditor.currParticle );";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Save Current Emitter";
                         hovertime = "1000";
                         isContainer = "0";
@@ -297,7 +297,7 @@
                         visible = "1";
                         active = "1";
                         command = "PE_EmitterEditor.showNewDialog();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Create New Emitter";
                         hovertime = "1000";
                         isContainer = "0";
@@ -325,7 +325,7 @@
                         visible = "1";
                         active = "1";
                         command = "PE_EmitterEditor.showDeleteDialog();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Delete Current Emitter";
                         hovertime = "1000";
                         isContainer = "0";
@@ -350,7 +350,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -391,7 +391,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -415,7 +415,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -436,7 +436,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateLifeFields( false, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( false, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_lifetimeMS_slider";
@@ -466,7 +466,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( false, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_lifetimeMS_textEdit";
@@ -483,7 +483,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -507,7 +507,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -528,7 +528,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateLifeFields( true, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( true, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_lifetimeVarianceMS_slider";
@@ -558,7 +558,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( true, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_lifetimeVarianceMS_textEdit";
@@ -575,7 +575,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -598,7 +598,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -618,7 +618,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateLifeFieldsInfiniteLoop();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_infiniteLoop";
@@ -635,7 +635,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -649,10 +649,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -668,7 +668,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -692,7 +692,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -713,7 +713,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateAmountFields( false, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( false, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_ejectionPeriodMS_slider";
@@ -743,7 +743,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( false, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_ejectionPeriodMS_textEdit";
@@ -760,7 +760,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -784,7 +784,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -805,7 +805,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateAmountFields( true, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( true, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_periodVarianceMS_slider";
@@ -835,7 +835,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( true, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_periodVarianceMS_textEdit";
@@ -861,7 +861,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -902,7 +902,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -926,7 +926,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -947,7 +947,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateSpeedFields( false, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( false, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_ejectionVelocity_slider";
@@ -977,7 +977,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( false, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_ejectionVelocity_textEdit";
@@ -994,7 +994,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1018,7 +1018,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1039,7 +1039,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateSpeedFields( true, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( true, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_velocityVariance_slider";
@@ -1069,7 +1069,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( true, $ThisControl.getValue() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_velocityVariance_textEdit";
@@ -1086,7 +1086,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1100,10 +1100,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1119,7 +1119,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1142,7 +1142,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1162,7 +1162,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"orientParticles\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_orientParticles";
@@ -1179,7 +1179,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1202,7 +1202,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1222,7 +1222,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"alignParticles\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_alignParticles";
@@ -1239,7 +1239,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1262,7 +1262,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1291,7 +1291,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "PE_EmitterEditor.updateEmitter( \"alignDirection\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_alignDirection";
@@ -1317,7 +1317,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -1358,7 +1358,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1382,7 +1382,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1403,7 +1403,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"thetaMin\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMin\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_thetaMin_slider";
@@ -1433,7 +1433,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMin\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_thetaMin_textEdit";
@@ -1450,7 +1450,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1474,7 +1474,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1495,7 +1495,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"thetaMax\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMax\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_thetaMax_slider";
@@ -1525,7 +1525,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMax\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_thetaMax_textEdit";
@@ -1542,7 +1542,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1556,10 +1556,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1575,7 +1575,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1599,7 +1599,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1620,7 +1620,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"phiVariance\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"phiVariance\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_phiVariance_slider";
@@ -1650,7 +1650,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"phiVariance\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_phiVariance_textEdit";
@@ -1667,7 +1667,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1691,7 +1691,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1712,7 +1712,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"ejectionOffset\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffset\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_ejectionOffset_slider";
@@ -1742,7 +1742,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffset\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_ejectionOffset_textEdit";
@@ -1759,7 +1759,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -1783,7 +1783,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1804,7 +1804,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"ejectionOffsetVariance\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffsetVariance\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_ejectionOffsetVariance_slider";
@@ -1833,7 +1833,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffsetVariance\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_ejectionOffsetVariance_textEdit";
@@ -1859,7 +1859,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -1900,7 +1900,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1923,7 +1923,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1951,7 +1951,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateParticlesFields($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PopupMenu";
@@ -1968,7 +1968,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1991,7 +1991,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2015,7 +2015,7 @@
                            visible = "1";
                            active = "1";
                            command = "%particleId = PEE_EmitterParticle2-->PopUpMenu.findText( \"None\" ); PEE_EmitterParticle2-->PopUpMenu.setSelected( %particleId );PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "Clear Particle 2 from Emitter";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2044,7 +2044,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PopupMenu";
@@ -2061,7 +2061,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2089,7 +2089,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PopupMenu";
@@ -2114,7 +2114,7 @@
                            visible = "1";
                            active = "1";
                            command = "%particleId = PEE_EmitterParticle3-->PopUpMenu.findText( \"None\" ); PEE_EmitterParticle3-->PopUpMenu.setSelected( %particleId );PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "Clear Particle 3 from Emitter";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2138,7 +2138,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2154,7 +2154,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2177,7 +2177,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2205,7 +2205,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PopupMenu";
@@ -2230,7 +2230,7 @@
                            visible = "1";
                            active = "1";
                            command = "%particleId = PEE_EmitterParticle4-->PopUpMenu.findText( \"None\" ); PEE_EmitterParticle4-->PopUpMenu.setSelected( %particleId );PE_EmitterEditor.updateParticlesFields();";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "Clear Particle 4 from Emitter";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2256,7 +2256,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -2298,7 +2298,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2321,7 +2321,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2345,11 +2345,11 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiPopUpMenuProfile";
+                           profile = "ToolsDropdownProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"blendStyle\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_blendType";
@@ -2366,7 +2366,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -2390,7 +2390,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2411,7 +2411,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"softnessDistance\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"softnessDistance\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_softnessDistance_slider";
@@ -2441,7 +2441,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"softnessDistance\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_softnessDistance_textEdit";
@@ -2458,7 +2458,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -2482,7 +2482,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2503,7 +2503,7 @@
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"ambientFactor\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ambientFactor\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_ambientFactor_slider";
@@ -2533,7 +2533,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ambientFactor\", $ThisControl.getText));";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEE_ambientFactor_textEdit";
@@ -2550,7 +2550,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2564,10 +2564,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2583,7 +2583,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2606,7 +2606,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2626,7 +2626,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"softParticles\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_softParticles";
@@ -2643,7 +2643,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2666,7 +2666,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2686,7 +2686,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"reverseOrder\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_reverseOrder";
@@ -2703,7 +2703,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2726,7 +2726,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2746,7 +2746,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"useEmitterSizes\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_useEmitterSizes";
@@ -2763,7 +2763,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2786,7 +2786,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2806,7 +2806,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"useEmitterColors\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEE_useEmitterColors";
@@ -2838,7 +2838,7 @@
          profile = "ToolsPanelDarkA";
          visible = "0";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -2868,7 +2868,7 @@
             profile = "ToolsScrollProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -2904,10 +2904,10 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "DropDownTextEditCtrl";
@@ -2936,7 +2936,7 @@
                      visible = "1";
                      active = "1";
                      command = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.onNewParticle();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "PopupMenu";
@@ -2966,7 +2966,7 @@
                      visible = "1";
                      active = "1";
                      altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "TextEdit";
@@ -2993,7 +2993,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3020,7 +3020,7 @@
                         visible = "1";
                         active = "1";
                         command = "PE_ParticleEditor.saveParticle( PE_ParticleEditor.currParticle );";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Save Current Particle";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3047,7 +3047,7 @@
                         profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Add New Particle To Current Emitter";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3075,7 +3075,7 @@
                         visible = "1";
                         active = "1";
                         command = "PE_ParticleEditor.showDeleteDialog();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         tooltip = "Delete Current Particle";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3100,7 +3100,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -3147,7 +3147,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3164,7 +3164,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3187,7 +3187,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3257,7 +3257,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"useInvAlpha\", $ThisControl.getValue());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_inverseAlpha";
@@ -3286,7 +3286,7 @@
                            profile = "ToolsTextEditProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "art/gfx/particles/impact";
                            hovertime = "1000";
                            isContainer = "0";
@@ -3308,7 +3308,7 @@
                            visible = "1";
                            active = "1";
                            command = "PE_ParticleEditor.updateParticleTexture(1);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3321,10 +3321,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3338,10 +3338,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3354,10 +3354,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3381,7 +3381,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3402,7 +3402,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateLifeFields( false, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( false, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_lifetimeMS_slider";
@@ -3432,7 +3432,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( false, $ThisControl.getText() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_lifetimeMS_textEdit";
@@ -3446,10 +3446,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3473,7 +3473,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3494,7 +3494,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateLifeFields( true, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( true, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_lifetimeVarianceMS_slider";
@@ -3524,7 +3524,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( true, $ThisControl.getText() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_lifetimeVarianceMS_textEdit";
@@ -3550,7 +3550,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -3588,10 +3588,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3615,7 +3615,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3636,7 +3636,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"inheritedVelFactor\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"inheritedVelFactor\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_inheritedVelFactor_slider";
@@ -3666,7 +3666,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"inheritedVelFactor\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_inheritedVelFactor_textEdit";
@@ -3680,10 +3680,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3707,7 +3707,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3728,7 +3728,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"constantAcceleration\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"constantAcceleration\", $ThisControl.getValue(), true, false);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_constantAcceleration_slider";
@@ -3758,7 +3758,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"constantAcceleration\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_constantAcceleration_textEdit";
@@ -3772,10 +3772,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3789,10 +3789,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3805,10 +3805,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3823,10 +3823,10 @@
                            minExtent = "0 0";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "0 Gravity";
                            hovertime = "1000";
                            isContainer = "0";
@@ -3850,7 +3850,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3871,7 +3871,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"gravityCoefficient\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"gravityCoefficient\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_gravityCoefficient_slider";
@@ -3901,7 +3901,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"gravityCoefficient\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_gravityCoefficient_textEdit";
@@ -3915,10 +3915,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -3942,7 +3942,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3963,7 +3963,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"dragCoefficient\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"dragCoefficient\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_dragCoefficient_slider";
@@ -3993,7 +3993,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"dragCoefficient\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_dragCoefficient_textEdit";
@@ -4019,7 +4019,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -4057,10 +4057,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4075,10 +4075,10 @@
                            minExtent = "0 0";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "No Spin";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4102,7 +4102,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4123,7 +4123,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateSpinFields( true, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( true, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_spinRandomMin_slider";
@@ -4153,7 +4153,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( true, $ThisControl.getText() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_spinRandomMin_textEdit";
@@ -4167,10 +4167,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4185,10 +4185,10 @@
                            minExtent = "0 0";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            tooltip = "No Spin";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4212,7 +4212,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4233,7 +4233,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateSpinFields( false, $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( false, $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_spinRandomMax_slider";
@@ -4263,7 +4263,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( false, $ThisControl.getText() );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_spinRandomMax_textEdit";
@@ -4277,10 +4277,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4294,10 +4294,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -4310,10 +4310,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4337,7 +4337,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4358,7 +4358,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"spinSpeed\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"spinSpeed\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_spinSpeed_slider";
@@ -4388,7 +4388,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"spinSpeed\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_spinSpeed_textEdit";
@@ -4414,7 +4414,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -4452,10 +4452,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4478,7 +4478,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4495,12 +4495,12 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiSwatchButtonProfile";
+                           profile = "ToolsSwatchButtonProfile";
                            visible = "1";
                            active = "1";
                            command = "getColorF( PE_ParticleEditor.currParticle.colors[0], \"PE_ColorTintSwatch0.updateParticleColor\");";
                            altCommand = "$ThisControl.updateParticleColor( $ThisControl.color );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "PE_ColorTintSwatch";
@@ -4518,12 +4518,12 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiSwatchButtonProfile";
+                           profile = "ToolsSwatchButtonProfile";
                            visible = "1";
                            active = "1";
                            command = "getColorF( PE_ParticleEditor.currParticle.colors[1], \"PE_ColorTintSwatch1.updateParticleColor\");";
                            altCommand = "$ThisControl.updateParticleColor( $ThisControl.color );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "PE_ColorTintSwatch";
@@ -4541,12 +4541,12 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiSwatchButtonProfile";
+                           profile = "ToolsSwatchButtonProfile";
                            visible = "1";
                            active = "1";
                            command = "getColorF( PE_ParticleEditor.currParticle.colors[2], \"PE_ColorTintSwatch2.updateParticleColor\");";
                            altCommand = "$ThisControl.updateParticleColor( $ThisControl.color );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "PE_ColorTintSwatch";
@@ -4564,12 +4564,12 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiSwatchButtonProfile";
+                           profile = "ToolsSwatchButtonProfile";
                            visible = "1";
                            active = "1";
                            command = "getColorF( PE_ParticleEditor.currParticle.colors[3], \"PE_ColorTintSwatch3.updateParticleColor\");";
                            altCommand = "$ThisControl.updateParticleColor( $ThisControl.color );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "PE_ColorTintSwatch";
@@ -4583,10 +4583,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4600,10 +4600,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -4616,10 +4616,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4643,7 +4643,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4664,7 +4664,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"sizes[0]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[0]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointSize_slider0";
@@ -4694,7 +4694,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[0]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointSize_textEdit0";
@@ -4708,10 +4708,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4735,7 +4735,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4756,7 +4756,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"sizes[1]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[1]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointSize_slider1";
@@ -4786,7 +4786,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[1]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointSize_textEdit1";
@@ -4800,10 +4800,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4827,7 +4827,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4848,7 +4848,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"sizes[2]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[2]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointSize_slider2";
@@ -4878,7 +4878,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[2]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointSize_textEdit2";
@@ -4892,10 +4892,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -4919,7 +4919,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4940,7 +4940,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"sizes[3]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[3]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointSize_slider3";
@@ -4970,7 +4970,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[3]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointSize_textEdit3";
@@ -4984,10 +4984,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5001,10 +5001,10 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5017,10 +5017,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -5044,7 +5044,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5065,7 +5065,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"times[0]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[0]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointTime_slider0";
@@ -5095,7 +5095,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[0]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointTime_textEdit0";
@@ -5109,10 +5109,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -5136,7 +5136,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5157,7 +5157,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"times[1]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[1]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointTime_slider1";
@@ -5187,7 +5187,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[1]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointTime_textEdit1";
@@ -5201,10 +5201,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -5228,7 +5228,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5249,7 +5249,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"times[2]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[2]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointTime_slider2";
@@ -5279,7 +5279,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[2]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointTime_textEdit2";
@@ -5293,10 +5293,10 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateControl";
@@ -5320,7 +5320,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5341,7 +5341,7 @@
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"times[3]\", $ThisControl.getValue(), true, true );";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[3]\", $ThisControl.getValue(), true, false );";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "PEP_pointTime_slider3";
@@ -5371,7 +5371,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[3]\", $ThisControl.getText());";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PEP_pointTime_textEdit3";
@@ -5405,7 +5405,7 @@
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -5432,7 +5432,7 @@
          visible = "1";
          active = "1";
          command = "ParticleEditor.updateEmitterNode();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Play Particle Effect from Start";
          hovertime = "1000";
          isContainer = "0";
@@ -5460,7 +5460,7 @@
          visible = "1";
          active = "1";
          command = "ParticleEditor.resetEmitterNode();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Drops Particle Effect in front of the Camera";
          hovertime = "1000";
          isContainer = "0";

@@ -72,7 +72,7 @@ function Editor::create() {
 	// expect the Canvas to exist, so it must be constructed
 	// before the editor.
 	new EditManager(Editor) {
-		profile = "GuiContentProfile";
+		profile = "ToolsDefaultProfile";
 		horizSizing = "right";
 		vertSizing = "top";
 		position = "0 0";

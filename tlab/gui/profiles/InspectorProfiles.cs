@@ -20,31 +20,57 @@ singleton GuiControlProfile( GuiInspectorProfile  : ToolsDefaultProfile ) {
 // GuiPopUpMenuProfile - Default profile might overwrite one used in game
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile Item
-delObj(GuiPopUpMenuProfile_Item);
-singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
-{
-   modal = "1";
-   fontSize = "18";
-   fontColors[1] = "255 160 0 255";
-   fontColorHL = "255 160 0 255";
-   autoSizeWidth = "1";
-   autoSizeHeight = "1";
-   fillColorSEL = "199 152 15 240";
-   opaque = "1";
-   bevelColorHL = "255 0 255 255";
-   fontColors[0] = "0 0 0 255";
-   fontColor = "0 0 0 255";
-   fillColor = "0 1 16 255";
-   fillColorHL = "180 113 18 169";
-   fontColors[2] = "3 206 254 255";
-   fontColors[3] = "254 3 62 255";
-   fontColorNA = "3 206 254 255";
-   fontColorSEL = "254 3 62 255";
-   profileForChildren = "GuiPopUpMenuProfile_Item";
-};
+//delObj(GuiPopUpMenuProfile_Item);
+if (!isObject(GuiPopUpMenuProfile_Item))
+	singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
+	{
+		modal = "1";
+		fontSize = "18";
+		fontColors[1] = "255 160 0 255";
+		fontColorHL = "255 160 0 255";
+		autoSizeWidth = "1";
+		autoSizeHeight = "1";
+		fillColorSEL = "199 152 15 240";
+		opaque = "1";
+		bevelColorHL = "255 0 255 255";
+		fontColors[0] = "0 0 0 255";
+		fontColor = "0 0 0 255";
+		fillColor = "0 1 16 255";
+		fillColorHL = "180 113 18 169";
+		fontColors[2] = "3 206 254 255";
+		fontColors[3] = "254 3 62 255";
+		fontColorNA = "3 206 254 255";
+		fontColorSEL = "254 3 62 255";		
+	};
+//------------------------------------------------------------------------------
+//GuiPopUpMenuProfile List
+//delObj(GuiPopUpMenuProfile_List);
+if (!isObject(GuiPopUpMenuProfile_List))
+	singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
+	{
+		modal = "1";
+		fontSize = "18";
+		fontColors[1] = "255 160 0 255";
+		fontColorHL = "255 160 0 255";
+		autoSizeWidth = "1";
+		autoSizeHeight = "1";
+		fillColorSEL = "199 152 15 240";
+		opaque = "1";
+		bevelColorHL = "255 0 255 255";
+		fontColors[0] = "0 0 0 255";
+		fontColor = "0 0 0 255";
+		fillColor = "0 1 16 255";
+		fillColorHL = "180 113 18 169";
+		fontColors[2] = "3 206 254 255";
+		fontColors[3] = "254 3 62 255";
+		fontColorNA = "3 206 254 255";
+		fontColorSEL = "254 3 62 255";
+		profileForChildren = "GuiPopUpMenuProfile_Item";
+	};
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
 delObj(GuiPopUpMenuProfile_List);
+if (!isObject(GuiPopUpMenuProfile))
 singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
 {   
    hasBitmapArray     = "1";
@@ -74,28 +100,29 @@ singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
 };
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile Menu
-delObj(GuiPopUpMenuProfile);
-singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
-{   
-  hasBitmapArray     = "1";
-  profileForChildren = "ToolsDropdownProfile_List";
- 	bitmap = "tlab/gui/assets/element/GuiDropdownProfile_Thin.png";
-   fontSize = "15";
-   justify = "Center";
-   fillColor = "242 241 241 255";  
-   fillColorHL = "228 228 235 255";
-   fontColors[1] = "255 160 0 255";
-   fontColors[2] = "3 206 254 255";
-   fontColorHL = "255 160 0 255";
-   fontColorNA = "3 206 254 255";
-   autoSizeWidth = "0";
-   autoSizeHeight = "0";
-   fontType = "Davidan";
-   modal = "1";
-   fontColors[3] = "254 3 62 255";
-   fontColorSEL = "254 3 62 255";
-   bevelColorLL = "Magenta";
-};
+//delObj(GuiPopUpMenuProfile);
+if (!isObject(GuiPopUpMenuProfile))
+	singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
+	{   
+	  hasBitmapArray     = "1";
+	  profileForChildren = "ToolsDropdownProfile_List";
+		bitmap = "tlab/gui/assets/element/GuiDropdownProfile_Thin.png";
+		fontSize = "15";
+		justify = "Center";
+		fillColor = "242 241 241 255";  
+		fillColorHL = "228 228 235 255";
+		fontColors[1] = "255 160 0 255";
+		fontColors[2] = "3 206 254 255";
+		fontColorHL = "255 160 0 255";
+		fontColorNA = "3 206 254 255";
+		autoSizeWidth = "0";
+		autoSizeHeight = "0";
+		fontType = "Davidan";
+		modal = "1";
+		fontColors[3] = "254 3 62 255";
+		fontColorSEL = "254 3 62 255";
+		bevelColorLL = "Magenta";
+	};
 //------------------------------------------------------------------------------
 
 //==============================================================================

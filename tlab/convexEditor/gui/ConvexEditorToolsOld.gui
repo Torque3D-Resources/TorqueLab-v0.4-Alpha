@@ -23,7 +23,7 @@
    profile = "ToolsScrollProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    tooltipWidth = "500";
    isContainer = "1";
@@ -56,7 +56,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       tooltipWidth = "500";
       isContainer = "1";
@@ -79,7 +79,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";
@@ -103,7 +103,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             tooltipWidth = "500";
             isContainer = "1";
@@ -126,10 +126,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             tooltipWidth = "500";
             isContainer = "1";
@@ -145,7 +145,7 @@
                profile = "ToolsPanelDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                tooltipWidth = "500";
                isContainer = "1";
@@ -174,7 +174,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "ConvexEditorGui.editNodeDetails();";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -199,7 +199,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -216,7 +216,7 @@
                profile = "ToolsPanelDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                tooltipWidth = "500";
                isContainer = "1";
@@ -240,7 +240,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -269,7 +269,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "ConvexEditorGui.editNodeDetails();";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -287,7 +287,7 @@
                profile = "ToolsPanelDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                tooltipWidth = "500";
                isContainer = "1";
@@ -311,7 +311,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -335,7 +335,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -364,7 +364,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "ConvexEditorGui.editNodeDetails();";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -394,7 +394,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "ConvexEditorGui.editNodeDetails();";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";
@@ -412,7 +412,7 @@
                profile = "ToolsPanelDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                tooltipWidth = "500";
                isContainer = "1";
@@ -437,7 +437,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";
@@ -461,7 +461,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             tooltipWidth = "500";
             isContainer = "1";
@@ -567,10 +567,10 @@
       minExtent = "16 16";
       horizSizing = "width";
       vertSizing = "height";
-      profile = "GuiDefaultProfile";
+      profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       tooltipWidth = "500";
       isContainer = "1";
@@ -601,7 +601,7 @@
          profile = "ToolsWindowProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";
@@ -624,7 +624,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             tooltipWidth = "500";
             isContainer = "1";
@@ -692,7 +692,7 @@
                   profile = "ToolsTreeViewProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   tooltipWidth = "500";
                   isContainer = "1";

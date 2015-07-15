@@ -8,7 +8,7 @@
 //==============================================================================
 // Activate the interface for a plugin
 //==============================================================================
-$LabDevGui_StackList = "ToolsTextBase ToolsTextAlt";
+$LabDevGui_StackList = "ToolsTextBase ToolsTextFX";
 $LabDevGui_SampleText = "Sample text - éç@#$%?&*";
 
 
@@ -54,8 +54,8 @@ function LabDevGui::generateSamples(%this) {
 		if (strFind(%obj.getName(),"ToolsTextBase")){
 			%this.generateTextSample(%obj.getName(),"ToolsTextBase");
 		}
-      if (strFind(%obj.getName(),"ToolsTextAlt")){
-			%this.generateTextSample(%obj.getName(),"ToolsTextAlt");
+      if (strFind(%obj.getName(),"ToolsTextFX")){
+			%this.generateTextSample(%obj.getName(),"ToolsTextFX");
 		}   
 	}
 }

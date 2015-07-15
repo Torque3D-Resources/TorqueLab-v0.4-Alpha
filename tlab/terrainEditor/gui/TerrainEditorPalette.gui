@@ -8,7 +8,7 @@
    profile = "ToolsBoxDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainEditor";
@@ -145,7 +145,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( smoothSlope );";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       tooltip = "Smooth Slope (5)";
       hovertime = "750";
       isContainer = "0";
