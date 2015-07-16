@@ -2,16 +2,17 @@
 // TorqueLab -> Procedural Terrain Painter GUI script
 // Copyright NordikLab Studio, 2014
 //==============================================================================
-
-$Lab::TerrainPainter::UseTerrainHeight = "0";
+$TPG_DefaultHeightMin = 0;
+$TPG_DefaultHeightMax = 1000;
+$TPG_DefaultSlopeMin = 0;
+$TPG_DefaultSlopeMax = 90;
+$TPG_DefaultCoverage = 100;
 $Lab::TerrainPainter::ValidateHeight = "0";
-$TPG_MaxHeight = 10000;
-$TPG_MinHeight = -10000;
 $TPG_Coverage = 100;
-$TPPHeightMin = -10000;
-$TPPHeightMax = 10000;
-$TPPSlopeMin = 0;
-$TPPSlopeMax = 90;
+
+$TPG_CreateMissingMaterials = false;
+
+$TPG_AppendLoadedLayers = false;
 $TerrainPaintGeneratorGui_Initialized = false;
 //==============================================================================
 // Multi material automatic terrain painter
@@ -22,40 +23,16 @@ function TerrainPaintGeneratorGui::onWake(%this) {
 	if (!$TerrainPaintGeneratorGui_Initialized)
 		TPG.init();
 
-	TPG_GenerateProgressWindow.setVisible(false);
-	%this-->rolloutSettings.expanded = false;
+	TPG_Window-->saveGroupButton.visible = 0;
+	TPG_GenerateProgressWindow.setVisible(false);	
 	TPG_PillSample.setVisible(false);
-	%menu = %this-->MenuTerrainLayers;
-	%menu.clear();
-	%mats = ETerrainEditor.getMaterials();
-
-	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
-		%matInternalName = getRecord( %mats, %i );
-		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
-		$TerrainPainterMatId[%matInternalName] = %i;
-		%menu.add(%matInternalName,%i);
-	}
-
-	%menu.setSelected(0);
-	%matList = ETerrainEditor.getMaterials();
-
-	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
-		%matInternalName = getRecord( %mats, %i );
-		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
-
-		// Is there no material info for this slot?
-		if ( !isObject( %mat ) )
-			continue;
-
-		%this.updatePillLayerList(%mat);
-	}
-
-	foreach(%layer in TPG_LayerGroup) {
-		TerrainPaintGeneratorGui.updateLayerPill(%layer);
-	}
-		
-	%this.checkHeightDefaults();
+	
 	TPG.checkLayersStackGroup();
+	foreach(%layer in TPG_LayerGroup) {
+		%this.updateLayerPill(%layer);
+		%this.updateLayerMaterialMenu(%layer);
+	}	
+	
 	
 	TPG.map.push();
 	Lab.hidePluginTools();
@@ -68,65 +45,23 @@ function TerrainPaintGeneratorGui::onSleep(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainPaintGeneratorGui::checkHeightDefaults(%this) {
-	Lab.getTerrainHeightRange();
-	%this-->terrainHeight.setText($Lab_TerrainHeight);
-	$TPG_MaxHeight =  $Lab_TerrainHeight;
-	$TPG_MinHeight =  0;
-	$TPG_TerrainZ =  $Lab_TerrainZ;
-
-	if (!$Lab::TerrainPainter::UseTerrainHeight) {
-		$TPG_MaxHeight += $Lab_TerrainZ;
-		$TPG_MinHeight += $Lab_TerrainZ;
-	}
-
-	%this.checkLayersHeight();
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-function TerrainPaintGeneratorGui::checkLayersHeight(%this) {
-	foreach(%layer in TPG_LayerGroup) {
-		%this.checkHeightSystem(%layer);
-	}
+function TPG::toggleOptions(%this) {
+	TPG_Options.visible = !TPG_Options.visible;
+	TerrainPaintGeneratorGui-->optionsIcon.setStateOn(TPG_Options.visible);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainPaintGeneratorGui::checkHeightSystem(%this,%layer) {
-	if (%layer.useTerrainHeight != $Lab::TerrainPainter::UseTerrainHeight) {
-		//Need to convert Heights
-		if (%layer.useTerrainHeight) {
-			%layer.heightMin = %layer.heightMin + $Lab_TerrainZ;
-			%layer.heightMax = %layer.heightMax + $Lab_TerrainZ;
-			%layer.useTerrainHeight = 0;
-			echo("Layer:" SPC %layer.matInternalName SPC " changed to World Heights");
-		} else {
-			%layer.heightMin = %layer.heightMin - $Lab_TerrainZ;
-			%layer.heightMax = %layer.heightMax - $Lab_TerrainZ;
-			%layer.useTerrainHeight = 1;
-			echo("Layer:" SPC %layer.matInternalName SPC " changed to Terrain Heights");
-		}
-
-		%this.updateLayerPill(%layer);
-	}
-
-	%this.validateHeight(%layer);
+function TPG::addTerrainMaterialLayer(%this,%matInternalName) {	
+	%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
+	if (!isObject(%mat))
+		return false;
+		
+	ETerrainEditor.addMaterial(%matInternalName);
+	EPainter.updateLayers();
+	ETerrainEditor.updateMaterial(  EPainterStack.getCount(), %mat.getInternalName() );
+	return true;	
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function TerrainPaintGeneratorGui::validateHeight(%this,%layer) {
-	if (!$Lab::TerrainPainter::ValidateHeight) return;
-
-	if (%layer.heightMin < $TPG_MinHeight) %layer.heightMin = $TPG_MinHeight;
-
-	if (%layer.heightMax > $TPG_MaxHeight) %layer.heightMax = $TPG_MaxHeight;
-
-	if (%layer.heightMin > %layer.heightMax) %layer.heightMin = %layer.heightMax;
-
-	%this.updateLayerPill(%layer);
-}
-//------------------------------------------------------------------------------
-
 
 
 //==============================================================================
@@ -146,199 +81,75 @@ function TerrainPaintGeneratorGui::deleteLayer(%this, %buttonCtrl) {
 function TerrainPaintGeneratorGui::deleteLayerGroup(%this) {
 	TPG_LayerGroup.clear();
 	TPG_StackLayers.clear();
-}
-//------------------------------------------------------------------------------
-
-
-//==============================================================================
-function TPG_EditTerrainHeight::onValidate(%this) {
-	theTerrain.terrainHeight = %this.getText();
-	TerrainPaintGeneratorGui.checkHeightDefaults();
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-//OLD STUFF
-//==============================================================================
-
-//==============================================================================
-function autoLayers() {
-	Canvas.pushDialog(TerrainPaintGeneratorGui);
+	TPG_Window-->saveGroupButton.active = false;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function generateProceduralTerrainMask() {
-	Canvas.popDialog(TerrainPaintGeneratorGui);
-	ETerrainEditor.autoMaterialLayer($TPPHeightMin, $TPPHeightMax, $TPPSlopeMin, $TPPSlopeMax);
-}
-//------------------------------------------------------------------------------
-/*
-//==============================================================================
-function TerrainPaintGeneratorGui::onWake(%this)
-{
-
-   %this.tree = ProceduralPainterLayers;
-
-   ProceduralPainterLayers.open( AutoPaintTree );
-	ProceduralPainterLayers.buildVisibleTree(true);
-  %this.UpdateLayerList();
-
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TerrainPaintGeneratorGui::init(%this)
-{
-   if ( !isObject( AutoPaintTree ) ) {
-		new SimGroup( AutoPaintTree  );
-		%this.showError = true;
+function TerrainPaintGeneratorGui::deleteInvalidLayers(%this) {
+	foreach(%pill in TPG_StackLayers){
+		%layer = %pill.layerObj;
+		if (strFind(%layer.matInternalName,"*"))
+			%removeList = strAddWord(%removeList,%layer.getId());
 	}
-
-	 if ( !isObject( AutoPaintGroupMain ) ) {
-      new SimGroup(AutoPaintGroupMain) {
-         internalName = "MainGroup";
-         parentGroup = AutoPaintTree;
-      };
-	 }
-
-	ProceduralPainterLayers.open( AutoPaintTree );
-	ProceduralPainterLayers.buildVisibleTree(true);
-
+	foreach$(%layer in %removeList){
+		delObj(%layer.pill);
+		delObj(%layer);
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Multi Material Procedural Painter
+// Copy/Paste layer parameters system
 //==============================================================================
 //==============================================================================
-function TerrainPaintGeneratorGui::AddNewLayerGroup(%this)
-{
-
-   %tree = %this.tree;
-
-   %this.lastGroupId++;
-
-   %internalName = "LayerGroup_"@%this.lastGroupId++;
-	%group = new SimGroup() {
-		internalName = %internalName;
-		parentGroup = AutoPaintTree;
-	};
-	//MECreateUndoAction::submit( %group );
-	%tree.open( AutoPaintLayerGroup );
-	%tree.buildVisibleTree(true);
-	%item = %tree.findItemByObjectId( %group );
-   %tree.clearSelection();
-	%tree.addSelection( %item );
-	%tree.scrollVisible( %item );
-	//%tree.dirty = true;
+function TPG_FieldCopyButton::onClick(%this) {
+	%layer = %this.layerObj;
+	%pill = %layer.pill;
+	%wordsData = strreplace(%this.internalName,"_"," ");
+	%field = getWord(%wordsData,0);
+	%action = getWord(%wordsData,1);
+	
+	if (%action $= "Copy"){
+		TPG.clipBoard = %layer.getFieldValue(%field);
+	} else if (%action $= "Paste"){
+		if (TPG.clipBoard $= "")
+			return;
+		%layer.setFieldValue(%field,TPG.clipBoard);
+		%ctrl = %pill.findObjectByInternalName(%field,true);
+		%ctrl.setText(TPG.clipBoard);
+		
+	}
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainPaintGeneratorGui::UpdateLayerList(%this)
-{
-   %menu = %this-->MenuTerrainLayers;
-   %menu.clear();
-  %mats = ETerrainEditor.getMaterials();
-  for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
-     %matInternalName = getRecord( %mats, %i );
-		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
-		%menu.add(%matInternalName,%i);
-  }
-  %menu.setSelected(0);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TerrainPaintGeneratorGui::layerSelected(%this,%menu)
-{
-   %matInternalName = %menu.getText();
-  %mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
-   %this.selectedMaterial = %mat;
-    %this.selectedLayer.layerMaterial = %mat;
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TerrainPaintGeneratorGui::addLayerToList(%this)
-{
-
-   %tree = ProceduralPainterLayers;
-   %layer = %this.selectedLayer;
-   %layer.layerName = PPainterLayerSelect-->layerName.getText();
-    %mat  = %layer.layerMaterial;
-
-   if (!isObject(%layer)){
-      error("No selected layer , can't add new layer");
+function TPG::getCurrentHeight(%this,%id) {
+	%avgHeight = ETerrainEditor.lastAverageHeight;
+	
+	%avgHeight = mFloatLength(%avgHeight,2);
+	TPG.clipBoard = %avgHeight; 
+	
+	if (%id $= "")
 		return;
-	}
-
-  %parentGroup = %tree.getSelectedObject();
-	if ( !isObject( %parentGroup ) ){
-      error("No layer group selected, can't add new layer");
+	TPG.height[%id] = %avgHeight;
+	$TPG_ValueStore[%id] = %avgHeight;
+	eval("TPG_StoredValues-->v"@%id@".setText(\""@%avgHeight@"\");");
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TPG::setCurrentHeight(%this,%id) {
+	
+	if (TPG.height[%id] $= "")
 		return;
-	}
-
-
-	%name = getUniqueInternalName( %layer.internalName, AutoPaintLayerGroup, true );
-	%layer.internalName = %layer.internalName @"_"@ %layer.layerName@"_"@%mat.getName();
-	%layer.parentGroup =  %parentGroup;
-
-	//MECreateUndoAction::submit( %element );
-	%tree.clearSelection();
-	%tree.buildVisibleTree( true );
-	%item = %tree.findItemByObjectId( %layer.getId() );
-	%tree.scrollVisible( %item );
-	%tree.addSelection( %item );
-	%tree.dirty = true;
-
-
-}
-//------------------------------------------------------------------------------
-
-
-//==============================================================================
-function TerrainPaintGeneratorGui::updateSelectedLayer(%this,%layer)
-{
-
-    PPainterLayerSelect-->updateButton.text = "Update layer";
-    if (!isObject(%layer))
-    {
-
-       %internalName = "Layer_"@%this.lastLayerId++;
-
-
-      %layer = new ScriptObject() {
-		   internalName = %internalName;
-		   layerName = "New Layer";
-		   minHeight = "-1000";
-		    maxHeight = "1000";
-		   minSlope = "0";
-		   maxSlope = "90";
-	   };
-	   PPainterLayerSelect-->updateButton.text = "Add to list";
-    }
-    %this.selectedLayer = %layer;
-    PPainterLayerSelect-->layerName.text = %layer.layerName;
-      PPainterLayerSelect-->minHeight.text = %layer.minHeight;
-	PPainterLayerSelect-->maxHeight.text = %layer.maxHeight;
-  PPainterLayerSelect-->minSlope.text = %layer.minSlope;
-  PPainterLayerSelect-->maxSlope.text = %layer.maxSlope;
+	TPG.clipBoard = TPG.height[%id]; 		
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainPaintGeneratorGui::generateMultiLayers(%this)
-{
-
-
+function TPG::pasteCurrentHeight(%this,%id) {
+	
+	if (TPG.clipBoard $= "")
+		return;
+	TPG.height[%id] = TPG.clipBoard; 
+	$TPG_ValueStore[%id] = TPG.clipBoard;
+	eval("TPG_StoredValues-->v"@%id@".setText(\""@TPG.clipBoard@"\");");
 }
 //------------------------------------------------------------------------------
-
-//==============================================================================
-// ProceduralPainterLayers TreeView callbacks
-//==============================================================================
-//==============================================================================
-function ProceduralPainterLayers::onSelect(%this,%id)
-{
-
-      %layer = %this.getSelectedObject();
-  TerrainPaintGeneratorGui.updateSelectedLayer(%id);
-}
-//------------------------------------------------------------------------------
-
-*/

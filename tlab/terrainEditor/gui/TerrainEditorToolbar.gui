@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new GuiStackControl(EWTerrainEditToolbar) {
+%guiContent = new GuiStackControl(EWTerrainEditToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -10,25 +10,24 @@ new GuiStackControl(EWTerrainEditToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "245 0";
-   extent = "674 32";
+   extent = "706 32";
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
    superClass = "ToolbarPluginStack";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      defaultParent = "guiGroup";
-      defaultStack = "10992";
-      disabledGroup = "11033";
-      EditorContainer = "4085";
+      defaultParent = "GuiGroup";
+      defaultStack = "11531";
+      disabledGroup = "11568";
+      EditorContainer = "5179";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
@@ -377,7 +376,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "Softness";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -385,13 +384,12 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "33";
+            value = "50";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "TEP_SoftnessSlider";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -399,7 +397,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "softness_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -492,7 +490,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "pressure";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -500,13 +498,12 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "22";
+            value = "50";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "TEP_PressureSlider";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -514,7 +511,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "pressure_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -607,21 +604,20 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "size";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
          new GuiSliderCtrl() {
-            range = "1 200";
+            range = "1 40";
             ticks = "0";
             snap = "0";
-            value = "12";
+            value = "10";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "TEP_BrushSizeSlider";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -629,7 +625,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "size_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -703,7 +699,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "19.0698";
+            text = "20";
             maxLength = "3";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -724,7 +720,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "setHeight";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -732,13 +728,12 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "20 60";
             ticks = "0";
             snap = "0";
-            value = "44";
+            value = "60";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "TEP_SetHeightSlider";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -747,7 +742,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "setheight_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -764,7 +759,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "548 0";
-      extent = "38 32";
+      extent = "70 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -866,6 +861,36 @@ new GuiStackControl(EWTerrainEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/PaintCurve.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "40 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "Canvas.pushDialog( TerrainManagerGui );";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "TerrainManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -897,7 +922,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "590 0";
+      position = "622 0";
       extent = "84 32";
       minExtent = "8 2";
       horizSizing = "right";

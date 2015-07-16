@@ -25,9 +25,9 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12304";
-      disabledGroup = "12345";
-      EditorContainer = "5168";
+      defaultStack = "12830";
+      disabledGroup = "12869";
+      EditorContainer = "5179";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
 
@@ -143,7 +143,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "12304";
+            toolbar = "12830";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -343,11 +343,11 @@
             profile = "ToolsTextEditDark";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.setSlopeMin($ThisControl);";
+            altCommand = "TEP_BrushManager.setSlopeMin($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "slopeMin";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -355,7 +355,7 @@
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "1";
+            value = "0";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -364,13 +364,14 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.setSlopeMin($ThisControl);";
+            altCommand = "TEP_BrushManager.setSlopeMin($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "slopeMin_slider";
             canSave = "1";
-            canSaveDynamicFields = "0";
+            canSaveDynamicFields = "1";
+               GuiGroup = "TPP_Slider_SlopeMin";
          };
       };
       new GuiContainer() {
@@ -457,11 +458,11 @@
             profile = "ToolsTextEditDark";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.setSlopeMax($ThisControl);";
+            altCommand = "TEP_BrushManager.setSlopeMax($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "slopeMax";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -469,7 +470,7 @@
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "1";
+            value = "90";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -478,13 +479,14 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.setSlopeMax($ThisControl);";
+            altCommand = "TEP_BrushManager.setSlopeMax($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "slopeMax_slider";
             canSave = "1";
-            canSaveDynamicFields = "0";
+            canSaveDynamicFields = "1";
+               GuiGroup = "TPP_Slider_SlopeMax";
          };
       };
       new GuiContainer() {
@@ -571,19 +573,19 @@
             profile = "ToolsTextEditDark";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushSize($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "size";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
          new GuiSliderCtrl() {
-            range = "0 90";
+            range = "1 40";
             ticks = "0";
             snap = "0";
-            value = "2";
+            value = "20";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -592,11 +594,11 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushSize($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "size_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -685,11 +687,11 @@
             profile = "ToolsTextEditDark";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushPressure($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "pressure";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -697,7 +699,7 @@
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "1";
+            value = "50";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -706,13 +708,14 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushPressure($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "pressure_slider";
             canSave = "1";
-            canSaveDynamicFields = "0";
+            canSaveDynamicFields = "1";
+               GuiGroup = "TPP_Slider_Pressure";
          };
       };
       new GuiContainer() {
@@ -799,11 +802,11 @@
             profile = "ToolsTextEditDark";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushSoftness($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "Softness";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -811,7 +814,7 @@
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "1";
+            value = "50";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -820,11 +823,11 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            altCommand = "TPP_BrushManager.updateBrushSoftness($ThisControl);";
+            altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "slider";
+            internalName = "softness_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

@@ -23,8 +23,10 @@
 /// The texture filename filter used with OpenFileDialog.
 $TerrainEditor::TextureFileSpec = "Image Files (*.png, *.jpg, *.dds)|*.png;*.jpg;*.dds|All Files (*.*)|*.*|";
 
-
-
+//ETerrainEditor.setSelectType();
+function ETerrainEditor::setSelectType( %this ) {
+	%this.setBrushType("Selection");
+}
 
 function TerrainEditor::init( %this ) {
 	%this.attachTerrain();
