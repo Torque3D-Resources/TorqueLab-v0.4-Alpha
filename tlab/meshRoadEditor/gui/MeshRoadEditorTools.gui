@@ -20,10 +20,10 @@
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -69,7 +69,7 @@
       profile = "ToolsWindowProfile_Dark";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -91,7 +91,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -157,7 +157,7 @@
                profile = "ToolsTreeViewProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -181,7 +181,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -204,7 +204,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "0";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -228,7 +228,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -281,7 +281,7 @@
             visible = "1";
             active = "1";
             command = "toggleVisible(MeshRoadEditorToolsSettings);";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -301,10 +301,10 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -325,10 +325,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -350,7 +350,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -373,7 +373,7 @@
                   profile = "ToolsTextBase_H1_C";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -394,7 +394,7 @@
                   profile = "ToolsPanelDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -416,7 +416,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -437,7 +437,7 @@
                         visible = "1";
                         active = "1";
                         command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultWidth\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "slider";
@@ -467,7 +467,7 @@
                         visible = "1";
                         active = "1";
                         command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultWidth\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "TextEdit";
@@ -492,7 +492,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -514,7 +514,7 @@
                   profile = "ToolsPanelDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -536,7 +536,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -557,7 +557,7 @@
                         visible = "1";
                         active = "1";
                         command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultDepth\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "slider";
@@ -587,7 +587,7 @@
                         visible = "1";
                         active = "1";
                         command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultDepth\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "TextEdit";
@@ -612,7 +612,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -636,7 +636,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -658,7 +658,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "AggregateBox";
@@ -682,7 +682,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -706,7 +706,7 @@
                      visible = "1";
                      active = "1";
                      variable = "MeshRoadEditorGui.topMaterialName";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "defaultMaterial";
@@ -727,7 +727,7 @@
                      visible = "1";
                      active = "1";
                      command = "materialSelector.showDialog(\"MeshRoadEditorGui.showDefaultMaterialSaveDialog\",\"TOP\");";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -763,7 +763,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -785,7 +785,7 @@
          profile = "ToolsBoxTitleBar";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -808,7 +808,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -830,7 +830,7 @@
             profile = "ToolsPanelDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -853,7 +853,7 @@
                profile = "ToolsTextBase_S1_R";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -881,7 +881,7 @@
                visible = "1";
                active = "0";
                altCommand = "MeshRoadEditorGui.editNodeDetails();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "position";
@@ -905,7 +905,7 @@
             profile = "ToolsPanelDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -928,7 +928,7 @@
                profile = "ToolsTextBase_S1_R";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -956,7 +956,7 @@
                visible = "1";
                active = "0";
                altCommand = "MeshRoadEditorGui.editNodeDetails();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "rotation";
@@ -980,7 +980,7 @@
             profile = "ToolsPanelDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1003,7 +1003,7 @@
                profile = "ToolsTextBase_S1_R";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1031,7 +1031,7 @@
                visible = "1";
                active = "0";
                altCommand = "MeshRoadEditorGui.editNodeDetails();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "depth";
@@ -1055,7 +1055,7 @@
                profile = "ToolsTextBase_S1_R";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1083,7 +1083,7 @@
                visible = "1";
                active = "0";
                altCommand = "MeshRoadEditorGui.editNodeDetails();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "width";
@@ -1108,7 +1108,7 @@
          profile = "ToolsBoxTitleBar";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1187,7 +1187,7 @@
             profile = "ToolsPanelDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1230,7 +1230,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";

@@ -17,7 +17,7 @@ new GuiStackControl(MaterialEditorToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
@@ -51,7 +51,7 @@ new GuiStackControl(MaterialEditorToolbar) {
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -74,7 +74,7 @@ new GuiStackControl(MaterialEditorToolbar) {
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -89,10 +89,10 @@ new GuiStackControl(MaterialEditorToolbar) {
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -105,10 +105,10 @@ new GuiStackControl(MaterialEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -137,7 +137,7 @@ new GuiStackControl(MaterialEditorToolbar) {
          visible = "1";
          active = "1";
          command = "materialSelector.showDialog(\"MaterialEditorGui.switchMaterial\");";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Open existing material";
          hovertime = "1000";
          isContainer = "0";
@@ -161,7 +161,7 @@ new GuiStackControl(MaterialEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -184,7 +184,7 @@ new GuiStackControl(MaterialEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";

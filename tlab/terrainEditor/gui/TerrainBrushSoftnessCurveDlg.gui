@@ -8,7 +8,7 @@
    profile = "ToolsGuiOverlayProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -39,7 +39,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -60,7 +60,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "FilterCurveCtrl";
@@ -84,7 +84,7 @@
          profile = "ToolsTextBase_C";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -107,7 +107,7 @@
          profile = "ToolsTextBase_C";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -130,7 +130,7 @@
          profile = "ToolsTextBase_C";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -153,7 +153,7 @@
          profile = "ToolsTextBase_C";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -185,7 +185,7 @@
          visible = "1";
          active = "1";
          command = "TerrainBrushSoftnessCurveDlg.onOk();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -217,7 +217,7 @@
          visible = "1";
          active = "1";
          command = "Canvas.popDialog( TerrainBrushSoftnessCurveDlg );";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -249,7 +249,7 @@
          visible = "1";
          active = "1";
          command = "TerrainBrushSoftnessCurveDlg.resetCurve();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";

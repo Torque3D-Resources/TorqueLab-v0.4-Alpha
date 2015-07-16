@@ -54,10 +54,10 @@
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "GuiTabBookProfile";
+      profile = "ToolsTabBookProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -79,10 +79,10 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "0";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -105,7 +105,7 @@
             profile = "ToolsBoxTitleBar";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -128,7 +128,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -151,7 +151,7 @@
             profile = "ToolsBoxDarkC";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -172,10 +172,10 @@
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -197,7 +197,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -217,7 +217,7 @@
                      visible = "1";
                      active = "1";
                      command = "SEP_GroundCover.createGroundCover();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -237,7 +237,7 @@
                      visible = "1";
                      active = "0";
                      command = "SEP_GroundCover.saveData();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -263,10 +263,10 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -288,7 +288,7 @@
             profile = "ToolsBoxDarkC";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -309,10 +309,10 @@
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -334,7 +334,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -357,7 +357,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -377,7 +377,7 @@
                      visible = "1";
                      active = "1";
                      command = "SEP_GroundCover.createGroundCover();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -404,7 +404,7 @@
                      profile = "ToolsDropdownProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -424,7 +424,7 @@
                      visible = "1";
                      active = "0";
                      command = "SEP_GroundCover.saveData();";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -449,7 +449,7 @@
             profile = "ToolsBoxTitleBar";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -472,7 +472,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -495,10 +495,10 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -520,7 +520,7 @@
                   profile = "ToolsBoxTitleBar";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -543,7 +543,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -564,10 +564,10 @@
                      minExtent = "16 16";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "GuiDefaultProfile";
+                     profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -589,7 +589,7 @@
                         profile = "ToolsBoxDarkC";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -612,7 +612,7 @@
                            profile = "ToolsTextBase_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -633,10 +633,10 @@
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";

@@ -20,10 +20,10 @@
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -69,7 +69,7 @@
       profile = "ToolsWindowProfile_Dark";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -120,7 +120,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorDialogs.toggleDlg(\"ForestManager\");";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -143,7 +143,7 @@
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -221,7 +221,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -275,7 +275,7 @@
                      visible = "1";
                      active = "1";
                      altCommand = "ForestEditorGui.setBrushFilter($ThisControl.getValue());";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -393,7 +393,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -447,7 +447,7 @@
                      visible = "1";
                      active = "1";
                      altCommand = "ForestEditorGui.setItemFilter($ThisControl.getValue());";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -572,7 +572,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.newMeshGroup();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Add New Brush Group";
             hovertime = "1000";
             isContainer = "0";
@@ -600,7 +600,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.newMesh();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Add new mesh";
             hovertime = "1000";
             isContainer = "0";
@@ -628,7 +628,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.deleteMesh();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Delete selected mesh";
             hovertime = "1000";
             isContainer = "0";
@@ -656,7 +656,7 @@
             visible = "1";
             active = "1";
             command = "toggleVisible(ForestEditorToolsSettings);";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -709,7 +709,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.newGroup();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Add New Brush Group";
             hovertime = "1000";
             isContainer = "0";
@@ -737,7 +737,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.newBrush();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Add New Brush Group";
             hovertime = "1000";
             isContainer = "0";
@@ -765,7 +765,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.newElement();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Add New Brush Element";
             hovertime = "1000";
             isContainer = "0";
@@ -793,7 +793,7 @@
             visible = "1";
             active = "1";
             command = "ForestEditorGui.deleteBrushOrElement();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Delete selected";
             hovertime = "1000";
             isContainer = "0";
@@ -827,7 +827,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -849,7 +849,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -872,7 +872,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";

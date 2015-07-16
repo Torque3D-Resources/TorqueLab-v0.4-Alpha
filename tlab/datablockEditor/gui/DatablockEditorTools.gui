@@ -20,10 +20,10 @@
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -70,7 +70,7 @@
       profile = "ToolsWindowProfile_Dark";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -145,10 +145,10 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -177,7 +177,7 @@
                   visible = "1";
                   active = "1";
                   command = "DatablockEditorTree.setFilterText($ThisControl.getValue());";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -419,7 +419,7 @@
             visible = "0";
             active = "1";
             command = "DatablockEditorPlugin.createDatablock();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Create new datablock";
             hovertime = "1000";
             isContainer = "0";
@@ -449,7 +449,7 @@
             visible = "1";
             active = "1";
             command = "DatablockEditorPlugin.deleteDatablock();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Delete Datablock";
             hovertime = "1000";
             isContainer = "0";
@@ -484,7 +484,7 @@
       profile = "ToolsWindowProfile_Dark";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -584,7 +584,7 @@
                visible = "1";
                active = "1";
                command = "DatablockEditorPlugin.save();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                tooltip = "Save Datablock (ALT S)";
                hovertime = "1000";
                isContainer = "0";
@@ -612,7 +612,7 @@
                visible = "1";
                active = "1";
                command = "DatablockEditorPlugin.showSaveNewFileDialog();";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                tooltip = "Save Datablock to a New File";
                hovertime = "1000";
                isContainer = "0";

@@ -46,7 +46,7 @@
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -72,7 +72,7 @@
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -94,7 +94,7 @@
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -109,10 +109,10 @@
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -125,10 +125,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -157,7 +157,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderGrid = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Show grid";
          hovertime = "1000";
          isContainer = "1";
@@ -186,7 +186,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.fitToShape();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Fit Camera to Shape (F)";
          hovertime = "1000";
          isContainer = "1";
@@ -215,7 +215,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.orbitNode = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Orbit the selected node";
          hovertime = "1000";
          isContainer = "1";
@@ -242,7 +242,7 @@
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -264,7 +264,7 @@
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -279,10 +279,10 @@
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -295,10 +295,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -327,7 +327,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderNodes = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Show Nodes (N)";
          hovertime = "1000";
          isContainer = "1";
@@ -356,7 +356,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderGhost = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle shape transparency in the preview window (T)";
          hovertime = "1000";
          isContainer = "1";
@@ -385,7 +385,7 @@
          visible = "1";
          active = "1";
          command = "shapeEditorWireframeMode();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle shape wireframe in the preview window (R)";
          hovertime = "1000";
          isContainer = "1";
@@ -412,7 +412,7 @@
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -434,7 +434,7 @@
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -449,10 +449,10 @@
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -465,10 +465,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -497,7 +497,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderbounds = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle selected object bounding box in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -526,7 +526,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderObjBox = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle selected object bounding box in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -555,7 +555,7 @@
          visible = "1";
          active = "1";
          command = "shapeEdShapeView.renderColMeshes = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle rendering of collision meshes in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -582,7 +582,7 @@
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -604,7 +604,7 @@
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -619,10 +619,10 @@
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -635,10 +635,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -667,7 +667,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEditorPlugin.toggleAdvancedOptions();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle Advanced Properties Window";
          hovertime = "1000";
          isContainer = "1";
@@ -696,7 +696,7 @@
          visible = "1";
          active = "1";
          command = "ShapeEditorPlugin.toggleAnimBar();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle Animation controls bar";
          hovertime = "1000";
          isContainer = "1";
@@ -726,7 +726,7 @@
          active = "1";
          variable = "Lab.forceLoadDAE";
          command = "Lab.forceLoadDAE = $ThisControl.getValue();";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Toggle Animation controls bar";
          hovertime = "1000";
          isContainer = "1";
@@ -750,7 +750,7 @@
       profile = "ToolsGuiModelessDialogProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";

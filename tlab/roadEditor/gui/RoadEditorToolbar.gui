@@ -14,10 +14,10 @@ new GuiStackControl(RoadEditorToolbar) {
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "RoadEditorToolbar";
@@ -50,7 +50,7 @@ new GuiStackControl(RoadEditorToolbar) {
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "Render modes";
@@ -73,7 +73,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -88,10 +88,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -104,10 +104,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -136,7 +136,7 @@ new GuiStackControl(RoadEditorToolbar) {
          visible = "1";
          active = "1";
          variable = "$DecalRoad::showSpline";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Show Spline (Z)";
          hovertime = "1000";
          isContainer = "0";
@@ -166,7 +166,7 @@ new GuiStackControl(RoadEditorToolbar) {
          visible = "1";
          active = "1";
          variable = "$DecalRoad::wireframe";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Show Wireframe (X)";
          hovertime = "1000";
          isContainer = "0";
@@ -196,7 +196,7 @@ new GuiStackControl(RoadEditorToolbar) {
          visible = "1";
          active = "1";
          variable = "$DecalRoad::showRoad";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Show Road Texture (V)";
          hovertime = "1000";
          isContainer = "0";
@@ -224,7 +224,7 @@ new GuiStackControl(RoadEditorToolbar) {
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "Materials";
@@ -247,7 +247,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -262,10 +262,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -278,10 +278,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -304,7 +304,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -328,7 +328,7 @@ new GuiStackControl(RoadEditorToolbar) {
             profile = "ToolsTextBase_S1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -352,7 +352,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             variable = "RoadEditorGui.materialName";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "defaultMaterial";
@@ -366,10 +366,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarBoxChild";
@@ -390,7 +390,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             command = "materialSelector.showDialog(\"RoadEditorGui.showDefaultMaterialSaveDialog\");";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarIcon";
@@ -413,7 +413,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -437,7 +437,7 @@ new GuiStackControl(RoadEditorToolbar) {
             profile = "ToolsTextBase_S1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -460,7 +460,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             variable = "RoadEditorPlugin.selectedMaterial";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "activeMaterial";
@@ -474,10 +474,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarBoxChild";
@@ -498,7 +498,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             command = "RoadEditorGui.changeActiveMaterial();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "changeActiveMaterialBtn";
@@ -526,7 +526,7 @@ new GuiStackControl(RoadEditorToolbar) {
       profile = "ToolsPanelDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "width";
@@ -549,7 +549,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -564,10 +564,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "4 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -580,10 +580,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarGroup";
@@ -606,7 +606,7 @@ new GuiStackControl(RoadEditorToolbar) {
          profile = "ToolsPanelDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -630,7 +630,7 @@ new GuiStackControl(RoadEditorToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -643,10 +643,10 @@ new GuiStackControl(RoadEditorToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarBoxChild";
@@ -676,7 +676,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             command = "RoadEditorPlugin.setCtrlParam(\"DefaultWidth\",$ThisControl);";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "TextEdit";
@@ -697,7 +697,7 @@ new GuiStackControl(RoadEditorToolbar) {
             visible = "1";
             active = "1";
             command = "RoadEditorPlugin.setCtrlParam(\"DefaultWidth\",$ThisControl);";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "slider";
@@ -721,7 +721,7 @@ new GuiStackControl(RoadEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -744,7 +744,7 @@ new GuiStackControl(RoadEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";

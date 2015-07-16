@@ -20,10 +20,10 @@
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -70,7 +70,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -121,7 +121,7 @@
             visible = "1";
             active = "1";
             command = "RoadEditorDialogs.toggleDlg(\"Settings\");";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -144,7 +144,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -167,7 +167,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -233,7 +233,7 @@
                profile = "ToolsTreeViewProfile_Dark";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -286,7 +286,7 @@
             visible = "0";
             active = "1";
             command = "EditorMenuEditDelete();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "deleteSelection";
@@ -314,7 +314,7 @@
             profile = "ToolsButtonDark";
             visible = "0";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "add Sim Group";
             hovertime = "1000";
             isContainer = "0";
@@ -344,7 +344,7 @@
             visible = "0";
             active = "1";
             command = "EWorldEditor.lockSelection(true); SceneEditorTree.toggleLock();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Lock selection";
             hovertime = "1000";
             isContainer = "0";
@@ -380,7 +380,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -402,7 +402,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -425,7 +425,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -455,7 +455,7 @@
             profile = "ToolsTabBookProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -480,7 +480,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -502,7 +502,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -525,7 +525,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "roadNodePageTitle";
@@ -546,7 +546,7 @@
                      visible = "1";
                      active = "1";
                      command = "Lab.getDecalRoadNodes(true);";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -569,7 +569,7 @@
                   profile = "ToolsBoxTitleDark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -599,7 +599,7 @@
                      profile = "ToolsScrollProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -620,10 +620,10 @@
                         minExtent = "16 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "nodeStack";
@@ -648,7 +648,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "roadNodePageTitle";
@@ -670,7 +670,7 @@
                      active = "1";
                      variable = "$Lab_REP_ShowNodePosition";
                      command = "RoadEditorGui.setNodeLink($ThisControl);";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "linked";
@@ -691,7 +691,7 @@
                      visible = "1";
                      active = "1";
                      command = "RoadEditorGui.setNodeLink($ThisControl,true);";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "globalLink";
@@ -714,10 +714,10 @@
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "nodeStackSample";
@@ -740,7 +740,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -762,7 +762,7 @@
                         profile = "ToolsPanelDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -782,7 +782,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "selectBtn";
@@ -806,7 +806,7 @@
                         profile = "ToolsPanelDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -830,7 +830,7 @@
                            profile = "ToolsTextBase_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -854,11 +854,11 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "GuiTextEditProfile";
+                           profile = "ToolsTextEditProfile";
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeDataWidth($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "WidthEdit";
@@ -879,7 +879,7 @@
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeDataWidth($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "WidthSlider";
@@ -903,7 +903,7 @@
                         profile = "ToolsPanelDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -924,7 +924,7 @@
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeLink($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "linked";
@@ -952,7 +952,7 @@
                            visible = "1";
                            active = "1";
                            command = "toggleVisible($ThisControl.getParent().getParent()-->posCtrl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "togglePos";
@@ -977,7 +977,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "posCtrl";
@@ -1002,7 +1002,7 @@
                         profile = "ToolsTextBase_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1026,11 +1026,11 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "GuiTextEditProfile";
+                        profile = "ToolsTextEditProfile";
                         visible = "1";
                         active = "1";
                         command = "RoadEditorGui.setNodeDataPos($ThisControl);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "PosEdit";
@@ -1054,7 +1054,7 @@
                   profile = "ToolsPanelDarkA";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "nodeStackSampleOld";
@@ -1079,7 +1079,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "id";
@@ -1102,7 +1102,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -1123,7 +1123,7 @@
                         visible = "1";
                         active = "1";
                         command = "RoadEditorGui.setNodeLink($ThisControl);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "linked";
@@ -1143,7 +1143,7 @@
                         profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "selectBtn";
@@ -1167,7 +1167,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -1190,7 +1190,7 @@
                         profile = "ToolsPanelDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -1214,7 +1214,7 @@
                            profile = "ToolsTextBase_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1238,11 +1238,11 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "GuiTextEditProfile";
+                           profile = "ToolsTextEditProfile";
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeDataWidth($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "WidthEdit";
@@ -1263,7 +1263,7 @@
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeDataWidth($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "WidthSlider";
@@ -1287,7 +1287,7 @@
                         profile = "ToolsPanelDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -1312,11 +1312,11 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "GuiTextEditProfile";
+                           profile = "ToolsTextEditProfile";
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeDataPos($ThisControl);";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "PosEdit";
@@ -1340,7 +1340,7 @@
                            profile = "ToolsTextBase_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1366,10 +1366,10 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "0";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                hidden = "1";
@@ -1392,7 +1392,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "AggregateBox";
@@ -1415,7 +1415,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -1436,7 +1436,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "RoadEditorGui.setNodeWidth($ThisControl.getValue());$thisControl.updateFriends();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "slider";
@@ -1466,7 +1466,7 @@
                         visible = "1";
                         active = "0";
                         altCommand = "RoadEditorGui.editNodeDetails();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "width";
@@ -1490,7 +1490,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1513,7 +1513,7 @@
                      profile = "ToolsPanelDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -1543,7 +1543,7 @@
                         visible = "1";
                         active = "0";
                         altCommand = "RoadEditorGui.editNodeDetails();";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "position";
@@ -1567,7 +1567,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1652,7 +1652,7 @@
          profile = "ToolsPanelDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
