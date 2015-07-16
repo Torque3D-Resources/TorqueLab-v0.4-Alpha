@@ -65,7 +65,7 @@ singleton GuiControlProfile( ToolsTextBase_List : ToolsTextBase ) {
 //==============================================================================
 singleton GuiControlProfile(ToolsTextBase_S1 : ToolsTextBase) {
     fontSize = "14";
-    fontType = "Gotham Book";
+    fontType = "Gotham";
    fontColors[7] = "255 0 255 255";
 };
 singleton GuiControlProfile(ToolsTextBase_S1_C : ToolsTextBase_S1) {
@@ -153,12 +153,12 @@ singleton GuiControlProfile(ToolsTextBaseA_S1 : ToolsTextBaseA)
 //==============================================================================
 singleton GuiControlProfile(ToolsTextFX : ToolsDefaultProfile) {
     fontColor = "254 224 97 255";
-    fontType = "Anson Regular";
+    fontType = "Lato";
     fillColor = "238 236 240 255";
     bevelColorHL = "Magenta";
     justify = "left";
     category = "ToolsText";
-   fontSize = "16";
+   fontSize = "15";
    fontColors[0] = "254 224 97 255";
 
 };

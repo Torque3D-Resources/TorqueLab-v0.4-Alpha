@@ -57,7 +57,7 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 // Sync the current profile values into the params objects
 function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
 	%pill = %paramArray.pill[%field];
-
+	
 	if (isObject(%pill)) {
 		%pillHolder = %pill.findObjectByInternalName(%field,true);
 		%pillHolder.setTypeValue(%value,true);

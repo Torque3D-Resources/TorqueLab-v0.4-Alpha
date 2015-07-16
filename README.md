@@ -12,7 +12,11 @@ For more informations, visit the official TorqueLab Wiki:
 [https://github.com/NordikLab/TorqueLab/wiki](https://github.com/NordikLab/TorqueLab/wiki "TorqueLab Official Wiki")
 
 ## Instalation
-Read the installation Wiki page:
+The installation process have been simplified for v0.3 version. You can simply download the files, delete existing tools/ folder, then paste both tools/ and tlab/ folder provided in the root of your project. Then, if you haven't modified how the default editor are loaded, you should be able to use TorqueLab the same way as the standard editor. (F11 to load TorqueLab from inside a mission, F10 to load the GuiEditor from anywhere.
+
+**You need to add few code changes to use TorqueLab, some of for extra features but some are needed else the game will crash when loading the editor. Instruction to add those changes are provide in installation page.**
+
+For git based installation that allow to quickly pull new changes into your project, please visit the installation page.
 [https://github.com/NordikLab/TorqueLab/wiki/Installation](https://github.com/NordikLab/TorqueLab/wiki/Installation "TorqueLab Installation WiKi")
 
 ## Notes

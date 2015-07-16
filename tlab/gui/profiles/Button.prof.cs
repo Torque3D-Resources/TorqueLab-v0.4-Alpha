@@ -26,7 +26,7 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
     hasBitmapArray = "1";
     fixedExtent = "0";
    bevelColorLL = "Magenta";
-   textOffset = "0 1";
+   textOffset = "0 0";
    autoSizeWidth = "1";
    autoSizeHeight = "1";
    borderThickness = "0";
