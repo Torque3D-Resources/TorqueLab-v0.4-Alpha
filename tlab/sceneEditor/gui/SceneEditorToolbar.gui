@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new GuiStackControl(SceneEditorToolbar) {
+%guiContent = new GuiStackControl(SceneEditorToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -10,24 +10,25 @@ new GuiStackControl(SceneEditorToolbar) {
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
    position = "245 0";
-   extent = "631 32";
+   extent = "681 32";
    minExtent = "16 16";
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "SceneEditorToolbar";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      defaultParent = "guiGroup";
-      defaultStack = "7292";
-      disabledGroup = "7351";
-      EditorContainer = "4085";
+      defaultParent = "GuiGroup";
+      defaultStack = "7640";
+      disabledGroup = "7687";
+      EditorContainer = "5181";
       editorParent = "EditorGuiToolbarStack";
       plugin = "SceneEditor";
 
@@ -541,7 +542,7 @@ new GuiStackControl(SceneEditorToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7292";
+            toolbar = "7640";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -573,7 +574,7 @@ new GuiStackControl(SceneEditorToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7292";
+            toolbar = "7640";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -604,7 +605,7 @@ new GuiStackControl(SceneEditorToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7292";
+            toolbar = "7640";
       };
    };
    new GuiStackControl() {
@@ -719,7 +720,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             isDisabled = "0";
-            toolbar = "7292";
+            toolbar = "7640";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -750,7 +751,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             isDisabled = "1";
-            toolbar = "7292";
+            toolbar = "7640";
       };
    };
    new GuiStackControl() {
@@ -856,7 +857,7 @@ new GuiStackControl(SceneEditorToolbar) {
          isContainer = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7292";
+            toolbar = "7640";
 
          new GuiTextCtrl() {
             text = "Grid";
@@ -984,7 +985,7 @@ new GuiStackControl(SceneEditorToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7292";
+            toolbar = "7640";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1027,7 +1028,7 @@ new GuiStackControl(SceneEditorToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "561 0";
-      extent = "68 30";
+      extent = "100 30";
       minExtent = "16 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -1153,6 +1154,36 @@ new GuiStackControl(SceneEditorToolbar) {
          tooltip = "Toggles object center (O) and bounds center (P)";
          hovertime = "1000";
          isContainer = "0";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/TerrainManager.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "70 0";
+         extent = "30 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "Canvas.pushDialog( TerrainManagerGui );";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "TerrainManager";
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
@@ -1341,7 +1372,7 @@ new GuiStackControl(SceneEditorToolbar) {
             sbUsesNAColor = "0";
             reverseTextList = "0";
             bitmapBounds = "16 16";
-            text = "toTerrain";
+            text = "atOrigin";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -1506,7 +1537,7 @@ new GuiStackControl(SceneEditorToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "631 0";
+      position = "663 0";
       extent = "18 30";
       minExtent = "4 2";
       horizSizing = "right";

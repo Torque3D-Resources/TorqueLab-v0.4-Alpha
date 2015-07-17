@@ -36,7 +36,65 @@ function TMG::refreshData(%this) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function TMG::getActiveFolders(%this) {
+	%dataFolder = MissionGroup.dataFolder;
+	if (%dataFolder $= "")
+		%dataFolder = filePath(TMG.activeTerrain.terrainFile);
+	
+	TMG.setFolder("data",%dataFolder);
+	
+	%sourceFolder = MissionGroup.sourceFolder;
+	if (%sourceFolder $= "")
+		%sourceFolder = %dataFolder;	
+	TMG.setFolder("source",%sourceFolder);
+	
+	%targetFolder = MissionGroup.targetFolder;
+	if (%targetFolder $= "")
+		%targetFolder = %dataFolder;	
+	TMG.setFolder("target",%targetFolder);
+	
+	TMG.setFolder("source",MissionGroup.sourceSubFolder,true);
+	TMG.setFolder("target",MissionGroup.targetSubFolder,true);	
+	
+	TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
+	TMG_PageMaterialLayers-->textureMapFolder.setText(TMG.sourceFolder);
+	TMG_PageMaterialLayers-->relativeMapFolder.setText(TMG.sourceSubFolder);
+	TMG_PageMaterialLayers-->textureTargetFolder.setText(TMG.targetFolder);
+	TMG_PageMaterialLayers-->relativeTargetFolder.setText(TMG.targetSubFolder);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
+	%oldSource = TMG.sourceFolder;
+	
+	if (%relativeToData){
+		devLog("Relative folder:",%type,"Folder",%folder);
+		%subFolder = %folder;
+		%folder = TMG.dataFolder@"/"@%subFolder;
+		%subField = %type@"SubFolder";
+		eval("TMG."@%subField@" = %subFolder;");
+		if (!%onlyTMG){
+			MissionGroup.setFieldValue(%subField,%subFolder);
+			TMG.activeTerrain.setFieldValue(%subField,%subFolder);
+		}
+		
+	}	
+	
+	%field = %type@"Folder";
+	eval("TMG."@%field@" = %folder;");
+	
+	if (!%onlyTMG){
+		MissionGroup.setFieldValue(%field,%folder);
+		TMG.activeTerrain.setFieldValue(%field,%folder);
+	}
 
+	devLog("Old source:",%oldSource,"New source",TMG.sourceFolder);
+	//Update map layers data if source changed
+	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
+		TMG.updateMaterialLayers();
+}
+//------------------------------------------------------------------------------
 
 
 //==============================================================================
@@ -48,33 +106,28 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	}
 	TMG.activeTerrain = %terrainId;
 	
-	ETerrainEditor.attachTerrain(%terrainId);
-	%dataFolder = %terrainId.dataFolder;	
-	if (%dataFolder $= "")
-		%dataFolder = filePath(%terrainId.terrainFile);	
+	%this.getActiveFolders();
+	
+	TMG_PageMaterialLayers-->heightmapModeStack-->Current.visible = !%terrainId.isNew;
+	TMG_MaterialLayersNewTerrain.visible = %terrainId.isNew;
+	if (%terrainId.isNew){		
+		if (TMG.heightmapMode $= "Current")
+			TMG.changeHeightmapMode("","Source");
+	}
+	else {		
+		ETerrainEditor.attachTerrain(%terrainId);
 		
-	devLog("Datafolder:",%dataFolder);
-	
-	syncParamArray(TMG.terrainArray);
-	
-	TMG.dataFolder = %dataFolder;
-	TerrainManagerGui-->dataFolder.setText(%dataFolder);	
-	TMG.activeHeightInfo = ETerrainEditor.getHeightRange();
-	TMG.activeHeightRange = TMG.activeHeightInfo.x SPC "\c1(\c2"@TMG.activeHeightInfo.y@"\c1/\c2"@TMG.activeHeightInfo.z@"\c1)";
+		TMG.activeHeightInfo = ETerrainEditor.getHeightRange();
+		TMG.activeHeightRange = TMG.activeHeightInfo.x SPC "\c1(\c2"@TMG.activeHeightInfo.y@"\c1/\c2"@TMG.activeHeightInfo.z@"\c1)";
+		
+		TMG_HeightmapOptions-->heightScale.setText(TMG.activeHeightInfo.x);
+		TMG_HeightmapOptions-->squareSize.setText(%terrainId.squareSize);
+		
+		syncParamArray(TMG.terrainArray);	
+	}		
 	%this.updateTerrainLayers();
 	TMG.updateMaterialLayers();
 	
-	TMG_HeightmapOptions-->heightScale.setText(TMG.activeHeightInfo.x);
-	TMG_HeightmapOptions-->squareSize.setText(%terrainId.squareSize);
-	
-	
-	/*
-	%terrainSettingObj = MissionGroup.findObjectByInternalName(%terrainId.getName()@"_Settings",true);
-	if (!isObject(%terrainSettingObj)){
-		%terrainSettingObj = newScriptObject(%terrainId.getName()@"_Settings",%terrainId.parentGroup);
-		%terrainSettingObj.terrainName = %terrainId.getName();		
-	}
-	*/
 }
 //------------------------------------------------------------------------------
 
@@ -86,6 +139,7 @@ function TMG::updateTerrainList(%this) {
 	foreach$(%terrain in %list){
 		TMG_ActiveTerrainMenu.add(%terrain.getName(),%terrain.getId());
 	}
+	TMG_ActiveTerrainMenu.add("New terrain",0);
 	if (TMG.activeTerrain $= "" || !isObject(TMG.activeTerrain))
 		TMG.activeTerrain = getWord(%list,0).getId();
 	
@@ -97,6 +151,14 @@ function TMG::updateTerrainList(%this) {
 
 //==============================================================================
 function TMG_ActiveTerrainMenu::onSelect(%this,%id,%text) {
+	
+	if (%id $= "0"){
+		TMG.activeTerrain = newScriptObject("TMG_NewTerrain");
+		TMG_NewTerrain.isNew = true;
+		TMG_NewTerrain.dataFolder = 
+		%id = TMG.activeTerrain.getId();
+	}
+		
 	if (!isObject(%id))
 	return;
 	
@@ -141,8 +203,7 @@ function TMG::setDataFolder( %this, %path ) {
 	}
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
 	TerrainManagerGui-->dataFolder.setText(%path);	
-	%terObj.setFieldValue("dataFolder",%path);
-	TMG.dataFolder = %path;
+	%this.setFolder("data",%path);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

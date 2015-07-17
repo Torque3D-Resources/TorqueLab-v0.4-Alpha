@@ -10,7 +10,7 @@
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
    position = "245 0";
-   extent = "710 32";
+   extent = "664 32";
    minExtent = "16 16";
    horizSizing = "width";
    vertSizing = "bottom";
@@ -25,9 +25,9 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12830";
-      disabledGroup = "12869";
-      EditorContainer = "5179";
+      defaultStack = "13108";
+      disabledGroup = "13147";
+      EditorContainer = "5181";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
 
@@ -143,7 +143,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "12830";
+            toolbar = "13108";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -585,7 +585,7 @@
             range = "1 40";
             ticks = "0";
             snap = "0";
-            value = "20";
+            value = "5";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -833,6 +833,120 @@
          };
       };
    };
+   new GuiStackControl() {
+      stackingType = "Horizontal";
+      horizStacking = "Left to Right";
+      vertStacking = "Top to Bottom";
+      padding = "2";
+      dynamicSize = "1";
+      dynamicNonStackExtent = "0";
+      dynamicPos = "0";
+      changeChildSizeToFit = "1";
+      changeChildPosition = "1";
+      position = "626 0";
+      extent = "38 30";
+      minExtent = "4 16";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsPanelDarkB";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "Managers";
+      superClass = "ToolbarContainer";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "0 0";
+         extent = "6 30";
+         minExtent = "4 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsPanelDarkB";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "GroupDivider";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/GroupDivider.png";
+            wrap = "0";
+            position = "1 6";
+            extent = "4 18";
+            minExtent = "4 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsGuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+         new GuiMouseEventCtrl() {
+            lockMouse = "0";
+            position = "0 0";
+            extent = "6 30";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsGuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            superClass = "ToolbarGroup";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/TerrainManager.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "8 0";
+         extent = "30 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "Canvas.pushDialog( TerrainManagerGui );";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "TerrainManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
    new GuiContainer() {
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -840,7 +954,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 0";
+      position = "669 0";
       extent = "84 30";
       minExtent = "8 2";
       horizSizing = "right";
@@ -894,7 +1008,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "626 0";
+      position = "669 0";
       extent = "84 30";
       minExtent = "8 2";
       horizSizing = "right";

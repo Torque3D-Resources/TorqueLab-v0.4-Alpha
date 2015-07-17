@@ -5,6 +5,7 @@
 //==============================================================================
 //==============================================================================
 function TMG::initMaterialLayersPage(%this) {
+	devLog("initMaterialLayersPage");
 	TMG_PageMaterialLayers-->textureMapFolder.setText("");
 	TMG_PageMaterialLayers-->relativeMapFolder.setText("");
 	TMG_PageMaterialLayers-->textureTargetFolder.setText("");
@@ -80,19 +81,6 @@ function TMG::updateMaterialLayers(%this) {
 	%this.scanTextureMapFolder();
 	
 	
-	TMG_PageMaterialLayers-->textureTargetFolder.setText(%terObj.targetFolder);
-	TMG_PageMaterialLayers-->textureMapFolder.setText(%terObj.sourceFolder);
-	
-	%relTarget = "";
-	if (!strFind(%terObj.targetFolder, TMG.dataFolder))
-		%relTarget = strreplace(%terObj.targetFolder,TMG.dataFolder@"/","");	
-	TMG_PageMaterialLayers-->relativeTargetFolder.setText(%relTarget);
-	
-	%relSource = "";
-	if (!strFind(%terObj.sourceFolder, TMG.dataFolder))
-		%relSource = strreplace(%terObj.sourceFolder,TMG.dataFolder@"/","");	
-	TMG_PageMaterialLayers-->relativeMapFolder.setText(%relSource);	
-	
 	
 	TMG_PageMaterialLayers-->heightmapCurrentText.text = "Heightmap:\c1" SPC %terObj.getName()@"_heightmap";
 	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
@@ -124,7 +112,9 @@ function TMG::updateMaterialLayers(%this) {
 		
 		%texture = %terObj.getName()@"_layerMap_"@%i@"_"@%matInternalName;
 		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%i@");";
-		%pill-->exportMapBtn.internalName = "Layer_"@%i;
+
+		%pill-->removeMapBtn.command = "TMG.removeLayerMap("@%i@");";
+		
 		foreach(%radio in %pill-->channelStack){
 			%radio.superClass = "TMG_MapChannelRadio";
 			%radio.setStateOn(false);
@@ -267,6 +257,14 @@ function TMG::reimportTerrain(%this) {
 // Terrain Data Folder (used as base for exporting)
 //==============================================================================
 //==============================================================================
+function TMG::removeLayerMap( %this,%layerId) {
+	warnLog("Not yet");
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Terrain Data Folder (used as base for exporting)
+//==============================================================================
+//==============================================================================
 function TMG::changeMapFolderMode( %this, %ctrl,%mode) {
 	TMG.mapFolderMode = %mode;
 	if (TMG.mapFolderMode $= "")
@@ -313,28 +311,22 @@ function TMG::setTextureMapFolder( %this, %path,%isTargetFolder ) {
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
 	if (%isTargetFolder){
 		TMG_PageMaterialLayers-->textureTargetFolder.setText(%path);
-		TMG.targetFolder = %path;
-		%terObj.targetFolder("sourceFolder",%path);
+		%this.setFolder("target",%path);		
 		return;
 	}
-	TMG_PageMaterialLayers-->textureMapFolder.setText(%path);	
-
-	%terObj.setFieldValue("sourceFolder",%path);
-	TMG.SourceFolder = %path;
-	TMG.updateMaterialLayers();
+	TMG_PageMaterialLayers-->textureMapFolder.setText(%path);
+	%this.setFolder("source",%path);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG_RelativeMapFolderEdit::onValidate( %this ) {	
-	TMG.SourceFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
-	%terObj.setFieldValue("sourceFolder",TMG.SourceFolder);
-	TMG.updateMaterialLayers();
+	TMG.setFolder("source",%this.getText(),true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG_RelativeTargetFolderEdit::onValidate( %this ) {	
-	TMG.targetFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
-	%terObj.setFieldValue("targetFolder",TMG.targetFolder);
+function TMG_RelativeTargetFolderEdit::onValidate( %this ) {		
+	TMG.setFolder("target",%this.getText(),true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -350,7 +342,8 @@ function TMG::changeHeightmapMode( %this, %ctrl, %mode) {
 	TMG_PageMaterialLayers-->browseHeightmap.visible = 0;
 	TMG_PageMaterialLayers-->sourceHeightmap.visible = 0;
 	eval("TMG_PageMaterialLayers-->"@TMG.heightmapMode@"Heightmap.visible = 1;");
-	%ctrl.setStateOn(true);
+	eval("TMG_PageMaterialLayers-->heightmapModeStack-->"@TMG.heightmapMode@".setStateOn(true);");
+	
 	
 }
 //------------------------------------------------------------------------------
