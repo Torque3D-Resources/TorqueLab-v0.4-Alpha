@@ -24,6 +24,7 @@ function TMG::init(%this) {
 	TMG.initMaterialLayersPage();
 	
 	TerrainManagerGui-->dataFolder.setText("");	
+	TMG.initialized = true;
 }
 //------------------------------------------------------------------------------
 
@@ -47,17 +48,26 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	}
 	TMG.activeTerrain = %terrainId;
 	
+	ETerrainEditor.attachTerrain(%terrainId);
 	%dataFolder = %terrainId.dataFolder;	
 	if (%dataFolder $= "")
 		%dataFolder = filePath(%terrainId.terrainFile);	
 		
 	devLog("Datafolder:",%dataFolder);
 	
+	syncParamArray(TMG.terrainArray);
+	
+	TMG.dataFolder = %dataFolder;
 	TerrainManagerGui-->dataFolder.setText(%dataFolder);	
 	TMG.activeHeightInfo = ETerrainEditor.getHeightRange();
 	TMG.activeHeightRange = TMG.activeHeightInfo.x SPC "\c1(\c2"@TMG.activeHeightInfo.y@"\c1/\c2"@TMG.activeHeightInfo.z@"\c1)";
 	%this.updateTerrainLayers();
 	TMG.updateMaterialLayers();
+	
+	TMG_HeightmapOptions-->heightScale.setText(TMG.activeHeightInfo.x);
+	TMG_HeightmapOptions-->squareSize.setText(%terrainId.squareSize);
+	
+	
 	/*
 	%terrainSettingObj = MissionGroup.findObjectByInternalName(%terrainId.getName()@"_Settings",true);
 	if (!isObject(%terrainSettingObj)){
@@ -132,6 +142,7 @@ function TMG::setDataFolder( %this, %path ) {
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
 	TerrainManagerGui-->dataFolder.setText(%path);	
 	%terObj.setFieldValue("dataFolder",%path);
+	TMG.dataFolder = %path;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -80,6 +80,20 @@ function TMG::updateMaterialLayers(%this) {
 	%this.scanTextureMapFolder();
 	
 	
+	TMG_PageMaterialLayers-->textureTargetFolder.setText(%terObj.targetFolder);
+	TMG_PageMaterialLayers-->textureMapFolder.setText(%terObj.sourceFolder);
+	
+	%relTarget = "";
+	if (!strFind(%terObj.targetFolder, TMG.dataFolder))
+		%relTarget = strreplace(%terObj.targetFolder,TMG.dataFolder@"/","");	
+	TMG_PageMaterialLayers-->relativeTargetFolder.setText(%relTarget);
+	
+	%relSource = "";
+	if (!strFind(%terObj.sourceFolder, TMG.dataFolder))
+		%relSource = strreplace(%terObj.sourceFolder,TMG.dataFolder@"/","");	
+	TMG_PageMaterialLayers-->relativeMapFolder.setText(%relSource);	
+	
+	
 	TMG_PageMaterialLayers-->heightmapCurrentText.text = "Heightmap:\c1" SPC %terObj.getName()@"_heightmap";
 	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
 	%hmMenu.clear();
@@ -105,8 +119,9 @@ function TMG::updateMaterialLayers(%this) {
 		%pill = cloneObject(TMG_MaterialLayersPill);
 		
 		%pill.internalName = "Layer_"@%i;
+		%pill.matInternalName = %matInternalName;
 		%pill-->materialName.text = "Material:\c1" SPC %matInternalName;
-		%pill-->materialName.internalName = %matInternalName;
+		
 		%texture = %terObj.getName()@"_layerMap_"@%i@"_"@%matInternalName;
 		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%i@");";
 		%pill-->exportMapBtn.internalName = "Layer_"@%i;
@@ -173,8 +188,9 @@ function TMG::selectLayerMapMenu(%this,%menu,%layerId,%channels) {
 
 //==============================================================================
 function TMG::prepareAllLayers(%this,%doImport) {
-	%folder = TMG_PageMaterialLayers-->textureMapFolder.text;	
+	%folder = TMG.SourceFolder;	
 	%this.exportTerrainLayersToPath(%folder,"png");
+	
 	foreach(%pill in TMG_MaterialLayersStack){
 		if (%pill-->mapMenu.getSelected() $= "0"){
 			%pill.file = %folder@"/"@%pill-->mapMenu.getText()@".png";
@@ -207,16 +223,17 @@ function TMG::reimportTerrain(%this) {
 	}
 	if(!isObject(%terObj) || !isFile(TMG.currentHeightMap))
 		return;
-	%metersPerPixel = 2;
-	%heightScale = 146;
-	%flipYAxis = true;
 	
-	foreach(%pill in TMG_MaterialLayersStack) {
-		
+	
+	%metersPerPixel = TMG_HeightmapOptions-->squareSize.getText();
+	%heightScale = TMG_HeightmapOptions-->heightScale.getText();
+	%flipYAxis = TMG_HeightmapOptions-->flipAxisCheck.isStateOn();
+	
+	foreach(%pill in TMG_MaterialLayersStack) {		
 		%opacityNames = strAddRecord(%opacityNames,%pill.file TAB %pill.activeChannels);
-		%materialNames = strAddRecord(%materialNames,%pill-->materialName.internalName);
-		
+		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);		
 	}	
+	devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");
 	%name = getUniqueName(%terObj.getName());
 	%obj = TerrainBlock::import(  %name,
 											 TMG.currentHeightMap,
@@ -227,6 +244,9 @@ function TMG::reimportTerrain(%this) {
 											 %flipYAxis );
 	%obj.terrainHeight = %heightScale;
 	%obj.position = %terObj.position;
+	%obj.dataFolder = %terObj.dataFolder;
+	%obj.sourceFolder = %terObj.sourceFolder;
+	%obj.targetFolder = %terObj.targetFolder;
 	if ( isObject( %obj ) ) {		
 		// Select it in the editor.
 		EWorldEditor.clearSelection();
@@ -294,10 +314,12 @@ function TMG::setTextureMapFolder( %this, %path,%isTargetFolder ) {
 	if (%isTargetFolder){
 		TMG_PageMaterialLayers-->textureTargetFolder.setText(%path);
 		TMG.targetFolder = %path;
+		%terObj.targetFolder("sourceFolder",%path);
 		return;
 	}
 	TMG_PageMaterialLayers-->textureMapFolder.setText(%path);	
-	%terObj.setFieldValue("textureMapFolder",%path);
+
+	%terObj.setFieldValue("sourceFolder",%path);
 	TMG.SourceFolder = %path;
 	TMG.updateMaterialLayers();
 }
@@ -305,13 +327,14 @@ function TMG::setTextureMapFolder( %this, %path,%isTargetFolder ) {
 //==============================================================================
 function TMG_RelativeMapFolderEdit::onValidate( %this ) {	
 	TMG.SourceFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
+	%terObj.setFieldValue("sourceFolder",TMG.SourceFolder);
 	TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG_RelativeTargetFolderEdit::onValidate( %this ) {	
 	TMG.targetFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
-	
+	%terObj.setFieldValue("targetFolder",TMG.targetFolder);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

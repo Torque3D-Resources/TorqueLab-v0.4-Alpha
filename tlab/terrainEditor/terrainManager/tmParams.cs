@@ -13,7 +13,7 @@ function TMG::buildTerrainInfoParams( %this ) {
 	%arCfg.style = "LabCfgB_230";
 	%arCfg.useNewSystem = true;
 
-	%arCfg.group[%gid++] = "Group settings";
+	%arCfg.group[%gid++] = "TerrainBlock Parameters";
 
 	%arCfg.setVal("terrainFile",       "" TAB "terrainFile" TAB "FileSelect" TAB "callback>>TMG.getTerrainFile();" TAB "TMG.activeTerrain" TAB %gid);
 	%arCfg.setVal("castShadows",        "" TAB "castShadows" TAB "Checkbox" TAB "" TAB "TMG.activeTerrain" TAB %gid);
@@ -27,7 +27,7 @@ function TMG::buildTerrainInfoParams( %this ) {
 	%this.terrainArray = %arCfg;
 }
 //------------------------------------------------------------------------------
-
+//syncParamArray(TMG.terrainArray);
 //==============================================================================
 function TMG::updateTerrainParam(%this,%field,%value,%ctrl,%array) {
 	
