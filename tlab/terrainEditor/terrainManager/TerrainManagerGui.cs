@@ -6,8 +6,10 @@
 $TMG_Init = false;
 //==============================================================================
 function TerrainManagerGui::onWake(%this) {
-	if (!$TMG_Init)
+	if (!TMG.initialized)
 		TMG.init();
+	
+	TMG.refreshData();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -16,14 +18,25 @@ function TerrainManagerGui::onSleep(%this) {
 }
 //------------------------------------------------------------------------------
 
-
 //==============================================================================
 function TMG::init(%this) {
+	
+	TMG.initMaterialLayersPage();
+	
+	TerrainManagerGui-->dataFolder.setText("");	
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function TMG::refreshData(%this) {
 	TMG.updateTerrainList();
-	%this.initMaterialLayersPage();
+	%this.refreshMaterialLayersPage();
 	%this.buildTerrainInfoParams();
 }
 //------------------------------------------------------------------------------
+
+
+
 
 //==============================================================================
 function TMG::setActiveTerrain(%this,%terrainId) {
@@ -34,6 +47,13 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	}
 	TMG.activeTerrain = %terrainId;
 	
+	%dataFolder = %terrainId.dataFolder;	
+	if (%dataFolder $= "")
+		%dataFolder = filePath(%terrainId.terrainFile);	
+		
+	devLog("Datafolder:",%dataFolder);
+	
+	TerrainManagerGui-->dataFolder.setText(%dataFolder);	
 	TMG.activeHeightInfo = ETerrainEditor.getHeightRange();
 	TMG.activeHeightRange = TMG.activeHeightInfo.x SPC "\c1(\c2"@TMG.activeHeightInfo.y@"\c1/\c2"@TMG.activeHeightInfo.z@"\c1)";
 	%this.updateTerrainLayers();

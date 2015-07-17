@@ -3,12 +3,23 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
 //==============================================================================
 function TMG::initMaterialLayersPage(%this) {
-	%mapFolder = TMG_PageMaterialLayers-->textureMapFolder.text;
-	if (!isDirectory(%mapFolder))
-		TMG_PageMaterialLayers-->textureMapFolder.text = %this.getDefaultFolder();
+	TMG_PageMaterialLayers-->textureMapFolder.setText("");
+	TMG_PageMaterialLayers-->relativeMapFolder.setText("");
+	TMG_PageMaterialLayers-->textureTargetFolder.setText("");
+	TMG_PageMaterialLayers-->relativeTargetFolder.setText("");
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::refreshMaterialLayersPage(%this) {
+	//%mapFolder = TMG_PageMaterialLayers-->textureMapFolder.getText();
+	//if (!isDirectory(%mapFolder))
+		//TMG_PageMaterialLayers-->textureMapFolder.setText(%this.getDefaultFolder());
+	
+	%targetFolder = TMG_PageMaterialLayers-->textureTargetFolder.getText();
+	if (!isDirectory(%targetFolder))
+		TMG_PageMaterialLayers-->textureMapFolder.setText(%this.getDefaultFolder());
 	
 	%info = "The material layers page allow to simply reimport your terrain with current or new texture map." SPC
 			"Those maps can be produced by external tools like L3TD or WorldMachine. Simply specify the folder containing" SPC
@@ -32,7 +43,7 @@ function TMG::initMaterialLayersPage(%this) {
 function TMG::scanTextureMapFolder(%this) {
 	TMG.textureMapList = "";
 	if (TMG.mapFolderMode $= "relative"){
-		%folder = TerrainManagerGui-->dataFolder.getText() @"/"@TMG_PageMaterialLayers-->relativeMapFolder.getText();
+		%folder = TMG.sourceFolder;
 		devLog("Scanning relative folder",%folder);
 	}
 	else
@@ -46,6 +57,8 @@ function TMG::scanTextureMapFolder(%this) {
 		TMG.textureMapList = "Nothing found in scanned folder." TAB "-" TAB "-";
 		return;
 	}
+
+	%this.activeTerrain.setFieldValue("mapSourceFolder",%folder);
 	%files = getMultiExtensionFileList(%folder,"png dds bmp tga jpg");
 	
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
@@ -247,7 +260,7 @@ function TMG::changeMapFolderMode( %this, %ctrl,%mode) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function TMG::selectTextureMapFolder( %this, %filter) {
+function TMG::selectTextureMapFolder( %this, %isTargetFolder) {
 	
 	%currentFile = MissionGroup.getFilename();
 	%dlg = new OpenFolderDialog() {
@@ -265,30 +278,42 @@ function TMG::selectTextureMapFolder( %this, %filter) {
 		%dlg.DefaultPath = getMainDotCSDir();
 
 	if(%dlg.Execute())
-		TMG.setTextureMapFolder(%dlg.FileName);
+		TMG.setTextureMapFolder(%dlg.FileName,%isTargetFolder);
 		
 	%dlg.delete();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::setTextureMapFolder( %this, %path ) {
+function TMG::setTextureMapFolder( %this, %path,%isTargetFolder ) {
 	%terObj = %this.activeTerrain;
 	if (!isObject(%terObj)){
 		warnlog("Not active terrain detected. Please select one before setting data folder:",%terObj);
 		return;
 	}
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
+	if (%isTargetFolder){
+		TMG_PageMaterialLayers-->textureTargetFolder.setText(%path);
+		TMG.targetFolder = %path;
+		return;
+	}
 	TMG_PageMaterialLayers-->textureMapFolder.setText(%path);	
 	%terObj.setFieldValue("textureMapFolder",%path);
+	TMG.SourceFolder = %path;
 	TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG_RelativeMapFolderEdit::onValidate( %this ) {	
+	TMG.SourceFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
 	TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+function TMG_RelativeTargetFolderEdit::onValidate( %this ) {	
+	TMG.targetFolder = TerrainManagerGui-->dataFolder.getText()@"/"@%this.getText();
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Heightmap for re-importing
 //==============================================================================
@@ -302,6 +327,7 @@ function TMG::changeHeightmapMode( %this, %ctrl, %mode) {
 	TMG_PageMaterialLayers-->browseHeightmap.visible = 0;
 	TMG_PageMaterialLayers-->sourceHeightmap.visible = 0;
 	eval("TMG_PageMaterialLayers-->"@TMG.heightmapMode@"Heightmap.visible = 1;");
+	%ctrl.setStateOn(true);
 	
 }
 //------------------------------------------------------------------------------

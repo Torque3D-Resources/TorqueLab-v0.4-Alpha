@@ -214,3 +214,8 @@ singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
    justify = "Left";
    textOffset = "16 5";
 };
+
+singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
+{
+   fontSize = "14";
+};

@@ -15,8 +15,11 @@ function TMG::initExporter( %this) {
 //==============================================================================
 // Export Functions
 //==============================================================================
+function TMG::exportHeightMapToFile( %this) {
+	getSaveFilename("Png Files|*.png","TMG.exportHeightMapFile",TMG.getDefaultFolder(),true);
+}
 //==============================================================================
-function TMG::exportHeightMap( %this,%folder) {
+function TMG::exportHeightMap( %this,%folder,%noOverwrite) {
 	%terObj = %this.activeTerrain;
 	if (!isObject(%terObj)){
 		warnlog("Trying to export layers for invalid terrain:",%terObj);
@@ -25,6 +28,7 @@ function TMG::exportHeightMap( %this,%folder) {
 	
 	if ($TMG_ExportLayerFormat $= "")
 		$TMG_ExportLayerFormat = "png";
+	
 	
 	if (%folder $= "")
 		%folder = %terObj.dataFolder;
@@ -39,14 +43,49 @@ function TMG::exportHeightMap( %this,%folder) {
 	%exportPath = %folder@"/"@$TMG_ExportFolderName;
 	
 	%filePrefix = %terObj.getName() @ "_heightmap.png";	
+	%exportFile = %folder @ "/" @ %filePrefix;
+	%result = %this.exportHeightMapFile(%exportFile,"png",%noOverwrite);
+	//%ret = %terObj.exportHeightMap( %folder @ "/" @ %filePrefix,"png" );
 	
-	%ret = %terObj.exportHeightMap( %folder @ "/" @ %filePrefix,"png" );
-	
-	devLog("Terrain HeightMap exported to:",%folder @ "/" @ %filePrefix,"Result=",%ret);
-	if (%ret)
+	//devLog("Terrain HeightMap exported to:",%folder @ "/" @ %filePrefix,"Result=",%ret);
+	if (%result)
 		return %folder @ "/" @ %filePrefix;
 	
 	return "";
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::exportHeightMapFile( %this,%file,%format,%noOverwrite) {
+	%terObj = %this.activeTerrain;
+	if (!isObject(%terObj)){
+		warnlog("Trying to export layers for invalid terrain:",%terObj);
+		return;
+	}
+	if (%format $= "")
+		%format = "png";
+	
+	if (%noOverwrite)
+		devLog("No overwrite");
+	if (isFile(%file))
+		devLog("File exist");
+	if (isFile(%file) && %noOverwrite){
+		%newFile = filePath(%file)@"/"@fileBase(%file)@"_"@%inc++@fileExt(%file);
+		while (isFile(%newFile)){
+			%newFile = filePath(%file)@"/"@fileBase(%file)@"_"@%inc++@fileExt(%file);
+			if (%inc > 20){
+				warnLog("Couldn't find a unique file name after 20 attempts. Export aborted!");
+				return false;
+			}
+		}
+		%file = %newFile;
+	}
+		
+	%ret = %terObj.exportHeightMap( %file,%format );
+	if (%ret)
+		info("Heightmap exported to:",%file);
+	else
+		info("Heightmap failed to export to:",%file,"See console for report");
+	return %ret;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
