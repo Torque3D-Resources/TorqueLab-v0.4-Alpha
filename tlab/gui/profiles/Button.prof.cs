@@ -206,3 +206,11 @@ singleton GuiControlProfile(ToolsSwatchButtonProfile : GuiSwatchButtonProfile)
 	 category = "Tools";
 };
 //------------------------------------------------------------------------------
+
+singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
+{
+   bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_S1.png";
+   fontSize = "12";
+   justify = "Left";
+   textOffset = "16 5";
+};

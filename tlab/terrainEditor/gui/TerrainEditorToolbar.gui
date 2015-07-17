@@ -26,7 +26,7 @@
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
       defaultStack = "11531";
-      disabledGroup = "11568";
+      disabledGroup = "11569";
       EditorContainer = "5179";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
@@ -863,7 +863,7 @@
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/PaintCurve.png";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/TerrainManager.png";
          iconLocation = "Center";
          sizeIconToButton = "1";
          makeIconSquare = "1";
