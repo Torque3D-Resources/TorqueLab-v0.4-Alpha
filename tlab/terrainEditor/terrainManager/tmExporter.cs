@@ -10,6 +10,27 @@ function TMG::initExporter( %this) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function TMG::exportEverything( %this,%target,%noOverwrite) {
+	%terObj = %this.activeTerrain;
+	
+	if (!isObject(%terObj)){
+		warnlog("Trying to export layers and heightmap for invalid terrain:",%terObj);
+		return;
+	}
+	if (%terObj.isNew){
+		warnLog("You must import an heightmap on a new terrain before exporting.");
+		return;
+	}
+	if (%target $= ""){
+		getFolderName("","TMG.exportEverything",TMG.dataFolder,"Select destination folder");
+		return;
+	}
+		
+	%this.exportHeightMap(%target,%noOverwrite);
+	%this.exportTerrainLayersToPath(%target,"png");
+}
+//------------------------------------------------------------------------------
 
 
 //==============================================================================
@@ -120,19 +141,26 @@ function TMG::exportTerrainLayers( %this,%folder,%addSubFolder,%layerId) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG::exportTerrainLayersToPath( %this,%exportPath,%format,%layerId) {
+	devLog("exportTerrainLayersToPath %exportPath,%format,%layerId",%exportPath,%format,%layerId);
 	%terObj = %this.activeTerrain;
+	
 	if (!isObject(%terObj)){
 		warnlog("Trying to export layers for invalid terrain:",%terObj);
 		return;
 	}
-	
+	if (%terObj.isNew){
+		warnLog("You must import an heightmap on a new terrain before exporting.");
+		return;
+	}
 	if (%format $= "")
 		%format = "png";
 	
 	if (%exportPath $= ""){
-		warnLog("Export failed because no folder set");
-		return;	
+		getFolderName("","TMG.exportTerrainLayersToPath",TMG.dataFolder,"Select destination folder",%format, %layerId);
+		return;
+
 	}		
+	
 	
 	
 	%filePrefix = %terObj.getName() @ "_layerMap";	

@@ -109,12 +109,16 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	%this.getActiveFolders();
 	
 	TMG_PageMaterialLayers-->heightmapModeStack-->Current.visible = !%terrainId.isNew;
-	TMG_MaterialLayersNewTerrain.visible = %terrainId.isNew;
+	//TMG_MaterialLayersNewTerrain.visible = %terrainId.isNew;
 	if (%terrainId.isNew){		
 		if (TMG.heightmapMode $= "Current")
 			TMG.changeHeightmapMode("","Source");
+		
+		%terrainName = getUniqueName("theTerrain");
+		
 	}
-	else {		
+	else {	
+		%terrainName = %terrainId.getName();	
 		ETerrainEditor.attachTerrain(%terrainId);
 		
 		TMG.activeHeightInfo = ETerrainEditor.getHeightRange();
@@ -124,7 +128,8 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG_HeightmapOptions-->squareSize.setText(%terrainId.squareSize);
 		
 		syncParamArray(TMG.terrainArray);	
-	}		
+	}
+	%this.validateImportTerrainName(%terrainName);
 	%this.updateTerrainLayers();
 	TMG.updateMaterialLayers();
 	

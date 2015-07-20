@@ -73,6 +73,61 @@ function TMG::scanTextureMapFolder(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// Add New Terrain Layers
+//==============================================================================
+//==============================================================================
+function TMG::addMaterialLayer(%this,%matInternalName) {
+	if(%matInternalName $= ""){
+		%mats = ETerrainEditor.getMaterials();
+		%matInternalName = getRecord(%mats,0);
+		%isNewMat = true;
+	}
+	%terObj = %this.activeTerrain;
+		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
+		%pill = cloneObject(TMG_MaterialLayersPill);
+		
+		%pill.matObj = %mat;
+		%pill.internalName = "Layer_"@%i;
+		%pill.matInternalName = %matInternalName;
+		%pill-->materialName.text = "Material:\c1" SPC %matInternalName;
+		
+		if (%isNewMat)
+			%texture = "Not selected";
+		else
+			%texture = %terObj.getName()@"_layerMap_"@%i@"_"@%matInternalName;
+		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%i@");";
+
+		%pill-->removeMapBtn.command = "TMG.removeLayerMap("@%pill@");";
+		
+		%pill-->materialMouse.pill = %pill;
+		%pill-->materialMouse.superClass = "TMG_LayerMaterialMouse";
+		
+		foreach(%radio in %pill-->channelStack){
+			%radio.superClass = "TMG_MapChannelRadio";
+			%radio.setStateOn(false);
+		}
+		%menu = %pill-->mapMenu;
+		%menu.pill = %pill;
+		%menu.layerId = %i;
+		%menu.clear();
+		%menu.add(%texture,0);
+		%menu.channels[0] = "1";
+		for(%j=0;%j<getRecordCount(TMG.textureMapList);%j++){
+			%record = getRecord(TMG.textureMapList,%j);
+			%file = getField(%record,0);
+			
+			%onlyFile = fileBase(%file)@fileExt(%file);
+			%menu.add(%onlyFile,%id++);
+			%menu.file[%id] = %file;
+			%menu.channels[%id] = getField(%record,1);
+		}
+		%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%i@");";
+		%menu.setSelected(0,false);
+		TMG_MaterialLayersStack.add(%pill);
+		%this.selectLayerMapMenu(%menu,%i);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // Terrain Layers Functions
 //==============================================================================
 //==============================================================================
@@ -103,41 +158,7 @@ function TMG::updateMaterialLayers(%this) {
 	%mats = ETerrainEditor.getMaterials();
 	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
 		%matInternalName = getRecord( %mats, %i );
-		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
-		%pill = cloneObject(TMG_MaterialLayersPill);
-		
-		%pill.internalName = "Layer_"@%i;
-		%pill.matInternalName = %matInternalName;
-		%pill-->materialName.text = "Material:\c1" SPC %matInternalName;
-		
-		%texture = %terObj.getName()@"_layerMap_"@%i@"_"@%matInternalName;
-		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%i@");";
-
-		%pill-->removeMapBtn.command = "TMG.removeLayerMap("@%i@");";
-		
-		foreach(%radio in %pill-->channelStack){
-			%radio.superClass = "TMG_MapChannelRadio";
-			%radio.setStateOn(false);
-		}
-		%menu = %pill-->mapMenu;
-		%menu.pill = %pill;
-		%menu.layerId = %i;
-		%menu.clear();
-		%menu.add(%texture,0);
-		%menu.channels[0] = "1";
-		for(%j=0;%j<getRecordCount(TMG.textureMapList);%j++){
-			%record = getRecord(TMG.textureMapList,%j);
-			%file = getField(%record,0);
-			
-			%onlyFile = fileBase(%file)@fileExt(%file);
-			%menu.add(%onlyFile,%id++);
-			%menu.file[%id] = %file;
-			%menu.channels[%id] = getField(%record,1);
-		}
-		%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%i@");";
-		%menu.setSelected(0,false);
-		TMG_MaterialLayersStack.add(%pill);
-		%this.selectLayerMapMenu(%menu,%i);
+		%this.addMaterialLayer(%matInternalName);		
 	}
 	TMG_PageMaterialLayers-->reimportButton.active = 0;
 }
@@ -175,92 +196,66 @@ function TMG::selectLayerMapMenu(%this,%menu,%layerId,%channels) {
 	
 }
 //------------------------------------------------------------------------------
-
 //==============================================================================
-function TMG::prepareAllLayers(%this,%doImport) {
-	%folder = TMG.SourceFolder;	
-	%this.exportTerrainLayersToPath(%folder,"png");
-	
-	foreach(%pill in TMG_MaterialLayersStack){
-		if (%pill-->mapMenu.getSelected() $= "0"){
-			%pill.file = %folder@"/"@%pill-->mapMenu.getText()@".png";
-			%isFile = isFile(%pill.file);			
-		}
-		%pill.activeChannels = "";
-		%stack = %pill-->channelStack;
-		foreach$(%chan in %pill.channelRadios){			
-			%radio = %stack.findObjectByInternalName(%chan);
-			if (%radio.isStateOn())
-				%pill.activeChannels = strAddWord(%pill.activeChannels,%chan);
-		}		
+// Layer Materials Update
+//==============================================================================
+//==============================================================================
+function TMG_LayerMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCount) {
+	if (%mouseClickCount > 1){
+		TMG.showLayerMaterialDlg(%this.pill);
 	}
 	
-	TMG.currentHeightMap = %this.exportHeightMap(%folder);
-	
-	TMG_PageMaterialLayers-->reimportButton.active = 1;
-	if (%doImport)
-		%this.reimportTerrain();
 	
 }
 //==============================================================================
-function TMG::reimportTerrain(%this) {
-	%terObj = %this.activeTerrain;
-	%folder = TMG_PageMaterialLayers-->textureMapFolder.text;	
-	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
-	if (%hmMenu.getSelected() !$= "0"){
-		%file = %folder @"/"@%hmMenu.getText();
-		TMG.currentHeightMap = %file;		
-	}
-	if(!isObject(%terObj) || !isFile(TMG.currentHeightMap))
+function TMG::showLayerMaterialDlg( %this,%pill ) {
+	if (!isObject(%pill)) {
+		warnLog("Invalid layer to change material");
 		return;
-	
-	
-	%metersPerPixel = TMG_HeightmapOptions-->squareSize.getText();
-	%heightScale = TMG_HeightmapOptions-->heightScale.getText();
-	%flipYAxis = TMG_HeightmapOptions-->flipAxisCheck.isStateOn();
-	
-	foreach(%pill in TMG_MaterialLayersStack) {		
-		%opacityNames = strAddRecord(%opacityNames,%pill.file TAB %pill.activeChannels);
-		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);		
-	}	
-	devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");
-	%name = getUniqueName(%terObj.getName());
-	%obj = TerrainBlock::import(  %name,
-											 TMG.currentHeightMap,
-											 %metersPerPixel,
-											 %heightScale,
-											 %opacityNames,
-											 %materialNames,
-											 %flipYAxis );
-	%obj.terrainHeight = %heightScale;
-	%obj.position = %terObj.position;
-	%obj.dataFolder = %terObj.dataFolder;
-	%obj.sourceFolder = %terObj.sourceFolder;
-	%obj.targetFolder = %terObj.targetFolder;
-	if ( isObject( %obj ) ) {		
-		// Select it in the editor.
-		EWorldEditor.clearSelection();
-		EWorldEditor.selectObject(%obj);
-		// When we drop the selection don't store undo
-		// state for it... the creation deals with it.
-		EWorldEditor.dropSelection( true );
-		ETerrainEditor.isDirty = true;
-		EPainter.updateLayers();
-	} else {
-		warnLog("Something bad happen and heightmap import failed!");
-	}	
+	}
+	%mat = %pill.matObj;	
+	TMG.changeMaterialPill = %pill;
+
+	%matId = %pill.matId;
+	TerrainMaterialDlg.showByObjectId( %mat, TMG_LayerMaterialChangeCallback );
 }
-
-
+//------------------------------------------------------------------------------
+//==============================================================================
+// Callback from TerrainMaterialDlg returning selected material info
+function TMG_LayerMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
+	devLog(" TMG_LayerMaterialChangeCallback ( %mat, %matIndex, %activeIdx )", %mat, %matIndex, %activeIdx );
+	
+	%pill = TMG.changeMaterialPill;
+	
+	if (!isObject(%pill)) {
+		warnLog("Change material failed because no active layer found");
+		return;
+	}
+	
+	%pill.matObj = %mat;
+	%pill.matInternalName = %mat.internalName;
+	%pill-->materialName.text = "Material:\c1" SPC %mat.internalName;
+	
+}
+//------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 //==============================================================================
 // Terrain Data Folder (used as base for exporting)
 //==============================================================================
+
 //==============================================================================
-function TMG::removeLayerMap( %this,%layerId) {
-	warnLog("Not yet");
+function TMG::removeLayerMap( %this,%pill) {
+	delObj(%pill);
+	
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+function TMG::removeAllLayerMaps( %this) {
+	TMG_MaterialLayersStack.deleteAllObjects();
+	
+}
+//------------------------------------------------------------------------------
+
 //==============================================================================
 // Terrain Data Folder (used as base for exporting)
 //==============================================================================
@@ -345,38 +340,6 @@ function TMG::changeHeightmapMode( %this, %ctrl, %mode) {
 	eval("TMG_PageMaterialLayers-->heightmapModeStack-->"@TMG.heightmapMode@".setStateOn(true);");
 	
 	
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Export Single Layer Map
-//==============================================================================
-
-//==============================================================================
-function TMG::selectSingleTextureMapFolder( %this, %layerId) {
-	
-	%folder = TerrainManagerGui-->dataFolder.getText();
-	%dlg = new OpenFolderDialog() {
-		Title = "Select Export Folder";
-		Filters = %filter;
-		DefaultFile = %folder;
-		ChangePath = false;
-		MustExist = true;
-		MultipleFiles = false;
-	};
-
-	if(filePath( %folder ) !$= "")
-		%dlg.DefaultPath = filePath(%folder);
-	else
-		%dlg.DefaultPath = getMainDotCSDir();
-
-	if(%dlg.Execute())
-		TMG.setSingleTextureMapFolder(%dlg.FileName,%layerId);
-		
-	%dlg.delete();
-}
-//------------------------------------------------------------------------------
-function TMG::setSingleTextureMapFolder( %this, %path,%layerId) {
-	%this.exportTerrainLayersToPath(%path,"png",%layerId);
 }
 //------------------------------------------------------------------------------
 
