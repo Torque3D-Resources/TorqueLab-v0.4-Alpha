@@ -23,8 +23,7 @@ function SceneEditorDialogs::onActivated( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::onShow( %this ) {
 	devLog("SEP_AmbientManager::onShow(%this)");
-
-	%this.getSkySystemObject();
+	hide(SEP_SkySystemCreator);	
 
 	%this.updateSkySystemData();
 	syncParamObj(SEP_AmbientManager.FogParamArray);
@@ -45,7 +44,7 @@ function SEP_AmbientManager::initDialog( %this ) {
 	
 	
 
-	SEP_ScatterSkyManager.buildParams();
+	SEP_AmbientManager.initSkySystemData();
 	
 }
 //------------------------------------------------------------------------------
@@ -103,8 +102,8 @@ function SEP_CloudsBook::onTabSelected( %this,%text,%index ) {
 
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SEP_AmbientManager::setObjectDirty( %this,%isDirty,%obj ) {
-	logd("SEP_AmbientManager::setObjectDirty( %this,%isDirty,%obj )");
+function SEP_AmbientManager::setObjectDirty( %this,%obj,%isDirty ) {
+	logd("SEP_AmbientManager::setObjectDirty( %this,%obj,%isDirty )");
 	
 	if (!isObject(%obj)){
 		warnLog("Trying to set dirty for invalid object in AmbienManager:",%obj);

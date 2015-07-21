@@ -3,7 +3,14 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function SEP_AmbientManager::initSkySystemData( %this ) {
+	%this.getSkySystemObject();
+	SEP_ScatterSkyManager.buildParams();	
+	SEP_LegacySkyManager.buildParams();
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 	logd("SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text)",%this,%id,%text);
@@ -22,18 +29,28 @@ function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
-	logd("SEP_SkySelectMenu::OnSelect(%this,%id,%text)",%this,%id,%text);
+	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%text)",%this,%id,%text);
 	
 	if (isObject(%text)){
-		SEP_AmbientManager.hideAllSkyObjects();
+		//if (%text.getClassName() $= "ScatterSky")
+			%hideSkyBox = true;
+			
+		SEP_AmbientManager.hideAllSkyObjects(%hideSkyBox);
 		%text.hidden = false;
 		if (isObject(%text.mySkyBox))
 			%text.mySkyBox.hidden = false;
 			
 		SEP_AmbientManager.getSkySystemObject();
+		
+		if (%text.getClassName() $= "Sun")
+			SEP_LegacySkyManager.selectSky(%text);
+		else if (%text.getClassName() $= "ScatterSky")
+			SEP_ScatterSkyManager.selectScatterSky(%text);
 	}
 }
 //------------------------------------------------------------------------------
+
+
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::updateSkySystemData( %this,%select ) {
@@ -53,10 +70,10 @@ function SEP_AmbientManager::updateSkySystemData( %this,%select ) {
 		%id++;
 	}
 	devLog("ID=",%id);
-	if (%id $= "1")
-		hide(AMD_SelectSkyContainer);
-	else
-		show(AMD_SelectSkyContainer);
+	//if (%id $= "1")
+	//	hide(AMD_SelectSkyContainer);
+	//else
+		//show(AMD_SelectSkyContainer);
 		
 	SEP_SkySelectMenu.setSelected(%select,false);
 }
@@ -68,6 +85,9 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 	%this.skySystemObj = "";
 	%this.scatterSkyObj = "";
 	%this.sunObj = "";
+	%this.skyBoxObj = "";
+	SEP_SkySystem-->ScatterSky.visible = 0;
+	SEP_SkySystem-->Lecacy.visible = 0;
 	%scatterSkyList = Lab.getMissionObjectClassList("ScatterSky");
 	foreach$(%obj in %scatterSkyList){
 		if (%obj.hidden)
@@ -80,6 +100,7 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 		%this.scatterSkyObj = %obj;
 		%this.skySystem = "ScatterSky";
 		%this.skySystemObj = %obj;
+		SEP_SkySystem-->ScatterSky.visible = 1;
 	}
 	
 	%sunList = Lab.getMissionObjectClassList("Sun");
@@ -100,6 +121,20 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 		%this.sunObj = %obj;	
 		%this.skySystem = "Sun";	
 		%this.skySystemObj = %obj;
+		SEP_SkySystem-->Lecacy.visible = 1;
+		
+		%skyBoxList = Lab.getMissionObjectClassList("SkyBox");
+		foreach$(%skyBox in %skyBoxList){
+			if (%skyBox.hidden)			
+				continue;
+			
+			if (isObject(%this.skyBoxObj)){
+				warnLog("Multiple active SkyBoxes detected which might cause unexpected result. The first object found is set as Main Skybox:",%this.skyBoxObj);
+				continue;
+			}	
+			%this.skyBoxObj = %skyBox;			
+			%this.sunObj.setFieldValue("mySkyBox",%skyBox);
+		}
 	}	
 	
 	info("AmbientManager detected the Sky System:",%this.skySystem,"Using object",%this.skySystemObj);
@@ -121,6 +156,8 @@ function SEP_AmbientManager::createNewSkySystem( %this ) {
 	//Rebuild Fog Params since they depend of type of sky system
 	SEP_AmbientManager.updateSkySystemData();
 	%this.buildFogParams();
+	
+	hide(SEP_SkySystemCreator);
 	
 }
 //------------------------------------------------------------------------------
@@ -254,6 +291,10 @@ function SEP_AmbientManager::createNewLecacySky( %this ) {
 		};
 		
 		MissionGroup.add(%newSky);
+		
+		%newSun.mySkyBox = %newSky;
+		%this.skyBoxObj = %obj;
+			%this.SunSkyBox[%newSun.getName()] = %newSky;
 	}
 	
 }
@@ -317,11 +358,13 @@ function SEP_AmbientManager::clearSkySystem( %this ) {
 			delObj(%sky);
 }
 
-function SEP_AmbientManager::hideAllSkyObjects( %this ) {
+function SEP_AmbientManager::hideAllSkyObjects( %this,%hideSkyBox ) {
 	%scatterSkyList = Lab.getMissionObjectClassList("ScatterSky");
 	%sunList = Lab.getMissionObjectClassList("Sun");	
 	%skyList = Lab.getMissionObjectClassList("SkyBox");	
-	%list = %scatterSkyList SPC %sunList SPC %skyList;
+	%list = %scatterSkyList SPC %sunList;// SPC %skyList;
+	if (%hideSkyBox)
+		%list = %list SPC %skyList;
 	
 	foreach$(%obj in %list)
 		%obj.hidden = true;

@@ -74,7 +74,7 @@ function SEP_AmbientManager::updateFogField( %this,%field, %value,%obj ) {
 function SEP_AmbientManager::setFogDirty( %this,%isDirty,%obj ) { 
 	
 	if (isObject(%obj))
-		%this.setObjectDirty(%isDirty,%obj);
+		%this.setObjectDirty(%obj,%isDirty);
 		
 	if (!%isDirty)
 		%this.dirtyFogObjects = "";
@@ -87,10 +87,8 @@ function SEP_AmbientManager::setFogDirty( %this,%isDirty,%obj ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Sync the current profile values into the params objects
-function SEP_AmbientManager::saveFogData( %this,%isDirty,%obj ) { 
+function SEP_AmbientManager::saveFogData( %this,%isDirty,%obj ) { 	
 	
-	if (isObject(%obj))
-		%this.setObjectDirty(%isDirty,%obj);
 	
 	foreach$(%obj in %this.dirtyFogObjects)
 		SEP_AmbientManager_PM.saveDirtyObject(%obj);	

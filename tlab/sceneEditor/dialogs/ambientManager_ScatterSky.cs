@@ -22,7 +22,7 @@ function SEP_ScatterSkyManager::buildParams( %this ) {
 	
 	%arCfg.group[%gid++] = "Sky & Sun settings" TAB "Stack StackA";
 	%arCfg.setVal("rayleighScattering",       "" TAB "rayleighScattering" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("fogScale",       "" TAB "fogScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	//%arCfg.setVal("fogScale",       "" TAB "fogScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("zOffset",       "" TAB "zOffset" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("ambientScale",       "" TAB "ambientScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("sunSize",       "" TAB "sunSize" TAB "SliderEdit" TAB "range>>0 10" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
@@ -30,6 +30,12 @@ function SEP_ScatterSkyManager::buildParams( %this ) {
 	%arCfg.setVal("colorize",       "" TAB "colorize" TAB "ColorSlider" TAB "mode>>float" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("azimuth",       "" TAB "azimuth" TAB "SliderEdit" TAB "range>>0 360;;validate>>flen 1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("elevation",       "" TAB "elevation" TAB "SliderEdit" TAB "range>>0 90" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	
+	%arCfg.group[%gid++] = "Fog settings" TAB "Stack StackA";
+	%arCfg.setVal("fogScale",       "" TAB "Fog Color" TAB "ColorEdit" TAB "mode>>float;;flen>>2;;noAlpha>>1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);	
+	%arCfg.setVal("fogDensity",       "" TAB "fogDensity" TAB "SliderEdit" TAB "range>>0 0.03" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogDensityOffset",       "" TAB "fogDensityOffset" TAB "SliderEdit" TAB "range>>0 100" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogAtmosphereHeight",       "" TAB "fogAtmosphereHeight" TAB "SliderEdit" TAB "range>>0 1000" TAB "theLevelInfo" TAB %gid);
 
 	%arCfg.group[%gid++] = "Shadows settings" TAB "Stack StackB";
 	%arCfg.setVal("overDarkFactor",       "" TAB "overDarkFactor" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
@@ -84,6 +90,7 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 		return;
 	}
 	
+	%this-->scatterSkyTitle.text = "ScatterSky -> \c1" @ %obj.getName() @"\c0 properties";
 	%this.selectedScatterSky = %obj;
 	%this.selectedScatterSkyName = %obj.getName();
 	%this.setDirty();
@@ -91,73 +98,91 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 	syncParamArray(SEP_ScatterSkyManager.paramArray);
 }
 //------------------------------------------------------------------------------
+
+
 //==============================================================================
-function SEP_ScatterSkyManager::saveObject(%this) {
-	logd("SEP_ScatterSkyManager::saveObject(%this)",%this);
-	%obj = %this.selectedScatterSky;
+function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj) {	
+	if (%obj $= "")
+		%obj = %this.selectedScatterSky;
+		
+	
 
-	if (!isObject(%obj)) {
-		warnLog("Can't save ScatterSky because none is selected. Tried wth:",%obj);
-		return;
+	if (!isObject(%obj)){
+		eval("%obj = "@%obj@";");
+		if (!isObject(%obj)){
+			warnLog("Invalid object for Legacy field:",%field,"Object:",%obj);
+ 			return;
+		}
 	}
-
-	if (!SEP_AmbientManager_PM.isDirty(%obj)) {
-		warnLog("Object is not dirty, nothing to save");
-		return;
-	}
-
-	//SEP_AmbientManager_PM.setDirty(%obj);
-	SEP_AmbientManager_PM.saveDirtyObject(%obj);
-	%this.setDirty(false);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function SEP_ScatterSkyManager::setDirty(%this,%isDirty) {
-	logd("SEP_ScatterSkyManager::setDirty(%this,%isDirty)",%this,%isDirty);
-	%obj = %this.selectedScatterSky;
-
-	if (%isDirty $="")
-		%isDirty = SEP_AmbientManager_PM.isDirty(%obj);
-	else if ( !SEP_AmbientManager_PM.isDirty(%obj) && %isDirty)
-		SEP_AmbientManager_PM.setDirty( %obj );
-	else if ( SEP_AmbientManager_PM.isDirty(%obj) && !%isDirty)
-		SEP_AmbientManager_PM.removeDirty( %obj );
-
-	%this.isDirty = %isDirty;
-	SEP_ScatterSkySaveButton.active = %isDirty;
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value) {	
-	%obj = %this.selectedScatterSky;
-
-	if (!isObject(%obj)) {
-		warnLog("Can't update scatterSky value because none is selected. Tried wth:",%obj);
-		return;
-	}
+	
+	if (%obj.getClassName() !$= "ScatterSky")
+		SceneInspector.inspect(%obj);
+		
+		
 
 	%currentValue = %obj.getFieldValue(%field);
 
 	if (%currentValue $= %value) {		
 		return;
 	}
-
-	ScatterSkyInspector.apply();
+	
+	if (%obj.getClassName() $= "ScatterSky")
+		ScatterSkyInspector.apply();
+	else
+		SceneInspector.apply();
 	//eval("%obj."@%checkField@" = %value;");
 	%obj.setFieldValue(%field,%value);
 	EWorldEditor.isDirty = true;
-	%this.setDirty(true);
+	%this.setDirtyObject(%obj,true);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3) {
-	logd("SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3)",%this,%field,%value,%ctrl,%arg1,%arg2,%arg3);
-	%this.updateFieldValue(%field,%value);
+function SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg1,%arg2) {
+	logd("SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg1,%arg2)",%this,%field,%value,%ctrl,%array,%arg1,%arg2);
+	
+	%arrayValue = %array.getVal(%field);
+	%obj = getField(%arrayValue,4);	
+	%this.updateFieldValue(%field,%value,%obj);
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+// SAVING AND DIRTY MANAGEMENTS
+//==============================================================================
+//==============================================================================
+function SEP_ScatterSkyManager::setDirtyObject(%this,%obj,%isDirty) {
+	logd("SEP_ScatterSkyManager::setDirtyObject(%this,%obj,%isDirty)",%this,%obj,%isDirty);
+	
+	if (isObject(%obj)){
+		SEP_AmbientManager.setObjectDirty(%obj,%isDirty);
+	
+		if (%isDirty){
+			%this.dirtyList = strAddWord(%this.dirtyList,%obj.getId(),true);
+		} else {
+			%this.dirtyList = strRemoveWord(%this.dirtyList,%obj.getId());
+		}
+	}
+	devLog("Legacy Dirty List=",%this.dirtyList);
+	%legacyIsDirty = false;
+	if (getWordCount(%this.dirtyList) > 0)
+		%legacyIsDirty = true;
+	SEP_ScatterSkySaveButton.active = %legacyIsDirty;
+}
+//------------------------------------------------------------------------------
 
+//==============================================================================
+// Sync the current profile values into the params objects
+function SEP_ScatterSkyManager::saveData( %this ) { 		
+	
+	foreach$(%obj in %this.dirtyList){
+		if(SEP_AmbientManager_PM.isDirty(%obj))
+			SEP_AmbientManager_PM.saveDirtyObject(%obj);	
+		%this.setDirtyObject(%obj,false);
+	}
+
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 /*
