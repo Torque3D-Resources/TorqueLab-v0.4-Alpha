@@ -139,7 +139,7 @@ function tlabExecDialogs(%loadGui ) {
 		exec("tlab/EditorLab/gui/dialogs/ESceneManager.gui");
 		exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.gui");
 		exec("tlab/EditorLab/gui/dialogs/ColladaImportProgress.gui");
-		execPattern("tlab/EditorLab/gui/tools/*.gui");
+		execPattern("tlab/EditorLab/editorDialogs/*.gui");
 		execPattern("tlab/EditorLab/gui/debugTools/*.gui");
 	}
 
@@ -149,15 +149,27 @@ function tlabExecDialogs(%loadGui ) {
 	exec("tlab/EditorLab/gui/dialogs/ESceneManager.cs");
 	exec("tlab/EditorLab/gui/commonDialogs.cs");
 	exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.cs");
-	execPattern("tlab/EditorLab/gui/tools/*.cs");
+	execPattern("tlab/EditorLab/editorDialogs/*.cs");
 	execPattern("tlab/EditorLab/gui/debugTools/*.cs");
 }
 tlabExecDialogs(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecDialogs");
-function execTools( ) {
-	execPattern("tlab/EditorLab/gui/tools/*.cs");
-}
 
+
+//------------------------------------------------------------------------------
+//Old Settings Dialog for temporary references
+function tlabExecTools(%loadGui ) {
+	if (%loadGui) {		
+		execPattern("tlab/EditorLab/editorTools/*.gui");		
+	}	
+	execPattern("tlab/EditorLab/editorTools/*.cs");	
+}
+tlabExecTools(!$LabGuiExeced);
+%execAll = strAddWord(%execAll,"tlabExecTools");
+
+function execTools(%execGui ) {
+	tlabExecTools(%execGui);
+}
 
 
 

@@ -13,6 +13,21 @@ function SceneEditorDialogs::onActivated( %this ) {
 	if (SceneEditorDialogs.selectedPage $= "")
 		SceneEditorDialogs.selectedPage = "0";
 
+	SEP_SkySystemCreator-->newScatterSkyName.setText("envScatterSky");
+	SEP_SkySystemCreator-->newSunName.setText("envSun");
+	SEP_SkySystemCreator-->newSkyName.setText("envSkyBox");
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function SEP_AmbientManager::onShow( %this ) {
+	devLog("SEP_AmbientManager::onShow(%this)");
+
+	%this.getSkySystemObject();
+
+	%this.updateSkySystemData();
+	syncParamObj(SEP_AmbientManager.FogParamArray);
 }
 //------------------------------------------------------------------------------
 
@@ -25,6 +40,10 @@ function SEP_AmbientManager::initDialog( %this ) {
 		new PersistenceManager(SEP_AmbientManager_PM);
 		
 	SEP_AmbientBook.selectPage($SEP_AmbientBook_PageId);
+	
+	%this.getSkySystemObject();
+	
+	
 
 	SEP_ScatterSkyManager.buildParams();
 	
@@ -38,6 +57,13 @@ function SEP_AmbientManager::onActivated( %this ) {
 	SEP_ScatterSkyBook.selectPage($SEP_ScatterSkyBook_PageId);
 	SEP_PrecipitationBook.selectPage($SEP_PrecipitationBook_PageId);
 	SEP_CloudsBook.selectPage($SEP_CloudsBook_PageId);
+	
+	SEP_ScatterSkySystemMenu.clear();
+	SEP_ScatterSkySystemMenu.add("New Scatter Sky",0);
+	SEP_ScatterSkySystemMenu.add("New Sun (+SkyBox)",1);
+	SEP_ScatterSkySystemMenu.setSelected(0);
+	%this.getSkySystemObject();
+	SEP_AmbientManager.buildFogParams(true);
 	SEP_AmbientManager.buildBasicCloudsParams();
 	SEP_AmbientManager.initBasicCloudsData();
 	SEP_AmbientManager.buildCloudLayerParams();
@@ -72,5 +98,23 @@ function SEP_AmbientBook::onTabSelected( %this,%text,%index ) {
 function SEP_CloudsBook::onTabSelected( %this,%text,%index ) {	
 	
 	$SEP_CloudsBook_PageId = %index;
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function SEP_AmbientManager::setObjectDirty( %this,%isDirty,%obj ) {
+	logd("SEP_AmbientManager::setObjectDirty( %this,%isDirty,%obj )");
+	
+	if (!isObject(%obj)){
+		warnLog("Trying to set dirty for invalid object in AmbienManager:",%obj);
+		return;
+	}
+	if (%isDirty $="")
+		%isDirty = SEP_AmbientManager_PM.isDirty(%obj);		
+	else if ( !SEP_AmbientManager_PM.isDirty(%obj) && %isDirty)
+		SEP_AmbientManager_PM.setDirty( %obj );
+	else if ( SEP_AmbientManager_PM.isDirty(%obj) && !%isDirty)
+		SEP_AmbientManager_PM.removeDirty( %obj );
 }
 //------------------------------------------------------------------------------

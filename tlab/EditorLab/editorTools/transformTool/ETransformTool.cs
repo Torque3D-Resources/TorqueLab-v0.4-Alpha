@@ -6,7 +6,7 @@
 //EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
 
 $ETransformToolContainers = "ETransformTool SceneEditorTransformTools";
-
+$ETransformToolEditFields = "PosX PosY PosZ TransX TransY TransZ RotX RotY RotZ RotH RotP RotB ScaleX ScaleY ScaleZ";
 $ETransformTool::Active::Position = false;
 $ETransformTool::Active::Rotation = false;
 $ETransformTool::Active::Scale = false;
@@ -19,14 +19,30 @@ $ETransformTool::LocalCenter::Rotation = true;
 $ETransformTool::LocalCenter::Scale = true;
 
 $ETransformTool::Proportional::Scale = false;
-
+//==============================================================================
+//ETransformTool.resetAll Field TextEditValue Changed
+function ETransformTool::resetAll( %this,%ctrl ) {
+	foreach$(%field in $ETransformToolEditFields){
+		%ctrl = %this.findObjectByInternalName(%field,true);	
+		%ctrl.setText("0");
+		%this.updateTextEditField(%ctrl);
+	}
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
-//ETransform tool text edit onValidate
-function ETransformEdit::onValidate( %this ) {
-	devLog("ECloneEdit::onValidate");
-	%value = %this.getText();
-	%field = %this.internalName;
+//ETransformTool Field TextEditValue Changed
+function ETransformTool::editCommand( %this,%ctrl ) {
+	devLog("ETransformTool::editCommand",%ctrl);	
+	%this.updateTextEditField(%ctrl);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//ETransformTool Field TextEditValue Changed
+function ETransformTool::updateTextEditField( %this,%ctrl ) {
+	devLog("ETransformTool::updateTextEditField",%ctrl);
+	%value = %ctrl.getText();
+	%field = %ctrl.internalName;
 
 	if (!strIsNumeric(%value)) {
 		warnLog("Invalid value submitted for:",%field, "Value resetted to 0");
@@ -40,7 +56,16 @@ function ETransformEdit::onValidate( %this ) {
 			continue;
 
 		%textEdit.setValue(%value);
-	}
+	}	
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+//ETransform tool text edit onValidate
+function ETransformEdit::onValidate( %this ) {
+	devLog("ECloneEdit::onValidate");
+	ETransformTool.updateTextEditField(%this);
+	
 }
 //------------------------------------------------------------------------------
 
@@ -68,336 +93,18 @@ function ETransformTool::setFieldValueContainers( %this,%field,%value ) {
 		%textEdit.setValue(%value);
 	}
 }
-//==============================================================================
-//==============================================================================
-// Position And Translation Functions
-//==============================================================================
-//==============================================================================
 
 //==============================================================================
-// Position  Transform Functions
-//==============================================================================
-
-//==============================================================================
-function ETransformTool::getAbsPosition( %this,%axis ) {
-	if (%axis $= "")
-		%axis = "all";
-
-	%pos = EWorldEditor.getSelectionCentroid();
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("PosX",getWord(%pos, 0));
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("PosY",getWord(%pos, 1));
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("PosZ",getWord(%pos, 2));
-
-	// Turn off relative as we're populating absolute values
-	%this-->PosRelative.setValue(0);
-	// Finally, set the Position check box as active.  The user
-	// likely wants this if they're getting the position.
-	//%this-->DoPosition.setValue(1);
+function ETransformTool::getSelectionObj( %this ) {
+	%obj = EWorldEditor.getSelectedObject( 0 );
+	if( !isObject(%obj)) {
+		warnLog("No selected object found");
+		return "";
+	}
+	return %obj;
 }
 //------------------------------------------------------------------------------
 
-
-//==============================================================================
-function ETransformTool::setSelPosition( %this,%axis ) {
-	%posX = %this-->PosX.getText();
-	%posY = %this-->PosY.getText();
-	%posZ = %this-->PosZ.getText();
-	%position = %posX SPC %posY SPC %posZ;
-	// Turn off relative as we're populating absolute values
-	%relative = %this-->PosRelative.getValue();
-	devLog("Is Relative:",%relative);
-	devLog("Is POSITI:",%position);
-	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
-	EWorldEditor.transformSelection(true,%position,%relative,false,"",false,false,   "","",false,false);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function ETransformTool::clearPosition( %this,%axis ) {
-	if (%axis $= "")
-		%axis = "all";
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("PosX","0");
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("PosY","0");
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("PosZ","0");
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Translate  Transform Functions
-//==============================================================================
-//==============================================================================
-function ETransformTool::getAbsTrans( %this,%axis ) {
-	%obj = EWorldEditor.getSelectedObject(0);
-	
-	
-	if( !isObject(%obj) ) {
-		// No SceneObjects selected
-		return;
-	}
-	if (%axis $= "")
-		%axis = "all";
-
-	%size = %obj.getObjectBox();
-	%scale = %obj.getScale();
-	%sizex = (getWord(%size, 3) - getWord(%size, 0)) * getWord(%scale, 0);
-	%sizey = (getWord(%size, 4) - getWord(%size, 1)) * getWord(%scale, 1);
-	%sizez = (getWord(%size, 5) - getWord(%size, 2)) * getWord(%scale, 2);
-	
-	%scale = %obj.scale;
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("TransX",%sizex);
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("TransY",%sizey);
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("TransZ",%sizez);
-
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function ETransformTool::clearTrans( %this,%axis ) {
-	if (%axis $= "")
-		%axis = "all";
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("TransX","0");
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("TransY","0");
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("TransZ","0");
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function ETransformTool::setSelTrans( %this ) {
-	%transX = %this-->TransX.getText();
-	%transY = %this-->TransY.getText();
-	%transZ = %this-->TransZ.getText();
-	
-	%pos = EWorldEditor.getSelectionCentroid();
-	
-	%pos.x += %transX;
-	%pos.y += %transY;
-	%pos.z += %transZ;
-
-	// Turn off relative as we're populating absolute values
-	%relative = %this-->PosRelative.getValue();
-	devLog("Is Relative:",%relative);
-	devLog("Is POSITI:",%position);
-	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
-	EWorldEditor.transformSelection(true,%pos,false,false,"",false,false,   "","",false,false);
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-// Scale/Size Functions
-//==============================================================================
-//==============================================================================
-function ETransformTool::getAbsScale( %this,%axis ) {
-	%obj = EWorldEditor.getSelectedObject(0);
-	
-	
-	if( !isObject(%obj) ) {
-		// No SceneObjects selected
-		return;
-	}
-	if (%axis $= "")
-		%axis = "all";
-
-	%scale = %obj.scale;
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("ScaleX",getWord(%scale, 0));
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("ScaleY",getWord(%scale, 1));
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("ScaleZ",getWord(%scale, 2));
-
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function ETransformTool::getAbsSize( %this,%axis ) {
-	%obj = EWorldEditor.getSelectedObject(0);
-	
-	
-	if( !isObject(%obj) ) {
-		// No SceneObjects selected
-		return;
-	}
-	if (%axis $= "")
-		%axis = "all";
-
-	%size = %obj.getObjectBox();
-	%scale = %obj.getScale();
-	%sizex = (getWord(%size, 3) - getWord(%size, 0)) * getWord(%scale, 0);
-	%sizey = (getWord(%size, 4) - getWord(%size, 1)) * getWord(%scale, 1);
-	%sizez = (getWord(%size, 5) - getWord(%size, 2)) * getWord(%scale, 2);
-	
-	%scale = %obj.scale;
-
-	if (%axis $= "x" || %axis $= "all")
-		%this.setFieldValueContainers("SizeX",%sizex);
-
-	if (%axis $= "y" || %axis $= "all")
-		%this.setFieldValueContainers("SizeY",%sizey);
-
-	if (%axis $= "z" || %axis $= "all")
-		%this.setFieldValueContainers("SizeZ",%sizez);
-
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-// Rotation Transform Functions
-//==============================================================================
-function ETransformTool::getAbsRotation( %this ,%axis) {
-	%obj = EWorldEditor.getSelectedObject(0);	
-	if( !isObject(%obj) ) {
-		// No SceneObjects selected
-		return;
-	}
-
-	%rot = %obj.getEulerRotation();
-	%rot2 = %obj.getRotation();
-	
-	devLog("Euler rotation:",%rot,"Base rotation:",%rot2);
-}
-//==============================================================================
-// Get the selected object data
-//==============================================================================
-function ETransformSelection::getAbsRotation( %this ) {
-	%count = EWorldEditor.getSelectionSize();
-	// If we have more than one SceneObject selected,
-	// we must exit.
-	%obj = -1;
-
-	for( %i=0; %i<%count; %i++) {
-		%test = EWorldEditor.getSelectedObject( %i );
-
-		if( %test.isMemberOfClass("SceneObject") ) {
-			if( %obj != -1 )
-				return;
-
-			%obj = %test;
-		}
-	}
-
-	if( %obj == -1 ) {
-		// No SceneObjects selected
-		return;
-	}
-
-	%rot = %obj.getEulerRotation();
-	%this-->Pitch.setText(getWord(%rot, 0));
-	%this-->Bank.setText(getWord(%rot, 1));
-	%this-->Heading.setText(getWord(%rot, 2));
-	// Turn off relative as we're populating absolute values.
-	// Of course this means that we need to set local on.
-	%this-->RotRelative.setValue(0);
-	%this-->RotLocal.setValue(1);
-	// Finally, set the Rotation check box as active.  The user
-	// likely wants this if they're getting the position.
-	%this-->DoRotation.setValue(1);
-}
-
-function ETransformSelection::getAbsScaleOLD( %this ) {
-	%count = EWorldEditor.getSelectionSize();
-	
-	// If we have more than one SceneObject selected,
-	// we must exit.
-	%obj = -1;
-
-	for( %i=0; %i<%count; %i++) {
-		%test = EWorldEditor.getSelectedObject( %i );
-
-		if( %test.isMemberOfClass("SceneObject") ) {
-			if( %obj != -1 )
-				return;
-
-			%obj = %test;
-		}
-	}
-
-	if( %obj == -1 ) {
-		// No SceneObjects selected
-		return;
-	}
-
-	%scale = %obj.scale;
-	%scalex = getWord(%scale, 0);
-	%this-->ScaleX.setText(%scalex);
-
-	if( ETransformSelectionScaleProportional.getValue() == false ) {
-		%this-->ScaleY.setText(getWord(%scale, 1));
-		%this-->ScaleZ.setText(getWord(%scale, 2));
-	} else {
-		%this-->ScaleY.setText(%scalex);
-		%this-->ScaleZ.setText(%scalex);
-	}
-
-	// Turn off relative as we're populating absolute values
-	%this-->ScaleRelative.setValue(0);
-	// Finally, set the Scale check box as active.  The user
-	// likely wants this if they're getting the position.
-	%this-->DoScale.setValue(1);
-}
-
-function ETransformSelection::getAbsSizeOLD( %this ) {
-	%count = EWorldEditor.getSelectionSize();
-	// If we have more than one SceneObject selected,
-	// we must exit.
-	%obj = -1;
-
-	for( %i=0; %i<%count; %i++) {
-		%test = EWorldEditor.getSelectedObject( %i );
-
-		if( %test.isMemberOfClass("SceneObject") ) {
-			if( %obj != -1 )
-				return;
-
-			%obj = %test;
-		}
-	}
-
-	if( %obj == -1 ) {
-		// No SceneObjects selected
-		return;
-	}
-
-	%size = %obj.getObjectBox();
-	%scale = %obj.getScale();
-	%sizex = (getWord(%size, 3) - getWord(%size, 0)) * getWord(%scale, 0);
-	%this-->SizeX.setText( %sizex );
-
-	if( ETransformSelectionSizeProportional.getValue() == false ) {
-		%this-->SizeY.setText( (getWord(%size, 4) - getWord(%size, 1)) * getWord(%scale, 1) );
-		%this-->SizeZ.setText( (getWord(%size, 5) - getWord(%size, 2)) * getWord(%scale, 2) );
-	} else {
-		%this-->SizeY.setText( %sizex );
-		%this-->SizeZ.setText( %sizex );
-	}
-
-	// Turn off relative as we're populating absolute values
-	%this-->SizeRelative.setValue(0);
-	// Finally, set the Size check box as active.  The user
-	// likely wants this if they're getting the position.
-	%this-->DoSize.setValue(1);
-}
 
 /*
 function ETransformSelection::onWake( %this ) {

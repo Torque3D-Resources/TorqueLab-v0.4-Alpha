@@ -157,18 +157,7 @@ function SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%arg1,%arg
 }
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
-	logd("SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text)",%this,%id,%text);
-	SEP_SkySystemCreator-->ScatterSky.visible = 0;
-	SEP_SkySystemCreator-->Legacy.visible = 0;
-	if (%id $= "0"){
-		SEP_SkySystemCreator-->ScatterSky.visible = 1;
-	} else {
-		SEP_SkySystemCreator-->Legacy.visible = 1;
-	}
-}
-//------------------------------------------------------------------------------
+
 
 //==============================================================================
 /*
