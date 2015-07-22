@@ -94,11 +94,16 @@ function SEP_PrecipitationMenu::OnSelect(%this,%id,%text) {
 function SEP_PrecipitationManager::selectPrecipitation(%this,%objId) {
 	logd("SEP_PrecipitationManager::selectPrecipitation(%this,%objId)",%this,%objId);
 	%this.selectedPrecipitation = %objId;
-	%this.selectedPrecipitationName = %objId.getName();
+	%name = %objId.getName();
+	if (%name $= "")
+		%name = "Precipitation \c2-\c1 " @ %objId.getId();
+	%this.selectedPrecipitationName = %name;
 	PrecipitationInspector.inspect(%objId);
 	%this.setDirty();
 	%datablock = %objId.dataBlock;
 	SEP_PrecipitationDataMenu.setSelected(%datablock.getId());
+	
+	%this-->activePrecipitationTitle.text = "Precipitation ->\c2" SPC %name;
 
 	foreach$(%field in SEP_PrecipitationManager.fieldList) {
 		%ctrl = SEP_PrecipitationProperties.findObjectByInternalName(%field,true);
@@ -328,6 +333,23 @@ function SEP_PrecipitationManager::applyDataFile( %this,%file ) {
 function SEP_PrecipitationBook::onTabSelected( %this,%text,%index ) {	
 	
 	$SEP_PrecipitationBook_PageId = %index;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SEP_PrecipitationManager::toggleInspectorMode(%this) {
+	logd("SEP_PrecipitationManager::toggleInspectorMode(%this)",%this);
+
+	SEP_PrecipitationManager.inspectorMode = !SEP_PrecipitationManager.inspectorMode;
+	if (SEP_PrecipitationManager.inspectorMode){
+		SEP_PrecipitationInspectButton.text = "Custom mode";
+		SEP_Precipitation_Custom.visible = 0;
+		SEP_Precipitation_Inspector.visible = 1;		
+	}
+	else {
+		SEP_PrecipitationInspectButton.text = "Inspector mode";
+		SEP_Precipitation_Inspector.visible = 0;
+		SEP_Precipitation_Custom.visible = 1;
+	}	
 }
 //------------------------------------------------------------------------------
 /*

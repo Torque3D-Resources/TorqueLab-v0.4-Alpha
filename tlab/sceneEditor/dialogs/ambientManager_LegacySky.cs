@@ -37,9 +37,9 @@ function SEP_LegacySkyManager::buildParams( %this ) {
 	
 	%arCfg.group[%gid++] = "Fog settings" TAB "Stack StackB";
 	%arCfg.setVal("fogColor",       "" TAB "Fog Color" TAB "ColorEdit" TAB "mode>>float;;flen>>2;;noAlpha>>1" TAB "theLevelInfo" TAB %gid);	
-	%arCfg.setVal("fogDensity",       "" TAB "fogDensity" TAB "SliderEdit" TAB "range>>0 0.03" TAB "theLevelInfo" TAB %gid);
-	%arCfg.setVal("fogDensityOffset",       "" TAB "fogDensityOffset" TAB "SliderEdit" TAB "range>>0 100" TAB "theLevelInfo" TAB %gid);
-	%arCfg.setVal("fogAtmosphereHeight",       "" TAB "fogAtmosphereHeight" TAB "SliderEdit" TAB "range>>0 1000" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogDensity",       "" TAB "fogDensity" TAB "SliderEdit" TAB "range>>0 0.1" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogDensityOffset",       "" TAB "fogDensityOffset" TAB "SliderEdit" TAB "range>>0 200" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogAtmosphereHeight",       "" TAB "fogAtmosphereHeight" TAB "SliderEdit" TAB "range>>0 5000" TAB "theLevelInfo" TAB %gid);
 	
 	%arCfg.group[%gid++] = "Corona and Flare settings" TAB "Stack StackB";
 	%arCfg.setVal("coronaEnabled",       "" TAB "coronaEnabled" TAB "Checkbox" TAB "" TAB "SEP_LegacySkyManager.selectedSun" TAB %gid);
@@ -108,7 +108,7 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 		return;
 	}
 	
-	%this-->legacySkyTitle.text = "ScatterSky -> \c1" @ %obj.getName() @"\c0 properties";
+	%this-->legacySkyTitle.text = "Sky type:\c2 Sun+SkyBox \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedSun = %obj;
 	%this.selectedSunName = %obj.getName();
 	%this.setDirtyObject(%this.selectedSun);

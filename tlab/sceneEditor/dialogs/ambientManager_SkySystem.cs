@@ -6,7 +6,7 @@
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::initSkySystemData( %this ) {
-	%this.getSkySystemObject();
+	
 	SEP_ScatterSkyManager.buildParams();	
 	SEP_LegacySkyManager.buildParams();
 }
@@ -28,33 +28,52 @@ function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
-	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%text)",%this,%id,%text);
+function SEP_SkySelectMenu::OnSelect(%this,%id,%obj) {
+	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%obj);
 	
-	if (isObject(%text)){
+	if (!isObject(%obj))
+		return;
+	SEP_AmbientManager.hideAllSkyObjects(true);
+	%obj.hidden = false;
+	if (isObject(%obj.mySkyBox))
+		%obj.mySkyBox.hidden = false;
+			
+	SEP_AmbientManager.getSkySystemObject();
+	
+	if (%obj.getClassName() $= "Sun")
+			SEP_LegacySkyManager.selectSky(%obj);
+		else if (%obj.getClassName() $= "ScatterSky")
+			SEP_ScatterSkyManager.selectScatterSky(%obj);
+		
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SEP_AmbientManager::activateSkyObj(%this,%obj) {
+	devLog("SEP_AmbientManager::activateSkyObj(%this,%obj)",%this,%obj);
+	
+	if (isObject(%obj)){
 		//if (%text.getClassName() $= "ScatterSky")
 			%hideSkyBox = true;
 			
-		SEP_AmbientManager.hideAllSkyObjects(%hideSkyBox);
-		%text.hidden = false;
-		if (isObject(%text.mySkyBox))
-			%text.mySkyBox.hidden = false;
-			
-		SEP_AmbientManager.getSkySystemObject();
 		
-		if (%text.getClassName() $= "Sun")
-			SEP_LegacySkyManager.selectSky(%text);
-		else if (%text.getClassName() $= "ScatterSky")
-			SEP_ScatterSkyManager.selectScatterSky(%text);
+		
+		if (%obj.getClassName() $= "Sun")
+			SEP_LegacySkyManager.selectSky(%obj);
+		else if (%obj.getClassName() $= "ScatterSky")
+			SEP_ScatterSkyManager.selectScatterSky(%obj);
 	}
 }
 //------------------------------------------------------------------------------
 
-
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SEP_AmbientManager::updateSkySystemData( %this,%select ) {
-		
+//SEP_AmbientManager.updateSkySystemData
+function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
+	if (%build){
+		SEP_ScatterSkyManager.buildParams();	
+		SEP_LegacySkyManager.buildParams();
+	}
 	SEP_AmbientManager.getSkySystemObject();
 	SEP_SkySelectMenu.clear();
 	%id = 0;
@@ -66,7 +85,11 @@ function SEP_AmbientManager::updateSkySystemData( %this,%select ) {
 			//continue;		
 		if (%obj $= %this.skySystemObj)
 			%select = %id;
-		SEP_SkySelectMenu.add(%obj.getName(),%id);
+		%name = %obj.getName();
+		if (%name $= "")
+			%name = %obj.getClassName()@"\c2-\c1"@%obj.getId();
+		devLog("Adding mode:",%name);
+		SEP_SkySelectMenu.add(%name,%id);
 		%id++;
 	}
 	devLog("ID=",%id);
@@ -135,8 +158,9 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 			%this.skyBoxObj = %skyBox;			
 			%this.sunObj.setFieldValue("mySkyBox",%skyBox);
 		}
-	}	
+	}
 	
+	//%this.activateSkyObj(%this.skySystemObj);
 	info("AmbientManager detected the Sky System:",%this.skySystem,"Using object",%this.skySystemObj);
 	return %this.skySystemObj;
 }
@@ -279,7 +303,7 @@ function SEP_AmbientManager::createNewLecacySky( %this ) {
 		%name = SEP_SkySystemCreator-->newSkyName.getText();
 		%unique = getUniqueName(%name);
 		%newSky = new SkyBox(%unique) {
-			Material = "Material_mat";
+			Material = "Mat_DefaultSky";
 			drawBottom = "1";
 			fogBandHeight = "0";
 			position = "-58.4185 402.875 41.1485";

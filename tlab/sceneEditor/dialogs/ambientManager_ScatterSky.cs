@@ -33,9 +33,9 @@ function SEP_ScatterSkyManager::buildParams( %this ) {
 	
 	%arCfg.group[%gid++] = "Fog settings" TAB "Stack StackA";
 	%arCfg.setVal("fogScale",       "" TAB "Fog Color" TAB "ColorEdit" TAB "mode>>float;;flen>>2;;noAlpha>>1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);	
-	%arCfg.setVal("fogDensity",       "" TAB "fogDensity" TAB "SliderEdit" TAB "range>>0 0.03" TAB "theLevelInfo" TAB %gid);
-	%arCfg.setVal("fogDensityOffset",       "" TAB "fogDensityOffset" TAB "SliderEdit" TAB "range>>0 100" TAB "theLevelInfo" TAB %gid);
-	%arCfg.setVal("fogAtmosphereHeight",       "" TAB "fogAtmosphereHeight" TAB "SliderEdit" TAB "range>>0 1000" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogDensity",       "" TAB "fogDensity" TAB "SliderEdit" TAB "range>>0 0.1" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogDensityOffset",       "" TAB "fogDensityOffset" TAB "SliderEdit" TAB "range>>0 200" TAB "theLevelInfo" TAB %gid);
+	%arCfg.setVal("fogAtmosphereHeight",       "" TAB "fogAtmosphereHeight" TAB "SliderEdit" TAB "range>>0 5000" TAB "theLevelInfo" TAB %gid);
 
 	%arCfg.group[%gid++] = "Shadows settings" TAB "Stack StackB";
 	%arCfg.setVal("overDarkFactor",       "" TAB "overDarkFactor" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
@@ -90,12 +90,30 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 		return;
 	}
 	
-	%this-->scatterSkyTitle.text = "ScatterSky -> \c1" @ %obj.getName() @"\c0 properties";
+	%this-->scatterSkyTitle.text = "Sky type:\c2 ScatterSky \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedScatterSky = %obj;
 	%this.selectedScatterSkyName = %obj.getName();
 	%this.setDirty();
 	ScatterSkyInspector.inspect(	%obj);
 	syncParamArray(SEP_ScatterSkyManager.paramArray);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SEP_ScatterSkyManager::toggleInspectorMode(%this) {
+	logd("SEP_ScatterSkyManager::toggleInspectorMode(%this)",%this);
+
+	SEP_ScatterSkyManager.inspectorMode = !SEP_ScatterSkyManager.inspectorMode;
+	if (SEP_ScatterSkyManager.inspectorMode){
+		SEP_ScatterSkyInspectButton.text = "Custom mode";
+		SEP_ScatterSky_Custom.visible = 0;
+		SEP_ScatterSky_Inspector.visible = 1;		
+	}
+	else {
+		SEP_ScatterSkyInspectButton.text = "Inspector mode";
+		SEP_ScatterSky_Inspector.visible = 0;
+		SEP_ScatterSky_Custom.visible = 1;
+	}
+	
 }
 //------------------------------------------------------------------------------
 

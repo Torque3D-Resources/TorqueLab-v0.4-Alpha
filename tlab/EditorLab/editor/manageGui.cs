@@ -36,7 +36,11 @@ function Lab::addGui(%this,%gui,%type) {
 	case "Overlay":
 		%container = EditorGui;
 		LabDialogGuiSet.add(%gui);
-
+	
+	case "EditorDlg":
+		%container = EditorDialogs;
+		LabEditorDlgSet.add(%gui);
+		
 	case "":
 		%container = $LabSettingContainer;
 		LabSettingGuiSet.add(%gui);
@@ -67,7 +71,9 @@ function Lab::initCoreGuis(%this) {
 //==============================================================================
 function Lab::detachEditorGuis(%this) {
 	%this.editorGuisDetached = true;
-
+	
+	
+	
 	foreach(%gui in LabGuiSet) {
 		%gui.editorParent = %gui.parentGroup;
 		%parent = %gui.defaultParent;
@@ -108,7 +114,9 @@ function Lab::attachEditorGuis(%this) {
 		return;
 
 	Lab.editorGuisDetached = false;
-
+	
+	
+	
 	foreach(%gui in LabGuiSet) {
 		%gui.parentGroup = %gui.editorParent;
 		hide(%gui);

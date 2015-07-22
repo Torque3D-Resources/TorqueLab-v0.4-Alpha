@@ -7117,3 +7117,23 @@
    };
 };
 //--- OBJECT WRITE END ---
+
+new GuiControl()
+{
+   position = "139 0";
+   extent = "53 18";
+   profile = "ToolsDefaultProfile";
+   tooltipProfile = "ToolsGuiToolTipProfile";
+   isContainer = "1";
+
+   new GuiTextCtrl()
+   {
+      text = "Dist.";
+      maxLength = "255";
+      extent = "26 18";
+      minExtent = "8 8";
+      profile = "ToolsTextBase_S1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      isContainer = "0";
+   };
+};

@@ -24,8 +24,8 @@ function SceneEditorDialogs::onActivated( %this ) {
 function SEP_AmbientManager::onShow( %this ) {
 	devLog("SEP_AmbientManager::onShow(%this)");
 	hide(SEP_SkySystemCreator);	
-
-	%this.updateSkySystemData();
+	
+	SEP_AmbientManager.updateSkySystemData(true);
 	syncParamObj(SEP_AmbientManager.FogParamArray);
 }
 //------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ function SEP_AmbientManager::onActivated( %this ) {
 	SEP_ScatterSkySystemMenu.add("New Scatter Sky",0);
 	SEP_ScatterSkySystemMenu.add("New Sun (+SkyBox)",1);
 	SEP_ScatterSkySystemMenu.setSelected(0);
-	%this.getSkySystemObject();
+	//%this.getSkySystemObject();
 	SEP_AmbientManager.buildFogParams(true);
 	SEP_AmbientManager.buildBasicCloudsParams();
 	SEP_AmbientManager.initBasicCloudsData();

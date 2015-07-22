@@ -10,7 +10,7 @@ $BasicClouds::Default_["texture2"] = "art/gfx/skies/clouds/cloud3.png";
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_AmbientManager.buildBasicCloudsParams();
 function SEP_AmbientManager::buildBasicCloudsParams( %this ) {
-	%arCfg = createParamsArray("SEP_BasicClouds",SEP_BasicCloudsProperties);
+	%arCfg = createParamsArray("SEP_BasicClouds",SEP_BasicClouds);
 	%arCfg.updateFunc = "SEP_AmbientManager.updateBasicCloudsParam";
 	//%arCfg.style = "LabCfgB_304";
 	%arCfg.useNewSystem = true;
@@ -255,7 +255,23 @@ function SEP_BasicCloudsMenu::onSelect(%this,%id,%text) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function SEP_BasicClouds::toggleInspectorMode(%this) {
+	logd("SEP_BasicClouds::toggleInspectorMode(%this)",%this);
 
+	SEP_BasicClouds.inspectorMode = !SEP_BasicClouds.inspectorMode;
+	if (SEP_BasicClouds.inspectorMode){
+		SEP_BasicCloudsInspectButton.text = "Custom mode";
+		SEP_BasicClouds_Custom.visible = 0;
+		SEP_BasicClouds_Inspector.visible = 1;		
+	}
+	else {
+		SEP_BasicCloudsInspectButton.text = "Inspector mode";
+		SEP_BasicClouds_Inspector.visible = 0;
+		SEP_BasicClouds_Custom.visible = 1;
+	}	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 /*
 layerEnabled

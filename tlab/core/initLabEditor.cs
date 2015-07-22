@@ -43,6 +43,8 @@ function Lab::initEditorGui( %this ) {
 	newSimSet("LabPaletteGuiSet");
 	newSimSet("LabDialogGuiSet");
 	newSimSet("LabSettingGuiSet");
+	newSimSet("LabEditorDlgSet");
+	
 	$LabPalletteContainer = EditorGui-->ToolsPaletteContainer;
 	$LabPalletteArray = EditorGui-->ToolsPaletteArray;
 	$LabPluginsArray = EditorGui-->PluginsArray;

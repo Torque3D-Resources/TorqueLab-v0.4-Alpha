@@ -7,7 +7,7 @@
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_ScatterSkyManager.buildParams();
 function SEP_AmbientManager::buildCloudLayerParams( %this ) {
-	%arCfg = createParamsArray("SEP_CloudLayer",SEP_CloudLayerProperties);
+	%arCfg = createParamsArray("SEP_CloudLayer",SEP_CloudLayer);
 	%arCfg.updateFunc = "SEP_AmbientManager.updateCloudLayerParam";
 	%arCfg.style = "LabCfgB_230";
 	%arCfg.useNewSystem = true;

@@ -15,6 +15,8 @@ function TerrainManagerGui::onWake(%this) {
 //==============================================================================
 function TerrainManagerGui::onSleep(%this) {
 	
+	if (isObject(TMG_GroundCoverClone-->MainContainer))
+		SEP_GroundCover.add(TMG_GroundCoverClone-->MainContainer);
 }
 //------------------------------------------------------------------------------
 
@@ -30,6 +32,8 @@ function TMG::init(%this) {
 
 //==============================================================================
 function TMG::refreshData(%this) {
+	hide(SEP_GroundCover);
+	TMG_GroundCoverClone.add(SEP_GroundCover-->MainContainer);
 	TMG.updateTerrainList();
 	%this.refreshMaterialLayersPage();
 	%this.buildTerrainInfoParams();

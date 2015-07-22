@@ -131,6 +131,7 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.addGui( EManageSFXParameters ,"Dialog");
 	Lab.addGui( ESelectObjects ,"Dialog");
 	
+	Lab.addGui( EPostFxManager ,"EditorDlg");
 	EWorldEditor.init();
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();
