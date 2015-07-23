@@ -64,6 +64,7 @@ function syncParamArrayCtrl( %ctrl, %updateFunc,%array,%arg1,%arg2) {
 	// PrefGroup autosyncing will add the field to the prefGroup and store the value inside
 	//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 	if (%array.autoSyncPref $= "1"||%array.autoSyncPref) {
+		devLog("Pref:",%prefGroup@%field,"Value",%value);
 		%prefGroup = %array.prefGroup;
 		eval(%prefGroup@%field@" = %value;");		
 	}
