@@ -121,7 +121,10 @@ function Lab::attachEditorGuis(%this) {
 	
 	foreach(%gui in LabGuiSet) {
 		%gui.parentGroup = %gui.editorParent;
-		hide(%gui);
+		if (%gui.isCommon)
+			show(%gui);
+		else
+			hide(%gui);
 	}
 
 	foreach(%item in LabPaletteItemSet) {

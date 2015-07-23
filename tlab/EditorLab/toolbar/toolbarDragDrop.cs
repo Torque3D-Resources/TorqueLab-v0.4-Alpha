@@ -216,7 +216,7 @@ function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
 // Dragged control dropped over undefined control (gonna check if it's droppable)
 function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
 	%droppedCtrl = %draggedControl.dragSourceControl;
-Lab.hideDisabledToolbarDropArea(	);
+	Lab.hideDisabledToolbarDropArea(	);
 	if (%draggedControl.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		show(%droppedCtrl);
@@ -236,10 +236,29 @@ Lab.hideDisabledToolbarDropArea(	);
 			show(%droppedCtrl);
 			return;
 		}
-	
-	
+	devLog("Dropped on InternalName:",%dropOnCtrl.internalName);
+	if (%dropOnCtrl.internalName $= "SubStackEnd"){
+		warnLog("Dropped on Sub Stack End");
+		%addToThis = %dropOnCtrl.parentGroup;
+		
+	}
+	if (%dropOnCtrl.internalName $= "StackEnd"){
+		warnLog("Dropped on Stack End");
+		%addToThis = %dropOnCtrl.parentGroup;
+		
+	}
+	if (%dropOnCtrl.internalName $= "StackEndImg"){
+		warnLog("Dropped on Stack End Img");
+		%addToThis = %dropOnCtrl.parentGroup.parentGroup;
+		
+	}
 	show(%droppedCtrl);
 	%addBefore = %dropOnCtrl;
+	if (isObject(%addToThis)){
+		devLog("Premature dropping!");
+		%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
+		return;
+	}
 
 	if (%droppedCtrl.isNewGroup || %droppedCtrl.getClassName() $= "GuiStackControl") {
 		%stackAndChild = Lab.findObjectToolbarStack(%dropOnCtrl,true);
@@ -387,8 +406,39 @@ function Lab::createNewToolbarIconGroup(%this) {
 	return %newGroup;
 }
 //==============================================================================
-function Lab::showDisabledToolbarDropArea(%this,%dragControl) {	
+function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
+	%isIcon = false;
+	if (%dragControl.isMemberOfClass("GuiIconButtonCtrl"))
+		%isIcon = true;
 	EToolbarDisabledDrop.visible = 1;
+	
+	//Only show StackEnd for groups
+	if(%isIcon){
+		foreach(%gui in LabToolbarGuiSet) {
+			foreach$(%stack in %gui.stackLists){
+				%stackEnd = %stack-->SubStackEnd;			
+				if (!isObject(%stackEnd))
+					continue;				
+				
+				show(%stackEnd);
+				%stack.pushToBack(%stackEnd);
+				%stackEnd.profile = "ToolsBoxDarkC";
+				%stackEnd.setExtent(18,%gui.parentGroup.extent.y);		
+			}
+		}
+	}
+	else {
+		foreach(%gui in LabToolbarGuiSet) {
+			%stackEnd = %gui-->StackEnd;
+			if (!isObject(%stackEnd))
+				continue;
+			%gui.pushToBack(%stackEnd);
+			show(%stackEnd);
+			%stackEnd.profile = "ToolsBoxDarkC";
+			%stackEnd.setExtent(27,%gui.parentGroup.extent.y);		
+		}
+	}
+	
 	foreach(%gui in EToolbarDisabledDrop) {
 		if (%gui.pluginName !$= %dragControl.pluginName){
 			%src = %gui.internalName;
@@ -399,10 +449,22 @@ function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 			%gui.setPosition(%src.position.x,0);
 		}		
 	}
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::hideDisabledToolbarDropArea(%this) {		
+function Lab::hideDisabledToolbarDropArea(%this) {	
+	foreach(%gui in LabToolbarGuiSet) {
+		%stackEnd = %gui-->StackEnd;
+		if (isObject(%stackEnd))
+			hide(%stackEnd);
+		foreach$(%stack in %gui.stackLists){
+			%subStackEnd = %stack-->SubStackEnd;			
+			if (isObject(%subStackEnd))
+					hide(%subStackEnd);				
+		}
+	}
+
 	foreach(%gui in EToolbarDisabledDrop)
 			%gui.visible = 0;				
 	EToolbarDisabledDrop.visible = 0;		

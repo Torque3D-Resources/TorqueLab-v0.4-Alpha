@@ -11,6 +11,18 @@
 //==============================================================================
 function Lab::initAllToolbarGroups(%this) {
 	EGuiCustomizer-->saveToolbar.active = false;	
+	if (!isObject(EToolbarDisabledDrop)) {
+		%new =  new GuiContainer(EToolbarDisabledDrop) {					
+				horizSizing = "width";
+				vertSizing = "height";
+				profile = "ToolsDefaultProfile_NoModal";								
+			};
+			EditorGuiToolbar.add(%new);
+	}
+	
+	EditorGuiToolbar.pushToBack(EToolbarDisabledDrop);
+	EToolbarDisabledDrop.fitIntoParents();
+	hide(EToolbarDisabledDrop);
 	
 	foreach(%gui in LabToolbarGuiSet) {
 		Lab.initToolbarGroup(%gui);
@@ -26,6 +38,8 @@ function Lab::initToolbarGroup(%this,%gui) {
 	%pluginObj.iconList = "";
 	%pluginObj.toolbarGui = %gui;
 	%pluginName = %pluginObj.plugin;
+	if (%gui.plugin !$= %pluginName && %gui.plugin !$= "")
+		%gui.plugin = "";
 	if (!isObject(%pluginObj))
 		warnLog("Can't find the plugin obj for gui:",%gui,%gui.getName());
 
@@ -53,19 +67,29 @@ function Lab::initToolbarGroup(%this,%gui) {
 	%disabledDropContainer.setPosition(%gui.position.x,%gui.position.y);
 	hide(%disabledDropContainer);	
 	
-	if(!%gui.noDrag){
+	
 		%end = %gui.defaultStack-->StackEnd;
-
+		delObj(%end);
 		if (!isObject(%end)) {
-			%end =  new GuiContainer() {
-				extent = "84 30";
-				profile = "ToolsDefaultProfile";
+			%end = new GuiContainer() {  
+				extent = "27 32";     
+				profile = "ToolsBoxDarkC";   
+				isContainer = "1";
 				internalName = "StackEnd";
-				superClass = "PluginToolbarEnd";
-			};
+				superClass = "PluginToolbarEnd";   
+
+				new GuiBitmapCtrl() {
+					bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+					wrap = "0";
+					position = "6 5";
+					extent = "17 22"; 
+					internalName = "StackEndImg";    
+				};
+			};			
 			%defaultStack.add(%end);
 		}
-		%end.setExtent(9,30);
+		%end.setExtent(27,32);
+		hide(%end);
 		%disabled = %gui.defaultStack-->DisabledIcons;
 
 		if (!isObject(%disabled)) {
@@ -85,40 +109,38 @@ function Lab::initToolbarGroup(%this,%gui) {
 		foreach(%ctrl in %defaultStack)
 			if (%ctrl.getClassName() $= "GuiStackControl")
 				%pluginObj.toolbarGroups = strAddWord(%pluginObj.toolbarGroups,%ctrl.getId());
-
-		%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj);
-	}
-	else {
-		%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj);
-		info(%gui.getName(),"have Drag and Drop Disabled");
-	}
+	
+	%gui.stackLists = "";
+		%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj,%gui);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj) {
+function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj,%gui) {
 	%pluginText = "";
 	if (isObject(%pluginObj)){
 		%pluginText = "Plugin";
 		%pluginName = %pluginObj.plugin;
 	}
-
+	
 	foreach(%ctrl in %group) {
 		if (%pluginName !$= "")
 				%ctrl.pluginName = %pluginName;
 		if (%ctrl.isMemberOfClass("GuiStackControl")) {
-		
-			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
+			Lab.getStackEndGui(%ctrl,true);
+			%gui.stackLists = strAddWord(%gui.stackLists,%ctrl.getId(),true);
+			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
 			continue;
 		}
 		if (%ctrl.isMemberOfClass("GuiContainer")) {
 			
-			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
+			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
 			continue;
 		}
 		if (%ctrl.isMemberOfClass("GuiMouseEventCtrl")) {			
 			%ctrl.superClass = "Toolbar"@%pluginText@"Group";
 			
-			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
+			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
 			
 			continue;
 		}
@@ -137,6 +159,69 @@ function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj) {
 	}
 }
 
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::getStackEndGui(%this,%gui,%isSubStack) {
+	if (%isSubStack){
+		%end = %gui-->StackEnd;
+		delObj(%end);
+		%end = %gui-->SubStackEnd;
+		delObj(%end);
+		if (!isObject(%end)) {
+			%end = new GuiContainer() {  
+				extent = "18 32";     
+				profile = "ToolsBoxDarkC";   
+				isContainer = "1";
+				internalName = "SubStackEnd";
+				superClass = "PluginToolbarEnd";   
+
+				new GuiBitmapCtrl() {
+					bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+					wrap = "0";
+					position = "4 7";
+					extent = "12 16"; 
+					internalName = "StackEndImg";    
+				};
+			};			
+			%gui.add(%end);
+		}
+		%end.setExtent(18,32);
+		hide(%end);
+	}
+	else {
+		%end = %gui-->StackEnd;
+		delObj(%end);
+		if (!isObject(%end)) {
+			%end = new GuiContainer() {  
+				extent = "27 32";     
+				profile = "ToolsBoxDarkC";   
+				isContainer = "1";
+				internalName = "StackEnd";
+				superClass = "PluginToolbarEnd";   
+
+				new GuiBitmapCtrl() {
+					bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+					wrap = "0";
+					position = "6 5";
+					extent = "17 22";  
+					internalName = "StackEndImg";       
+				};
+			};			
+			%gui.add(%end);
+		}
+		%end.setExtent(27,32);
+		hide(%end);
+	}
+	return;
+	foreach(%gui in LabToolbarGuiSet) {
+		%stackEnd = %gui-->StackEnd;
+		delObj(%stackEnd);
+		foreach$(%stack in %gui.stackLists){
+			%subStackEnd = %stack-->SubStackEnd;			
+			delObj(%subStackEnd);	
+		}
+	}
+}
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::activatePluginToolbar(%this,%pluginObj) {
