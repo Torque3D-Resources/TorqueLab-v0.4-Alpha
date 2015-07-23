@@ -17,6 +17,8 @@ function syncParamArray(%paramArray,%keepEmptyValue) {
       %value = "";
       %syncObjs = getField(%data,4);
       
+      devLog("SyncObj = ",%syncObjs);
+      
       if (%syncObjs $= "") continue;
       //If no object to sync, there might be a prefGroup to use
      
@@ -57,7 +59,11 @@ function syncParamArray(%paramArray,%keepEmptyValue) {
       	warnLog("Couln't find a valid GuiControl holding the value for field:",%field);
       	return;
       }
-      %ctrl.setTypeValue(%value);     
+      %ctrl.setTypeValue(%value); 
+       %ctrl.updateFriends(); 
+      foreach$(%syncCtrl in %ctrl.syncCtrls)
+      	%syncCtrl.setTypeValue(%value); 
+    
    }	
 }
 //------------------------------------------------------------------------------
