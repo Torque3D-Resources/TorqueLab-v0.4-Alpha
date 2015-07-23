@@ -4,10 +4,11 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 $EPostFx_PresetFolder = "scripts/client/gfx/postFX/presets";
-$EPostFx_PresetFileFilter = "Post Effect Presets|*.pfx.cs";
-$EPostFx_Fields_General = "EnableVignette EnableSSAO EnableHDR EnableLightRays Enable ColorCorrectionRamp";
+$EPostFx_PresetFileFilter = "Post Effect Presets|*.pfx.cs|*.postfxpreset.cs";
+
+$EPostFx_Fields_General = "ColorCorrectionRamp";
 $EPostFx_Fields_DOF = "BlurCurveFar BlurCurveNear BlurMax BlurMin EnableAutoFocus EnableDOF FocusRangeMax FocusRangeMin";
-$EPostFx_Fields_HDR = "adaptRate blueShiftColor brightPassThreshold enableBloom enableBlueShift enableToneMapping gaussMean gaussMultiplier gaussStdDev keyValue minLuminace whiteCutoff colorCorrectionRamp DebugEnabled";
+$EPostFx_Fields_HDR = "adaptRate blueShiftColor brightPassThreshold enableBloom enableBlueShift enableToneMapping gaussMean gaussMultiplier gaussStdDev keyValue minLuminace whiteCutoff DebugEnabled ColorCorrectionRamp";
 $EPostFx_Fields_LightRays = "brightScalar decay density numSamples weight";
 $EPostFx_Fields_SSAO = "blurDepthTol blurNormalTol lDepthMax lDepthMin lDepthPow lNormalPow lNormalTol lRadius lStrength overallStrength quality sDepthMax sDepthMin sDepthPow sDepthPow sNormalPow sNormalTol sRadius sStrength";
 $EPostFx_PostFxList = "HDR DOF SSAO LightRays Vignette";
@@ -86,6 +87,7 @@ function EPostFxManager::validatePresetName(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+
 function EPostFxManager::selectPresetFileSave(%this) {
 %default = $EPostFx_PresetFolder@"/default.pfx.cs";
  getSaveFilename($EPostFx_PresetFileFilter, "EPostFxManager.savePresetsToFile", %defaultFile);
@@ -105,12 +107,49 @@ function EPostFxManager::savePresetsToFile(%this,%file) {
 			$PostFxPreset_[%type,%field] = %value;
 		}
 	}
-	
+
 	export("$PostFxPreset_*", %file);
 	info("PostFX Presets exported to file:",%file);
 	%this.updatePresetMenu();
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+//EPostFxManager.saveMissionPresets
+function EPostFxManager::saveMissionPresets(%this) {
+	%missionFile = $Client::MissionFile;
+	%postFxFile = strreplace(%missionFile,".mis",".postfxpreset.cs");
+	
+	//Convert some fields to work with stock templates (Those are bad set in templates, not torquelab)
+	$GeneralPostFx::ColorCorrectionRamp = $HDRPostFx::ColorCorrectionRamp;
+	
+	foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){
+			eval("%value = $LabPostFx_Enabled_"@%field@";");
+			eval("$PostFXManager::Settings::Enable"@%field@" = %value;");
+			
+	}
+	foreach$(%type in "DOF HDR LightRays SSAO"){
+		foreach$(%field in $EPostFx_Fields_[%type]){
+			//General fields for mission with no prefix store below
+			if (strFindWords(%field,$EPostFx_Fields_General)) {
+				devLog("Skipping general field for mission export:",%field);
+				continue;
+			}
+			eval("%value = $"@%type@"PostFx::"@%field@";");			
+			eval("$PostFXManager::Settings::"@%type@"::"@%field@" = %value;");
+		}
+	}
+	//General presets are not using prefix in stock template
+	foreach$(%field in $EPostFx_Fields_General){
+			eval("%value = $GeneralPostFx::"@%field@";");
+			eval("$PostFXManager::Settings::"@%field@" = %value;");
+			
+	}
+	export("$PostFXManager::Settings::*", %postFxFile);
+	info("MISSION PostFX Presets exported to mission file:",%postFxFile);
+	
+}
+//------------------------------------------------------------------------------
+
 //==============================================================================
 // LOAD PostFx Presets
 //==============================================================================
