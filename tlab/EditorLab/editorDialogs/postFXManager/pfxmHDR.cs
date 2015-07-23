@@ -90,7 +90,9 @@ function EPostFx_DebugHDRCheckbox::onClick(%this)
    if ( %this.getValue() )
       LuminanceVisPostFX.enable();
    else
-      LuminanceVisPostFX.disable();   
+      LuminanceVisPostFX.disable(); 
+	
+	$HDRPostFX::DebugEnabled = %this.getValue();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -125,5 +127,8 @@ function EPostFxManager::customSyncHDR(%this) {
 	logd("EPostFxManager::customSyncHDR(%this)",%this);
 	%blueShift = $HDRPostFx::enableBlueShift;
 	EPostFxManager-->enableBlueShift.setStateOn(%blueShift);	
+	
+	%debug = $HDRPostFX::DebugEnabled;
+	EPostFxManager-->enableDebugMode.setStateOn(%debug);	
 }
 //------------------------------------------------------------------------------

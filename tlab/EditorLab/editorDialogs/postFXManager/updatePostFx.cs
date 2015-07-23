@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$EPostFx_PostFxList = "HDR DOF SSAO LightRays Vignette";
+
 //==============================================================================
 function EPostFxManager::syncAll(%this) {
 	foreach$(%type in $EPostFx_PostFxList){
@@ -17,7 +17,12 @@ function EPostFxManager::syncAll(%this) {
 
 //==============================================================================
 function EPostFxManager::applyPostFXSettings(%this) {
-	
+	%this.settingsSetEnabled( $LabPostFx_Enabled_PostFX);
+	/*foreach$(%type in $EPostFx_PostFxList){
+		eval("%enabled = $LabPostFx_Enabled_"@%type@";");
+		info(%type,"Enabled:",%enabled);
+		%this.settingsEffectSetEnabled(%type,%enabled);
+	}*/
 	%this.UpdateDOFSettings();
 	EPostFxManager.syncAll();
 }
@@ -41,34 +46,41 @@ function EPostFxManager_EnableCheck::onAction(%this) {
 //------------------------------------------------------------------------------
 function EPostFxManager::settingsSetEnabled(%this, %bEnablePostFX)
 {	
-   $LabPostFx_General_Enabled = %bEnablePostFX;
-   
+    $LabPostFx_Enabled_PostFX = %bEnablePostFX;
+ 
    //if to enable the postFX, apply the ones that are enabled
    if ( %bEnablePostFX )
    {
       //SSAO, HDR, LightRays, DOF
-      
-      if ( $LabPostFx_General_EnableSSAO )      
+      foreach$(%type in $EPostFx_PostFxList){
+			eval("%enabled = $LabPostFx_Enabled_"@%type@";");			
+			%this.settingsEffectSetEnabled(%type,%enabled);
+			info(%type,"PostFX Enabled SO Enabled:",%enabled);
+		}
+		return;
+      if ( $LabPostFx_Enabled_SSAO )      
          SSAOPostFx.enable();      
       else
          SSAOPostFx.disable();
       
-      if ( $LabPostFx_General_EnableHDR )
+      if ( $LabPostFx_Enabled_HDR ){
          HDRPostFX.enable();
-      else
+      }
+      else{
          HDRPostFX.disable();
+      }
 
-      if ( $LabPostFx_General_EnableLightRays )
+      if ( $LabPostFx_Enabled_LightRays )
          LightRayPostFX.enable();
       else
          LightRayPostFX.disable();
       
-      if ( $LabPostFx_General_EnableDOF )
+      if ( $LabPostFx_Enabled_DOF )
          DOFPostEffect.enable();
       else
          DOFPostEffect.disable();
 		 
-      if ( $LabPostFx_General_EnableVignette )
+      if ( $LabPostFx_Enabled_Vignette )
          VignettePostEffect.enable();
       else
          VignettePostEffect.disable();
@@ -92,24 +104,29 @@ function EPostFxManager::settingsSetEnabled(%this, %bEnablePostFX)
 function EPostFxManager::settingsEffectSetEnabled(%this, %sName, %bEnable)
 {
    %postEffect = 0;
-  
+  if (%bEnable $= "")
+  	%bEnable = "0";
    //Determine the postFX to enable, and apply the boolean
    if(%sName $= "SSAO")
    {
       %postEffect = SSAOPostFx;
-      $LabPostFx_General_EnableSSAO = %bEnable;
+      $LabPostFx_Enabled_SSAO = %bEnable;
       //$pref::PostFX::SSAO::Enabled = %bEnable;
    }
    else if(%sName $= "HDR")
    {
       %postEffect = HDRPostFX;
-      $LabPostFx_General_EnableHDR = %bEnable;
+      $LabPostFx_Enabled_HDR = %bEnable;
+      if (%bEnable && $HDRPostFx::DebugEnabled)
+      	 LuminanceVisPostFX.enable();
+		else
+			 LuminanceVisPostFX.disable();
       //$pref::PostFX::HDR::Enabled = %bEnable;
    }
    else if(%sName $= "LightRays")
    {
       %postEffect = LightRayPostFX;
-      $LabPostFx_General_EnableLightRays = %bEnable;
+      $LabPostFx_Enabled_LightRays = %bEnable;
       //$pref::PostFX::LightRays::Enabled = %bEnable;      
    }
    else if(%sName $= "DOF")
@@ -123,18 +140,18 @@ function EPostFxManager::settingsEffectSetEnabled(%this, %sName, %bEnable)
 			info("% - Lab PostFX Manager - " @ %sName @ " disabled");
 			return;
       %postEffect = DOFPostEffect;
-      $LabPostFx_General_EnableDOF = %bEnable;
+      $LabPostFx_Enabled_DOF = %bEnable;
       //$pref::PostFX::DOF::Enabled = %bEnable;
    }
    else if(%sName $= "Vignette")
    {
       %postEffect = VignettePostEffect;
-      $LabPostFx_General_EnableVignette = %bEnable;
+     $LabPostFx_Enabled_Vignette = %bEnable;
       //$pref::PostFX::Vignette::Enabled = %bEnable;
    }
    
    // Apply the change
-   if ( %bEnable == true )
+   if ( %bEnable )
    {
       %postEffect.enable();
       info("% - PostFX Manager - " @ %sName @ " enabled");

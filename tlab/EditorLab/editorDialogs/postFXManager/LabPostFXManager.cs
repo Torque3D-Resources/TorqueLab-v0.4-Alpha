@@ -4,6 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
+EPostFxManager.initialized = false;
 function EPostFxManager::onWake(%this) {
 	devLog("EPostFxManager::onWake");
 	//Check if the UI is all there (Might be moved and forgotten)
@@ -39,12 +40,13 @@ function EPostFxManager::onSleep(%this) {
 
 //==============================================================================
 function EPostFxManager::init(%this,%notInitialized) {
-	%this.initPresets();
+	
 	%this.buildParamsHDR();
 	%this.buildParamsSSAO();
 	%this.buildParamsLightRays();
 	%this.buildParamsDOF();
 	%this.buildParamsVignette();
+	EPostFxManager.initPresets();
 	if (%notInitialized $= "")
 		EPostFxManager.initialized = true;
 	else

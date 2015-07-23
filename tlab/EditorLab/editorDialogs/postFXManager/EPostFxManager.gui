@@ -16,7 +16,7 @@
    anchorBottom = "0";
    anchorLeft = "1";
    anchorRight = "0";
-   position = "478 55";
+   position = "251 88";
    extent = "389 740";
    minExtent = "8 2";
    horizSizing = "right";
@@ -36,18 +36,18 @@
       createSkyType = "ScatterSky";
       currentCloudLayer = "0";
       defaultParent = "GuiGroup";
-      DOFParamArray = "20018";
+      DOFParamArray = "20536";
       EditorContainer = "EditorDialogs";
       editorParent = "SceneEditorDialogs";
       FogParamArray = "69268";
       gameName = "Ambient Manager";
-      HDRParamArray = "19846";
+      HDRParamArray = "20364";
       initialized = "1";
       isDirty = "0";
-      LightRaysParamArray = "19986";
+      LightRaysParamArray = "20504";
       skySystem = "ScatterSky";
-      SSAOParamArray = "19896";
-      VignetteParamArray = "20059";
+      SSAOParamArray = "20414";
+      VignetteParamArray = "20577";
 
    new GuiContainer(EPostFxManager_Main) {
       docking = "Client";
@@ -194,7 +194,7 @@
                sinkAllKeyEvents = "0";
                password = "0";
                passwordMask = "*";
-               text = "[Preset Name]";
+               text = "default";
                maxLength = "1024";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -252,7 +252,7 @@
                vertSizing = "bottom";
                profile = "ToolsButtonProfile_S1";
                visible = "1";
-               active = "0";
+               active = "1";
                command = "EPostFxManager.saveActivePreset();";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
@@ -500,7 +500,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "art/gfx/postFX/colorRampsA/cRampA_SunsetA.png";
+                     text = "art/gfx/postFX/ccRampPack/Contrast.png";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -737,6 +737,7 @@
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
+                        internalName = "enableDebugMode";
                         canSave = "1";
                         canSaveDynamicFields = "0";
                      };
@@ -2770,6 +2771,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "22.4242";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -2795,10 +2797,10 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSliderCtrl() {
-                                 range = "0 50";
+                                 range = "0 1";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.5";
+                                 value = "1";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -2871,6 +2873,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "46.5152";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -2896,10 +2899,10 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSliderCtrl() {
-                                 range = "0 50";
+                                 range = "0 1";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.5";
+                                 value = "1";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -2972,6 +2975,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "0.105455";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -2997,10 +3001,10 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSliderCtrl() {
-                                 range = "0 0.3";
+                                 range = "0 100";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.3";
+                                 value = "0.105455";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -3073,6 +3077,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "0.542424";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -3098,10 +3103,10 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSliderCtrl() {
-                                 range = "0 1";
+                                 range = "0 200";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.5";
+                                 value = "0.542424";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -3174,6 +3179,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "0.264545";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -3199,10 +3205,10 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSliderCtrl() {
-                                 range = "0 0.3";
+                                 range = "-1 0";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.3";
+                                 value = "0";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -3275,6 +3281,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
+                                 text = "0.560606";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -3303,7 +3310,7 @@
                                  range = "0 1";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "0.5";
+                                 value = "0.560606";
                                  position = "2 19";
                                  extent = "340 11";
                                  minExtent = "8 2";
@@ -3340,7 +3347,7 @@
             anchorLeft = "1";
             anchorRight = "1";
             position = "0 17";
-            extent = "520 584";
+            extent = "377 623";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -3364,7 +3371,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "520 584";
+               extent = "377 623";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -3417,7 +3424,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 18";
-                  extent = "512 562";
+                  extent = "369 601";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -3441,7 +3448,7 @@
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
                      position = "3 3";
-                     extent = "487 273";
+                     extent = "344 273";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -3465,7 +3472,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 0";
-                        extent = "487 224";
+                        extent = "344 224";
                         minExtent = "16 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3487,7 +3494,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "487 224";
+                           extent = "344 224";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -3512,7 +3519,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "0 27";
-                              extent = "487 191";
+                              extent = "344 191";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -3535,7 +3542,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "487 16";
+                                 extent = "344 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -3578,7 +3585,7 @@
                                     groupNum = "-1";
                                     buttonType = "ToggleButton";
                                     useMouseEvents = "0";
-                                    position = "466 0";
+                                    position = "323 0";
                                     extent = "15 16";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -3605,7 +3612,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 19";
-                                 extent = "487 32";
+                                 extent = "344 32";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -3651,6 +3658,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
+                                    text = "0.75";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -3658,7 +3666,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "435 0";
+                                    position = "292 0";
                                     extent = "50 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -3679,9 +3687,9 @@
                                     range = "0 5";
                                     ticks = "0";
                                     snap = "0";
-                                    value = "0.5";
+                                    value = "0.75";
                                     position = "2 19";
-                                    extent = "483 11";
+                                    extent = "340 11";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -3706,7 +3714,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 54";
-                                 extent = "487 32";
+                                 extent = "344 32";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -3752,6 +3760,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
+                                    text = "40";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -3759,7 +3768,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "435 0";
+                                    position = "292 0";
                                     extent = "50 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -3780,9 +3789,9 @@
                                     range = "20 512";
                                     ticks = "0";
                                     snap = "0";
-                                    value = "20";
+                                    value = "40";
                                     position = "2 19";
-                                    extent = "483 11";
+                                    extent = "340 11";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -3807,7 +3816,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 89";
-                                 extent = "487 32";
+                                 extent = "344 32";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -3853,6 +3862,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
+                                    text = "0.94";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -3860,7 +3870,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "435 0";
+                                    position = "292 0";
                                     extent = "50 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -3881,9 +3891,9 @@
                                     range = "0.01 1";
                                     ticks = "0";
                                     snap = "0";
-                                    value = "0.5";
+                                    value = "0.94";
                                     position = "2 19";
-                                    extent = "483 11";
+                                    extent = "340 11";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -3908,7 +3918,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 124";
-                                 extent = "487 32";
+                                 extent = "344 32";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -3954,6 +3964,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
+                                    text = "5.65";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -3961,7 +3972,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "435 0";
+                                    position = "292 0";
                                     extent = "50 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -3982,9 +3993,9 @@
                                     range = "0.1 10";
                                     ticks = "0";
                                     snap = "0";
-                                    value = "0.5";
+                                    value = "5.65";
                                     position = "2 19";
-                                    extent = "483 11";
+                                    extent = "340 11";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -4009,7 +4020,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 159";
-                                 extent = "487 32";
+                                 extent = "344 32";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -4055,6 +4066,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
+                                    text = "1.0";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -4062,7 +4074,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "435 0";
+                                    position = "292 0";
                                     extent = "50 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -4083,9 +4095,9 @@
                                     range = "0.01 1";
                                     ticks = "0";
                                     snap = "0";
-                                    value = "0.5";
+                                    value = "1";
                                     position = "2 19";
-                                    extent = "483 11";
+                                    extent = "340 11";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -4116,7 +4128,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 224";
-                        extent = "487 49";
+                        extent = "344 49";
                         minExtent = "16 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4138,7 +4150,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "487 49";
+                           extent = "344 49";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -4163,7 +4175,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "0 27";
-                              extent = "487 16";
+                              extent = "344 16";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -4186,7 +4198,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "487 16";
+                                 extent = "344 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -4229,7 +4241,7 @@
                                     groupNum = "-1";
                                     buttonType = "ToggleButton";
                                     useMouseEvents = "0";
-                                    position = "466 0";
+                                    position = "323 0";
                                     extent = "15 16";
                                     minExtent = "8 2";
                                     horizSizing = "left";
