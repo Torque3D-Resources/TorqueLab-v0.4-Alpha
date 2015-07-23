@@ -9,7 +9,7 @@ $LabPlugin::ToolbarPos = "306 0";
 //Reinitialize all plugin data
 function Lab::prepareAllPluginsGui(%this) {
 	//Prepare the plugins toolbars
-	%this.initAllPluginsToolbar();
+	%this.initAllToolbarGroups();
 	%this.initAllPluginsDialogs();
 	
 	

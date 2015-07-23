@@ -96,29 +96,38 @@ function EPostFxManager::selectPresetFileSave(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::savePresetsToFile(%this,%file) {
-	
-	foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){
-			eval("%value = $LabPostFx_Enabled_"@%field@";");
-			$PostFxPreset_["Enabled",%field] = %value;
+	%useStockFormat = EPostFxManager_Main-->storeAsStockPreset.isStateOn();
+	if (%useStockFormat){
+		EPostFxManager.saveMissionPresets(%file);
 	}
-	foreach$(%type in "DOF HDR LightRays SSAO"){
-		foreach$(%field in $EPostFx_Fields_[%type]){
-			eval("%value = $"@%type@"PostFx::"@%field@";");			
-			$PostFxPreset_[%type,%field] = %value;
+	else {
+		$PostFXPresetFormat = "Lab";
+		foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){
+				eval("%value = $LabPostFx_Enabled_"@%field@";");
+				$PostFxPreset_["Enabled",%field] = %value;
 		}
+		foreach$(%type in "DOF HDR LightRays SSAO"){
+			foreach$(%field in $EPostFx_Fields_[%type]){
+				eval("%value = $"@%type@"PostFx::"@%field@";");			
+				$PostFxPreset_[%type,%field] = %value;
+			}
+		}
+		export("$PostFXPresetFor*", %file);
+		export("$PostFxPreset_*", %file);
 	}
 
-	export("$PostFxPreset_*", %file);
 	info("PostFX Presets exported to file:",%file);
 	%this.updatePresetMenu();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //EPostFxManager.saveMissionPresets
-function EPostFxManager::saveMissionPresets(%this) {
-	%missionFile = $Client::MissionFile;
-	%postFxFile = strreplace(%missionFile,".mis",".postfxpreset.cs");
-	
+function EPostFxManager::saveMissionPresets(%this,%postFxFile) {
+	if (%postFxFile $= ""){
+		%missionFile = $Client::MissionFile;
+		%postFxFile = strreplace(%missionFile,".mis",".postfxpreset.cs");
+	}
+	$PostFXPresetFormat = "Stock";
 	//Convert some fields to work with stock templates (Those are bad set in templates, not torquelab)
 	$GeneralPostFx::ColorCorrectionRamp = $HDRPostFx::ColorCorrectionRamp;
 	
@@ -144,7 +153,8 @@ function EPostFxManager::saveMissionPresets(%this) {
 			eval("$PostFXManager::Settings::"@%field@" = %value;");
 			
 	}
-	export("$PostFXManager::Settings::*", %postFxFile);
+	export("$PostFXPresetFor*", %postFxFile);
+	export("$PostFXManager::Settings::*", %postFxFile,true);
 	info("MISSION PostFX Presets exported to mission file:",%postFxFile);
 	
 }
@@ -164,9 +174,42 @@ function EPostFxManager::selectPresetFileLoad(%this) {
 function EPostFxManager::loadPresetsFromFile(%this,%file) {
 	if (!isFile(%file))
 		return false;
+	$PostFXPresetFormat = "";
 	exec(%file);
+	if ($PostFXPresetFormat $= "Stock"){
+		%this.loadStockPresets();
+	}
+	else {
+		%this.loadLabPresets();		
+	}
+	info("PostFX Presets imported from file:",%file,"With Format:",$PostFXPresetFormat);
+	%this.applyPostFXSettings();
+	return true;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function EPostFxManager::loadLabPresets(%this) {	
 	foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){			
-			%value = $PostFxPreset_["Enabled",%field];
+				%value = $PostFxPreset_["Enabled",%field];
+				if (%value $= "")
+					%value = "0";
+				eval("$LabPostFx_Enabled_"@%field@" = %value;");
+				info("Pref:","$LabPostFx_Enabled_"@%field,"Value",%value);
+		}
+		foreach$(%type in "DOF HDR LightRays SSAO"){
+			foreach$(%field in $EPostFx_Fields_[%type]){
+				%value = $PostFxPreset_[%type,%field];
+				eval("$"@%type@"PostFx::"@%field@" = %value;");	
+				//info("Pref:","$"@%type@"PostFx::"@%field,"Value",%value);	
+			}
+		}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function EPostFxManager::loadStockPresets(%this) {
+	
+	foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){			
+			eval("%value = $PostFXManager::Settings::Enable"@%field@";");
 			if (%value $= "")
 				%value = "0";
 			eval("$LabPostFx_Enabled_"@%field@" = %value;");
@@ -174,18 +217,17 @@ function EPostFxManager::loadPresetsFromFile(%this,%file) {
 	}
 	foreach$(%type in "DOF HDR LightRays SSAO"){
 		foreach$(%field in $EPostFx_Fields_[%type]){
-			%value = $PostFxPreset_[%type,%field];
+			eval("%value = $PostFXManager::Settings::"@%type@"::"@%field@";");
+			
 			eval("$"@%type@"PostFx::"@%field@" = %value;");	
 			//info("Pref:","$"@%type@"PostFx::"@%field,"Value",%value);	
 		}
+		
 	}	
-
-	info("PostFX Presets imported from file:",%file);
-	%this.applyPostFXSettings();
-	return true;
+	
+	$HDRPostFX::ColorCorrectionRamp = $PostFXManager::Settings::ColorCorrectionRamp;		
 }
 //------------------------------------------------------------------------------
-
 //==============================================================================
 function EPostFxManager::dumpPrefs(%this) {
 	export("$LabPostFx*", "tlab/postFxPrefs.cs");

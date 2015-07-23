@@ -40,6 +40,8 @@ function Lab::initEditorGui( %this ) {
 	newSimSet("LabEditorGuiSet");
 	newSimSet("LabExtraGuiSet");
 	newSimSet("LabToolbarGuiSet");
+	newSimSet("LabToolbarEndGuiSet");
+	newSimSet("LabToolbarStartGuiSet");
 	newSimSet("LabPaletteGuiSet");
 	newSimSet("LabDialogGuiSet");
 	newSimSet("LabSettingGuiSet");
@@ -51,6 +53,8 @@ function Lab::initEditorGui( %this ) {
 	$LabWorldContainer = EditorGui-->WorldContainer;
 	$LabSettingContainer = EditorGui-->SettingContainer;
 	$LabToolbarContainer = EditorGui-->ToolbarContainer;
+	$LabToolbarEndContainer = EditorGui-->ToolbarContainerEnd;
+	$LabToolbarStartContainer = EditorGui-->ToolbarContainerStart;
 	$LabDialogContainer = EditorGui-->ToolsContainer;
 	$LabEditorContainer = EditorGui-->EditorContainer;
 	$LabExtraContainer = EditorGui-->ExtraContainer;

@@ -10,7 +10,7 @@ $TMG_TerrainTextureFormats = "JPG DDS PNG";
 function TMG::buildTerrainInfoParams( %this ) {
 	%arCfg = createParamsArray("TMG_Terrain",TMG_TerrainArrayStack);
 	%arCfg.updateFunc = "TMG.updateTerrainParam";
-	%arCfg.style = "LabCfgB_230";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
 
 	%arCfg.group[%gid++] = "TerrainBlock Parameters";
@@ -23,7 +23,7 @@ function TMG::buildTerrainInfoParams( %this ) {
 	%arCfg.setVal("lightMapSize",        "" TAB "lightMapSize" TAB "TextEdit" TAB "" TAB "TMG.activeTerrain" TAB %gid);
 	%arCfg.setVal("screenError",        "" TAB "screenError" TAB "TextEdit" TAB "" TAB "TMG.activeTerrain" TAB %gid);	
 	
-	buildParamsArray(%arCfg,false);
+	buildParamsArray(%arCfg,isObject(TMG.activeTerrain));
 	%this.terrainArray = %arCfg;
 }
 //------------------------------------------------------------------------------

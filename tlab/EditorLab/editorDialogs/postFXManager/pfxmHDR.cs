@@ -30,8 +30,8 @@ function EPostFxManager::buildParamsHDR( %this ) {
 	%arCfg.setVal("whiteCutoff",       "" TAB "White cut-off" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("adaptRate",       "" TAB "Adapt rate" TAB "SliderEdit" TAB "range>>0.1 10" TAB "EPostFxManager" TAB %gid);
 	
-
-
+	%arCfg.group[%gid++] = "ColorShift Settings" TAB "StackType none;;Stack StackColorShift";	
+	%arCfg.setVal("enableBlueShift",       "" TAB "Color shift amount (0 = disabled)" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 
 	buildParamsArray(%arCfg,false);
 	%this.HDRParamArray = %arCfg;
@@ -125,10 +125,13 @@ function EPostFx_ColorShiftBasePicker::onAction(%this)
 //==============================================================================
 function EPostFxManager::customSyncHDR(%this) {
 	logd("EPostFxManager::customSyncHDR(%this)",%this);
-	%blueShift = $HDRPostFx::enableBlueShift;
-	EPostFxManager-->enableBlueShift.setStateOn(%blueShift);	
+
 	
 	%debug = $HDRPostFX::DebugEnabled;
-	EPostFxManager-->enableDebugMode.setStateOn(%debug);	
+	EPostFxManager_Main-->enableDebugMode.setStateOn(%debug);	
+	
+	EPostFx_EnableHDRCheckbox.setStateOn($LabPostFx_Enabled_HDR);
+	
+	 %this-->ColorCorrectionFileName.Text = $HDRPostFX::colorCorrectionRamp;
 }
 //------------------------------------------------------------------------------

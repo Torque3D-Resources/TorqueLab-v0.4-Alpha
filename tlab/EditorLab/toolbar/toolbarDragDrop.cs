@@ -8,14 +8,24 @@
 //==============================================================================
 //==============================================================================
 // Start dragging a toolbar icon
+function ToolbarPluginIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {	
+	if (!isObject(%this)) {
+		devLog("ToolbarPluginIcon class is corrupted! Fix it!");
+		return;
+	}
+
+	Lab.startToolbarDrag(%this,%a1,%a2,%a3);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Start dragging a toolbar icon
 function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	if (!isObject(%this)) {
 		devLog("PluginIcon class is corrupted! Fix it!");
 		return;
 	}
-
-	startDragAndDropCtrl(%this,"Toolbar","Lab.onToolbarIconDroppedDefault");
-	hide(%this);
+	Lab.startToolbarDrag(%this,%a1,%a2,%a3);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -25,13 +35,30 @@ function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {
 		devLog("ToolbarBoxChild class is corrupted! Fix it!");
 		return;
 	}
-
 	%src = %this.parentGroup;
-	startDragAndDropCtrl(%src,"Toolbar","Lab.onToolbarIconDroppedDefault");
-	hide(%src);
+	Lab.startToolbarDrag(%src,%a1,%a2,%a3);
+	
 }
 //------------------------------------------------------------------------------
 
+
+
+//==============================================================================
+// Start dragging a toolbar icons group
+function ToolbarPluginGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
+	if (!isObject(%this)) {
+		devLog("ToolbarGroup class is corrupted! Fix it!");
+		return;
+	}
+
+	%group = %this.parentGroup.parentGroup;
+
+	if (%group.getClassName() !$= "GuiStackControl")
+		return;
+	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
+
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Start dragging a toolbar icons group
 function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
@@ -44,12 +71,24 @@ function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
 
 	if (%group.getClassName() !$= "GuiStackControl")
 		return;
+	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
 
-	startDragAndDropCtrl(%group,"Toolbar","Lab.onToolbarIconDroppedDefault");
-	hide(%group);
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+// Start dragging a toolbar icons group
+function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
+	if (!isObject(%this)) {
+		devLog("ToolbarBoxChild class is corrupted! Fix it!");
+		return;
+	}
+	
+	
+	startDragAndDropCtrl(%ctrl,"Toolbar","Lab.onToolbarIconDroppedDefault");	
+	hide(%ctrl);
+	Lab.showDisabledToolbarDropArea(	%ctrl);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Toolbar Dropping a dragged item callbacks
 //==============================================================================
@@ -58,7 +97,7 @@ function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
 // Dragged control dropped in Toolbar Trash Bin
 function EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint) {
 	%droppedCtrl = %control.dragSourceControl;
-
+Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		show(%droppedCtrl);
@@ -96,13 +135,21 @@ function EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint) {
 function ToolbarIcon::onControlDropped(%this, %control, %dropPoint) {
 
 	%droppedCtrl = %control.dragSourceControl;
-
+Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		show(%droppedCtrl);
 		return;
 	}
-
+	
+	
+		if(%droppedCtrl.pluginName !$= %this.pluginName){			
+			warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%droppedCtrl.pluginName,"On",%this.pluginName);			
+			show(%droppedCtrl);
+			return;
+		}
+	
+	
 	if(isObject(%droppedCtrl.srcCtrl))
 	{
 	
@@ -139,7 +186,7 @@ function ToolbarIcon::onControlDropped(%this, %control, %dropPoint) {
 // Dragged control dropped over a toolbar icon
 function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
 	%droppedCtrl = %control.dragSourceControl;
-
+	Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		show(%droppedCtrl);
@@ -169,13 +216,28 @@ function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
 // Dragged control dropped over undefined control (gonna check if it's droppable)
 function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
 	%droppedCtrl = %draggedControl.dragSourceControl;
-
+Lab.hideDisabledToolbarDropArea(	);
 	if (%draggedControl.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		show(%droppedCtrl);
 		return;
 	}
 
+	if (%dropOnCtrl.superClass $= "ToolbarIconNoDrop"){
+		warnLog("Can't drop on locked icons");
+		show(%droppedCtrl);
+		return;
+	}
+
+		if(%draggedControl.pluginName !$= %dropOnCtrl.pluginName){	
+			devLog("Dropped Plugin Name:",%draggedControl.pluginName);
+			devLog("Dropped on Plugin Name:",%dropOnCtrl.pluginName);			
+			warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl.pluginName,"On",%dropOnCtrl.pluginName);			
+			show(%droppedCtrl);
+			return;
+		}
+	
+	
 	show(%droppedCtrl);
 	%addBefore = %dropOnCtrl;
 
@@ -324,3 +386,25 @@ function Lab::createNewToolbarIconGroup(%this) {
 	};
 	return %newGroup;
 }
+//==============================================================================
+function Lab::showDisabledToolbarDropArea(%this,%dragControl) {	
+	EToolbarDisabledDrop.visible = 1;
+	foreach(%gui in EToolbarDisabledDrop) {
+		if (%gui.pluginName !$= %dragControl.pluginName){
+			%src = %gui.internalName;
+			if (%src.visible $= "0")
+				continue;
+			%gui.visible = 1;
+			%gui.setExtent(%src.extent.x,EditorGuiToolbar.extent.y);
+			%gui.setPosition(%src.position.x,0);
+		}		
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::hideDisabledToolbarDropArea(%this) {		
+	foreach(%gui in EToolbarDisabledDrop)
+			%gui.visible = 0;				
+	EToolbarDisabledDrop.visible = 0;		
+}
+//------------------------------------------------------------------------------

@@ -26,10 +26,19 @@ function EPostFxManager::onShow(%this) {
 		
 	if (!EPostFxManager.initialized)
 		EPostFxManager.init();
-	
-	
+	$EPostFxManagerActive = true;
+	SceneEditorToolbar-->PostFXManager.setStateOn(true);
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+function EPostFxManager::onHide(%this) {
+	devLog("EPostFxManager::onHide");
+	
+	$EPostFxManagerActive = false;
+	SceneEditorToolbar-->PostFXManager.setStateOn(false);
+}
+//------------------------------------------------------------------------------
+
 //==============================================================================
 function EPostFxManager::onSleep(%this) {
 	

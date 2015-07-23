@@ -7,24 +7,25 @@
 //==============================================================================
 // Initialize the Toolbar
 //==============================================================================
-//==============================================================================
-function Lab::initAllPluginsToolbar() {
-	EGuiCustomizer-->saveToolbar.active = false;
 
+//==============================================================================
+function Lab::initAllToolbarGroups(%this) {
+	EGuiCustomizer-->saveToolbar.active = false;	
+	
 	foreach(%gui in LabToolbarGuiSet) {
-		Lab.initPluginToolbar(%gui);
+		Lab.initToolbarGroup(%gui);
 	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::initPluginToolbar(%this,%gui) {
+function Lab::initToolbarGroup(%this,%gui) {
 	if (%gui.plugin $= "")
 		%gui.plugin = strreplace(%gui.getName(),"Toolbar","");
 
 	%pluginObj = %gui.plugin@"Plugin";
 	%pluginObj.iconList = "";
 	%pluginObj.toolbarGui = %gui;
-
+	%pluginName = %pluginObj.plugin;
 	if (!isObject(%pluginObj))
 		warnLog("Can't find the plugin obj for gui:",%gui,%gui.getName());
 
@@ -35,61 +36,103 @@ function Lab::initPluginToolbar(%this,%gui) {
 
 	%defaultStack.superClass = "ToolbarPluginStack";
 	%gui.defaultStack = %defaultStack;
-	%end = %gui.defaultStack-->StackEnd;
+	
+	%disabledDropContainer = EToolbarDisabledDrop.findObjectByInternalName(%gui.getName());
+	if (!isObject(%disabledDropContainer)) {
+			%disabledDropContainer =  new GuiContainer() {				
+				extent = %gui.extent;				
+				horizSizing = "width";
+				profile = "ToolsPanelDarkA";
+				internalName = %gui.getName();
+				superClass = "PluginToolbarEnd";				
+			};
+			EToolbarDisabledDrop.add(%disabledDropContainer);
+		}
+	%disabledDropContainer.profile = "ToolsPanelDarkA_T50";
+	%disabledDropContainer.pluginName = %pluginName;	
+	%disabledDropContainer.setPosition(%gui.position.x,%gui.position.y);
+	hide(%disabledDropContainer);	
+	
+	if(!%gui.noDrag){
+		%end = %gui.defaultStack-->StackEnd;
 
-	if (!isObject(%end)) {
-		%end =  new GuiContainer() {
-			extent = "84 30";
-			profile = "ToolsDefaultProfile";
-			internalName = "StackEnd";
-			superClass = "PluginToolbarEnd";
-		};
-		%defaultStack.add(%end);
+		if (!isObject(%end)) {
+			%end =  new GuiContainer() {
+				extent = "84 30";
+				profile = "ToolsDefaultProfile";
+				internalName = "StackEnd";
+				superClass = "PluginToolbarEnd";
+			};
+			%defaultStack.add(%end);
+		}
+		%end.setExtent(9,30);
+		%disabled = %gui.defaultStack-->DisabledIcons;
+
+		if (!isObject(%disabled)) {
+			%disabled =  new GuiContainer() {
+				extent = "84 30";
+				profile = "ToolsDefaultProfile";
+				internalName = "DisabledIcons";
+				visible = 0;
+			};
+			%defaultStack.add(%disabled);
+		}
+
+		%gui.disabledGroup = %disabled;
+		%defaultStack.pushToBack(%end);
+		%pluginObj.toolbarGroups = "";
+
+		foreach(%ctrl in %defaultStack)
+			if (%ctrl.getClassName() $= "GuiStackControl")
+				%pluginObj.toolbarGroups = strAddWord(%pluginObj.toolbarGroups,%ctrl.getId());
+
+		%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj);
 	}
-
-	%disabled = %gui.defaultStack-->DisabledIcons;
-
-	if (!isObject(%disabled)) {
-		%disabled =  new GuiContainer() {
-			extent = "84 30";
-			profile = "ToolsDefaultProfile";
-			internalName = "DisabledIcons";
-			visible = 0;
-		};
-		%defaultStack.add(%disabled);
+	else {
+		%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj);
+		info(%gui.getName(),"have Drag and Drop Disabled");
 	}
-
-	%gui.disabledGroup = %disabled;
-	%defaultStack.pushToBack(%end);
-	%pluginObj.toolbarGroups = "";
-
-	foreach(%ctrl in %defaultStack)
-		if (%ctrl.getClassName() $= "GuiStackControl")
-			%pluginObj.toolbarGroups = strAddWord(%pluginObj.toolbarGroups,%ctrl.getId());
-
-	%this.scanPluginToolbarGroup(%defaultStack,"",%pluginObj);
-	%plugName = %pluginObj.displayName;
-
-	if (%pluginObj.displayName $= "")
-		%plugName = "InvalidPlugin" SPC %gui.plugin;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj) {
+	%pluginText = "";
+	if (isObject(%pluginObj)){
+		%pluginText = "Plugin";
+		%pluginName = %pluginObj.plugin;
+	}
+
 	foreach(%ctrl in %group) {
+		if (%pluginName !$= "")
+				%ctrl.pluginName = %pluginName;
 		if (%ctrl.isMemberOfClass("GuiStackControl")) {
+		
 			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
 			continue;
 		}
-
+		if (%ctrl.isMemberOfClass("GuiContainer")) {
+			
+			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
+			continue;
+		}
+		if (%ctrl.isMemberOfClass("GuiMouseEventCtrl")) {			
+			%ctrl.superClass = "Toolbar"@%pluginText@"Group";
+			
+			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj);
+			
+			continue;
+		}
 		if (%ctrl.isMemberOfClass("GuiIconButtonCtrl")) {
-			%ctrl.superClass = "ToolbarIcon";
+			
+			%ctrl.superClass = "Toolbar"@%pluginText@"Icon";
 			%ctrl.useMouseEvents = true;
 			%ctrl.toolbar = %pluginObj.toolbarGui;
 			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
+			
 		} else if (%group.isMemberOfClass("GuiStackControl")) {
 			%ctrl.toolbar = %pluginObj.toolbarGui;
 			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
+			
 		}
 	}
 }
@@ -171,6 +214,7 @@ function Lab::storePluginsToolbarState(%this) {
 function Lab::rebuildAllToolbarPluginMenus(%this) {
 	foreach(%gui in LabToolbarGuiSet) {
 		%pluginObj = %gui.plugin@"Plugin";
+		
 		delObj(%pluginObj.toolbarMenu);
 	}
 }

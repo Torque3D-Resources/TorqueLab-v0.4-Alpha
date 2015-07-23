@@ -10,25 +10,24 @@
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
    position = "245 0";
-   extent = "681 32";
+   extent = "713 32";
    minExtent = "16 16";
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "SceneEditorToolbar";
    superClass = "ToolbarPluginStack";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "7640";
-      disabledGroup = "7687";
-      EditorContainer = "5181";
+      defaultStack = "8807";
+      disabledGroup = "8855";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "SceneEditor";
 
@@ -542,7 +541,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7640";
+            toolbar = "8807";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -574,7 +573,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7640";
+            toolbar = "8807";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -605,7 +604,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7640";
+            toolbar = "8807";
       };
    };
    new GuiStackControl() {
@@ -720,7 +719,7 @@
          canSave = "1";
          canSaveDynamicFields = "1";
             isDisabled = "0";
-            toolbar = "7640";
+            toolbar = "8807";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -751,7 +750,7 @@
          canSave = "1";
          canSaveDynamicFields = "1";
             isDisabled = "1";
-            toolbar = "7640";
+            toolbar = "8807";
       };
    };
    new GuiStackControl() {
@@ -857,7 +856,7 @@
          isContainer = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7640";
+            toolbar = "8807";
 
          new GuiTextCtrl() {
             text = "Grid";
@@ -985,7 +984,7 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "7640";
+            toolbar = "8807";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1028,7 +1027,7 @@
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "561 0";
-      extent = "100 30";
+      extent = "132 30";
       minExtent = "16 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -1179,6 +1178,37 @@
          visible = "1";
          active = "1";
          command = "Canvas.pushDialog( TerrainManagerGui );";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "TerrainManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ManagerPostFx.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "102 0";
+         extent = "30 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         variable = "!EPostFxManager.visible";
+         command = "ToggleVisible(EPostFxManager);";
          tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
@@ -1537,7 +1567,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "663 0";
+      position = "695 0";
       extent = "18 30";
       minExtent = "4 2";
       horizSizing = "right";

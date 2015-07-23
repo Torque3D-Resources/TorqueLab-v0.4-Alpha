@@ -6,7 +6,7 @@
 
 
 //==============================================================================
-function Lab::addGui(%this,%gui,%type) {
+function Lab::addGui(%this,%gui,%type,%noHide) {
 	
 %parent = %gui.parentGroup;
 	switch$(%type) {
@@ -23,8 +23,9 @@ function Lab::addGui(%this,%gui,%type) {
 		LabExtraGuiSet.add(%gui);
 
 	case "Toolbar":
-		%container = $LabToolbarContainer;
+		%container = $LabToolbarContainer@%arg1;
 		LabToolbarGuiSet.add(%gui);
+	
 
 	case "Dialog":
 		%container = $LabDialogContainer;
@@ -48,8 +49,9 @@ function Lab::addGui(%this,%gui,%type) {
 	
 	%gui.defaultParent = %gui.parentGroup;
 	LabGuiSet.add(%gui); // Simset Holding all Editor Guis
-	hide(%gui);
-
+	
+	if (!%noHide)
+		hide(%gui);
 	if (isObject(%container)) {
 		%container.add(%gui);
 		%gui.editorContainer = %container;

@@ -43,19 +43,59 @@ function TMG::setTerrainFile( %this,%file ) {
 //==============================================================================
 function TMG::updateTerrainLayers(%this,%clearOnly) {
 	TMG_TerrainLayerStack.clear();
+	hide(TMG_TerrainLayerPill);
+	show(TMG_TerrainLayerStack);
 	if (%clearOnly)
 		return;
 	%mats = ETerrainEditor.getMaterials();
 	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
 		%matInternalName = getRecord( %mats, %i );
-		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
+		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );		
 		%pill = cloneObject(TMG_TerrainLayerPill);
-		%pill-->matInternalName.text = %matInternalName;
-		%pill-->textureMap.text = "Not implemented";
-		%pill-->textureMap.importTextureMapBtn.command = "TMG.importLayerTextureMap(\""@%matInternalName@"\");";
-		%pill-->textureMap.exportTextureMapBtn.command = "TMG.exportLayerTextureMap(\""@%matInternalName@"\");";
+		%pill.matObj = %mat;
+		%pill.layerId = %i;
+		%pill.internalName = "Layer_"@%i;
+		%pill-->materialName.text = "Material:\c1" SPC %mat.internalName;
+		%pill-->materialMouse.pill = %pill;
+		%pill-->materialMouse.superClass = "TMG_GeneralMaterialMouse";
+		%pill-->materialMouse.callback = "TMG_GeneralMaterialChangeCallback";
+		
 		TMG_TerrainLayerStack.add(%pill);
 	}
+	
+}
+//------------------------------------------------------------------------------
+function TMG_GeneralMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCount) {
+	if (%mouseClickCount > 1){
+		TMG.showGeneralMaterialDlg(%this.pill);
+	}
+	
+	
+}
+//==============================================================================
+function TMG::showGeneralMaterialDlg( %this,%pill ) {
+	devLog("TMG::showGeneralMaterialDlg( %this,%pill )", %this,%pill );
+	if (!isObject(%pill)) {
+		warnLog("Invalid layer to change material");
+		return;
+	}
+	if (%callback $= "")
+		%callback = "TMG_LayerMaterialChangeCallback";
+	%mat = %pill.matObj;	
+	TMG.changeMaterialPill = %pill;
+	TMG.changeMaterialLive = %directUpdate;
+	TerrainMaterialDlg.show( %pill.layerId, %mat,TMG_GeneralMaterialChangeCallback );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Callback from TerrainMaterialDlg returning selected material info
+function TMG_GeneralMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
+	devLog(" TMG_LayerMaterialChangeCallback ( %mat, %matIndex, %activeIdx )", %mat, %matIndex, %activeIdx );
+	
+	TMG_LayerMaterialChangeCallback(%mat, %matIndex, %activeIdx );
+	
+	EPainter_TerrainMaterialUpdateCallback(%mat, %matIndex);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

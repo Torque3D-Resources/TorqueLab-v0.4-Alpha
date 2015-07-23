@@ -76,7 +76,7 @@ function TMG::scanTextureMapFolder(%this) {
 // Add New Terrain Layers
 //==============================================================================
 //==============================================================================
-function TMG::addMaterialLayer(%this,%matInternalName) {
+function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
 	if(%matInternalName $= ""){
 		%mats = ETerrainEditor.getMaterials();
 		%matInternalName = getRecord(%mats,0);
@@ -87,7 +87,8 @@ function TMG::addMaterialLayer(%this,%matInternalName) {
 		%pill = cloneObject(TMG_MaterialLayersPill);
 		
 		%pill.matObj = %mat;
-		%pill.internalName = "Layer_"@%i;
+		%pill.layerId = %layerId;
+		%pill.internalName = "Layer_"@%layerId;
 		%pill.matInternalName = %matInternalName;
 		%pill-->materialName.text = "Material:\c1" SPC %matInternalName;
 		
@@ -158,7 +159,7 @@ function TMG::updateMaterialLayers(%this) {
 	%mats = ETerrainEditor.getMaterials();
 	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
 		%matInternalName = getRecord( %mats, %i );
-		%this.addMaterialLayer(%matInternalName);		
+		%this.addMaterialLayer(%matInternalName,%i);		
 	}
 	TMG_PageMaterialLayers-->reimportButton.active = 0;
 }
@@ -202,22 +203,24 @@ function TMG::selectLayerMapMenu(%this,%menu,%layerId,%channels) {
 //==============================================================================
 function TMG_LayerMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCount) {
 	if (%mouseClickCount > 1){
-		TMG.showLayerMaterialDlg(%this.pill);
+		TMG.showLayerMaterialDlg(%this.pill,%this.callback);
 	}
 	
 	
 }
 //==============================================================================
-function TMG::showLayerMaterialDlg( %this,%pill ) {
+function TMG::showLayerMaterialDlg( %this,%pill,%callback ) {
+	devLog("TMG::showLayerMaterialDlg( %this,%pill,%callback )", %this,%pill,%callback );
 	if (!isObject(%pill)) {
 		warnLog("Invalid layer to change material");
 		return;
 	}
+	if (%callback $= "")
+		%callback = "TMG_LayerMaterialChangeCallback";
 	%mat = %pill.matObj;	
 	TMG.changeMaterialPill = %pill;
-
-	%matId = %pill.matId;
-	TerrainMaterialDlg.showByObjectId( %mat, TMG_LayerMaterialChangeCallback );
+	TMG.changeMaterialLive = %directUpdate;
+	TerrainMaterialDlg.showByObjectId( %mat, %callback );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -234,7 +237,13 @@ function TMG_LayerMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
 	
 	%pill.matObj = %mat;
 	%pill.matInternalName = %mat.internalName;
-	%pill-->materialName.text = "Material:\c1" SPC %mat.internalName;
+	%layerId = %pill.layerId;
+	foreach$(%layersStack in "TMG_MaterialLayersStack TMG_TerrainLayerStack"){
+		%layersPill = %layersStack.findObjectByInternalName("Layer_"@%layerId,true);
+		%layersPill-->materialName.text = "Material:\c1" SPC %mat.internalName;
+	}
+	
+	
 	
 }
 //------------------------------------------------------------------------------

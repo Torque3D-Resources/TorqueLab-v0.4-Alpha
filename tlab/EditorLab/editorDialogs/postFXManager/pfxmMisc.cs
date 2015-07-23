@@ -21,8 +21,8 @@ function EPostFxManager::buildParamsLightRays( %this ) {
 	%arCfg.setVal("numSamples",       "" TAB "Samples" TAB "SliderEdit" TAB "range>>20 512" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("density",       "" TAB "Density" TAB "SliderEdit" TAB "range>>0.01 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("weight",       "" TAB "Weight" TAB "SliderEdit" TAB "range>>0.1 10" TAB "EPostFxManager" TAB %gid);
-	%arCfg.setVal("decay",       "" TAB "Decay" TAB "SliderEdit" TAB "range>>0.01 1" TAB "EPostFxManager" TAB %gid);
-	
+	%arCfg.setVal("decay",       "" TAB "Decay (0 to 1)" TAB "SliderEdit" TAB "range>>0.01 1;;linkSet>>decay_hi" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("decay_hi",       "" TAB "Decay (0.9 to 1)" TAB "SliderEdit" TAB "range>>0.9 1;;linkSet>>decay" TAB "EPostFxManager" TAB %gid);
 	
 
 	buildParamsArray(%arCfg,false);
@@ -33,6 +33,7 @@ function EPostFxManager::buildParamsLightRays( %this ) {
 //==============================================================================
 function EPostFxManager::updateParamLightRays(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3) {
 	logd("EPostFxManager::updateParamLightRays(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3)",%this,%field,%value,%ctrl,%arg1,%arg2,%arg3);
+	
 	eval("$LabPostFx_LightRays_"@%field@" = %value;");
 }
 //------------------------------------------------------------------------------
