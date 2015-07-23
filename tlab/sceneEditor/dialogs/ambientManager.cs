@@ -24,17 +24,13 @@ function SceneEditorDialogs::onActivated( %this ) {
 function SEP_AmbientManager::onShow( %this ) {
 	devLog("SEP_AmbientManager::onShow(%this)");
 	
-	SEP_PostFXManager_Clone.add(EPostFxManager-->MainContainer);	
-	
-	hide(EPostFxManager);
+	EPostFxManager.moveToGui(SEP_PostFXManager_Clone);	
 	
 	hide(SEP_SkySystemCreator);	
 	
 	SEP_AmbientManager.updateSkySystemData(true);
 	syncParamObj(SEP_AmbientManager.FogParamArray);
-	
-	//EPostFxManager.init("1");
-	EPostFxManager.schedule(1000,"init","1");
+
 	
 	//SEP_AmbientBook.selectPage(0);
 }
@@ -44,23 +40,21 @@ function SEP_AmbientManager::onShow( %this ) {
 function SEP_AmbientManager::onHide( %this ) {
 	devLog("SEP_AmbientManager::onHide(%this)");
 	
-	if (isObject(SEP_PostFXManager_Clone-->MainContainer)){
-		EPostFxManager.add(SEP_PostFXManager_Clone-->MainContainer);
-		
-	}
+	EPostFxManager.moveFromGui();
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::onPreEditorSave(%this) {	
-	devLog("SEP_AmbientManager::onPreEditorSave",TMG_GroundCoverClone-->MainContainer);
+	devLog("SEP_AmbientManager::onPreEditorSave",TMG_GroundCoverClone-->MainContainer);	
 	if (isObject(SEP_PostFXManager_Clone-->MainContainer))
-		EPostFxManager.add(EPostFxManager_Main);
+		EPostFxManager.moveFromGui();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::onPostEditorSave(%this) {
 	devLog("SEP_AmbientManager::onPostEditorSave",TMG_GroundCoverClone-->MainContainer);
-	SEP_PostFXManager_Clone.add(EPostFxManager-->MainContainer);
+	EPostFxManager.moveToGui(SEP_PostFXManager_Clone);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -16,8 +16,13 @@ function EPostFxManager::onWake(%this) {
 function EPostFxManager::onShow(%this) {
 	devLog("EPostFxManager::onShow");
 	//Check if the UI is all there (Might be moved and forgotten)
-	if (EPostFxManager_Main.parentGroup !$= %this)
+	if (!isObject(%this-->MainContainer)){
+		devLog("Moving back Data");
 		EPostFxManager.add(EPostFxManager_Main);
+		EPostFxManager.schedule(1000,"init","1");
+		return;
+	}
+		
 	if (!EPostFxManager.initialized)
 		EPostFxManager.init();
 	
@@ -36,18 +41,36 @@ function EPostFxManager::onSleep(%this) {
 function EPostFxManager::init(%this,%notInitialized) {
 		
 	%this.buildParamsHDR();
+	%this.buildParamsSSAO();
 	if (%notInitialized $= "")
 		EPostFxManager.initialized = true;
 	else
 		EPostFxManager.initialized = false;
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+function EPostFxManager::moveToGui(%this,%gui) {		
+	%gui.add(EPostFxManager_Main);	
+	hide(EPostFxManager);
+	
+	//Schedule a new init to adapt the params to new host stack
+	EPostFxManager.schedule(1000,"init","1");
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function EPostFxManager::moveFromGui(%this,%gui) {
+	%this.add(EPostFxManager_Main);	
+	EPostFxManager.schedule(1000,"init");
+	
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::onPreEditorSave(%this) {
 	
 	%this-->StackBloom.clear();
 	%this-->StackBrightness.clear();
+	EPostFxPage_SSAOStack.clear();
 
 }
 //------------------------------------------------------------------------------

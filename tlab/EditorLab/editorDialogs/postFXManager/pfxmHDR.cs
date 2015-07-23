@@ -34,7 +34,7 @@ function EPostFxManager::buildParamsHDR( %this ) {
 
 
 	buildParamsArray(%arCfg,false);
-	%this.CloudLayerParamArray = %arCfg;
+	%this.HDRParamArray = %arCfg;
 }
 //------------------------------------------------------------------------------
 //$HDRPostFX::minLuminace;
