@@ -21,6 +21,18 @@ function TerrainManagerGui::onSleep(%this) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
+function TerrainManagerGui::onPreEditorSave(%this) {	
+	devLog("TerrainManagerGui::onPreEditorSave",TMG_GroundCoverClone-->MainContainer);
+	if (isObject(TMG_GroundCoverClone-->MainContainer))
+		SEP_GroundCover.add(TMG_GroundCoverClone-->MainContainer);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TerrainManagerGui::onPostEditorSave(%this) {
+	devLog("TerrainManagerGui::onPostEditorSave",TMG_GroundCoverClone-->MainContainer);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function TMG::init(%this) {
 	
 	TMG.initMaterialLayersPage();

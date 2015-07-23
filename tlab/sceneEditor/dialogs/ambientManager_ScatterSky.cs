@@ -7,9 +7,9 @@
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_ScatterSkyManager.buildParams();
 function SEP_ScatterSkyManager::buildParams( %this ) {
-	%arCfg = createParamsArray("SEP_ScatterSky",SEP_ScatterSkyProperties);
+	%arCfg = createParamsArray("SEP_ScatterSky",SEP_ScatterSky_Custom);
 	%arCfg.updateFunc = "SEP_ScatterSkyManager.updateParam";
-	%arCfg.style = "LabCfgB_230";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
 	%arCfg.group[%gid++] = "Lighting settings" TAB "Stack StackA";
 	%arCfg.setVal("skyBrightness",       "" TAB "Sky brightness" TAB "SliderEdit" TAB "range>>0 50;;tickAt>>0.1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);

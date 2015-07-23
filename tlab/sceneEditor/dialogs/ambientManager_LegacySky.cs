@@ -7,9 +7,9 @@
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_ScatterSkyManager.buildParams();
 function SEP_LegacySkyManager::buildParams( %this ) {
-	%arCfg = createParamsArray("SEP_LegacySky",SEP_LegacySkyProperties);
+	%arCfg = createParamsArray("SEP_LegacySky",SEP_LegacySkyManager);
 	%arCfg.updateFunc = "SEP_LegacySkyManager.updateParam";
-	%arCfg.style = "LabCfgB_230";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
 	%arCfg.group[%gid++] = "Lighting settings" TAB "Stack StackA";
 	

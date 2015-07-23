@@ -100,28 +100,22 @@ function PluginDlg::showDlg( %this, %dlg,%alwaysOn ) {
 	%dlgCtrl.alwaysOn = %alwaysOn;
 	if (!isObject(%dlgCtrl))
 		return;
-	
-	if(%dlgCtrl.isMethod("onShow"))
-		%dlgCtrl.onShow();
 	if (!%dlgCtrl.isVisible()) 
-		show(%dlgCtrl);		
+		show(%dlgCtrl);
 	
 	show(%this);	
+	if(%dlgCtrl.isMethod("onShow"))
+		%dlgCtrl.onShow();
+	
+	
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function PluginDlg::hideDlg( %this, %dlg ) {
 	%this.fitIntoParents();
 	%dlgCtrl = %this.findObjectByInternalName(%dlg);
-	%dlgCtrl.alwaysOn = false;
-	if (!isObject(%dlgCtrl))
-		return;
-
-	if (!%dlgCtrl.isVisible()) 
-		return;
-		
-	hide(%dlgCtrl);
-	%this.checkState();
+	%this.hideDlgCtrl(%dlgCtrl);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -131,8 +125,23 @@ function PluginDlg::closeSelf( %this,%dlgCtrl ) {
 	if (%dlgCtrl.parentGroup $= GameLabGui){
 		GameLabGui.closeAll();
 	}
+	%this.hideDlgCtrl(%dlgCtrl);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::hideDlgCtrl( %this, %dlgCtrl ) {
+	if (!isObject(%dlgCtrl))
+		return;
 		
+	%dlgCtrl.alwaysOn = false;	
+
+	//if (!%dlgCtrl.isVisible()) 
+		//return;
 	hide(%dlgCtrl);
+	if(%dlgCtrl.isMethod("onShow"))
+		%dlgCtrl.onHide();	
+	
 	%this.checkState();
 }
 //------------------------------------------------------------------------------
@@ -161,5 +170,25 @@ function PluginDlg::checkState( %this ) {
 function PluginDlg::onSleep( %this ) {
 	foreach(%ctrl in %this)
 		hide(%ctrl);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::onPreEditorSave(%this) {	
+	devLog("PluginDlg::onPreEditorSave",%this);
+	//Check if a onPreEditorSave method is found in sub dialogs
+	foreach(%ctrl in %this){
+		if (%ctrl.isMethod("onPreEditorSave"))
+			%ctrl.onPreEditorSave();
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::onPostEditorSave(%this) {	
+	devLog("PluginDlg::onPostEditorSave",%this);
+	//Check if a onPreEditorSave method is found in sub dialogs
+	foreach(%ctrl in %this){
+		if (%ctrl.isMethod("onPostEditorSave"))
+			%ctrl.onPostEditorSave();
+	}
 }
 //------------------------------------------------------------------------------

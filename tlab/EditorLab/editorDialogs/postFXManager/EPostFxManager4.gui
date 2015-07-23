@@ -16,7 +16,7 @@
    anchorBottom = "0";
    anchorLeft = "1";
    anchorRight = "0";
-   position = "289 59";
+   position = "217 37";
    extent = "389 740";
    minExtent = "8 2";
    horizSizing = "right";
@@ -32,7 +32,7 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       BasicCloudsParamArray = "69292";
-      CloudLayerParamArray = "77134";
+      CloudLayerParamArray = "53230";
       createSkyType = "ScatterSky";
       currentCloudLayer = "0";
       defaultParent = "GuiGroup";
@@ -40,7 +40,6 @@
       editorParent = "SceneEditorDialogs";
       FogParamArray = "69268";
       gameName = "Ambient Manager";
-      initialized = "1";
       isDirty = "0";
       skySystem = "ScatterSky";
 
@@ -284,7 +283,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "art/gfx/postFx/null_color_ramp.png";
+                     text = "art/gfx/postFX/colorRampsA/cRampA_DaySunny_Yellow.png";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -569,7 +568,7 @@
                      position = "3 3";
                      extent = "344 460";
                      minExtent = "16 16";
-                     horizSizing = "width";
+                     horizSizing = "right";
                      vertSizing = "bottom";
                      profile = "GuiDefaultProfile";
                      visible = "1";
@@ -767,8 +766,8 @@
                               canSaveDynamicFields = "0";
 
                               new GuiColorPickerCtrl(EPostFx_ColorShiftPicker) {
-                                 baseColor = "0.333333 0 1 1";
-                                 pickColor = "0.286275 0.647059 0.823529 1";
+                                 baseColor = "0 0.666667 1 1";
+                                 pickColor = "0.580392 0.662745 0.705882 1";
                                  selectorGap = "1";
                                  displayMode = "BlendColor";
                                  actionOnMove = "1";
@@ -782,7 +781,7 @@
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "GuiToolTipProfile";
-                                 tooltip = "Color Values : 0.286275 0.647059 0.823529 1";
+                                 tooltip = "Color Values : 0.580392 0.662745 0.705882 1";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -790,7 +789,7 @@
                               };
                               new GuiColorPickerCtrl(EPostFx_ColorShiftBasePicker) {
                                  baseColor = "1 0 0.0235294 1";
-                                 pickColor = "0.333333 0 1 1";
+                                 pickColor = "0 0.666667 1 1";
                                  selectorGap = "1";
                                  displayMode = "HorizColor";
                                  actionOnMove = "1";
@@ -804,7 +803,7 @@
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "GuiToolTipProfile";
-                                 tooltip = "Color Values : 0.333333 0 1 1";
+                                 tooltip = "Color Values : 0 0.666667 1 1";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";

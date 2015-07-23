@@ -23,13 +23,46 @@ function SceneEditorDialogs::onActivated( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::onShow( %this ) {
 	devLog("SEP_AmbientManager::onShow(%this)");
+	
+	SEP_PostFXManager_Clone.add(EPostFxManager-->MainContainer);	
+	
+	hide(EPostFxManager);
+	
 	hide(SEP_SkySystemCreator);	
 	
 	SEP_AmbientManager.updateSkySystemData(true);
 	syncParamObj(SEP_AmbientManager.FogParamArray);
+	
+	//EPostFxManager.init("1");
+	EPostFxManager.schedule(1000,"init","1");
+	
+	//SEP_AmbientBook.selectPage(0);
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function SEP_AmbientManager::onHide( %this ) {
+	devLog("SEP_AmbientManager::onHide(%this)");
+	
+	if (isObject(SEP_PostFXManager_Clone-->MainContainer)){
+		EPostFxManager.add(SEP_PostFXManager_Clone-->MainContainer);
+		
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SEP_AmbientManager::onPreEditorSave(%this) {	
+	devLog("SEP_AmbientManager::onPreEditorSave",TMG_GroundCoverClone-->MainContainer);
+	if (isObject(SEP_PostFXManager_Clone-->MainContainer))
+		EPostFxManager.add(EPostFxManager_Main);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SEP_AmbientManager::onPostEditorSave(%this) {
+	devLog("SEP_AmbientManager::onPostEditorSave",TMG_GroundCoverClone-->MainContainer);
+	SEP_PostFXManager_Clone.add(EPostFxManager-->MainContainer);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::initDialog( %this ) {
