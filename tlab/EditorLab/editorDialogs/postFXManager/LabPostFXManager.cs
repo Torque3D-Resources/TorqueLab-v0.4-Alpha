@@ -39,9 +39,12 @@ function EPostFxManager::onSleep(%this) {
 
 //==============================================================================
 function EPostFxManager::init(%this,%notInitialized) {
-		
+	%this.initPresets();
 	%this.buildParamsHDR();
 	%this.buildParamsSSAO();
+	%this.buildParamsLightRays();
+	%this.buildParamsDOF();
+	%this.buildParamsVignette();
 	if (%notInitialized $= "")
 		EPostFxManager.initialized = true;
 	else
@@ -80,4 +83,5 @@ function EPostFxManager::onPostEditorSave(%this) {
 	EPostFxManager.init();
 }
 //------------------------------------------------------------------------------
+
 

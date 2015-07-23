@@ -36,12 +36,13 @@ function EPostFxManager::buildParamsHDR( %this ) {
 	buildParamsArray(%arCfg,false);
 	%this.HDRParamArray = %arCfg;
 }
+//syncParamArray(arEPostFx_HDRParam);
 //------------------------------------------------------------------------------
 //$HDRPostFX::minLuminace;
 //==============================================================================
 function EPostFxManager::updateParamHDR(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3) {
 	logd("EPostFxManager::updateParamHDR(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3)",%this,%field,%value,%ctrl,%arg1,%arg2,%arg3);
-	
+	eval("$LabPostFx_HDR_"@%field@" = %value;");
 }
 //------------------------------------------------------------------------------
 
@@ -75,15 +76,16 @@ function EPostFxManager::setColorCorrectionFile(%this,%filename,%reset) {
 
 //==============================================================================
 // Enable/Disable HDR
-function EPostFx_EnableHDRCheckbox::onAction(%this)
+function EPostFx_EnableHDRCheckbox::onClick(%this)
 {
+	devLog("EPostFx_EnableHDRCheckbox::onClick",%this.isStateOn());
    %toEnable = %this.isStateOn();
-   PostFXManager.settingsEffectSetEnabled("HDR", %toEnable);
+   EPostFxManager.settingsEffectSetEnabled("HDR", %toEnable);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Enable/Disable HDR Debug
-function EPostFx_DebugHDRCheckbox::onAction(%this)
+function EPostFx_DebugHDRCheckbox::onClick(%this)
 {
    if ( %this.getValue() )
       LuminanceVisPostFX.enable();
@@ -115,5 +117,13 @@ function EPostFx_ColorShiftBasePicker::onAction(%this)
 {
    EPostFx_ColorShiftPicker.baseColor = %this.PickColor;
    %this.ToolTip = "Color Values : " @ %this.PickColor;
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function EPostFxManager::customSyncHDR(%this) {
+	logd("EPostFxManager::customSyncHDR(%this)",%this);
+	%blueShift = $HDRPostFx::enableBlueShift;
+	EPostFxManager-->enableBlueShift.setStateOn(%blueShift);	
 }
 //------------------------------------------------------------------------------

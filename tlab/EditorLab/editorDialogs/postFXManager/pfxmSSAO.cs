@@ -59,11 +59,9 @@ function EPostFxManager::updateParamSSAO(%this,%field,%value,%ctrl,%arg1,%arg2,%
 
 //==============================================================================
 // Enable/Disable SSAO
-function EPostFx_EnableSSAOCheckbox::onAction(%this)
-{
-   %toEnable = %this.isStateOn();
-   PostFXManager.settingsEffectSetEnabled("SSAO", %toEnable);
-  
+function EPostFx_EnableSSAOCheckbox::onClick(%this)
+{ 
+   EPostFxManager.settingsEffectSetEnabled("SSAO", %this.isStateOn());  
 }
 //------------------------------------------------------------------------------
 
