@@ -9,8 +9,8 @@
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "966 0";
-   extent = "92 32";
+   position = "783 0";
+   extent = "74 32";
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -24,14 +24,13 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       allowedPlugins = "SceneEditor TerrainEditor";
-      defaultParent = "EditorGuiToolbarStack";
-      defaultStack = "7051";
-      disabledGroup = "7058";
+      defaultParent = "GuiGroup";
+      defaultStack = "7048";
+      disabledGroup = "7055";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      NoDrag = "1";
-      plugin = "CommonTools";
+      stackLists = "7049";
 
    new GuiStackControl() {
       stackingType = "Horizontal";
@@ -111,7 +110,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroupNoDrag";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -127,7 +126,7 @@
          autoSize = "0";
          groupNum = "-1";
          buttonType = "ToggleButton";
-         useMouseEvents = "0";
+         useMouseEvents = "1";
          position = "10 0";
          extent = "30 32";
          minExtent = "8 2";
@@ -143,7 +142,7 @@
          hovertime = "1000";
          isContainer = "0";
          internalName = "PostFXManager";
-         superClass = "ToolbarIconNoDrop";
+         superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
@@ -158,7 +157,7 @@
          autoSize = "0";
          groupNum = "-1";
          buttonType = "PushButton";
-         useMouseEvents = "0";
+         useMouseEvents = "1";
          position = "44 0";
          extent = "30 32";
          minExtent = "8 2";
@@ -173,9 +172,52 @@
          hovertime = "1000";
          isContainer = "0";
          internalName = "TerrainManager";
-         superClass = "ToolbarIconNoDrop";
+         superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
+      };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "78 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "PluginToolbarEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "StackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
       };
    };
    new GuiContainer() {
@@ -209,20 +251,40 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "76 0";
-      extent = "16 32";
+      extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "1";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
       superClass = "PluginToolbarEnd";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---

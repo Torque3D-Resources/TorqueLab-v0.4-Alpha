@@ -79,9 +79,9 @@ function EPostFx_EnableDOFAutoFocus::onClick(%this)
 //-----------------------------------------------------------------------------
 function DOFPostEffect::onEnabled(%this)
 {
-	devLog("DOFPostEffect ENABLED");
+	
 }
 function DOFPostEffect::onDisabled(%this)
 {
-	devLog("DOFPostEffect DISABLED");
+	
 }

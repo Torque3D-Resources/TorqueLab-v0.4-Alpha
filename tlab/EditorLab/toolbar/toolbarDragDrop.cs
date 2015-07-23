@@ -6,17 +6,7 @@
 //==============================================================================
 // Toolbar drag controls callbacks
 //==============================================================================
-//==============================================================================
-// Start dragging a toolbar icon
-function ToolbarPluginIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {	
-	if (!isObject(%this)) {
-		devLog("ToolbarPluginIcon class is corrupted! Fix it!");
-		return;
-	}
 
-	Lab.startToolbarDrag(%this,%a1,%a2,%a3);
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 // Start dragging a toolbar icon
 function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
@@ -43,22 +33,7 @@ function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {
 
 
 
-//==============================================================================
-// Start dragging a toolbar icons group
-function ToolbarPluginGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	if (!isObject(%this)) {
-		devLog("ToolbarGroup class is corrupted! Fix it!");
-		return;
-	}
 
-	%group = %this.parentGroup.parentGroup;
-
-	if (%group.getClassName() !$= "GuiStackControl")
-		return;
-	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
-
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 // Start dragging a toolbar icons group
 function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
@@ -82,9 +57,11 @@ function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
 		devLog("ToolbarBoxChild class is corrupted! Fix it!");
 		return;
 	}
+	%callback = "Lab.onToolbarIconDroppedDefault";
+	if (%ctrl.getClassName() $= "GuiStackControl")
+		%callback = "Lab.onToolbarGroupDroppedDefault";
 	
-	
-	startDragAndDropCtrl(%ctrl,"Toolbar","Lab.onToolbarIconDroppedDefault");	
+	startDragAndDropCtrl(%ctrl,"Toolbar",%callback);	
 	hide(%ctrl);
 	Lab.showDisabledToolbarDropArea(	%ctrl);
 }
@@ -96,7 +73,12 @@ function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
 //==============================================================================
 // Dragged control dropped in Toolbar Trash Bin
 function EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint) {
+	devLog("EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint)",%this, %control, %dropPoint);
+	
+	
 	%droppedCtrl = %control.dragSourceControl;
+	
+	
 Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
@@ -133,7 +115,12 @@ Lab.hideDisabledToolbarDropArea(	);
 //==============================================================================
 // Dragged control dropped over a toolbar icon
 function ToolbarIcon::onControlDropped(%this, %control, %dropPoint) {
-
+	devLog("ToolbarIcon IS NOT VALID ANYMORE");
+	if (%control.isMemberOfClass("GuiStackControl"))
+		Lab.onToolbarGroupDroppedDefault(%this,%control,%dropPoint);
+	else if (%control.isMemberOfClass("GuiIconButtonCtrl"))
+		Lab.onToolbarIconDroppedDefault(%this,%control,%dropPoint);
+	return;
 	%droppedCtrl = %control.dragSourceControl;
 Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
@@ -185,7 +172,13 @@ Lab.hideDisabledToolbarDropArea(	);
 //==============================================================================
 // Dragged control dropped over a toolbar icon
 function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
-	%droppedCtrl = %control.dragSourceControl;
+	devLog("PluginToolbarEnd IS NOT VALID ANYMORE");
+	
+	if (%control.isMemberOfClass("GuiStackControl"))
+		Lab.onToolbarGroupDroppedDefault(%this,%control,%dropPoint);
+	else if (%control.isMemberOfClass("GuiIconButtonCtrl"))
+		Lab.onToolbarIconDroppedDefault(%this,%control,%dropPoint);
+	return;
 	Lab.hideDisabledToolbarDropArea(	);
 	if (%control.dropType !$= "Toolbar") {
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
@@ -214,66 +207,81 @@ function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Dragged control dropped over undefined control (gonna check if it's droppable)
-function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
+function Lab::onToolbarGroupDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
 	%droppedCtrl = %draggedControl.dragSourceControl;
 	Lab.hideDisabledToolbarDropArea(	);
-	if (%draggedControl.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
+	
+	if(%droppedCtrl.pluginName !$= %dropOnCtrl.pluginName){				
+		warnLog("Can't drop plugin icon on something not related to this plugin.");			
 		show(%droppedCtrl);
 		return;
 	}
-
-	if (%dropOnCtrl.superClass $= "ToolbarIconNoDrop"){
-		warnLog("Can't drop on locked icons");
-		show(%droppedCtrl);
-		return;
-	}
-
-		if(%draggedControl.pluginName !$= %dropOnCtrl.pluginName){	
-			devLog("Dropped Plugin Name:",%draggedControl.pluginName);
-			devLog("Dropped on Plugin Name:",%dropOnCtrl.pluginName);			
-			warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl.pluginName,"On",%dropOnCtrl.pluginName);			
-			show(%droppedCtrl);
-			return;
-		}
-	devLog("Dropped on InternalName:",%dropOnCtrl.internalName);
-	if (%dropOnCtrl.internalName $= "SubStackEnd"){
-		warnLog("Dropped on Sub Stack End");
-		%addToThis = %dropOnCtrl.parentGroup;
+	show(%droppedCtrl);	
+	switch$(%dropOnCtrl.superClass){		
+		case "StackEnd":
+			if (%droppedCtrl.getClassName() !$= "GuiStackControl") {
+				warnLog("Can't drop icon on a group stack",%droppedCtrl);					
+				return;
+			}
+			%addToThis = %dropOnCtrl.parentGroup;
+			%addBefore = %dropOnCtrl;
+		case "StackEndImg" or "ToolbarIcon":
+			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
+			%addBefore = %dropOnCtrl.parentGroup;	
 		
 	}
-	if (%dropOnCtrl.internalName $= "StackEnd"){
-		warnLog("Dropped on Stack End");
-		%addToThis = %dropOnCtrl.parentGroup;
-		
-	}
-	if (%dropOnCtrl.internalName $= "StackEndImg"){
-		warnLog("Dropped on Stack End Img");
-		%addToThis = %dropOnCtrl.parentGroup.parentGroup;
-		
-	}
-	show(%droppedCtrl);
-	%addBefore = %dropOnCtrl;
-	if (isObject(%addToThis)){
-		devLog("Premature dropping!");
-		%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
-		return;
-	}
-
-	if (%droppedCtrl.isNewGroup || %droppedCtrl.getClassName() $= "GuiStackControl") {
+	
+	
+	if (%droppedCtrl.isNewGroup ) {
 		%stackAndChild = Lab.findObjectToolbarStack(%dropOnCtrl,true);
 		%addToThis = getWord(%stackAndChild,0);
 		%addBefore =  getWord(%stackAndChild,1);
-	} else
-		%addToThis = Lab.findObjectToolbarStack(%dropOnCtrl,%lookForDefaultStack);
-
-	if (!isObject(%addToThis))
-		return;
-
-	if (%droppedCtrl.isNewGroup) {
-		%newGroup = Lab.createNewToolbarIconGroup();
-		%droppedCtrl = %newGroup;
 	}
+	
+	if (!isObject(%addToThis)){
+		warnLog("Invalid target to add dropped ctrl to:",%addToThis);
+		return;
+	}
+		
+	if (!isObject(%addBefore))
+			warnLog("Invalid target to add before:",%addBefore);	
+	
+	%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Dragged control dropped over undefined control (gonna check if it's droppable)
+function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
+	%droppedCtrl = %draggedControl.dragSourceControl;
+	Lab.hideDisabledToolbarDropArea(	);
+	show(%droppedCtrl);
+	if (%draggedControl.dropType !$= "Toolbar") {
+		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);		
+		return;
+	}	
+
+	if(%draggedControl.pluginName !$= %dropOnCtrl.pluginName){				
+		warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl.pluginName,"On",%dropOnCtrl.pluginName);				
+		return;
+	}	
+	
+	switch$(%dropOnCtrl.superClass){		
+		case "SubStackEnd" or "ToolbarIcon":
+			%addToThis = %dropOnCtrl.parentGroup;
+			%addBefore = %dropOnCtrl;
+		case "SubStackEndImg":	
+			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
+			%addBefore = %dropOnCtrl.parentGroup;		
+	}
+
+	if (!isObject(%addToThis)){
+		warnLog("Invalid target to add dropped ctrl to:",%addToThis);
+		return;
+	}
+		
+	if (!isObject(%addBefore))
+			warnLog("Invalid target to add before:",%addBefore);
+	
 
 	%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
 }

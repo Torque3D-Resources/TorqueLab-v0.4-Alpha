@@ -190,6 +190,8 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.resizeEditorGui();
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");
 	
+	Lab.initAllToolbarGroups();
+	
 }
 //------------------------------------------------------------------------------
 

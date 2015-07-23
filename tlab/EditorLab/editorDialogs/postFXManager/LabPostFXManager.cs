@@ -5,8 +5,7 @@
 //==============================================================================
 //==============================================================================
 EPostFxManager.initialized = false;
-function EPostFxManager::onWake(%this) {
-	devLog("EPostFxManager::onWake");
+function EPostFxManager::onWake(%this) {	
 	//Check if the UI is all there (Might be moved and forgotten)
 	%this.onShow();
 	
@@ -15,7 +14,7 @@ function EPostFxManager::onWake(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::onShow(%this) {
-	devLog("EPostFxManager::onShow");
+	
 	//Check if the UI is all there (Might be moved and forgotten)
 	if (!isObject(%this-->MainContainer)){
 		devLog("Moving back Data");
@@ -31,9 +30,7 @@ function EPostFxManager::onShow(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function EPostFxManager::onHide(%this) {
-	devLog("EPostFxManager::onHide");
-	
+function EPostFxManager::onHide(%this) {	
 	$EPostFxManagerActive = false;
 	SceneEditorToolbar-->PostFXManager.setStateOn(false);
 }
