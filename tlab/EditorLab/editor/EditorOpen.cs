@@ -10,7 +10,7 @@ function Editor::open(%this) {
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
 
-	Lab.attachEditorGuis();
+	Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 
 	if( !LabEditor.isInitialized )

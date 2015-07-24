@@ -15,13 +15,14 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
    hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      defaultParent = "3987";
-      defaultStack = "9775";
-      disabledGroup = "9802";
-      EditorContainer = "4085";
+      defaultParent = "4914";
+      defaultStack = "11566";
+      disabledGroup = "11593";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       enabled = "1";
       plugin = "MeshRoadEditor";
+      stackLists = "11567 11574";
       tooltipWidth = "500";
 
    new GuiStackControl() {
@@ -35,7 +36,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "627 30";
+      extent = "539 30";
       minExtent = "16 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -223,6 +224,50 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             canSave = "1";
             canSaveDynamicFields = "0";
          };
+         new GuiContainer() {
+            margin = "0 0 0 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "104 0";
+            extent = "18 30";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsBoxDarkC";
+            visible = "0";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            internalName = "SubStackEnd";
+            superClass = "SubStackEnd";
+            hidden = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiBitmapCtrl() {
+               bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+               wrap = "0";
+               position = "4 7";
+               extent = "12 16";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiDefaultProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               internalName = "SubStackEndImg";
+               superClass = "SubStackEndImg";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
       };
       new GuiStackControl() {
          stackingType = "Horizontal";
@@ -365,7 +410,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarBoxChild";
+               superClass = "ToolbarGroup";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -479,7 +524,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarBoxChild";
+               superClass = "ToolbarGroup";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -617,7 +662,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarBoxChild";
+               superClass = "ToolbarGroup";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -643,6 +688,50 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                canSaveDynamicFields = "0";
             };
          };
+         new GuiContainer() {
+            margin = "0 0 0 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "435 0";
+            extent = "18 30";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsBoxDarkC";
+            visible = "0";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            internalName = "SubStackEnd";
+            superClass = "SubStackEnd";
+            hidden = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiBitmapCtrl() {
+               bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+               wrap = "0";
+               position = "4 7";
+               extent = "12 16";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiDefaultProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               internalName = "SubStackEndImg";
+               superClass = "SubStackEndImg";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -664,29 +753,6 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          isContainer = "1";
          internalName = "DisabledIcons";
          hidden = "1";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiContainer() {
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
-         position = "543 0";
-         extent = "84 30";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "1";
-         internalName = "StackEnd";
-         superClass = "PluginToolbarEnd";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
@@ -984,6 +1050,50 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          hovertime = "750";
          isContainer = "0";
          superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
+   new GuiContainer() {
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "0 0";
+      extent = "27 32";
+      minExtent = "8 2";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "StackEnd";
+      superClass = "StackEnd";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         superClass = "StackEndImg";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

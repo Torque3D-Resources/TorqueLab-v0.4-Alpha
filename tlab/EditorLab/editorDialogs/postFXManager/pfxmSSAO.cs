@@ -71,14 +71,9 @@ function EPostFx_EnableSSAOCheckbox::onClick(%this)
 //==============================================================================
 //==============================================================================
 // ColorShift Color Picked
-function EPostFx_SSAOQuality::onSelect(%this,%id,%text)
-{
-	 devLog("onSelect",%text,"Id",%id);
-
-   if(%id > -1 && %id < 3)
-   {
+function EPostFx_SSAOQuality::onSelect(%this,%id,%text){
+   if(%id > -1 && %id < 3) {
       $SSAOPostFx::quality = %id;
-   }
-   devLog("SSAO Quality selected",%text,"Value",$SSAOPostFx::quality);
+   }  
 }
 //------------------------------------------------------------------------------

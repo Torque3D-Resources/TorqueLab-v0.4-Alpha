@@ -113,7 +113,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
 		exec("tlab/EditorLab/gui/core/LabDevGui.gui");
 		exec("tlab/EditorLab/gui/GameLabGui.gui");
-		execPattern("tlab/EditorLab/gui/Common/*.gui");
+		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
@@ -123,7 +123,7 @@ function tlabExecGui(%loadGui ) {
 	exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.cs" );
 	
 	execPattern("tlab/EditorLab/gui/MaterialSelector/*.cs");
-	execPattern("tlab/EditorLab/gui/Common/*.cs");
+	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
 	
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");

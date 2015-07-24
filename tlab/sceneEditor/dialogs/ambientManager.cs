@@ -79,8 +79,7 @@ function SEP_AmbientManager::initDialog( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::onActivated( %this ) {
 	logd("SEP_AmbientManager::onActivated(%this)");
-	SEP_AmbientBook.selectPage($SEP_AmbientBook_PageId);
-	SEP_ScatterSkyBook.selectPage($SEP_ScatterSkyBook_PageId);
+	SEP_AmbientBook.selectPage($SEP_AmbientBook_PageId);	
 	SEP_PrecipitationBook.selectPage($SEP_PrecipitationBook_PageId);
 	SEP_CloudsBook.selectPage($SEP_CloudsBook_PageId);
 	
@@ -88,8 +87,8 @@ function SEP_AmbientManager::onActivated( %this ) {
 	SEP_ScatterSkySystemMenu.add("New Scatter Sky",0);
 	SEP_ScatterSkySystemMenu.add("New Sun (+SkyBox)",1);
 	SEP_ScatterSkySystemMenu.setSelected(0);
-	//%this.getSkySystemObject();
-	SEP_AmbientManager.buildFogParams(true);
+
+	
 	SEP_AmbientManager.buildBasicCloudsParams();
 	SEP_AmbientManager.initBasicCloudsData();
 	SEP_AmbientManager.buildCloudLayerParams();

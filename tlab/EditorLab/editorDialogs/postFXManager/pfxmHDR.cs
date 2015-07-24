@@ -77,10 +77,8 @@ function EPostFxManager::setColorCorrectionFile(%this,%filename,%reset) {
 //==============================================================================
 // Enable/Disable HDR
 function EPostFx_EnableHDRCheckbox::onClick(%this)
-{
-	devLog("EPostFx_EnableHDRCheckbox::onClick",%this.isStateOn());
-   %toEnable = %this.isStateOn();
-   EPostFxManager.settingsEffectSetEnabled("HDR", %toEnable);
+{	
+   EPostFxManager.settingsEffectSetEnabled("HDR", %this.isStateOn());
 }
 //------------------------------------------------------------------------------
 //==============================================================================

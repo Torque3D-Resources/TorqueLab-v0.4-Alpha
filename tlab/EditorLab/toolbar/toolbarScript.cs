@@ -62,6 +62,7 @@ function Lab::initToolbarGroup(%this,%gui) {
 			};
 			EToolbarDisabledDrop.add(%disabledDropContainer);
 		}
+	LabGeneratedSet.add(EToolbarDisabledDrop); //Dont save those with EditorGui
 	%disabledDropContainer.profile = "ToolsPanelDarkA_T50";
 	%disabledDropContainer.pluginName = %pluginName;	
 	%disabledDropContainer.setPosition(%gui.position.x,%gui.position.y);
@@ -107,9 +108,18 @@ function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj,%gui) {
 		if (%ctrl.isMemberOfClass("GuiStackControl")) {
 			Lab.getStackEndGui(%ctrl,true);
 			%gui.stackLists = strAddWord(%gui.stackLists,%ctrl.getId(),true);
-			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
+			%this.scanPluginToolbarStack(%ctrl,%pluginObj,%gui);
+			//%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
 			continue;
 		}
+		if (%ctrl.isMemberOfClass("GuiIconButtonCtrl")) {
+			
+			%ctrl.superClass = "ToolbarIcon";
+			%ctrl.useMouseEvents = true;
+			%ctrl.toolbar = %pluginObj.toolbarGui;
+			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());			
+		}
+		continue;
 		if (%ctrl.isMemberOfClass("GuiContainer")) {
 			
 			%this.scanPluginToolbarGroup(%ctrl,%level++,%pluginObj,%gui);
@@ -122,17 +132,51 @@ function Lab::scanPluginToolbarGroup(%this,%group,%level,%pluginObj,%gui) {
 			
 			continue;
 		}
+		 else if (%group.isMemberOfClass("GuiStackControl")) {
+			%ctrl.toolbar = %pluginObj.toolbarGui;
+			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
+			
+		}
+	}
+}
+
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::scanPluginToolbarStack(%this,%stack,%pluginObj,%gui) {
+	%pluginText = "";
+	if (isObject(%pluginObj)){		
+		%pluginName = %pluginObj.plugin;
+	}
+	
+	foreach(%ctrl in %stack) {
+		if (%pluginName !$= "")
+				%ctrl.pluginName = %pluginName;		
+		
+		if (%ctrl.isMemberOfClass("GuiContainer")) {
+			%dropTarget = %stack.getObjectIndex(%ctrl);			
+		
+			foreach(%subCtrl in %ctrl){				
+				if (%subCtrl.isMemberOfClass("GuiMouseEventCtrl")) {			
+					%subCtrl.superClass = "MouseStart";	
+					%subCtrl.dropTarget = %dropTarget;					
+				}
+			}
+			continue;
+		}
+		
 		if (%ctrl.isMemberOfClass("GuiIconButtonCtrl")) {
 			
 			%ctrl.superClass = "ToolbarIcon";
 			%ctrl.useMouseEvents = true;
-			%ctrl.toolbar = %pluginObj.toolbarGui;
-			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
 			
-		} else if (%group.isMemberOfClass("GuiStackControl")) {
-			%ctrl.toolbar = %pluginObj.toolbarGui;
-			%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
-			
+			if (isObject(%pluginObj)){
+				devLog("Toolbar GUI:",%gui,"PluginGui:",%pluginObj.toolbarGui);
+				%ctrl.toolbar = %pluginObj.toolbarGui;
+				%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
+			}
+			else{			
+				%ctrl.toolbar = %gui;
+			}			
 		}
 	}
 }
@@ -228,25 +272,7 @@ function Lab::toggleToolbarGroupVisible(%this,%groupId,%itemId) {
 }
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function Lab::setToolbarIconDisabled(%this,%icon,%disabled) {
-	%icon.canSaveDynamicFields = true;
 
-	if (%icon.locked $= %disabled)
-		return;
-
-	EGuiCustomizer-->saveToolbar.active = true;
-	%icon.locked = %disabled;
-
-	if (!%disabled)
-		return;
-
-	%disabledGroup = %icon.toolbar-->DisabledIcons;
-
-	if (%disabled && isObject(%disabledGroup))
-		%disabledGroup.add(%icon);
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::saveToolbar(%this,%icon,%disabled) {
 	EGuiCustomizer-->saveToolbar.active = false;
@@ -257,7 +283,8 @@ function Lab::saveToolbar(%this,%icon,%disabled) {
 //==============================================================================
 function Lab::storePluginsToolbarState(%this) {
 	foreach(%gui in LabToolbarGuiSet) {
-		%gui.save(%gui.getFilename());
+		devLog("Save Test:",%gui.getName(),"File",%gui.getFilename());
+		//%gui.save(%gui.getFilename());
 	}
 
 	Lab.toolbarIsDirty = false;

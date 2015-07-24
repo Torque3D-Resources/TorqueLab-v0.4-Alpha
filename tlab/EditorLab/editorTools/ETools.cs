@@ -48,10 +48,13 @@ function ETools::toggleTool(%this,%tool) {
 //==============================================================================
 function ETools::showTool(%this,%tool) {
 	%dlg = %this.findObjectByInternalName(%tool,true);
+	if(!isObject(%dlg)){
+		warnLog("Trying to show invalid tools dialog for tool:",%tool,"Dlg",%dlg);
+		return;
+	}
 	%this.fitIntoParents();
 	
 	ETools.visible = true;
-
 
 	%dlg.setVisible(true);
 		

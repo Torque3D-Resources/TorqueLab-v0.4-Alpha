@@ -194,7 +194,7 @@ function EPostFxManager::loadLabPresets(%this) {
 				if (%value $= "")
 					%value = "0";
 				eval("$LabPostFx_Enabled_"@%field@" = %value;");
-				info("Pref:","$LabPostFx_Enabled_"@%field,"Value",%value);
+				
 		}
 		foreach$(%type in "DOF HDR LightRays SSAO"){
 			foreach$(%field in $EPostFx_Fields_[%type]){
@@ -213,7 +213,7 @@ function EPostFxManager::loadStockPresets(%this) {
 			if (%value $= "")
 				%value = "0";
 			eval("$LabPostFx_Enabled_"@%field@" = %value;");
-			info("Pref:","$LabPostFx_Enabled_"@%field,"Value",%value);
+			
 	}
 	foreach$(%type in "DOF HDR LightRays SSAO"){
 		foreach$(%field in $EPostFx_Fields_[%type]){

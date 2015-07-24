@@ -16,8 +16,7 @@ function EPostFxManager::onWake(%this) {
 function EPostFxManager::onShow(%this) {
 	
 	//Check if the UI is all there (Might be moved and forgotten)
-	if (!isObject(%this-->MainContainer)){
-		devLog("Moving back Data");
+	if (!isObject(%this-->MainContainer)){		
 		EPostFxManager.add(EPostFxManager_Main);
 		EPostFxManager.schedule(1000,"init","1");
 		return;

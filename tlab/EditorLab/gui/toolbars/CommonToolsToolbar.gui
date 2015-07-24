@@ -9,7 +9,7 @@
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "783 0";
+   position = "1053 0";
    extent = "74 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,10 +26,11 @@
       allowedPlugins = "SceneEditor TerrainEditor";
       defaultParent = "GuiGroup";
       defaultStack = "7048";
-      disabledGroup = "7055";
+      disabledGroup = "7061";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
+      noDrag = "1";
       stackLists = "7049";
 
    new GuiStackControl() {
@@ -110,7 +111,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -174,7 +175,8 @@
          internalName = "TerrainManager";
          superClass = "ToolbarIcon";
          canSave = "1";
-         canSaveDynamicFields = "0";
+         canSaveDynamicFields = "1";
+            toolbar = "7048";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -183,7 +185,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "78 0";
+         position = "44 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -195,7 +197,7 @@
          hovertime = "1000";
          isContainer = "1";
          internalName = "SubStackEnd";
-         superClass = "PluginToolbarEnd";
+         superClass = "SubStackEnd";
          hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
@@ -214,7 +216,8 @@
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "StackEndImg";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -250,7 +253,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "76 0";
+      position = "100 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
@@ -262,7 +265,7 @@
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
-      superClass = "PluginToolbarEnd";
+      superClass = "StackEnd";
       hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
@@ -282,6 +285,7 @@
          hovertime = "1000";
          isContainer = "0";
          internalName = "StackEndImg";
+         superClass = "StackEndImg";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

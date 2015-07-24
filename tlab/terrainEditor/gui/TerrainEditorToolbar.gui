@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiStackControl(EWTerrainEditToolbar) {
+new GuiStackControl(EWTerrainEditToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -10,7 +10,7 @@
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "245 0";
-   extent = "706 32";
+   extent = "618 32";
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -26,12 +26,13 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11533";
-      disabledGroup = "11571";
-      EditorContainer = "5181";
+      defaultStack = "12883";
+      disabledGroup = "12921";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
+      stackLists = "12884 12891 12915";
 
    new GuiStackControl() {
       stackingType = "Horizontal";
@@ -205,6 +206,50 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "104 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
    };
    new GuiStackControl() {
       stackingType = "Horizontal";
@@ -347,7 +392,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -461,7 +506,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -575,7 +620,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -690,7 +735,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -744,6 +789,50 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "setheight_slider";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "440 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -892,6 +981,50 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "72 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
    };
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -924,20 +1057,41 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "622 0";
-      extent = "84 32";
+      extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "1";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
-      superClass = "PluginToolbarEnd";
+      superClass = "StackEnd";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         superClass = "StackEndImg";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---

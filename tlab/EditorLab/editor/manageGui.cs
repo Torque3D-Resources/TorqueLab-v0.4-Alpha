@@ -7,8 +7,8 @@
 
 //==============================================================================
 function Lab::addGui(%this,%gui,%type,%noHide) {
-	
-%parent = %gui.parentGroup;
+	%parent = %gui.parentGroup;
+
 	switch$(%type) {
 	case "Gui":
 		%container = $LabSettingContainer;
@@ -25,33 +25,33 @@ function Lab::addGui(%this,%gui,%type,%noHide) {
 	case "Toolbar":
 		%container = $LabToolbarContainer@%arg1;
 		LabToolbarGuiSet.add(%gui);
-	
 
 	case "Dialog":
 		%container = $LabDialogContainer;
 		LabDialogGuiSet.add(%gui);
 
-	case "Palette":			
+	case "Palette":
 		LabPaletteGuiSet.add(%gui);
 
 	case "Overlay":
 		%container = EditorGui;
 		LabDialogGuiSet.add(%gui);
-	
+
 	case "EditorDlg":
 		%container = EditorDialogs;
 		LabEditorDlgSet.add(%gui);
-		
+
 	case "":
 		%container = $LabSettingContainer;
 		LabSettingGuiSet.add(%gui);
 	}
-	
+
 	%gui.defaultParent = %gui.parentGroup;
 	LabGuiSet.add(%gui); // Simset Holding all Editor Guis
-	
+
 	if (!%noHide)
 		hide(%gui);
+
 	if (isObject(%container)) {
 		%container.add(%gui);
 		%gui.editorContainer = %container;
@@ -61,71 +61,70 @@ function Lab::addGui(%this,%gui,%type,%noHide) {
 
 //==============================================================================
 function Lab::initCoreGuis(%this) {
-	foreach(%dlg in ETools){
+	foreach(%dlg in ETools) {
 		hide(%dlg);
 	}
 }
 
 
 //==============================================================================
-// Manage the GUI for the plugins
+// Detach the GUIs not saved with EditorGui (For safely save EditorGui)
 //==============================================================================
 //==============================================================================
-function Lab::detachEditorGuis(%this) {
+function Lab::detachAllEditorGuis(%this) {
 	%this.editorGuisDetached = true;
 	
-	
-	
-	foreach(%gui in LabGuiSet) {
-		%gui.editorParent = %gui.parentGroup;
-		%parent = %gui.defaultParent;
+	foreach(%gui in LabGeneratedSet)
+		%this.detachEditorGui(%gui);
 
-		if (!isObject(%parent))
-			%parent = GuiGroup;
+	foreach(%gui in LabGuiSet)
+		%this.detachEditorGui(%gui);
 
-		%parent.add(%gui);
-		show(%gui);
-	}
+	foreach(%gui in LabPaletteItemSet)
+		%this.detachEditorGui(%gui,true);
 
-	foreach(%item in LabPaletteItemSet) {
-		%defaultParent = %item.defaultParent;
-
-		if( isObject(%defaultParent)) {
-			%defaultParent.add(%item);
-		}
-	}
-
-	foreach(%obj in EWToolsPaletteArray) {
+	foreach(%obj in EWToolsPaletteArray)
 		%paletteList = strAddWord(%paletteList,%obj.getId());
-	}
 
-	foreach$(%id in %paletteList) {
-		%defaultParent = %id.defaultParent;
-
-		if( isObject(%defaultParent)) {
-			%defaultParent.add(%id);
-		}
-	}
+	foreach$(%id in %paletteList)
+		%this.detachEditorGui(%id,true);
 
 	%this.resetPluginsBar();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::attachEditorGuis(%this) {
+function Lab::detachEditorGui(%this,%gui,%dontShow) {
+	EditorDetachedGuis.add(%gui);
+	%gui.editorParent = %gui.parentGroup;
+	%parent = %gui.defaultParent;
+
+	if (!isObject(%parent))
+		%parent = GuiGroup;
+
+	%parent.add(%gui);
+
+	if (%dontShow)
+		return;
+
+	show(%gui);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Reattach the GUIs not saved with EditorGui (For safely save EditorGui)
+//==============================================================================
+//==============================================================================
+function Lab::attachAllEditorGuis(%this) {
 	if (!%this.editorGuisDetached)
 		return;
 
 	Lab.editorGuisDetached = false;
 	
+	foreach(%gui in EditorDetachedGuis) 
+		%this.attachEditorGui(%gui);	
 	
-	
-	foreach(%gui in LabGuiSet) {
-		%gui.parentGroup = %gui.editorParent;
-		if (%gui.isCommon)
-			show(%gui);
-		else
-			hide(%gui);
-	}
+
+	//foreach(%gui in LabGuiSet) 
+		//%this.attachEditorGui(%gui);	
 
 	foreach(%item in LabPaletteItemSet) {
 		$LabPalletteArray.add(%item);
@@ -136,7 +135,16 @@ function Lab::attachEditorGuis(%this) {
 	%this.resizeEditorGui();
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+function Lab::attachEditorGui(%this,%gui,%dontShow) {
+	%gui.parentGroup = %gui.editorParent;
 
+		if (%gui.isCommon)
+			show(%gui);
+		else
+			hide(%gui);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Clear the editors menu (for dev purpose only as now)
 function Lab::resizeEditorGui( %this ) {
@@ -151,13 +159,14 @@ function Lab::resizeEditorGui( %this ) {
 	//-----------------------------------------------------
 	// VisibilityLayerContainer
 	EVisibility.Position = getWord(visibilityToggleBtn.position, 0) SPC getWord(EditorGuiToolbar.extent, 1);
+
 	//-----------------------------------------------------
 	// CameraSpeedDropdownCtrlContainer
-/*	CameraSpeedDropdownCtrlContainerA.position = firstWord(CameraSpeedDropdownContainer.position) + firstWord(EditorGuiToolbar.position) + -6 SPC
-			(getWord(CameraSpeedDropdownContainer, 1)) + 31;
-	softSnapSizeSliderCtrlContainer-->slider.position = firstWord(SceneEditorToolbar-->softSnapSizeTextEdit.getGlobalPosition()) - 12 SPC
-			(getWord(SceneEditorToolbar-->softSnapSizeTextEdit.getGlobalPosition(), 1)) + 18;
-*/
+	/*	CameraSpeedDropdownCtrlContainerA.position = firstWord(CameraSpeedDropdownContainer.position) + firstWord(EditorGuiToolbar.position) + -6 SPC
+				(getWord(CameraSpeedDropdownContainer, 1)) + 31;
+		softSnapSizeSliderCtrlContainer-->slider.position = firstWord(SceneEditorToolbar-->softSnapSizeTextEdit.getGlobalPosition()) - 12 SPC
+				(getWord(SceneEditorToolbar-->softSnapSizeTextEdit.getGlobalPosition(), 1)) + 18;
+	*/
 	foreach(%gui in $LabEditorContainer)
 		%gui.fitIntoParents();
 
@@ -176,7 +185,7 @@ function Lab::togglePluginTools(%this) {
 	if (getWordCount(EditorFrameMain.columns) > 1)
 		%this.hidePluginTools();
 	else
-		%this.showPluginTools();	
+		%this.showPluginTools();
 }
 //------------------------------------------------------------------------------
 
@@ -190,10 +199,11 @@ function Lab::hidePluginTools(%this) {
 //==============================================================================
 function Lab::showPluginTools(%this) {
 	%sideCol = EditorFrameMain.lastToolsCol;
+
 	if (%sideCol $= "")
 		%sideCol = mCeil(EditorFrameMain.extent.x * 0.75);
+
 	EditorFrameMain.columns = "0" SPC %sideCol;
 	EditorFrameMain.updateSizes();
-
 }
 //------------------------------------------------------------------------------

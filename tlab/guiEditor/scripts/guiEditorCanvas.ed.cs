@@ -192,8 +192,8 @@ function GuiEditCanvas::onCreateMenu(%this) {
 			item[%id++] = "Add to EditorGui" TAB "" TAB "Lab.setGuisToEditor();";
 			item[%id++] = "-> General Editors GUIs <-";
 			item[%id++] = "Toggle Editors GUI listing" TAB "" TAB "Lab.toggleEditorGuiListing();";
-			item[%id++] = "Dettach the Editor GUIs" TAB "" TAB "Lab.detachEditorGuis();";
-			item[%id++] = "Attach the Editor GUIs" TAB "" TAB "Lab.attachEditorGuis();";
+			item[%id++] = "Detach the Editor GUIs" TAB "" TAB "Lab.detachAllEditorGuis();";
+			item[%id++] = "Attach the Editor GUIs" TAB "" TAB "Lab.attachAllEditorGuis();";
 			item[%id++] = "Toggle Lab Editor Settings" TAB "" TAB "toggleDlg(LabEditorSettings);";
 			item[%id++] = "-> Special Editors GUIs <-";
 			item[%id++] = "Toggle Field Duplicator" TAB  "Alt-Shift D" TAB "Lab.toggleDuplicator();";

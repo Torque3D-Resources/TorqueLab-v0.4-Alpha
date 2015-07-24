@@ -10,7 +10,7 @@ function EPostFxManager::syncAll(%this) {
 		syncParamArray("arEPostFx_"@%type@"Param");
 		if (%this.isMethod("customSync"@%type))
 			eval("%this.customSync"@%type@"();");
-		info("PostFx Type:",%type,"Synced");
+	
 	}
 }
 //------------------------------------------------------------------------------
@@ -54,37 +54,9 @@ function EPostFxManager::settingsSetEnabled(%this, %bEnablePostFX)
       //SSAO, HDR, LightRays, DOF
       foreach$(%type in $EPostFx_PostFxList){
 			eval("%enabled = $LabPostFx_Enabled_"@%type@";");			
-			%this.settingsEffectSetEnabled(%type,%enabled);
-			info(%type,"PostFX Enabled SO Enabled:",%enabled);
+			%this.settingsEffectSetEnabled(%type,%enabled);			
 		}
-		return;
-      if ( $LabPostFx_Enabled_SSAO )      
-         SSAOPostFx.enable();      
-      else
-         SSAOPostFx.disable();
-      
-      if ( $LabPostFx_Enabled_HDR ){
-         HDRPostFX.enable();
-      }
-      else{
-         HDRPostFX.disable();
-      }
-
-      if ( $LabPostFx_Enabled_LightRays )
-         LightRayPostFX.enable();
-      else
-         LightRayPostFX.disable();
-      
-      if ( $LabPostFx_Enabled_DOF )
-         DOFPostEffect.enable();
-      else
-         DOFPostEffect.disable();
-		 
-      if ( $LabPostFx_Enabled_Vignette )
-         VignettePostEffect.enable();
-      else
-         VignettePostEffect.disable();
-     
+		
       postVerbose("% - PostFX Manager - PostFX enabled");      
    }
    else
@@ -130,15 +102,7 @@ function EPostFxManager::settingsEffectSetEnabled(%this, %sName, %bEnable)
       //$pref::PostFX::LightRays::Enabled = %bEnable;      
    }
    else if(%sName $= "DOF")
-   {
-   	if (%bEnable){
-   		DOFPostEffect.enable();
-			info("% - Lab PostFX Manager - " @ %sName @ " enabled");
-			return;
-   	}
-   		DOFPostEffect.disable();
-			info("% - Lab PostFX Manager - " @ %sName @ " disabled");
-			return;
+   {   	
       %postEffect = DOFPostEffect;
       $LabPostFx_Enabled_DOF = %bEnable;
       //$pref::PostFX::DOF::Enabled = %bEnable;

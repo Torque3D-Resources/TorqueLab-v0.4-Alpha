@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiStackControl(EWTerrainPainterToolbar) {
+new GuiStackControl(EWTerrainPainterToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -15,21 +15,23 @@
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainPainterToolbar";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13108";
-      disabledGroup = "13147";
-      EditorContainer = "5181";
+      defaultStack = "14327";
+      disabledGroup = "14371";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
+      stackLists = "14328 14334 14366";
 
    new GuiStackControl() {
       stackingType = "Horizontal";
@@ -143,7 +145,8 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "13108";
+            pluginName = "TerrainPainter";
+            toolbar = "14327";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -174,6 +177,50 @@
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
+      };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "72 0";
+         extent = "18 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
       };
    };
    new GuiStackControl() {
@@ -317,7 +364,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -372,6 +419,7 @@
             canSave = "1";
             canSaveDynamicFields = "1";
                GuiGroup = "TPP_Slider_SlopeMin";
+               pluginName = "TerrainPainter";
          };
       };
       new GuiContainer() {
@@ -432,7 +480,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -487,6 +535,7 @@
             canSave = "1";
             canSaveDynamicFields = "1";
                GuiGroup = "TPP_Slider_SlopeMax";
+               pluginName = "TerrainPainter";
          };
       };
       new GuiContainer() {
@@ -547,7 +596,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -661,7 +710,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -716,6 +765,7 @@
             canSave = "1";
             canSaveDynamicFields = "1";
                GuiGroup = "TPP_Slider_Pressure";
+               pluginName = "TerrainPainter";
          };
       };
       new GuiContainer() {
@@ -776,7 +826,7 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            superClass = "ToolbarGroup";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -828,6 +878,50 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "softness_slider";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "548 0";
+         extent = "18 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -946,6 +1040,50 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "40 0";
+         extent = "18 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
    };
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -999,6 +1137,8 @@
          locked = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
+            pluginName = "TerrainPainter";
+            toolbar = "14327";
       };
    };
    new GuiContainer() {
@@ -1009,20 +1149,41 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "669 0";
-      extent = "84 30";
+      extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "1";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
-      superClass = "PluginToolbarEnd";
+      superClass = "StackEnd";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         superClass = "StackEndImg";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---

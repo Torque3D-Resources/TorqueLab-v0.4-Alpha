@@ -9,45 +9,40 @@
 
 //==============================================================================
 // Start dragging a toolbar icon
-function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	if (!isObject(%this)) {
-		devLog("PluginIcon class is corrupted! Fix it!");
-		return;
-	}
+function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {	
 	Lab.startToolbarDrag(%this,%a1,%a2,%a3);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Start dragging a toolbar icons group
-function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	if (!isObject(%this)) {
-		devLog("ToolbarBoxChild class is corrupted! Fix it!");
-		return;
-	}
+function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {	
 	%src = %this.parentGroup;
 	Lab.startToolbarDrag(%src,%a1,%a2,%a3);
-	
 }
 //------------------------------------------------------------------------------
 
-
-
-
 //==============================================================================
 // Start dragging a toolbar icons group
-function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	if (!isObject(%this)) {
-		devLog("ToolbarGroup class is corrupted! Fix it!");
-		return;
-	}
-
+function MouseStart::onMouseDragged( %this,%a1,%a2,%a3 ) {
+	
 	%group = %this.parentGroup.parentGroup;
 
 	if (%group.getClassName() !$= "GuiStackControl")
 		return;
-	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
 
+	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// OLD: Replaced with MouseStart
+function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
+	
+	%group = %this.parentGroup.parentGroup;
+
+	if (%group.getClassName() !$= "GuiStackControl")
+		return;
+
+	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -57,235 +52,22 @@ function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
 		devLog("ToolbarBoxChild class is corrupted! Fix it!");
 		return;
 	}
+
 	%callback = "Lab.onToolbarIconDroppedDefault";
+
 	if (%ctrl.getClassName() $= "GuiStackControl")
 		%callback = "Lab.onToolbarGroupDroppedDefault";
-	
-	startDragAndDropCtrl(%ctrl,"Toolbar",%callback);	
+
+	startDragAndDropCtrl(%ctrl,"Toolbar",%callback);
 	hide(%ctrl);
 	Lab.showDisabledToolbarDropArea(	%ctrl);
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-// Toolbar Dropping a dragged item callbacks
-//==============================================================================
+
 
 //==============================================================================
-// Dragged control dropped in Toolbar Trash Bin
-function EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint) {
-	devLog("EToolbarIconTrash::onControlDropped(%this, %control, %dropPoint)",%this, %control, %dropPoint);
-	
-	
-	%droppedCtrl = %control.dragSourceControl;
-	
-	
-Lab.hideDisabledToolbarDropArea(	);
-	if (%control.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
-		show(%droppedCtrl);
-		return;
-	}
-	if(isObject(%droppedCtrl.srcCtrl))
-		return;
-	if (%droppedCtrl.getClassName() $= "GuiStackControl") {
-		show(%droppedCtrl);
 
-		for(%i = %droppedCtrl.getCount()-1; %i >= 0; %i--) {
-			%obj = %droppedCtrl.getObject(%i);
-
-			if (%obj.internalName $= "GroupDivider")
-				continue;
-
-			%this.add(%obj);
-		}
-
-		%droppedCtrl.delete();
-		return;
-	}
-	
-	
-	Lab.setToolbarIconDisabled(%droppedCtrl,true);
-	%clone = %droppedCtrl.deepClone();
-	%clone.srcCtrl = %droppedCtrl;
-	
-	show(%clone);
-	%this.add(%clone);
-}
-//------------------------------------------------------------------------------
 //==============================================================================
-// Dragged control dropped over a toolbar icon
-function ToolbarIcon::onControlDropped(%this, %control, %dropPoint) {
-	devLog("ToolbarIcon IS NOT VALID ANYMORE");
-	if (%control.isMemberOfClass("GuiStackControl"))
-		Lab.onToolbarGroupDroppedDefault(%this,%control,%dropPoint);
-	else if (%control.isMemberOfClass("GuiIconButtonCtrl"))
-		Lab.onToolbarIconDroppedDefault(%this,%control,%dropPoint);
-	return;
-	%droppedCtrl = %control.dragSourceControl;
-Lab.hideDisabledToolbarDropArea(	);
-	if (%control.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
-		show(%droppedCtrl);
-		return;
-	}
-	
-	
-		if(%droppedCtrl.pluginName !$= %this.pluginName){			
-			warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%droppedCtrl.pluginName,"On",%this.pluginName);			
-			show(%droppedCtrl);
-			return;
-		}
-	
-	
-	if(isObject(%droppedCtrl.srcCtrl))
-	{
-	
-		%clone = %droppedCtrl;
-		%droppedCtrl = %droppedCtrl.srcCtrl;
-		delObj(%clone);
-	}
-	%addToThis = %this.parentGroup;
-	%addBefore = %this;
-	show(%droppedCtrl);
-	
-	if (%droppedCtrl.getClassName() $= "GuiStackControl") {
-		%stackAndChild = Lab.findObjectToolbarStack(%this,true);
-		%addToThis = getWord(%stackAndChild,0);
-		%addBefore =  getWord(%stackAndChild,1);
-	} else if (%droppedCtrl.isNewGroup) {
-		show(%droppedCtrl);
-		%newGroup = Lab.createNewToolbarIconGroup();
-		%droppedCtrl = %newGroup;
-		%stackAndChild = Lab.findObjectToolbarStack(%this,true);
-		%addToThis = getWord(%stackAndChild,0);
-		%addBefore =  getWord(%stackAndChild,1);
-	}
-
-	if (!isObject( %addToThis )) {
-		warnLog("Something went wrong, can't find a valid stack for the dropped on icon",%this);
-		return;
-	}
-
-	Lab.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Dragged control dropped over a toolbar icon
-function PluginToolbarEnd::onControlDropped(%this, %control, %dropPoint) {
-	devLog("PluginToolbarEnd IS NOT VALID ANYMORE");
-	
-	if (%control.isMemberOfClass("GuiStackControl"))
-		Lab.onToolbarGroupDroppedDefault(%this,%control,%dropPoint);
-	else if (%control.isMemberOfClass("GuiIconButtonCtrl"))
-		Lab.onToolbarIconDroppedDefault(%this,%control,%dropPoint);
-	return;
-	Lab.hideDisabledToolbarDropArea(	);
-	if (%control.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
-		show(%droppedCtrl);
-		return;
-	}
-	if(isObject(%droppedCtrl.srcCtrl))
-	{
-		
-		%clone = %droppedCtrl;
-		%droppedCtrl = %droppedCtrl.srcCtrl;
-		delObj(%clone);
-	}
-	show(%droppedCtrl);
-	%stackAndChild = Lab.findObjectToolbarStack(%this,true);
-	%addToThis = getWord(%stackAndChild,0);
-	%addBefore =  getWord(%stackAndChild,1);
-
-	if (%droppedCtrl.isNewGroup ) {
-		%newGroup = Lab.createNewToolbarIconGroup();
-		%droppedCtrl = %newGroup;
-	}
-
-	Lab.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Dragged control dropped over undefined control (gonna check if it's droppable)
-function Lab::onToolbarGroupDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
-	%droppedCtrl = %draggedControl.dragSourceControl;
-	Lab.hideDisabledToolbarDropArea(	);
-	
-	if(%droppedCtrl.pluginName !$= %dropOnCtrl.pluginName){				
-		warnLog("Can't drop plugin icon on something not related to this plugin.");			
-		show(%droppedCtrl);
-		return;
-	}
-	show(%droppedCtrl);	
-	switch$(%dropOnCtrl.superClass){		
-		case "StackEnd":
-			if (%droppedCtrl.getClassName() !$= "GuiStackControl") {
-				warnLog("Can't drop icon on a group stack",%droppedCtrl);					
-				return;
-			}
-			%addToThis = %dropOnCtrl.parentGroup;
-			%addBefore = %dropOnCtrl;
-		case "StackEndImg" or "ToolbarIcon":
-			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
-			%addBefore = %dropOnCtrl.parentGroup;	
-		
-	}
-	
-	
-	if (%droppedCtrl.isNewGroup ) {
-		%stackAndChild = Lab.findObjectToolbarStack(%dropOnCtrl,true);
-		%addToThis = getWord(%stackAndChild,0);
-		%addBefore =  getWord(%stackAndChild,1);
-	}
-	
-	if (!isObject(%addToThis)){
-		warnLog("Invalid target to add dropped ctrl to:",%addToThis);
-		return;
-	}
-		
-	if (!isObject(%addBefore))
-			warnLog("Invalid target to add before:",%addBefore);	
-	
-	%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Dragged control dropped over undefined control (gonna check if it's droppable)
-function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %dropPoint) {
-	%droppedCtrl = %draggedControl.dragSourceControl;
-	Lab.hideDisabledToolbarDropArea(	);
-	show(%droppedCtrl);
-	if (%draggedControl.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);		
-		return;
-	}	
-
-	if(%draggedControl.pluginName !$= %dropOnCtrl.pluginName){				
-		warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl.pluginName,"On",%dropOnCtrl.pluginName);				
-		return;
-	}	
-	
-	switch$(%dropOnCtrl.superClass){		
-		case "SubStackEnd" or "ToolbarIcon":
-			%addToThis = %dropOnCtrl.parentGroup;
-			%addBefore = %dropOnCtrl;
-		case "SubStackEndImg":	
-			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
-			%addBefore = %dropOnCtrl.parentGroup;		
-	}
-
-	if (!isObject(%addToThis)){
-		warnLog("Invalid target to add dropped ctrl to:",%addToThis);
-		return;
-	}
-		
-	if (!isObject(%addBefore))
-			warnLog("Invalid target to add before:",%addBefore);
-	
-
-	%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 // Dragged control dropped over undefined control (gonna check if it's droppable)
 function Lab::findObjectToolbarStack(%this,%checkObj,%defaultPluginStack) {
@@ -339,142 +121,86 @@ function Lab::addToolbarItemToGroup(%this,%item,%group,%addBefore) {
 				%obj.extent.x = "6";
 		}
 	}
+
 	%this.setToolbarIconDisabled(%item,false);
 	%group.add(%item);
 	%group.updateStack();
 	%group.reorderChild(%item,%addBefore);
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-// Create a new Icon Group to be dragged in Toolbar
-//==============================================================================
-//==============================================================================
-// Start dragging a new icons group to be added to toolbar
-function NewToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	if (!isObject(%this)) {
-		devLog("ToolbarGroup class is corrupted! Fix it!");
-		return;
-	}
 
-	%group = %this.parentGroup;
-	%group.isNewGroup = true;
-	startDragAndDropCtrl(%group,"Toolbar","Lab.onToolbarIconDroppedDefault");
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-// Dragged control dropped over undefined control (gonna check if it's droppable)
-function Lab::createNewToolbarIconGroup(%this) {
-	%newGroup = new GuiStackControl() {
-		stackingType = "Horizontal";
-		horizStacking = "Left to Right";
-		vertStacking = "Top to Bottom";
-		padding = "2";
-		dynamicSize = "1";
-		dynamicNonStackExtent = "0";
-		dynamicPos = "0";
-		changeChildSizeToFit = "1";
-		changeChildPosition = "1";
-		position = "472 0";
-		extent = "68 30";
-		minExtent = "4 16";
-		profile = "ToolsPanelDarkB";
-		visible = "1";
-		active = "1";
-		internalName = "ToolbarGroup";
-		superClass = "ToolbarContainer";
-		new GuiContainer() {
-			position = "0 0";
-			extent = "16 30";
-			minExtent = "4 2";
-			profile = "ToolsPanelDarkB";
-			visible = "1";
-			active = "1";
-			tooltipProfile = "ToolsGuiToolTipProfile";
-			internalName = "GroupDivider";
-			new GuiBitmapCtrl() {
-				bitmap = "tlab/gui/icons/toolbar-assets/GroupDivider.png";
-				wrap = "0";
-				position = "1 6";
-				extent = "4 18";
-				minExtent = "4 2";
-				profile = "ToolsDefaultProfile";
-				visible = "1";
-				active = "1";
-			};
-			new GuiMouseEventCtrl() {
-				extent = "16 30";
-				minExtent = "8 2";
-				visible = "1";
-				active = "1";
-				superClass = "ToolbarGroup";
-			};
-		};
-	};
-	return %newGroup;
-}
 //==============================================================================
 function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 	%isIcon = false;
+
 	if (%dragControl.isMemberOfClass("GuiIconButtonCtrl"))
 		%isIcon = true;
+
 	EToolbarDisabledDrop.visible = 1;
-	
+
 	//Only show StackEnd for groups
-	if(%isIcon){
+	if(%isIcon) {
 		foreach(%gui in LabToolbarGuiSet) {
-			foreach$(%stack in %gui.stackLists){
-				%stackEnd = %stack-->SubStackEnd;			
+			foreach$(%stack in %gui.stackLists) {
+				%stackEnd = %stack-->SubStackEnd;
+
 				if (!isObject(%stackEnd))
-					continue;				
-				
+					continue;
+
 				show(%stackEnd);
 				%stack.pushToBack(%stackEnd);
 				%stackEnd.profile = "ToolsBoxDarkC";
-				%stackEnd.setExtent(18,%gui.parentGroup.extent.y);		
+				%stackEnd.setExtent(18,%gui.parentGroup.extent.y);
 			}
 		}
-	}
-	else {
+	} else {
 		foreach(%gui in LabToolbarGuiSet) {
 			%stackEnd = %gui-->StackEnd;
+
 			if (!isObject(%stackEnd))
 				continue;
+
 			%gui.pushToBack(%stackEnd);
 			show(%stackEnd);
 			%stackEnd.profile = "ToolsBoxDarkC";
-			%stackEnd.setExtent(27,%gui.parentGroup.extent.y);		
+			%stackEnd.setExtent(27,%gui.parentGroup.extent.y);
 		}
 	}
-	
+
 	foreach(%gui in EToolbarDisabledDrop) {
-		if (%gui.pluginName !$= %dragControl.pluginName){
+		if (%gui.pluginName !$= %dragControl.pluginName) {
 			%src = %gui.internalName;
+
 			if (%src.visible $= "0")
 				continue;
+
 			%gui.visible = 1;
 			%gui.setExtent(%src.extent.x,EditorGuiToolbar.extent.y);
 			%gui.setPosition(%src.position.x,0);
-		}		
+		}
 	}
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::hideDisabledToolbarDropArea(%this) {	
+function Lab::hideDisabledToolbarDropArea(%this) {
 	foreach(%gui in LabToolbarGuiSet) {
 		%stackEnd = %gui-->StackEnd;
+
 		if (isObject(%stackEnd))
 			hide(%stackEnd);
-		foreach$(%stack in %gui.stackLists){
-			%subStackEnd = %stack-->SubStackEnd;			
+		
+		//foreach$(%stack in %gui.stackLists) {
+		foreach(%subCtrl in %gui) {
+			%subStackEnd = %subCtrl-->SubStackEnd;
+
 			if (isObject(%subStackEnd))
-					hide(%subStackEnd);				
+				hide(%subStackEnd);
 		}
 	}
 
 	foreach(%gui in EToolbarDisabledDrop)
-			%gui.visible = 0;				
-	EToolbarDisabledDrop.visible = 0;		
+		%gui.visible = 0;
+
+	EToolbarDisabledDrop.visible = 0;
 }
 //------------------------------------------------------------------------------

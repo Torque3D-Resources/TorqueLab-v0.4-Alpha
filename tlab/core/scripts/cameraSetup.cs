@@ -279,7 +279,8 @@ function Lab::syncCameraGui( %this,%forced ) {
 	}
 
 	%cameraTypesButton = EditorGuiToolbar-->cameraTypes;
-	%cameraTypesButton.setBitmap($LabCameraTypesIcon); //Default Toggle Camera Icon
+	if (isObject(%cameraTypesButton))	
+		%cameraTypesButton.setBitmap($LabCameraTypesIcon); //Default Toggle Camera Icon
 	// Sync camera settings.
 	%flyModeRadioItem = -1;
 
