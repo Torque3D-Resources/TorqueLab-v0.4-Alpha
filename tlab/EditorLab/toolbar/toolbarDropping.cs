@@ -52,8 +52,7 @@ function Lab::findToolbarGroupDropTarget(%this,%dropOnCtrl, %droppedCtrl, %dropP
 	//devLog("findToolbarGroupDropTarget(%dropOnCtrl, %droppedCtrl, %dropPoint)",%dropOnCtrl, %droppedCtrl, %dropPoint);
 	
 	switch$(%dropOnCtrl.superClass) {
-		case "ToolbarStart" or "ToolbarStartImg":
-			%addToThis = 
+		
 		case "StackEnd":
 			if (%droppedCtrl.getClassName() !$= "GuiStackControl") {
 				warnLog("Can't drop icon on a group stack",%droppedCtrl);
