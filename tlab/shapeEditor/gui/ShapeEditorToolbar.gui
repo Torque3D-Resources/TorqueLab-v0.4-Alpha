@@ -26,12 +26,12 @@ new GuiStackControl(ShapeEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12495";
-      disabledGroup = "12496";
+      defaultStack = "12559";
+      disabledGroup = "12560";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ShapeEditor";
-      stackLists = "12497 12504 12511 12518";
+      stackLists = "12561 12570 12579 12588";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -133,7 +133,8 @@ new GuiStackControl(ShapeEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -350,7 +351,8 @@ new GuiStackControl(ShapeEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -567,7 +569,8 @@ new GuiStackControl(ShapeEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -784,7 +787,8 @@ new GuiStackControl(ShapeEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

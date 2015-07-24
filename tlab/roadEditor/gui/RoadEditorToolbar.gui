@@ -9,7 +9,7 @@ new GuiStackControl(RoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "245 0";
+   position = "122 0";
    extent = "608 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,13 +26,36 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12261";
-      disabledGroup = "12292";
+      defaultStack = "12318";
+      disabledGroup = "12355";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "12262 12269 12283";
+      stackLists = "12319 12328 12344";
 
+   new GuiContainer() {
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "0 0";
+      extent = "84 30";
+      minExtent = "8 2";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsDefaultProfile";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "DisabledIcons";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
    new GuiStackControl() {
       stackingType = "Horizontal";
       horizStacking = "Left to Right";
@@ -111,7 +134,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -329,7 +353,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -417,7 +442,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -525,7 +551,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -675,7 +702,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -738,7 +766,8 @@ new GuiStackControl(RoadEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -838,29 +867,6 @@ new GuiStackControl(RoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
       };
-   };
-   new GuiContainer() {
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "0 0";
-      extent = "84 30";
-      minExtent = "8 2";
-      horizSizing = "right";
-      vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      internalName = "DisabledIcons";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
    };
    new GuiContainer() {
       margin = "0 0 0 0";

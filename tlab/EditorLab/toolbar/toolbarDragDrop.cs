@@ -51,10 +51,18 @@ function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
 		return;
 	}
 
-	%callback = "Lab.onToolbarIconDroppedDefault";
+	if (%ctrl.parentGroup.superClass !$= "EToolbarTrashClass"){
+		%ctrl.originalParent = %ctrl.parentGroup;
+		%ctrl.originalIndex = %ctrl.parentGroup.getObjectIndex(%ctrl);
+	}
 
-	if (%ctrl.getClassName() $= "GuiStackControl")
+	if (%ctrl.getClassName() $= "GuiStackControl"){
 		%callback = "Lab.onToolbarGroupDroppedDefault";
+	}
+	else {
+		%callback = "Lab.onToolbarIconDroppedDefault";
+		
+	}
 
 	startDragAndDropCtrl(%ctrl,"Toolbar",%callback);
 	hide(%ctrl);
@@ -119,11 +127,18 @@ function Lab::addToolbarItemToGroup(%this,%item,%group,%addBefore) {
 				%obj.extent.x = "6";
 		}
 	}
-
-	%this.setToolbarIconDisabled(%item,false);
-	%group.add(%item);
+	%original = %this.getTrashedOriginalIcon(%item);
+	if (%original.srcIcon !$= "")
+		%original.srcIcon = "";
+	
+	%group.add(%original);
 	%group.updateStack();
-	%group.reorderChild(%item,%addBefore);
+	%group.reorderChild(%original,%addBefore);
+	
+	%item.originalParent = %group;
+	%item.originalIndex = %group.getObjectIndex(%original);
+	
+	Lab.setToolbarDirty(true);
 }
 //------------------------------------------------------------------------------
 

@@ -118,11 +118,11 @@ function EPostFxManager::settingsEffectSetEnabled(%this, %sName, %bEnable)
    if ( %bEnable )
    {
       %postEffect.enable();
-      info("% - PostFX Manager - " @ %sName @ " enabled");
+     // ("% - PostFX Manager - " @ %sName @ " enabled");
    }
    else
    {
       %postEffect.disable();
-      info("% - PostFX Manager - " @ %sName @ " disabled");
+      //info("% - PostFX Manager - " @ %sName @ " disabled");
    }
 }

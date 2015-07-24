@@ -108,7 +108,7 @@ function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %d
 //==============================================================================
 // Dragged control dropped over undefined control (gonna check if it's droppable)
 function Lab::findToolbarItemDropTarget(%this,%dropOnCtrl, %droppedCtrl, %dropPoint) {
-devLog("findToolbarItemDropTarget(%dropOnCtrl SuperClass",%dropOnCtrl.superClass);
+
 	switch$(%dropOnCtrl.superClass) {
 		case "MouseStart":
 			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
@@ -137,8 +137,9 @@ function Lab::dropControlOnToolbar(%this,%droppedCtrl, %addToThis, %addBefore) {
 	}
 
 	if (!isObject(%addBefore))
-		warnLog("Invalid target to add before:",%addBefore);
-
+		warnLog("Invalid target to add before:",%addBefore);	
+	
+	
 	%this.addToolbarItemToGroup(%droppedCtrl,%addToThis,%addBefore);
 }
 //------------------------------------------------------------------------------

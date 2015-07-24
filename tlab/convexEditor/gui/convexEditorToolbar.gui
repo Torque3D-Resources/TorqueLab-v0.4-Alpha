@@ -9,7 +9,7 @@ new GuiStackControl(ConvexEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "245 0";
+   position = "245 -1";
    extent = "102 32";
    minExtent = "16 16";
    horizSizing = "width";
@@ -26,13 +26,36 @@ new GuiStackControl(ConvexEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10346";
-      disabledGroup = "10354";
+      defaultStack = "10381";
+      disabledGroup = "10391";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ConvexEditor";
-      stackLists = "10347";
+      stackLists = "10382";
 
+   new GuiContainer() {
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "861 0";
+      extent = "84 30";
+      minExtent = "8 2";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsDefaultProfile";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "DisabledIcons";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
    new GuiStackControl() {
       stackingType = "Horizontal";
       horizStacking = "Left to Right";
@@ -110,7 +133,8 @@ new GuiStackControl(ConvexEditorToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -246,29 +270,6 @@ new GuiStackControl(ConvexEditorToolbar) {
             canSaveDynamicFields = "0";
          };
       };
-   };
-   new GuiContainer() {
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "861 0";
-      extent = "84 30";
-      minExtent = "8 2";
-      horizSizing = "right";
-      vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      internalName = "DisabledIcons";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
    };
    new GuiContainer() {
       margin = "0 0 0 0";

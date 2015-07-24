@@ -181,7 +181,7 @@ function SEP_ScatterSkyManager::setDirtyObject(%this,%obj,%isDirty) {
 			%this.dirtyList = strRemoveWord(%this.dirtyList,%obj.getId());
 		}
 	}
-	devLog("Legacy Dirty List=",%this.dirtyList);
+	
 	%legacyIsDirty = false;
 	if (getWordCount(%this.dirtyList) > 0)
 		%legacyIsDirty = true;

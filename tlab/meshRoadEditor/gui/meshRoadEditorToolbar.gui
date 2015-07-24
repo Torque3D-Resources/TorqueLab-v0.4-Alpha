@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
-   position = "245 0";
+   position = "156 0";
    extent = "800 32";
    minExtent = "8 2";
    horizSizing = "right";
@@ -16,13 +16,13 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "4914";
-      defaultStack = "11566";
-      disabledGroup = "11593";
+      defaultStack = "11612";
+      disabledGroup = "11643";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       enabled = "1";
       plugin = "MeshRoadEditor";
-      stackLists = "11567 11574";
+      stackLists = "11613 11622";
       tooltipWidth = "500";
 
    new GuiStackControl() {
@@ -129,10 +129,41 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarGroup";
+               internalName = "MouseStart";
+               superClass = "MouseStart";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
+         };
+         new GuiIconButtonCtrl(MeshRoadEditorShowRoadBtn) {
+            buttonMargin = "1 1";
+            iconBitmap = "tlab/gui/icons/toolbar_assets/RoadShaded.png";
+            iconLocation = "Left";
+            sizeIconToButton = "0";
+            makeIconSquare = "0";
+            textLocation = "Left";
+            textMargin = "4";
+            autoSize = "0";
+            groupNum = "-1";
+            buttonType = "ToggleButton";
+            useMouseEvents = "1";
+            position = "8 0";
+            extent = "30 30";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsButtonDark";
+            visible = "1";
+            active = "1";
+            variable = "$MeshRoad::showRoad";
+            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltip = "Show Road Texture (V)";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "ShowRoadBtn";
+            superClass = "ToolbarIcon";
+            canSave = "1";
+            canSaveDynamicFields = "0";
          };
          new GuiIconButtonCtrl(MeshRoadEditorShowSplineBtn) {
             buttonMargin = "1 1";
@@ -146,7 +177,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             groupNum = "-1";
             buttonType = "ToggleButton";
             useMouseEvents = "1";
-            position = "8 0";
+            position = "40 0";
             extent = "30 30";
             minExtent = "8 2";
             horizSizing = "right";
@@ -176,7 +207,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             groupNum = "-1";
             buttonType = "ToggleButton";
             useMouseEvents = "1";
-            position = "40 0";
+            position = "72 0";
             extent = "30 30";
             minExtent = "8 2";
             horizSizing = "right";
@@ -190,36 +221,6 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "WireframeBtn";
-            superClass = "ToolbarIcon";
-            canSave = "1";
-            canSaveDynamicFields = "0";
-         };
-         new GuiIconButtonCtrl(MeshRoadEditorShowRoadBtn) {
-            buttonMargin = "1 1";
-            iconBitmap = "tlab/gui/icons/toolbar_assets/RoadShaded.png";
-            iconLocation = "Left";
-            sizeIconToButton = "0";
-            makeIconSquare = "0";
-            textLocation = "Left";
-            textMargin = "4";
-            autoSize = "0";
-            groupNum = "-1";
-            buttonType = "ToggleButton";
-            useMouseEvents = "1";
-            position = "72 0";
-            extent = "30 30";
-            minExtent = "8 2";
-            horizSizing = "right";
-            vertSizing = "bottom";
-            profile = "ToolsButtonDark";
-            visible = "1";
-            active = "1";
-            variable = "$MeshRoad::showRoad";
-            tooltipProfile = "ToolsGuiToolTipProfile";
-            tooltip = "Show Road Texture (V)";
-            hovertime = "1000";
-            isContainer = "0";
-            internalName = "ShowRoadBtn";
             superClass = "ToolbarIcon";
             canSave = "1";
             canSaveDynamicFields = "0";
@@ -347,7 +348,8 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarGroup";
+               internalName = "MouseStart";
+               superClass = "MouseStart";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -410,7 +412,8 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarGroup";
+               internalName = "MouseStart";
+               superClass = "MouseStart";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -524,7 +527,8 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarGroup";
+               internalName = "MouseStart";
+               superClass = "MouseStart";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -662,7 +666,8 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               superClass = "ToolbarGroup";
+               internalName = "MouseStart";
+               superClass = "MouseStart";
                canSave = "1";
                canSaveDynamicFields = "0";
             };

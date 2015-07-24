@@ -135,11 +135,12 @@ function Lab::initializeEditorGui( %this ) {
 
 	Lab.addGui( EPostFxManager ,"EditorDlg");
 	
-	Lab.addGui( CommonToolsToolbar ,"Toolbar",true);
-	Lab.addGui( CommonSettingsToolbar ,"Toolbar",true);
-
-	CommonToolsToolbar.isCommon = true;
-	CommonSettingsToolbar.isCommon = true;
+	
+	Lab.addGui( StackStartToolbar ,"Toolbar",true);
+	Lab.addGui( StackEndToolbar ,"Toolbar",true);
+	
+	StackStartToolbar.isCommon = true;
+	StackEndToolbar.isCommon = true;
 	EWorldEditor.init();
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();
@@ -191,6 +192,8 @@ function Lab::initializeEditorGui( %this ) {
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");
 	
 	Lab.initAllToolbarGroups();
+	
+	Lab.initToolbarTrash();
 	
 }
 //------------------------------------------------------------------------------

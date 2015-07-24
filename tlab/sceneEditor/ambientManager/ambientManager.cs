@@ -21,39 +21,32 @@ function SceneEditorDialogs::onActivated( %this ) {
 
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SEP_AmbientManager::onShow( %this ) {
-	devLog("SEP_AmbientManager::onShow(%this)");
-	
+function SEP_AmbientManager::onShow( %this ) {	
 	EPostFxManager.moveToGui(SEP_PostFXManager_Clone);	
 	
 	hide(SEP_SkySystemCreator);	
 	
 	SEP_AmbientManager.updateSkySystemData(true);
 	syncParamObj(SEP_AmbientManager.FogParamArray);
-
-	
-	//SEP_AmbientBook.selectPage(0);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SEP_AmbientManager::onHide( %this ) {
-	devLog("SEP_AmbientManager::onHide(%this)");
-	
+function SEP_AmbientManager::onHide( %this ) {	
 	EPostFxManager.moveFromGui();
 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::onPreEditorSave(%this) {	
-	devLog("SEP_AmbientManager::onPreEditorSave",TMG_GroundCoverClone-->MainContainer);	
+	info("SEP_AmbientManager::onPreEditorSave");	
 	if (isObject(SEP_PostFXManager_Clone-->MainContainer))
 		EPostFxManager.moveFromGui();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::onPostEditorSave(%this) {
-	devLog("SEP_AmbientManager::onPostEditorSave",TMG_GroundCoverClone-->MainContainer);
+	info("SEP_AmbientManager::onPostEditorSave");
 	EPostFxManager.moveToGui(SEP_PostFXManager_Clone);
 }
 //------------------------------------------------------------------------------
