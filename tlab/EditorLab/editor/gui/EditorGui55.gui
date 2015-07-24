@@ -111,7 +111,7 @@
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
          position = "0 2";
-         extent = "78 32";
+         extent = "16 32";
          minExtent = "16 16";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -292,7 +292,7 @@
                processUsesBrush = "0";
                maxBrushSize = "40 40";
                adjustHeightVal = "10";
-               setHeightVal = "100";
+               setHeightVal = "60";
                scaleVal = "1";
                smoothFactor = "0.1";
                noiseFactor = "1";
@@ -476,7 +476,7 @@
                groupNum = "1";
                buttonType = "RadioButton";
                useMouseEvents = "0";
-               position = "139507 0";
+               position = "139055 0";
                extent = "36 40";
                minExtent = "7 2";
                horizSizing = "left";
@@ -494,7 +494,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiDynamicCtrlArrayControl(ToolsToolbarArray) {
-               colCount = "3915";
+               colCount = "3903";
                colSize = "36";
                rowCount = "1";
                rowSize = "40";
@@ -506,7 +506,7 @@
                dynamicSize = "0";
                padding = "0 0 0 0";
                position = "4 0";
-               extent = "144882 40";
+               extent = "144430 40";
                minExtent = "1024 32";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -572,8 +572,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "573 44";
-            extent = "228 220";
+            position = "573 1";
+            extent = "228 176";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -2267,7 +2267,7 @@
       canSaveDynamicFields = "1";
 
       new GuiTextCtrl(EWorldEditorStatusBarSelection) {
-         text = "1 object selected";
+         text = "0 objects selected";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -2378,7 +2378,7 @@
             new GuiBitmapCtrl() {
                bitmap = "tlab/gui/assets/gfx/Divider-v.png";
                wrap = "0";
-               position = "0 0";
+               position = "-1 0";
                extent = "10 20";
                minExtent = "1 1";
                horizSizing = "left";
@@ -2422,7 +2422,7 @@
             new GuiBitmapCtrl() {
                bitmap = "tlab/gui/assets/gfx/Divider-v.png";
                wrap = "0";
-               position = "76 0";
+               position = "75 0";
                extent = "10 20";
                minExtent = "1 1";
                horizSizing = "left";
@@ -2478,7 +2478,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "106 0";
+               position = "105 0";
                extent = "122 20";
                minExtent = "8 8";
                horizSizing = "left";

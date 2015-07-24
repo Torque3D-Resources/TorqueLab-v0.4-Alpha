@@ -52,6 +52,8 @@ function Lab::findToolbarGroupDropTarget(%this,%dropOnCtrl, %droppedCtrl, %dropP
 	//devLog("findToolbarGroupDropTarget(%dropOnCtrl, %droppedCtrl, %dropPoint)",%dropOnCtrl, %droppedCtrl, %dropPoint);
 	
 	switch$(%dropOnCtrl.superClass) {
+		case "ToolbarStart" or "ToolbarStartImg":
+			%addToThis = 
 		case "StackEnd":
 			if (%droppedCtrl.getClassName() !$= "GuiStackControl") {
 				warnLog("Can't drop icon on a group stack",%droppedCtrl);
@@ -93,9 +95,11 @@ function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %d
 		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		return;
 	}
-
+	if (%dropOnCtrl.isMemberOfClass("GuiBitmapCtrl"))
+		%dropOnCtrl = %dropOnCtrl.parentGroup;	
+	
 	if(%draggedControl.pluginName !$= %dropOnCtrl.pluginName) {
-		warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl.pluginName,"On",%dropOnCtrl.pluginName);			
+		warnLog("Can't drop plugin icon on something not related to this plugin. Dropped Plugin",%draggedControl,"On",%dropOnCtrl);			
 		return;
 	}
 

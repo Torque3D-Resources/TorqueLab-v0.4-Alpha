@@ -18,7 +18,7 @@ function NewToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
 		devLog("ToolbarGroup class is corrupted! Fix it!");
 		return;
 	}
-	devLog("NewGroup = ",%this.parentGroup);
+	
 	%group = %this.parentGroup;
 	%group.isNewGroup = true;
 	startDragAndDropCtrl(%group,"Toolbar","Lab.onNewToolbarGroupDropped");

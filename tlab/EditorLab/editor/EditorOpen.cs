@@ -139,7 +139,7 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.addGui( CommonSettingsToolbar ,"Toolbar",true);
 
 	CommonToolsToolbar.isCommon = true;
-	CommonToolsToolbar.noDrag = true;
+	CommonSettingsToolbar.isCommon = true;
 	EWorldEditor.init();
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();

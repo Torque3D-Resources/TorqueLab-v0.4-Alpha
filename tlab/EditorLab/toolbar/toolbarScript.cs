@@ -156,7 +156,8 @@ function Lab::scanPluginToolbarStack(%this,%stack,%pluginObj,%gui) {
 			%dropTarget = %stack.getObjectIndex(%ctrl);			
 		
 			foreach(%subCtrl in %ctrl){				
-				if (%subCtrl.isMemberOfClass("GuiMouseEventCtrl")) {			
+				if (%subCtrl.isMemberOfClass("GuiMouseEventCtrl")) {	
+					%subCtrl.internalName = "MouseStart";			
 					%subCtrl.superClass = "MouseStart";	
 					%subCtrl.dropTarget = %dropTarget;					
 				}
@@ -168,15 +169,11 @@ function Lab::scanPluginToolbarStack(%this,%stack,%pluginObj,%gui) {
 			
 			%ctrl.superClass = "ToolbarIcon";
 			%ctrl.useMouseEvents = true;
-			
-			if (isObject(%pluginObj)){
-				devLog("Toolbar GUI:",%gui,"PluginGui:",%pluginObj.toolbarGui);
-				%ctrl.toolbar = %pluginObj.toolbarGui;
+			%ctrl.toolbar = %gui;
+			if (isObject(%pluginObj)){				
 				%pluginObj.iconList = strAddWord(%pluginObj.iconList,%ctrl.getId());
 			}
-			else{			
-				%ctrl.toolbar = %gui;
-			}			
+		
 		}
 	}
 }

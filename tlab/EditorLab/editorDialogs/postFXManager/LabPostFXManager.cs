@@ -25,13 +25,13 @@ function EPostFxManager::onShow(%this) {
 	if (!EPostFxManager.initialized)
 		EPostFxManager.init();
 	$EPostFxManagerActive = true;
-	SceneEditorToolbar-->PostFXManager.setStateOn(true);
+	EditorGuiToolbarStack-->PostFXManager.setStateOn(true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::onHide(%this) {	
 	$EPostFxManagerActive = false;
-	SceneEditorToolbar-->PostFXManager.setStateOn(false);
+	EditorGuiToolbarStack-->PostFXManager.setStateOn(false);
 }
 //------------------------------------------------------------------------------
 

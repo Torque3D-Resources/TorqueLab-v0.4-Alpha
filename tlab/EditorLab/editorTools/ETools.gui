@@ -21,7 +21,7 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      EditorContainer = "5028";
+      EditorContainer = "5005";
       editorParent = "EditorFrameTools";
 
    new GuiContainer(EToolbarObjectCenterDropdown) {
@@ -12766,7 +12766,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "95 2";
+                  position = "96 2";
                   extent = "247 17";
                   minExtent = "8 8";
                   horizSizing = "width";
@@ -12778,6 +12778,27 @@
                   tooltipProfile = "ToolsGuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new GuiButtonCtrl() {
+                  text = "Save toolbar";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+                  position = "240 0";
+                  extent = "137 20";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsButtonProfile";
+                  visible = "1";
+                  active = "1";
+                  command = "Lab.saveToolbar();";
+                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  internalName = "saveToolbar";
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };
@@ -12913,7 +12934,7 @@
                      new GuiMouseEventCtrl() {
                         lockMouse = "0";
                         position = "0 0";
-                        extent = "82 30";
+                        extent = "82 32";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -13041,7 +13062,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsBoxDarkA";
+               profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -13059,7 +13080,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 4";
-                  extent = "137 311";
+                  extent = "143 311";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -13072,8 +13093,100 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
+                  new GuiScrollCtrl() {
+                     willFirstRespond = "1";
+                     hScrollBar = "alwaysOff";
+                     vScrollBar = "alwaysOn";
+                     lockHorizScroll = "0";
+                     lockVertScroll = "0";
+                     constantThumbHeight = "0";
+                     childMargin = "0 0";
+                     mouseWheelScrollSpeed = "-1";
+                     docking = "Client";
+                     margin = "20 0 0 0";
+                     padding = "0 0 0 0";
+                     anchorTop = "1";
+                     anchorBottom = "0";
+                     anchorLeft = "1";
+                     anchorRight = "0";
+                     position = "0 20";
+                     extent = "143 291";
+                     minExtent = "8 2";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     profile = "ToolsScrollProfile";
+                     visible = "1";
+                     active = "1";
+                     tooltipProfile = "GuiToolTipProfile";
+                     hovertime = "1000";
+                     isContainer = "1";
+                     canSave = "1";
+                     canSaveDynamicFields = "0";
+
+                     new GuiDynamicCtrlArrayControl(EToolbarBoxTrash) {
+                        colCount = "4";
+                        colSize = "30";
+                        rowCount = "1";
+                        rowSize = "32";
+                        rowSpacing = "2";
+                        colSpacing = "0";
+                        frozen = "0";
+                        autoCellSize = "1";
+                        fillRowFirst = "1";
+                        dynamicSize = "1";
+                        padding = "0 0 0 0";
+                        position = "3 3";
+                        extent = "122 32";
+                        minExtent = "8 2";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        profile = "ToolsBoxDarkC";
+                        visible = "1";
+                        active = "1";
+                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        hovertime = "1000";
+                        isContainer = "1";
+                        superClass = "EToolbarTrashClass";
+                        canSave = "1";
+                        canSaveDynamicFields = "0";
+
+                        new GuiIconButtonCtrl() {
+                           buttonMargin = "1 1";
+                           iconBitmap = "tlab/gui/icons/toolbar_assets/PrefabUnpack.png";
+                           iconLocation = "Left";
+                           sizeIconToButton = "0";
+                           makeIconSquare = "0";
+                           textLocation = "Left";
+                           textMargin = "4";
+                           autoSize = "0";
+                           groupNum = "-1";
+                           buttonType = "ToggleButton";
+                           useMouseEvents = "1";
+                           position = "0 0";
+                           extent = "30 32";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsButtonDark";
+                           visible = "1";
+                           active = "1";
+                           command = "Lab.ExplodePrefab();";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "0";
+                           internalName = "explodePrefabBtn";
+                           superClass = "ToolbarIcon";
+                           locked = "1";
+                           canSave = "1";
+                           canSaveDynamicFields = "1";
+                              isDisabled = "1";
+                              pluginName = "SceneEditor";
+                              toolbar = "8826";
+                        };
+                     };
+                  };
                   new GuiTextCtrl() {
-                     text = "Toolbar Options";
+                     text = "Disabled boxes";
                      maxLength = "255";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -13081,8 +13194,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 0";
-                     extent = "137 17";
+                     position = "5 2";
+                     extent = "213 17";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -13095,284 +13208,17 @@
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
-                  new GuiStackControl() {
-                     stackingType = "Vertical";
-                     horizStacking = "Left to Right";
-                     vertStacking = "Top to Bottom";
-                     padding = "0";
-                     dynamicSize = "1";
-                     dynamicNonStackExtent = "0";
-                     dynamicPos = "0";
-                     changeChildSizeToFit = "1";
-                     changeChildPosition = "1";
-                     position = "0 25";
-                     extent = "137 114";
-                     minExtent = "16 16";
-                     horizSizing = "right";
-                     vertSizing = "bottom";
-                     profile = "ToolsDefaultProfile";
-                     visible = "1";
-                     active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
-                     hovertime = "1000";
-                     isContainer = "1";
-                     canSave = "1";
-                     canSaveDynamicFields = "0";
-
-                     new GuiTextCtrl() {
-                        text = "Add toolbar group";
-                        maxLength = "255";
-                        margin = "0 0 0 0";
-                        padding = "0 0 0 0";
-                        anchorTop = "1";
-                        anchorBottom = "0";
-                        anchorLeft = "1";
-                        anchorRight = "0";
-                        position = "0 0";
-                        extent = "137 17";
-                        minExtent = "8 8";
-                        horizSizing = "width";
-                        vertSizing = "bottom";
-                        profile = "ToolsTextBase";
-                        visible = "1";
-                        active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
-                        hovertime = "1000";
-                        isContainer = "0";
-                        canSave = "1";
-                        canSaveDynamicFields = "0";
-                     };
-                     new GuiContainer() {
-                        margin = "0 0 0 0";
-                        padding = "0 0 0 0";
-                        anchorTop = "1";
-                        anchorBottom = "0";
-                        anchorLeft = "1";
-                        anchorRight = "0";
-                        position = "0 17";
-                        extent = "137 34";
-                        minExtent = "8 2";
-                        horizSizing = "right";
-                        vertSizing = "bottom";
-                        profile = "ToolsBoxDarkB";
-                        visible = "1";
-                        active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
-                        hovertime = "1000";
-                        isContainer = "1";
-                        canSave = "1";
-                        canSaveDynamicFields = "0";
-
-                        new GuiTextEditCtrl() {
-                           historySize = "0";
-                           tabComplete = "0";
-                           sinkAllKeyEvents = "0";
-                           password = "0";
-                           passwordMask = "*";
-                           text = "NewToolbarGroup";
-                           maxLength = "1024";
-                           margin = "0 0 0 0";
-                           padding = "0 0 0 0";
-                           anchorTop = "1";
-                           anchorBottom = "0";
-                           anchorLeft = "1";
-                           anchorRight = "0";
-                           position = "0 15";
-                           extent = "137 19";
-                           minExtent = "8 2";
-                           horizSizing = "width";
-                           vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
-                           visible = "1";
-                           active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
-                           hovertime = "1000";
-                           isContainer = "1";
-                           internalName = "newGroupName";
-                           canSave = "1";
-                           canSaveDynamicFields = "0";
-                        };
-                        new GuiTextCtrl() {
-                           text = "New group name";
-                           maxLength = "255";
-                           margin = "0 0 0 0";
-                           padding = "0 0 0 0";
-                           anchorTop = "1";
-                           anchorBottom = "0";
-                           anchorLeft = "1";
-                           anchorRight = "0";
-                           position = "0 0";
-                           extent = "137 17";
-                           minExtent = "8 8";
-                           horizSizing = "width";
-                           vertSizing = "bottom";
-                           profile = "ToolsTextBase_S1";
-                           visible = "1";
-                           active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
-                           hovertime = "1000";
-                           isContainer = "0";
-                           canSave = "1";
-                           canSaveDynamicFields = "0";
-                        };
-                     };
-                     new GuiContainer() {
-                        margin = "0 0 0 0";
-                        padding = "0 0 0 0";
-                        anchorTop = "1";
-                        anchorBottom = "0";
-                        anchorLeft = "1";
-                        anchorRight = "0";
-                        position = "0 51";
-                        extent = "137 42";
-                        minExtent = "8 2";
-                        horizSizing = "right";
-                        vertSizing = "bottom";
-                        profile = "ToolsBoxDarkB";
-                        visible = "1";
-                        active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
-                        hovertime = "1000";
-                        isContainer = "1";
-                        canSave = "1";
-                        canSaveDynamicFields = "0";
-
-                        new GuiContainer() {
-                           margin = "0 0 0 0";
-                           padding = "0 0 0 0";
-                           anchorTop = "1";
-                           anchorBottom = "0";
-                           anchorLeft = "1";
-                           anchorRight = "0";
-                           position = "23 5";
-                           extent = "82 30";
-                           minExtent = "8 2";
-                           horizSizing = "center";
-                           vertSizing = "center";
-                           profile = "ToolsBoxDarkC";
-                           visible = "1";
-                           active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
-                           hovertime = "1000";
-                           isContainer = "1";
-                           canSave = "1";
-                           canSaveDynamicFields = "0";
-
-                           new GuiBitmapCtrl() {
-                              bitmap = "tlab/gui/icons/toolbar-assets/GroupDivider.png";
-                              wrap = "0";
-                              position = "5 3";
-                              extent = "4 20";
-                              minExtent = "4 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsDefaultProfile";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "0";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-                           };
-                           new GuiTextCtrl() {
-                              text = "Drop me";
-                              maxLength = "255";
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "18 1";
-                              extent = "54 17";
-                              minExtent = "8 8";
-                              horizSizing = "width";
-                              vertSizing = "bottom";
-                              profile = "ToolsTextBase_S1_C";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "0";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-                           };
-                           new GuiTextCtrl() {
-                              text = "on toolbar";
-                              maxLength = "255";
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "18 12";
-                              extent = "54 17";
-                              minExtent = "8 8";
-                              horizSizing = "width";
-                              vertSizing = "bottom";
-                              profile = "ToolsTextBase_S1_C";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "0";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-                           };
-                           new GuiMouseEventCtrl() {
-                              lockMouse = "0";
-                              position = "0 0";
-                              extent = "82 30";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsDefaultProfile";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "0";
-                              superClass = "NewToolbarGroup";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-                           };
-                        };
-                     };
-                     new GuiButtonCtrl() {
-                        text = "Save toolbar";
-                        groupNum = "-1";
-                        buttonType = "PushButton";
-                        useMouseEvents = "0";
-                        position = "0 93";
-                        extent = "137 21";
-                        minExtent = "8 2";
-                        horizSizing = "right";
-                        vertSizing = "bottom";
-                        profile = "ToolsButtonProfile";
-                        visible = "1";
-                        active = "1";
-                        command = "Lab.saveToolbar();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
-                        hovertime = "1000";
-                        isContainer = "0";
-                        internalName = "saveToolbar";
-                        canSave = "1";
-                        canSaveDynamicFields = "0";
-                     };
-                  };
                };
                new GuiContainer() {
                   docking = "Right";
-                  margin = "4 4 4 4";
+                  margin = "4 4 0 4";
                   padding = "0 0 0 0";
                   anchorTop = "1";
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "149 4";
-                  extent = "224 311";
+                  position = "151 4";
+                  extent = "222 311";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -13386,7 +13232,7 @@
                   canSaveDynamicFields = "0";
 
                   new GuiTextCtrl() {
-                     text = "Unused icons";
+                     text = "Disabled icons";
                      maxLength = "255";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -13394,8 +13240,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 0";
-                     extent = "224 17";
+                     position = "5 2";
+                     extent = "201 17";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -13409,7 +13255,7 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiDynamicCtrlArrayControl(EToolbarIconTrash) {
-                     colCount = "5";
+                     colCount = "6";
                      colSize = "30";
                      rowCount = "2";
                      rowSize = "30";
@@ -13420,17 +13266,18 @@
                      fillRowFirst = "1";
                      dynamicSize = "0";
                      padding = "0 0 0 0";
-                     position = "13 24";
-                     extent = "159 310";
+                     position = "7 23";
+                     extent = "205 281";
                      minExtent = "8 2";
-                     horizSizing = "right";
-                     vertSizing = "bottom";
+                     horizSizing = "width";
+                     vertSizing = "height";
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
+                     superClass = "EToolbarTrashClass";
                      canSave = "1";
                      canSaveDynamicFields = "0";
 
@@ -13464,7 +13311,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8883";
+                           srcCtrl = "8887";
                            toolbar = "8818";
                      };
                      new GuiIconButtonCtrl() {
@@ -13497,7 +13344,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8884";
+                           srcCtrl = "8888";
                            toolbar = "8818";
                      };
                      new GuiIconButtonCtrl() {
@@ -13531,7 +13378,7 @@
                         canSaveDynamicFields = "1";
                            isDisabled = "0";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8885";
+                           srcCtrl = "8889";
                            toolbar = "8818";
                      };
                      new GuiContainer() {
@@ -13556,7 +13403,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8886";
+                           srcCtrl = "8890";
                            toolbar = "7292";
 
                         new GuiTextCtrl() {
@@ -13660,7 +13507,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8890";
+                           srcCtrl = "8894";
                            toolbar = "8818";
                      };
                      new GuiIconButtonCtrl() {
@@ -13675,7 +13522,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "1";
-                        position = "0 32";
+                        position = "160 0";
                         extent = "30 30";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -13693,7 +13540,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8891";
+                           srcCtrl = "8895";
                            toolbar = "8818";
                      };
                      new GuiIconButtonCtrl() {
@@ -13708,7 +13555,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "1";
-                        position = "32 32";
+                        position = "0 32";
                         extent = "30 30";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -13728,7 +13575,7 @@
                         canSaveDynamicFields = "1";
                            isDisabled = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8892";
+                           srcCtrl = "8896";
                            toolbar = "8818";
                      };
                      new GuiIconButtonCtrl() {
@@ -13743,7 +13590,7 @@
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "1";
-                        position = "64 32";
+                        position = "32 32";
                         extent = "30 30";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -13762,11 +13609,35 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            pluginName = "SceneEditor";
-                           srcCtrl = "8893";
+                           srcCtrl = "8897";
                            toolbar = "8818";
                      };
                   };
                };
+            };
+            new GuiContainer(EToolbarTrashDropZone) {
+               docking = "Client";
+               margin = "4 4 4 4";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "4 74";
+               extent = "377 319";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsDefaultProfile";
+               visible = "0";
+               active = "1";
+               tooltipProfile = "ToolsGuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               superClass = "EToolbarTrashClass";
+               hidden = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
             };
          };
       };
@@ -13788,7 +13659,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "632 255";
+      position = "764 255";
       extent = "210 257";
       minExtent = "198 130";
       horizSizing = "windowRelative";

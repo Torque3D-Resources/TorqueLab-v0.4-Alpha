@@ -184,3 +184,7 @@ function tlabExec( ) {
 	}
 	info("All core TorqueLab scripts executed.");
 }
+
+function quickGui( ) {
+	exec("tlab/EditorLab/gui/QuickExecTmp.gui");
+}

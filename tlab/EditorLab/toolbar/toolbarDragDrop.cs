@@ -9,13 +9,13 @@
 
 //==============================================================================
 // Start dragging a toolbar icon
-function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {	
+function ToolbarIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	Lab.startToolbarDrag(%this,%a1,%a2,%a3);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Start dragging a toolbar icons group
-function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {	
+function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	%src = %this.parentGroup;
 	Lab.startToolbarDrag(%src,%a1,%a2,%a3);
 }
@@ -24,7 +24,6 @@ function ToolbarBoxChild::onMouseDragged( %this,%a1,%a2,%a3 ) {
 //==============================================================================
 // Start dragging a toolbar icons group
 function MouseStart::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	
 	%group = %this.parentGroup.parentGroup;
 
 	if (%group.getClassName() !$= "GuiStackControl")
@@ -36,7 +35,6 @@ function MouseStart::onMouseDragged( %this,%a1,%a2,%a3 ) {
 //==============================================================================
 // OLD: Replaced with MouseStart
 function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	
 	%group = %this.parentGroup.parentGroup;
 
 	if (%group.getClassName() !$= "GuiStackControl")
@@ -132,16 +130,22 @@ function Lab::addToolbarItemToGroup(%this,%item,%group,%addBefore) {
 //==============================================================================
 function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 	%isIcon = false;
+	//Show the Trash Drop Zone
+	show(EToolbarTrashDropZone);
 
 	if (%dragControl.isMemberOfClass("GuiIconButtonCtrl"))
 		%isIcon = true;
 
 	EToolbarDisabledDrop.visible = 1;
+	%startStack = EditorGuiToolbarStack-->FirstToolbarGroup;
+	EditorGuiToolbarStack.bringToFront(%startStack);
+	%lastStack = EditorGuiToolbarStack-->LastToolbarGroup;
+	EditorGuiToolbarStack.pushToBack(%lastStack);
 
 	//Only show StackEnd for groups
 	if(%isIcon) {
-		foreach(%gui in LabToolbarGuiSet) {
-			foreach$(%stack in %gui.stackLists) {
+		foreach(%gui in EditorGuiToolbarStack) {
+			foreach(%stack in %gui) {
 				%stackEnd = %stack-->SubStackEnd;
 
 				if (!isObject(%stackEnd))
@@ -154,7 +158,7 @@ function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 			}
 		}
 	} else {
-		foreach(%gui in LabToolbarGuiSet) {
+		foreach(%gui in EditorGuiToolbarStack) {
 			%stackEnd = %gui-->StackEnd;
 
 			if (!isObject(%stackEnd))
@@ -171,7 +175,7 @@ function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 		if (%gui.pluginName !$= %dragControl.pluginName) {
 			%src = %gui.internalName;
 
-			if (%src.visible $= "0")
+			if (%src.visible $= "0" || !%src.visible)
 				continue;
 
 			%gui.visible = 1;
@@ -183,12 +187,17 @@ function Lab::showDisabledToolbarDropArea(%this,%dragControl) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::hideDisabledToolbarDropArea(%this) {
-	foreach(%gui in LabToolbarGuiSet) {
+	//Hide the Trash Drop Zone
+	hide(EToolbarTrashDropZone);
+	hide(EditorGuiToolbarStack-->ToolbarStart);
+	hide(EditorGuiToolbarStack-->ToolbarEnd);
+
+	foreach(%gui in EditorGuiToolbarStack) {
 		%stackEnd = %gui-->StackEnd;
 
 		if (isObject(%stackEnd))
 			hide(%stackEnd);
-		
+
 		//foreach$(%stack in %gui.stackLists) {
 		foreach(%subCtrl in %gui) {
 			%subStackEnd = %subCtrl-->SubStackEnd;
