@@ -27,6 +27,9 @@ function buildParamDropdown( %pData ) {
    %menu.variable = %pData.Variable;
    %menu.canSaveDynamicFields = true;
    
+   if (%pData.Option[%pData.Setting,"syncId"] !$= ""){
+   	%menu.syncId = true;
+   }
    if (%pData.myNameIs!$= ""){
       %name = %pData.myNameIs;
       if (isObject(%name)){
@@ -36,13 +39,15 @@ function buildParamDropdown( %pData ) {
       %menu.setName(%name);     
    }
    
-   %menuId = 1;
+   %menuId = 0;
    if (%pData.Option[%pData.Setting,"itemList"] !$= ""){
       %list = %pData.Option[%pData.Setting,"itemList"];
       eval("%items = "@%list@";");       
       foreach$(%item in %items) {
          %menu.add(%item,%menuId);
+         devLog("Add item:",%item,"Id",%menuId);
          %menuId++;
+         
       }
    }
    else if (%pData.Option[%pData.Setting,"fieldList"] !$= ""){

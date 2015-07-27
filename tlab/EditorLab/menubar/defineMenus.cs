@@ -59,6 +59,7 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "-";
 	$LabMenuItem[%id,%itemId++] = "Game Options..." TAB "" TAB "Canvas.pushDialog(DlgOptions);";
 	$LabMenuItem[%id,%itemId++] = "PostEffect Manager" TAB "" TAB "Canvas.pushDialog(PostFXManager);";
+	$LabMenuItem[%id,%itemId++] = "Lab PostFX Manager" TAB "" TAB "toggleVisible(EPostFxManager);";
 	$LabMenuItem[%id,%itemId++] = "Copy Tool" TAB "" TAB "toggleDlg(ToolObjectCopyDlg);";
 	$LabMenuItem[%id,%itemId++] = "Toggle transform box" TAB "" TAB "ETransformBox.toggleBox();";
 	%itemId = -1;

@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiStackControl(ConvexEditorToolbar) {
+new GuiStackControl(ConvexEditorToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -9,28 +9,53 @@
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "245 0";
-   extent = "122 32";
+   position = "245 -1";
+   extent = "102 32";
    minExtent = "16 16";
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "ConvexEditorToolbar";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "7388";
-      disabledGroup = "7435";
-      EditorContainer = "5150";
+      defaultStack = "10348";
+      disabledGroup = "10349";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
-      plugin = "SceneEditor";
+      plugin = "ConvexEditor";
+      stackLists = "10350";
 
+   new GuiContainer() {
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "861 0";
+      extent = "84 30";
+      minExtent = "8 2";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsDefaultProfile";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "DisabledIcons";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
    new GuiStackControl() {
       stackingType = "Horizontal";
       horizStacking = "Left to Right";
@@ -108,7 +133,8 @@
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -132,7 +158,7 @@
          vertSizing = "bottom";
          profile = "ToolsButtonDark";
          visible = "1";
-         active = "1";
+         active = "0";
          command = "ConvexEditorGui.handleDelete();";
          tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Delete selection [Disabled] (Delete)";
@@ -161,7 +187,7 @@
          vertSizing = "bottom";
          profile = "ToolsButtonDark";
          visible = "1";
-         active = "1";
+         active = "0";
          command = "ConvexEditorGui.splitSelectedFace();";
          tooltipProfile = "ToolsGuiToolTipProfile";
          tooltip = "Split selected face [Disabled]\nUse Ctrl + Rotate instead for more control";
@@ -200,29 +226,50 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-   };
-   new GuiContainer() {
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "861 0";
-      extent = "84 30";
-      minExtent = "8 2";
-      horizSizing = "right";
-      vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      internalName = "DisabledIcons";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "104 0";
+         extent = "18 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
    };
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -232,20 +279,41 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "104 0";
-      extent = "18 30";
-      minExtent = "4 2";
+      extent = "27 32";
+      minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsGuiModelessDialogProfile";
-      visible = "1";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
-      superClass = "PluginToolbarEnd";
+      superClass = "StackEnd";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         superClass = "StackEndImg";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---

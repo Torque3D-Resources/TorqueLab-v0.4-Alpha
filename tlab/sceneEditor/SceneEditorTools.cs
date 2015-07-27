@@ -3,7 +3,29 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+function SceneEditorTools::onPreEditorSave( %this ) {
+	devLog("SceneEditorTools::onPreEditorSave:");
+	%this.removeToolClones();
+}
+function SceneEditorTools::onPostEditorSave( %this ) {
+	devLog("SceneEditorTools::onPostEditorSave:");
+	%this.getToolClones();
+}
 
+
+function SceneEditorTools::removeToolClones( %this ) {
+	devLog("SceneEditorTools::removeToolClones:");
+	delObj(SceneEditorTools-->toolsStack);	
+	delObj(SceneEditorTools-->cloneTools);
+
+}
+function SceneEditorTools::getToolClones( %this ) {
+	devLog("SceneEditorTools::getToolClones:");
+	%this.removeToolClones();
+	
+	SEP_ToolsStack.add(ETransformTool-->toolsStack.deepClone());
+	SEP_CloneToolsStack.add(ECloneTool-->cloneTools.deepClone());
+}
 
 //==============================================================================
 // SceneEditorTools Frame Set Scripts

@@ -169,7 +169,7 @@ function isImageFile(%file) {
 }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-function getFolderName( %filter, %callback,%startFolder,%title ) {
+function getFolderName( %filter, %callback,%startFolder,%title,%extraArg1,%extraArg2 ) {
 	if (%title $= "")
 		%title = "Select Export Folder";
 
@@ -181,15 +181,21 @@ function getFolderName( %filter, %callback,%startFolder,%title ) {
 		MustExist = true;
 		MultipleFiles = false;
 	};
-
+	
+	
+	 
 	if(%dlg.Execute()) {
 		%relativePath = makeRelativePath(%dlg.FileName);
-		%cb = %callback@"(\""@%relativePath@"/\");";
+		%cb = %callback@"(\""@%relativePath@"/\", \""@%extraArg1@"\" ,  \""@%extraArg2@"\" );";
+		//if (%addArgs !$= "")
+			//%cb = %callback@"(\""@%relativePath@"/\""@%addArgs@");";
+		//%cb = %callback@"(\""@%args@"/\");";
 		devLog("Callback is:",%cb,"Relative:",makeRelativePath(%dlg.FileName));
 		eval(%cb);
 	}
 
 	%dlg.delete();
+	
 }
 
 //--------------------------------------------------------------------------

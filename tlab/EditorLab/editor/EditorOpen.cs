@@ -10,7 +10,7 @@ function Editor::open(%this) {
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
 
-	Lab.attachEditorGuis();
+	Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 
 	if( !LabEditor.isInitialized )
@@ -131,6 +131,16 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.addGui( EManageSFXParameters ,"Dialog");
 	Lab.addGui( ESelectObjects ,"Dialog");
 	
+	
+
+	Lab.addGui( EPostFxManager ,"EditorDlg");
+	
+	
+	Lab.addGui( StackStartToolbar ,"Toolbar",true);
+	Lab.addGui( StackEndToolbar ,"Toolbar",true);
+	
+	StackStartToolbar.isCommon = true;
+	StackEndToolbar.isCommon = true;
 	EWorldEditor.init();
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();
@@ -180,6 +190,10 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.initCoreGuis();
 	Lab.resizeEditorGui();
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");
+	
+	Lab.initAllToolbarGroups();
+	
+	Lab.initToolbarTrash();
 	
 }
 //------------------------------------------------------------------------------

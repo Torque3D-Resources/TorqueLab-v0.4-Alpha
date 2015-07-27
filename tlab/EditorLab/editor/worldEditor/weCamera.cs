@@ -3,6 +3,26 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+
+//==============================================================================
+function Lab::setCameraMoveSpeed(%this, %speed) {
+	// Update Toolbar TextEdit
+	EWorldEditorCameraSpeed.setText( %value );
+	$Camera::movementSpeed = %value;
+	EditorGuiToolbarStack-->CameraMoveSpeed.setTypeValue(%value);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::toggleCamSpeedSlider(%this, %sourceObj) {
+	%srcPos = %sourceObj.getRealPosition();
+	%srcPos.y += %sourceObj.extent.y;
+	%range = "0 1000";
+	%ticks = getTicksFromRange(%range,"0.1");
+	EOverlay.toggleSlider("2",%srcPos,"range \t "@%range@" \n ticks \t "@%ticks@"\n altCommand \t Lab.setCameraMoveSpeed($ThisControl.getValue());");
+}
+//------------------------------------------------------------------------------
+
+
 function Lab::toggleToolbarCamSpeedSlider( %this,%sourceObj ) {
 //Canvas.pushDialog(softSnapSizeSliderCtrlContainer);
 	%srcPos = %sourceObj.getRealPosition();

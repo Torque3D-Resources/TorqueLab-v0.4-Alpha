@@ -81,8 +81,9 @@ function EditorPlugin::onActivated( %this ) {
 		warnLog("The plugin",%this.displayName,"have no editor GUI assigned. Using default World Editor GUI");
 	}
 	
-	Lab.activatePluginToolbar(%this);
-
+	//Lab.activatePluginToolbar(%this);
+	Lab.setToolbarPluginTrash(%this);
+	
 	if (isObject(%this.dialogs))		
 		%this.dialogs.onActivatedDialogs();
 }	
@@ -99,7 +100,7 @@ function EditorPlugin::onDeactivated( %this,%newEditor ) {
 
 	hide(%this.editorGui);
 	%this.isActivated = false;
-	Lab.deactivatePluginToolbar(%this);
+	//Lab.deactivatePluginToolbar(%this);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -222,3 +223,20 @@ function EditorPlugin::setCtrlParam( %this,%field,%ctrl ) {
 	%value = %ctrl.getTypeValue();
 	LabParams.updateParamFromCtrl(%ctrl,%field,%value,%this.paramArray);
 }
+
+//==============================================================================
+/// Callback when the the paste item of the edit menu is selected or its
+/// accelerator is pressed.
+function EditorPlugin::setCommonGuiAccess( %this,%gui ) {
+	%gui.allowedPlugins = strAddWord(%gui.allowedPlugins,%this.pluginName,true);
+	info(%this.pluginName,"access granted to GUI:",%gui.getName());
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+/// Callback when the the paste item of the edit menu is selected or its
+/// accelerator is pressed.
+function EditorPlugin::removeCommonGuiAccess( %this,%gui ) {
+	%gui.allowedPlugins = strRemoveWord(%gui.allowedPlugins,%this.pluginName);
+	info(%this.pluginName,"access revoked to GUI:",%gui.getName());
+}
+//------------------------------------------------------------------------------

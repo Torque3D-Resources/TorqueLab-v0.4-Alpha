@@ -262,32 +262,26 @@ function Lab::setSubmenuItemChecked(%this,%menuTarget,%menuItem,%submenuItemText
 //==============================================================================
 
 //==============================================================================
+/// LabMenu::onMenuItemSelect Called whenever an item in a menu is selected.
+/// Parameters:
+/// %menuId 	Index id of the menu which contains the selected menu item
+/// %menuText 	Text of the menu which contains the selected menu item
+/// %menuItemId 	Index id of the selected menu item
+/// %menuItemText 	Text of the selected menu item
 function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	/* Called whenever an item in a menu is selected.
-
-	Parameters:
-	%menuId 	Index id of the menu which contains the selected menu item
-	%menuText 	Text of the menu which contains the selected menu item
-	%menuItemId 	Index id of the selected menu item
-	%menuItemText 	Text of the selected menu item
-
-	*/
-
-		
+	devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
 	%callBack =  $LabMenuCallback[%menuId,%menuItemId,%menuItemText];
 	eval(%callBack);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LabMenu::onMenuSelect(%this,%menuId,%menuText) {
-	/* Called whenever a menu is selected.
-
-	Parameters:
-	menuId 	Index id of the clicked menu
-	menuText 	Text of the clicked menu
-
-	*/
+/// LabMenu::onMenuSelect Called whenever a menu is selected.
+/// Parameters:
+/// menuId 	Index id of the clicked menu
+/// menuText 	Text of the clicked menu
+function LabMenu::onMenuSelect(%this,%menuId,%menuText) {	
+	devLog("LabMenu::onMenuSelect(%this,%menuId,%menuText)",%this,%menuId,%menuText);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -302,15 +296,13 @@ function LabMenu::onMouseInMenu(%this,%isInMenu) {
 	*/
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
+/// LabMenu::onSubmenuSelect Called whenever a submenu is selected.
+/// Parameters:
+/// submenuId 	Index id of the clicked submenu
+/// submenuText 	Text of the clicked submenu
 function LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText) {
-	/* Called whenever a submenu is selected.
-
-	Parameters:
-	submenuId 	Id of the selected submenu
-	submenuText 	Text of the selected submenu
-
-
-	*/
+	devLog("LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText)",%this,%submenuId,%submenuText);
 }
 //------------------------------------------------------------------------------

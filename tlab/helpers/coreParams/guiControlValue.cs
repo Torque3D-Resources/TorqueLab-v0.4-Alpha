@@ -8,7 +8,7 @@
 //==============================================================================
 //==============================================================================
 // Get the type of a GuiControl depending of it class
-function GuiControl::getType( %this ) {
+function GuiControl::getType( %this,%requestType ) {
 
 	if (!isObject(%this)) {
 		return "";
@@ -25,7 +25,12 @@ function GuiControl::getType( %this ) {
 	if (%class $= "GuiColorPickerCtrl")
 			%type = "Color";
 
-	if (%class $= "GuiPopUpMenuCtrl" || %class $= "GuiTextEditCtrl" || %class $= "GuiTextCtrl")
+	if (%class $= "GuiPopUpMenuCtrl"){
+		%type = "Text";
+		if (%this.syncId && %requestType $= "get")
+			%type = "MenuId";
+	}
+	if ( %class $= "GuiTextEditCtrl" || %class $= "GuiTextCtrl")
 			%type = "Text";
 	return %type;
 }
@@ -37,7 +42,7 @@ function GuiControl::getType( %this ) {
 /// %updateFriends : Check for aggregated ctrl friends
 function GuiControl::setTypeValue( %this,%value,%updateFriends ) {
 
-	%type = %this.getType();
+	%type = %this.getType("set");
 
 	switch$(%type) {
 	case "Value":
@@ -53,6 +58,7 @@ function GuiControl::setTypeValue( %this,%value,%updateFriends ) {
 		%this.updateColor();
 	case "Text":
 		%this.setText(%value);
+	
 	default:
 		%this.setValue(%value);
 	}
@@ -65,7 +71,7 @@ function GuiControl::setTypeValue( %this,%value,%updateFriends ) {
 /// Get the value of a GuiControl depending of it type
 /// return : The value assigned to the control
 function GuiControl::getTypeValue( %this ) {
-	%type = %this.getType();
+	%type = %this.getType("get");
 
 	switch$(%type) {
 	case "Value":
@@ -77,6 +83,8 @@ function GuiControl::getTypeValue( %this ) {
 		%value = %this.isStateOn();
 	case "Color":
 		%value = %this.BaseColor ;
+	case "MenuId":
+		%value = %this.getSelected();
 
 	}
 	return %value;

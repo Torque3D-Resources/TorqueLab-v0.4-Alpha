@@ -113,6 +113,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
 		exec("tlab/EditorLab/gui/core/LabDevGui.gui");
 		exec("tlab/EditorLab/gui/GameLabGui.gui");
+		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
@@ -122,6 +123,7 @@ function tlabExecGui(%loadGui ) {
 	exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.cs" );
 	
 	execPattern("tlab/EditorLab/gui/MaterialSelector/*.cs");
+	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
 	
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
@@ -139,7 +141,7 @@ function tlabExecDialogs(%loadGui ) {
 		exec("tlab/EditorLab/gui/dialogs/ESceneManager.gui");
 		exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.gui");
 		exec("tlab/EditorLab/gui/dialogs/ColladaImportProgress.gui");
-		execPattern("tlab/EditorLab/gui/tools/*.gui");
+		execPattern("tlab/EditorLab/editorDialogs/*.gui");
 		execPattern("tlab/EditorLab/gui/debugTools/*.gui");
 	}
 
@@ -149,15 +151,27 @@ function tlabExecDialogs(%loadGui ) {
 	exec("tlab/EditorLab/gui/dialogs/ESceneManager.cs");
 	exec("tlab/EditorLab/gui/commonDialogs.cs");
 	exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.cs");
-	execPattern("tlab/EditorLab/gui/tools/*.cs");
+	execPattern("tlab/EditorLab/editorDialogs/*.cs");
 	execPattern("tlab/EditorLab/gui/debugTools/*.cs");
 }
 tlabExecDialogs(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecDialogs");
-function execTools( ) {
-	execPattern("tlab/EditorLab/gui/tools/*.cs");
-}
 
+
+//------------------------------------------------------------------------------
+//Old Settings Dialog for temporary references
+function tlabExecTools(%loadGui ) {
+	if (%loadGui) {		
+		execPattern("tlab/EditorLab/editorTools/*.gui");		
+	}	
+	execPattern("tlab/EditorLab/editorTools/*.cs");	
+}
+tlabExecTools(!$LabGuiExeced);
+%execAll = strAddWord(%execAll,"tlabExecTools");
+
+function execTools(%execGui ) {
+	tlabExecTools(%execGui);
+}
 
 
 
@@ -169,4 +183,8 @@ function tlabExec( ) {
 		eval(%func@"();");
 	}
 	info("All core TorqueLab scripts executed.");
+}
+
+function quickGui( ) {
+	exec("tlab/EditorLab/gui/QuickExecTmp.gui");
 }

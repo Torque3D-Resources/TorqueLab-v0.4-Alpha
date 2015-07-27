@@ -192,11 +192,14 @@ function GuiEditCanvas::onCreateMenu(%this) {
 			item[%id++] = "Add to EditorGui" TAB "" TAB "Lab.setGuisToEditor();";
 			item[%id++] = "-> General Editors GUIs <-";
 			item[%id++] = "Toggle Editors GUI listing" TAB "" TAB "Lab.toggleEditorGuiListing();";
-			item[%id++] = "Dettach the Editor GUIs" TAB "" TAB "Lab.detachEditorGuis();";
-			item[%id++] = "Attach the Editor GUIs" TAB "" TAB "Lab.attachEditorGuis();";
+			item[%id++] = "Detach the Editor GUIs" TAB "" TAB "Lab.detachAllEditorGuis();";
+			item[%id++] = "Attach the Editor GUIs" TAB "" TAB "Lab.attachAllEditorGuis();";
 			item[%id++] = "Toggle Lab Editor Settings" TAB "" TAB "toggleDlg(LabEditorSettings);";
 			item[%id++] = "-> Special Editors GUIs <-";
 			item[%id++] = "Toggle Field Duplicator" TAB  "Alt-Shift D" TAB "Lab.toggleDuplicator();";
+			item[%id++] = "-> Special TorqueLab functions <-";
+			item[%id++] = "Save all toolbars" TAB  "" TAB "Lab.saveToolbar();";
+			
 		};
 		new PopupMenu() {
 			superClass = "MenuBuilder";
@@ -394,6 +397,8 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 	}
 
 	if( isWriteableFileName( %filename ) ) {
+		if (%currentObject.isMethod("onPreEditorSave"))
+			%currentObject.onPreEditorSave();
 		//
 		// Extract any existent TorqueScript before writing out to disk
 		//
@@ -444,6 +449,8 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 		%fo.delete();
 		%currentObject.setFileName( makeRelativePath( %filename, getMainDotCsDir() ) );
 		GuiEditorStatusBar.print( "Saved file '" @ %currentObject.getFileName() @ "'" );
+		if (%currentObject.isMethod("onPreEditorSave"))
+			%currentObject.onPostEditorSave();
 	} else
 		LabMsgOk( "Error writing to file", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only." );
 }

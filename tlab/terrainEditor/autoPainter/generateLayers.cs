@@ -156,12 +156,16 @@ function TPG::generateLayer(%this,%layer,%stepMode) {
 	%slopeMax = %layer.getFieldValue("slopeMax");
 	%coverage = %layer.getFieldValue("coverage");	
 	
+	%terrain = ETerrainEditor.getActiveTerrain();
+	%heightMin_w = getWord(%terrain.position,2) + %heightMin;
+	%heightMax_w = getWord(%terrain.position,2) + %heightMax;
+	
 	if (%stepMode)
-		info("Step Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin, %heightMax, %slopeMin, %slopeMax,"Coverage",%coverage);
+		info("Step Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin_w@"("@%heightMin@")", %heightMax_w@"("@%heightMax@")", %slopeMin, %slopeMax,"Coverage",%coverage);
 	else
 		info("Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin, %heightMax, %slopeMin, %slopeMax,"Coverage",%coverage);
 
-	ETerrainEditor.autoMaterialLayer(%heightMin, %heightMax, %slopeMin, %slopeMax,%coverage);
+	ETerrainEditor.autoMaterialLayer(%heightMin_w, %heightMax_w, %slopeMin, %slopeMax,%coverage);
 	%this.generateLayerCompleted(%layer);
 }
 //------------------------------------------------------------------------------

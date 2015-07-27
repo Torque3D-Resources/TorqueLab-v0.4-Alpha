@@ -9,8 +9,8 @@ new GuiStackControl(ForestEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "245 0";
-   extent = "624 32";
+   position = "156 0";
+   extent = "536 32";
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -25,14 +25,38 @@ new GuiStackControl(ForestEditToolbar) {
    hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      defaultParent = "guiGroup";
-      defaultStack = "8642";
-      disabledGroup = "8676";
-      EditorContainer = "4085";
+      defaultParent = "GuiGroup";
+      defaultStack = "10583";
+      disabledGroup = "10584";
+      EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
+      stackLists = "10585 10592";
 
+   new GuiContainer() {
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "0 0";
+      extent = "84 30";
+      minExtent = "8 2";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "ToolsDefaultProfile";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "ToolsGuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "DisabledIcons";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
    new GuiStackControl() {
       stackingType = "Horizontal";
       horizStacking = "Left to Right";
@@ -111,7 +135,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -144,6 +169,50 @@ new GuiStackControl(ForestEditToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
+      };
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "40 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
       };
    };
    new GuiStackControl() {
@@ -224,7 +293,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarGroup";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -251,7 +321,8 @@ new GuiStackControl(ForestEditToolbar) {
          class = "AggregateBox";
          canSave = "1";
          canSaveDynamicFields = "1";
-            toolbar = "8642";
+            pluginName = "ForestEditor";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -289,7 +360,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -303,7 +375,6 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "FEP_Slider_GlobalScale";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -369,7 +440,8 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
-            toolbar = "8642";
+            pluginName = "ForestEditor";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -407,7 +479,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -421,7 +494,6 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "FEP_Slider_Hardness";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -486,7 +558,8 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
-            toolbar = "8642";
+            pluginName = "ForestEditor";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -524,7 +597,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -568,7 +642,6 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "FEP_Slider_Pressure";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -603,7 +676,8 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
-            toolbar = "8642";
+            pluginName = "ForestEditor";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -641,7 +715,8 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            superClass = "ToolbarBoxChild";
+            internalName = "MouseStart";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -655,7 +730,6 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
-            guiGroup = "FEP_Slider_BrushSize";
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
@@ -699,29 +773,50 @@ new GuiStackControl(ForestEditToolbar) {
             canSaveDynamicFields = "0";
          };
       };
-   };
-   new GuiContainer() {
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "0 0";
-      extent = "84 30";
-      minExtent = "8 2";
-      horizSizing = "right";
-      vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      internalName = "DisabledIcons";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
+      new GuiContainer() {
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "496 0";
+         extent = "18 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxDarkC";
+         visible = "0";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "SubStackEnd";
+         superClass = "SubStackEnd";
+         hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiBitmapCtrl() {
+            bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+            wrap = "0";
+            position = "4 7";
+            extent = "12 16";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SubStackEndImg";
+            superClass = "SubStackEndImg";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
    };
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -731,20 +826,41 @@ new GuiStackControl(ForestEditToolbar) {
       anchorLeft = "1";
       anchorRight = "0";
       position = "540 0";
-      extent = "84 32";
+      extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsDefaultProfile";
-      visible = "1";
+      profile = "ToolsBoxDarkC";
+      visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
-      superClass = "PluginToolbarEnd";
+      superClass = "StackEnd";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+         wrap = "0";
+         position = "6 5";
+         extent = "17 22";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "StackEndImg";
+         superClass = "StackEndImg";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---
