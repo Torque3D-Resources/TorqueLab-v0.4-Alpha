@@ -33,6 +33,16 @@ function MouseStart::onMouseDragged( %this,%a1,%a2,%a3 ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// Start dragging a toolbar icons group
+function MouseBox::onMouseDragged( %this,%a1,%a2,%a3 ) {
+	%group = %this.parentGroup;
+
+	
+
+	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // OLD: Replaced with MouseStart
 function ToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	%group = %this.parentGroup.parentGroup;

@@ -81,6 +81,26 @@ function ECloneTool::setCurrentOffset( %this,%axis ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
+function ECloneTool::resetCurrentOffset( %this,%axis ) {
+	%obj = EWorldEditor.getSelectedObject(0);
+	%size = %obj.getObjectBox();
+	%scale = %obj.getScale();
+	%sizex = "0";
+	%sizey = "0";
+	%sizez = "0";
+
+	foreach$(%container in $ECloneToolContainers) {
+		%textEdit = %container.findObjectByInternalName("copyOffset"@%axis,true);
+
+		if (!isObject(%textEdit))
+			continue;
+
+		%textEdit.setValue(%size[%axis]);
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//FONTS -> Change the font to all profile or only those specified in the list
 function ECloneEdit::onValidate( %this ) {
 	devLog("ECloneEdit::onValidate");
 	%value = %this.getText();

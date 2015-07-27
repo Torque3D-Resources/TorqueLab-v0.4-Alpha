@@ -26,12 +26,12 @@ new GuiStackControl(ConvexEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10346";
-      disabledGroup = "10347";
+      defaultStack = "10348";
+      disabledGroup = "10349";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ConvexEditor";
-      stackLists = "10348";
+      stackLists = "10350";
 
    new GuiContainer() {
       margin = "0 0 0 0";

@@ -52,8 +52,8 @@ function TMG::reimportTerrain(%this) {
 	%flipYAxis = TMG_HeightmapOptions-->flipAxisCheck.isStateOn();
 	
 	foreach(%pill in TMG_MaterialLayersStack) {	
-		%fixFile = strreplace(%pill.file,"__","_");
-		devLoh("Importing opacity file:",%pill.file,"Fixed:",%fixFile);
+		%fixFile = %pill.file;
+	
 		%opacityNames = strAddRecord(%opacityNames,%fixFile TAB %pill.activeChannels);
 		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);		
 	}	

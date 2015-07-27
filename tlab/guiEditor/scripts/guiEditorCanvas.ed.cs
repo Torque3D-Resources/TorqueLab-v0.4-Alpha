@@ -197,6 +197,9 @@ function GuiEditCanvas::onCreateMenu(%this) {
 			item[%id++] = "Toggle Lab Editor Settings" TAB "" TAB "toggleDlg(LabEditorSettings);";
 			item[%id++] = "-> Special Editors GUIs <-";
 			item[%id++] = "Toggle Field Duplicator" TAB  "Alt-Shift D" TAB "Lab.toggleDuplicator();";
+			item[%id++] = "-> Special TorqueLab functions <-";
+			item[%id++] = "Save all toolbars" TAB  "" TAB "Lab.saveToolbar();";
+			
 		};
 		new PopupMenu() {
 			superClass = "MenuBuilder";

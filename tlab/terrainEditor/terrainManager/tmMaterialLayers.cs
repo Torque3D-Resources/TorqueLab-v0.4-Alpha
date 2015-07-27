@@ -95,8 +95,8 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
 		if (%isNewMat)
 			%texture = "Not selected";
 		else
-			%texture = %terObj.getName()@"_layerMap_"@%i@"_"@%matInternalName;
-		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%i@");";
+			%texture = %terObj.getName()@"_layerMap_"@%layerId@"_"@%matInternalName;
+		%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%layerId@");";
 
 		%pill-->removeMapBtn.command = "TMG.removeLayerMap("@%pill@");";
 		
@@ -109,7 +109,7 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
 		}
 		%menu = %pill-->mapMenu;
 		%menu.pill = %pill;
-		%menu.layerId = %i;
+		%menu.layerId =%layerId;
 		%menu.clear();
 		%menu.add(%texture,0);
 		%menu.channels[0] = "1";
@@ -125,7 +125,7 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
 		%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%layerId@");";
 		%menu.setSelected(0,false);
 		TMG_MaterialLayersStack.add(%pill);
-		%this.selectLayerMapMenu(%menu,%i);
+		%this.selectLayerMapMenu(%menu,%layerId);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

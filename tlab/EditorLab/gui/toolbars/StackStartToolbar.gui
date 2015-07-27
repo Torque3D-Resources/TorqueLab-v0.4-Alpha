@@ -9,7 +9,7 @@ new GuiStackControl(StackStartToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "791 0";
+   position = "0 0";
    extent = "70 32";
    minExtent = "4 16";
    horizSizing = "right";
@@ -81,6 +81,8 @@ new GuiStackControl(StackStartToolbar) {
       superClass = "ToolbarContainer";
       canSave = "1";
       canSaveDynamicFields = "1";
+         originalIndex = "1";
+         originalParent = "StackStartToolbar";
 
       new GuiContainer() {
          margin = "0 0 0 0";

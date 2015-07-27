@@ -60,6 +60,10 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	SEP_CreatorPage.initArrayCfg();
 	
 	ETransformBox.deactivate();
+	
+	%this.getToolClones();
+	
+		
 }
 //------------------------------------------------------------------------------
 //==============================================================================
