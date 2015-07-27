@@ -25,13 +25,15 @@ function EPostFxManager::onShow(%this) {
 	if (!EPostFxManager.initialized)
 		EPostFxManager.init();
 	$EPostFxManagerActive = true;
-	EditorGuiToolbarStack-->PostFXManager.setStateOn(true);
+	if (isObject(EditorGuiToolbarStack-->PostFXManager))
+		EditorGuiToolbarStack-->PostFXManager.setStateOn(true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::onHide(%this) {	
 	$EPostFxManagerActive = false;
-	EditorGuiToolbarStack-->PostFXManager.setStateOn(false);
+	if (isObject(EditorGuiToolbarStack-->PostFXManager))
+		EditorGuiToolbarStack-->PostFXManager.setStateOn(false);
 }
 //------------------------------------------------------------------------------
 

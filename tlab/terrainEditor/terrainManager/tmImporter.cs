@@ -51,8 +51,10 @@ function TMG::reimportTerrain(%this) {
 	%heightScale = TMG_HeightmapOptions-->heightScale.getText();
 	%flipYAxis = TMG_HeightmapOptions-->flipAxisCheck.isStateOn();
 	
-	foreach(%pill in TMG_MaterialLayersStack) {		
-		%opacityNames = strAddRecord(%opacityNames,%pill.file TAB %pill.activeChannels);
+	foreach(%pill in TMG_MaterialLayersStack) {	
+		%fixFile = strreplace(%pill.file,"__","_");
+		devLoh("Importing opacity file:",%pill.file,"Fixed:",%fixFile);
+		%opacityNames = strAddRecord(%opacityNames,%fixFile TAB %pill.activeChannels);
 		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);		
 	}	
 	devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");

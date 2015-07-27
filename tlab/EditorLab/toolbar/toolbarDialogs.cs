@@ -96,28 +96,28 @@ function toggleSnappingOptions( %var ) {
 			EWorldEditor.stickToGround = 1;
 			EWorldEditor.setSoftSnap(false);
 			ESnapOptionsTabBook.selectPage(0);
-			SnapToBar->objectSnapBtn.setStateOn(0);
+			SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
 		} else {
 			// soft snapping
 			EWorldEditor.stickToGround = 0;
 			EWorldEditor.setSoftSnap(true);
 			ESnapOptionsTabBook.selectPage(1);
-			SnapToBar->objectSnapDownBtn.setStateOn(0);
+			SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
 		}
 	} else if( %var $= "terrain" && EWorldEditor.stickToGround == 0 ) {
 		// Terrain Snapping
 		EWorldEditor.stickToGround = 1;
 		EWorldEditor.setSoftSnap(false);
 		ESnapOptionsTabBook.selectPage(0);
-		SnapToBar->objectSnapDownBtn.setStateOn(1);
-		SnapToBar->objectSnapBtn.setStateOn(0);
+		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(1);
+		SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
 	} else if( %var $= "soft" && EWorldEditor.getSoftSnap() == false ) {
 		// Object Snapping
 		EWorldEditor.stickToGround = 0;
 		EWorldEditor.setSoftSnap(true);
 		ESnapOptionsTabBook.selectPage(1);
-		SnapToBar->objectSnapBtn.setStateOn(1);
-		SnapToBar->objectSnapDownBtn.setStateOn(0);
+		SceneEditorToolbar-->objectSnapBtn.setStateOn(1);
+		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
 	} else if( %var $= "grid" ) {
 		EWorldEditor.setGridSnap( !EWorldEditor.getGridSnap() );
 	} else {

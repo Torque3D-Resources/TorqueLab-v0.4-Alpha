@@ -32,12 +32,12 @@ function EWorldEditor::syncGui( %this ) {
 
 	SceneEditorToolbar-->renderHandleBtn.setStateOn( EWorldEditor.renderObjHandle );
 	SceneEditorToolbar-->renderTextBtn.setStateOn( EWorldEditor.renderObjText );
-	SnapToBar-->objectSnapBtn.setStateOn( EWorldEditor.getSoftSnap() );
+	SceneEditorToolbar-->objectSnapBtn.setStateOn( EWorldEditor.getSoftSnap() );
 	//SceneEditorToolbar-->softSnapSizeTextEdit.setText( EWorldEditor.getSoftSnapSize() );
 	ESnapOptions-->SnapSize.setText( EWorldEditor.getSoftSnapSize() );
 	ESnapOptions-->GridSize.setText( EWorldEditor.getGridSize() );
 	ESnapOptions-->GridSnapButton.setStateOn( %this.getGridSnap() );
-	SnapToBar-->objectGridSnapBtn.setStateOn( %this.getGridSnap() );
+	SceneEditorToolbar-->objectGridSnapBtn.setStateOn( %this.getGridSnap() );
 	ESnapOptions-->NoSnapButton.setStateOn( !%this.stickToGround && !%this.getSoftSnap() && !%this.getGridSnap() );
 }
 //------------------------------------------------------------------------------

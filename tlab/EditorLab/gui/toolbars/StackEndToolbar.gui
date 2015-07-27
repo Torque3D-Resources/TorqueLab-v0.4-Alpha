@@ -10,7 +10,7 @@ new GuiStackControl(StackEndToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "869 0";
-   extent = "74 32";
+   extent = "142 32";
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -31,7 +31,7 @@ new GuiStackControl(StackEndToolbar) {
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "7030 7037";
+      stackLists = "7032";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -132,7 +132,7 @@ new GuiStackControl(StackEndToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "74 32";
+      extent = "142 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -263,6 +263,70 @@ new GuiStackControl(StackEndToolbar) {
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/TerrainManager.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "78 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "Canvas.pushDialog( TerrainManagerGui );";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "TerrainManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            originalIndex = "3";
+            originalParent = "7032";
+            toolbar = "7028";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ManagerPostFx.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "112 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         variable = "!EPostFxManager.visible";
+         command = "ToggleVisible(EPostFxManager);";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "PostFXManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
       new GuiContainer() {
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -270,7 +334,7 @@ new GuiStackControl(StackEndToolbar) {
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "78 0";
+         position = "146 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";

@@ -122,7 +122,7 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
 			%menu.file[%id] = %file;
 			%menu.channels[%id] = getField(%record,1);
 		}
-		%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%i@");";
+		%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%layerId@");";
 		%menu.setSelected(0,false);
 		TMG_MaterialLayersStack.add(%pill);
 		%this.selectLayerMapMenu(%menu,%i);
@@ -171,6 +171,7 @@ function TMG::selectLayerMapMenu(%this,%menu,%layerId,%channels) {
 	%layerId = %menu.layerId;
 	%file = %menu.file[%menu.getSelected()];
 	%channels = %menu.channels[%menu.getSelected()];
+	
 	%pill = %menu.pill;
 	%pill.file = %file;
 	%stack = %pill-->channelStack;

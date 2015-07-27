@@ -16,13 +16,13 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "4914";
-      defaultStack = "11612";
-      disabledGroup = "11643";
+      defaultStack = "11577";
+      disabledGroup = "11608";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       enabled = "1";
       plugin = "MeshRoadEditor";
-      stackLists = "11613 11622";
+      stackLists = "11578 11587";
       tooltipWidth = "500";
 
    new GuiStackControl() {

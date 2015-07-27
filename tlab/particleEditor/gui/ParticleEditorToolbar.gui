@@ -26,8 +26,8 @@ new GuiStackControl(ParticleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11911";
-      disabledGroup = "11915";
+      defaultStack = "11876";
+      disabledGroup = "11877";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ParticleEditor";
@@ -65,7 +65,7 @@ new GuiStackControl(ParticleEditorToolbar) {
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "0 0";
+      position = "-31 0";
       extent = "12 32";
       minExtent = "7 2";
       horizSizing = "left";

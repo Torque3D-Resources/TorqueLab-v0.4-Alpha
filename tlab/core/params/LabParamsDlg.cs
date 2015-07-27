@@ -102,11 +102,11 @@ function LabParamsTree::onSelect( %this,%itemId ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onMouseUp( %this,%itemId,%clicks ) {
-	devLog("LabParamsTree::onMouseUp( %this,%itemId,%clicks )",%this,%itemId,%clicks );
+
 	%itemObj = $LabParamsItemObj[%itemId];
 	%text = %this.getItemText(%itemId);
 	%value = %this.getItemValue(%itemId);
-	devLog("LabParamsTree::onMouseUp Text",%text,"Value",%value );
+
 
 	if (isObject(%itemObj)) {
 		LabParamsDlg.setSelectedSettings(%itemObj);

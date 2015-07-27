@@ -34,7 +34,7 @@ function Lab::GetAutoPrefabFile() {
 	%firstObj = EWorldEditor.getSelectedObject(0);
 
 	if (%firstObj.isMemberOfClass(TSStatic)) {
-		devLog("TSSTAtic shape=",%firstObj.shapeName);
+		
 		%name = fileBase(%firstObj.shapeName);
 	}
 
@@ -53,8 +53,7 @@ function Lab::GetAutoPrefabFile() {
 		%uniqueName = %name@"_"@%inc++;
 		%file = %prefabPath@%uniqueName@".prefab";
 	}
-
-	devLog("AutoFile = ",%file);
+	
 	return %file;
 }
 //------------------------------------------------------------------------------
