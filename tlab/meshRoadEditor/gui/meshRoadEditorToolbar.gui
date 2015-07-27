@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
-   position = "156 0";
+   position = "78 0";
    extent = "800 32";
    minExtent = "8 2";
    horizSizing = "right";
@@ -16,13 +16,13 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "4914";
-      defaultStack = "11579";
-      disabledGroup = "11610";
+      defaultStack = "11147";
+      disabledGroup = "11178";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       enabled = "1";
       plugin = "MeshRoadEditor";
-      stackLists = "11580 11589";
+      stackLists = "11148 11157";
       tooltipWidth = "500";
 
    new GuiStackControl() {
@@ -130,7 +130,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
-               superClass = "MouseStart";
+               superClass = "MouseBox";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -349,7 +349,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
-               superClass = "MouseStart";
+               superClass = "MouseBox";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -413,7 +413,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
-               superClass = "MouseStart";
+               superClass = "MouseBox";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -528,7 +528,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
-               superClass = "MouseStart";
+               superClass = "MouseBox";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -667,7 +667,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
-               superClass = "MouseStart";
+               superClass = "MouseBox";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
