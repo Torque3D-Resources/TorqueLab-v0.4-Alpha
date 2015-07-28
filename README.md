@@ -13,7 +13,7 @@ TorqueLab is a completly revamping on the native Torque3D game editors (tools fo
 For more informations, visit the official TorqueLab Wiki:
 [https://github.com/NordikLab/TorqueLab/wiki](https://github.com/NordikLab/TorqueLab/wiki "TorqueLab Official Wiki")
 
-## Instalation
+## Installation
 The installation process have been simplified for v0.4 version. You can simply download the files, delete existing tools/ folder, then paste both tools/ and tlab/ folder provided in the root of your project. Then, if you haven't modified how the default editor are loaded, you should be able to use TorqueLab the same way as the standard editor. (F11 to load TorqueLab from inside a mission, F10 to load the GuiEditor from anywhere.
 https://github.com/NordikLab/TorqueLab/wiki/TorqueLab-required-source-code-changes
 #### You need to recompile your project with the required changes added to your source code:

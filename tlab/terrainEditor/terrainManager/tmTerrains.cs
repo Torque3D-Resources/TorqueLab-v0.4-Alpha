@@ -41,6 +41,8 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG.infoTexturesActive = "Active terrain textures used:\c2" SPC getRecordCount(ETerrainEditor.getMaterials());
 		TMG.infoBlockCount = "Total terrain blocks:\c2" SPC ETerrainEditor.getTerrainBlockCount();
 		TMG.infoBlockList = "Terrain blocks list:\c2" SPC ETerrainEditor.getTerrainBlocksMaterialList();
+		
+		TMG_PageGeneral-->storeFolders.setStateOn(%terrainId.storeFolders);
 	
 		TMG.infoActions1 = "Totals actions:\c2" SPC ETerrainEditor.getActionName(1);
 		syncParamArray(TMG.terrainArray);	
@@ -53,7 +55,7 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function TMG::updateTerrainList(%this) {
+function TMG::updateTerrainList(%this,%selectCurrent) {
 	TMG_ActiveTerrainMenu.clear();
 	
 	%list = getMissionObjectClassList("TerrainBlock");
@@ -61,9 +63,12 @@ function TMG::updateTerrainList(%this) {
 		TMG_ActiveTerrainMenu.add(%terrain.getName(),%terrain.getId());
 	}
 	TMG_ActiveTerrainMenu.add("New terrain",0);
-	if (TMG.activeTerrain $= "" || !isObject(TMG.activeTerrain))
-		TMG.activeTerrain = getWord(%list,0).getId();
 	
+	if (!%selectCurrent)
+		return;
+	if (!isObject(TMG.activeTerrain))
+		TMG.activeTerrain = getWord(%list,0);	
+
 	TMG_ActiveTerrainMenu.setSelected(TMG.activeTerrain);
 	
 }
@@ -84,6 +89,19 @@ function TMG_ActiveTerrainMenu::onSelect(%this,%id,%text) {
 	return;
 	
 	TMG.setActiveTerrain(%id);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::storeFolderToTerrain(%this,%storeToTerrain) {
+	devLog("storeFolderToTerrain",%storeToTerrain);
+	if (!isObject(TMG.ActiveTerrain))
+		return;
+
+	if (!%storeToTerrain && TMG.ActiveTerrain.getFieldValue("storeFolders") $= "")
+		return;		
+		
+	TMG.ActiveTerrain.setFieldValue("storeFolders",%storeToTerrain);	
 	
 }
 //------------------------------------------------------------------------------

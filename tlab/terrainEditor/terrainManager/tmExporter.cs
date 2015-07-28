@@ -41,6 +41,7 @@ function TMG::exportHeightMapToFile( %this) {
 }
 //==============================================================================
 function TMG::exportHeightMap( %this,%folder,%noOverwrite) {
+	devLog("exportHeightMap folder",%folder);
 	%terObj = %this.activeTerrain;
 	if (!isObject(%terObj)){
 		warnlog("Trying to export layers for invalid terrain:",%terObj);

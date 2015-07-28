@@ -48,7 +48,7 @@ function TMG::init(%this) {
 function TMG::refreshData(%this) {
 	hide(SEP_GroundCover);
 	TMG_GroundCoverClone.add(SEP_GroundCover-->MainContainer);
-	TMG.updateTerrainList();
+	TMG.updateTerrainList(true);
 	%this.refreshMaterialLayersPage();
 	%this.buildTerrainInfoParams();
 }
