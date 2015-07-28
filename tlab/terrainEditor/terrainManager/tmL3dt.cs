@@ -14,7 +14,9 @@ function TMG::selectL3DTAlphaXml(%this) {
 
 //==============================================================================
 function TMG::setL3DTAlphaXml(%this,%file) {
-	
+	%fileCln = makeRelativePath(%file);
+	%fileCln = strreplace(%fileCln,TMG.dataFolder,"");
+	TMG_PageMaterialLayers-->l3dtXMLText.text = %fileCln;
 	%this.readL3DTAlphaXml(%file);
 }
 //------------------------------------------------------------------------------
@@ -25,6 +27,9 @@ function TMG::readL3DTAlphaXml(%this,%filename) {
 		%filename = $LastXML;
 	else
 		$LastXML = %filename;
+	
+	if (!isFile(%filename))
+		return;
 		
 	%baseFolder = filePath(%filename);
 	 %xml = new SimXMLDocument() {};  
@@ -42,11 +47,11 @@ function TMG::readL3DTAlphaXml(%this,%filename) {
 	 %xml.popElement();  
 	 
 	 TMG.customMapList = "";
-	devLog("Width:",%width,"Height",%height,"Cjannels count:",%channels);
+	
    %xml.pushFirstChildElement("ImageList");  
    while(true)  
    {  
-      echo("TABLE:" SPC %xml.attribute("tableName"));  
+   
       %xml.pushFirstChildElement("Image");  
       while (true)  
       {  
@@ -75,7 +80,7 @@ function TMG::readL3DTAlphaXml(%this,%filename) {
 				%material = %xml.getData();
 				%xml.popElement();
 				%xml.popElement();
-				devLog("Layer Info-- Channel:",%color,"Texture:",%texture,"Material:",%material);
+				
 				
 				%layer[%layerId++] = %fullFile TAB %color TAB %material;
 			 	if (!%xml.nextSiblingElement("Layer")) break;  
@@ -101,7 +106,7 @@ function TMG::readL3DTAlphaXml(%this,%filename) {
    	%file = makeRelativePath(%file);
    	%channel = getField(%layer[%id],1);
    	%material = getField(%layer[%id],2);
-   	devlog("Final Layer #"@%id, %file,%channel,%material);
+   
    	%newId = TMG.addMaterialLayer(%material);
    	TMG.setLayerMapFile(%newId,%file,%channels,%channel);
    }

@@ -46,6 +46,10 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	
 		TMG.infoActions1 = "Totals actions:\c2" SPC ETerrainEditor.getActionName(1);
 		syncParamArray(TMG.terrainArray);	
+		
+		TMG_PageMaterialLayers-->terrainX.setText(%terrainId.position.x);
+		TMG_PageMaterialLayers-->terrainY.setText(%terrainId.position.y);
+		TMG_PageMaterialLayers-->terrainZ.setText(%terrainId.position.z);
 	}
 	%this.validateImportTerrainName(%terrainName);
 	%this.updateTerrainLayers();

@@ -90,6 +90,22 @@ function TMG::reimportTerrain(%this) {
 		return;
 	}
 	%name = TMG_PageMaterialLayers-->importTerrainName.getText();
+	%bmpInfo = getBitmapinfo(%heightmapFile );	
+	devLog("HeightMap info:",%bmpInfo);
+	%size = getWord(%bmpInfo,0);
+	%worldSize = (%size * %metersPerPixel);
+	
+	%position = TMG_PageMaterialLayers-->terrainX.getText() SPC TMG_PageMaterialLayers-->terrainY.getText() SPC TMG_PageMaterialLayers-->terrainZ.getText(); 
+	devLog("Position PRE:",%position);
+	if (TMG.centerImportTerrain){
+		%position.x =  %worldSize/-2;
+		%position.y =  %worldSize/-2;
+	}
+	devLog("Position POS:",%position);
+	//if (isObject(%terObj))
+		//%position = %terObj.position;
+	delObj(%name);
+	%updated = nameToID( %name );
 	%obj = TerrainBlock::import(  %name,
 											%heightmapFile,
 											%metersPerPixel,
@@ -101,12 +117,17 @@ function TMG::reimportTerrain(%this) {
 	%obj.dataFolder = TMG.dataFolder;
 	%obj.sourceFolder = TMG.sourceFolder;
 	%obj.targetFolder = TMG.targetFolder;
-
-	if (isObject(%terObj)) {
-		%obj.position = %terObj.position;
-	}
+	%obj.position = %position;
 
 	if ( isObject( %obj ) ) {
+		if( %obj != %updated ) {
+			// created a new TerrainBlock
+			// Submit an undo action.
+			MECreateUndoAction::submit(%obj);
+		}
+		%obj.schedule(500,"setPosition",%position);
+		assert( isObject( EWorldEditor ),
+				  "ObjectBuilderGui::processNewObject - EWorldEditor is missing!" );
 		// Select it in the editor.
 		EWorldEditor.clearSelection();
 		EWorldEditor.selectObject(%obj);
