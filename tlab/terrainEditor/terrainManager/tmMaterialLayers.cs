@@ -6,21 +6,21 @@
 //==============================================================================
 function TMG::initMaterialLayersPage(%this) {
 	devLog("initMaterialLayersPage");
-	TMG_PageMaterialLayers-->textureMapFolder.setText("");
-	TMG_PageMaterialLayers-->relativeMapFolder.setText("");
+	TMG_PageMaterialLayers-->textureSourceFolder.setText("");
+	TMG_PageMaterialLayers-->relativeSourceFolder.setText("");
 	TMG_PageMaterialLayers-->textureTargetFolder.setText("");
 	TMG_PageMaterialLayers-->relativeTargetFolder.setText("");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG::refreshMaterialLayersPage(%this) {
-	//%mapFolder = TMG_PageMaterialLayers-->textureMapFolder.getText();
+	//%mapFolder = TMG_PageMaterialLayers-->textureSourceFolder.getText();
 	//if (!isDirectory(%mapFolder))
-		//TMG_PageMaterialLayers-->textureMapFolder.setText(%this.getDefaultFolder());
+		//TMG_PageMaterialLayers-->textureSourceFolder.setText(%this.getDefaultFolder());
 	
 	%targetFolder = TMG_PageMaterialLayers-->textureTargetFolder.getText();
 	if (!isDirectory(%targetFolder))
-		TMG_PageMaterialLayers-->textureMapFolder.setText(%this.getDefaultFolder());
+		TMG_PageMaterialLayers-->textureSourceFolder.setText(%this.getDefaultFolder());
 	
 	%info = "The material layers page allow to simply reimport your terrain with current or new texture map." SPC
 			"Those maps can be produced by external tools like L3TD or WorldMachine. Simply specify the folder containing" SPC
@@ -43,15 +43,7 @@ function TMG::refreshMaterialLayersPage(%this) {
 //==============================================================================
 function TMG::scanTextureMapFolder(%this) {
 	TMG.textureMapList = "";
-	if (TMG.mapFolderMode $= "relative"){
-		%folder = TMG.sourceFolder;
-		devLog("Scanning relative folder",%folder);
-	}
-	else
-	{
-		%folder = TMG_PageMaterialLayers-->textureMapFolder.text;
-		devLog("Scanning browse folder",%folder);
-	}
+	%folder = TMG.sourceFolder;		
 	
 	if (!isDirectory(%folder)){
 		warnLog("Invalid folder specified:",%folder," Make sure the folder exist and contain the images sources");
@@ -59,7 +51,6 @@ function TMG::scanTextureMapFolder(%this) {
 		return;
 	}
 
-	%this.activeTerrain.setFieldValue("mapSourceFolder",%folder);
 	%files = getMultiExtensionFileList(%folder,"png dds bmp tga jpg");
 	
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
@@ -77,10 +68,15 @@ function TMG::scanTextureMapFolder(%this) {
 //==============================================================================
 //==============================================================================
 function TMG::addMaterialLayer(%this,%matInternalName,%layerId) {
+			
 	if(%matInternalName $= ""){
 		%mats = ETerrainEditor.getMaterials();
+		if (%layerId $= ""){
+			%layerId =TMG_MaterialLayersStack.getCount();
+		}
 		%matInternalName = getRecord(%mats,0);
 		%isNewMat = true;
+		
 	}
 	%terObj = %this.activeTerrain;
 		%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
@@ -138,7 +134,7 @@ function TMG::updateMaterialLayers(%this) {
 	
 	
 	
-	TMG_PageMaterialLayers-->heightmapCurrentText.text = "Heightmap:\c1" SPC %terObj.getName()@"_heightmap";
+	TMG_PageMaterialLayers-->heightmapCurrentText.text = %terObj.getName()@"_heightmap";
 	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
 	%hmMenu.clear();
 	
@@ -319,13 +315,13 @@ function TMG::setTextureMapFolder( %this, %path,%isTargetFolder ) {
 		%this.setFolder("target",%path);		
 		return;
 	}
-	TMG_PageMaterialLayers-->textureMapFolder.setText(%path);
+	TMG_PageMaterialLayers-->textureSourceFolder.setText(%path);
 	%this.setFolder("source",%path);
 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG_RelativeMapFolderEdit::onValidate( %this ) {	
+function TMG_RelativeSourceFolderEdit::onValidate( %this ) {	
 	TMG.setFolder("source",%this.getText(),true);
 }
 //------------------------------------------------------------------------------

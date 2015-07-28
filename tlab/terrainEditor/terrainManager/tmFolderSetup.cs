@@ -6,58 +6,83 @@
 
 //==============================================================================
 function TMG::getActiveFolders(%this) {
-	%dataFolder = MissionGroup.dataFolder;
+	%dataFolder = TMG.activeTerrain.dataFolder;
+	if (%dataFolder $= "")
+		%dataFolder = MissionGroup.dataFolder;
 	if (%dataFolder $= "")
 		%dataFolder = filePath(TMG.activeTerrain.terrainFile);
 	
 	TMG.setFolder("data",%dataFolder);
 	
-	%sourceFolder = MissionGroup.sourceFolder;
+	%sourceFolder = TMG.activeTerrain.sourceFolder;
+	if (%sourceFolder $= "")
+		%sourceFolder = MissionGroup.sourceFolder;
 	if (%sourceFolder $= "")
 		%sourceFolder = %dataFolder;	
 	TMG.setFolder("source",%sourceFolder);
 	
-	%targetFolder = MissionGroup.targetFolder;
+	%targetFolder = TMG.activeTerrain.targetFolder;
+	if (%targetFolder $= "")
+		%targetFolder = MissionGroup.targetFolder;
 	if (%targetFolder $= "")
 		%targetFolder = %dataFolder;	
 	TMG.setFolder("target",%targetFolder);
 	
-	TMG.setFolder("source",MissionGroup.sourceSubFolder,true);
-	TMG.setFolder("target",MissionGroup.targetSubFolder,true);	
+	//TMG.setFolder("source",MissionGroup.sourceSubFolder,true);
+	//TMG.setFolder("target",MissionGroup.targetSubFolder,true);	
 	
-	TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
-	TMG_PageMaterialLayers-->textureMapFolder.setText(TMG.sourceFolder);
-	TMG_PageMaterialLayers-->relativeMapFolder.setText(TMG.sourceSubFolder);
-	TMG_PageMaterialLayers-->textureTargetFolder.setText(TMG.targetFolder);
-	TMG_PageMaterialLayers-->relativeTargetFolder.setText(TMG.targetSubFolder);
+	
+	//%relativeSourceFolder = strreplace(%sourceFolder,%dataFolder,"");
+	//TerrainManagerGui-->subFolderSourceTitle.text = "Target folder:\c2" SPC %relativeSourceFolder;
+	
+	//TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
+	//TMG_PageMaterialLayers-->textureSourceFolder.setText(TMG.sourceFolder);
+	//TMG_PageMaterialLayers-->relativeSourceFolder.setText(TMG.sourceSubFolder);
+	//TMG_PageMaterialLayers-->textureTargetFolder.setText(TMG.targetFolder);
+	//TMG_PageMaterialLayers-->relativeTargetFolder.setText(TMG.targetSubFolder);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
-	%oldSource = TMG.sourceFolder;
-	
-	if (%relativeToData){
-		devLog("Relative folder:",%type,"Folder",%folder);
+function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {	
+	if (%relativeToData){	
 		%subFolder = %folder;
 		%folder = TMG.dataFolder@"/"@%subFolder;
+		%folder = strreplace(%folder,"//","/");
 		%subField = %type@"SubFolder";
 		eval("TMG."@%subField@" = %subFolder;");
-		if (!%onlyTMG){
-			MissionGroup.setFieldValue(%subField,%subFolder);
-			TMG.activeTerrain.setFieldValue(%subField,%subFolder);
-		}
+		//if (!%onlyTMG){
+		//	MissionGroup.setFieldValue(%subField,%subFolder);
+		//	TMG.activeTerrain.setFieldValue(%subField,%subFolder);
+		//}
 		
 	}	
+	if (%type !$= "data"){		
+		%relativeFolder = strreplace(%folder,TMG.dataFolder,"\c2[Data]\c0");
+		eval("%editCtrl = TerrainManagerGui-->relative"@%type@"Folder;");
+		%editCtrl.setText(%relativeFolder);
+		
+		
+		eval("%editFullCtrl = TerrainManagerGui-->texture"@%type@"Folder;");
+		%editFullCtrl.setText(%relativeFolder);
+		
+		eval("%subEdit = TerrainManagerGui-->"@%type@"_FolderEdit;");
+		%subEdit.setText(%relativeFolder);
+	}
+	else {
+		TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
+	}
+	
 	
 	%field = %type@"Folder";
 	eval("TMG."@%field@" = %folder;");
 	
 	if (!%onlyTMG){
-		MissionGroup.setFieldValue(%field,%folder);
-		TMG.activeTerrain.setFieldValue(%field,%folder);
+		MissionGroup.setFieldValue(%field,%folder);		
 	}
-
-	devLog("Old source:",%oldSource,"New source",TMG.sourceFolder);
+	if (isObject(TMG.activeTerrain)){
+		if (TMG.activeTerrain.storeFolders)
+			TMG.activeTerrain.setFieldValue(%field,%folder);
+	}
 	//Update map layers data if source changed
 	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
 		TMG.updateMaterialLayers();
@@ -115,5 +140,14 @@ function TMG::getDefaultFolder(%this) {
 	%folder = filePath(MissionGroup.getFilename());
 		return %folder;	
 	
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function RelativeFolderEdit::onValidate(%this) {
+	%data = strreplace(%this.internalName,"_"," ");
+	%type = getWord(%data,0);
+	%text = strreplace(%this.getText(),"[Data]","");
+	TMG.setFolder(%type,%text,true);
 }
 //------------------------------------------------------------------------------

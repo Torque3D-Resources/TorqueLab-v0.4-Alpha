@@ -5,73 +5,96 @@
 //==============================================================================
 
 //==============================================================================
-// Import Terrain Heightmap + Layers
+// Prepare and import the terrain HeightMap (Manager Import Terrain Button)
 //==============================================================================
 
 //==============================================================================
 function TMG::prepareAllLayers(%this,%doImport) {
-	%folder = TMG.SourceFolder;	
+	%folder = TMG.SourceFolder;
 	%this.exportTerrainLayersToPath(%folder,"png");
-	
-	foreach(%pill in TMG_MaterialLayersStack){
-		if (%pill-->mapMenu.getSelected() $= "0"){
+
+	foreach(%pill in TMG_MaterialLayersStack) {
+		if (%pill-->mapMenu.getSelected() $= "0") {
 			%pill.file = %folder@"/"@%pill-->mapMenu.getText()@".png";
-			%isFile = isFile(%pill.file);			
+			%isFile = isFile(%pill.file);
 		}
+
 		%pill.activeChannels = "";
 		%stack = %pill-->channelStack;
-		foreach$(%chan in %pill.channelRadios){			
+
+		foreach$(%chan in %pill.channelRadios) {
 			%radio = %stack.findObjectByInternalName(%chan);
+
 			if (%radio.isStateOn())
 				%pill.activeChannels = strAddWord(%pill.activeChannels,%chan);
-		}		
+		}
 	}
-	
+
 	TMG.currentHeightMap = %this.exportHeightMap(%folder);
-	
 	TMG_PageMaterialLayers-->reimportButton.active = 1;
+
 	if (%doImport)
 		%this.reimportTerrain();
-	
 }
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Import Terrain Heightmap + Layers
+//==============================================================================
 //==============================================================================
 function TMG::reimportTerrain(%this) {
 	%terObj = %this.activeTerrain;
-	%folder = TMG_PageMaterialLayers-->textureMapFolder.text;	
+	%folder = TMG_PageMaterialLayers-->textureSourceFolder.text;
 	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
-	if (%hmMenu.getSelected() !$= "0"){
+
+	if (%hmMenu.getSelected() !$= "0") {
 		%file = %folder @"/"@%hmMenu.getText();
-		TMG.currentHeightMap = %file;		
+		%file = strreplace(%file,"//","/");
+		TMG.currentHeightMap = %file;
 	}
-	if(!isObject(%terObj) || !isFile(TMG.currentHeightMap))
+
+	%heightmapFile = TMG.currentHeightMap;
+
+	if (TMG.heightmapMode $= "Source") {
+		%heightmapSrc = %hmMenu.getText();
+		%heightmapFile = TMG.SourceFolder@"/"@%heightmapSrc;
+		devLog("Reimporting with heightmap:",%heightmapSrc,"File:",%heightmapFile);
+	}
+
+	if(!isFile(%heightmapFile)) {
+		warnLog("Invalid file or terrainObj terrain:",	%terObj);
+		warnLog("Invalid file or terrainObj file:",	TMG.currentHeightMap);
 		return;
-	
-	
+	}
+
 	%metersPerPixel = TMG_HeightmapOptions-->squareSize.getText();
 	%heightScale = TMG_HeightmapOptions-->heightScale.getText();
 	%flipYAxis = TMG_HeightmapOptions-->flipAxisCheck.isStateOn();
-	
-	foreach(%pill in TMG_MaterialLayersStack) {	
+
+	foreach(%pill in TMG_MaterialLayersStack) {
 		%fixFile = %pill.file;
-	
 		%opacityNames = strAddRecord(%opacityNames,%fixFile TAB %pill.activeChannels);
-		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);		
-	}	
-	devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");
-	%name = TMG_PageMaterialLayers-->importTerrainName.getText();	
+		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);
+	}
+
+	%name = TMG_PageMaterialLayers-->importTerrainName.getText();
 	%obj = TerrainBlock::import(  %name,
-											 TMG.currentHeightMap,
-											 %metersPerPixel,
-											 %heightScale,
-											 %opacityNames,
-											 %materialNames,
-											 %flipYAxis );
+											%heightmapFile,
+											%metersPerPixel,
+											%heightScale,
+											%opacityNames,
+											%materialNames,
+											%flipYAxis );
 	%obj.terrainHeight = %heightScale;
-	%obj.position = %terObj.position;
-	%obj.dataFolder = %terObj.dataFolder;
-	%obj.sourceFolder = %terObj.sourceFolder;
-	%obj.targetFolder = %terObj.targetFolder;
-	if ( isObject( %obj ) ) {		
+	%obj.dataFolder = TMG.dataFolder;
+	%obj.sourceFolder = TMG.sourceFolder;
+	%obj.targetFolder = TMG.targetFolder;
+
+	if (isObject(%terObj)) {
+		%obj.position = %terObj.position;
+	}
+
+	if ( isObject( %obj ) ) {
 		// Select it in the editor.
 		EWorldEditor.clearSelection();
 		EWorldEditor.selectObject(%obj);
@@ -80,9 +103,12 @@ function TMG::reimportTerrain(%this) {
 		EWorldEditor.dropSelection( true );
 		ETerrainEditor.isDirty = true;
 		EPainter.updateLayers();
+		TMG.updateTerrainList();
+		TMG.setActiveTerrain(%obj);
 	} else {
 		warnLog("Something bad happen and heightmap import failed!");
-	}	
+		devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");
+	}
 }
 
 
@@ -93,7 +119,6 @@ function TMG::reimportTerrain(%this) {
 
 //==============================================================================
 function TMG::selectSingleTextureMapFolder( %this, %layerId) {
-	
 	%folder = TerrainManagerGui-->dataFolder.getText();
 	%dlg = new OpenFolderDialog() {
 		Title = "Select Export Folder";
@@ -111,7 +136,7 @@ function TMG::selectSingleTextureMapFolder( %this, %layerId) {
 
 	if(%dlg.Execute())
 		TMG.setSingleTextureMapFolder(%dlg.FileName,%layerId);
-		
+
 	%dlg.delete();
 }
 //------------------------------------------------------------------------------
@@ -128,13 +153,13 @@ function TMG_ImportTerrainNameEdit::onValidate(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG::validateImportTerrainName(%this,%name) {
-	if (isObject(%name)){
+	if (isObject(%name)) {
 		%info = "\c2Terrain exist and will be overridden with heightmap";
 	} else {
 		%info = "\c1New terrain will be created from heightmap";
 	}
+
 	TMG_PageMaterialLayers-->importTerrainNameStatus.setText(%info);
 	TMG_PageMaterialLayers-->importTerrainName.setText(%name);
-	
 }
 //------------------------------------------------------------------------------
