@@ -309,12 +309,18 @@ function buildParamsArray( %array,%syncAfter ) {
 			}
 			
 		}
-		%fieldCtrl = %pData.pill.findObjectByInternalName(%pData.Setting,true);
-		if (%pData.Option[%pData.Setting,"superClass"] !$= ""){
-				devLog("Setting superClass for:",%fieldCtrl,"SuperClass=",	%pData.Option[%pData.Setting,"superClass"]);
-				%fieldCtrl.superClass = %pData.Option[%pData.Setting,"superClass"];
-		}
 		
+		//Get the GuiCtrl which have the setting as internal name
+		%fieldCtrl = %pData.pill.findObjectByInternalName(%pData.Setting,true);
+		
+		//Check some option settings and add those found to fieldCtrl
+		if (%pData.Option[%pData.Setting,"superClass"] !$= "")			
+			%fieldCtrl.superClass = %pData.Option[%pData.Setting,"superClass"];				
+		
+		if (%pData.Option[%pData.Setting,"linkSet"] !$= "")
+				%fieldCtrl.linkSet = %pData.Option[%pData.Setting,"linkSet"];
+				
+				
 		%pData.pill-->field.internalName = "fieldTitle";
 		%pData.pill-->fieldTitle.canSaveDynamicFields = "1";
 		%pData.pill-->fieldTitle.linkedField = %field;

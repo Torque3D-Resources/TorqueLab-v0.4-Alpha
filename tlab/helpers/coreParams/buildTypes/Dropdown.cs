@@ -44,8 +44,7 @@ function buildParamDropdown( %pData ) {
       %list = %pData.Option[%pData.Setting,"itemList"];
       eval("%items = "@%list@";");       
       foreach$(%item in %items) {
-         %menu.add(%item,%menuId);
-         devLog("Add item:",%item,"Id",%menuId);
+         %menu.add(%item,%menuId);        
          %menuId++;
          
       }
@@ -81,43 +80,5 @@ function buildParamDropdown( %pData ) {
    
    return;
 
-   //Update dropdown data
-   %menu.clear();
-   %selectedId = 0;
-   %menuData =  %pData.Option[%pData.Setting,"menuData"];
-   %defaultData =  %pData.Option[%pData.Setting,"default"];			
-   if (%menuData!$="") {
-				   devLog("building DropDown param:",%menuData);
-					%updType = getWord(%menuData,0);
-					%updValue = getWords(%menuData,1);
-					%menu.guiGroup = %updValue;
-					if (%updType $="group") {
-						%menuId = 1;
-						foreach(%obj in %updValue) {
-							%menu.add(%obj.getName(),%menuId);
-							%menuId++;
-						}
-					} else if (%updType $="list") {
-						eval("%datalist = $"@%updValue@";");
-						%menuId = 1;
-						foreach$(%obj in %datalist) {
-
-							%menu.add(%obj.getName(),%menuId);
-							%menuId++;
-						}
-					}
-					else if (%updType $="strlist") {
-						eval("%datalist = $"@%updValue@";");
-						%menuId = 0;
-						foreach$(%obj in %datalist) {
-							%menu.add(%obj,%menuId);							
-							if (%obj $= %defaultData)
-							   %selectedId = %menuId;
-							%menuId++;
-						}
-					}
-				}
-		
-            %menu.setSelected(%selectedId,false);
 }
 //------------------------------------------------------------------------------
