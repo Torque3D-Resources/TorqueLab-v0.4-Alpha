@@ -43,38 +43,39 @@ function TMG::getActiveFolders(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {	
+function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {		
+	if (%folder $= "")
+		return;	
+	
+		
 	if (%relativeToData){	
 		%subFolder = %folder;
 		%folder = TMG.dataFolder@"/"@%subFolder;
 		%folder = strreplace(%folder,"//","/");
 		%subField = %type@"SubFolder";
-		eval("TMG."@%subField@" = %subFolder;");
-		//if (!%onlyTMG){
-		//	MissionGroup.setFieldValue(%subField,%subFolder);
-		//	TMG.activeTerrain.setFieldValue(%subField,%subFolder);
-		//}
+		eval("TMG."@%subField@" = %subFolder;");		
 		
 	}	
+	%field = %type@"Folder";
+	eval("TMG."@%field@" = %folder;");	
 	if (%type !$= "data"){		
 		%relativeFolder = strreplace(%folder,TMG.dataFolder,"\c2[Data]\c0");
-		eval("%editCtrl = TerrainManagerGui-->relative"@%type@"Folder;");
-		%editCtrl.setText(%relativeFolder);
-		
-		
-		eval("%editFullCtrl = TerrainManagerGui-->texture"@%type@"Folder;");
-		%editFullCtrl.setText(%relativeFolder);
+		eval("%editCtrl = TerrainManagerGui-->"@%type@"_sideFolder;");
+		%editCtrl.setText(%relativeFolder);			
 		
 		eval("%subEdit = TerrainManagerGui-->"@%type@"_FolderEdit;");
 		%subEdit.setText(%relativeFolder);
 	}
 	else {
-		TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
+	
+		TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);
+		TerrainManagerGui-->sideDataFolderText.text = TMG.dataFolder;		
+		%this.setFolder("source",TMG.sourceSubFolder,true);
+		%this.setFolder("target",TMG.targetSubFolder,true);
 	}
 	
 	
-	%field = %type@"Folder";
-	eval("TMG."@%field@" = %folder;");
+	
 	
 	if (!%onlyTMG){
 		MissionGroup.setFieldValue(%field,%folder);		
@@ -123,7 +124,7 @@ function TMG::setDataFolder( %this, %path ) {
 		return;
 	}
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
-	TerrainManagerGui-->dataFolder.setText(%path);	
+	//TerrainManagerGui-->dataFolder.setText(%path);	
 	%this.setFolder("data",%path);
 }
 //------------------------------------------------------------------------------
