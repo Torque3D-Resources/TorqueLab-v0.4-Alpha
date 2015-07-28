@@ -1,5 +1,5 @@
 //==============================================================================
-// TorqueLab -> TerrainMaterialManager
+// TorqueLab -> TerrainManager - Import Heightmaps and Layers
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -19,10 +19,6 @@ function TMG::prepareAllLayers(%this,%doImport) {
 			warnLog(%pill.layerId," Layer file created from menu text:",%pill.file);
 		
 		}
-		else if (isFile(%pill.file)) {
-			warnLog(%pill.layerId," Layer file was stored in pill:",%pill.file);
-		}
-			
 
 		%pill.activeChannels = "";
 		%stack = %pill-->channelStack;
@@ -39,7 +35,7 @@ function TMG::prepareAllLayers(%this,%doImport) {
 	TMG_PageMaterialLayers-->reimportButton.active = 1;
 
 	if (%doImport)
-		%this.reimportTerrain();
+		%this.importTerrain();
 }
 //------------------------------------------------------------------------------
 
@@ -47,7 +43,7 @@ function TMG::prepareAllLayers(%this,%doImport) {
 // Import Terrain Heightmap + Layers
 //==============================================================================
 //==============================================================================
-function TMG::reimportTerrain(%this) {
+function TMG::importTerrain(%this) {
 	%terObj = %this.activeTerrain;
 	%folder = TMG_PageMaterialLayers-->textureSourceFolder.text;
 	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
@@ -154,24 +150,8 @@ function TMG::reimportTerrain(%this) {
 //==============================================================================
 function TMG::selectSingleTextureMapFolder( %this, %layerId) {
 	%folder = TerrainManagerGui-->dataFolder.getText();
-	%dlg = new OpenFolderDialog() {
-		Title = "Select Export Folder";
-		Filters = %filter;
-		DefaultFile = %folder;
-		ChangePath = false;
-		MustExist = true;
-		MultipleFiles = false;
-	};
-
-	if(filePath( %folder ) !$= "")
-		%dlg.DefaultPath = filePath(%folder);
-	else
-		%dlg.DefaultPath = getMainDotCSDir();
-
-	if(%dlg.Execute())
-		TMG.setSingleTextureMapFolder(%dlg.FileName,%layerId);
-
-	%dlg.delete();
+	getFolderName(%filter,"TMG.setSingleTextureMapFolder",%folder,"Select Export Folder",%layerId);
+	
 }
 //------------------------------------------------------------------------------
 function TMG::setSingleTextureMapFolder( %this, %path,%layerId) {

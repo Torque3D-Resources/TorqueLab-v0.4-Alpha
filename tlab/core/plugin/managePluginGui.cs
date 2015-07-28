@@ -11,8 +11,6 @@ function Lab::prepareAllPluginsGui(%this) {
 	//Prepare the plugins toolbars
 	//%this.initAllToolbarGroups();
 	%this.initAllPluginsDialogs();
-	
-	
 }
 //------------------------------------------------------------------------------
 
@@ -27,7 +25,6 @@ function Lab::activatePluginGui(%this,%pluginObj) {
 		EditorFrameMain.columns = Lab.previousEditorColumns;
 		EditorFrameMain.updateSizes();
 	}*/
-	
 	Lab.checkPluginTools();
 
 	//%pluginFrameSet = %pluginObj.plugin@"_FrameSet";
@@ -71,6 +68,7 @@ function Lab::addGuiToPluginSet(%this,%plugin,%gui) {
 	if (!isObject(%pluginSimSet)) {
 		%pluginSimSet = newSimSet(%pluginSimSet);
 	}
+
 	%gui.plugin = %plugin;
 	%pluginSimSet.add(%gui);
 	LabPluginGuiSet.add(%gui);
@@ -86,20 +84,27 @@ function Lab::addPluginEditor(%this,%plugin,%gui,%notFullscreen) {
 
 	// Simset Holding Editor Guis for the plugin
 }
+//------------------------------------------------------------------------------
+//==============================================================================
+// Plugin Tools (Right Column UI)
 function Lab::addPluginGui(%this,%plugin,%gui) {
 	%this.addGuiToPluginSet(%plugin,%gui);
+	%pluginObj = %plugin@"Plugin";
+	%pluginObj.useTools = true;
+	
 	/*%pluginFrameSet = %plugin@"_FrameSet";
 
 	if (!isObject(%pluginFrameSet)) {
 		newSimSet(%pluginFrameSet);
 	}
-	
+
 	%pluginFrameSet.add(%gui);
 	*/
 	// Simset Holding Editor Guis for the plugin
 	%this.addGui(%gui,"Gui");
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function Lab::addPluginToolbar(%this,%plugin,%gui) {
 	%gui.plugin = %plugin;
 	%this.addGuiToPluginSet(%plugin,%gui);
@@ -112,9 +117,7 @@ function Lab::addPluginDlg(%this,%plugin,%gui) {
 	%gui.pluginObj = %pluginObj;
 	%gui.superClass = "PluginDlg";
 	%this.addGui(%gui,"Dialog");
-	%gui.isDlg = true;	
-	
-	
+	%gui.isDlg = true;
 }
 
 function Lab::addPluginPalette(%this,%plugin,%gui) {
@@ -167,6 +170,7 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 function Lab::removeFromEditorsMenu( %this,  %pluginObj ) {
 	if (!isObject(%windowMenu))
 		return;
+
 	%windowMenu = Lab.findMenu( "Editors" );
 	%pluginName = %pluginObj.getName();
 	%count = %windowMenu.getItemCount();

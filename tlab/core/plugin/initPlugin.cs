@@ -35,6 +35,7 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable) {
 		alwaysOn = %alwaysEnable;
 		pluginOrder = %pluginOrder;
 		shortPlugin = %shortObjName;
+		useTools = false;
 	};
 	LabPluginGroup.add(%pluginObj);
 

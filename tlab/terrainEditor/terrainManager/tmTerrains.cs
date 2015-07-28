@@ -5,7 +5,7 @@
 //==============================================================================
 //==============================================================================
 function TMG::setActiveTerrain(%this,%terrainId) {
-	info("Active terrain is:",%terrainId.getName());
+	
 	if (!isObject(%terrainId)){
 		TMG.activeTerrain = "";
 		TMG.activeHeightInfo = "";
@@ -97,8 +97,7 @@ function TMG_ActiveTerrainMenu::onSelect(%this,%id,%text) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::storeFolderToTerrain(%this,%storeToTerrain) {
-	devLog("storeFolderToTerrain",%storeToTerrain);
+function TMG::storeFolderToTerrain(%this,%storeToTerrain) {	
 	if (!isObject(TMG.ActiveTerrain))
 		return;
 
