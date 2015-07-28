@@ -12,6 +12,8 @@ function TerrainManagerGui::onWake(%this) {
 	
 	TMG_MainBook.selectPage($TMG_CurrentPage);
 	TMG.refreshData();
+	Lab.hidePluginTools();
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -19,6 +21,8 @@ function TerrainManagerGui::onSleep(%this) {
 	
 	if (isObject(TMG_GroundCoverClone-->MainContainer))
 		SEP_GroundCover.add(TMG_GroundCoverClone-->MainContainer);
+	
+	Lab.showPluginTools();
 }
 //------------------------------------------------------------------------------
 
@@ -57,7 +61,15 @@ function TMG::refreshData(%this) {
 
 
 
-
+//==============================================================================
+function TMG::toggleTools(%this,%button) {
+	%visible = %button.getValue();
+	if (%visible)
+		Lab.showPluginTools();
+	else 
+		Lab.hidePluginTools();	
+}
+//------------------------------------------------------------------------------
 
 
 //==============================================================================

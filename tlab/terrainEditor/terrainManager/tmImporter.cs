@@ -14,10 +14,15 @@ function TMG::prepareAllLayers(%this,%doImport) {
 	%this.exportTerrainLayersToPath(%folder,"png");
 
 	foreach(%pill in TMG_MaterialLayersStack) {
-		if (%pill-->mapMenu.getSelected() $= "0") {
+		if (!isFile(%pill.file)) {			
 			%pill.file = %folder@"/"@%pill-->mapMenu.getText()@".png";
-			%isFile = isFile(%pill.file);
+			warnLog(%pill.layerId," Layer file created from menu text:",%pill.file);
+		
 		}
+		else if (isFile(%pill.file)) {
+			warnLog(%pill.layerId," Layer file was stored in pill:",%pill.file);
+		}
+			
 
 		%pill.activeChannels = "";
 		%stack = %pill-->channelStack;
@@ -73,10 +78,17 @@ function TMG::reimportTerrain(%this) {
 
 	foreach(%pill in TMG_MaterialLayersStack) {
 		%fixFile = %pill.file;
+		if (!isFile(%fixFile))
+			%preImportFailed = true;
 		%opacityNames = strAddRecord(%opacityNames,%fixFile TAB %pill.activeChannels);
 		%materialNames = strAddRecord(%materialNames,%pill.matInternalName);
 	}
-
+	if (%preImportFailed){
+		devLog("Pre heightmap import failed! Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");
+		devLog("Opacity list:",%opacityNames);
+		devLog("Material list:",%materialNames);
+		return;
+	}
 	%name = TMG_PageMaterialLayers-->importTerrainName.getText();
 	%obj = TerrainBlock::import(  %name,
 											%heightmapFile,
@@ -103,8 +115,9 @@ function TMG::reimportTerrain(%this) {
 		EWorldEditor.dropSelection( true );
 		ETerrainEditor.isDirty = true;
 		EPainter.updateLayers();
-		TMG.updateTerrainList();
-		TMG.setActiveTerrain(%obj);
+		TMG.activeTerrain = %obj;
+		TMG.updateTerrainList(true);
+		//TMG.setActiveTerrain(%obj);
 	} else {
 		warnLog("Something bad happen and heightmap import failed!");
 		devLog("Importing heightmap with",getRecordCount(%opacityNames)," opacity maps and ",getRecordCount(%materialNames),"Materials.");

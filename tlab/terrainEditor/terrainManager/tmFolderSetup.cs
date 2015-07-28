@@ -58,13 +58,22 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 	}	
 	%field = %type@"Folder";
 	eval("TMG."@%field@" = %folder;");	
-	if (%type !$= "data"){		
-		%relativeFolder = strreplace(%folder,TMG.dataFolder,"\c2[Data]\c0");
+	if (%type !$= "data"){
+		
+		%subText = %folder;
+		if (strFind(%folder,TMG.dataFolder)){				
+			%relativeFolder = strreplace(%folder,TMG.dataFolder,"");
+			if (getSubStr(%relativeFolder,0,1) $= "/")
+				%relativeFolder = getSubStr(%relativeFolder,1);
+			%subText = "\c2[Data/]\c0"@%relativeFolder;
+		}
+		
+		
 		eval("%editCtrl = TerrainManagerGui-->"@%type@"_sideFolder;");
-		%editCtrl.setText(%relativeFolder);			
+		%editCtrl.setText(%subText);			
 		
 		eval("%subEdit = TerrainManagerGui-->"@%type@"_FolderEdit;");
-		%subEdit.setText(%relativeFolder);
+		%subEdit.setText(%subText);
 	}
 	else {
 	

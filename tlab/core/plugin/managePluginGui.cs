@@ -23,19 +23,21 @@ function Lab::prepareAllPluginsGui(%this) {
 //Set a plugin as active (Selected Editor Plugin)
 function Lab::activatePluginGui(%this,%pluginObj) {
 	//Check if the toolFrame
-	if (EditorFrameMain.columns $= "0") {
+	/*if (EditorFrameMain.columns $= "0") {
 		EditorFrameMain.columns = Lab.previousEditorColumns;
 		EditorFrameMain.updateSizes();
-	}
+	}*/
+	
+	Lab.checkPluginTools();
 
-	%pluginFrameSet = %pluginObj.plugin@"_FrameSet";
+	//%pluginFrameSet = %pluginObj.plugin@"_FrameSet";
 
-	if (!isObject(%pluginFrameSet)) {
+	/*if (!isObject(%pluginFrameSet)) {
 		Lab.previousEditorColumns = EditorFrameMain.columns;
 		//No tool frame for this plugin
 		EditorFrameMain.columns = "0";
 		EditorFrameMain.updateSizes();
-	}
+	}*/
 
 	if (%pluginObj.no3D)
 		ECamViewGui.setState(false,true);
@@ -86,13 +88,14 @@ function Lab::addPluginEditor(%this,%plugin,%gui,%notFullscreen) {
 }
 function Lab::addPluginGui(%this,%plugin,%gui) {
 	%this.addGuiToPluginSet(%plugin,%gui);
-	%pluginFrameSet = %plugin@"_FrameSet";
+	/*%pluginFrameSet = %plugin@"_FrameSet";
 
 	if (!isObject(%pluginFrameSet)) {
 		newSimSet(%pluginFrameSet);
 	}
-
+	
 	%pluginFrameSet.add(%gui);
+	*/
 	// Simset Holding Editor Guis for the plugin
 	%this.addGui(%gui,"Gui");
 }

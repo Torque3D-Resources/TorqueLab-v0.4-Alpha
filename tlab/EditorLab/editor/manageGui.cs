@@ -190,6 +190,14 @@ function Lab::togglePluginTools(%this) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
+function Lab::checkPluginTools(%this) {
+	if (getWordCount(EditorFrameMain.columns) <= 1){
+		%this.showPluginTools();
+	}
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function Lab::hidePluginTools(%this) {
 	EditorFrameMain.lastToolsCol = getWord(EditorFrameMain.columns,1);
 	EditorFrameMain.columns = "0";
