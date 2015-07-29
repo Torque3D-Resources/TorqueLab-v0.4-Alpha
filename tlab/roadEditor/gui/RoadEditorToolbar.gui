@@ -9,7 +9,7 @@ new GuiStackControl(RoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "122 0";
    extent = "608 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11844";
-      disabledGroup = "11845";
+      defaultStack = "12285";
+      disabledGroup = "12286";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "11846 11855 11871";
+      stackLists = "12287 12296 12312";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -135,7 +135,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -354,7 +354,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -443,7 +443,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -552,7 +552,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -703,7 +703,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -767,7 +767,7 @@ new GuiStackControl(RoadEditorToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

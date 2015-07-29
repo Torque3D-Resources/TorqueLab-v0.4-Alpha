@@ -110,9 +110,6 @@ function Lab::onToolbarIconDroppedDefault(%this,%dropOnCtrl, %draggedControl, %d
 function Lab::findToolbarItemDropTarget(%this,%dropOnCtrl, %droppedCtrl, %dropPoint) {
 
 	switch$(%dropOnCtrl.superClass) {
-		case "MouseBox":
-			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
-			%addBefore = %dropOnCtrl.parentGroup;
 		case "MouseStart":
 			%addToThis = %dropOnCtrl.parentGroup.parentGroup;
 			%addBefore = %dropOnCtrl.parentGroup.parentGroup.getObject(1);

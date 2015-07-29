@@ -27,9 +27,6 @@ function buildParamDropdown( %pData ) {
    %menu.variable = %pData.Variable;
    %menu.canSaveDynamicFields = true;
    
-   if (%pData.Option[%pData.Setting,"syncId"] !$= ""){
-   	%menu.syncId = true;
-   }
    if (%pData.myNameIs!$= ""){
       %name = %pData.myNameIs;
       if (isObject(%name)){
@@ -39,14 +36,13 @@ function buildParamDropdown( %pData ) {
       %menu.setName(%name);     
    }
    
-   %menuId = 0;
+   %menuId = 1;
    if (%pData.Option[%pData.Setting,"itemList"] !$= ""){
       %list = %pData.Option[%pData.Setting,"itemList"];
       eval("%items = "@%list@";");       
       foreach$(%item in %items) {
-         %menu.add(%item,%menuId);        
+         %menu.add(%item,%menuId);
          %menuId++;
-         
       }
    }
    else if (%pData.Option[%pData.Setting,"fieldList"] !$= ""){
@@ -80,5 +76,43 @@ function buildParamDropdown( %pData ) {
    
    return;
 
+   //Update dropdown data
+   %menu.clear();
+   %selectedId = 0;
+   %menuData =  %pData.Option[%pData.Setting,"menuData"];
+   %defaultData =  %pData.Option[%pData.Setting,"default"];			
+   if (%menuData!$="") {
+				   devLog("building DropDown param:",%menuData);
+					%updType = getWord(%menuData,0);
+					%updValue = getWords(%menuData,1);
+					%menu.guiGroup = %updValue;
+					if (%updType $="group") {
+						%menuId = 1;
+						foreach(%obj in %updValue) {
+							%menu.add(%obj.getName(),%menuId);
+							%menuId++;
+						}
+					} else if (%updType $="list") {
+						eval("%datalist = $"@%updValue@";");
+						%menuId = 1;
+						foreach$(%obj in %datalist) {
+
+							%menu.add(%obj.getName(),%menuId);
+							%menuId++;
+						}
+					}
+					else if (%updType $="strlist") {
+						eval("%datalist = $"@%updValue@";");
+						%menuId = 0;
+						foreach$(%obj in %datalist) {
+							%menu.add(%obj,%menuId);							
+							if (%obj $= %defaultData)
+							   %selectedId = %menuId;
+							%menuId++;
+						}
+					}
+				}
+		
+            %menu.setSelected(%selectedId,false);
 }
 //------------------------------------------------------------------------------

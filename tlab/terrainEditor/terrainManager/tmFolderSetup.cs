@@ -6,133 +6,114 @@
 
 //==============================================================================
 function TMG::getActiveFolders(%this) {
-	%dataFolder = TMG.activeTerrain.dataFolder;
-	if (%dataFolder $= "")
-		%dataFolder = MissionGroup.dataFolder;
+	%dataFolder = MissionGroup.dataFolder;
 	if (%dataFolder $= "")
 		%dataFolder = filePath(TMG.activeTerrain.terrainFile);
 	
 	TMG.setFolder("data",%dataFolder);
 	
-	%sourceFolder = TMG.activeTerrain.sourceFolder;
-	if (%sourceFolder $= "")
-		%sourceFolder = MissionGroup.sourceFolder;
+	%sourceFolder = MissionGroup.sourceFolder;
 	if (%sourceFolder $= "")
 		%sourceFolder = %dataFolder;	
 	TMG.setFolder("source",%sourceFolder);
 	
-	%targetFolder = TMG.activeTerrain.targetFolder;
-	if (%targetFolder $= "")
-		%targetFolder = MissionGroup.targetFolder;
+	%targetFolder = MissionGroup.targetFolder;
 	if (%targetFolder $= "")
 		%targetFolder = %dataFolder;	
 	TMG.setFolder("target",%targetFolder);
+	
+	TMG.setFolder("source",MissionGroup.sourceSubFolder,true);
+	TMG.setFolder("target",MissionGroup.targetSubFolder,true);	
+	
+	TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);	
+	TMG_PageMaterialLayers-->textureMapFolder.setText(TMG.sourceFolder);
+	TMG_PageMaterialLayers-->relativeMapFolder.setText(TMG.sourceSubFolder);
+	TMG_PageMaterialLayers-->textureTargetFolder.setText(TMG.targetFolder);
+	TMG_PageMaterialLayers-->relativeTargetFolder.setText(TMG.targetSubFolder);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {		
-	if (%folder $= "")
-		return;	
+function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
+	%oldSource = TMG.sourceFolder;
 	
-		
-	if (%relativeToData){	
+	if (%relativeToData){
+		devLog("Relative folder:",%type,"Folder",%folder);
 		%subFolder = %folder;
 		%folder = TMG.dataFolder@"/"@%subFolder;
-		%folder = strreplace(%folder,"//","/");
 		%subField = %type@"SubFolder";
-		eval("TMG."@%subField@" = %subFolder;");		
-		
-	}	
-	%field = %type@"Folder";
-	eval("TMG."@%field@" = %folder;");	
-	if (%type !$= "data"){
-		
-		%subText = %folder;
-		if (strFind(%folder,TMG.dataFolder)){				
-			%relativeFolder = strreplace(%folder,TMG.dataFolder,"");
-			if (getSubStr(%relativeFolder,0,1) $= "/")
-				%relativeFolder = getSubStr(%relativeFolder,1);
-			%subText = "\c2[Data/]\c0"@%relativeFolder;
+		eval("TMG."@%subField@" = %subFolder;");
+		if (!%onlyTMG){
+			MissionGroup.setFieldValue(%subField,%subFolder);
+			TMG.activeTerrain.setFieldValue(%subField,%subFolder);
 		}
 		
-		
-		eval("%editCtrl = TerrainManagerGui-->"@%type@"_sideFolder;");
-		%editCtrl.setText(%subText);			
-		
-		eval("%subEdit = TerrainManagerGui-->"@%type@"_FolderEdit;");
-		%subEdit.setText(%subText);
-	}
-	else {
+	}	
 	
-		TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);
-		TerrainManagerGui-->sideDataFolderText.text = TMG.dataFolder;		
-		%this.setFolder("source",TMG.sourceSubFolder,true);
-		%this.setFolder("target",TMG.targetSubFolder,true);
-	}
-	
-	
-	
+	%field = %type@"Folder";
+	eval("TMG."@%field@" = %folder;");
 	
 	if (!%onlyTMG){
-		MissionGroup.setFieldValue(%field,%folder);		
+		MissionGroup.setFieldValue(%field,%folder);
+		TMG.activeTerrain.setFieldValue(%field,%folder);
 	}
-	if (isObject(TMG.activeTerrain)){
-		if (TMG.activeTerrain.storeFolders)
-			TMG.activeTerrain.setFieldValue(%field,%folder);
-	}
+
+	devLog("Old source:",%oldSource,"New source",TMG.sourceFolder);
 	//Update map layers data if source changed
 	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
 		TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Select TerrainManager Data folder
+// Terrain Data Folder (used as base for exporting)
 //==============================================================================
 //==============================================================================
-function TMG::selectDataFolder( %this,%type) {
-	if (%type $= "")
-		%type = "data";
-	eval("%currentFolder = TMG."@%type@"Folder;");	
+function TMG::selectDataFolder( %this, %filter) {
 	
-	if (!isDirectory(%current))
-		%currentFolder = MissionGroup.getFilename();
-	
-	getFolderName("","TMG.setDataFolder",%currentFolder,"Select Export Folder",%type);	
+	%currentFile = MissionGroup.getFilename();
+	%dlg = new OpenFolderDialog() {
+		Title = "Select Export Folder";
+		Filters = %filter;
+		DefaultFile = %currentFile;
+		ChangePath = false;
+		MustExist = true;
+		MultipleFiles = false;
+	};
+
+	if(filePath( %currentFile ) !$= "")
+		%dlg.DefaultPath = filePath(%currentFile);
+	else
+		%dlg.DefaultPath = getMainDotCSDir();
+
+	if(%dlg.Execute())
+		TMG.setDataFolder(%dlg.FileName);
+		
+	%dlg.delete();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG::setDataFolder( %this, %path,%type ) {
+function TMG::setDataFolder( %this, %path ) {
 	%terObj = %this.activeTerrain;
 	if (!isObject(%terObj)){
 		warnlog("Not active terrain detected. Please select one before setting data folder:",%terObj);
 		return;
 	}
 	%path =  makeRelativePath( %path, getMainDotCsDir() );
-	//TerrainManagerGui-->dataFolder.setText(%path);	
-	%this.setFolder(%type,%path);
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-// Data/Source/Target TextEdit validations
-//==============================================================================
-
-//==============================================================================
-function RelativeFolderEdit::onValidate(%this) {
-	%data = strreplace(%this.internalName,"_"," ");
-	%type = getWord(%data,0);
-	%text = strreplace(%this.getText(),"[Data]","");
-	TMG.setFolder(%type,%text,true);
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-function TMG_RelativeSourceFolderEdit::onValidate( %this ) {
-	TMG.setFolder("source",%this.getText(),true);
+	TerrainManagerGui-->dataFolder.setText(%path);	
+	%this.setFolder("data",%path);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMG_RelativeTargetFolderEdit::onValidate( %this ) {
-	TMG.setFolder("target",%this.getText(),true);
+function TMG::getDefaultFolder(%this) {
+	if (isObject(TMG.activeTerrain)){
+		if (TMG.activeTerrain.dataFolder !$= "")
+			return TMG.activeTerrain.dataFolder;
+	}
+	
+	if (TerrainManagerGui-->dataFolder.text !$= "")		
+		return TerrainManagerGui-->dataFolder.text;
+	
+	%folder = filePath(MissionGroup.getFilename());
+		return %folder;	
+	
 }
 //------------------------------------------------------------------------------

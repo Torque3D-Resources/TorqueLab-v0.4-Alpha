@@ -9,8 +9,8 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "78 0";
-   extent = "696 32";
+   position = "0 0";
+   extent = "785 32";
    minExtent = "16 16";
    horizSizing = "width";
    vertSizing = "bottom";
@@ -26,12 +26,12 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13828";
-      disabledGroup = "13829";
+      defaultStack = "14374";
+      disabledGroup = "14375";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
-      stackLists = "13830 13839 13873";
+      stackLists = "14376 14385 14419";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -46,13 +46,12 @@ new GuiStackControl(EWTerrainPainterToolbar) {
       horizSizing = "right";
       vertSizing = "bottom";
       profile = "ToolsDefaultProfile";
-      visible = "0";
+      visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
-      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
    };
@@ -66,7 +65,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
       dynamicPos = "0";
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
-      position = "0 0";
+      position = "89 0";
       extent = "102 30";
       minExtent = "4 16";
       horizSizing = "right";
@@ -135,7 +134,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -169,10 +168,8 @@ new GuiStackControl(EWTerrainPainterToolbar) {
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            originalIndex = "1";
-            originalParent = "13944";
             pluginName = "TerrainPainter";
-            toolbar = "13828";
+            toolbar = "14374";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -233,7 +230,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "TerrainPainter";
-            toolbar = "13828";
+            toolbar = "14374";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -290,7 +287,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
       dynamicPos = "0";
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
-      position = "107 0";
+      position = "196 0";
       extent = "546 30";
       minExtent = "4 16";
       horizSizing = "right";
@@ -359,7 +356,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -423,7 +420,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -540,7 +537,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -657,7 +654,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -772,7 +769,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -889,7 +886,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -1000,7 +997,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
       dynamicPos = "0";
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
-      position = "658 0";
+      position = "747 0";
       extent = "38 30";
       minExtent = "4 16";
       horizSizing = "right";
@@ -1069,7 +1066,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -1156,7 +1153,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "701 0";
+      position = "790 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";

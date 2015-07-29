@@ -39,10 +39,6 @@ function Editor::open(%this) {
 	//Callbacks used by plugins
 	Lab.OnEditorOpen();
 	EditorFrameWorld.pushToBack(EditorFrameTools);
-	
-
-	EditorGuiToolbarStack.bringToFront(EditorGuiToolbarStack-->FirstToolbarGroup);
-	EditorGuiToolbarStack.pushToBack(EditorGuiToolbarStack-->LastToolbarGroup);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

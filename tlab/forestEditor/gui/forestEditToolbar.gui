@@ -9,7 +9,7 @@ new GuiStackControl(ForestEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "156 0";
    extent = "536 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10147";
-      disabledGroup = "10148";
+      defaultStack = "10583";
+      disabledGroup = "10584";
       EditorContainer = "4920";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "10149 10156";
+      stackLists = "10585 10592";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -136,7 +136,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -294,7 +294,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -322,7 +322,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "10147";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -361,7 +361,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -441,7 +441,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "10147";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -480,7 +480,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -559,7 +559,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "10147";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -598,7 +598,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -677,7 +677,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "10147";
+            toolbar = "10583";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -716,7 +716,7 @@ new GuiStackControl(ForestEditToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

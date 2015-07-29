@@ -26,8 +26,6 @@ function hide(%obj,%child) {
 		return false;
 
 	%hideMe.setVisible(false);
-	if (%hideMe.isMethod("onHide"))
-			%hideMe.onHide();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -40,10 +38,7 @@ function show(%obj,%child) {
    }
 	if (!isObject(%showMe))
 		return false;
-	
 	%showMe.setVisible(true);
-	if (%showMe.isMethod("onShow"))
-			%showMe.onShow();		
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -57,9 +52,9 @@ function toggleVisible(%obj,%child) {
    if (!isObject(%toggleMe))
 		return false;
 	if (%toggleMe.visible)
-		hide(%toggleMe);		
+		hide(%toggleMe);
 	else
-		show(%toggleMe);	
+		show(%toggleMe);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

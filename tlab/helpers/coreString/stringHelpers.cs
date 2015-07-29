@@ -164,23 +164,6 @@ function strFind(%str,%find) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-/// Check if the word contain any of the supplied words. Return true if found.
-/// Optional: %all -> If %all is true, must find all words to return true;
-function recordFind(%records,%find,%partof) {
-	for( %i = 0; %i < getRecordCount( %records ); %i++ ) {
-		%record = getRecord( %records, %i );
-		if (%record $= %find)
-			return %i;
-		if (!%partof)
-			continue;
-		if (strFind(%record,%find))
-			return %i;
-	}	
-	return "-1";	
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
 //
 function strAddField(%str,%field,%addEmpty) {
 	if (%addEmpty && %field $= "")

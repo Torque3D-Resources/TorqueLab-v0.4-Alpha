@@ -73,7 +73,8 @@ function TMG_GeneralMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mous
 	
 }
 //==============================================================================
-function TMG::showGeneralMaterialDlg( %this,%pill ) {	
+function TMG::showGeneralMaterialDlg( %this,%pill ) {
+	devLog("TMG::showGeneralMaterialDlg( %this,%pill )", %this,%pill );
 	if (!isObject(%pill)) {
 		warnLog("Invalid layer to change material");
 		return;
@@ -88,9 +89,13 @@ function TMG::showGeneralMaterialDlg( %this,%pill ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Callback from TerrainMaterialDlg returning selected material info
-function TMG_GeneralMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {	
-	TMG_LayerMaterialChangeCallback(%mat, %matIndex, %activeIdx );	
-	EPainter_TerrainMaterialUpdateCallback(%mat, %matIndex);	
+function TMG_GeneralMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
+	devLog(" TMG_LayerMaterialChangeCallback ( %mat, %matIndex, %activeIdx )", %mat, %matIndex, %activeIdx );
+	
+	TMG_LayerMaterialChangeCallback(%mat, %matIndex, %activeIdx );
+	
+	EPainter_TerrainMaterialUpdateCallback(%mat, %matIndex);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

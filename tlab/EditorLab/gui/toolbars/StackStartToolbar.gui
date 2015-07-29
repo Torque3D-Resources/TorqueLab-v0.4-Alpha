@@ -137,14 +137,14 @@ new GuiStackControl(StackStartToolbar) {
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
-            superClass = "MouseBox";
+            superClass = "MouseStart";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/Settings.png";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/SceneManager.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -162,7 +162,7 @@ new GuiStackControl(StackStartToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         command = "toggleDlg(LabParamsDlg);";
+         command = "ESceneManager.toggleVisibility();";
          tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -170,12 +170,13 @@ new GuiStackControl(StackStartToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             originalIndex = "1";
-            originalParent = "7037";
+            originalParent = "7048";
+            srcIcon = "7052";
             toolbar = "7044";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/SceneManager.png";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/Settings.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -193,15 +194,15 @@ new GuiStackControl(StackStartToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         command = "ESceneManager.toggleVisibility();";
+         command = "toggleDlg(LabParamsDlg);";
          tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "1";
-            originalIndex = "2";
-            originalParent = "7046";
+            originalIndex = "1";
+            originalParent = "7037";
             toolbar = "7044";
       };
       new GuiContainer() {

@@ -20,11 +20,6 @@ $ParamsArray_DefaultStackType = "Rollout";
 //==============================================================================
 // RPE_DatablockEditor.buildInterface();
 function buildParamsArray( %array,%syncAfter ) {
-	
-	//======================================================================
-	// Prepare the array for the build process (Set default for unsetted settings)
-	//----------------------------------------------------------------------		
-	
 	%guiStyle = %array.style;
 
 	if (%guiStyle $= "")
@@ -49,23 +44,21 @@ function buildParamsArray( %array,%syncAfter ) {
 	if (%array.groupFieldId !$= "")
 		%groupFieldId =%array.groupFieldId;
 
-
-	
-	//======================================================================
-	// Prepare all params group data
-	//----------------------------------------------------------------------		
+	//Clean the Params container for this array
+	//%baseCtrl.clear();
+	//==============================================================================
+	// GENERATE THE PARAMS GROUPS CONTAINERS
+	//Add all params group stacks before adding their data
 	%gid = 1;
-	while(%array.group[%gid] !$="") {
 
+	while(%array.group[%gid] !$="") {
 		%groupInfo = %array.group[%gid];
 		%groupTitle = getField(%groupInfo,0);
 		%groupOptions = getField(%groupInfo,1);
 		%groupOptFields = strreplace(%groupOptions,";;","\t");
 
 		for(%gi=0; %gi<getFieldCount(%groupOptFields); %gi++) {
-		
 			%gData = getField(%groupOptFields,%gi);
-				
 			%gField = firstWord(%gData);
 			%gFieldValue = removeWord(%gData,0);
 			%groupOption[%gid,%gField] = %gFieldValue;
@@ -75,8 +68,7 @@ function buildParamsArray( %array,%syncAfter ) {
 
 		if (%groupOption[%gid,"StackType"] !$= "")
 			%groupCtrlType = %groupOption[%gid,"StackType"];
-		
-		
+
 		%baseCtrl = %array.container;
 
 		if (%groupOption[%gid,"Container"] !$= "")
@@ -85,11 +77,7 @@ function buildParamsArray( %array,%syncAfter ) {
 		if (%groupOption[%gid,"Stack"] !$= "") {
 			%baseCtrl = %array.container.findObjectByInternalName(%groupOption[%gid,"Stack"],true);
 		}
-		
-		if (%groupOption[%gid,"GroupCtrl"] !$= "") {
-			%baseCtrl = %array.container.findObjectByInternalName(%groupOption[%gid,"Stack"],true);
-		}
-		
+
 		if (!%baseCtrlClear[%baseCtrl]) {
 			%baseCtrl.clear();
 			%baseCtrlClear[%baseCtrl] = true;
@@ -100,46 +88,29 @@ function buildParamsArray( %array,%syncAfter ) {
 			%gid++;
 			continue;
 		}
-		//======================================================================
-		// Set the stack control in which the group pills will be added
-		//----------------------------------------------------------------------
-		//If Type is set to none or is empty, the base stack will be used
-		if (%groupCtrlType !$= "none" && %groupCtrlType !$= ""){
-			//------------------------------------------------
-			// Get the source widgets used to add pills (must have stack as children)
-			%displayType = getWord(%groupStackType,0);
-			%displayOptions = getWords(%groupStackType,1);
+
+		//------------------------------------------------
+		//Group Display Setup
+		%displayType = getWord(%groupStackType,0);
+		%displayOptions = getWords(%groupStackType,1);
+		%displayWidget = %guiSource.findObjectByInternalName(%groupCtrlType,true);
+
+		if (!isObject(%displayWidget)) {
+			warnLog("Invalid group control type for group:",%groupTitle,"Using default type. Type tried was:",%groupCtrlType,"Source",%guiSource);
+			%groupCtrlType = $ParamsArray_DefaultStackType;
 			%displayWidget = %guiSource.findObjectByInternalName(%groupCtrlType,true);
 
 			if (!isObject(%displayWidget)) {
-				warnLog("Invalid group control type for group:",%groupTitle,"Using default type. Type tried was:",%groupCtrlType,"Source",%guiSource);
-				%groupCtrlType = $ParamsArray_DefaultStackType;
-				%displayWidget = %guiSource.findObjectByInternalName(%groupCtrlType,true);
-
-				if (!isObject(%displayWidget)) {
-					warnLog("Something is not configurated right, can't generate the default group type:",$ParamsArray_DefaultStackType);
-					%gid++;
-					continue;
-				}
+				warnLog("Something is not configurated right, can't generate the default group type:",$ParamsArray_DefaultStackType);
+				%gid++;
+				continue;
 			}
+		}
 
-			%displayCtrl = cloneObject(%displayWidget);
-			%displayCtrl.caption = %groupTitle;	
-			
-			if (%groupOption[%gid,"InternalName"] !$= "") {
-				%displayCtrl.internalName = %groupOption[%gid,"InternalName"];
-			}
-			%baseCtrl.add(%displayCtrl);
-			%groupStack = %displayCtrl-->stackCtrl;
-		}
-		else {
-			%groupStack = %baseCtrl;
-		}
-		%groupCtrl[%gid] = %groupStack;
-		
-		//======================================================================
-		// Group preparation completed, prepare for next group ID
-		//----------------------------------------------------------------------		
+		%displayCtrl = cloneObject(%displayWidget);
+		%displayCtrl.caption = %groupTitle;
+		%baseCtrl.add(%displayCtrl);
+		%groupCtrl[%gid] = %displayCtrl-->stackCtrl;
 		%gid++;
 	}
 
@@ -197,11 +168,7 @@ function buildParamsArray( %array,%syncAfter ) {
 
 		if (%pillSrc $= "ColorInt")
 			%pillSrc = "Color";
-		
-		//Set the WidgetSource the same width as target
-		%widgetSourceWidth = %guiSource.extent.x;
-		%guiSource.setExtent(%pData.parentCtrl.extent.x,%guiSource.extent.y);
-		%guiSource-->widgets.setExtent(%pData.parentCtrl.extent.x,%guiSource.extent.y);
+
 		%pData.Widget = %guiSource.findObjectByInternalName(%pillSrc,true);
 
 		if(!isObject(%pData.Widget)) {
@@ -209,12 +176,9 @@ function buildParamsArray( %array,%syncAfter ) {
 			%fid++;
 			continue;
 		}
-		
-		
-				
+
 		%pData.pill = cloneObject(%pData.Widget);
-	
-		//%guiSource.setExtent(%widgetSourceWidth,%guiSource.extent.y);
+
 		//Overide aggregate if set and custom is specified
 		if (%pData.pill.class !$="" && %aggregateClass !$="")
 			%pData.pill.class = %aggregateClass;
@@ -257,10 +221,6 @@ function buildParamsArray( %array,%syncAfter ) {
 		if (%pData.Option[%pData.Setting,"variable"] !$= "")
 			%pData.Variable = %pData.Option[%pData.Setting,"variable"];
 			
-		
-			
-			
-			
 		%tmpFieldValue = %pData.Value;
 		%multiplier = 1;
 		%tooltip = %pData.Option[%pData.Setting,"tooltip"];
@@ -296,7 +256,6 @@ function buildParamsArray( %array,%syncAfter ) {
 			paramLog("Couldn't create the param, there's no function for that control type:",%pData.Category);
 
 		if (%ctrlHolder) {
-			
 			if (%pData.Option[%pData.Setting,"validate"] !$= "") {
 				%validate = %pData.Option[%pData.Setting,"validate"];
 				%ctrlHolder.validateFunc = %validate;
@@ -307,20 +266,8 @@ function buildParamsArray( %array,%syncAfter ) {
 				%ctrlHolder.validationType = %pData.validation;
 				%ctrlHolder.friend.validationType = %pData.validation;
 			}
-			
 		}
-		
-		//Get the GuiCtrl which have the setting as internal name
-		%fieldCtrl = %pData.pill.findObjectByInternalName(%pData.Setting,true);
-		
-		//Check some option settings and add those found to fieldCtrl
-		if (%pData.Option[%pData.Setting,"superClass"] !$= "")			
-			%fieldCtrl.superClass = %pData.Option[%pData.Setting,"superClass"];				
-		
-		if (%pData.Option[%pData.Setting,"linkSet"] !$= "")
-				%fieldCtrl.linkSet = %pData.Option[%pData.Setting,"linkSet"];
-				
-				
+
 		%pData.pill-->field.internalName = "fieldTitle";
 		%pData.pill-->fieldTitle.canSaveDynamicFields = "1";
 		%pData.pill-->fieldTitle.linkedField = %field;

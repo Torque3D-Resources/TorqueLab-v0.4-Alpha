@@ -181,34 +181,14 @@ function Lab::resizeEditorGui( %this ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-// TorqueLab Plugin Tools Container (Side settings area)
-//==============================================================================
-//==============================================================================
 function Lab::togglePluginTools(%this) {
-	if (getWordCount(EditorFrameMain.columns) > 1){
+	if (getWordCount(EditorFrameMain.columns) > 1)
 		%this.hidePluginTools();
-		return false;
-	}
-	else {
+	else
 		%this.showPluginTools();
-		return true;
-	}
 }
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function Lab::checkPluginTools(%this) {
-	%currentPlugin = Lab.currentEditor;
-	if (!%currentPlugin.useTools){
-		%this.hidePluginTools();
-		return;
-	}
-	if (getWordCount(EditorFrameMain.columns) <= 1){
-		%this.showPluginTools();
-	}
-	
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::hidePluginTools(%this) {
 	EditorFrameMain.lastToolsCol = getWord(EditorFrameMain.columns,1);

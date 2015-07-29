@@ -37,11 +37,10 @@ function TMG::exportEverything( %this,%target,%noOverwrite) {
 // Export Functions
 //==============================================================================
 function TMG::exportHeightMapToFile( %this) {
-	getSaveFilename("Png Files|*.png","TMG.exportHeightMapFile",TMG.dataFolder,true);
+	getSaveFilename("Png Files|*.png","TMG.exportHeightMapFile",TMG.getDefaultFolder(),true);
 }
 //==============================================================================
 function TMG::exportHeightMap( %this,%folder,%noOverwrite) {
-	devLog("exportHeightMap folder",%folder);
 	%terObj = %this.activeTerrain;
 	if (!isObject(%terObj)){
 		warnlog("Trying to export layers for invalid terrain:",%terObj);
@@ -110,7 +109,36 @@ function TMG::exportHeightMapFile( %this,%file,%format,%noOverwrite) {
 	return %ret;
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+//Tmg.exportTerrainLayers("","",2);
+function TMG::exportTerrainLayers( %this,%folder,%addSubFolder,%layerId) {
+	%terObj = %this.activeTerrain;
+	if (!isObject(%terObj)){
+		warnlog("Trying to export layers for invalid terrain:",%terObj);
+		return;
+	}
+	
+	if ($TMG_ExportLayerFormat $= "")
+		$TMG_ExportLayerFormat = "png";
+	
+	if (%folder $= "")
+		%folder = %terObj.dataFolder;
+		
+	if (%folder $= ""){
+		warnLog("Export failed because no folder set");
+		return;	
+		%baseFile = MissionGroup.getFilename();
+		%basePath = filePath( MissionGroup.getFilename());
+		%terObj.setFieldValue("dataFolder",%basePath@"Data");
+	}
+	if ($TMG_ExportFolderName $= "")
+		$TMG_ExportFolderName = "Default";
+		
+	%exportPath = %terObj.dataFolder@"/"@$TMG_ExportFolderName;
+	%this.exportTerrainLayersToPath(%exportPath,$TMG_ExportLayerFormat,%layerId);
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function TMG::exportTerrainLayersToPath( %this,%exportPath,%format,%layerId) {
 	devLog("exportTerrainLayersToPath %exportPath,%format,%layerId",%exportPath,%format,%layerId);

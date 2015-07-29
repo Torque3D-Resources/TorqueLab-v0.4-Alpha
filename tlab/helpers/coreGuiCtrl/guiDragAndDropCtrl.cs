@@ -187,7 +187,7 @@ function GuiControl::onControlDragged(%this, %control, %dropPoint) {
 function GuiControl::onControlDropped(%this, %control, %dropPoint) {  
 	
 	if (%control.defaultCallback !$= ""){		
-		//warnLog("Default onControlDropped called but switched to specified callback:",%control.defaultCallback);
+		warnLog("Default onControlDropped called but switched to specified callback:",%control.defaultCallback);
 		eval(%control.defaultCallback@"(%this,%control,%dropPoint);");
 		 //show(%control.dragSourceControl);
 		return;

@@ -3,7 +3,64 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+function syncParamArray(%paramArray,%keepEmptyValue) {
 
+   %i = 0;
+	   for( ; %i < %paramArray.count() ; %i++) {
+		   %field = %paramArray.getKey(%i);
+		   %data = %paramArray.getValue(%i);		  
+		   
+  // foreach$(%field in %paramObj.fieldList){	 
+    //  if (%paramObj.skipField[%field])    
+      //   continue;
+      
+      %value = "";
+      %syncObjs = getField(%data,4);
+      
+      if (%syncObjs $= "") continue;
+      //If no object to sync, there might be a prefGroup to use
+     
+   
+      %firstData = getWord(%syncObjs,0);
+      %firstObj = %firstData;
+      if (!isObject(%firstObj))
+         eval("%firstObj = "@ getWord(%syncObjs,0) @";");
+      
+     // devLog("Sync objs:",%syncObjs);
+      
+      if (isObject(%firstObj)){
+         paramLog(%field,"Param update from object:",%firstObj);
+        %value = %firstObj.getFieldValue(%field);      
+      }      
+      else if (getSubStr(%firstData,0,1) $= "$"){
+          //Seem to be a function so replace ** with the value   
+         %fix = strreplace(%firstData,"\"","");        
+         eval("%value = "@%fix@";"); 
+         paramLog("updateSettingsParams Global:",%firstData,"Field",%field,"Value",%value);
+        
+          
+        
+      }
+      // Check for special object field name EX: EWorldEditor.stickToGround
+      else if (strstr(%firstData,".") !$= "-1"){
+         //devLog("updateSettingsParams SpecialObjField:",%data,"Field",%field,"Value",%value);
+         //Seem to be a function so replace ** with the value             
+         eval("%value = "@%firstData@";"); 
+          paramLog(%field,"Param update from Object field:",%firstData);               
+      }      
+      //devLog("Value for field:",%field,"Is:",%value);
+      
+      if (%value $= "" && !%keepEmptyValue) continue;
+      
+      %ctrl = %paramArray.container.findObjectByInternalName(%field,true);
+      if (!isObject(%ctrl)){
+      	warnLog("Couln't find a valid GuiControl holding the value for field:",%field);
+      	return;
+      }
+      %ctrl.setTypeValue(%value);     
+   }	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function autoUpdateParamArray( %field,%value,%paramArray,%callback ) { 
    devLog("autoUpdateParamArray( %field,%value,%paramArray,%callback ) ", %field,%value,%paramArray,%callback ) ;

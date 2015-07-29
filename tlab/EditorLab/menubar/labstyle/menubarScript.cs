@@ -269,7 +269,7 @@ function Lab::setSubmenuItemChecked(%this,%menuTarget,%menuItem,%submenuItemText
 /// %menuItemId 	Index id of the selected menu item
 /// %menuItemText 	Text of the selected menu item
 function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	//devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
+	devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
 	%callBack =  $LabMenuCallback[%menuId,%menuItemId,%menuItemText];
 	eval(%callBack);
 }
@@ -281,7 +281,7 @@ function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItem
 /// menuId 	Index id of the clicked menu
 /// menuText 	Text of the clicked menu
 function LabMenu::onMenuSelect(%this,%menuId,%menuText) {	
-	//devLog("LabMenu::onMenuSelect(%this,%menuId,%menuText)",%this,%menuId,%menuText);
+	devLog("LabMenu::onMenuSelect(%this,%menuId,%menuText)",%this,%menuId,%menuText);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -303,6 +303,6 @@ function LabMenu::onMouseInMenu(%this,%isInMenu) {
 /// submenuId 	Index id of the clicked submenu
 /// submenuText 	Text of the clicked submenu
 function LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText) {
-	//devLog("LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText)",%this,%submenuId,%submenuText);
+	devLog("LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText)",%this,%submenuId,%submenuText);
 }
 //------------------------------------------------------------------------------

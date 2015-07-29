@@ -61,7 +61,7 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	
 	ETransformBox.deactivate();
 	
-	SceneEditorTools.getToolClones();
+	%this.getToolClones();
 	
 		
 }
