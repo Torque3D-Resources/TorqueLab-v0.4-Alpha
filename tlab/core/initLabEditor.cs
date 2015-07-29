@@ -59,7 +59,7 @@ function Lab::initEditorGui( %this ) {
 	$LabDialogContainer = EditorGui-->ToolsContainer;
 	$LabEditorContainer = EditorGui-->EditorContainer;
 	$LabExtraContainer = EditorGui-->ExtraContainer;
-	EditorFrameMain.frameMinExtent(1,280,100);
+	
 }
 //------------------------------------------------------------------------------
 

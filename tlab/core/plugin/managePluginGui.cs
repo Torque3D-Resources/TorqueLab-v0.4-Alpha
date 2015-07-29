@@ -11,53 +11,13 @@ function Lab::prepareAllPluginsGui(%this) {
 	//Prepare the plugins toolbars
 	//%this.initAllToolbarGroups();
 	%this.initAllPluginsDialogs();
-	
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Activate the interface for a plugin
 //==============================================================================
-//==============================================================================
-//Set a plugin as active (Selected Editor Plugin)
-function Lab::activatePluginGui(%this,%pluginObj) {
-	//Check if the toolFrame
-	if (EditorFrameMain.columns $= "0") {
-		EditorFrameMain.columns = Lab.previousEditorColumns;
-		EditorFrameMain.updateSizes();
-	}
 
-	%pluginFrameSet = %pluginObj.plugin@"_FrameSet";
-
-	if (!isObject(%pluginFrameSet)) {
-		Lab.previousEditorColumns = EditorFrameMain.columns;
-		//No tool frame for this plugin
-		EditorFrameMain.columns = "0";
-		EditorFrameMain.updateSizes();
-	}
-
-	if (%pluginObj.no3D)
-		ECamViewGui.setState(false,true);
-	else
-		ECamViewGui.setState($Lab_CamViewEnabled);
-
-	//Hide all the Guis for all plugins
-	foreach(%gui in LabPluginGuiSet)
-		%gui.setVisible(false);
-
-	//Show only the Gui related to actiavted plugin
-	%pluginGuiSet = %pluginObj.plugin@"_GuiSet";
-
-	foreach(%gui in %pluginGuiSet) {
-		//Don't show dialogs
-		if (%gui.isDlg)
-			continue;
-
-		%gui.setVisible(true);
-	}
-}
-//------------------------------------------------------------------------------
 
 
 //==============================================================================
@@ -69,6 +29,7 @@ function Lab::addGuiToPluginSet(%this,%plugin,%gui) {
 	if (!isObject(%pluginSimSet)) {
 		%pluginSimSet = newSimSet(%pluginSimSet);
 	}
+
 	%gui.plugin = %plugin;
 	%pluginSimSet.add(%gui);
 	LabPluginGuiSet.add(%gui);
@@ -84,19 +45,29 @@ function Lab::addPluginEditor(%this,%plugin,%gui,%notFullscreen) {
 
 	// Simset Holding Editor Guis for the plugin
 }
+//------------------------------------------------------------------------------
+//==============================================================================
+// Plugin Tools (Right Column UI)
 function Lab::addPluginGui(%this,%plugin,%gui) {
 	%this.addGuiToPluginSet(%plugin,%gui);
-	%pluginFrameSet = %plugin@"_FrameSet";
+	%pluginObj = %plugin@"Plugin";
+	%pluginObj.useTools = true;
+	%pluginObj.toolsGui = %gui;
+	%gui.superClass = "FrameSetPluginTools";
+	
+	/*%pluginFrameSet = %plugin@"_FrameSet";
 
 	if (!isObject(%pluginFrameSet)) {
 		newSimSet(%pluginFrameSet);
 	}
 
 	%pluginFrameSet.add(%gui);
+	*/
 	// Simset Holding Editor Guis for the plugin
 	%this.addGui(%gui,"Gui");
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function Lab::addPluginToolbar(%this,%plugin,%gui) {
 	%gui.plugin = %plugin;
 	%this.addGuiToPluginSet(%plugin,%gui);
@@ -109,9 +80,7 @@ function Lab::addPluginDlg(%this,%plugin,%gui) {
 	%gui.pluginObj = %pluginObj;
 	%gui.superClass = "PluginDlg";
 	%this.addGui(%gui,"Dialog");
-	%gui.isDlg = true;	
-	
-	
+	%gui.isDlg = true;
 }
 
 function Lab::addPluginPalette(%this,%plugin,%gui) {
@@ -164,6 +133,7 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 function Lab::removeFromEditorsMenu( %this,  %pluginObj ) {
 	if (!isObject(%windowMenu))
 		return;
+
 	%windowMenu = Lab.findMenu( "Editors" );
 	%pluginName = %pluginObj.getName();
 	%count = %windowMenu.getItemCount();

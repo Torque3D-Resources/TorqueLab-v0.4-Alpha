@@ -6,14 +6,8 @@
 
 function initializeMeshRoadEditor() {
 	echo(" % - Initializing Mesh Road Editor");
-	exec( "./meshRoadEditor.cs" );
-	exec( "tlab/meshRoadEditor/gui/meshRoadEditorGui.gui" );
-	exec( "./gui/MeshRoadEditorTools.gui" );
-	exec( "./gui/meshRoadEditorToolbar.gui");
-	exec( "tlab/meshRoadEditor/gui/meshRoadEditorPaletteGui.gui");
-	exec( "tlab/meshRoadEditor/meshRoadEditorGui.cs" );
-	exec( "tlab/meshRoadEditor/MeshRoadEditorPlugin.cs" );
-	exec( "tlab/meshRoadEditor/MeshRoadEditorParams.cs" );
+	execMREP(true);
+	
 	Lab.createPlugin("MeshRoadEditor","Mesh Road Editor");
 	Lab.addPluginEditor("MeshRoadEditor",MeshRoadEditorGui);
 	Lab.addPluginGui("MeshRoadEditor",   MeshRoadEditorTools);
@@ -35,7 +29,29 @@ function initializeMeshRoadEditor() {
 	%map.bindCmd( keyboard, "x", "MeshRoadEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "MeshRoadEditorShowRoadBtn.performClick();", "" );
 	MeshRoadEditorPlugin.map = %map;
+	
+	$MRoadManager = newScriptObject("MRoadManager");
 }
+//------------------------------------------------------------------------------
+//==============================================================================
+function execMREP(%loadGui) {
+	//----------------------------------------------
+	// Terrain Editor GUIs
+	if (%loadGui) {
+		exec( "tlab/meshRoadEditor/meshRoadEditor.cs" );
+		exec( "tlab/meshRoadEditor/gui/meshRoadEditorGui.gui" );
+		exec( "tlab/meshRoadEditor/gui/MeshRoadEditorTools.gui" );
+		exec( "tlab/meshRoadEditor/gui/meshRoadEditorToolbar.gui");
+		exec( "tlab/meshRoadEditor/gui/meshRoadEditorPaletteGui.gui");
+	}
 
+	exec( "tlab/meshRoadEditor/meshRoadEditorGui.cs" );
+	exec( "tlab/meshRoadEditor/MeshRoadEditorPlugin.cs" );
+	exec( "tlab/meshRoadEditor/MeshRoadEditorParams.cs" );
+	execPattern( "tlab/meshRoadEditor/RoadManager/*.cs" );
+	execPattern( "tlab/meshRoadEditor/Editor/*.cs" );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function destroyMeshRoadEditor() {
 }

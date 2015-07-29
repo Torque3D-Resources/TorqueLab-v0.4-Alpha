@@ -161,8 +161,9 @@ function Lab::scanPluginToolbarStack(%this,%stack,%pluginObj,%gui) {
 			foreach(%subCtrl in %ctrl) {
 				if (%subCtrl.isMemberOfClass("GuiMouseEventCtrl")) {
 					%subCtrl.internalName = "MouseStart";
-					%subCtrl.superClass = "MouseStart";
+					%subCtrl.superClass = "MouseBox";
 					%subCtrl.dropTarget = %dropTarget;
+					%subCtrl.pluginName = %pluginName;
 				}
 			}
 
