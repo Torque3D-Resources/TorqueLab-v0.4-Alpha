@@ -69,7 +69,7 @@ function Lab::pluginInitCompleted( %this ) {
 	%this.prepareAllPluginsGui();
 	ETools.initTools();
 	//Prepare the Settings
-	%this.initConfigSystem();
+	Lab.initConfigSystem();
 }
 //------------------------------------------------------------------------------
 

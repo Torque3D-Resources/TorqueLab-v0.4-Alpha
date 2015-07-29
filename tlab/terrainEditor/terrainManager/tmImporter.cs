@@ -15,7 +15,7 @@ function TMG::prepareAllLayers(%this,%doImport) {
 
 	foreach(%pill in TMG_MaterialLayersStack) {
 		devLog("Prepare layer file:",%pill.file);
-		if (%pill.useDefaultLayer){
+		if (%pill.useDefaultLayer && !isFile(%pill.file)){
 			%pill.file = %folder@"/"@%pill.defaultLayerFile@".png";
 		}
 		devLog("DefaultLayerFile = ",%pill.defaultLayerFile);
@@ -146,7 +146,7 @@ function TMG::importTerrain(%this) {
 		TMG.activeTerrain = %obj;
 		TMG.updateTerrainList(true);
 		
-		TMG.saveTerrain();
+		//TMG.saveTerrain();
 		//ETerrainEditor.saveTerrainToFile(%obj);
 		//TMG.setActiveTerrain(%obj);
 	} else {

@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10148";
-      disabledGroup = "10149";
-      EditorContainer = "4921";
+      defaultStack = "10149";
+      disabledGroup = "10150";
+      EditorContainer = "4922";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "10150 10157";
+      stackLists = "10151 10158";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -311,7 +311,7 @@ new GuiStackControl(ForestEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -322,7 +322,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "10148";
+            toolbar = "10149";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -430,7 +430,7 @@ new GuiStackControl(ForestEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -441,7 +441,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "10148";
+            toolbar = "10149";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -548,7 +548,7 @@ new GuiStackControl(ForestEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -559,7 +559,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "10148";
+            toolbar = "10149";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -666,7 +666,7 @@ new GuiStackControl(ForestEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -677,7 +677,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "10148";
+            toolbar = "10149";
 
          new GuiTextCtrl() {
             text = "Tip Size";

@@ -8,12 +8,12 @@
 //==============================================================================
 
 function Lab::loadEditorFrameMainDefaults(%this) {
-	0.8055
+	
 	$LabGui_EditorFrameMain_Column_Thin = "0.8055";
 	$LabGui_EditorFrameMain_Column_Normal = "0.75";
 	$LabGui_EditorFrameMain_Column_Large = "0.6666";
 	$LabGui_EditorFrameMain_SizeMode = "Normal";
-	$LabGui_EditorFrameMain_BorderWidth = "2";
+	$LabGui_EditorFrameMain_BorderWidth = "4";
 	
 	$LabGui_EditorFrameMain_Locked = true;
 	
@@ -25,6 +25,26 @@ Lab.loadEditorFrameMainDefaults();
 //==============================================================================
 // EditorFrameMain Functions
 //==============================================================================
+//==============================================================================
+function Lab::setEditorFrameMainLocked(%this,%sizeMode) {
+	%size = $LabGui_EditorFrameMain_Column_[%sizeMode];
+	if (%size $= "")
+		return;
+	
+	$LabGui_EditorFrameMain_SizeMode = %sizeMode;
+	%this.setupEditorFrameMain();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::setEditorFrameMainSize(%this,%sizeMode) {
+	%size = $LabGui_EditorFrameMain_Column_[%sizeMode];
+	if (%size $= "")
+		return;
+	
+	$LabGui_EditorFrameMain_SizeMode = %sizeMode;
+	%this.setupEditorFrameMain();
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::setupEditorFrameMain(%this,%defaultSize,%mode) {
 	EditorFrameMain.frameMinExtent(1,280,100);
@@ -45,9 +65,9 @@ function Lab::setupEditorFrameMain(%this,%defaultSize,%mode) {
 	EditorFrameMain.updateSizes();
 	
 	if ($LabGui_EditorFrameMain_Locked && EditorFrameMain.borderWidth !$= "0")
-		%this.lockEditorFrameMain(true)
+		%this.lockEditorFrameMain(true);
 	else if (!$LabGui_EditorFrameMain_Locked && EditorFrameMain.borderWidth $= "0")
-		%this.lockEditorFrameMain(false)
+		%this.lockEditorFrameMain(false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -58,8 +78,8 @@ function Lab::lockEditorFrameMain(%this,%locked) {
 		EditorFrameMain.borderWidth = "0";
 		return;
 	}
-	EditorFrameMain.borderEnable = "dynamic";
-	EditorFrameMain.borderMovable = "dynamic";
+	EditorFrameMain.borderEnable = "alwaysOn";
+	EditorFrameMain.borderMovable = "alwaysOn";
 	EditorFrameMain.borderWidth = $LabGui_EditorFrameMain_BorderWidth;		
 }
 //------------------------------------------------------------------------------
@@ -73,9 +93,7 @@ function Lab::checkPluginTools(%this) {
 	%toolsGui = %currentPlugin.toolsGui;
 	
 	
-	if (isObject(%toolsGui))
-	{
-	}
+	
 	if (!%currentPlugin.useTools){
 		%this.hidePluginTools();
 		return;

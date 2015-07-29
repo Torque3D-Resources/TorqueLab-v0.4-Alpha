@@ -223,7 +223,7 @@ function TMG::updateMaterialLayers(%this) {
 		%matInternalName = getRecord( %mats, %i );
 		%this.addMaterialLayer(%matInternalName,%i);
 	}
-
+devLog("Post Layers TMG_MaterialLayersStack count=",TMG_MaterialLayersStack.getCount(),"Mats=",ETerrainEditor.getMaterials());
 	TMG_PageMaterialLayers-->reimportButton.active = 0;
 }
 //------------------------------------------------------------------------------
@@ -251,8 +251,10 @@ function TMG::setLayerMapFile(%this,%layerId,%file,%channels,%activeChannel,%don
 		warnLog("setLayerMapFile called for invalidPill");
 		return;
 	}
-	if (!isFile(%file))
+	if (!isFile(%file)){
+		devLog("InvalidFile:",%file);
 		%file = "Invalid file";
+	}
 
 	%pill.file = %file;
 	%stack = %pill-->channelStack;

@@ -42,6 +42,18 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
 //==============================================================================
+//Interface EDITOR SETTINGS
+$FrameMainSizes = "Thin Normal Large";
+	//Binds and inputs
+	%gid = 0;
+	%ar = %this.newParamsArray("Editor","Interface","",true);
+	%ar.prefGroup = "$LabGui_EditorFrameMain_";
+	%ar.autoSyncPref = true;
+	%ar.style = "StyleA";
+	%ar.group[%gid++] = "Main editor frame";	
+	%ar.setVal("SizeMode",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorFrameMainSize(*val*);" TAB %gid);
+	%ar.setVal("Locked",      "Normal" TAB "Lock side frame resizing" TAB "Checkbox" TAB "ff>>gg" TAB "Lab.lockEditorFrameMain(*val*);" TAB %gid);
+//==============================================================================
 //WORLD EDITOR SETTINGS
 	//Camera
 	%gid = 0;

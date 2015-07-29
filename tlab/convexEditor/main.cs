@@ -14,13 +14,14 @@ function initializeConvexEditor() {
 	exec( "./convexEditorGui.cs" );
 	exec( "tlab/convexEditor/ConvexEditorPlugin.cs" );
 	exec( "tlab/convexEditor/ConvexEditorParams.cs" );
+	Lab.createPlugin("ConvexEditor");
 	Lab.addPluginEditor("ConvexEditor",ConvexEditorGui);
 	Lab.addPluginGui("ConvexEditor",    ConvexEditorTools);
 	//Lab.addPluginGui("ConvexEditor",   ConvexEditorOptionsWindow);
 	//Lab.addPluginGui("ConvexEditor",   ConvexEditorTreeWindow);
 	Lab.addPluginToolbar("ConvexEditor",ConvexEditorToolbar);
 	Lab.addPluginPalette("ConvexEditor",   ConvexEditorPalette);
-	Lab.createPlugin("ConvexEditor");
+	
 	ConvexEditorPlugin.editorGui = ConvexEditorGui;
 	// Note that we use the WorldEditor's Toolbar.
 	%map = new ActionMap();

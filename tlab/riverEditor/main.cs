@@ -24,12 +24,13 @@ function initializeRiverEditor() {
 	echo(" % - Initializing River Editor");
 	execRiverEd(true);
 	// Add ourselves to EditorGui, where all the other tools reside
+	Lab.createPlugin("RiverEditor","River Editor");
 	Lab.addPluginEditor("RiverEditor",RiverEditorGui);
 	Lab.addPluginGui("RiverEditor",RiverEditorTools);
 	Lab.addPluginToolbar("RiverEditor",RiverEditorToolbar);
 	Lab.addPluginPalette("RiverEditor",   RiverEditorPalette);
 	Lab.addPluginDlg("RiverEditor",RiverEditorDialogs);
-	Lab.createPlugin("RiverEditor","River Editor");
+	
 	RiverEditorPlugin.editorGui = RiverEditorGui;
 	$RiverEd = newScriptObject("RiverEd");
 	%map = new ActionMap();

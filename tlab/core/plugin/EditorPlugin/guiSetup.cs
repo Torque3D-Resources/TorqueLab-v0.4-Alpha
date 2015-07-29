@@ -10,7 +10,7 @@ function EditorPlugin::activateGui( %this ) {
 	
 	Lab.checkPluginTools();	
 
-	if (%pluginObj.no3D)
+	if (%this.no3D)
 		ECamViewGui.setState(false,true);
 	else
 		ECamViewGui.setState($Lab_CamViewEnabled);
@@ -20,7 +20,7 @@ function EditorPlugin::activateGui( %this ) {
 		%gui.setVisible(false);
 
 	//Show only the Gui related to actiavted plugin
-	%pluginGuiSet = %pluginObj.plugin@"_GuiSet";
+	%pluginGuiSet = %this.plugin@"_GuiSet";
 
 	foreach(%gui in %pluginGuiSet) {
 		//Don't show dialogs

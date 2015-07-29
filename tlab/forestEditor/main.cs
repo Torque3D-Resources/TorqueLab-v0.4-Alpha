@@ -28,13 +28,14 @@ function initializeForestEditor() {
 	echo(" % - Initializing Forest Editor");
 	//$FEP_BrushSet = newSimSet("FEP_BrushSet");
 	execFEP(true);
+	Lab.createPlugin("ForestEditor");
 	//Add the different editor GUIs to the LabEditor
 	Lab.addPluginEditor("ForestEditor",ForestEditorGui);
 	Lab.addPluginGui("ForestEditor",   ForestEditorTools);
 	Lab.addPluginToolbar("ForestEditor",ForestEditToolbar);
 	Lab.addPluginPalette("ForestEditor",   ForestEditorPalette);
 	Lab.addPluginDlg("ForestEditor",   ForestEditorDialogs);
-	Lab.createPlugin("ForestEditor");
+	
 	ForestEditorPlugin.editorGui = ForestEditorGui;
 	ForestEditorPalleteWindow.position = getWord($pref::Video::mode, 0) - 209  SPC getWord(EditorGuiToolbar.extent, 1)-1;
 	new SimSet(ForestTools) {

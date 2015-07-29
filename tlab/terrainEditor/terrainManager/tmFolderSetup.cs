@@ -52,7 +52,7 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 			%relativeFolder = strreplace(%folder,TMG.dataFolder,"");
 			if (getSubStr(%relativeFolder,0,1) $= "/")
 				%relativeFolder = getSubStr(%relativeFolder,1);
-			%subText = "\c2[Data/]\c0"@%relativeFolder;
+			%subText = %relativeFolder;
 		}
 		
 		
@@ -81,8 +81,8 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 			TMG.activeTerrain.setFieldValue(%field,%folder);
 	}
 	//Update map layers data if source changed
-	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
-		TMG.updateMaterialLayers();
+	//if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
+		//TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -94,10 +94,10 @@ function TMG::selectDataFolder( %this,%type) {
 		%type = "data";
 	eval("%currentFolder = TMG."@%type@"Folder;");	
 	
-	if (!isDirectory(%current))
+	if (!isDirectory(%currentFolder))
 		%currentFolder = MissionGroup.getFilename();
-	
-	getFolderName("","TMG.setDataFolder",%currentFolder,"Select Export Folder",%type);	
+	devLog("Current Dir:",%currentFolder);
+	getFolderName("*.*","TMG.setDataFolder",%currentFolder,"Select Export Folder",%type);	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -120,19 +120,30 @@ function TMG::setDataFolder( %this, %path,%type ) {
 //==============================================================================
 function RelativeFolderEdit::onValidate(%this) {
 	%data = strreplace(%this.internalName,"_"," ");
-	%type = getWord(%data,0);
-	%text = strreplace(%this.getText(),"[Data]","");
-	TMG.setFolder(%type,%text,true);
+	%type = getWord(%data,0);	
+
+	%path = TMG.fixEditPath(%this.getText());
+	TMG.setFolder(%type,%path,true);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function TMG_RelativeSourceFolderEdit::onValidate( %this ) {
-	TMG.setFolder("source",%this.getText(),true);
+	%path = TMG.fixEditPath(%this.getText());
+	TMG.setFolder("source",%path,true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TMG_RelativeTargetFolderEdit::onValidate( %this ) {
-	TMG.setFolder("target",%this.getText(),true);
+	%path = TMG.fixEditPath(%this.getText());
+	TMG.setFolder("target",%path,true);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::fixEditPath( %this,%path ) {	
+	%fixPath = %path;	
+
+		return %fixPath;
+
 }
 //------------------------------------------------------------------------------

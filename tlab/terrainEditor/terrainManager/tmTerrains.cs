@@ -11,17 +11,16 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG.activeHeightInfo = "";
 	}
 	TMG.activeTerrain = %terrainId;
-	
+	TMG_ActiveTerrainMenu.setText(TMG.activeTerrain.getName());
 	%this.getActiveFolders();
 	
 	TMG_PageMaterialLayers-->heightmapModeStack-->Current.visible = !%terrainId.isNew;
 	//TMG_MaterialLayersNewTerrain.visible = %terrainId.isNew;
 	if (%terrainId.isNew){		
 		if (TMG.heightmapMode $= "Current")
-			TMG.changeHeightmapMode("","Source");
-		
-		%terrainName = getUniqueName("theTerrain");
-		
+			TMG.changeHeightmapMode("","Source");	
+				
+		%terrainName = getUniqueName("theTerrain");		
 	}
 	else {	
 		%terrainName = %terrainId.getName();	
@@ -53,8 +52,10 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	}
 	%this.validateImportTerrainName(%terrainName);
 	%this.updateTerrainLayers();
-	TMG.updateMaterialLayers();
-	
+	if (ETerrainEditor.getMaterials() $= "")
+		TMG.schedule(1000,"updateMaterialLayers");
+	else
+		%this.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 
@@ -73,7 +74,8 @@ function TMG::updateTerrainList(%this,%selectCurrent) {
 	if (!isObject(TMG.activeTerrain))
 		TMG.activeTerrain = getWord(%list,0);	
 
-	TMG_ActiveTerrainMenu.setSelected(TMG.activeTerrain);
+	TMG.setActiveTerrain(TMG.activeTerrain);
+	//TMG_ActiveTerrainMenu.setSelected(TMG.activeTerrain.getId());
 	
 }
 //------------------------------------------------------------------------------

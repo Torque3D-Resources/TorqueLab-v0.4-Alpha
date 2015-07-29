@@ -16,8 +16,9 @@ function initializeDatablockEditor() {
 	exec( "tlab/datablockEditor/DatablockEditorPlugin.cs" );
 	exec( "tlab/datablockEditor/DatablockEditorParams.cs" );
 	// Add ourselves to EditorGui, where all the other tools reside
-	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);
 	Lab.createPlugin("DatablockEditor");
+	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);
+	
 	DatablockEditorPlugin.superClass = "WEditorPlugin";
 	DatablockEditorPlugin.customPalette = "SceneEditorPalette";
 	DatablockEditorTreeTabBook.selectPage( 0 );
