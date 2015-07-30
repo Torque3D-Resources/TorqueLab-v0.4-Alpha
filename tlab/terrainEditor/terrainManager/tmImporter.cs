@@ -10,7 +10,7 @@ $pref::Directories::Terrain = "levels/FarmDemo/";
 
 //==============================================================================
 function TMG::prepareAllLayers(%this,%doImport) {
-	%folder = TMG.SourceFolder;
+	%folder = TMG.DataFolder@"/TerData/"@TMG.activeTerrain.getName();
 	%this.exportTerrainLayersToPath(%folder,"png");
 
 	foreach(%pill in TMG_MaterialLayersStack) {
@@ -59,7 +59,7 @@ function TMG::importTerrain(%this) {
 		%file = strreplace(%file,"//","/");
 		TMG.currentHeightMap = %file;
 	}
-
+	TMG.currentHeightMap = strreplace(TMG.currentHeightMap,"//","/");
 	%heightmapFile = TMG.currentHeightMap;
 
 	if (TMG.heightmapMode $= "Source") {

@@ -7,13 +7,12 @@
 // -->Image array store in Global
 //==============================================================================
 
-function Lab::loadScriptsProfiles(%this) {
-   // exec("tlab/gui/labStyleSetup.cs");
-   // exec("tlab/gui/labStyleSave.cs");
-   // exec("tlab/gui/labStyleLoad.cs");
-   // exec("tlab/gui/profileAnalyse.cs");
+function Lab::setupProfiles(%this) {
+	exec("tlab/gui/profiles/profileSetup.cs");
+   Lab.initProfilesSetupData();
 }
 //Lab.loadScriptsProfiles();
+exec("tlab/gui/profiles/profileSetup.cs");
 exec("tlab/gui/profiles/baseProfiles.cs");
 
 //exec("tlab/gui/profiles/defaultProfiles.cs");
@@ -24,6 +23,7 @@ for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%
 exec("tlab/gui/profiles/editorProfiles.cs");
 exec("tlab/gui/profiles/inspectorProfiles.cs");
 //Lab.initProfileStyleData();
+
 
 
 

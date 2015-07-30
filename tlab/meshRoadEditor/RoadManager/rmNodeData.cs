@@ -64,8 +64,8 @@ function MRoadManager::addNodePillToStack(%this,%nodeId){
 	%pill.nodeId = %nodeId;
 	%pill-->Linked.setStateOn(false);
 	%pill.linkCheck = %pill-->Linked;
-	%pill-->nodeIdText.text = "Node #\c2"@%nodeId;
-	//%pill.caption = "Node #\c4"@%nodeId;
+	//%pill-->nodeIdText.text = "Node #\c2"@%nodeId;
+	%pill.caption = "Node #\c4"@%nodeId;
 	%pill-->toggleNorm.command = "toggleVisible("@%pill-->normCtrl.getId()@");";
 	%pill-->togglePos.command = "toggleVisible("@%pill-->posCtrl.getId()@");";
 	%pill-->deleteButton.command = "MRoadManager.deleteNodeId("@%nodeId@");";

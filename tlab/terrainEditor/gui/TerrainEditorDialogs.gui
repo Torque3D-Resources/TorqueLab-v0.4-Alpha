@@ -84,7 +84,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -205,7 +205,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue_S1";
+                     profile = "ToolsTextEditDark_S1";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -352,7 +352,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2416,7 +2416,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_BrushSize_Range_Min";
@@ -2493,7 +2493,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_BrushSize_Range_Max";
@@ -2817,7 +2817,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_SetHeight_Range_Max";
@@ -2894,7 +2894,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_SetHeight_Range_Min";
@@ -3264,7 +3264,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_Softness_Range_Min";
@@ -3341,7 +3341,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_Softness_Range_Max";
@@ -3688,7 +3688,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_Pressure_Range_Min";
@@ -3765,7 +3765,7 @@
                                  minExtent = "8 16";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue_S1";
+                                 profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TEP_BrushManager_Pressure_Range_Max";

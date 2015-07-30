@@ -32,7 +32,10 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
    borderThickness = "0";
 };
 //------------------------------------------------------------------------------
-
+singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
+{
+   fontSize = "14";
+};
 
 //==============================================================================
 //ToolsButtonDark Style
@@ -179,7 +182,13 @@ singleton GuiControlProfile( ToolsRadioProfile_L1 : ToolsRadioProfile ) {
    
 };
 //------------------------------------------------------------------------------
-
+singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
+{
+   bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_S1.png";
+   fontSize = "12";
+   justify = "Left";
+   textOffset = "16 5";
+};
 //==============================================================================
 // Swatch Button Profile -> Used in stock code (Do not remove)
 //==============================================================================
@@ -207,15 +216,6 @@ singleton GuiControlProfile(ToolsSwatchButtonProfile : GuiSwatchButtonProfile)
 };
 //------------------------------------------------------------------------------
 
-singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
-{
-   bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_S1.png";
-   fontSize = "12";
-   justify = "Left";
-   textOffset = "16 5";
-};
 
-singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
-{
-   fontSize = "14";
-};
+
+

@@ -30,9 +30,12 @@ function TMG::scanTextureMapFolder(%this) {
 	}
 
 	%files = getMultiExtensionFileList(%folder,"png dds bmp tga jpg");
-
+	if (isDirectory(TMG.terrainFolder))
+		%files = %files NL getMultiExtensionFileList(TMG.terrainFolder,"png dds bmp tga jpg");
+		
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
 		%file = %folder@getRecord(%files,%i);
+		%file = validatePath(%file);
 		%this.addTextureMap(%file);
 	}
 }
@@ -83,7 +86,7 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 
 	if (%isNewMat){
 		%texture = "Not selected";
-		%file = "";
+		%file = "\"\"";
 }
 	else {
 		%texture = "Default Alpha Map -\c2"@%layerId@"_"@%matInternalName;
@@ -92,12 +95,15 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 	
 		%file = addFilenameToPath(%layersMapFolder,%fileName@".png");		
 		if (!isFile(%file))
-			%file = "";		
+			%file = "\"\"";	
 			
 		//%texture = %terObj.getName()@"_layerMap_"@%layerId@"_"@%matInternalName;
 		devLog("Layer default map file=",%file,isFile(%file));
 	}
+	%file = validatePath(%file);
 	%pill.file = %file;
+	%pill.texture = %texture;
+	%pill.fileName = %fileName;
 	%pill.useDefaultLayer = true;
 	%pill.defaultLayerFile = %terObj.getName()@"_layerMap_"@%layerId@"_"@%matInternalName;
 	%pill-->exportMapBtn.command = "TMG.selectSingleTextureMapFolder("@%layerId@");";
@@ -108,7 +114,7 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 	%previewContainer = %pill-->imageButton.parentGroup.parentGroup;
 	%previewContainer.visible = TMG.ShowMapPreview;
 	
-	
+
 	%pill-->imageButton.setBitmap(%file);
 	
 	foreach(%radio in %pill-->channelStack) {
@@ -116,30 +122,8 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 		%radio.setStateOn(false);
 	}
 
-	%menu = %pill-->mapMenu;
-	%menu.pill = %pill;
-	%menu.layerId =%layerId;
-	%menu.clear();
-	%menu.add(%texture,0);
-	%menu.file[0] = %fileName;
-	%menu.channels[0] = "1";
-	%fullList = TMG.textureMapList;
-
-	if ( getRecordCount(TMG.customMapList) > 0)
-		%fullList = %fullList NL TMG.customMapList;
-
-	for(%j=0; %j<getRecordCount(%fullList); %j++) {
-		%record = getRecord(%fullList,%j);
-		%file = getField(%record,0);
-		%onlyFile = fileBase(%file)@fileExt(%file);
-		%menu.add(%onlyFile,%id++);
-		%menu.file[%id] = %file;
-		%menu.channels[%id] = getField(%record,1);
-	}
-
-	%menu.command = "TMG.selectLayerMapMenu("@%menu@","@%layerId@");";
-	%menu.setSelected(0,false);
 	TMG_MaterialLayersStack.add(%pill);
+	%this.updateMaterialLayerMenu(%pill);
 	%this.setLayerMapFile(%layerId,%file,"1","r",true);
 	return %layerId;
 }
@@ -184,36 +168,20 @@ function TMG::setMaterialLayerChannel(%this,%layerId,%channel) {
 //==============================================================================
 function TMG::updateMaterialLayers(%this) {
 	%terObj = %this.activeTerrain;
-	%this.scanTextureMapFolder();
 	
-	if (TMG.autoExportLayerMode $= "Source" || TMG.autoExportLayerMode $= "Target"){
+	
+	if (TMG.autoExportLayerMode !$= "Never" ){
 		eval("%exportPath = TMG."@TMG.autoExportLayerMode@"Folder;");	
 		devLog("Exporting all layers to path:",%exportPath);
 		%this.exportTerrainLayersToPath(%exportPath);
 	}
-	else if(TMG.autoExportLayerMode $= "Default"){
-		%exportPath = TMG.targetFolder@"/"@%terObj.getName();
-	}
+	%this.scanTextureMapFolder();
 		
 	TMG_PageMaterialLayers-->heightmapCurrentText.text = %terObj.getName()@"_heightmap";
-	%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
-	%hmMenu.clear();
-	%hmMenu.add(%terObj.getName()@"_heightmap.png",0);
-	%hmMenu.file[0] = "default";
-	%fullList = TMG.textureMapList;
-
-	if ( getRecordCount(TMG.customMapList) > 0)
-		%fullList = %fullList NL TMG.customMapList;
-
-	for(%j=0; %j<getRecordCount(%fullList); %j++) {
-		%record = getRecord(%fullList,%j);
-		%file = getField(%record,0);
-		%onlyFile = fileBase(%file)@fileExt(%file);
-		%hmMenu.add(%onlyFile,%hmid++);
-		%hmMenu.file[%hmid] = %file;
-	}
-
-	%hmMenu.setSelected(0,false);
+	
+	//Update the default HeightMap Map Menu
+	TMG.updateMaterialLayerMenu();
+	
 	hide(TMG_MaterialLayersPill);
 	show(TMG_MaterialLayersStack);
 	TMG_MaterialLayersStack.clear();
@@ -223,8 +191,65 @@ function TMG::updateMaterialLayers(%this) {
 		%matInternalName = getRecord( %mats, %i );
 		%this.addMaterialLayer(%matInternalName,%i);
 	}
-devLog("Post Layers TMG_MaterialLayersStack count=",TMG_MaterialLayersStack.getCount(),"Mats=",ETerrainEditor.getMaterials());
+
 	TMG_PageMaterialLayers-->reimportButton.active = 0;
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Material Layer Available Map Menu
+//==============================================================================
+//==============================================================================
+function TMG::updateAllMaterialLayersMenu(%this) {
+	foreach(%pill in TMG_MaterialLayersStack)
+		%this.updateMaterialLayerMenu(%pill);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::updateMaterialLayerMenu(%this,%pill) {
+	%terObj = %this.activeTerrain;
+	%this.scanTextureMapFolder();	
+	
+	//Heightmap Map Menu Update
+	if (%pill $= ""){
+		%mapMenu = TMG_PageMaterialLayers-->heightMapMenu;
+		%mapMenu.clear();
+		%mapMenu.add(%terObj.getName()@"_heightmap.png",0);
+		%mapMenu.file[0] = "default";
+	}
+	//Pill Map Menu Update
+	else {
+		if (!isObject(%pill))
+			return;
+			
+		%mapMenu = %pill-->mapMenu;
+		%mapMenu.clear();	
+		%mapMenu.pill = %pill;
+		%mapMenu.layerId = %pill.layerId;
+	
+		%mapMenu.add(%pill.texture,0);
+		%mapMenu.file[0] = %pill.fileName;
+		%mapMenu.channels[0] = "1";
+		%mapMenu.command = "TMG.selectLayerMapMenu("@%mapMenu@","@%pill.layerId@");";
+	}
+	
+	//Common Map Menu Update
+	%fullList = TMG.textureMapList;
+
+	if ( getRecordCount(TMG.customMapList) > 0)
+		%fullList = %fullList NL TMG.customMapList;
+
+	for(%j=0; %j<getRecordCount(%fullList); %j++) {
+		%record = getRecord(%fullList,%j);
+		%file = getField(%record,0);
+		%onlyFile = fileBase(%file)@fileExt(%file);
+		%mapMenu.add(%onlyFile,%mid++);
+		%mapMenu.file[%mid] = %file;
+		%mapMenu.channels[%mid] = getField(%record,1);
+	}
+
+	%mapMenu.setSelected(0,false);
+	
 }
 //------------------------------------------------------------------------------
 
@@ -251,6 +276,7 @@ function TMG::setLayerMapFile(%this,%layerId,%file,%channels,%activeChannel,%don
 		warnLog("setLayerMapFile called for invalidPill");
 		return;
 	}
+	%file = validatePath(%file);
 	if (!isFile(%file)){
 		devLog("InvalidFile:",%file);
 		%file = "Invalid file";
@@ -419,9 +445,8 @@ function TMG::setAutoExportMode( %this,%mode) {
 function TMG::getLayersMapFolder( %this) {
 	if (TMG.autoExportLayerMode $= "Target")
 		return TMG.targetFolder;
-	else if (TMG.autoExportLayerMode $= "Default"){
-		if (isObject(TMG.activeTerrain))
-			return TMG.targetFolder@"/"@TMG.activeTerrain.getName();		
+	else if (TMG.autoExportLayerMode $= "Terrain"){		
+		return TMG.terrainFolder;		
 	}
 	return TMG.sourceFolder;
 }

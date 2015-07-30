@@ -86,7 +86,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -276,7 +276,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         altCommand = "TerrainPainterTools.setDefaultTexturesFolder($ThisControl.getText());";
@@ -872,7 +872,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1038,7 +1038,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue_S1";
+                           profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1114,7 +1114,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue_S1";
+                           profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1190,7 +1190,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue_S1";
+                           profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1266,7 +1266,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue_S1";
+                           profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1389,7 +1389,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1485,7 +1485,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";

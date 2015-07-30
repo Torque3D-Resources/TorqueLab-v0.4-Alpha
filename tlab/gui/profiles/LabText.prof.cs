@@ -13,7 +13,7 @@ singleton GuiControlProfile(ToolsTextBase : ToolsDefaultProfile) {
     fontColor = "252 254 252 255";
     fontType = "Gotham Bold";
     fillColor = "238 236 240 255";
-    bevelColorHL = "Magenta";
+    bevelColorHL = "255 0 255 255";
     justify = "Left";
     category = "ToolsText";
     fontColors[0] = "252 254 252 255";
@@ -25,13 +25,13 @@ singleton GuiControlProfile(ToolsTextBase : ToolsDefaultProfile) {
    fontColors[4] = "238 255 0 255";
    fontColorLink = "238 255 0 255";
    opaque = "0";
-   fontColors[3] = "254 3 62 255";
+   fontColors[3] = "37 194 120 255";
    fontColors[5] = "3 254 148 255";
    fontColors[6] = "3 21 254 255";
    fontColors[7] = "254 236 3 255";
    fontColors[8] = "254 3 43 255";
    fontColors[9] = "3 48 248 255";
-   fontColorSEL = "254 3 62 255";
+   fontColorSEL = "37 194 120 255";
    fontColorLinkHL = "3 254 148 255";
    colorFont = "DefaultFontA";
 

@@ -27,6 +27,9 @@ function TMG::getActiveFolders(%this) {
 	if (%targetFolder $= "")
 		%targetFolder = %dataFolder;	
 	TMG.setFolder("target",%targetFolder);
+	
+	%terrainFolder = validatePath(TMG.dataFolder@"/terData/"@TMG.activeTerrain.getName(),true);
+	TMG.terrainFolder = %terrainFolder;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -42,9 +45,11 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 		%subField = %type@"SubFolder";
 		eval("TMG."@%subField@" = %subFolder;");		
 		
-	}	
+	}
+	%folder = validatePath(%folder,true);
 	%field = %type@"Folder";
-	eval("TMG."@%field@" = %folder;");	
+	eval("TMG."@%field@" = %folder;");
+	
 	if (%type !$= "data"){
 		
 		%subText = %folder;
@@ -81,8 +86,8 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 			TMG.activeTerrain.setFieldValue(%field,%folder);
 	}
 	//Update map layers data if source changed
-	//if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
-		//TMG.updateMaterialLayers();
+	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
+		TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

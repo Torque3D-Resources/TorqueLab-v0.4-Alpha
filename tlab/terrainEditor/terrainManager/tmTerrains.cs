@@ -22,7 +22,8 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 				
 		%terrainName = getUniqueName("theTerrain");		
 	}
-	else {	
+	else {
+		TMG.changeHeightmapMode("","Current");	
 		%terrainName = %terrainId.getName();	
 		ETerrainEditor.attachTerrain(%terrainId);
 		

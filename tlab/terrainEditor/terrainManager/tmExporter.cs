@@ -131,10 +131,9 @@ function TMG::exportTerrainLayersToPath( %this,%exportPath,%format,%layerId) {
 	if (%exportPath $= ""){
 		getFolderName("","TMG.exportTerrainLayersToPath",TMG.dataFolder,"Select destination folder",%format, %layerId);
 		return;
-
 	}		
-	if (%exportPath $= "Default"){
-		%exportPath = TMG.targetFolder@"/"@%terObj.getName();
+	if (%exportPath $= "Default"){		
+		%exportPath = TMG.terrainFolder;
 	}
 	
 	

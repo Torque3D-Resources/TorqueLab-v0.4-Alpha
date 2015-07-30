@@ -34,7 +34,7 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
 //==============================================================================
 //ToolsBoxDarkA Style
 singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
-     opaque = false;
+     opaque = "1";
     border = -2;
     category = "ToolsContainers";
     bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC.png";
@@ -81,4 +81,26 @@ singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
 singleton GuiControlProfile(ToolsBoxTitleBar_Thin : ToolsBoxTitleBar)
 {
    bitmap = "tlab/gui/assets/container-assets/GuiBoxTitleBar_Thin.png";
+};
+
+singleton GuiControlProfile(ToolsPaneProfile : ToolsBoxDarkA)
+{
+   bevelColorLL = "255 0 255 255";
+   bitmap = "tlab/gui/assets/container-assets/GuiPaneProfile.png";
+   opaque = "1";
+   fillColor = "2 2 2 255";
+   fillColorHL = "2 2 2 255";
+   fillColorNA = "2 2 2 255";
+   border = "2";
+   borderThickness = "5";
+   fontType = "Gotham Bold";
+   fontSize = "20";
+   fontColors[0] = "254 254 254 255";
+   fontColor = "254 254 254 255";
+   textOffset = "2 6";
+};
+
+singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
+{
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkA_Top.png";
 };

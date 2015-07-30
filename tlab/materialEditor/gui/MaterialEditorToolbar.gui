@@ -26,13 +26,13 @@ new GuiStackControl(MaterialEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10788";
-      disabledGroup = "10789";
-      EditorContainer = "4922";
+      defaultStack = "10929";
+      disabledGroup = "10930";
+      EditorContainer = "4967";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialEditor";
       preventReordering = "0";
-      stackLists = "10790";
+      stackLists = "10931";
 
    new GuiContainer() {
       margin = "0 0 0 0";

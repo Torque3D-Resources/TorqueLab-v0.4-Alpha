@@ -50,59 +50,39 @@ singleton GuiControlProfile( ToolsTextEditProfile_Num : ToolsTextEditProfile ) {
 //==============================================================================
 //ToolsTextEditDark
 //------------------------------------------------------------------------------
-singleton GuiControlProfile( ToolsTextEditDark : ToolsDefaultProfile ) {
-    opaque = true;
-    bitmap = "tlab/gui/assets/element/GuiTextEditDark.png";
 
-    hasBitmapArray = true;
-    border = -2; // fix to display textEdit img
-    //borderWidth = "1";  // fix to display textEdit img
-    //borderColor = "100 100 100";
-    fillColor = "242 241 240 0";
-    fillColorHL = "255 255 255";
-    fontColor = "194 254 254 255";
-    fontColorHL = "255 255 255";
-    fontColorSEL = "98 100 137";
-    fontColorNA = "200 200 200";
-    textOffset = "4 2";
-    autoSizeWidth = false;
-    autoSizeHeight = true;
-    justify = "left";
-    tab = true;
-    canKeyFocus = true;
-    category = "Tools";
-    fontType = "Gotham Book";
-    fontSize = "15";
-    fontColors[1] = "255 255 255 255";
-    fontColors[2] = "200 200 200 255";
-    fontColors[3] = "98 100 137 255";
-   bevelColorHL = "255 0 255 255";
-   fontColors[0] = "194 254 254 255";
-   modal = "1";
-};
 //------------------------------------------------------------------------------
 //ToolsTextEditDark Blue border variation
-singleton GuiControlProfile( ToolsTextEditDark_Blue : ToolsTextEditDark ) {  
+singleton GuiControlProfile( ToolsTextEditDark : ToolsTextEditProfile ) {  
     bitmap = "tlab/gui/assets/element/GuiTextEditDark_Blue.png";
    bevelColorLL = "Magenta";
    fontSize = "15";
    textOffset = "0 0";
    justify = "Top";
+   fontColors[0] = "252 254 252 255";
+   fontColors[1] = "254 185 5 255";
+   fontColors[2] = "254 227 83 255";
+   fontColors[3] = "34 102 132 150";
+   fontColors[9] = "255 0 255 255";
+   fontColor = "252 254 252 255";
+   fontColorHL = "254 185 5 255";
+   fontColorNA = "254 227 83 255";
+   fontColorSEL = "34 102 132 150";
 };
-//------------------------------------------------------------------------------
-//ToolsTextEditDark Blue border variation
-singleton GuiControlProfile( ToolsTextEditDark_Num : ToolsTextEditDark_Blue ) {  
-    numbersOnly = true;
-};
-//------------------------------------------------------------------------------
 
 
-singleton GuiControlProfile(ToolsTextEditDark_Blue_S1 : ToolsTextEditDark_Blue)
+
+singleton GuiControlProfile(ToolsTextEditDark_S1 : ToolsTextEditDark)
 {
    bevelColorLL = "255 0 255 255";
    fontSize = "14";
    fontType = "Arial";
 };
 
-
+//------------------------------------------------------------------------------
+//ToolsTextEditDark Blue border variation
+singleton GuiControlProfile( ToolsTextEditDark_Num : ToolsTextEditDark ) {  
+    numbersOnly = true;
+};
+//------------------------------------------------------------------------------
 

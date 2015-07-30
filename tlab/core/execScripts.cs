@@ -162,7 +162,8 @@ tlabExecDialogs(!$LabGuiExeced);
 //------------------------------------------------------------------------------
 //Old Settings Dialog for temporary references
 function tlabExecTools(%loadGui ) {
-	if (%loadGui) {		
+	if (%loadGui) {
+		devLog("Loading editorTools GUIs");		
 		execPattern("tlab/EditorLab/editorTools/*.gui");		
 	}	
 	execPattern("tlab/EditorLab/editorTools/*.cs");	

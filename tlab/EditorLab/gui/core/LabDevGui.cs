@@ -18,17 +18,20 @@ EditorMap.bindCmd( keyboard, "ctrl 0", "LabDevGui.toggleMe();","" );
 function LabDevGui::onWake(%this) {
 	
 	LabDevGui.generateSamples();
+	EditorMap.push();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::toggleMe(%this) {
 	devLog("ToggleMe");
-	if (%this.isAwake()){
-		popDlg(%this);
+	if (Canvas.getContent().getName() !$= "LabDevGui"){
+		devLog("LabDevGui called:",Canvas.getContent().getName() );
+		LabDevGui.previousGui = Canvas.getContent();
+		setGui(LabDevGui);		
 	}
 	else {
-		pushDlg(%this);
+		setGui(%this.previousGui);
 	}
 	
 }

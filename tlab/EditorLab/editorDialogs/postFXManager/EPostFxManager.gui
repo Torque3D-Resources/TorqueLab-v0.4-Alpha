@@ -318,7 +318,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_Blue_S1";
+                  profile = "ToolsTextEditDark_S1";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
@@ -548,7 +548,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -692,7 +692,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "top";
-                     profile = "ToolsTextEditDark_Blue_S1";
+                     profile = "ToolsTextEditDark_S1";
                      visible = "1";
                      active = "1";
                      altCommand = "EPostFxManager.setColorCorrectionFile( $thisControl.getText() );";
@@ -1211,7 +1211,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamHDR\",\"arEPostFx_HDRParam\",\"\",\"\");";
@@ -3139,7 +3139,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -3241,7 +3241,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -3343,7 +3343,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -3445,7 +3445,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -3547,7 +3547,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -3649,7 +3649,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamDOF\",\"arEPostFx_DOFParam\",\"\",\"\");";
@@ -4024,7 +4024,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamLightRays\",\"arEPostFx_LightRaysParam\",\"\",\"\");";
@@ -4125,7 +4125,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamLightRays\",\"arEPostFx_LightRaysParam\",\"\",\"\");";
@@ -4226,7 +4226,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamLightRays\",\"arEPostFx_LightRaysParam\",\"\",\"\");";
@@ -4327,7 +4327,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamLightRays\",\"arEPostFx_LightRaysParam\",\"\",\"\");";
@@ -4428,7 +4428,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_Blue";
+                                    profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"EPostFxManager.updateParamLightRays\",\"arEPostFx_LightRaysParam\",\"\",\"\");";

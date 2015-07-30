@@ -97,7 +97,7 @@
          minExtent = "8 -500";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2223,7 +2223,7 @@
          minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2485,7 +2485,7 @@
                      minExtent = "8 2";
                      horizSizing = "relative";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue_S1";
+                     profile = "ToolsTextEditDark_S1";
                      visible = "1";
                      active = "0";
                      altCommand = "ShapeEdSequences.onEditName();";
@@ -2679,7 +2679,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdSequences.onEditSeqInOut(\"in\", $ThisControl.getText());";
@@ -2755,7 +2755,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdSequences.onEditSeqInOut(\"out\", $ThisControl.getText());";
@@ -2831,7 +2831,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdSequences.onEditPriority();";
@@ -2914,7 +2914,7 @@
                      minExtent = "8 2";
                      horizSizing = "left";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      altCommand = "ShapeEdSequences.onEditBlend();";
@@ -3261,7 +3261,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdTriggerList.onEditSelection();";
@@ -3337,7 +3337,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdTriggerList.onEditSelection();";
@@ -3555,7 +3555,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdNodes.onEditName();";
@@ -3706,7 +3706,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdNodes.onEditTransform();";
@@ -3783,7 +3783,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "0";
                         altCommand = "ShapeEdNodes.onEditTransform();";
@@ -4176,7 +4176,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditName();";
@@ -4207,7 +4207,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditSize();";
