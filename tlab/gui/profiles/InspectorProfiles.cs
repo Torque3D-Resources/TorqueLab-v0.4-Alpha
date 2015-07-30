@@ -94,7 +94,7 @@ singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
    fontColor = "0 0 0 255";
    fontType = "Davidan";
    justify = "Center";
-   bitmap = "tlab/gui/assets/element/GuiDropdownProfile_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
    category = "Tools";
   
 };
@@ -106,7 +106,7 @@ if (!isObject(GuiPopUpMenuProfile))
 	{   
 	  hasBitmapArray     = "1";
 	  profileForChildren = "ToolsDropdownProfile_List";
-		bitmap = "tlab/gui/assets/element/GuiDropdownProfile_Thin.png";
+		bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
 		fontSize = "15";
 		justify = "Center";
 		fillColor = "242 241 241 255";  
@@ -140,7 +140,7 @@ singleton GuiControlProfile( GuiButtonProfile : ToolsDefaultProfile ) {
     fontColors[0] = "254 254 254 255";
     fontColors[2] = "200 200 200 255";
     fontColorNA = "200 200 200 255";
-    bitmap = "tlab/gui/assets/button/GuiButtonProfile.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
     hasBitmapArray = "1";
     fixedExtent = "0";
    bevelColorLL = "Magenta";
@@ -166,7 +166,7 @@ singleton GuiControlProfile( GuiInspectorCheckBoxProfile : ToolsDefaultProfile )
     fontColorNA = "200 200 200";
     fixedExtent = 1;
     justify = "left";
-    bitmap = "tlab/gui/assets/button/GuiCheckboxProfile_S1.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_S1.png";
     hasBitmapArray = true;
     category = "Tools";
     fontType = "Gotham Book";
@@ -192,7 +192,7 @@ singleton GuiControlProfile( GuiInspectorButtonProfile : ToolsButtonProfile ) {
     fontColors[0] = "254 254 254 255";
     fontColors[2] = "200 200 200 255";
     fontColorNA = "200 200 200 255";
-    bitmap = "tlab/gui/assets/button/GuiButtonProfile.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
     fixedExtent = "0";
    bevelColorLL = "Magenta";
    textOffset = "0 2";
@@ -211,7 +211,7 @@ singleton GuiControlProfile(GuiInspectorSwatchButtonProfile : GuiInspectorButton
 	fillColorNA = "200 200 200 255";
 	fontSize = "24";
 	textOffset = "16 10";
-	bitmap = "tlab/gui/assets/button/GuiButtonProfile.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
 	hasBitmapArray = "1";
 	fontColors[0] = "253 253 253 255";
 	fontColor = "253 253 253 255";
@@ -249,7 +249,7 @@ singleton GuiControlProfile( GuiInspectorTextEditProfile : ToolsDefaultProfile )
     fontColorSEL = "16 108 87 255";
     fontColors[0] = "231 224 178 255";
     fontColor = "231 224 178 255";
-   bitmap = "tlab/gui/assets/element/GuiTextEditDark.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiTextEditDark.png";
    hasBitmapArray = "1";
    modal = true;
   
@@ -288,7 +288,7 @@ singleton GuiControlProfile( GuiInspectorGroupProfile : ToolsDefaultProfile ) {
     fontColorHL = "25 25 25 220";
     fontColorNA = "128 128 128 255";
     textOffset = "20 0";
-    bitmap = "tlab/gui/assets/container/GuiRolloutProfile.png";
+    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile.png";
     opaque = "0";
     fillColor = "0 0 0 237";
     fillColorNA = "255 255 255 255";
@@ -382,7 +382,7 @@ singleton GuiControlProfile( GuiInspectorRolloutProfile0 : ToolsDefaultProfile) 
     borderColorHL = "156 156 156";
     borderColorNA = "64 64 64";
 
-    bitmap = "tlab/gui/assets/container/GuiRolloutProfile_Thin.png";
+    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
 
     textOffset = "20 -1";
     category = "Editor";
@@ -411,7 +411,7 @@ singleton GuiControlProfile( GuiInspectorStackProfile ) {
 //==============================================================================
 // Used in SourceCode - Inspector Checkbox single profile
 singleton GuiControlProfile( InspectorTypeCheckboxProfile : GuiInspectorFieldProfile ) {
-    bitmap = "tlab/gui/assets/button/GuiCheckboxProfile_S1.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_S1.png";
     hasBitmapArray = true;
     opaque=false;
     border=false;

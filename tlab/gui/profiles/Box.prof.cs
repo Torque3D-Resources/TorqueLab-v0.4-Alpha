@@ -55,7 +55,7 @@ singleton GuiControlProfile( ToolsBoxTitleDark : ToolsDefaultProfile ) {
      opaque = false;
     border = -2;
     category = "ToolsContainers";
-    bitmap = "tlab/gui/assets/container/GuiBoxTitleDark";
+    bitmap = "tlab/gui/assets/container-assets/GuiBoxTitleDark";
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
 };
@@ -68,7 +68,7 @@ singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
     opaque = false;
     border = -2;
     category = "ToolsContainers";
-    bitmap = "tlab/gui/assets/container/GuiBoxTitleBar.png";
+    bitmap = "tlab/gui/assets/container-assets/GuiBoxTitleBar.png";
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    fontType = "Gotham Black";

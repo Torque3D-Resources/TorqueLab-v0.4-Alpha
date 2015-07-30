@@ -64,7 +64,7 @@ singleton GuiControlProfile (ToolsDropdownProfile : ToolsDefaultProfile)
 {   
   hasBitmapArray     = "1";
   profileForChildren = "ToolsDropdownProfile_List";
- 	bitmap = "tlab/gui/assets/element/GuiDropdownProfile.png";
+ 	bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile.png";
    fillColor = "242 241 241 255";
    fontSize = "17";
    fillColorHL = "228 228 235 255";
@@ -90,7 +90,7 @@ singleton GuiControlProfile (ToolsDropdownProfile : ToolsDefaultProfile)
 // DropdownBasic Thin Version
 singleton GuiControlProfile(ToolsDropdownProfile_Thin : ToolsDropdownProfile)
 {
-   bitmap = "tlab/gui/assets/element/GuiDropdownProfile_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
    fontSize = "15";
    justify = "Center";
    autoSizeHeight = "1";
@@ -100,7 +100,7 @@ singleton GuiControlProfile(ToolsDropdownProfile_Thin : ToolsDropdownProfile)
 // DropdownBasic Thin Version
 singleton GuiControlProfile(ToolsDropdownProfile_L1 : ToolsDropdownProfile)
 {
-   bitmap = "tlab/gui/assets/element/GuiDropdownProfile_L1.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_L1.png";
    fontSize = "15";
    justify = "Center";
 };
@@ -148,7 +148,7 @@ singleton GuiControlProfile (ToolsDropdownBasic : ToolsDefaultProfile)
 {   
   hasBitmapArray     = "1";
   profileForChildren = "ToolsDropdownBasic_List";
- 	bitmap = "tlab/gui/assets/element/GuiDropdownAlt.png";
+ 	bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt.png";
    fillColor = "242 241 241 255";
    fontSize = "17";
    fillColorHL = "228 228 235 255";
@@ -169,7 +169,7 @@ singleton GuiControlProfile (ToolsDropdownBasic : ToolsDefaultProfile)
 // DropdownBasic Thin Version
 singleton GuiControlProfile(ToolsDropdownBasic_Thin : ToolsDropdownBasic)
 {
-   bitmap = "tlab/gui/assets/element/GuiDropdownAlt_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt_Thin.png";
 };
 //------------------------------------------------------------------------------
 
@@ -181,7 +181,7 @@ singleton GuiControlProfile(ToolsDropdownBasic_Thin : ToolsDropdownBasic)
 // ToolsTreeViewProfile Style
 //------------------------------------------------------------------------------
 singleton GuiControlProfile( ToolsTreeViewProfile : ToolsDefaultProfile ) {
-    bitmap = "tlab/gui/assets/element/GuiTreeViewProfile.png";
+    bitmap = "tlab/gui/assets/element-assets/GuiTreeViewProfile.png";
     autoSizeHeight = true;
     canKeyFocus = true;
     fillColor = "255 255 255";

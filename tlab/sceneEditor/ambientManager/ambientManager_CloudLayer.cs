@@ -78,7 +78,7 @@ function SEP_AmbientManager::initCloudLayerData( %this ) {
 // Sync the current profile values into the params objects
 function SEP_AmbientManager::getCloudLayerTexture( %this,%layer ) { 
 	%this.currentCloudLayer = %layer;
-   %currentFile = $LGM_SelectedObject.bitmap;
+   %currentFile = $GLab_SelectedObject.bitmap;
    getLoadFilename("*.*|*.*", "SEP_AmbientManager.setCloudLayerTexture", %currentFile);
 }
 //------------------------------------------------------------------------------

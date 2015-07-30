@@ -69,7 +69,7 @@ function SEP_AmbientManager::getBasicCloudTexture( %this,%layer ) {
 	//	GameLabGui.noCursor = 0;
 	}*/
 	%this.currentBasicClouds = %layer;
-   %currentFile = $LGM_SelectedObject.bitmap;
+   %currentFile = $GLab_SelectedObject.bitmap;
    //Canvas.cursorOff();
    getLoadFilename("*.*|*.*", "SEP_AmbientManager.setBasicCloudTexture", %currentFile);
 }

@@ -16,11 +16,26 @@ EditorMap.bindCmd( keyboard, "ctrl 0", "LabDevGui.toggleMe();","" );
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::onWake(%this) {
-	
+	if (!$LDG_ProfileSetupLoaded)
+		Lab.initProfilesSetupData(true,true);
+	LDG_WidgetsContainer.add(LWG_WidgetsTabBook);
 	LabDevGui.generateSamples();
 	EditorMap.push();
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
+function LabDevGui::onSleep(%this) {	
+	LWG_WidgetsContainer.add(LWG_WidgetsTabBook);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
+function LabWidgetsGui::onWake(%this) {	
+	LWG_WidgetsContainer.add(LWG_WidgetsTabBook);	
+}
+//------------------------------------------------------------------------------
+
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::toggleMe(%this) {

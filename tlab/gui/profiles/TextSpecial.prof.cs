@@ -16,7 +16,7 @@
 //------------------------------------------------------------------------------
 singleton GuiControlProfile( ToolsTextEditProfile : ToolsDefaultProfile ) {
     opaque = true;
-    bitmap = "tlab/gui/assets/element/GuiTextEditBorder.png";
+    bitmap = "tlab/gui/assets/element-assets/GuiTextEditBorder.png";
 
     hasBitmapArray = true;
     border = -2; // fix to display textEdit img
@@ -54,7 +54,7 @@ singleton GuiControlProfile( ToolsTextEditProfile_Num : ToolsTextEditProfile ) {
 //------------------------------------------------------------------------------
 //ToolsTextEditDark Blue border variation
 singleton GuiControlProfile( ToolsTextEditDark : ToolsTextEditProfile ) {  
-    bitmap = "tlab/gui/assets/element/GuiTextEditDark_Blue.png";
+    bitmap = "tlab/gui/assets/element-assets/GuiTextEditDark_Blue.png";
    bevelColorLL = "Magenta";
    fontSize = "15";
    textOffset = "0 0";

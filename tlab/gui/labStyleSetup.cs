@@ -4,9 +4,7 @@
 //------------------------------------------------------------------------------
 // Allow to manage different GUI Styles without conflict
 //==============================================================================
-//exec("scripts/gui/profileStyleSetup.cs");
-//exec("scripts/gui/profileStyleLoad.cs");
-//exec("scripts/gui/profileStyleSave.cs");
+
 $LabStyleColorTypes = "Color1 Color2 Color3 Background1 Background2 Background3 DarkColor1 DarkColor2 DarkColor3 LightColor1 LightColor2 LightColor3";
 $ProfileFields["general"] = "tab canKeyFocus mouseOverSelected modal opaque bitmap hasBitmapArray category";
 $ProfileFields["fill"] = "fillColor fillColorHL fillColorNA fillColorSEL";

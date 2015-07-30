@@ -19,7 +19,7 @@
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsSliderProfile : ToolsDefaultProfile)
 {
-   bitmap = "tlab/gui/assets/element/GuiSliderProfile.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiSliderProfile.png";
 };
 //------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ singleton GuiControlProfile(ToolsSliderProfile : ToolsDefaultProfile)
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsSliderKnob : ToolsDefaultProfile)
 {
-   bitmap = "tlab/gui/assets/element/GuiSliderAlt.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiSliderAlt.png";
 };
 //------------------------------------------------------------------------------
 
@@ -37,6 +37,6 @@ singleton GuiControlProfile(ToolsSliderKnob : ToolsDefaultProfile)
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsSliderBox : ToolsDefaultProfile)
 {
-   bitmap = "tlab/gui/assets/element/GuiSliderBox.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiSliderBox.png";
 };
 //------------------------------------------------------------------------------

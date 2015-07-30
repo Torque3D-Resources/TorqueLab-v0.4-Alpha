@@ -96,7 +96,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/CtrlCameraSpeedDropdown.gui");
 		exec("tlab/EditorLab/gui/CtrlSnapSizeSlider.gui");
 		exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.gui");
-		exec("tlab/EditorLab/gui/DlgManageSFXParameters.gui" );
+		exec("tlab/EditorLab/gui/DGLabanageSFXParameters.gui" );
 		exec("tlab/EditorLab/gui/LabWidgetsGui.gui");
 		exec("tlab/EditorLab/gui/DlgAddFMODProject.gui");
 		exec("tlab/EditorLab/gui/DlgEditorChooseLevel.gui");
@@ -112,23 +112,25 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/core/scriptEditorDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
-		exec("tlab/EditorLab/gui/core/LabDevGui.gui");
+
 		exec("tlab/EditorLab/gui/GameLabGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
+		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
-	exec("tlab/EditorLab/gui/DlgManageSFXParameters.cs" );
+	exec("tlab/EditorLab/gui/DGLabanageSFXParameters.cs" );
 	exec("tlab/EditorLab/gui/DlgAddFMODProject.cs");
 	exec("tlab/EditorLab/gui/DlgEditorChooseLevel.cs");
 	exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.cs" );
 	
 	execPattern("tlab/EditorLab/gui/MaterialSelector/*.cs");
 	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
+	execPattern("tlab/EditorLab/gui/LabDevGui/*.cs");
 	
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
-	exec("tlab/EditorLab/gui/core/LabDevGui.cs");
+
 	exec("tlab/EditorLab/gui/GameLabGui.cs");
 }
 tlabExecGui(!$LabGuiExeced);

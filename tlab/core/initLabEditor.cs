@@ -25,6 +25,8 @@ function Lab::initLabEditor( %this ) {
 	%this.initEditorGui();
 	%this.initMenubar();
 	%this.initParamsSystem();
+	
+	 exec("tlab/EditorLab/gui/guiLab/initGuiLab.cs");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -70,6 +72,8 @@ function Lab::pluginInitCompleted( %this ) {
 	ETools.initTools();
 	//Prepare the Settings
 	Lab.initConfigSystem();
+	
+	
 }
 //------------------------------------------------------------------------------
 

@@ -53,7 +53,7 @@ singleton GuiControlProfile (editorMenu_wBorderProfile : NavPanelProfile) {
 	category = "Editor";
 };
 singleton GuiControlProfile (inspectorStyleRolloutListProfile : NavPanelProfile) {
-	bitmap = "tlab/gui/assets/container/GuiRolloutProfile_Thin.png";
+	bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
 	category = "Editor";
 	hasBitmapArray = "1";
 };
@@ -62,14 +62,14 @@ singleton GuiControlProfile (inspectorStyleRolloutListProfile : NavPanelProfile)
 	category = "Editor";
 };
 singleton GuiControlProfile (inspectorStyleRolloutInnerProfile : NavPanelProfile) {
-	bitmap = "tlab/gui/assets/container/GuiRolloutProfile_Thin.png";
+	bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
 	category = "Editor";
 	fontColors[5] = "Fuchsia";
 	fontColorLinkHL = "Fuchsia";
 	hasBitmapArray = "1";
 };
 singleton GuiControlProfile (inspectorStyleRolloutInnerProfile : NavPanelProfile) {
-	bitmap = "tlab/gui/assets/container/GuiRolloutProfile_Thin.png";
+	bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
 	category = "Editor";
 	bevelColorLL = "255 0 255 255";
 	fontColors[1] = "0 0 0 255";
