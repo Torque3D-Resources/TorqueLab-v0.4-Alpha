@@ -8,7 +8,10 @@ $Params::EnableLogs = 0;
 
 
 //==============================================================================
-//Initialize plugin data
+/// Create a ParamsArray Object
+/// %name:	Base name of the array used to named related stuff (Ex: ArrayObject = "ar"@%name@"Param")
+/// %container: GuiStackControl to add params to (if empty, will look for %name@"ParamStack";
+/// %prefGroup: Pref global in which the data will be stored ($PrefExample_"@%field = %value) 
 function createParamsArray(%name,%container,%prefGroup) {
   
    if (%name $= ""){

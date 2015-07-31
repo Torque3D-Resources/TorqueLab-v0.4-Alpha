@@ -15,6 +15,16 @@ function GuiFrameSetCtrl::setRows(%this,%rows,%fitAll){
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// Set a new rows value and refresh the frame set
+/// Rows are set like: %rowA_Y SPC %rowB_Y ... SPC %rowZ_Y;
+function GuiFrameSetCtrl::setColumns(%this,%columns,%fitAll){
+	%this.columns = %columns;
+	%this.updateSizes();
+	devLog(%this,"GuiFrameSetCtrl setColumns",%this.columns);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 /// Hide a GuiFrameSet child and push it to back
 function GuiFrameSetCtrl::hideCtrl(%this,%ctrl){
 	hide(%ctrl);

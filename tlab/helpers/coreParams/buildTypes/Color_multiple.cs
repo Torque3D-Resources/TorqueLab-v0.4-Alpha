@@ -1,5 +1,5 @@
 //==============================================================================
-// Castle Blasters ->
+// HelpersLab -> Build Params - Color Controls
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -98,113 +98,99 @@ function buildParamColorSlider( %pData ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Empty Editor Gui
-function GuiColorPickerCtrl::ColorPickedI(%this,%color) {
-	devLog("GuiColorPickerCtrl::ColorPickedI(%this,%color)",%this,%color);
-	%srcObj = %this.sourceObject;
-	%srcField = %this.sourceField;
-	%alpha = mCeil(getWord(%color,3));
-	%color = setWord(%color,3,%alpha);	
+// RPE_DatablockEditor.buildInterface();
+function buildParamColorSliderEdit( %pData ) {
+	%isIntColor = false;
+	if(%pData.Option[%pData.Setting,"mode"] $= "int")
+		%isIntColor = true;
+	%pData.pill-->field.text = %pData.Title;
+	%alphaSlider = %pData.pill-->slider;
+	//ColorPicker ctrl update
+	%colorPicker = %pData.pill-->colorPicker;
+	%colorPicker.command = %pData.Command;
+	%colorPicker.altCommand = %pData.AltCommand;
+	%colorPicker.internalName = %pData.InternalName;
+	%colorPicker.alphaSlider = %alphaSlider;
+	%checkbox.variable = %pData.Variable;
+	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
+	%colorPicker.lockedAlpha = %noAlpha;
+	
+	
 
-	%baseColor = ColorIntToFloat(%color);
-	devLog("GuiColorPickerCtrl::ColorPicked(Converted)",%baseColor);
-	%this.baseColor = %baseColor;
-	if (isObject(%srcObj))
-		%srcObj.setFieldValue(%srcField,%color);
+	if(%pData.Option[%pData.Setting,"mode"] $= "int")
+		%colorPicker.isIntColor = true;
 
-	if (isObject(%this.alphaSlider)) {
-		devLog("Color Picked, updating Slider to:",%alpha);
-		%this.alphaSlider.setValue(%alpha);
+	%alphaSlider.colorPicker = %colorPicker;
+	%alphaSlider.fieldSource = %pData.Setting;
+	%alphaSlider.command = %colorPicker@".AlphaChanged($ThisControl);";
+	
+	if (%isIntColor)
+		%alphaSlider.range = "0 255";
+	else
+		%alphaSlider.range = "0 1";
+	
+	%textEdit = %pData.pill-->TextEdit;
+	%textEdit.command = %pData.Command;
+	%textEdit.altCommand = %pData.AltCommand;
+	%textEdit.internalName = %pData.Setting@"_ColorEdit";
+	%textEdit.colorPickerCtrl = %colorPicker;
+	%textEdit.superClass = "GuiColorEditCtrl";
+	%textEdit.isIntColor = %isIntColor;
+	%textEdit.alphaSlider = %alphaSlider;
+	
+	%colorPicker.colorEditCtrl = %textEdit;
+	%colorPicker.syncCtrls = %textEdit;
+	
+	%floatLength = %pData.Option[%pData.Setting,"flen"];
+	if (%floatLength > 0){
+		%colorPicker.floatLength = %floatLength;
+		%textEdit.floatLength = %floatLength;
 	}
+	return %colorPicker;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Empty Editor Gui
-function GuiColorPickerCtrl::ColorUpdatedI(%this,%color) {
-	devLog("GuiColorPickerCtrl::ColorUpdatedI(%this,%color)",%this,%color);
-	%alpha = mCeil(getWord(%color,3));
+// RPE_DatablockEditor.buildInterface();
+function buildParamColorEdit( %pData ) {
+	%isIntColor = false;
+	if(%pData.Option[%pData.Setting,"mode"] $= "int")
+		%isIntColor = true;
+	%pData.pill-->field.text = %pData.Title;
 	
+	//ColorPicker ctrl update
+	%colorPicker = %pData.pill-->colorPicker;
+	%colorPicker.command = %pData.Command;
+	%colorPicker.altCommand = %pData.AltCommand;
+	%colorPicker.internalName = %pData.InternalName;
 	
-	
-	%baseColor = ColorIntToFloat(%color);
+	%checkbox.variable = %pData.Variable;
+	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
+	%colorPicker.lockedAlpha = %noAlpha;
+	%colorPicker.noAlpha = %noAlpha;
 	
 
-	devLog("GuiColorPickerCtrl::ColorUpdated(Converted)",%baseColor);
-	// %this.sourceArray.setValue(%this.internalName,%color);
-		%this.baseColor = %baseColor;	
-	%this.updateColor();
+	if(%pData.Option[%pData.Setting,"mode"] $= "int")
+		%colorPicker.isIntColor = true;
 
-	if (isObject(%this.alphaSlider)) {
-		devLog("Color Updated, updating Slider to:",%alpha);
-		%this.alphaSlider.setValue(%alpha);
+	
+	%textEdit = %pData.pill-->TextEdit;
+	%textEdit.command = %pData.Command;
+	%textEdit.altCommand = %pData.AltCommand;
+	%textEdit.internalName = %pData.Setting@"_ColorEdit";
+	%textEdit.setting = %pData.Setting;
+	%textEdit.colorPickerCtrl = %colorPicker;
+	%textEdit.superClass = "GuiColorEditCtrl";
+	%textEdit.isIntColor = %isIntColor;
+	%textEdit.noAlpha = %noAlpha;
+	
+	%colorPicker.colorEditCtrl = %textEdit;
+	%colorPicker.syncCtrls = %textEdit;
+	
+	%floatLength = %pData.Option[%pData.Setting,"flen"];
+	if (%floatLength > 0){
+		%colorPicker.floatLength = %floatLength;
+		%textEdit.floatLength = %floatLength;
 	}
-		devLog("UpdateFunct:",%this.updateCommand);
-	%ctrl = %this;
-	eval(%ctrl.updateCommand);
+	return %colorPicker;
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-// Empty Editor Gui
-function GuiColorPickerCtrl::ColorPicked(%this,%color) {
-	devLog("GuiColorPickerCtrl::ColorPicked(%this,%color)",%this,%color);
-	%srcObj = %this.sourceObject;
-	%srcField = %this.sourceField;
-	%alpha = mCeil(getWord(%color,3));
-	%color = setWord(%color,3,%alpha);
-	%baseColor = %color;
-	if (%this.isIntColor)
-	//	%baseColor = ColorIntToFloat(%color);
-	
-	devLog("GuiColorPickerCtrl::ColorPicked(Converted)",%baseColor);
-	%this.baseColor = %baseColor;
-	if (isObject(%srcObj))
-		%srcObj.setFieldValue(%srcField,%color);
-
-	if (isObject(%this.alphaSlider)) {
-		devLog("Color Picked, updating Slider to:",%alpha);
-		%this.alphaSlider.setValue(%alpha);
-	}
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Empty Editor Gui
-function GuiColorPickerCtrl::ColorUpdated(%this,%color) {
-	devLog("GuiColorPickerCtrl::ColorUpdated(%this,%color)",%this,%color);
-	%alpha = mCeil(getWord(%color,3));
-	
-	%baseColor = %color;
-	if (%this.isIntColor)
-		%baseColor = ColorIntToFloat(%color);
-	
-	%this.baseColor = %baseColor;	
-	
-	devLog("GuiColorPickerCtrl::ColorUpdated(Converted)",%baseColor);
-	// %this.sourceArray.setValue(%this.internalName,%color);
-	%this.updateColor();
-
-	if (isObject(%this.alphaSlider)) {
-		devLog("Color Updated, updating Slider to:",%alpha);
-		%this.alphaSlider.setValue(%alpha);
-	}
-		devLog("UpdateFunct:",%this.updateCommand);
-	%ctrl = %this;
-	eval(%ctrl.updateCommand);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Empty Editor Gui
-function GuiColorPickerCtrl::AlphaChanged(%this,%sourceCtrl) {
-	devLog("GuiColorPickerCtrl::AlphaChanged(%this,%sourceCtrl)",%this,%sourceCtrl,"Value:",%sourceCtrl.getValue());
-	%alpha = %sourceCtrl.getValue();
-	
-	devLog("Start color = ",%this.baseColor);
-	%this.baseColor.a = %alpha;
-	%color = %this.baseColor;
-	%this.updateColor();
-	devLog("UpdateFunct:",%this.updateCommand);
-	devLog("End color = ",%this.baseColor);	
-	%ctrl = %this;
-	eval(%ctrl.updateCommand);
-}
-//------------------------------------------------------------------------------
-

@@ -164,8 +164,35 @@ function strFind(%str,%find) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
+/// Check if the word contain any of the supplied words. Return true if found.
+/// Optional: %all -> If %all is true, must find all words to return true;
+function recordFind(%records,%find,%partof) {
+	for( %i = 0; %i < getRecordCount( %records ); %i++ ) {
+		%record = getRecord( %records, %i );
+		if (%record $= %find)
+			return %i;
+		if (!%partof)
+			continue;
+		if (strFind(%record,%find))
+			return %i;
+	}	
+	return "-1";	
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
 //
-function strAddField(%str,%field,%addEmpty) {
+function strAddField(%str,%field,%unique,%addEmpty) {
+	
+	if (%unique) {	
+		for(%i =0;%i < getFieldCount(%str);%i++) {	
+			%check = getField(%str,%i); 		
+			if (%check $= %field){				
+				return %str;
+			}
+		}
+	}
+	
 	if (%addEmpty && %field $= "")
 		%field = " ";
 	
@@ -291,12 +318,27 @@ function ColorFloatToInt( %color ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 /// Convert %color from int to float. Ex "0 128 255" => "0 0.5 1"
-function ColorIntToFloat( %color ) {
+function ColorIntToFloat( %color,%length ) {
 	%red     = getWord( %color, 0 );
 	%green   = getWord( %color, 1 );
 	%blue    = getWord( %color, 2 );
 	%alpha   = getWord( %color, 3 );
+	
+	%color = ( %red / 255 ) SPC ( %green / 255 ) SPC ( %blue / 255 ) SPC ( %alpha / 255 );
+	
+	if (%length > 0)
+		%color = ColorFloatLength(%color,%length);
 	return ( %red / 255 ) SPC ( %green / 255 ) SPC ( %blue / 255 ) SPC ( %alpha / 255 );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Empty Editor Gui
+function ColorFloatLength(%this,%color,%length) {
+	%color.r = mFloatLength(%color.r,%this.floatLength);
+	%color.g = mFloatLength(%color.g,%this.floatLength);
+	%color.b = mFloatLength(%color.b,%this.floatLength);
+	%color.a = mFloatLength(%color.a,%this.floatLength);
+	return %color;
 }
 //------------------------------------------------------------------------------
 /*

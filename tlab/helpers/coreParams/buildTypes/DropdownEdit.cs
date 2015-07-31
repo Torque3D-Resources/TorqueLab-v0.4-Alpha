@@ -82,7 +82,7 @@ function buildParamDropdownEdit( %pData ) {
    }
    
    %textEdit = %pData.pill-->edit;
-   
+   %textEdit.setting = %pData.Setting;
     %textEdit.command = %pData.Command;
    %textEdit.altCommand = %pData.AltCommand;
     %textEdit.internalName = %pData.InternalName@"_edit";

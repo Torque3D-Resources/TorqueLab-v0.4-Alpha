@@ -169,7 +169,7 @@ function isImageFile(%file) {
 }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-function getFolderName( %filter, %callback,%startFolder,%title ) {
+function getFolderName( %filter, %callback,%startFolder,%title,%extraArg1,%extraArg2 ) {
 	if (%title $= "")
 		%title = "Select Export Folder";
 
@@ -181,15 +181,21 @@ function getFolderName( %filter, %callback,%startFolder,%title ) {
 		MustExist = true;
 		MultipleFiles = false;
 	};
-
+	
+	
+	 
 	if(%dlg.Execute()) {
 		%relativePath = makeRelativePath(%dlg.FileName);
-		%cb = %callback@"(\""@%relativePath@"/\");";
+		%cb = %callback@"(\""@%relativePath@"/\", \""@%extraArg1@"\" ,  \""@%extraArg2@"\" );";
+		//if (%addArgs !$= "")
+			//%cb = %callback@"(\""@%relativePath@"/\""@%addArgs@");";
+		//%cb = %callback@"(\""@%args@"/\");";
 		devLog("Callback is:",%cb,"Relative:",makeRelativePath(%dlg.FileName));
 		eval(%cb);
 	}
 
 	%dlg.delete();
+	
 }
 
 //--------------------------------------------------------------------------
@@ -346,3 +352,28 @@ function listDirectory(%path) {
 		%file = findNextFile(%path);
 	}
 }
+
+//==============================================================================
+function addFilenameToPath(%path, %filename, %extension) {
+	%fullName = strreplace(%filename,"/","");
+	if (%extension !$= "")
+		%fullName = %fullName @"."@%extension;
+	
+	%fullPath = strreplace(%path @"/"@%fullName,"//","/");
+	%relPath = makeRelativePath(%fullPath);
+	return %relPath;
+	
+	
+}	
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function validatePath(%path, %makeRelative) {
+	%path = strreplace(%path,"//","/");
+	
+	if (%makeRelative)
+		%path = makeRelativePath(%path);
+	
+	return %path;
+}	
+//------------------------------------------------------------------------------
