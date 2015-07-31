@@ -61,8 +61,3 @@ $Lab["Color","Dark","A"] = "21 26 32";
  	$Lab["Font","Tools","Alt","Strong"] = "Anson Regular";
  	$Lab["Font","Tools","Alt","Thin"] = "Anson Regular";
  	
-	$Lab["FontData","Gotham"] = "Book" TAB "Black" TAB "Book";
- 	$Lab["FontData","Aileron"] = "" TAB "Bold";
- 	$Lab["FontData","Gafata"] = "Std";
- 	$Lab["FontData","Lato"] = "";
- 	$Lab["FontData","Davidan"] = "Std";

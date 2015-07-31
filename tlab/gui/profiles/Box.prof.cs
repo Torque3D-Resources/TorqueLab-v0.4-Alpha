@@ -17,7 +17,8 @@ singleton GuiControlProfile( ToolsBoxDarkA : ToolsDefaultProfile ) {
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    hasBitmapArray = "1";
-   fillColor = "21 26 32 255";
+   fillColor = "19 40 55 255";
+   fontType = "Anson Regular";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -27,10 +28,26 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
     border = -2;
     category = "ToolsContainers";
     bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkB.png";
-    fontColors[2] = "0 0 0 255";
-    fontColorNA = "0 0 0 255";
+    fontColors[2] = "254 227 83 255";
+    fontColorNA = "254 227 83 255";
    hasBitmapArray = "1";
-   fillColor = "34 35 35 255";
+   fillColor = "14 151 226 255";
+   fillColorSEL = "101 136 166 255";
+   fontType = "Lato";
+   fontColors[0] = "252 254 252 255";
+   fontColors[1] = "252 189 81 255";
+   fontColors[3] = "29 104 143 255";
+   fontColors[4] = "238 255 0 255";
+   fontColors[5] = "252 189 81 255";
+   fontColors[6] = "3 21 254 255";
+   fontColors[7] = "254 236 3 255";
+   fontColors[8] = "254 3 43 255";
+   fontColors[9] = "3 48 248 255";
+   fontColor = "252 254 252 255";
+   fontColorHL = "252 189 81 255";
+   fontColorSEL = "29 104 143 255";
+   fontColorLink = "238 255 0 255";
+   fontColorLinkHL = "252 189 81 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -44,6 +61,7 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
     fontColorNA = "0 0 0 255";
    hasBitmapArray = "1";
    fillColor = "19 40 55 255";
+   fontType = "Anson Regular";
 };
 //------------------------------------------------------------------------------
 
@@ -106,4 +124,18 @@ singleton GuiControlProfile(ToolsPaneProfile : ToolsBoxDarkA)
 singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
 {
    bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkA_Top.png";
+};
+
+singleton GuiControlProfile(ToolsPaneDarkA : ToolsPaneProfile)
+{
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
+   bitmap = "tlab/gui/assets/container-assets/GuiPaneDarkA.png";
+};
+
+singleton GuiControlProfile(ToolsPaneDarkC : ToolsPaneDarkA)
+{
+   fontColors[4] = "255 0 255 255";
+   fontColorLink = "255 0 255 255";
+   bitmap = "tlab/gui/assets/container-assets/GuiPaneDarkC.png";
 };

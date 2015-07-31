@@ -8,7 +8,7 @@
 //==============================================================================
 // Activate the interface for a plugin
 //==============================================================================
-$LabDevGui_StackList = "ToolsTextBase ToolsTextFX";
+$LabDevGui_StackList = "ToolsTextBase ToolsTextFX ToolsTextAlt";
 $LabDevGui_SampleText = "Sample text - éç@#$%?&*";
 
 
@@ -17,7 +17,7 @@ EditorMap.bindCmd( keyboard, "ctrl 0", "LabDevGui.toggleMe();","" );
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::onWake(%this) {
 	if (!$LDG_ProfileSetupLoaded)
-		Lab.initProfilesSetupData(true,true);
+		Lab.initProfileSetupSystem();
 		
 	LDG_ProfilesSetupTree.init();
 	LDG_WidgetsContainer.add(LWG_WidgetsTabBook);
@@ -33,11 +33,30 @@ function LabDevGui::onSleep(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
+function LabDevGui::onPreEditorSave(%this) {	
+	LWG_WidgetsContainer.add(LWG_WidgetsTabBook);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
+function LabDevGui::onPostEditorSave(%this) {	
+	GuiEditCanvas.save(LabWidgetsGui,true);
+	LDG_WidgetsContainer.add(LWG_WidgetsTabBook);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
 function LabWidgetsGui::onWake(%this) {	
 	LWG_WidgetsContainer.add(LWG_WidgetsTabBook);	
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
+function LabWidgetsGui::onPreEditorSave(%this) {	
+	LWG_WidgetsContainer.add(LWG_WidgetsTabBook);
+	devLog("About to save LabWidgetsGui to:",LabWidgetsGui.getFilename());	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::toggleMe(%this) {
@@ -76,7 +95,10 @@ function LabDevGui::generateSamples(%this) {
 		}
       if (strFind(%obj.getName(),"ToolsTextFX")){
 			%this.generateTextSample(%obj.getName(),"ToolsTextFX");
-		}   
+		}  
+		if (strFind(%obj.getName(),"ToolsTextAlt")){
+			%this.generateTextSample(%obj.getName(),"ToolsTextAlt");
+		}    
 	}
 }
 //------------------------------------------------------------------------------

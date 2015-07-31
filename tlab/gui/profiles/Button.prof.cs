@@ -13,7 +13,7 @@
 //------------------------------------------------------------------------------
 singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
     fontSize = "16";
-    fontType = "Gafata Std Bold";
+    fontType = "Gotham Bold";
     fontColor = "254 254 254 255";
     justify = "center";
     category = "ToolsButtons";
@@ -25,11 +25,13 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
     bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
     hasBitmapArray = "1";
     fixedExtent = "0";
-   bevelColorLL = "Magenta";
+   bevelColorLL = "255 0 255 255";
    textOffset = "0 0";
    autoSizeWidth = "1";
    autoSizeHeight = "1";
    borderThickness = "0";
+   fontColors[9] = "255 0 255 255";
+   fontColors[6] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
@@ -43,6 +45,9 @@ singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
 singleton GuiControlProfile( ToolsButtonDark : ToolsButtonProfile ) {
     bitmap = "tlab/gui/assets/button-assets/GuiButtonDark.png";
      border = "-2";
+   fontType = "Anson Regular";
+   fontColors[9] = "255 0 255 255";
+   fontColors[6] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 

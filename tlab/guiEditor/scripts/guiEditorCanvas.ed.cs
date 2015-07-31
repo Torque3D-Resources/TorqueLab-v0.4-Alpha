@@ -325,7 +325,10 @@ function GuiEditCanvas::open( %this ) {
 
 function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 	// Get the control we should save.
-	if( %selectedOnly ) {
+	if( isObject(%selectedOnly) ) {
+		%currentObject = %selectedOnly;
+	}
+	else if( %selectedOnly ) {
 		%selected = GuiEditor.getSelection();
 
 		if( !%selected.getCount() )
@@ -449,7 +452,7 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 		%fo.delete();
 		%currentObject.setFileName( makeRelativePath( %filename, getMainDotCsDir() ) );
 		GuiEditorStatusBar.print( "Saved file '" @ %currentObject.getFileName() @ "'" );
-		if (%currentObject.isMethod("onPreEditorSave"))
+		if (%currentObject.isMethod("onPostEditorSave"))
 			%currentObject.onPostEditorSave();
 	} else
 		LabMsgOk( "Error writing to file", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only." );

@@ -55,7 +55,7 @@ singleton GuiControlProfile( ToolsTextEditProfile_Num : ToolsTextEditProfile ) {
 //ToolsTextEditDark Blue border variation
 singleton GuiControlProfile( ToolsTextEditDark : ToolsTextEditProfile ) {  
     bitmap = "tlab/gui/assets/element-assets/GuiTextEditDark_Blue.png";
-   bevelColorLL = "Magenta";
+   bevelColorLL = "255 0 255 255";
    fontSize = "15";
    textOffset = "0 0";
    justify = "Top";
