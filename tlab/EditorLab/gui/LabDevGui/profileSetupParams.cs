@@ -29,3 +29,16 @@ function initProfileSetupParams(%this) {
 	buildParamsArray(%ar,true);
 	Lab.profileSetupArray = %ar;
 }
+
+function exportProfileSetupParams(%this,%file) {		
+	export("$LabColor*","tlab/profDefaultTest.cs");	
+	%fileWrite = getFileWriteObj("tlab/gui/profiles/profDefaultArray.cs");	
+	%array = arGuiProfilesSetupData;		
+	for(%i = 0; %i< %array.count(); %i++) {
+		%key = %array.getKey(%i);
+		%data = %array.getValue(%i);
+		%fileWrite.writeLine("$ProfSetupData_"@%i@" = \""@getRecord(%data,0)@"\" NL \""@getRecord(%data,1)@"\" NL \""@getRecord(%data,2)@"\" NL \""@getRecord(%data,3)@"\";");		
+	}
+	%fileWrite.writeLine("$ProfSetupData_Total = "@%array.count()@";");		
+	closeFileObj(%fileWrite);	
+}

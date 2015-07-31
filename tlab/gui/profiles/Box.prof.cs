@@ -17,6 +17,7 @@ singleton GuiControlProfile( ToolsBoxDarkA : ToolsDefaultProfile ) {
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    hasBitmapArray = "1";
+   fillColor = "21 26 32 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -29,6 +30,7 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    hasBitmapArray = "1";
+   fillColor = "34 35 35 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -41,6 +43,7 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    hasBitmapArray = "1";
+   fillColor = "19 40 55 255";
 };
 //------------------------------------------------------------------------------
 

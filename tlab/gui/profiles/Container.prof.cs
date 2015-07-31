@@ -277,6 +277,6 @@ singleton GuiControlProfile(ToolsWindowPanel : ToolsWindowProfile)
    fontColors[0] = "245 245 245 255";
    fontColor = "245 245 245 255";
    textOffset = "8 1";
-   fontColors[3] = "White";
-   fontColorSEL = "White";
+   fontColors[3] = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
 };

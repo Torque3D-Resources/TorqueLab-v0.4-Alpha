@@ -18,6 +18,8 @@ EditorMap.bindCmd( keyboard, "ctrl 0", "LabDevGui.toggleMe();","" );
 function LabDevGui::onWake(%this) {
 	if (!$LDG_ProfileSetupLoaded)
 		Lab.initProfilesSetupData(true,true);
+		
+	LDG_ProfilesSetupTree.init();
 	LDG_WidgetsContainer.add(LWG_WidgetsTabBook);
 	LabDevGui.generateSamples();
 	EditorMap.push();

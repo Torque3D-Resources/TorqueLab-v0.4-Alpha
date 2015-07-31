@@ -60,14 +60,15 @@ singleton GuiControlProfile( ToolsTextEditDark : ToolsTextEditProfile ) {
    textOffset = "0 0";
    justify = "Top";
    fontColors[0] = "252 254 252 255";
-   fontColors[1] = "254 185 5 255";
+   fontColors[1] = "34 102 132 150";
    fontColors[2] = "254 227 83 255";
-   fontColors[3] = "34 102 132 150";
+   fontColors[3] = "254 185 5 255";
    fontColors[9] = "255 0 255 255";
    fontColor = "252 254 252 255";
-   fontColorHL = "254 185 5 255";
+   fontColorHL = "34 102 132 150";
    fontColorNA = "254 227 83 255";
-   fontColorSEL = "34 102 132 150";
+   fontColorSEL = "254 185 5 255";
+   fontColors[7] = "255 0 255 255";
 };
 
 

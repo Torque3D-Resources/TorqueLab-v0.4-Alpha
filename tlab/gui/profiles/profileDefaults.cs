@@ -37,5 +37,32 @@ $Lab["Color","Dark","A"] = "21 26 32";
 	$Lab["Color","TextAlt","8"] = "254 3 43";
 	$Lab["Color","TextAlt","9"] = "3 48 248";	
 	
-	$Lab["Color","EditDark","3"] = "34 102 132 150";
- 	$Lab["Color","EditDark","1"] = "254 185 5";
+	$Lab["Color","EditDark","Sel"] = "34 102 132 150";
+ 	$Lab["Color","EditDark","HL"] = "254 185 5";	
+ 
+ 	
+ 	$Lab["Font","Game","Base","Std"] = "Gotham Book";
+ 	$Lab["Font","Game","Base","Strong"] = "Gotham Bold";
+ 	$Lab["Font","Game","Base","Thin"] = "Gotham Bold";
+ 	$Lab["Font","Game","Fx","Std"] = "Lato";
+ 	$Lab["Font","Game","Fx","Strong"] = "Lato";
+ 	$Lab["Font","Game","Fx","Thin"] = "Lato";
+ 	$Lab["Font","Game","Alt","Std"] = "Anson Regular";
+ 	$Lab["Font","Game","Alt","Strong"] = "Anson Regular";
+ 	$Lab["Font","Game","Alt","Thin"] = "Anson Regular";
+ 	
+ 	$Lab["Font","Tools","Base","Std"] = "Gotham Book";
+ 	$Lab["Font","Tools","Base","Strong"] = "Gotham Bold";
+ 	$Lab["Font","Tools","Base","Thin"] = "Gotham Bold";
+ 	$Lab["Font","Tools","Fx","Std"] = "Lato";
+ 	$Lab["Font","Tools","Fx","Strong"] = "Lato";
+ 	$Lab["Font","Tools","Fx","Thin"] = "Lato";
+ 	$Lab["Font","Tools","Alt","Std"] = "Anson Regular";
+ 	$Lab["Font","Tools","Alt","Strong"] = "Anson Regular";
+ 	$Lab["Font","Tools","Alt","Thin"] = "Anson Regular";
+ 	
+	$Lab["FontData","Gotham"] = "Book" TAB "Black" TAB "Book";
+ 	$Lab["FontData","Aileron"] = "" TAB "Bold";
+ 	$Lab["FontData","Gafata"] = "Std";
+ 	$Lab["FontData","Lato"] = "";
+ 	$Lab["FontData","Davidan"] = "Std";
