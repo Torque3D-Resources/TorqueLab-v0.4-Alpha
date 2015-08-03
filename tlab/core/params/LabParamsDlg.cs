@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+$LapParamsStyle = "StyleA";
 function paramOpt(  ) {
 	toggleDlg(LabParamsDlg);
 }
@@ -45,6 +45,8 @@ function LabParamsDlg::buildAllParams( %this ) {
 		%paramArray.optContainer = %newContainer;
 		LabParamsTree.addParam(%paramArray);
 		%paramArray.container = %newContainer-->Params_Stack;
+		
+		%paramArray.style = $LapParamsStyle;
 		buildParamsArray(%paramArray);
 		LabParams.syncArray(%paramArray,true);
 	}
@@ -84,16 +86,26 @@ function LabParamsDlg::clearSettingsContainer( %this ) {
 //==============================================================================
 function LabParamsTree::rebuildAll( %this ) {
 	LabParamsTree.clear();
+	LabParamsTree.groupList = "";
 	LabParamsDlg.clearSettingsContainer();
 	LabParamsDlg.buildAllParams(true);
-	LabParamsTree.buildVisibleTree();
+	%this.expandAllGroups();
+	%this.buildVisibleTree();
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // LabParamsTree Callbacks
 //==============================================================================
-
+//==============================================================================
+function LabParamsTree::expandAllGroups( %this,%buildTree ) {
+	foreach$(%id in  LabParamsTree.groupList)
+		LabParamsTree.expandItem(%id);
+	
+	if (%buildTree)
+		%this.buildVisibleTree();
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onSelect( %this,%itemId ) {
 	%text = %this.getItemText(%itemId);
@@ -127,6 +139,7 @@ function LabParamsTree::addSettingGroup( %this,%group) {
 
 	if( %groupId == 0 ) {
 		%groupId = %tree.insertItem( 0, %groupTitle,%group );
+		LabParamsTree.groupList = strAddWord(LabParamsTree.groupList,%groupId,true);
 	}
 
 	return %groupId;

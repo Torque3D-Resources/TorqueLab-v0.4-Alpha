@@ -66,11 +66,15 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 		
 		eval("%subEdit = TerrainManagerGui-->"@%type@"_FolderEdit;");
 		%subEdit.setText(%subText);
+		
+		eval("%genEdit = TMG_GeneralFolderSetup-->"@%type@"_FolderEdit;");
+		%genEdit.setText(%subText);
 	}
 	else {
 	
 		TerrainManagerGui-->dataFolder.setText(TMG.dataFolder);
-		TerrainManagerGui-->sideDataFolderText.text = TMG.dataFolder;		
+		TerrainManagerGui-->sideDataFolderText.text = TMG.dataFolder;
+		TMG_GeneralFolderSetup-->dataFolder.setText(TMG.dataFolder);
 		%this.setFolder("source",TMG.sourceSubFolder,true);
 		%this.setFolder("target",TMG.targetSubFolder,true);
 	}

@@ -53,7 +53,7 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
 //==============================================================================
 //ToolsBoxDarkA Style
 singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
-     opaque = "1";
+     opaque = "0";
     border = -2;
     category = "ToolsContainers";
     bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC.png";
@@ -63,6 +63,8 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
    fillColor = "19 40 55 255";
    fontType = "Anson Regular";
    fontColors[7] = "Fuchsia";
+   fontColors[5] = "Fuchsia";
+   fontColorLinkHL = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 

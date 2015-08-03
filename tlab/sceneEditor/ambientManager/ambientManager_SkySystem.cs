@@ -28,9 +28,9 @@ function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_SkySelectMenu::OnSelect(%this,%id,%obj) {
-	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%obj);
-	
+function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
+	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%text);
+	%obj = %id;
 	if (!isObject(%obj))
 		return;
 	SEP_AmbientManager.hideAllSkyObjects(true);
@@ -41,9 +41,9 @@ function SEP_SkySelectMenu::OnSelect(%this,%id,%obj) {
 	SEP_AmbientManager.getSkySystemObject();
 	
 	if (%obj.getClassName() $= "Sun")
-			SEP_LegacySkyManager.selectSky(%obj);
-		else if (%obj.getClassName() $= "ScatterSky")
-			SEP_ScatterSkyManager.selectScatterSky(%obj);
+		SEP_LegacySkyManager.selectSky(%obj);
+	else if (%obj.getClassName() $= "ScatterSky")
+		SEP_ScatterSkyManager.selectScatterSky(%obj);
 		
 	
 }
@@ -89,7 +89,7 @@ function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
 		if (%name $= "")
 			%name = %obj.getClassName()@"\c2-\c1"@%obj.getId();
 		devLog("Adding mode:",%name);
-		SEP_SkySelectMenu.add(%name,%id);
+		SEP_SkySelectMenu.add(%name,%obj.getId());
 		%id++;
 	}
 	devLog("ID=",%id);

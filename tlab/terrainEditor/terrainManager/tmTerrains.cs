@@ -14,6 +14,15 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 	TMG_ActiveTerrainMenu.setText(TMG.activeTerrain.getName());
 	%this.getActiveFolders();
 	
+	//===========================================================================
+	// GENERAL TAB INFORMATIONS
+	TMG_ActiveTerrainNameEdit.setText(TMG.activeTerrain.getName());
+	TMG_ActiveTerrainNameApply.active = 0;
+	
+	TMG_ActiveTerrainFileEdit.setText(TMG.activeTerrain.terrainFile);
+	TMG_ActiveTerrainFileApply.active = 0;
+	//---------------------------------------------------------------------------
+	
 	TMG_PageMaterialLayers-->heightmapModeStack-->Current.visible = !%terrainId.isNew;
 	//TMG_MaterialLayersNewTerrain.visible = %terrainId.isNew;
 	if (%terrainId.isNew){		
@@ -40,6 +49,7 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG.infoTexturesCount = "All terrains textures used:\c2" SPC TMG.activeTexturesCount;
 		TMG.infoTexturesActive = "Active terrain textures used:\c2" SPC getRecordCount(ETerrainEditor.getMaterials());
 		TMG.infoBlockCount = "Total terrain blocks:\c2" SPC ETerrainEditor.getTerrainBlockCount();
+		TMG.infoBlockMatCount = "Total block materials:\c2" SPC getRecordCount(ETerrainEditor.getTerrainBlocksMaterialList());
 		TMG.infoBlockList = "Terrain blocks list:\c2" SPC ETerrainEditor.getTerrainBlocksMaterialList();
 		
 		TMG_PageGeneral-->storeFolders.setStateOn(%terrainId.storeFolders);
@@ -65,10 +75,16 @@ function TMG::updateTerrainList(%this,%selectCurrent) {
 	TMG_ActiveTerrainMenu.clear();
 	
 	%list = getMissionObjectClassList("TerrainBlock");
+	if (getWordCount(%list) < 1){
+		TMG_ActiveTerrainMenu.add("No terrain found",0);
+		TMG_ActiveTerrainMenu.setText("No terrain found");
+		return;
+	}
 	foreach$(%terrain in %list){
 		TMG_ActiveTerrainMenu.add(%terrain.getName(),%terrain.getId());
 	}
-	TMG_ActiveTerrainMenu.add("New terrain",0);
+	
+	//TMG_ActiveTerrainMenu.add("New terrain",0);
 	
 	if (!%selectCurrent)
 		return;
@@ -115,26 +131,4 @@ function TMG::storeFolderToTerrain(%this,%storeToTerrain) {
 // Export Single Layer Map
 //==============================================================================
 
-//==============================================================================
-function TMG::saveTerrain(%this,%obj,%file) {	
-	if (%obj $= "")
-		%obj = TMG.activeTerrain;
-		
-	if (!isObject(%obj))
-		return;
-	if (%file $= "")
-		%file = addFilenameToPath(filePath(MissionGroup.getFileName()),%obj.getName(),"ter");	
-	
-	%obj.save(%file);
-	TMG.schedule(500,"updateTerrainFile",%obj,%file);
-	devLog("Terrain:",%obj.getName(),"Saved to",%file);	
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TMG::updateTerrainFile(%this,%obj,%file) {	
-	if (!isObject(%obj))
-		return;
-	%obj.setFieldValue("terrainFile",%file);
-	devLog("Terrain:",%obj.getName(),"terrainFileSet to",%file);	
-}
-//------------------------------------------------------------------------------
+
