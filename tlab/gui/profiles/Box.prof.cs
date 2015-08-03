@@ -62,8 +62,15 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
    hasBitmapArray = "1";
    fillColor = "19 40 55 255";
    fontType = "Anson Regular";
+   fontColors[7] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
+
+singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
+{
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC_Top.png";
+};
+
 
 //==============================================================================
 // GuiContainer Profiles
@@ -103,11 +110,13 @@ singleton GuiControlProfile(ToolsBoxTitleBar_Thin : ToolsBoxTitleBar)
 {
    bitmap = "tlab/gui/assets/container-assets/GuiBoxTitleBar_Thin.png";
 };
-
-singleton GuiControlProfile(ToolsPaneProfile : ToolsBoxDarkA)
+//==============================================================================
+// ToolsBoxPanelProfile (Made to go under GuiPanelProfile (GuiPaneCtrl))
+//==============================================================================
+singleton GuiControlProfile(ToolsBoxPanelProfile : ToolsDefaultProfile)
 {
    bevelColorLL = "255 0 255 255";
-   bitmap = "tlab/gui/assets/container-assets/GuiPaneProfile.png";
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxPanelProfile.png";
    opaque = "1";
    fillColor = "2 2 2 255";
    fillColorHL = "2 2 2 255";
@@ -120,22 +129,4 @@ singleton GuiControlProfile(ToolsPaneProfile : ToolsBoxDarkA)
    fontColor = "254 254 254 255";
    textOffset = "2 6";
 };
-
-singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
-{
-   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkA_Top.png";
-};
-
-singleton GuiControlProfile(ToolsPaneDarkA : ToolsPaneProfile)
-{
-   fontColors[4] = "Fuchsia";
-   fontColorLink = "Fuchsia";
-   bitmap = "tlab/gui/assets/container-assets/GuiPaneDarkA.png";
-};
-
-singleton GuiControlProfile(ToolsPaneDarkC : ToolsPaneDarkA)
-{
-   fontColors[4] = "255 0 255 255";
-   fontColorLink = "255 0 255 255";
-   bitmap = "tlab/gui/assets/container-assets/GuiPaneDarkC.png";
-};
+//------------------------------------------------------------------------------

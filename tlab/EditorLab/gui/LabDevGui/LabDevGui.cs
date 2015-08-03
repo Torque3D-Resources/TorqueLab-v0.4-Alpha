@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-
+$LDG_SystemInitialized = false;
 //==============================================================================
 // Activate the interface for a plugin
 //==============================================================================
@@ -12,17 +12,29 @@ $LabDevGui_StackList = "ToolsTextBase ToolsTextFX ToolsTextAlt";
 $LabDevGui_SampleText = "Sample text - éç@#$%?&*";
 
 
-EditorMap.bindCmd( keyboard, "ctrl 0", "LabDevGui.toggleMe();","" );
+EditorMap.bindCmd( keyboard, "ctrl f8", "LabDevGui.toggleMe();","" );
+$LDG = newScriptObject("LDG");
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function LabDevGui::onWake(%this) {
 	if (!$LDG_ProfileSetupLoaded)
 		Lab.initProfileSetupSystem();
-		
+	if (!$LDG_SystemInitialized)
+		LDG.initSystems();
+
 	LDG_ProfilesSetupTree.init();
 	LDG_WidgetsContainer.add(LWG_WidgetsTabBook);
 	LabDevGui.generateSamples();
 	EditorMap.push();
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+//Set a plugin as active (Selected Editor Plugin)
+function LDG::initSystems(%this) {	
+	%this.initProfileStyles();
+	%this.initProfileStyleParams();
+	$LDG_SystemInitialized = true;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -125,3 +137,4 @@ function LabDevGui::generateTextSample(%this,%profileName,%type) {
 	%stack.add(%pill);
 }
 //------------------------------------------------------------------------------
+

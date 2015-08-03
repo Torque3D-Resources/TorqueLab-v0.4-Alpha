@@ -10,11 +10,11 @@ new GuiStackControl(StackEndToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "886 0";
-   extent = "142 32";
+   extent = "176 32";
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "ToolsPanelDarkB";
+   profile = "ToolsFillDarkB";
    visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
@@ -26,12 +26,12 @@ new GuiStackControl(StackEndToolbar) {
    canSaveDynamicFields = "1";
       alwaysLast = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6428";
-      disabledGroup = "6429";
-      EditorContainer = "4414";
+      defaultStack = "6436";
+      disabledGroup = "6437";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6432";
+      stackLists = "6440";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -132,11 +132,11 @@ new GuiStackControl(StackEndToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "142 32";
+      extent = "176 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -159,7 +159,7 @@ new GuiStackControl(StackEndToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -294,7 +294,7 @@ new GuiStackControl(StackEndToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "3";
             originalParent = "7032";
-            toolbar = "6428";
+            toolbar = "6436";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";
@@ -327,6 +327,36 @@ new GuiStackControl(StackEndToolbar) {
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ToggleTools.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "146 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "Lab.togglePluginTools();";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "toggleTools";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
       new GuiContainer() {
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -334,7 +364,7 @@ new GuiStackControl(StackEndToolbar) {
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "146 0";
+         position = "180 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -379,7 +409,7 @@ new GuiStackControl(StackEndToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "144 0";
+      position = "178 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";

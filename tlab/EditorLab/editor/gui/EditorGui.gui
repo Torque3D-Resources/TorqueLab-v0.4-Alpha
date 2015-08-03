@@ -20,7 +20,7 @@
    langTableMod = "Default";
    canSave = "1";
    canSaveDynamicFields = "1";
-      previousGui = "1930";
+      previousGui = "1938";
       saveAs = "0";
       tooltipWidth = "500";
 
@@ -74,7 +74,7 @@
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkA";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -111,7 +111,7 @@
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
          position = "0 2";
-         extent = "142 32";
+         extent = "176 32";
          minExtent = "16 16";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -127,12 +127,12 @@
       };
    };
    new GuiFrameSetCtrl(EditorFrameMain) {
-      columns = "0 1044";
+      columns = "0 1080";
       rows = "0";
-      borderWidth = "2";
+      borderWidth = "0";
       borderColor = "106 106 106 255";
-      borderEnable = "dynamic";
-      borderMovable = "dynamic";
+      borderEnable = "alwaysOff";
+      borderMovable = "alwaysOff";
       autoBalance = "1";
       fudgeFactor = "0";
       docking = "Client";
@@ -164,7 +164,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "0 0";
-         extent = "1042 820";
+         extent = "1080 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -186,7 +186,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1042 820";
+            extent = "1080 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -265,16 +265,17 @@
                anchorLeft = "0";
                anchorRight = "0";
                position = "0 0";
-               extent = "1042 820";
+               extent = "1080 820";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
                profile = "WorldEditorProfile";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -292,7 +293,7 @@
                processUsesBrush = "0";
                maxBrushSize = "40 40";
                adjustHeightVal = "10";
-               setHeightVal = "100";
+               setHeightVal = "60";
                scaleVal = "1";
                smoothFactor = "0.1";
                noiseFactor = "1";
@@ -333,7 +334,7 @@
                anchorLeft = "0";
                anchorRight = "0";
                position = "0 0";
-               extent = "1042 820";
+               extent = "1080 820";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -362,7 +363,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 804";
-                  extent = "1042 16";
+                  extent = "1080 16";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "top";
@@ -432,7 +433,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1042 820";
+            extent = "1080 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -458,7 +459,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -476,7 +477,7 @@
                groupNum = "1";
                buttonType = "RadioButton";
                useMouseEvents = "0";
-               position = "139959 0";
+               position = "140863 0";
                extent = "36 40";
                minExtent = "7 2";
                horizSizing = "left";
@@ -494,7 +495,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiDynamicCtrlArrayControl(ToolsToolbarArray) {
-               colCount = "3927";
+               colCount = "3952";
                colSize = "36";
                rowCount = "1";
                rowSize = "40";
@@ -506,7 +507,7 @@
                dynamicSize = "0";
                padding = "0 0 0 0";
                position = "4 0";
-               extent = "145334 40";
+               extent = "146238 40";
                minExtent = "1024 32";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -670,7 +671,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsPanelLightA";
+               profile = "ToolsFillLightA";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -750,7 +751,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 40";
-            extent = "36 131";
+            extent = "36 193";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -769,7 +770,7 @@
             new GuiDynamicCtrlArrayControl(EWToolsPaletteArray) {
                colCount = "1";
                colSize = "32";
-               rowCount = "4";
+               rowCount = "6";
                rowSize = "28";
                rowSpacing = "3";
                colSpacing = "0";
@@ -779,7 +780,7 @@
                dynamicSize = "1";
                padding = "0 0 0 0";
                position = "2 5";
-               extent = "34 121";
+               extent = "34 183";
                minExtent = "34 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -801,7 +802,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 0";
+            position = "38 0";
             extent = "1042 820";
             minExtent = "8 2";
             horizSizing = "left";
@@ -827,7 +828,7 @@
                minExtent = "8 2";
                horizSizing = "left";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkB";
+               profile = "ToolsFillDarkB";
                visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1188,7 +1189,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1263,7 +1264,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1338,7 +1339,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1485,7 +1486,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1560,7 +1561,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1635,7 +1636,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1781,7 +1782,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1856,7 +1857,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1931,7 +1932,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2006,7 +2007,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkB";
+                        profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2184,7 +2185,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1042 820";
+            extent = "1080 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2206,7 +2207,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1042 820";
+            extent = "1080 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2228,12 +2229,12 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "1044 0";
-         extent = "396 820";
+         position = "1080 0";
+         extent = "360 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2257,7 +2258,7 @@
       minExtent = "8 8";
       horizSizing = "width";
       vertSizing = "top";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2267,7 +2268,6 @@
       canSaveDynamicFields = "1";
 
       new GuiTextCtrl(EWorldEditorStatusBarSelection) {
-         text = "0 objects selected";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -2290,7 +2290,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(EWorldEditorStatusBarInfo) {
-         text = "Move selection.  SHIFT while dragging duplicates objects.  CTRL to toggle soft snap.  ALT to toggle grid snap.";
+         text = "Road editor.";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";

@@ -68,7 +68,7 @@
          tabHeight = "21";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "0";
+         selectedPage = "2";
          frontTabPadding = "0";
          docking = "Client";
          margin = "22 0 0 0";
@@ -78,7 +78,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "0 22";
-         extent = "1880 1055";
+         extent = "1400 817";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -103,16 +103,17 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1880 1034";
+            extent = "1400 796";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkA";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -133,7 +134,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 8";
-               extent = "1872 1022";
+               extent = "1392 784";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -158,7 +159,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1392 763";
+                  extent = "1872 1001";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -180,7 +181,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "635 15";
-                     extent = "344 720";
+                     extent = "344 736";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -203,8 +204,8 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "6 27";
-                        extent = "344 693";
+                        position = "6 31";
+                        extent = "344 705";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -252,7 +253,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "344 160";
+                           extent = "344 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -275,7 +276,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -350,7 +351,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 15";
-                                    extent = "339 19";
+                                    extent = "345 19";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -424,7 +425,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "189 1";
+                                    position = "195 1";
                                     extent = "150 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -499,7 +500,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "246 1";
+                                    position = "252 1";
                                     extent = "93 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -574,7 +575,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "297 1";
+                                    position = "303 1";
                                     extent = "42 19";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -599,8 +600,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "344 49";
+                           position = "0 198";
+                           extent = "344 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -624,7 +625,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "344 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -648,7 +649,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -692,7 +693,7 @@
                               groupNum = "-1";
                               buttonType = "ToggleButton";
                               useMouseEvents = "0";
-                              position = "323 0";
+                              position = "329 0";
                               extent = "15 16";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -715,7 +716,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -761,7 +762,7 @@
                               displayMode = "Pallete";
                               actionOnMove = "1";
                               showReticle = "1";
-                              position = "240 0";
+                              position = "246 0";
                               extent = "98 16";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -784,7 +785,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -828,7 +829,7 @@
                               ticks = "0";
                               snap = "0";
                               value = "0.5";
-                              position = "281 3";
+                              position = "287 3";
                               extent = "53 11";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -853,7 +854,7 @@
                               displayMode = "Pallete";
                               actionOnMove = "1";
                               showReticle = "1";
-                              position = "228 0";
+                              position = "234 0";
                               extent = "43 16";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -876,7 +877,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -902,7 +903,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "0 2";
-                              extent = "286 16";
+                              extent = "292 16";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -929,7 +930,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "292 0";
+                              position = "298 0";
                               extent = "50 19";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -950,7 +951,7 @@
                               snap = "0";
                               value = "0.5";
                               position = "2 19";
-                              extent = "340 11";
+                              extent = "346 11";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -972,7 +973,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 343";
+                           position = "0 351";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1025,7 +1026,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "318 0";
+                              position = "324 0";
                               extent = "24 19";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1046,7 +1047,7 @@
                               snap = "0";
                               value = "0.5";
                               position = "2 19";
-                              extent = "340 11";
+                              extent = "346 11";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -1068,7 +1069,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 379";
+                           position = "0 387";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1121,7 +1122,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "263 0";
+                              position = "269 0";
                               extent = "79 19";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1142,7 +1143,7 @@
                               snap = "0";
                               value = "0.5";
                               position = "2 19";
-                              extent = "339 11";
+                              extent = "345 11";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -1164,7 +1165,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 415";
+                           position = "0 423";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1209,7 +1210,7 @@
                               snap = "0";
                               value = "0.5";
                               position = "153 4";
-                              extent = "180 12";
+                              extent = "186 12";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -1231,7 +1232,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 435";
+                           position = "0 443";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1302,7 +1303,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 455";
+                           position = "0 463";
                            extent = "344 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1346,7 +1347,7 @@
                               groupNum = "-1";
                               buttonType = "PushButton";
                               useMouseEvents = "0";
-                              position = "283 0";
+                              position = "289 0";
                               extent = "59 20";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1397,7 +1398,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 497";
+                           position = "0 505";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1449,7 +1450,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "144 3";
-                              extent = "193 19";
+                              extent = "199 19";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -1471,7 +1472,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 524";
+                           position = "0 532";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -1523,7 +1524,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "263 3";
-                              extent = "194 19";
+                              extent = "200 19";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -1546,8 +1547,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 551";
-                           extent = "344 96";
+                           position = "0 559";
+                           extent = "344 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -1570,7 +1571,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -1644,7 +1645,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "154 0";
-                                    extent = "190 19";
+                                    extent = "196 19";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -1718,7 +1719,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 17";
-                                    extent = "344 19";
+                                    extent = "350 19";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -1742,7 +1743,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 651";
+                           position = "0 663";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -1804,7 +1805,7 @@
                               ticks = "0";
                               snap = "0";
                               value = "0.5";
-                              position = "286 4";
+                              position = "292 4";
                               extent = "53 11";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1829,7 +1830,7 @@
                               displayMode = "Pallete";
                               actionOnMove = "1";
                               showReticle = "1";
-                              position = "263 0";
+                              position = "269 0";
                               extent = "17 16";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1857,7 +1858,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "156 0";
+                              position = "162 0";
                               extent = "102 18";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1880,7 +1881,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 674";
+                           position = "0 686";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -1944,7 +1945,7 @@
                               displayMode = "Pallete";
                               actionOnMove = "1";
                               showReticle = "1";
-                              position = "321 0";
+                              position = "327 0";
                               extent = "17 16";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -1972,7 +1973,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "215 0";
+                              position = "221 0";
                               extent = "102 18";
                               minExtent = "8 2";
                               horizSizing = "left";
@@ -2003,7 +2004,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1392 763";
+                  extent = "1872 1001";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2081,7 +2082,7 @@
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsPaneProfile";
+                           profile = "ToolsPanelProfile";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "GuiToolTipProfile";
@@ -2515,7 +2516,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "344 693";
+                        extent = "344 705";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -2563,7 +2564,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "344 160";
+                           extent = "344 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2586,7 +2587,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -2910,8 +2911,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "344 49";
+                           position = "0 198";
+                           extent = "344 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2935,7 +2936,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "344 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -2959,7 +2960,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3026,7 +3027,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3095,7 +3096,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3187,7 +3188,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3283,7 +3284,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 343";
+                           position = "0 351";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3379,7 +3380,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 379";
+                           position = "0 387";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3475,7 +3476,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 415";
+                           position = "0 423";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3542,7 +3543,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 435";
+                           position = "0 443";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3613,7 +3614,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 455";
+                           position = "0 463";
                            extent = "344 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3708,7 +3709,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 497";
+                           position = "0 505";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3782,7 +3783,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 524";
+                           position = "0 532";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -3857,8 +3858,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 551";
-                           extent = "344 96";
+                           position = "0 559";
+                           extent = "344 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -3881,7 +3882,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -4053,7 +4054,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 651";
+                           position = "0 663";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -4191,7 +4192,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 674";
+                           position = "0 686";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -4314,7 +4315,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1872 1001";
+                  extent = "1392 763";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -4345,7 +4346,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "1872 1001";
+                     extent = "1392 763";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -4370,7 +4371,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "344 693";
+                        extent = "344 705";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -4418,7 +4419,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "344 160";
+                           extent = "344 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -4441,7 +4442,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -4765,8 +4766,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "344 49";
+                           position = "0 198";
+                           extent = "344 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -4790,7 +4791,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "344 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -4814,7 +4815,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -4881,7 +4882,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -4950,7 +4951,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5042,7 +5043,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5138,7 +5139,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 343";
+                           position = "0 351";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5234,7 +5235,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 379";
+                           position = "0 387";
                            extent = "344 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5330,7 +5331,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 415";
+                           position = "0 423";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5397,7 +5398,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 435";
+                           position = "0 443";
                            extent = "344 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5468,7 +5469,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 455";
+                           position = "0 463";
                            extent = "344 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5563,7 +5564,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 497";
+                           position = "0 505";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5637,7 +5638,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 524";
+                           position = "0 532";
                            extent = "344 23";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -5712,8 +5713,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 551";
-                           extent = "344 96";
+                           position = "0 559";
+                           extent = "344 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -5736,7 +5737,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "344 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -5908,7 +5909,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 651";
+                           position = "0 663";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -6046,7 +6047,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 674";
+                           position = "0 686";
                            extent = "344 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -6189,7 +6190,7 @@
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsPaneDarkA";
+                           profile = "ToolsPanelDarkA";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "GuiToolTipProfile";
@@ -6961,7 +6962,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1416 812";
+                  extent = "1872 1001";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -6983,7 +6984,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "19 15";
-                     extent = "337 513";
+                     extent = "337 529";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -7006,8 +7007,8 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "6 27";
-                        extent = "230 486";
+                        position = "6 26";
+                        extent = "331 498";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -7030,7 +7031,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "230 132";
+                           extent = "331 136";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7053,8 +7054,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "230 91";
+                              position = "0 37";
+                              extent = "331 91";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -7076,7 +7077,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "230 35";
+                                 extent = "331 35";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7169,7 +7170,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 41";
-                                 extent = "230 22";
+                                 extent = "331 22";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7262,7 +7263,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 69";
-                                 extent = "230 22";
+                                 extent = "331 22";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7356,8 +7357,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 136";
-                           extent = "230 49";
+                           position = "0 140";
+                           extent = "331 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7381,8 +7382,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
-                              extent = "230 16";
+                              position = "0 31";
+                              extent = "331 16";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -7405,8 +7406,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 189";
-                           extent = "230 16";
+                           position = "0 197";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7490,8 +7491,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 209";
-                           extent = "230 16";
+                           position = "0 217";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7577,8 +7578,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 229";
-                           extent = "230 16";
+                           position = "0 237";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7687,8 +7688,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 249";
-                           extent = "230 19";
+                           position = "0 257";
+                           extent = "331 19";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7768,7 +7769,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiColorPickerCtrl() {
-                              baseColor = "1 0 1 1";
+                              baseColor = "Magenta";
                               pickColor = "0 0 0 1";
                               selectorGap = "1";
                               displayMode = "Pallete";
@@ -7825,8 +7826,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 272";
-                           extent = "230 32";
+                           position = "0 280";
+                           extent = "331 32";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7939,8 +7940,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 308";
-                           extent = "230 16";
+                           position = "0 316";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -8024,8 +8025,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 328";
-                           extent = "230 16";
+                           position = "0 336";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -8113,8 +8114,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 348";
-                           extent = "230 38";
+                           position = "0 356";
+                           extent = "331 38";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -8227,8 +8228,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 390";
-                           extent = "230 96";
+                           position = "0 398";
+                           extent = "331 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -8251,8 +8252,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "230 55";
+                              position = "0 37";
+                              extent = "331 55";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -8274,7 +8275,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "230 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8366,7 +8367,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "230 33";
+                                 extent = "331 33";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8468,7 +8469,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1416 812";
+                  extent = "1872 1001";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -8490,7 +8491,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "19 15";
-                     extent = "337 585";
+                     extent = "337 601";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -8513,8 +8514,8 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "6 27";
-                        extent = "300 558";
+                        position = "6 26";
+                        extent = "331 570";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -8537,7 +8538,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "300 164";
+                           extent = "331 168";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -8560,8 +8561,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "300 123";
+                              position = "0 37";
+                              extent = "331 123";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -8583,7 +8584,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8676,7 +8677,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "300 35";
+                                 extent = "331 35";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8769,7 +8770,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 63";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8862,7 +8863,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 85";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8955,7 +8956,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 107";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -9049,8 +9050,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 168";
-                           extent = "300 49";
+                           position = "0 172";
+                           extent = "331 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9074,8 +9075,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
-                              extent = "300 16";
+                              position = "0 31";
+                              extent = "331 16";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -9098,8 +9099,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 221";
-                           extent = "300 16";
+                           position = "0 229";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9183,8 +9184,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 241";
-                           extent = "300 16";
+                           position = "0 249";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9270,8 +9271,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 261";
-                           extent = "300 16";
+                           position = "0 269";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9380,8 +9381,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 281";
-                           extent = "300 29";
+                           position = "0 289";
+                           extent = "331 29";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9494,8 +9495,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 314";
-                           extent = "300 16";
+                           position = "0 322";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9579,8 +9580,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 334";
-                           extent = "300 16";
+                           position = "0 342";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9668,8 +9669,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 354";
-                           extent = "300 38";
+                           position = "0 362";
+                           extent = "331 38";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9782,8 +9783,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 396";
-                           extent = "300 162";
+                           position = "0 404";
+                           extent = "331 166";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -9806,8 +9807,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "300 121";
+                              position = "0 37";
+                              extent = "331 121";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -9829,7 +9830,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -9921,7 +9922,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -10013,7 +10014,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 44";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -10105,7 +10106,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 66";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -10250,7 +10251,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 88";
-                                 extent = "300 33";
+                                 extent = "331 33";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -10352,7 +10353,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1416 812";
+                  extent = "1872 1001";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -10398,7 +10399,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "304 639";
+                        extent = "304 651";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -10446,7 +10447,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "304 160";
+                           extent = "304 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -10469,7 +10470,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "304 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -10793,8 +10794,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "304 49";
+                           position = "0 198";
+                           extent = "304 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -10818,7 +10819,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "304 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -10842,7 +10843,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -10909,7 +10910,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -10978,7 +10979,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11070,7 +11071,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11166,7 +11167,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 343";
+                           position = "0 351";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11262,7 +11263,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 379";
+                           position = "0 387";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11358,7 +11359,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 415";
+                           position = "0 423";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11425,7 +11426,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 435";
+                           position = "0 443";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11496,7 +11497,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 455";
+                           position = "0 463";
                            extent = "304 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -11592,8 +11593,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 497";
-                           extent = "304 96";
+                           position = "0 505";
+                           extent = "304 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -11616,7 +11617,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "304 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -11788,7 +11789,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 597";
+                           position = "0 609";
                            extent = "304 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -11926,7 +11927,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 620";
+                           position = "0 632";
                            extent = "304 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -12094,7 +12095,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "230 676";
+                        extent = "230 688";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -12142,7 +12143,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "230 160";
+                           extent = "230 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -12165,7 +12166,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "230 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -12489,8 +12490,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "230 49";
+                           position = "0 198";
+                           extent = "230 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -12514,7 +12515,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "230 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -12538,7 +12539,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -12605,7 +12606,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -12674,7 +12675,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -12766,7 +12767,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "230 19";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -12904,7 +12905,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 330";
+                           position = "0 338";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13000,7 +13001,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 366";
+                           position = "0 374";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13096,7 +13097,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 402";
+                           position = "0 410";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13192,7 +13193,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 438";
+                           position = "0 446";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13259,7 +13260,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 458";
+                           position = "0 466";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13330,7 +13331,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 478";
+                           position = "0 486";
                            extent = "230 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -13426,8 +13427,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 520";
-                           extent = "230 96";
+                           position = "0 528";
+                           extent = "230 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -13450,7 +13451,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "230 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -13622,7 +13623,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 620";
+                           position = "0 632";
                            extent = "230 33";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -13760,7 +13761,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 657";
+                           position = "0 669";
                            extent = "230 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -13890,12 +13891,11 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -13941,7 +13941,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "109 85";
-                  extent = "220 241";
+                  extent = "220 245";
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -14224,7 +14224,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "0 89";
-                     extent = "220 41";
+                     extent = "220 45";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14248,7 +14248,7 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "0 21";
+                        position = "0 25";
                         extent = "220 20";
                         minExtent = "16 16";
                         horizSizing = "width";
@@ -14272,7 +14272,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 132";
+                     position = "0 136";
                      extent = "220 28";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -14319,7 +14319,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 162";
+                     position = "0 166";
                      extent = "220 20";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -14404,7 +14404,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 184";
+                     position = "0 188";
                      extent = "220 20";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -14473,7 +14473,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "0 206";
+                     position = "0 210";
                      extent = "220 35";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -14583,7 +14583,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "19 15";
-                     extent = "337 513";
+                     extent = "337 529";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14607,8 +14607,8 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "6 27";
-                        extent = "230 486";
+                        position = "6 31";
+                        extent = "331 498";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -14631,7 +14631,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "230 132";
+                           extent = "331 136";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -14654,8 +14654,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "230 91";
+                              position = "0 37";
+                              extent = "331 91";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -14677,7 +14677,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "230 35";
+                                 extent = "331 35";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -14770,7 +14770,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 41";
-                                 extent = "230 22";
+                                 extent = "331 22";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -14863,7 +14863,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 69";
-                                 extent = "230 22";
+                                 extent = "331 22";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -14957,8 +14957,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 136";
-                           extent = "230 49";
+                           position = "0 140";
+                           extent = "331 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -14982,8 +14982,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
-                              extent = "230 16";
+                              position = "0 31";
+                              extent = "331 16";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -15006,8 +15006,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 189";
-                           extent = "230 16";
+                           position = "0 197";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15091,8 +15091,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 209";
-                           extent = "230 16";
+                           position = "0 217";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15178,8 +15178,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 229";
-                           extent = "230 16";
+                           position = "0 237";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15288,8 +15288,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 249";
-                           extent = "230 19";
+                           position = "0 257";
+                           extent = "331 19";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15426,8 +15426,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 272";
-                           extent = "230 32";
+                           position = "0 280";
+                           extent = "331 32";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15540,8 +15540,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 308";
-                           extent = "230 16";
+                           position = "0 316";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15625,8 +15625,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 328";
-                           extent = "230 16";
+                           position = "0 336";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15714,8 +15714,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 348";
-                           extent = "230 38";
+                           position = "0 356";
+                           extent = "331 38";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15828,8 +15828,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 390";
-                           extent = "230 96";
+                           position = "0 398";
+                           extent = "331 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15852,8 +15852,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "230 55";
+                              position = "0 37";
+                              extent = "331 55";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -15875,7 +15875,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "230 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -15967,7 +15967,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "230 33";
+                                 extent = "331 33";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16064,7 +16064,7 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "19 15";
-                     extent = "337 585";
+                     extent = "337 601";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16088,8 +16088,8 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "6 27";
-                        extent = "300 558";
+                        position = "6 31";
+                        extent = "331 570";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -16112,7 +16112,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
-                           extent = "300 164";
+                           extent = "331 168";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16135,8 +16135,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "300 123";
+                              position = "0 37";
+                              extent = "331 123";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -16158,7 +16158,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16251,7 +16251,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "300 35";
+                                 extent = "331 35";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16344,7 +16344,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 63";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16437,7 +16437,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 85";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16530,7 +16530,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 107";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -16624,8 +16624,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 168";
-                           extent = "300 49";
+                           position = "0 172";
+                           extent = "331 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16649,8 +16649,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
-                              extent = "300 16";
+                              position = "0 31";
+                              extent = "331 16";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -16673,8 +16673,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 221";
-                           extent = "300 16";
+                           position = "0 229";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16758,8 +16758,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 241";
-                           extent = "300 16";
+                           position = "0 249";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16845,8 +16845,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 261";
-                           extent = "300 16";
+                           position = "0 269";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16955,8 +16955,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 281";
-                           extent = "300 29";
+                           position = "0 289";
+                           extent = "331 29";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -17069,8 +17069,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 314";
-                           extent = "300 16";
+                           position = "0 322";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -17154,8 +17154,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 334";
-                           extent = "300 16";
+                           position = "0 342";
+                           extent = "331 16";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -17243,8 +17243,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 354";
-                           extent = "300 38";
+                           position = "0 362";
+                           extent = "331 38";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -17357,8 +17357,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 396";
-                           extent = "300 162";
+                           position = "0 404";
+                           extent = "331 166";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -17381,8 +17381,8 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
-                              extent = "300 121";
+                              position = "0 37";
+                              extent = "331 121";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -17404,7 +17404,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -17496,7 +17496,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 22";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -17588,7 +17588,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 44";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -17680,7 +17680,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 66";
-                                 extent = "300 16";
+                                 extent = "331 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -17825,7 +17825,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 88";
-                                 extent = "300 33";
+                                 extent = "331 33";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -17947,7 +17947,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "304 639";
+                        extent = "304 651";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -17995,7 +17995,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "304 160";
+                           extent = "304 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -18018,7 +18018,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "304 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -18342,8 +18342,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "304 49";
+                           position = "0 198";
+                           extent = "304 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -18367,7 +18367,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "304 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -18391,7 +18391,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18458,7 +18458,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18527,7 +18527,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18619,7 +18619,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18715,7 +18715,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 343";
+                           position = "0 351";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18811,7 +18811,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 379";
+                           position = "0 387";
                            extent = "304 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18907,7 +18907,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 415";
+                           position = "0 423";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -18974,7 +18974,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 435";
+                           position = "0 443";
                            extent = "304 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -19045,7 +19045,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 455";
+                           position = "0 463";
                            extent = "304 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -19141,8 +19141,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 497";
-                           extent = "304 96";
+                           position = "0 505";
+                           extent = "304 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -19165,7 +19165,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "304 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -19337,7 +19337,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 597";
+                           position = "0 609";
                            extent = "304 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -19475,7 +19475,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 620";
+                           position = "0 632";
                            extent = "304 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -19617,7 +19617,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "6 27";
-                        extent = "230 676";
+                        extent = "230 688";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -19665,7 +19665,7 @@
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 30";
-                           extent = "230 160";
+                           extent = "230 164";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -19688,7 +19688,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "230 119";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -20012,8 +20012,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 194";
-                           extent = "230 49";
+                           position = "0 198";
+                           extent = "230 53";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -20037,7 +20037,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 27";
+                              position = "0 31";
                               extent = "230 16";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -20061,7 +20061,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 247";
+                           position = "0 255";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20128,7 +20128,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 267";
+                           position = "0 275";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20197,7 +20197,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 287";
+                           position = "0 295";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20289,7 +20289,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 307";
+                           position = "0 315";
                            extent = "230 19";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20427,7 +20427,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 330";
+                           position = "0 338";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20523,7 +20523,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 366";
+                           position = "0 374";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20619,7 +20619,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 402";
+                           position = "0 410";
                            extent = "230 32";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20715,7 +20715,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 438";
+                           position = "0 446";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20782,7 +20782,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 458";
+                           position = "0 466";
                            extent = "230 16";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20853,7 +20853,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 478";
+                           position = "0 486";
                            extent = "230 38";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -20949,8 +20949,8 @@
                            clickCollapse = "1";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
-                           position = "0 520";
-                           extent = "230 96";
+                           position = "0 528";
+                           extent = "230 100";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -20973,7 +20973,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "0 33";
+                              position = "0 37";
                               extent = "230 55";
                               minExtent = "16 16";
                               horizSizing = "width";
@@ -21145,7 +21145,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 620";
+                           position = "0 632";
                            extent = "230 33";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -21283,7 +21283,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "0 657";
+                           position = "0 669";
                            extent = "230 19";
                            minExtent = "8 2";
                            horizSizing = "relative";
@@ -21457,7 +21457,7 @@
             changeChildSizeToFit = "1";
             changeChildPosition = "1";
             position = "109 85";
-            extent = "220 160";
+            extent = "220 164";
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -21740,7 +21740,7 @@
                hideHeader = "0";
                autoCollapseSiblings = "0";
                position = "0 89";
-               extent = "220 41";
+               extent = "220 45";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -21764,7 +21764,7 @@
                   dynamicPos = "0";
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
-                  position = "0 21";
+                  position = "0 25";
                   extent = "220 20";
                   minExtent = "16 16";
                   horizSizing = "width";
@@ -21788,7 +21788,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 132";
+               position = "0 136";
                extent = "220 28";
                minExtent = "8 2";
                horizSizing = "right";

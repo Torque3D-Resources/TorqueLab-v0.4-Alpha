@@ -14,7 +14,7 @@ new GuiStackControl(StackStartToolbar) {
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "ToolsPanelDarkB";
+   profile = "ToolsFillDarkB";
    visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
@@ -26,12 +26,12 @@ new GuiStackControl(StackStartToolbar) {
    canSaveDynamicFields = "1";
       alwaysFirst = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6444";
-      disabledGroup = "6445";
-      EditorContainer = "4414";
+      defaultStack = "6453";
+      disabledGroup = "6454";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6446";
+      stackLists = "6455";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -71,7 +71,7 @@ new GuiStackControl(StackStartToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "GuiToolTipProfile";
@@ -96,7 +96,7 @@ new GuiStackControl(StackStartToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -171,7 +171,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "6444";
+            toolbar = "6453";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -202,7 +202,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "2";
             originalParent = "7046";
-            toolbar = "6444";
+            toolbar = "6453";
       };
       new GuiContainer() {
          margin = "0 0 0 0";

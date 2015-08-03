@@ -10,7 +10,7 @@
 //==============================================================================
 
 //==============================================================================
-singleton GuiControlProfile(ToolsPanelColorA : ToolsDefaultProfile) {
+singleton GuiControlProfile(ToolsFillAccentA : ToolsDefaultProfile) {
     fillColor = "14 151 226 255";
     opaque = "1";
     bevelColorHL = "Fuchsia";
@@ -20,11 +20,11 @@ singleton GuiControlProfile(ToolsPanelColorA : ToolsDefaultProfile) {
     fontColorLink = "255 0 255 255";
     fontColors[0] = "88 1 192 255";
     fontColor = "88 1 192 255";
-    category = "ToolsPanels";
+    category = "ToolsFills";
     fillColorNA = "255 255 255 255";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelColorB : ToolsPanelColorA) {
+singleton GuiControlProfile(ToolsFillAccentB : ToolsFillAccentA) {
     opaque = "1";
     fillColor = "17 45 58 255";
     fontColors[0] = "88 1 192 255";
@@ -35,9 +35,10 @@ singleton GuiControlProfile(ToolsPanelColorB : ToolsPanelColorA) {
     fillColorNA = "255 255 255 255";
     fontColors[9] = "Magenta";
    bevelColorHL = "255 0 255 255";
+   fontColors[8] = "Magenta";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelColorC : ToolsPanelColorA) {
+singleton GuiControlProfile(ToolsFillAccentC : ToolsFillAccentA) {
     opaque = "1";
     fillColor = "101 136 166 255";
     fontColors[0] = "88 1 192 255";
@@ -56,7 +57,7 @@ singleton GuiControlProfile(ToolsPanelColorC : ToolsPanelColorA) {
 
 //==============================================================================
 
-singleton GuiControlProfile(ToolsPanelDarkA : ToolsDefaultProfile) {
+singleton GuiControlProfile(ToolsFillDarkA : ToolsDefaultProfile) {
     opaque = "1";
     fillColor = "21 26 32 255";
     fontColors[0] = "88 1 192 255";
@@ -69,16 +70,16 @@ singleton GuiControlProfile(ToolsPanelDarkA : ToolsDefaultProfile) {
     fillColorHL = "228 228 235 255";
    fillColorNA = "255 255 255 255";
    fontType = "Aileron";
-   category = "ToolsPanels";
+   category = "ToolsFills";
    fontColors[5] = "Fuchsia";
    fontColorLinkHL = "Fuchsia";
 };
-singleton GuiControlProfile(ToolsPanelDarkA_T50 : ToolsPanelDarkA)
+singleton GuiControlProfile(ToolsFillDarkA_T50 : ToolsFillDarkA)
 {
    fillColor = "34 35 35 131";
 };
 
-singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA) {
+singleton GuiControlProfile(ToolsFillDarkB : ToolsFillDarkA) {
     fillColor = "34 35 35 255";
     opaque = "1";
     bevelColorHL = "Fuchsia";
@@ -88,7 +89,7 @@ singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA) {
     fontColorLink = "Fuchsia";
     fontColors[0] = "88 1 192 255";
     fontColor = "88 1 192 255";
-    category = "ToolsPanels";
+    category = "ToolsFills";
     fillColorNA = "255 255 255 255";
     fontColors[9] = "255 0 255 255";
     fontColors[7] = "255 0 255 255";
@@ -100,7 +101,7 @@ singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA) {
    cursorColor = "0 0 0 255";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelDarkC : ToolsPanelDarkA) {
+singleton GuiControlProfile(ToolsFillDarkC : ToolsFillDarkA) {
     opaque = "1";
     fillColor = "19 40 55 255";
     fontColors[0] = "88 1 192 255";
@@ -119,7 +120,7 @@ singleton GuiControlProfile(ToolsPanelDarkC : ToolsPanelDarkA) {
 // Light Color Panels -> Light theme colors (A-B-C)
 //==============================================================================
 //==============================================================================
-singleton GuiControlProfile(ToolsPanelLightA : ToolsDefaultProfile) {
+singleton GuiControlProfile(ToolsFillLightA : ToolsDefaultProfile) {
     opaque = "1";
     fillColor = "242 242 242 255";
     fontColors[0] = "88 1 192 255";
@@ -129,10 +130,10 @@ singleton GuiControlProfile(ToolsPanelLightA : ToolsDefaultProfile) {
     fontColorHL = "Black";
     fontType = "Gotham Black";
    fillColorNA = "255 255 255 255";
-   category = "ToolsPanels";
+   category = "ToolsFills";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelLightB : ToolsPanelLightA) {
+singleton GuiControlProfile(ToolsFillLightB : ToolsFillLightA) {
     fillColor = "239 246 248 255";
     opaque = "1";
     bevelColorHL = "Magenta";
@@ -148,7 +149,7 @@ singleton GuiControlProfile(ToolsPanelLightB : ToolsPanelLightA) {
     fontColorSEL = "White";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelLightC : ToolsPanelLightA) {
+singleton GuiControlProfile(ToolsFillLightC : ToolsFillLightA) {
     opaque = "1";
     fillColor = "216 216 216 255";
     fontColors[0] = "88 1 192 255";

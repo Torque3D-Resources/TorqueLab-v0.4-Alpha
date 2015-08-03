@@ -207,7 +207,7 @@ singleton GuiControlProfile (ToolsGuiMenuBarProfile  : ToolsDefaultProfile) {
     opaque = true;
     border = "1";
     category = "Tools";
-   fillColor = "48 48 48 255";
+   fillColor = "0 0 0 255";
    fontType = "Gotham Book";
    fontSize = "18";
    fontColors[0] = "0 226 255 255";
@@ -238,7 +238,7 @@ singleton GuiControlProfile (ToolsGuiMenuBarProfile  : ToolsDefaultProfile) {
 // MenuBar Items
 singleton GuiControlProfile( ToolsGuiMenuProfile : ToolsGuiMenuBarProfile) {
     opaque = true;
-    fillcolor = "41 41 41 193";
+    fillcolor = "29 29 29 194";
     fontColor = "206 243 254 255";
     fontColorHL = "64 222 254 255";   
     category = "Tools";

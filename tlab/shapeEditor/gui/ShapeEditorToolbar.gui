@@ -26,12 +26,12 @@ new GuiStackControl(ShapeEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12753";
-      disabledGroup = "12754";
-      EditorContainer = "4414";
+      defaultStack = "12929";
+      disabledGroup = "12930";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ShapeEditor";
-      stackLists = "12755 12764 12773 12782";
+      stackLists = "12931 12940 12949 12958";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -71,7 +71,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -93,7 +93,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -289,7 +289,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -311,7 +311,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -507,7 +507,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -529,7 +529,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -725,7 +725,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -747,7 +747,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

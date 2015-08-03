@@ -1,9 +1,9 @@
-$ProfSetupData_0 = "ToolsPanelDarkA" NL "fillColor" NL "Dark_A" NL "Color";
-$ProfSetupData_1 = "ToolsPanelDarkB" NL "fillColor" NL "Dark_B" NL "Color";
-$ProfSetupData_2 = "ToolsPanelDarkC" NL "fillColor" NL "Dark_C" NL "Color";
-$ProfSetupData_3 = "ToolsPanelColorA" NL "fillColor" NL "Accent_A" NL "Color";
-$ProfSetupData_4 = "ToolsPanelColorB" NL "fillColor" NL "Accent_B" NL "Color";
-$ProfSetupData_5 = "ToolsPanelColorC" NL "fillColor" NL "Accent_C" NL "Color";
+$ProfSetupData_0 = "ToolsFillDarkA" NL "fillColor" NL "Dark_A" NL "Color";
+$ProfSetupData_1 = "ToolsFillDarkB" NL "fillColor" NL "Dark_B" NL "Color";
+$ProfSetupData_2 = "ToolsFillDarkC" NL "fillColor" NL "Dark_C" NL "Color";
+$ProfSetupData_3 = "ToolsFillAccentA" NL "fillColor" NL "Accent_A" NL "Color";
+$ProfSetupData_4 = "ToolsFillAccentB" NL "fillColor" NL "Accent_B" NL "Color";
+$ProfSetupData_5 = "ToolsFillAccentC" NL "fillColor" NL "Accent_C" NL "Color";
 $ProfSetupData_6 = "ToolsWindowPanel" NL "fillColor" NL "Dark_A" NL "Color";
 $ProfSetupData_7 = "ToolsTextBase" NL "fontColors" NL "Text" NL "ColorIds";
 $ProfSetupData_8 = "ToolsTextEditDark" NL "fontColors	0" NL "Text_0" NL "Color";

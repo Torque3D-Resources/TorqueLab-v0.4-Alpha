@@ -26,13 +26,13 @@ new GuiStackControl(MaterialEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11232";
-      disabledGroup = "11233";
-      EditorContainer = "4414";
+      defaultStack = "11408";
+      disabledGroup = "11409";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialEditor";
       preventReordering = "0";
-      stackLists = "11234";
+      stackLists = "11410";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -72,7 +72,7 @@ new GuiStackControl(MaterialEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -95,7 +95,7 @@ new GuiStackControl(MaterialEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

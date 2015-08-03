@@ -25,12 +25,12 @@ new GuiStackControl(RiverEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12380";
-      disabledGroup = "12381";
-      EditorContainer = "4414";
+      defaultStack = "12556";
+      disabledGroup = "12557";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RiverEditor";
-      stackLists = "12382 12399";
+      stackLists = "12558 12575";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -70,7 +70,7 @@ new GuiStackControl(RiverEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -93,7 +93,7 @@ new GuiStackControl(RiverEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -458,7 +458,7 @@ new GuiStackControl(RiverEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -481,7 +481,7 @@ new GuiStackControl(RiverEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

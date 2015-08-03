@@ -13,6 +13,7 @@ singleton GuiControlProfile( GuiInspectorProfile  : ToolsDefaultProfile ) {
     cankeyfocus = true;
     tab = true;
     category = "Editor";
+   fontSize = "15";
 };
 //------------------------------------------------------------------------------
 
@@ -239,7 +240,7 @@ singleton GuiControlProfile( GuiInspectorTextEditProfile : ToolsDefaultProfile )
     opaque = "1";
     fillColor = "0 0 0 0";
     fillColorHL = "2 2 2 49";
-    fontType = "Arial";
+    fontType = "Lato";
     fontColors[1] = "254 254 254 255";
     fontColors[2] = "100 100 100 255";
     fontColors[3] = "16 108 87 255";
@@ -247,11 +248,12 @@ singleton GuiControlProfile( GuiInspectorTextEditProfile : ToolsDefaultProfile )
     fontColorHL = "254 254 254 255";
     fontColorNA = "100 100 100 255";
     fontColorSEL = "16 108 87 255";
-    fontColors[0] = "231 224 178 255";
-    fontColor = "231 224 178 255";
+    fontColors[0] = "254 254 254 255";
+    fontColor = "254 254 254 255";
    bitmap = "tlab/gui/assets/element-assets/GuiTextEditDark.png";
    hasBitmapArray = "1";
    modal = true;
+   fontSize = "15";
   
 };
 //------------------------------------------------------------------------------
@@ -288,11 +290,11 @@ singleton GuiControlProfile( GuiInspectorGroupProfile : ToolsDefaultProfile ) {
     fontColorHL = "25 25 25 220";
     fontColorNA = "128 128 128 255";
     textOffset = "20 0";
-    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile.png";
-    opaque = "0";
-    fillColor = "0 0 0 237";
+    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_S1.png";
+    opaque = "1";
+    fillColor = "66 66 66 222";
     fillColorNA = "255 255 255 255";
-    fontSize = "15";
+    fontSize = "17";
    fillColorHL = "255 255 255 255";
    fontColors[3] = "43 107 206 255";
    fontColorSEL = "43 107 206 255";
@@ -305,15 +307,15 @@ singleton GuiControlProfile( GuiInspectorGroupProfile : ToolsDefaultProfile ) {
 //==============================================================================
 // Used in SourceCode
 singleton GuiControlProfile( GuiInspectorFieldProfile : ToolsDefaultProfile ) {
-    fontType    = "Arial";
-    fontSize    = "14";
+    fontType    = "Lato";
+    fontSize    = "16";
 
-    fontColor = "238 238 238 255";
+    fontColor = "254 243 171 255";
     fontColorHL = "231 224 178 255";
     fontColorNA = "190 190 190 255";
 
     justify = "left";
-    opaque = false;
+    opaque = "1";
     border = false;
 
     bitmap = "tlab/gui/icons/default/classImages/rollout";
@@ -323,16 +325,17 @@ singleton GuiControlProfile( GuiInspectorFieldProfile : ToolsDefaultProfile ) {
     category = "Editor";
     tab = "1";
     canKeyFocus = "1";
-    fillColor = "51 51 51 255";
-    fillColorHL = "32 32 34 255";
-    fillColorNA = "244 244 244 255";
+    fillColor = "3 14 21 166";
+    fillColorHL = "5 29 39 243";
+    fillColorNA = "90 90 90 176";
     borderColor = "190 190 190 255";
     borderColorHL = "156 156 156 255";
     borderColorNA = "200 200 200 255";
-    fontColors[0] = "238 238 238 255";
+    fontColors[0] = "254 243 171 255";
     fontColors[1] = "231 224 178 255";
     fontColors[2] = "190 190 190 255";
     fontColors[9] = "255 0 255 255";
+   fillColorSEL = "99 101 138 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -348,18 +351,22 @@ singleton GuiControlProfile( GuiInspectorMultiFieldProfile : GuiInspectorFieldPr
 singleton GuiControlProfile( GuiInspectorDynamicFieldProfile : GuiInspectorFieldProfile ) {
     border = "0";
     borderColor = "190 190 190 255";
-    opaque = "1";
+    opaque = "0";
     fillColor = "51 51 51 255";
     fillColorHL = "32 32 34 255";
-    fontColors[0] = "238 238 238 255";
+    fontColors[0] = "199 241 254 255";
     fontColors[1] = "231 224 178 255";
     fontColors[2] = "100 100 100 255";
     fontColors[3] = "43 107 206 255";
-    fontColor = "238 238 238 255";
+    fontColor = "199 241 254 255";
     fontColorHL = "231 224 178 255";
     fontColorNA = "100 100 100 255";
     fontColorSEL = "43 107 206 255";
    dynamicField = "defaultValue";
+   fillColorNA = "244 244 244 255";
+   fillColorSEL = "99 101 138 156";
+   fontType = "Lato bold";
+   fontSize = "15";
 };
 //------------------------------------------------------------------------------
 
@@ -367,10 +374,10 @@ singleton GuiControlProfile( GuiInspectorDynamicFieldProfile : GuiInspectorField
 // Used in SourceCode -> Rollout for Array settings (Ex: GroundCover Layers)
 singleton GuiControlProfile( GuiInspectorRolloutProfile0 : ToolsDefaultProfile) {
     // font
-    fontType = "Gotham Book";
+    fontType = "Lato bold";
     fontSize = 14;
 
-    fontColor = "254 229 115 255";
+    fontColor = "99 243 254 255";
     fontColorHL = "32 100 100";
     fontColorNA = "0 0 0";
 
@@ -382,11 +389,11 @@ singleton GuiControlProfile( GuiInspectorRolloutProfile0 : ToolsDefaultProfile) 
     borderColorHL = "156 156 156";
     borderColorNA = "64 64 64";
 
-    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
+    bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_S1.png";
 
-    textOffset = "20 -1";
+    textOffset = "20 0";
     category = "Editor";
-    fontColors[0] = "254 229 115 255";
+    fontColors[0] = "99 243 254 255";
     fontColors[1] = "32 100 100 255";
     fontColors[9] = "255 0 255 255";
      modal = true;

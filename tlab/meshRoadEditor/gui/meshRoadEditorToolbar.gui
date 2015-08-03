@@ -26,11 +26,11 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11811";
-      disabledGroup = "11812";
-      EditorContainer = "4414";
+      defaultStack = "11987";
+      disabledGroup = "11988";
+      EditorContainer = "4422";
       plugin = "MeshRoadEditor";
-      stackLists = "11813 11822";
+      stackLists = "11989 11998";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -70,7 +70,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -93,7 +93,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -289,7 +289,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -312,7 +312,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

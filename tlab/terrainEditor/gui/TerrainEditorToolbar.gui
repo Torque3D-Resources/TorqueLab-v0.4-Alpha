@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13149";
-      disabledGroup = "13150";
-      EditorContainer = "4414";
+      defaultStack = "13325";
+      disabledGroup = "13326";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "13151 13160 13186";
+      stackLists = "13327 13336 13362";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -72,7 +72,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -95,7 +95,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -290,7 +290,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -313,7 +313,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -882,7 +882,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -905,7 +905,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

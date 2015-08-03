@@ -14,7 +14,7 @@ new GuiStackControl(ParticleEditorToolbar) {
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "ToolsPanelDarkB";
+   profile = "ToolsFillDarkB";
    visible = "0";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
@@ -26,9 +26,9 @@ new GuiStackControl(ParticleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12108";
-      disabledGroup = "12109";
-      EditorContainer = "4414";
+      defaultStack = "12284";
+      disabledGroup = "12285";
+      EditorContainer = "4422";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ParticleEditor";
       preventReordering = "0";
