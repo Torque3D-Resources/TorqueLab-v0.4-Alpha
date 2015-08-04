@@ -10,6 +10,7 @@ function paramOpt(  ) {
 
 function LabParamsDlg::onWake( %this ) {
 	hide(%this-->ParamStyles);
+	LabParamsTree.expandAllGroups(true);
 }
 //==============================================================================
 function LabParamsDlg::rebuildAll( %this ) {
@@ -107,23 +108,22 @@ function LabParamsTree::expandAllGroups( %this,%buildTree ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LabParamsTree::onSelect( %this,%itemId ) {
+function LabParamsTree::onSelect( %this,%itemId ) {	
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);
+	%value = %this.getItemValue(%itemId);	
+	%itemObj = $LabParamsItemObj[%itemId];
+	devLog("LabParamsTree onSelect:",%itemId,"Text",%text,"Value",%value,"ItemObj",%itemObj);
+	if (isObject(%itemObj)) {
+		LabParamsDlg.setSelectedSettings(%itemObj);
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onMouseUp( %this,%itemId,%clicks ) {
-
 	%itemObj = $LabParamsItemObj[%itemId];
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);
-
-
-	if (isObject(%itemObj)) {
-		LabParamsDlg.setSelectedSettings(%itemObj);
-	} else {
-	}
+	%value = %this.getItemValue(%itemId);	
+	return;	
 }
 //------------------------------------------------------------------------------
 

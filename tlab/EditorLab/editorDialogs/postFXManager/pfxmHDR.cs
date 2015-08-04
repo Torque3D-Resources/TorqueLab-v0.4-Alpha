@@ -8,14 +8,14 @@
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_ScatterSkyManager.buildParams();
 function EPostFxManager::buildParamsHDR( %this ) {
-	%arCfg = createParamsArray("EPostFx_HDR",EPostFxPage_HDR);
+	%arCfg = createParamsArray("EPostFx_HDR",EPostFxPage_HDRStack);
 	%arCfg.updateFunc = "EPostFxManager.updateParamHDR";
 	%arCfg.style = "StyleA";
 	
 	%arCfg.useNewSystem = true;
 	%arCfg.prefGroup = "$HDRPostFX::";
 	%arCfg.autoSyncPref = "1";
-	%arCfg.group[%gid++] = "HDR Bloom Settings" TAB "StackType none;;Stack StackBloom";
+	%arCfg.group[%gid++] = "HDR Bloom Settings";
 	%arCfg.setVal("enableBloom",       "" TAB "Enable bloom" TAB "Checkbox" TAB "superClass>>EPostFx_HDRCheckbox" TAB "EPostFxManager" TAB %gid);
 	
 	%arCfg.setVal("brightPassThreshold",       "" TAB "Bright pass threshold" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
@@ -23,18 +23,23 @@ function EPostFxManager::buildParamsHDR( %this ) {
 	%arCfg.setVal("gaussStdDev",       "" TAB "Blur Std Dev" TAB "SliderEdit" TAB "range>>0 3" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("gaussMultiplier",       "" TAB "Blur Multiplier" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
 	
-	%arCfg.group[%gid++] = "HDR Brightness Settings" TAB "StackType none;;Stack StackBrightness";
+	%arCfg.group[%gid++] = "HDR Brightness Settings";
 	%arCfg.setVal("enableToneMapping",       "" TAB "Tone mapping" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("keyValue",       "" TAB "Key value" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("minLuminace",       "" TAB "Liminance min." TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("whiteCutoff",       "" TAB "White cut-off" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("adaptRate",       "" TAB "Adapt rate" TAB "SliderEdit" TAB "range>>0.1 10" TAB "EPostFxManager" TAB %gid);
-	
-	%arCfg.group[%gid++] = "ColorShift Settings" TAB "StackType none;;Stack StackColorShift";	
+
+	//Enable blue shift is embed in gui
+	%arCfg.group[%gid++] = "ColorShift Settings";	
 	%arCfg.setVal("enableBlueShift",       "" TAB "Color shift amount (0 = disabled)" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("EPostFxPage_ColorShiftSelect",       "" TAB "" TAB "CloneCtrl" TAB "" TAB "" TAB %gid);
 
 	buildParamsArray(%arCfg,false);
 	%this.HDRParamArray = %arCfg;
+	
+	//%colorShiftClone = EPostFxPage_ColorShiftSelect.deepClone();
+	//EPostFxPage_ColorShiftSelect.visible = 0;
 }
 //syncParamArray(arEPostFx_HDRParam);
 //------------------------------------------------------------------------------
@@ -48,6 +53,8 @@ function EPostFxManager::updateParamHDR(%this,%field,%value,%ctrl,%arg1,%arg2,%a
 
 
 //==============================================================================
+
+//------------------------------------------------------------------------------
 function EPostFxManager::getColorCorrectionFile(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3) {
 	logd("EPostFxManager::updateParamHDR(%this,%field,%value,%ctrl,%arg1,%arg2,%arg3)",%this,%field,%value,%ctrl,%arg1,%arg2,%arg3);
 	%filter = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";   
@@ -115,11 +122,16 @@ function EPostFx_ColorShiftPicker::onAction(%this)
 // ColorShift Base Color Picked
 function EPostFx_ColorShiftBasePicker::onAction(%this)
 {
-   EPostFx_ColorShiftPicker.baseColor = %this.PickColor;
+	%this.parentGroup-->ShiftPicker.baseColor = %this.PickColor;
+	%this.parentGroup-->ShiftPicker.updateCOlor();
+	$HDRPostFX::blueShiftColor = %this.parentGroup-->ShiftPicker.PickColor;
+   //EPostFx_ColorShiftPicker.baseColor = %this.PickColor;
    %this.ToolTip = "Color Values : " @ %this.PickColor;
 }
 //------------------------------------------------------------------------------
-
+function EPostFxManager::updateColorShiftSlider(%this,%slider) {
+	$HDRPostFX::blueShiftColor = %slider.getValue();
+}
 //==============================================================================
 function EPostFxManager::customSyncHDR(%this) {
 	logd("EPostFxManager::customSyncHDR(%this)",%this);

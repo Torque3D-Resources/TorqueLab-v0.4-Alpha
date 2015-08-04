@@ -7,6 +7,7 @@
 //==============================================================================
 function EPostFxManager::syncAll(%this) {
 	foreach$(%type in $EPostFx_PostFxList){
+		devLog("Syncing PostFX type:",%type);
 		syncParamArray("arEPostFx_"@%type@"Param");
 		if (%this.isMethod("customSync"@%type))
 			eval("%this.customSync"@%type@"();");

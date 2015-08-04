@@ -9,7 +9,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "110 0";
    extent = "618 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13325";
-      disabledGroup = "13326";
-      EditorContainer = "4422";
+      defaultStack = "13255";
+      disabledGroup = "13256";
+      EditorContainer = "4442";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "13327 13336 13362";
+      stackLists = "13257 13266 13292";
 
    new GuiContainer() {
       margin = "0 0 0 0";

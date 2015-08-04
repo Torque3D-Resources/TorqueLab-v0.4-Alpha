@@ -314,3 +314,11 @@ singleton GuiControlProfile(ToolsTabBookCurve : ToolsTabBookProfile)
    textOffset = "0 0";
    fillColorSEL = "99 101 138 0";
 };
+
+singleton GuiControlProfile(ToolsWindowPanelA : ToolsWindowPanel)
+{
+   fontColors[8] = "255 0 255 255";
+   bitmap = "tlab/gui/assets/container-assets/GuiWindowPanelA.png";
+   opaque = "1";
+   fillColor = "19 40 55 255";
+};

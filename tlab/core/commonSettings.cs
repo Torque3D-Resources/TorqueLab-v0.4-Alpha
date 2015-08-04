@@ -59,7 +59,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%gid = 0;
 	%ar = %this.newParamsArray("Colors","WorldEditor");
 	%ar.group[%gid++] = "World editor colors settings";
-	%ar.setVal("gizmoGridColor",       "102 102 102 100" TAB "Gizmo grid color" TAB "ColorInt" TAB "" TAB "Lab.setGizmoGridColor(**);" TAB %gid);
+	
 	%ar.setVal("gridColor",       "102 102 102 100" TAB "gridColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("gridOriginColor",      "255 255 255 100"  TAB "gridOriginColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("gridMinorTickColor",     "51 51 51 100"     TAB "gridMinorTickColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
@@ -116,8 +116,8 @@ $FrameMainSizes = "Thin Normal Large";
 //Gizmo
 	%gid = 0;
 	%ar = %this.newParamsArray("AxisGizmo","WorldEditor");
-	%ar.group[%gid++] = "Axis gizmo settings";
-	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorInt" TAB "" TAB "Lab.setGizmoGridColor(**);" TAB %gid);
+	%ar.group[%gid++] = "Axis gizmo settings";	
+	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorInt" TAB "" TAB "Lab.setGizmoGridColor(*val*);" TAB %gid);
 	%ar.setVal("gridSize",       "10" TAB "gridSize" TAB "SliderEdit" TAB "range>>0 200" TAB "Lab.setGizmoGridSize(**);" TAB %gid);
 	%ar.setVal("planeDim",       "500" TAB "planeDim" TAB "SliderEdit" TAB "range>>0 1000" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("screenLength",       "100" TAB "Gizmo size" TAB "SliderEdit" TAB "range>>0 200;;validate>>flen 2" TAB "GlobalGizmoProfile" TAB "flen 1" TAB %gid);

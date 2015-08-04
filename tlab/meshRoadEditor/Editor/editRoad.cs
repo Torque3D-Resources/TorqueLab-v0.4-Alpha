@@ -33,8 +33,8 @@ function MeshRoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 	if ( %nodeIdx == -1 ) {
 		MeshRoadEditorOptionsWindow-->position.setActive( false );
 		MeshRoadEditorOptionsWindow-->position.setValue( "" );
-		MeshRoadEditorOptionsWindow-->rotation.setActive( false );
-		MeshRoadEditorOptionsWindow-->rotation.setValue( "" );
+		MeshRoadEditorOptionsWindow-->normal.setActive( false );
+		MeshRoadEditorOptionsWindow-->normal.setValue( "" );
 		MeshRoadEditorOptionsWindow-->width.setActive( false );
 		MeshRoadEditorOptionsWindow-->width.setValue( "" );
 		MeshRoadEditorOptionsWindow-->depth.setActive( false );
@@ -42,8 +42,8 @@ function MeshRoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 	} else {
 		MeshRoadEditorOptionsWindow-->position.setActive( true );
 		MeshRoadEditorOptionsWindow-->position.setValue( %this.getNodePosition() );
-		MeshRoadEditorOptionsWindow-->rotation.setActive( true );
-		MeshRoadEditorOptionsWindow-->rotation.setValue( %this.getNodeNormal() );
+		MeshRoadEditorOptionsWindow-->normal.setActive( true );
+		MeshRoadEditorOptionsWindow-->normal.setValue( %this.getNodeNormal() );
 		MeshRoadEditorOptionsWindow-->width.setActive( true );
 		MeshRoadEditorOptionsWindow-->width.setValue( %this.getNodeWidth() );
 		MeshRoadEditorOptionsWindow-->depth.setActive( true );
@@ -54,17 +54,19 @@ function MeshRoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 //==============================================================================
 function MeshRoadEditorGui::onNodeModified( %this, %nodeIdx ) {
 	MeshRoadEditorOptionsWindow-->position.setValue( %this.getNodePosition() );
-	MeshRoadEditorOptionsWindow-->rotation.setValue( %this.getNodeNormal() );
+	MeshRoadEditorOptionsWindow-->normal.setValue( %this.getNodeNormal() );
 	MeshRoadEditorOptionsWindow-->width.setValue( %this.getNodeWidth() );
 	MeshRoadEditorOptionsWindow-->depth.setValue( %this.getNodeDepth() );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorGui::editNodeDetails( %this ) {
+		
 	%this.setNodePosition( MeshRoadEditorOptionsWindow-->position.getText() );
-	%this.setNodeNormal( MeshRoadEditorOptionsWindow-->rotation.getText() );
+	%this.setNodeNormal( MeshRoadEditorOptionsWindow-->normal.getText() );
 	%this.setNodeWidth( MeshRoadEditorOptionsWindow-->width.getText() );
-	%this.setNodeDepth( MeshRoadEditorOptionsWindow-->depth.getText() );
+	%this.setNodeDepth( MeshRoadEditorOptionsWindow-->depth.getText() );	
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

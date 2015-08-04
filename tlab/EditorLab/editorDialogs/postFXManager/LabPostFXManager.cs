@@ -46,13 +46,16 @@ function EPostFxManager::onSleep(%this) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function EPostFxManager::init(%this,%notInitialized) {
+function EPostFxManager::init(%this,%forceInit,%notInitialized) {
+	devLog("EPostFxManager::init(%this,%forceInit,%notInitialized)",%forceInit,%notInitialized);
 	
 	%this.buildParamsHDR();
 	%this.buildParamsSSAO();
 	%this.buildParamsLightRays();
 	%this.buildParamsDOF();
 	%this.buildParamsVignette();
+	if (EPostFxManager.initialized && !%forceInit)
+		return;
 	EPostFxManager.initPresets();
 	if (%notInitialized $= "")
 		EPostFxManager.initialized = true;

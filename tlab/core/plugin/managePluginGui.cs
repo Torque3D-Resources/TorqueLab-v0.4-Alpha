@@ -19,6 +19,25 @@ function Lab::prepareAllPluginsGui(%this) {
 //==============================================================================
 
 
+//==============================================================================
+//Reinitialize all plugin data
+function Lab::togglePluginParamUI(%this) {
+	if (LabParamsDlg.isAwake()){
+		popDlg(LabParamsDlg);
+		return;
+	}
+	pushDlg(LabParamsDlg);
+	%currentPlugin = Lab.currentEditor.plugin;
+	%id = LabParamsTree.findItemByValue("Plugins_"@%currentPlugin);
+	
+	if (%id <= 0)
+		return;
+	LabParamsTree.clearSelection();
+	LabParamsTree.selectItem(%id);
+
+}
+//------------------------------------------------------------------------------
+
 
 //==============================================================================
 // Manage the GUI for the plugins

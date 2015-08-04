@@ -17,6 +17,7 @@ function EPostFxManager::initPresets(%this) {
 	EPostFx_Presets-->presetName.text = "[Preset Name]";
 	EPostFx_Presets-->saveActivePreset.active = 0;
 	%this.updatePresetMenu();
+	devLog(" EPostFxManager::initPresets");
 	%this.activatePresetFile($EPostFx_PresetFolder@"/default.pfx.cs");
 }
 //------------------------------------------------------------------------------
@@ -36,13 +37,14 @@ function EPostFxManager::updatePresetMenu(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function PFXM_PresetMenu::onSelect(%this,%id,%text) {
+	devLog(" PFXM_PresetMenu::onSelect");
 	%file = $EPostFx_PresetFolder@"/"@%text@".pfx.cs";	
 	EPostFxManager.activatePresetFile(%file);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::activatePresetFile(%this,%file) {
-	
+	devLog(" EPostFxManager::activatePresetFile");
 	%result = EPostFxManager.loadPresetsFromFile(%file);
 	
 	if (!%result){
@@ -172,6 +174,7 @@ function EPostFxManager::selectPresetFileLoad(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::loadPresetsFromFile(%this,%file) {
+	devLog(" EPostFxManager::loadPresetsFromFile");
 	if (!isFile(%file))
 		return false;
 	$PostFXPresetFormat = "";
