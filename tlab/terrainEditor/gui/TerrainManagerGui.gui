@@ -114,7 +114,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsDropdownProfile_Thin";
+            profile = "ToolsDropdownProfile_S1";
             visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
@@ -1926,7 +1926,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsDropdownProfile_Thin";
+                                    profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"TMG.updateTerrainParam\",\"arTMG_TerrainParam\",\"\",\"\");";
@@ -4077,7 +4077,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "ToolsDropdownProfile_Thin";
+                                 profile = "ToolsDropdownProfile_S1";
                                  visible = "1";
                                  active = "1";
                                  command = "TMG.selectLayerMapMenu(55631,0);";
@@ -7387,7 +7387,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "ToolsDropdownProfile_Thin";
+                                 profile = "ToolsDropdownProfile_S1";
                                  visible = "1";
                                  active = "1";
                                  command = "TMG.selectLayerMapMenu(46840,0);";
@@ -7989,7 +7989,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsDropdownProfile_Thin";
+                                    profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.selectLayerMapMenu(61739,0);";
@@ -8567,7 +8567,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsDropdownProfile_Thin";
+                                    profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.selectLayerMapMenu(61764,1);";
@@ -9145,7 +9145,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsDropdownProfile_Thin";
+                                    profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.selectLayerMapMenu(61789,2);";

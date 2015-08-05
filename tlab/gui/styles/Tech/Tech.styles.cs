@@ -84,7 +84,7 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "art/gui/DarkLab/element-assets/GuiDropdownProfile_Thin.png";
+         bitmap = "art/gui/DarkLab/element-assets/GuiDropdownProfile_S1.png";
          border = "0";
          borderColor = "100 100 100 255";
          borderColorHL = "50 50 50 50";
@@ -2008,8 +2008,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "24 1";
    };
-   new ScriptObject(ToolsRolloutProfile_Thin_TechStyle) {
-      internalName = "ToolsRolloutProfile_Thin";
+   new ScriptObject(ToolsRolloutProfile_S1_TechStyle) {
+      internalName = "ToolsRolloutProfile_S1";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -2121,13 +2121,13 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsRolloutProfile_Light_TechStyle) {
-      internalName = "ToolsRolloutProfile_Light";
+   new ScriptObject(ToolsRolloutProfile_Alt_TechStyle) {
+      internalName = "ToolsRolloutProfile_Alt";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Light.png";
+         bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Alt.png";
          border = "0";
          borderColor = "200 200 200 255";
          borderColorHL = "50 50 50 50";
@@ -2273,13 +2273,13 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 3";
    };
-   new ScriptObject(ToolsWindowBox_Light_TechStyle) {
-      internalName = "ToolsWindowBox_Light";
+   new ScriptObject(ToolsWindowBox_Alt_TechStyle) {
+      internalName = "ToolsWindowBox_Alt";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/container-assets/GuiWindowBox_Light.png";
+         bitmap = "tlab/gui/assets/container-assets/GuiWindowBox_Alt.png";
          border = "0";
          borderColor = "200 200 200 255";
          borderColorHL = "50 50 50 50";
@@ -4358,13 +4358,13 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "4 0";
    };
-   new ScriptObject(ToolsDropdownProfile_Thin_TechStyle) {
-      internalName = "ToolsDropdownProfile_Thin";
+   new ScriptObject(ToolsDropdownProfile_S1_TechStyle) {
+      internalName = "ToolsDropdownProfile_S1";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
+         bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
          border = "0";
          borderColor = "100 100 100 255";
          borderColorHL = "50 50 50 50";
@@ -4436,8 +4436,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "4 0";
    };
-   new ScriptObject(ToolsDropdownBasic_Item_TechStyle) {
-      internalName = "ToolsDropdownBasic_Item";
+   new ScriptObject(ToolsDropdownBase_Item_TechStyle) {
+      internalName = "ToolsDropdownBase_Item";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -4473,8 +4473,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsDropdownBasic_List_TechStyle) {
-      internalName = "ToolsDropdownBasic_List";
+   new ScriptObject(ToolsDropdownBase_List_TechStyle) {
+      internalName = "ToolsDropdownBase_List";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -4506,18 +4506,18 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          mouseOverSelected = "0";
          numbersOnly = "0";
          opaque = "1";
-         profileForChildren = "ToolsDropdownBasic_Item";
+         profileForChildren = "ToolsDropdownBase_Item";
          returnTab = "0";
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsDropdownBasic_TechStyle) {
-      internalName = "ToolsDropdownBasic";
+   new ScriptObject(ToolsDropdownBase_TechStyle) {
+      internalName = "ToolsDropdownBase";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt.png";
+         bitmap = "tlab/gui/assets/element-assets/GuiDropdownBase.png";
          border = "0";
          borderColor = "100 100 100 255";
          borderColorHL = "50 50 50 50";
@@ -4545,18 +4545,18 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          mouseOverSelected = "0";
          numbersOnly = "0";
          opaque = "1";
-         profileForChildren = "ToolsDropdownBasic_List";
+         profileForChildren = "ToolsDropdownBase_List";
          returnTab = "0";
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsDropdownBasic_Thin_TechStyle) {
-      internalName = "ToolsDropdownBasic_Thin";
+   new ScriptObject(ToolsDropdownBase_Thin_TechStyle) {
+      internalName = "ToolsDropdownBase_Thin";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt_Thin.png";
+         bitmap = "tlab/gui/assets/element-assets/GuiDropdownBase_S1.png";
          border = "0";
          borderColor = "100 100 100 255";
          borderColorHL = "50 50 50 50";
@@ -4584,7 +4584,7 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          mouseOverSelected = "0";
          numbersOnly = "0";
          opaque = "1";
-         profileForChildren = "ToolsDropdownBasic_List";
+         profileForChildren = "ToolsDropdownBase_List";
          returnTab = "0";
          tab = "0";
          textOffset = "0 0";
@@ -5088,7 +5088,7 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
          autoSizeWidth = "0";
-         bitmap = "tlab/gui/assets/container-assets/GuiRolloutProfile_Thin.png";
+         bitmap = "tlab/gui/assets/container-assets/GuiRolloutTitle_S1.png";
          border = "-2";
          borderColor = "100 100 100 255";
          borderColorHL = "50 50 50 50";

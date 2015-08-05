@@ -2410,7 +2410,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsDropdownProfile_Thin";
+               profile = "ToolsDropdownProfile_S1";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2483,7 +2483,7 @@
                minExtent = "8 8";
                horizSizing = "left";
                vertSizing = "bottom";
-               profile = "ToolsDropdownProfile_Thin";
+               profile = "ToolsDropdownProfile_S1";
                visible = "1";
                active = "1";
                command = "Lab.setCameraViewMode($ThisControl.getText());";

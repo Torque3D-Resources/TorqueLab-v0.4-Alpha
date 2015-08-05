@@ -19,6 +19,8 @@ singleton GuiControlProfile( ToolsBoxDarkA : ToolsDefaultProfile ) {
    hasBitmapArray = "1";
    fillColor = "19 40 55 255";
    fontType = "Anson Regular";
+   fontColors[4] = "255 0 255 255";
+   fontColorLink = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================

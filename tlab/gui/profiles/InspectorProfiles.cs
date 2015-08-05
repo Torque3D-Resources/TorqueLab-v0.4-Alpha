@@ -95,7 +95,7 @@ singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
    fontColor = "0 0 0 255";
    fontType = "Davidan";
    justify = "Center";
-   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
    category = "Tools";
   
 };
@@ -107,7 +107,7 @@ if (!isObject(GuiPopUpMenuProfile))
 	{   
 	  hasBitmapArray     = "1";
 	  profileForChildren = "ToolsDropdownProfile_List";
-		bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
+		bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
 		fontSize = "15";
 		justify = "Center";
 		fillColor = "242 241 241 255";  

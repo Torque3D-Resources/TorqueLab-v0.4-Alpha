@@ -67,7 +67,7 @@ package Lab {
         EditorSettings.read();
 
          new Settings(LabCfg) {
-            file = "tlab/config.xml";
+            file = "tlab/core/configs/config.xml";
         };
         
 

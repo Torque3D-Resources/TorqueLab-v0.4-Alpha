@@ -17,11 +17,12 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 	if (%container $= "")
 		%container = %name@"ParamStack";
 
+	%name = strreplace(%name," ","_");
 	%arrayName = %name;
-
 	if (%useLongName)
 		%arrayName = %group@%name;
-
+		
+	
 	%fullName = %arrayName@"_Param";
 	%array = newArrayObject(%fullName,LabParamsGroup,"ParamArray");
 	%array.internalName = %name;
@@ -36,7 +37,7 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 
 	%array.cfgObject = %cfgObject;
 	%array.groupLink = %group@"_"@%name;
-	%array.style = "LabCfgB_304";
+	%array.style = "OptStyleA";
 
 	if (%prefGroup $= "")
 		%prefGroup = %name;

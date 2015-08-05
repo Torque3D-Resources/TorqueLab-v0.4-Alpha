@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-EPostFxManager.initialized = false;
+
 function EPostFxManager::onWake(%this) {	
 	//Check if the UI is all there (Might be moved and forgotten)
 	%this.onShow();
@@ -22,7 +22,7 @@ function EPostFxManager::onShow(%this) {
 		return;
 	}
 		
-	if (!EPostFxManager.initialized)
+	if (!Lab.postFxInitialized)
 		EPostFxManager.init();
 	$EPostFxManagerActive = true;
 	if (isObject(EditorGuiToolbarStack-->PostFXManager))
@@ -47,20 +47,19 @@ function EPostFxManager::onSleep(%this) {
 
 //==============================================================================
 function EPostFxManager::init(%this,%forceInit,%notInitialized) {
-	devLog("EPostFxManager::init(%this,%forceInit,%notInitialized)",%forceInit,%notInitialized);
-	
+	//devLog("EPostFxManager::init(%this,%forceInit,%notInitialized)",%forceInit,%notInitialized);
+	if (Lab.postFxInitialized && !%forceInit)
+		return;
+		
 	%this.buildParamsHDR();
 	%this.buildParamsSSAO();
 	%this.buildParamsLightRays();
 	%this.buildParamsDOF();
 	%this.buildParamsVignette();
-	if (EPostFxManager.initialized && !%forceInit)
-		return;
+	
 	EPostFxManager.initPresets();
-	if (%notInitialized $= "")
-		EPostFxManager.initialized = true;
-	else
-		EPostFxManager.initialized = false;
+	Lab.postFxInitialized = true;
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================

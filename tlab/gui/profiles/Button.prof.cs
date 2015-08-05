@@ -32,6 +32,8 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
    borderThickness = "0";
    fontColors[9] = "255 0 255 255";
    fontColors[6] = "255 0 255 255";
+   fontColors[4] = "255 0 255 255";
+   fontColorLink = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
@@ -182,7 +184,7 @@ singleton GuiControlProfile(ToolsRadioProfile : ToolsDefaultProfile)
 //------------------------------------------------------------------------------
 //ToolsRadioProfile Large #1 
 singleton GuiControlProfile( ToolsRadioProfile_L1 : ToolsRadioProfile ) {
-	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_l1.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_L1.png";
    fontSize = "14";
    
 };

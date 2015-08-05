@@ -112,7 +112,7 @@ function LabParamsTree::onSelect( %this,%itemId ) {
 	%text = %this.getItemText(%itemId);
 	%value = %this.getItemValue(%itemId);	
 	%itemObj = $LabParamsItemObj[%itemId];
-	devLog("LabParamsTree onSelect:",%itemId,"Text",%text,"Value",%value,"ItemObj",%itemObj);
+	//devLog("LabParamsTree onSelect:",%itemId,"Text",%text,"Value",%value,"ItemObj",%itemObj);
 	if (isObject(%itemObj)) {
 		LabParamsDlg.setSelectedSettings(%itemObj);
 	}

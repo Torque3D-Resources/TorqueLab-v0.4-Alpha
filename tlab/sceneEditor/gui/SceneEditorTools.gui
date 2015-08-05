@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiFrameSetCtrl(SceneEditorTools) {
    columns = "0";
-   rows = "0 294";
+   rows = "0 293";
    borderWidth = "4";
    borderColor = "0 0 0 0";
    borderEnable = "alwaysOn";
@@ -16,7 +16,7 @@
    anchorLeft = "1";
    anchorRight = "0";
    position = "0 0";
-   extent = "280 820";
+   extent = "360 820";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -64,7 +64,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "280 290";
+      extent = "360 289";
       minExtent = "8 200";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -84,7 +84,7 @@
          tabHeight = "17";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "0";
          frontTabPadding = "6";
          docking = "Client";
          margin = "4 2 2 2";
@@ -94,7 +94,7 @@
          anchorLeft = "0";
          anchorRight = "0";
          position = "10 28";
-         extent = "260 252";
+         extent = "340 251";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -119,18 +119,17 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 34";
-            extent = "260 218";
+            position = "0 17";
+            extent = "340 234";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxDarkC_Top";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -143,7 +142,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "5 5";
-               extent = "250 20";
+               extent = "330 20";
                minExtent = "8 20";
                horizSizing = "width";
                vertSizing = "height";
@@ -165,7 +164,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "182 20";
+                  extent = "262 20";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -187,7 +186,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "162 2";
+                     position = "242 2";
                      extent = "18 18";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -218,7 +217,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "158 20";
+                     extent = "238 20";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -243,8 +242,8 @@
                   dynamicPos = "0";
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
-                  position = "188 1";
-                  extent = "16 18";
+                  position = "268 1";
+                  extent = "62 18";
                   minExtent = "16 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
@@ -275,14 +274,13 @@
                      horizSizing = "right";
                      vertSizing = "bottom";
                      profile = "ToolsButtonDark";
-                     visible = "0";
+                     visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
                      tooltip = "add Sim Group";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "addSimGroup";
-                     hidden = "1";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -304,7 +302,7 @@
                      horizSizing = "right";
                      vertSizing = "bottom";
                      profile = "ToolsButtonDark";
-                     visible = "0";
+                     visible = "1";
                      active = "1";
                      command = "EWorldEditor.lockSelection(true); SceneEditorTree.toggleLock();";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -312,7 +310,6 @@
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "lockSelection";
-                     hidden = "1";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -334,14 +331,13 @@
                      horizSizing = "right";
                      vertSizing = "bottom";
                      profile = "ToolsButtonDark";
-                     visible = "0";
+                     visible = "1";
                      active = "1";
                      command = "EditorMenuEditDelete();";
                      tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "deleteSelection";
-                     hidden = "1";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -364,7 +360,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 32";
-               extent = "248 180";
+               extent = "328 196";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -400,7 +396,7 @@
                   canRenameObjects = "1";
                   renameInternal = "1";
                   position = "0 0";
-                  extent = "180 231";
+                  extent = "11 21";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -997,11 +993,12 @@
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxDarkC_Top";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1131,8 +1128,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "260 235";
+            position = "0 34";
+            extent = "260 218";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -1282,7 +1279,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "AssetsLab.onMenuSelect($ThisControl);";
@@ -1376,7 +1373,7 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "ToolsDropdownProfile_Thin";
+                           profile = "ToolsDropdownProfile_S1";
                            visible = "1";
                            active = "1";
                            command = "AssetsLab.onMenuSelect($ThisControl);";
@@ -1475,7 +1472,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "AssetsLab.onMenuSelect($ThisControl);";
@@ -1628,7 +1625,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 95";
-               extent = "252 136";
+               extent = "252 119";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -1654,7 +1651,7 @@
                   dynamicSize = "0";
                   padding = "0 0 0 0";
                   position = "0 0";
-                  extent = "252 136";
+                  extent = "252 119";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -7779,7 +7776,7 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "252 1";
+         position = "332 1";
          extent = "20 20";
          minExtent = "16 16";
          horizSizing = "left";
@@ -7868,8 +7865,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 294";
-      extent = "280 526";
+      position = "0 293";
+      extent = "360 527";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -7889,7 +7886,7 @@
          tabHeight = "21";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "0";
+         selectedPage = "1";
          frontTabPadding = "0";
          docking = "Client";
          margin = "0 2 3 3";
@@ -7899,7 +7896,7 @@
          anchorLeft = "0";
          anchorRight = "0";
          position = "11 24";
-         extent = "258 492";
+         extent = "338 493";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -7925,16 +7922,17 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "258 471";
+            extent = "338 472";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxDarkC_Top";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -7948,7 +7946,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 8";
-               extent = "242 15";
+               extent = "322 15";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -7978,7 +7976,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 8";
-               extent = "242 410";
+               extent = "322 411";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -8004,7 +8002,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 0";
-                  extent = "232 1569";
+                  extent = "312 1569";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -8035,8 +8033,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "8 426";
-               extent = "242 37";
+               position = "8 427";
+               extent = "322 37";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -8055,7 +8053,7 @@
                   maxChars = "-1";
                   useURLMouseCursor = "0";
                   position = "2 4";
-                  extent = "238 16";
+                  extent = "318 16";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "top";
@@ -8082,17 +8080,16 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "338 553";
+            extent = "338 472";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxDarkC_Top";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -8160,7 +8157,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 24";
-               extent = "322 521";
+               extent = "322 440";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -8184,7 +8181,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "2 2";
-                  extent = "318 165";
+                  extent = "318 167";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -8206,11 +8203,11 @@
                      hideHeader = "0";
                      autoCollapseSiblings = "0";
                      position = "0 0";
-                     extent = "318 165";
+                     extent = "318 167";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsRolloutTitle";
+                     profile = "ToolsRolloutProfile_S1";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -8230,7 +8227,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 21";
-                        extent = "318 144";
+                        extent = "318 146";
                         minExtent = "16 16";
                         horizSizing = "right";
                         vertSizing = "bottom";

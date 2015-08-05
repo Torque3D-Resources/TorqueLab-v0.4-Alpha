@@ -15,13 +15,6 @@ function EPostFxManager::buildParamsHDR( %this ) {
 	%arCfg.useNewSystem = true;
 	%arCfg.prefGroup = "$HDRPostFX::";
 	%arCfg.autoSyncPref = "1";
-	%arCfg.group[%gid++] = "HDR Bloom Settings";
-	%arCfg.setVal("enableBloom",       "" TAB "Enable bloom" TAB "Checkbox" TAB "superClass>>EPostFx_HDRCheckbox" TAB "EPostFxManager" TAB %gid);
-	
-	%arCfg.setVal("brightPassThreshold",       "" TAB "Bright pass threshold" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
-	%arCfg.setVal("gaussMean",       "" TAB "Blur mean" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
-	%arCfg.setVal("gaussStdDev",       "" TAB "Blur Std Dev" TAB "SliderEdit" TAB "range>>0 3" TAB "EPostFxManager" TAB %gid);
-	%arCfg.setVal("gaussMultiplier",       "" TAB "Blur Multiplier" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
 	
 	%arCfg.group[%gid++] = "HDR Brightness Settings";
 	%arCfg.setVal("enableToneMapping",       "" TAB "Tone mapping" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
@@ -29,8 +22,15 @@ function EPostFxManager::buildParamsHDR( %this ) {
 	%arCfg.setVal("minLuminace",       "" TAB "Liminance min." TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("whiteCutoff",       "" TAB "White cut-off" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("adaptRate",       "" TAB "Adapt rate" TAB "SliderEdit" TAB "range>>0.1 10" TAB "EPostFxManager" TAB %gid);
+	
+	%arCfg.group[%gid++] = "HDR Bloom Settings";
+	%arCfg.setVal("enableBloom",       "" TAB "Enable bloom" TAB "Checkbox" TAB "superClass>>EPostFx_HDRCheckbox" TAB "EPostFxManager" TAB %gid);	
+	%arCfg.setVal("brightPassThreshold",       "" TAB "Bright pass threshold" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("gaussMean",       "" TAB "Blur mean" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("gaussStdDev",       "" TAB "Blur Std Dev" TAB "SliderEdit" TAB "range>>0 3" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("gaussMultiplier",       "" TAB "Blur Multiplier" TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);	
 
-	//Enable blue shift is embed in gui
+	
 	%arCfg.group[%gid++] = "ColorShift Settings";	
 	%arCfg.setVal("enableBlueShift",       "" TAB "Color shift amount (0 = disabled)" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("EPostFxPage_ColorShiftSelect",       "" TAB "" TAB "CloneCtrl" TAB "" TAB "" TAB %gid);

@@ -1992,7 +1992,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "TerrainPaintGeneratorGui.layerSelected($ThisControl);";
@@ -3252,7 +3252,7 @@
          minExtent = "8 2";
          horizSizing = "left";
          vertSizing = "bottom";
-         profile = "ToolsRolloutProfile_Thin";
+         profile = "ToolsRolloutProfile_S1";
          visible = "0";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

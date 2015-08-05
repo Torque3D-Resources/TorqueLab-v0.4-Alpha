@@ -51,7 +51,7 @@ function EditorGui::onSleep( %this ) {
 		Lab.storePluginsToolbarState();
 
 	Lab.saveAllPluginData();
-	LabCfg.write();
+	LabCfg.writeBaseConfig();
 	// Remove the editor's ActionMaps.
 	EditorMap.pop();
 	MoveMap.pop();
@@ -77,7 +77,7 @@ function EditorGui::onUnsetContent(%this, %newContent) {
 // Shutdown the EditorGui-> Called from the onExit function
 function EditorGui::shutdown( %this ) {
 	// Store settings.
-	LabCfg.write();
+	LabCfg.writeBaseConfig();
 	// Deactivate current editor.
 	if ( isObject( Lab.currentEditor ) && Lab.currentEditor.isActivated)
 		Lab.currentEditor.onDeactivated();

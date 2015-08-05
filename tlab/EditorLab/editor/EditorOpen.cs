@@ -20,7 +20,7 @@ function Editor::open(%this) {
 
 	//Set the wanted plugin activated
 	if (!isObject(Lab.currentEditor))
-		Lab.currentEditor = Lab.defaultPlugin;
+		Lab.currentEditor = Lab.defaultPlugin;	
 
 	Lab.setEditor( Lab.currentEditor, true );
 	EditorGui.previousGui = Canvas.getContent();
@@ -43,6 +43,10 @@ function Editor::open(%this) {
 
 	EditorGuiToolbarStack.bringToFront(EditorGuiToolbarStack-->FirstToolbarGroup);
 	EditorGuiToolbarStack.pushToBack(EditorGuiToolbarStack-->LastToolbarGroup);
+	
+
+	Lab.setupEditorFrameMain();
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

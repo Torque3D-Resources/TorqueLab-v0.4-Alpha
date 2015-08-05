@@ -88,9 +88,9 @@ singleton GuiControlProfile (ToolsDropdownProfile : ToolsDefaultProfile)
 //------------------------------------------------------------------------------
 //==============================================================================
 // DropdownBasic Thin Version
-singleton GuiControlProfile(ToolsDropdownProfile_Thin : ToolsDropdownProfile)
+singleton GuiControlProfile(ToolsDropdownProfile_S1 : ToolsDropdownProfile)
 {
-   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
    fontSize = "15";
    justify = "Center";
    autoSizeHeight = "1";
@@ -110,7 +110,7 @@ singleton GuiControlProfile(ToolsDropdownProfile_L1 : ToolsDropdownProfile)
 //==============================================================================
 //------------------------------------------------------------------------------
 //DropdownBasic Item
-singleton GuiControlProfile(ToolsDropdownBasic_Item : ToolsDefaultProfile)
+singleton GuiControlProfile(ToolsDropdownBase_Item : ToolsDefaultProfile)
 {
    modal = "1";
    fontSize = "22";
@@ -122,7 +122,7 @@ singleton GuiControlProfile(ToolsDropdownBasic_Item : ToolsDefaultProfile)
 };
 //------------------------------------------------------------------------------
 //DropdownBasic List
-singleton GuiControlProfile (ToolsDropdownBasic_List : ToolsDefaultProfile)
+singleton GuiControlProfile (ToolsDropdownBase_List : ToolsDefaultProfile)
 {   
    hasBitmapArray     = false;
    fontSize = "18";
@@ -135,7 +135,7 @@ singleton GuiControlProfile (ToolsDropdownBasic_List : ToolsDefaultProfile)
    fillColorHL = "180 113 18 169";
    fontColors[2] = "3 206 254 255";
    fontColorNA = "3 206 254 255";
-   profileForChildren = "ToolsDropdownBasic_Item";
+   profileForChildren = "ToolsDropdownBase_Item";
    fillColorSEL = "199 152 15 240";
    fontColors[3] = "254 3 62 255";
    fontColorSEL = "254 3 62 255";
@@ -144,11 +144,11 @@ singleton GuiControlProfile (ToolsDropdownBasic_List : ToolsDefaultProfile)
 };
 //------------------------------------------------------------------------------
 //DropdownBasic Menu
-singleton GuiControlProfile (ToolsDropdownBasic : ToolsDefaultProfile)
+singleton GuiControlProfile (ToolsDropdownBase : ToolsDefaultProfile)
 {   
   hasBitmapArray     = "1";
-  profileForChildren = "ToolsDropdownBasic_List";
- 	bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt.png";
+  profileForChildren = "ToolsDropdownBase_List";
+ 	bitmap = "tlab/gui/assets/element-assets/GuiDropdownBase.png";
    fillColor = "242 241 241 255";
    fontSize = "17";
    fillColorHL = "228 228 235 255";
@@ -167,9 +167,9 @@ singleton GuiControlProfile (ToolsDropdownBasic : ToolsDefaultProfile)
 //------------------------------------------------------------------------------
 //==============================================================================
 // DropdownBasic Thin Version
-singleton GuiControlProfile(ToolsDropdownBasic_Thin : ToolsDropdownBasic)
+singleton GuiControlProfile(ToolsDropdownBase_Thin : ToolsDropdownBase)
 {
-   bitmap = "tlab/gui/assets/element-assets/GuiDropdownAlt_Thin.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownBase_S1.png";
 };
 //------------------------------------------------------------------------------
 

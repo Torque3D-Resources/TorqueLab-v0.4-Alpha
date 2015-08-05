@@ -9,8 +9,8 @@ new GuiStackControl(ForestEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
-   extent = "536 32";
+   position = "110 0";
+   extent = "568 32";
    minExtent = "16 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "10843";
-      disabledGroup = "10844";
-      EditorContainer = "4442";
+      defaultStack = "11169";
+      disabledGroup = "11170";
+      EditorContainer = "4483";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "10845 10852";
+      stackLists = "11171 11179";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -68,7 +68,7 @@ new GuiStackControl(ForestEditToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "38 32";
+      extent = "70 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -170,6 +170,35 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ForestEditorSettings.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "40 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "ForestEditorDialogs.toggleDlg(\"ForestManager\");";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
       new GuiContainer() {
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -177,7 +206,7 @@ new GuiStackControl(ForestEditToolbar) {
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "40 0";
+         position = "72 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -225,7 +254,7 @@ new GuiStackControl(ForestEditToolbar) {
       dynamicPos = "0";
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
-      position = "42 0";
+      position = "74 0";
       extent = "494 32";
       minExtent = "4 16";
       horizSizing = "right";
@@ -322,7 +351,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "10843";
+            toolbar = "11169";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -441,7 +470,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "10843";
+            toolbar = "11169";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -559,7 +588,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "10843";
+            toolbar = "11169";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -677,7 +706,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "10843";
+            toolbar = "11169";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -825,7 +854,7 @@ new GuiStackControl(ForestEditToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "540 0";
+      position = "572 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";

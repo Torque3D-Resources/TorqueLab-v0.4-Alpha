@@ -6,13 +6,17 @@
 
 
 //==============================================================================
-function Lab::initConfigSystem( %this ) {
+function Lab::initConfigSystem( %this,%defaults ) {
 	//Start by building all the ConfigArray Params
 	$LabConfigArrayGroup = newSimGroup("LabConfigArrayGroup");
 	exec("tlab/core/commonSettings.cs");
+	LabParamsGroup.clear();
 	%this.initCommonParams();
 	%this.initAllPluginConfig();
-	LabCfg.read();
+	if (%defaults)
+		LabCfg.resetDefaults();
+	else
+		LabCfg.read();
 	//FIXME Rebuild params everytime for development but should be optimized later
 	LabParamsDlg.rebuildAll();
 	Lab.initDefaultSettings();
