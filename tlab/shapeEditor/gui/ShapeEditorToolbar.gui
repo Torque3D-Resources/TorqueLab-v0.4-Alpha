@@ -26,12 +26,12 @@ new GuiStackControl(ShapeEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13171";
-      disabledGroup = "13172";
-      EditorContainer = "4483";
+      defaultStack = "13115";
+      disabledGroup = "13116";
+      EditorContainer = "4417";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ShapeEditor";
-      stackLists = "13173 13182 13191 13200";
+      stackLists = "13117 13126 13135 13144";
 
    new GuiContainer() {
       margin = "0 0 0 0";

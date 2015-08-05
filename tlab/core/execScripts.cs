@@ -96,7 +96,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/CtrlCameraSpeedDropdown.gui");
 		exec("tlab/EditorLab/gui/CtrlSnapSizeSlider.gui");
 		exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.gui");
-		exec("tlab/EditorLab/gui/DGLabanageSFXParameters.gui" );
+		exec("tlab/EditorLab/gui/DlgManageSFXParameters.gui" );
 		exec("tlab/EditorLab/gui/LabWidgetsGui.gui");
 		exec("tlab/EditorLab/gui/DlgAddFMODProject.gui");
 		exec("tlab/EditorLab/gui/DlgEditorChooseLevel.gui");
@@ -119,7 +119,7 @@ function tlabExecGui(%loadGui ) {
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
-	exec("tlab/EditorLab/gui/DGLabanageSFXParameters.cs" );
+	exec("tlab/EditorLab/gui/DlgManageSFXParameters.cs" );
 	exec("tlab/EditorLab/gui/DlgAddFMODProject.cs");
 	exec("tlab/EditorLab/gui/DlgEditorChooseLevel.cs");
 	exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.cs" );

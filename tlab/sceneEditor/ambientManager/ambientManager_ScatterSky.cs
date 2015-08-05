@@ -85,11 +85,12 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 	logd("SEP_ScatterSkyManager::selectScatterSky(%this,%obj)",%this,%obj);
 
 	if (!isObject(%obj)) {
+		%this.selectedSunObj = "";
 		%this.selectedScatterSky = "";
 		%this.selectedScatterSkyName = "";
 		return;
 	}
-	
+	%this.selectedSunObj = %obj;
 	%this-->scatterSkyTitle.text = "Sky type:\c2 ScatterSky \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedScatterSky = %obj;
 	%this.selectedScatterSkyName = %obj.getName();

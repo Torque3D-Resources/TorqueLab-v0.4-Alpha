@@ -67,6 +67,9 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG.schedule(1000,"updateMaterialLayers");
 	else
 		%this.updateMaterialLayers();
+		
+	if (TMG.AutoGenerateHeightmap)
+		%this.prepareHeightmap();
 }
 //------------------------------------------------------------------------------
 

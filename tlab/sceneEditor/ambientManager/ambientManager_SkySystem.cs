@@ -83,22 +83,27 @@ function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
 	foreach$(%obj in %list){
 		//if (!%obj.isBackup)
 			//continue;		
-		if (%obj $= %this.skySystemObj)
-			%select = %id;
+		if (%obj $= SEP_AmbientManager.skySystemObj)
+			%select = %obj.getId();
 		%name = %obj.getName();
 		if (%name $= "")
 			%name = %obj.getClassName()@"\c2-\c1"@%obj.getId();
 		devLog("Adding mode:",%name);
 		SEP_SkySelectMenu.add(%name,%obj.getId());
+		if (%select $= "")
+			%select = %obj.getId();
 		%id++;
 	}
-	devLog("ID=",%id);
+	devLog("ID=",%id,"Select",%select);
 	//if (%id $= "1")
 	//	hide(AMD_SelectSkyContainer);
 	//else
 		//show(AMD_SelectSkyContainer);
-		
-	SEP_SkySelectMenu.setSelected(%select,false);
+		%update = false;
+	if (!isObject(%this.selectedSunObj))
+		%update = true;
+	
+	SEP_SkySelectMenu.setSelected(%select,%update);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -179,7 +184,7 @@ function SEP_AmbientManager::createNewSkySystem( %this ) {
 	
 	//Rebuild Fog Params since they depend of type of sky system
 	SEP_AmbientManager.updateSkySystemData();
-	%this.buildFogParams();
+	//%this.buildFogParams();
 	
 	hide(SEP_SkySystemCreator);
 	
@@ -331,14 +336,15 @@ function SEP_AmbientManager::backupCurrentSky( %this ) {
 	
 	%currentObj = %this.getSkySystemObject();
 	if (isObject(%currentObj)){
-		%name = %currentObj.getName()@"_Backup";
-		delObj(%name);
-		%backupObj = %currentObj.deepClone();
-		%backupObj.setName(%name);
+		//%name = %currentObj.getName()@"_Backup";
+		//delObj(%name);
+		%backupObj = %currentObj;
+		//%backupObj = %currentObj.deepClone();
+		//%backupObj.setName(%name);
 		%backupObj.hidden = true;
 		//%backupObj = newScriptObject("ScatterSkyBackup",MissionGroup);
 		%backupObj.isBackup = true;
-		MissionGroup.add(%backupObj);
+		//MissionGroup.add(%backupObj);
 		//%backupObj.assignFieldsFrom(%scatterSkyObj);
 	}
 	
@@ -351,13 +357,14 @@ function SEP_AmbientManager::backupCurrentSky( %this ) {
 				continue;
 			}
 			
-			%name = %obj.getName()@"_Backup";
-			delObj(%name);
-			%backupSkyBox = %obj.deepClone();
-			%backupSkyBox.setName(%name);
+			//%name = %obj.getName()@"_Backup";
+			//delObj(%name);
+			%backupSkyBox = %obj;
+			//%backupSkyBox = %obj.deepClone();
+			//%backupSkyBox.setName(%name);
 			%backupSkyBox.hidden = true;
 			%backupSkyBox.isBackup = true;
-			MissionGroup.add(%backupSkyBox);
+			//MissionGroup.add(%backupSkyBox);
 			%backupObj.mySkyBox = %backupSkyBox;
 			
 			break;

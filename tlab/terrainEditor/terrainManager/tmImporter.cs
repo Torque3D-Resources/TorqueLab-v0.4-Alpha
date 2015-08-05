@@ -4,14 +4,57 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 $pref::Directories::Terrain = "levels/FarmDemo/";
+
+$TMG_DefaultHeightmap_Invalid = "tlab/terrainEditor/gui/images/heightmapInvalid.png";
+$TMG_DefaultHeightmap_NotGenerated = "tlab/terrainEditor/gui/images/heightmapN.png";
+$TMG_DefaultHeightmap_Invalid = "tlab/terrainEditor/gui/images/heightmapInvalid.png";
 //==============================================================================
 // Prepare and import the terrain HeightMap (Manager Import Terrain Button)
 //==============================================================================
+//==============================================================================
+function TMG::updateImportHeightmapBmp(%this,%doImport) {
+	
 
+
+	
+
+	if (TMG.heightmapMode $= "Source") {
+		%hmMenu = TMG_PageMaterialLayers-->heightMapMenu;
+		%heightmapSrc = TMG_SourceHeightMapMenu.getText();
+		%heightmapFile = TMG.SourceFolder@"/"@%heightmapSrc;
+		if (!isFile(%heightmapFile))
+			%bmpFile = "tlab/terrainEditor/gui/images/heightmapNotSelected.png";
+		else
+			%bmpFile = %heightmapFile;
+	
+	} else if (TMG.heightmapMode $= "Current") {
+		%heightmapFile = TMG.terrainHeightMap;
+		if (!isFile(%heightmapFile))
+			%bmpFile = "tlab/terrainEditor/gui/images/heightmapNotGenerated.png";
+		else
+			%bmpFile = %heightmapFile;
+	}
+	else if (TMG.heightmapMode $= "Browse") {
+		%heightmapFile = TMG.browseHeightMap;
+		if (!isFile(%heightmapFile))
+			%bmpFile = "tlab/terrainEditor/gui/images/heightmapNotSelected.png";
+		else
+			%bmpFile = %heightmapFile;
+	}
+	%heightmapFile = TMG.currentHeightMap;
+	
+	if(strFind(%heightmapFile,".")) {
+		warnLog("Invalid file or terrainObj file:",	TMG.currentHeightMap);	
+		%heightmapFile = "";	
+		%bmpFile = "tlab/terrainEditor/gui/images/heightmapInvalid.png";
+	}
+	TMG_ImportHeightMapBmp.setBitmap(%bmpFile);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function TMG::prepareAllLayers(%this,%doImport) {
 	%folder = TMG.DataFolder@"/TerData/"@TMG.activeTerrain.getName();
-	%this.exportTerrainLayersToPath(%folder,"png");
+	%this.prepareOpacityMaps(%folder);
 
 	foreach(%pill in TMG_MaterialLayersStack) {
 		devLog("Prepare layer file:",%pill.file);
@@ -36,15 +79,31 @@ function TMG::prepareAllLayers(%this,%doImport) {
 				%pill.activeChannels = strAddWord(%pill.activeChannels,%chan);
 		}
 	}
-
-	TMG.currentHeightMap = %this.exportHeightMap(%folder);
-	TMG_PageMaterialLayers-->reimportButton.active = 1;
+	%this.prepareHeightmap(%folder);
 
 	if (%doImport)
 		%this.importTerrain();
+	
+	%this.updateImportHeightmapBmp();
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function TMG::prepareHeightmap(%this,%folder) {
+	if (%folder $= "")
+		%folder = TMG.DataFolder@"/TerData/"@TMG.activeTerrain.getName();
+	TMG.terrainHeightMap = %this.exportHeightMap(%folder);
+	
+	%this.updateImportHeightmapBmp();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::prepareOpacityMaps(%this,%folder) {
+	if (%folder $= "")
+		%folder = TMG.DataFolder@"/TerData/"@TMG.activeTerrain.getName();
+	%this.exportTerrainLayersToPath(%folder,"png");
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Import Terrain Heightmap + Layers
 //==============================================================================
@@ -192,3 +251,40 @@ function TMG::validateImportTerrainName(%this,%name) {
 	TMG_PageMaterialLayers-->importTerrainName.setText(%name);
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+// Heightmap for re-importing
+//==============================================================================
+//==============================================================================
+function TMG::changeHeightmapMode( %this, %ctrl, %mode) {
+	TMG.heightmapMode = %mode;
+
+	if (TMG.heightmapMode $= "")
+		TMG.heightmapMode = %ctrl.internalName;
+
+	TMG_PageMaterialLayers-->currentHeightmap.visible = 0;
+	TMG_PageMaterialLayers-->browseHeightmap.visible = 0;
+	TMG_PageMaterialLayers-->sourceHeightmap.visible = 0;
+	eval("TMG_PageMaterialLayers-->"@TMG.heightmapMode@"Heightmap.visible = 1;");
+	eval("TMG_PageMaterialLayers-->heightmapModeStack-->"@TMG.heightmapMode@".setStateOn(true);");
+	
+	TMG.updateImportHeightmapBmp();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG_SourceHeightMapMenu::onSelect( %this, %id, %text) {
+
+	TMG.updateImportHeightmapBmp();
+}
+//------------------------------------------------------------------------------
+function TMG::selectHeightMapImage( %this) {
+	getLoadFilename("Png Files|*.png","TMG.setHeightMapImage",TMG.terrainHeightMap);
+}
+//==============================================================================
+function TMG::setHeightMapImage( %this,%file) {
+	
+	%file = validatePath(%file,true);
+	devLog("HeightMap selected:",%file);
+	TMG.browseHeightMap = %file;
+	TMG_PageMaterialLayers-->heightmapFile.setText(%file);
+	TMG.updateImportHeightmapBmp();
+}

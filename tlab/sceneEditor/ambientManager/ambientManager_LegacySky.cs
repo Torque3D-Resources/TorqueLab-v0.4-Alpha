@@ -107,7 +107,7 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 		%this.selectedSkyBox = "";
 		return;
 	}
-	
+	%this.selectedSunObj = %obj;
 	%this-->legacySkyTitle.text = "Sky type:\c2 Sun+SkyBox \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedSun = %obj;
 	%this.selectedSunName = %obj.getName();
