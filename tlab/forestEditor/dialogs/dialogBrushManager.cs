@@ -41,7 +41,7 @@ function FEP_BrushManager::setBrushPressure( %this,%ctrl ) {
 	%newPressure = %clampPressure * 100;
 	%formatPressure = mFloatLength(%newPressure,1);
 
-
+%ctrl.updateFriends();
 	//Set the validated value to control and update friends if there's any
 	//Set the validated value to control and update friends if there's any
 	foreach(%slider in $GuiGroup_FEP_Slider_Pressure) {
@@ -72,7 +72,7 @@ function FEP_BrushManager::setBrushHardness( %this,%ctrl ) {
 	%newHardness = %clampHardness * 100;
 	%formatHardness = mFloatLength(%newHardness,1);
 
-
+%ctrl.updateFriends();
 	//Set the validated value to control and update friends if there's any
 	foreach(%slider in $GuiGroup_FEP_Slider_Hardness) {
 		%slider.setValue(%formatHardness);
@@ -99,10 +99,12 @@ function FEP_BrushManager::setGlobalScale( %this,%ctrl ) {
 	//%ctrl = $ThisControl;
 	//%val = %ctrl.getValue();
 	%value = mClamp(%value,%minScaleSize,%maxScaleSize);
+	%value = mFloatLength(%value,2);
+	%ctrl.setValue(%value);
 	//%ctrl.setValue(%val);
 	$Forest::GlobalScale = %value;
-	//%ctrl.updateFriends();
-
+	%ctrl.updateFriends();
+	devLog("setGlobalScale",%value);
 	//Set the validated value to control and update friends if there's any
 	foreach(%slider in $GuiGroup_FEP_Slider_GlobalScale) {
 		%slider.setValue(%value);
@@ -132,7 +134,7 @@ function FEP_BrushManager::setBrushSize( %this,%ctrl ) {
 		%slider.setValue(%value);
 		%slider.updateFriends();
 	}
-
+%ctrl.updateFriends();
 	ForestEditorPlugin.setParam("BrushSize",%value);
 }
 //------------------------------------------------------------------------------
