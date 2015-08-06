@@ -11,7 +11,7 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 
 	for( ; %i < %paramArray.count() ; %i++) {
 		%field = %paramArray.getKey(%i);
-		%data = %paramArray.getValue(%i);
+		%paramData = %paramArray.getValue(%i);
 		%fieldWords = strReplace(%field,"_"," ");
 		%fieldClean = getWord(%fieldWords,0);
 		%special = getWord(%fieldWords,1);
@@ -26,7 +26,7 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		%ctrl = %paramArray.container.findObjectByInternalName(%field,true);
 
 		if (!isObject(%ctrl)) {
-			warnLog("Couln't find a valid GuiControl holding the value for field:",%field);
+			warnLog("Couln't find a valid GuiControl holding the value for field:",%field,"Inside:",%paramArray.container);
 			continue;
 		}
 
@@ -44,16 +44,18 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		}
 
 		//---------------------------------------------------------------------------
-		%syncDataStr = getField(%data,4);
+		%syncDataStr = getField(%paramData,4);
+
 
 		if (%syncDataStr $= "")
 			continue;
-
+		
 		//Try each syncData until we get a value
 		foreach$(%data in %syncDataStr) {
-			//If data is an object, get the value from it
-			if (isObject(%data)) {
-				%value = %data.getFieldValue(%field);
+				//If data is an object, get the value from it
+			eval("%dataObj = "@%data@";");
+			if (isObject(%dataObj)) {				
+				%value = %dataObj.getFieldValue(%field);
 			}
 			//If data start with $, it might be a full global
 			else if (getSubStr(%data,0,1) $= "$") {

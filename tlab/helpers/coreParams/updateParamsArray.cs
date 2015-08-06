@@ -15,14 +15,12 @@ $HLabParams_FriendList = "slider";
 /// %array: The Param ArrayObject which hold all the data for the params set
 /// %arg1: Optional argument #1 which can be add to the updateFunc
 /// %arg2: Optional argument #2 which can be add to the updateFunc
-function syncParamArrayCtrl( %ctrl, %updateFunc,%array,%arg1,%arg2) {
-	devLog("SubField found:",%ctrl,%array,%arg1,%arg2);
+function syncParamArrayCtrl( %ctrl, %updateFunc,%array,%arg1,%arg2) {	
 	//===========================================================================
 	// Special script for GuiColorPickerCtrl Params
 	if (%ctrl.getClassName() $= "GuiColorPickerCtrl") {
 		%ctrl.updateCommand = %updateFunc@"(%ctrl.internalName,%color,%ctrl,\""@%array@"\",\""@%arg1@"\",\""@%arg2@"\");";
-		%currentColor =   %ctrl.baseColor;
-		
+		%currentColor =   %ctrl.baseColor;		
 		if (%ctrl $= ColorBlendSelect){
 			devLog("ColorBlendSelect syncCkipped");
 			return;
@@ -40,12 +38,17 @@ function syncParamArrayCtrl( %ctrl, %updateFunc,%array,%arg1,%arg2) {
 			%callBack = %ctrl@".ColorPicked";
 			%updateCallback = %ctrl@".ColorUpdated";
 			GetColorF( %currentColor, %callback, %ctrl.getRoot(), %updateCallback, %cancelCallback );
-		}
-
+		}	
 		return;
 	}
 	//---------------------------------------------------------------------------
 	
+	syncParamArrayCtrlData(%ctrl, %updateFunc,%array,%arg1,%arg2);
+	return;
+	
+}
+function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%arg1,%arg2) {
+	//devLog("syncParamArrayCtrlData",%ctrl, %updateFunc,%array,%arg1,%arg2);
 	//Get the field from the internalName which is always the part before _ if exist
 	%field = getWord(strreplace(%ctrl.internalName,"_"," "),0);
 	if (strFind(%ctrl.internalName,"_")){
@@ -57,8 +60,7 @@ function syncParamArrayCtrl( %ctrl, %updateFunc,%array,%arg1,%arg2) {
 				%field = %ctrl.setting;
 			else
 				%field = %ctrl.internalName;
-		}
-		devLog("SubField found:",%field);
+		}	
 	}
 	
 	

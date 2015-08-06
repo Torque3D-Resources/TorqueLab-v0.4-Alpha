@@ -54,6 +54,10 @@ function buildParamSliderEdit( %pData ) {
 
 				%slider.tooltip = %tooltip;
 				%slider.hovertime = %tooltipDelay;
+			
+				
+				%slider.extent.y = %pData.Widget-->Slider.extent.y;
+				
 				%pData.pill-->field.tooltip = %tooltip;
 				%pData.pill-->field.hovertime = %tooltipDelay;
 				%textEdit.tooltip = %tooltip;

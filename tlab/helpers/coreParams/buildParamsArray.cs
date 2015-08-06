@@ -18,17 +18,24 @@ $ParamsArray_AggregateClass = "AggregateVar";
 $ParamsArray_DefaultStack = "Params_Stack";
 $ParamsArray_DefaultStackType = "Rollout";
 //==============================================================================
-// RPE_DatablockEditor.buildInterface();
+// RPE_DatablockEditor.buildInterface(); buildParamsArray(AxisGizmo_Param)
 function buildParamsArray( %array,%syncAfter ) {
 	//======================================================================
 	// Prepare the array for the build process (Set default for unsetted settings)
 	//----------------------------------------------------------------------
 	%guiStyle = %array.style;
-
+	
 	if (%guiStyle $= "")
 		%guiStyle = $ParamsArray_DefaultStyle;
 
 	%guiSource = $ParamsArray_WidgetPrefix@%guiStyle;
+	
+	if (!isObject(%guiSource)){
+		warnLog("Can't build params because the widgets source is invalid:",%guiSource);
+		return;
+	}
+	%guiSourceOriginalExtentX = %guiSource.extent.x;
+	%guiSourceOriginalExtentY = %guiSource.extent.y;
 	%defaultStackType = $ParamsArray_DefaultStackType;
 	%cloneFromGui = %guiSource;
 
@@ -93,8 +100,11 @@ function buildParamsArray( %array,%syncAfter ) {
 			%baseCtrl = %groupOption[%gid,"Container"];
 		//Check for specific Stack Internal name specified in options
 		else if (%groupOption[%gid,"Stack"] !$= "") {
-			%baseCtrl = %array.container.findObjectByInternalName(%groupOption[%gid,"Stack"],true);
+			%baseCtrl = %array.container.findObjectByInternalName(%groupOption[%gid,"Stack"],true);			
+		}else if (%groupOption[%gid,"StackObj"] !$= "") {
+			eval("%baseCtrl = "@%groupOption[%gid,"StackObj"]@";");			
 		}
+	
 
 		if (!%baseCtrlClear[%baseCtrl]) {
 			%baseCtrl.clear();
@@ -129,16 +139,19 @@ function buildParamsArray( %array,%syncAfter ) {
 					continue;
 				}
 			}
-
 			%displayCtrl = cloneObject(%displayWidget);
-			%displayCtrl.caption = %groupTitle;
-
+			if (%groupCtrlType $= "Rollout")			
+				%displayCtrl.caption = %groupTitle;
+			else if (%groupCtrlType $= "Header")
+				%displayCtrl-->title.text = %groupTitle;
+				
 			if (%groupOption[%gid,"InternalName"] !$= "") {
 				%displayCtrl.internalName = %groupOption[%gid,"InternalName"];
 			}
 
 			%baseCtrl.add(%displayCtrl);
 		} else {
+			%displayCtrl.addDirect = true;
 			%displayCtrl = %baseCtrl;
 		}
 
@@ -150,7 +163,7 @@ function buildParamsArray( %array,%syncAfter ) {
 		
 		//Store the Group COntainer for the Group ID
 		%groupCtrl[%gid] = %displayCtrl;
-
+		
 		//======================================================================
 		// Group preparation completed, prepare for next group ID
 		//----------------------------------------------------------------------
@@ -194,7 +207,19 @@ function buildParamsArray( %array,%syncAfter ) {
 			%pData.groupId = "1";
 
 		%basePillCtrl = %groupCtrl[%pData.groupId];
-		%pData.parentCtrl = %basePillCtrl-->stackCtrl;
+		if (%basePillCtrl.addDirect)
+			%pData.parentCtrl = %basePillCtrl;
+		else
+			%pData.parentCtrl = %basePillCtrl-->stackCtrl;
+			
+		if (%pData.Type $= "CloneCtrl"){			
+			%ctrlHolder = %pData.setting.deepClone();
+			%ctrlHolder.visible = 1;
+			%pData.setting.visible = 0;
+			%pData.parentCtrl.add(%ctrlHolder);	
+			%removeKeyList = strAddWord(%removeKeyList,%field);		
+			continue;
+		}
 
 		if (!isObject(%pData.parentCtrl)) {
 			paramLog("Param skipped due to invalid parent ctrl! Skipped setting=",%pData.Setting);
@@ -218,7 +243,7 @@ function buildParamsArray( %array,%syncAfter ) {
 			%guiSource.setExtent(%pData.parentCtrl.extent.x,%guiSource.extent.y);
 			%guiSource-->widgets.setExtent(%pData.parentCtrl.extent.x,%guiSource.extent.y);
 		}
-
+		
 		%pData.Widget = %cloneFromGui.findObjectByInternalName(%pillSrc,true);
 
 		if(!isObject(%pData.Widget)) {
@@ -318,6 +343,7 @@ function buildParamsArray( %array,%syncAfter ) {
 		//=============================================================
 		//Call the predefined function for the GuiCtrl type
 		//-------------------------------------------------------------
+		
 		if (isFunction("buildParam"@%pData.Category))
 			eval("%ctrlHolder = buildParam"@%pData.Category@"(%pData);");
 		else
@@ -377,9 +403,19 @@ function buildParamsArray( %array,%syncAfter ) {
 
 	if (%multiCol > 0) {
 	}
+	
+	//Removed keys of ctrl we don't want to sync
+	foreach$(%key in %removeKeyList){
+		%index = %array.getIndexFromKey(%key);
+		%array.erase(%index);		
+	}
 
 	if (%syncAfter)
 		syncParamArray(%array);
+	
+	%guiSource.setExtent(%guiSourceOriginalExtentX,%guiSourceOriginalExtentY);
+
+
 }
 //------------------------------------------------------------------------------
 

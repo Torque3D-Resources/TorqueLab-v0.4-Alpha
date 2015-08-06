@@ -48,7 +48,7 @@ function fixTerrainMaterials(%loadNew,%reset) {
 						%fileWrite.writeLine("//Auto generated material for TerrainMaterial in:"@%fileBase@"");
 						%fileWrite.writeLine("//------------------------------------------------------------------------------");
 						%fileWrite.writeLine("//==============================================================================");
-						%fileWrite.writeLine("info(\"Loading generated materials for:"@%fileBase@"\");");
+						
 					}
 
 					%fileWrite.writeLine("//==============================================================================");
@@ -118,7 +118,7 @@ function fixTerrainMaterialsStock(%loadNew,%reset) {
 						%fileWrite.writeLine("//Auto generated material for TerrainMaterial in:"@%fileBase@"");
 						%fileWrite.writeLine("//------------------------------------------------------------------------------");
 						%fileWrite.writeLine("//==============================================================================");
-						%fileWrite.writeLine("info(\"Loading generated materials for:"@%fileBase@"\");");
+
 					}
 
 					%fileWrite.writeLine("//==============================================================================");

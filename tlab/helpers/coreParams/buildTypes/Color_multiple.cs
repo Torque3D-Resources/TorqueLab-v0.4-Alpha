@@ -88,7 +88,7 @@ function buildParamColorSlider( %pData ) {
 	%alphaSlider.colorPicker = %colorPicker;
 	%alphaSlider.fieldSource = %pData.Setting;
 	%alphaSlider.command = %colorPicker@".AlphaChanged($ThisControl);";
-	
+	%alphaSlider.altCommand = %colorPicker@".AlphaChanged($ThisControl);";
 	if (%isIntColor)
 		%alphaSlider.range = "0 255";
 	else
@@ -123,6 +123,7 @@ function buildParamColorSliderEdit( %pData ) {
 	%alphaSlider.colorPicker = %colorPicker;
 	%alphaSlider.fieldSource = %pData.Setting;
 	%alphaSlider.command = %colorPicker@".AlphaChanged($ThisControl);";
+		%alphaSlider.altCommand = %colorPicker@".AlphaChanged($ThisControl);";
 	
 	if (%isIntColor)
 		%alphaSlider.range = "0 255";

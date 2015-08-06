@@ -90,6 +90,11 @@ function GuiControl::getTypeValue( %this ) {
 		%value = %this.isStateOn();
 	case "Color":
 		%value = %this.BaseColor ;
+		if (%this.isIntColor){
+	   	%value = ColorFloatToInt(%value);			
+	   
+	   }
+		
 	case "MenuId":
 		%value = %this.getSelected();
 

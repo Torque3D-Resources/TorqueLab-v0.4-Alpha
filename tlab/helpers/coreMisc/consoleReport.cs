@@ -302,3 +302,10 @@ function logObj(%obj,%prefix, %dynamicOnly) {
 		%value = %obj.getFieldValue(%field);
 	}
 }
+
+//Moved in game to prevent unwanted console report, it will check for a function before calling it
+function updateTSShapeLoadProgress(%progress, %msg) {
+	if(isFunction("updateTSShapeLoadProgressUI"))
+      updateTSShapeLoadProgressUI(%progress, %msg);
+}
+

@@ -9,7 +9,11 @@
 function GuiControl::onAdd	(%this) {
     //Check if want to assign to a guiGroup
     if (%this.guiGroup !$= "" ) 
-      addCtrlToGuiGroup(%this);   
+      addCtrlToGuiGroup(%this); 
+	
+	if (!isObject(%this.profile)){
+		warnLog(%this.getName(),%this.getClassName()," have an invalid profile:",%this.profile);
+	}
 }
 //------------------------------------------------------------------------------
 

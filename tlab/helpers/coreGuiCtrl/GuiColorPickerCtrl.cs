@@ -6,6 +6,7 @@
 //==============================================================================
 // Lab ColorPicker Common updates and Picked function
 //==============================================================================
+$AutoColor = true;
 //==============================================================================
 // Called when a color is confirmed and colorPicker is closing
 function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {	
@@ -31,13 +32,18 @@ function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {
 		//eval(%command);
 	}
 	
-	if (%isPicked){
+	if (%isPicked || $AutoColor){
 		if (isObject(%this.colorEditCtrl)) {		
 			%command = %this.colorEditCtrl.command;
-			%command = strreplace(%command,"$ThisControl",%this.colorEditCtrl.getId());
-			devLog("About to eval:",%command);
+			%command = strreplace(%command,"$ThisControl",%this.colorEditCtrl.getId());		
 			eval(%command);
 			
+		}
+		else {
+			%command = %this.command;
+			%command = strreplace(%command,"$ThisControl",%this.getId());
+			%command = strreplace(%command,"syncParamArrayCtrl","syncParamArrayCtrlData");		
+			eval(%command);
 		}
 		%srcObj = %this.sourceObject;
 		%srcField = %this.sourceField;
@@ -128,14 +134,18 @@ function GuiColorPickerCtrl::ColorUpdated(%this,%color) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Empty Editor Gui
+// Callback of a GuiSliderCtrl assigned to the ColorPicker Alpha
 function GuiColorPickerCtrl::AlphaChanged(%this,%sourceCtrl) {	
-	%alpha = %sourceCtrl.getValue();	
+	%alpha = %sourceCtrl.getValue();
+	if (%this.isIntColor)
+		%alpha = %alpha / 255;
+	
+	%alpha = mClamp(%alpha,0,1);
 	%this.baseColor.a = %alpha;
 	%color = %this.baseColor;
 	%this.updateColor();
 
-	devLog("AlphaChanged color = ",%this.baseColor,"IsIntCOlor",%this.isIntColor);	
+	
 	if (%this.updateCommand !$= "")
 		eval(%this.updateCommand);
 	
