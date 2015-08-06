@@ -38,6 +38,8 @@ function GLab::updateProfilesColors(%this,%refreshList ) {
 // Update all the Color Sets assigned profiles
 function GLab::updateSingleProfileColors(%this,%profile,%cType ) {
   info("Updating single profile colors",%profile.getName(),"Type",%cType);
+    if (!isObject(GuiColor_Group))
+   	return;
   	%srcGroup = GuiColor_Group.findObjectByInternalName(%cType,true);
          %colorSet = %profile.getFieldValue(%cType);  
          
@@ -71,6 +73,8 @@ function GLab::updateSingleProfileColors(%this,%profile,%cType ) {
 //==============================================================================
 // Update ColorFill color set (use an object to hold all values)
 function GLab::updateProfilesFillColor(%this,%cType ) {
+	  if (!isObject(GuiColor_Group))
+   	return;
    %srcColor = GuiColor_Group.findObjectByInternalName(%cType,true);       
    foreach$(%profile in $ProfileListColor[%cType]){
       %colorSet = %profile.getFieldValue(%cType);           

@@ -15,6 +15,8 @@ function GLab::updateColors( %this ) {
       $GLab_ColorGroupSetList[%colorGroup] = "None";
    //Check each object in Color group and update the associated colorPickerCtrl
    //Colors are store in 2 ways: SimGroup and ScriptObject
+   if (!isObject(GuiColor_Group))
+   	return;
    foreach(%obj in GuiColor_Group){     
       if (%obj.getClassName() $= "SimGroup")
          %this.updateColorFontGroup(%obj);

@@ -14,30 +14,35 @@ function TMG::refreshMaterialLayersPage(%this) {
 	TMG_PageMaterialLayers-->materialLayersInfo.setText(%info);
 	//Change heightmap mode to current mode, else it will use the default current mode
 	TMG.changeMapFolderMode(TMG_PageMaterialLayers-->mapModeStack-->relative,TMG.mapFolderMode);
-	TMG.updateMaterialLayers();
+
+	//TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function TMG::scanTextureMapFolder(%this) {
 	TMG.textureMapList = "";
+	TMG.customMapList = "";
 	%folder = TMG.sourceFolder;
 
+	
 	if (!isDirectory(%folder)) {
 		warnLog("Invalid folder specified:",%folder," Make sure the folder exist and contain the images sources");
 		TMG.textureMapList = "Nothing found in scanned folder." TAB "-" TAB "-";
 		return;
 	}
 
-	%files = getMultiExtensionFileList(%folder,"png dds bmp tga jpg");
+	%files = getMultiExtensionFileList(%folder,"png bmp tga jpg");
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
 		%file = %folder@getRecord(%files,%i);
 		%file = validatePath(%file);
 		%this.addTextureMap(%file);
 	}
-	
-	if (isDirectory(TMG.terrainFolder))
-		%files = %files NL getMultiExtensionFileList(TMG.terrainFolder,"png dds bmp tga jpg");
+	return;
+	if (!isDirectory(TMG.terrainFolder))
+		return;
+		
+	%files = getMultiExtensionFileList(TMG.terrainFolder,"png bmp tga jpg");
 		
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
 		%file = %folder@getRecord(%files,%i);
@@ -119,9 +124,10 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 	
 	%previewContainer = %pill-->imageButton.parentGroup.parentGroup;
 	%previewContainer.visible = TMG.ShowMapPreview;
-	
-
-	%pill-->imageButton.setBitmap(%file);
+	%bmpFile = %file;
+	if (!isFile(%bmpFile))
+		%bmpFile = "tlab/terrainEditor/gui/images/textureMapNotGenerated.png";
+	%pill-->imageButton.setBitmap(%bmpFile);
 	
 	foreach(%radio in %pill-->channelStack) {
 		%radio.superClass = "TMG_MapChannelRadio";
@@ -174,7 +180,10 @@ function TMG::setMaterialLayerChannel(%this,%layerId,%channel) {
 //==============================================================================
 function TMG::updateMaterialLayers(%this) {
 	%terObj = %this.activeTerrain;
-	
+	if (TMG.activeDataUpdated){
+		warnLog("Trying to update layers while data is already updated");
+		return;
+	}
 	
 	if (TMG.autoExportLayerMode !$= "Never" ){
 		eval("%exportPath = TMG."@TMG.autoExportLayerMode@"Folder;");	
@@ -183,7 +192,7 @@ function TMG::updateMaterialLayers(%this) {
 	}
 	%this.scanTextureMapFolder();
 		
-	TMG_PageMaterialLayers-->heightmapCurrentText.text = %terObj.getName()@"_heightmap";
+	TMG_PageMaterialLayers-->heightmapCurrentText.text = TMG.activeHeightmapName;
 	
 	//Update the default HeightMap Map Menu
 	TMG.updateMaterialLayerMenu();
@@ -402,64 +411,10 @@ function TMG::removeAllLayerMaps( %this) {
 //==============================================================================
 // Terrain Data Folder (used as base for exporting)
 //==============================================================================
-//==============================================================================
-function TMG::changeMapFolderMode( %this, %ctrl,%mode) {
-	TMG.mapFolderMode = %mode;
-
-	if (TMG.mapFolderMode $= "")
-		TMG.mapFolderMode = %ctrl.internalName;
-
-	TMG_PageMaterialLayers-->relativeMapSource.visible = 0;
-	TMG_PageMaterialLayers-->browseMapSource.visible = 0;
-	eval("TMG_PageMaterialLayers-->"@TMG.mapFolderMode@"MapSource.visible = 1;");
-	TMG.updateMaterialLayers();
-}
-//------------------------------------------------------------------------------
 
 
 
 
-
-//==============================================================================
-// Heightmap for re-importing
-//==============================================================================
-//==============================================================================
-function TMG_AutoExportLayerRadio::onClick( %this) {
-	%mode = %this.internalName;
-	TMG.setAutoExportMode(%mode);	
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TMG::setAutoExportMode( %this,%mode) {
-	%radio = TMG_AutoExportLayerRadios.findObjectByInternalName(%mode);
-	%radio.setStateOn(true);
-	
-	TMG.autoExportLayerMode = %mode;
-	devLog("Auto export layer mode set to:",%mode);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function TMG::getLayersMapFolder( %this) {
-	if (TMG.autoExportLayerMode $= "Target")
-		return TMG.targetFolder;
-	else if (TMG.autoExportLayerMode $= "Terrain"){		
-		return TMG.terrainFolder;		
-	}
-	return TMG.sourceFolder;
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-function TMG_ShowMapPreviewCheck::onClick( %this) {
-	
-	TMG.ShowMapPreview = %this.isStateOn();
-	foreach(%pill in TMG_MaterialLayersStack){
-		%previewContainer = %pill-->imageButton.parentGroup.parentGroup;
-		%previewContainer.visible = TMG.ShowMapPreview;
-	}
-
-}
-//------------------------------------------------------------------------------
 
 //==============================================================================
 /*

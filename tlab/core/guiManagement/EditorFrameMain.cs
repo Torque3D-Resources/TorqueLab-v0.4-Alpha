@@ -45,6 +45,11 @@ function Lab::setEditorFrameMainSize(%this,%sizeMode) {
 	%this.setupEditorFrameMain();
 }
 //------------------------------------------------------------------------------
+function Lab::setupDefaultEditorFrameMain(%this) {
+	$LabGui_EditorFrameMain_SizeMode = InterfaceEditor_Param.getCfg("EditorFrameMain");
+	$LabGui_ForceToolsSize = InterfaceEditor_Param.getCfg("locked");
+	%this.setupEditorFrameMain();
+}
 //==============================================================================
 function Lab::setupEditorFrameMain(%this,%defaultSize,%mode) {
 	EditorFrameMain.frameMinExtent(1,280,100);

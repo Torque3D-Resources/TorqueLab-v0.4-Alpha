@@ -167,8 +167,8 @@ singleton GuiControlProfile(ToolsRadioProfile : ToolsDefaultProfile)
 	fillColor = "254 253 253 255";
 	fillColorHL = "221 221 221 255";
 	fillColorNA = "200 200 200 255";
-	fontSize = "20";
-	textOffset = "16 10";
+	fontSize = "17";
+	textOffset = "19 10";
 	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile.png";
 	hasBitmapArray = "1";
 	fontColors[0] = "250 250 250 255";
@@ -176,8 +176,8 @@ singleton GuiControlProfile(ToolsRadioProfile : ToolsDefaultProfile)
    border = "0";
    fontColors[2] = "Black";
    fontColorNA = "Black";
-   justify = "Center";
-   fontType = "Gotham Bold";
+   justify = "Left";
+   fontType = "Lato bold";
    category = "Tools";
    fontColors[8] = "255 0 255 255";
 };

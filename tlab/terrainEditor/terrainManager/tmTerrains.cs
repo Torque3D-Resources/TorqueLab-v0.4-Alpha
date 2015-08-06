@@ -5,12 +5,20 @@
 //==============================================================================
 //==============================================================================
 function TMG::setActiveTerrain(%this,%terrainId) {
-	
+/*	if (isObject(TMG.activeTerrain) && isObject(TMG.activeTerrain)){
+		if (TMG.activeTerrain.getId() $= %terrainId.getId()){
+			warnlog(TMG.activeTerrain.getName(),"Terrain is already active");
+			return;
+		}
+	}
+*/
+	TMG.activeDataUpdated = false;
 	if (!isObject(%terrainId)){
 		TMG.activeTerrain = "";
 		TMG.activeHeightInfo = "";
 	}
 	TMG.activeTerrain = %terrainId;
+	TMG.activeTerrainId = %terrainId.getId();
 	TMG_ActiveTerrainMenu.setText(TMG.activeTerrain.getName());
 	%this.getActiveFolders();
 	
@@ -62,14 +70,19 @@ function TMG::setActiveTerrain(%this,%terrainId) {
 		TMG_PageMaterialLayers-->terrainZ.setText(%terrainId.position.z);
 	}
 	%this.validateImportTerrainName(%terrainName);
+	%this.getTerrainHeightmapName();
 	%this.updateTerrainLayers();
+	devLog("updateMaterialLayers from setActiveTerrain");
 	if (ETerrainEditor.getMaterials() $= "")
 		TMG.schedule(1000,"updateMaterialLayers");
 	else
 		%this.updateMaterialLayers();
-		
+	
+	
 	if (TMG.AutoGenerateHeightmap)
 		%this.prepareHeightmap();
+		
+		TMG.activeDataUpdated = true;
 }
 //------------------------------------------------------------------------------
 
@@ -91,10 +104,12 @@ function TMG::updateTerrainList(%this,%selectCurrent) {
 	
 	if (!%selectCurrent)
 		return;
-	if (!isObject(TMG.activeTerrain))
-		TMG.activeTerrain = getWord(%list,0);	
-
-	TMG.setActiveTerrain(TMG.activeTerrain);
+	
+	
+	if (!isObject(TMG.activeTerrain))		
+		TMG.setActiveTerrain(getWord(%list,0));
+	else if (%selectCurrent)
+		TMG.setActiveTerrain(TMG.activeTerrain);
 	//TMG_ActiveTerrainMenu.setSelected(TMG.activeTerrain.getId());
 	
 }
@@ -134,4 +149,18 @@ function TMG::storeFolderToTerrain(%this,%storeToTerrain) {
 // Export Single Layer Map
 //==============================================================================
 
-
+//==============================================================================
+function TMG::getTerrainHeightmapName(%this) {	
+	TMG.activeHeightmapName = "";
+	if (!isObject(TMG.ActiveTerrain))
+		return;
+	%heightMapName = TMG.ActiveTerrain.getName()@"_hm_"@TMG.ActiveTerrain.squareSize;
+	
+	if (TMG.activeHeightRange !$="")
+	 %heightMapName = %heightMapName @"_"@mCeil(TMG.activeHeightInfo.x);
+	
+	TMG.activeHeightmapName = %heightMapName;
+	return %heightMapName;
+	
+}
+//------------------------------------------------------------------------------

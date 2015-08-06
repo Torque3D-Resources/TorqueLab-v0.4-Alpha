@@ -12,21 +12,23 @@ function TMG::getActiveFolders(%this) {
 	if (%dataFolder $= "")
 		%dataFolder = filePath(TMG.activeTerrain.terrainFile);
 	
-	TMG.setFolder("data",%dataFolder);
+	TMG.setFolder("data",validatePath(%dataFolder));
 	
 	%sourceFolder = TMG.activeTerrain.sourceFolder;
 	if (%sourceFolder $= "")
 		%sourceFolder = MissionGroup.sourceFolder;
 	if (%sourceFolder $= "")
-		%sourceFolder = %dataFolder;	
-	TMG.setFolder("source",%sourceFolder);
+		%sourceFolder = %dataFolder@"/Source";
+	
+	TMG.setFolder("source",validatePath(%sourceFolder));
 	
 	%targetFolder = TMG.activeTerrain.targetFolder;
 	if (%targetFolder $= "")
 		%targetFolder = MissionGroup.targetFolder;
 	if (%targetFolder $= "")
-		%targetFolder = %dataFolder;	
-	TMG.setFolder("target",%targetFolder);
+		%targetFolder = %dataFolder@"/Target";	
+		
+	TMG.setFolder("target",validatePath(%targetFolder));
 	
 	%terrainFolder = validatePath(TMG.dataFolder@"/terData/"@TMG.activeTerrain.getName(),true);
 	TMG.terrainFolder = %terrainFolder;
@@ -48,6 +50,11 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 	}
 	%folder = validatePath(%folder,true);
 	%field = %type@"Folder";
+	
+	eval("%currentFolder = TMG."@%field@";");
+	if (%currentFolder !$= %folder)
+		%folderChanged = true;
+	
 	eval("TMG."@%field@" = %folder;");
 	
 	if (%type !$= "data"){
@@ -90,8 +97,8 @@ function TMG::setFolder(%this,%type,%folder,%relativeToData,%onlyTMG) {
 			TMG.activeTerrain.setFieldValue(%field,%folder);
 	}
 	//Update map layers data if source changed
-	if (%type $= "Source" && %oldSource !$= TMG.sourceFolder)
-		TMG.updateMaterialLayers();
+	if (%type $= "Source" && %folderChanged)
+		TMG.updateAllMaterialLayersMenu();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

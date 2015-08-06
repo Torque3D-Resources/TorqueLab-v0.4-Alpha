@@ -108,34 +108,3 @@ function MaterialEditorGui::open(%this) {
 	MaterialEditorGui.preventUndo = false;
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function MaterialEditorGui::quit(%this) {
-	// if we quit, restore with notDirty
-	if(MaterialEditorGui.materialDirty) {
-		//keep on doing this
-		MaterialEditorGui.copyMaterials( notDirtyMaterial, materialEd_previewMaterial );
-		MaterialEditorGui.copyMaterials( notDirtyMaterial, MaterialEditorGui.currentMaterial );
-		MaterialEditorGui.guiSync( materialEd_previewMaterial );
-		materialEd_previewMaterial.flush();
-		materialEd_previewMaterial.reload();
-		MaterialEditorGui.currentMaterial.flush();
-		MaterialEditorGui.currentMaterial.reload();
-	}
-
-	if( isObject(MaterialEditorGui.currentMaterial) ) {
-		MaterialEditorGui.lastMaterial = MaterialEditorGui.currentMaterial.getName();
-	}
-
-	MaterialEditorGui.setMaterialNotDirty();
-	// First delete the model so that it releases
-	// material instances that use the preview materials.
-	matEd_previewObjectView.deleteModel();
-	// Now we can delete the preview materials and shaders
-	// knowing that there are no matinstances using them.
-	matEdCubeMapPreviewMat.delete();
-	materialEd_previewMaterial.delete();
-	materialEd_justAlphaMaterial.delete();
-	materialEd_justAlphaShader.delete();
-	$MaterialEditor_MaterialsLoaded = false;
-}
-//------------------------------------------------------------------------------

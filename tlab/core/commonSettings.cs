@@ -49,6 +49,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar = %this.newParamsArray("Editor","Interface","",true);
 	%ar.prefGroup = "$LabGui_EditorFrameMain_";
 	%ar.autoSyncPref = true;
+	
 	//%ar.style = "StyleA";
 	%ar.group[%gid++] = "Main editor frame";	
 	%ar.setVal("SizeMode",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorFrameMainSize(*val*);" TAB %gid);
@@ -99,6 +100,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.setVal("renderPopupBackground",       "1" TAB "renderPopupBackground" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("renderSelectionBox",       "1" TAB "renderSelectionBox" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("showMousePopupInfo",       "1" TAB "showMousePopupInfo" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
+	
 	//Misc
 	%gid = 0;
 	%ar = %this.newParamsArray("Misc","WorldEditor");
@@ -135,6 +137,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.setVal("renderPlaneHashes",       "1" TAB "renderPlaneHashes" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderSolid",       "0" TAB "renderSolid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderMoveGrid",       "1" TAB "renderMoveGrid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
+	
 	
 }
 //------------------------------------------------------------------------------

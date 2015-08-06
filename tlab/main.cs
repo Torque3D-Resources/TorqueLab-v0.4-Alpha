@@ -61,7 +61,7 @@ package Lab {
     		loadTorqueLabProfiles();
     		
         Parent::onStart();       
-        new Settings(EditorSettings) {
+     	 new Settings(EditorSettings) {
             file = "tlab/settings.xml";
         };
         EditorSettings.read();
@@ -146,10 +146,7 @@ package Lab {
 
         //$Scripts::ignoreDSOs = %toggle;
 
-        if(isWebDemo()) {
-            // if this is the web tool demo lets init some value storage
-            //$clicks
-        }
+     
         Lab.pluginInitCompleted();
     }
 

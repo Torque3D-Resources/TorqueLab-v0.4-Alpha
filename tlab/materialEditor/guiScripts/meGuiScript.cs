@@ -45,3 +45,53 @@ function MaterialEditorPlugin::toggleGroup(%this,%ctrl) {
 	MaterialEditorPlugin.setCfg("PropShowGroup_"@%group,%visible);
 }
 //------------------------------------------------------------------------------
+
+
+//==============================================================================
+// Image thumbnail right-clicks.
+
+// not yet functional
+function MaterialEditorMapThumbnail::onRightClick( %this ) {
+	if( !isObject( "MaterialEditorMapThumbnailPopup" ) )
+		new PopupMenu( MaterialEditorMapThumbnailPopup ) {
+		superClass = "MenuBuilder";
+		isPopup = true;
+		item[ 0 ] = "Open File" TAB "" TAB "openFile( %this.filePath );";
+		item[ 1 ] = "Open Folder" TAB "" TAB "openFolder( filePath( %this.filePath ) );";
+		filePath = "";
+	};
+
+	// Find the text control containing the filename.
+	%textCtrl = %this.parentGroup.findObjectByInternalName( %this.fileNameTextCtrl, true );
+
+	if( !%textCtrl )
+		return;
+
+	%fileName = %textCtrl.getText();
+	%fullPath = makeFullPath( %fileName, getMainDotCsDir() );
+	// Construct a full path.
+	%isValid = isFile( %fullPath );
+
+	if( !%isValid ) {
+		if( isFile( %fileName ) ) {
+			%fullPath = %fileName;
+			%isValid = true;
+		} else {
+			// Try material-relative path.
+			%material = MaterialEditorGui.currentMaterial;
+
+			if( isObject( %material ) ) {
+				%materialPath = filePath( makeFullPath( %material.getFilename(), getMainDotCsDir() ) );
+				%fullPath = makeFullPath( %fileName, %materialPath );
+				%isValid = isFile( %fullPath );
+			}
+		}
+	}
+
+	%popup = MaterialEditorMapThumbnailPopup;
+	%popup.enableItem( 0, %isValid );
+	%popup.enableItem( 1, %isValid );
+	%popup.filePath = %fullPath;
+	%popup.showPopup( Canvas );
+}
+//------------------------------------------------------------------------------

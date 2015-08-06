@@ -88,13 +88,13 @@ function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
 		%name = %obj.getName();
 		if (%name $= "")
 			%name = %obj.getClassName()@"\c2-\c1"@%obj.getId();
-		devLog("Adding mode:",%name);
+		
 		SEP_SkySelectMenu.add(%name,%obj.getId());
 		if (%select $= "")
 			%select = %obj.getId();
 		%id++;
 	}
-	devLog("ID=",%id,"Select",%select);
+	
 	//if (%id $= "1")
 	//	hide(AMD_SelectSkyContainer);
 	//else
@@ -109,7 +109,7 @@ function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::getSkySystemObject( %this ) {
-	devLog("SEP_AmbientManager::getSkySystemObject(%this)");
+	
 	%this.skySystemObj = "";
 	%this.scatterSkyObj = "";
 	%this.sunObj = "";
@@ -166,7 +166,7 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 	}
 	
 	//%this.activateSkyObj(%this.skySystemObj);
-	info("AmbientManager detected the Sky System:",%this.skySystem,"Using object",%this.skySystemObj);
+	
 	return %this.skySystemObj;
 }
 //------------------------------------------------------------------------------
@@ -194,7 +194,7 @@ function SEP_AmbientManager::createNewSkySystem( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::createNewScatterSky( %this ) {
-	devLog("SEP_AmbientManager::createNewScatterSky(%this)");
+	
 	
 	%backup = SEP_SkySystemCreator-->backupCurrentSystem.isStateOn();
 	if (%backup)
@@ -258,7 +258,7 @@ function SEP_AmbientManager::createNewScatterSky( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::createNewLecacySky( %this ) {
-	devLog("SEP_AmbientManager::createNewLecacySky(%this)");
+
 	%backup = SEP_SkySystemCreator-->backupCurrentSystem.isStateOn();
 	if (%backup)
 		%this.backupCurrentSky();
@@ -331,7 +331,7 @@ function SEP_AmbientManager::createNewLecacySky( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::backupCurrentSky( %this ) {
-	devLog("SEP_AmbientManager::backupCurrentSky(%this)");
+
 	
 	
 	%currentObj = %this.getSkySystemObject();

@@ -39,7 +39,8 @@ function LGTools::setProfileColorFromSet(%this,%set,%type ) {
 //==============================================================================
 // Update all the Color Sets assigned profiles
 function LGTools::updateProfileColorsSet(%this,%profile,%set,%type ) {
-	
+	 if (!isObject(GuiColor_Group))
+   			return;
 	switch$(%type){
  		case "colorFont":
  			info("Updating profile font colors",%profile.getName(),"Set",%set);
@@ -79,6 +80,7 @@ function LGTools::updateProfileColorsSet(%this,%profile,%set,%type ) {
  			
  			
 		case "colorFill":
+			 
  		  %srcColor = GuiColor_Group.findObjectByInternalName(%type,true);       
 		
 			    

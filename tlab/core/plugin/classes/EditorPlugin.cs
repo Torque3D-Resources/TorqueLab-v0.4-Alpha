@@ -56,8 +56,8 @@ function EditorPlugin::onEditorSleep( %this ) {
 /// Callback when the tool is 'activated' by the WorldEditor
 /// Push Gui's, stuff like that
 function EditorPlugin::onActivated( %this ) {
-	if(isDemo())
-		startToolTime(%this.getName());
+	//if(isDemo())
+		//startToolTime(%this.getName());
 
 	//Reset some default Plugin values
 	Lab.fitCameraGui = ""; //Used by GuiShapeEdPreview to Fit camera on object

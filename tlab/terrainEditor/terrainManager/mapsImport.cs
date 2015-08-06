@@ -29,10 +29,14 @@ function TMG::updateImportHeightmapBmp(%this,%doImport) {
 	
 	} else if (TMG.heightmapMode $= "Current") {
 		%heightmapFile = TMG.terrainHeightMap;
-		if (!isFile(%heightmapFile))
+		if (!isFile(%heightmapFile)){
+			TMG_GenerateHeightmapButton.visible = 1;
 			%bmpFile = "tlab/terrainEditor/gui/images/heightmapNotGenerated.png";
-		else
+		}
+		else{
+			TMG_GenerateHeightmapButton.visible = 0;
 			%bmpFile = %heightmapFile;
+		}
 	}
 	else if (TMG.heightmapMode $= "Browse") {
 		%heightmapFile = TMG.browseHeightMap;
@@ -41,10 +45,10 @@ function TMG::updateImportHeightmapBmp(%this,%doImport) {
 		else
 			%bmpFile = %heightmapFile;
 	}
-	%heightmapFile = TMG.currentHeightMap;
-	
-	if(strFind(%heightmapFile,".")) {
-		warnLog("Invalid file or terrainObj file:",	TMG.currentHeightMap);	
+	//%heightmapFile = TMG.currentHeightMap;
+	%heightmapFile = validatePath(%heightmapFile,true);
+	if(!isFile(%heightmapFile)) {
+		warnLog("Invalid file or terrainObj file:",	%heightmapFile);	
 		%heightmapFile = "";	
 		%bmpFile = "tlab/terrainEditor/gui/images/heightmapInvalid.png";
 	}
@@ -121,7 +125,12 @@ function TMG::importTerrain(%this) {
 	TMG.currentHeightMap = strreplace(TMG.currentHeightMap,"//","/");
 	%heightmapFile = TMG.currentHeightMap;
 
-	if (TMG.heightmapMode $= "Source") {
+	if (TMG.heightmapMode $= "Current") {
+		
+		%heightmapFile = TMG.terrainHeightMap;
+		devLog("Reimporting current heightmap:",%heightmapFile);
+	}
+	else if (TMG.heightmapMode $= "Source") {
 		%heightmapSrc = %hmMenu.getText();
 		%heightmapFile = TMG.SourceFolder@"/"@%heightmapSrc;
 		devLog("Reimporting with heightmap:",%heightmapSrc,"File:",%heightmapFile);
@@ -162,7 +171,7 @@ function TMG::importTerrain(%this) {
 		%position.x =  %worldSize/-2;
 		%position.y =  %worldSize/-2;
 	}
-	devLog("Position POS:",%position);
+	devLog("Import terrain:",%name,"SquareSize",%metersPerPixel,"HeightScale",%heightScale,"Flipped",%flipYAxis);
 	//%saveToFile = filePath(MissionGroup.getFileName());
 	//if (isObject(%name))
 	//	%saveToFile = %name.getFileName();
@@ -261,12 +270,17 @@ function TMG::changeHeightmapMode( %this, %ctrl, %mode) {
 	if (TMG.heightmapMode $= "")
 		TMG.heightmapMode = %ctrl.internalName;
 
+	TMG_HeightmapOptions-->flipAxisCheck.active = 1;
 	TMG_PageMaterialLayers-->currentHeightmap.visible = 0;
 	TMG_PageMaterialLayers-->browseHeightmap.visible = 0;
 	TMG_PageMaterialLayers-->sourceHeightmap.visible = 0;
 	eval("TMG_PageMaterialLayers-->"@TMG.heightmapMode@"Heightmap.visible = 1;");
 	eval("TMG_PageMaterialLayers-->heightmapModeStack-->"@TMG.heightmapMode@".setStateOn(true);");
 	
+	if (%mode $= "Current"){
+		TMG_HeightmapOptions-->flipAxisCheck.setStateOn(true);
+		//TMG_HeightmapOptions-->flipAxisCheck.active = 1;
+	}
 	TMG.updateImportHeightmapBmp();
 }
 //------------------------------------------------------------------------------
@@ -287,4 +301,25 @@ function TMG::setHeightMapImage( %this,%file) {
 	TMG.browseHeightMap = %file;
 	TMG_PageMaterialLayers-->heightmapFile.setText(%file);
 	TMG.updateImportHeightmapBmp();
+}
+function TMG_FlipAxisCheck::onClick( %this) {
+	if (TMG.heightmapMode $= "Current" && !%this.isStateOn()){
+		LabMsgOkCancel("Terrain will be inverted","Torque3D export the terrain heightmap with flipped Y axis. If you choose to not flip the Y axis while importing current terrain heightmap" SPC 
+		"exported from Torque3D, your terrain will be inverted. If you also use exported layer maps, those won't fit with terrain shape. If you want to toggle Y Axis Flipping off, click OK.",
+		"","TMG_HeightmapOptions-->flipAxisCheck.setStateOn(true);");
+	}
+	
+}
+function TMG_CenterTerrainCheckbox::onClick( %this) {
+	TMG.setCenteredTerrain(%this.isStateOn());
+	
+}
+function TMG::setCenteredTerrain( %this,%isCentered) {
+	if(%isCentered){
+		TMG_ImportOptions-->TerrainX.active = 0;
+		TMG_ImportOptions-->TerrainY.active = 0;
+		return;
+	}
+	TMG_ImportOptions-->TerrainX.active = 1;
+	TMG_ImportOptions-->TerrainY.active = 1;
 }

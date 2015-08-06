@@ -134,3 +134,16 @@ singleton GuiControlProfile(ToolsBoxPanelProfile : ToolsDefaultProfile)
    textOffset = "2 6";
 };
 //------------------------------------------------------------------------------
+
+singleton GuiControlProfile(ToolsBoxDarkB_Top : ToolsBoxDarkB)
+{
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkB_Top.png";
+};
+
+singleton GuiControlProfile(ToolsBoxDarkA_Top : ToolsBoxDarkA)
+{
+   bevelColorHL = "Fuchsia";
+   fontColors[0] = "Black";
+   fontColor = "Black";
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkA_Top.png";
+};

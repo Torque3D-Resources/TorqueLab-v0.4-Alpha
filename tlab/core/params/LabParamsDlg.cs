@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$LapParamsStyle = "StyleA";
+
 function paramOpt(  ) {
 	toggleDlg(LabParamsDlg);
 }
@@ -11,6 +11,7 @@ function paramOpt(  ) {
 function LabParamsDlg::onWake( %this ) {
 	hide(%this-->ParamStyles);
 	LabParamsTree.expandAllGroups(true);
+	LabCfg.getAllConfigs();
 }
 //==============================================================================
 function LabParamsDlg::rebuildAll( %this ) {
@@ -47,7 +48,7 @@ function LabParamsDlg::buildAllParams( %this ) {
 		LabParamsTree.addParam(%paramArray);
 		%paramArray.container = %newContainer-->Params_Stack;
 		
-		%paramArray.style = $LapParamsStyle;
+		%paramArray.style = $LabParamsStyle;
 		buildParamsArray(%paramArray);
 		LabParams.syncArray(%paramArray,true);
 	}

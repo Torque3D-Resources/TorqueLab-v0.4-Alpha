@@ -45,7 +45,7 @@ function Editor::open(%this) {
 	EditorGuiToolbarStack.pushToBack(EditorGuiToolbarStack-->LastToolbarGroup);
 	
 
-	Lab.setupEditorFrameMain();
+	Lab.setupDefaultEditorFrameMain();
 	
 }
 //------------------------------------------------------------------------------

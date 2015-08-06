@@ -12,12 +12,17 @@ $TMG_LayerOptionsPage = 0;
 //==============================================================================
 //==============================================================================
 function TerrainManagerGui::onWake(%this) {
-	if (!TMG.initialized)
-		TMG.init();
 	
 	TMG_LayerOptionsBook.selectPage($TMG_LayerOptionsPage);
 	TMG_LayersImportExportBook.selectPage($TMG_LayersImportExportPage);
 	TMG_MainBook.selectPage($TMG_CurrentPage);
+	TMG.setCenteredTerrain(TMG.centerImportTerrain);
+	if ($InGuiEditor)
+		return;
+	if (!TMG.initialized)
+		TMG.init();
+	
+	
 	TMG.refreshData();
 	Lab.hidePluginTools();
 }

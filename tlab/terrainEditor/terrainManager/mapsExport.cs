@@ -32,6 +32,34 @@ function TMG::exportEverything( %this,%target,%noOverwrite) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function TMG::exportTerrainData( %this,%target) {
+	if (%target $= ""){
+		getFolderName("","TMG.exportTerrainData","Select folder to export terrain data");
+		return;
+	}
+	if (%target $= "Source")
+		%folder = TMG.sourceFolder;
+	else if (%target $= "Target")
+		%folder = TMG.targetFolder;
+	else if (%target $= "Terrain")
+		%folder = TMG.terrainFolder;
+	else
+		%folder = %target;
+	
+	if (!isDirectory(%folder)){
+		warnLog("Invalid folder specified for export:",%folder);
+		return;
+	}
+	%exportHeightmap = TMG_ExportTypeRadios-->exportHeightmap.isStateOn();
+	%exportTexturemap = TMG_ExportTypeRadios-->exportTexturemap.isStateOn();
+	%exportAll = TMG_ExportTypeRadios-->exportAll.isStateOn();
+	if (%exportHeightmap || %exportAll)
+		%this.exportHeightMap(%folder,%noOverwrite);
+	if (%exportTexturemap || %exportAll)
+		%this.exportTerrainLayersToPath(%folder,"png");
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 // Export Functions
@@ -64,7 +92,8 @@ function TMG::exportHeightMap( %this,%folder,%noOverwrite) {
 		
 	%exportPath = %folder@"/"@$TMG_ExportFolderName;
 	
-	%filePrefix = %terObj.getName() @ "_heightmap.png";	
+	%hmName = TMG.getTerrainHeightmapName();
+	%filePrefix = %hmName@".png";	
 	%exportFile = %folder @ "/" @ %filePrefix;
 	%result = %this.exportHeightMapFile(%exportFile,"png",%noOverwrite);
 	//%ret = %terObj.exportHeightMap( %folder @ "/" @ %filePrefix,"png" );

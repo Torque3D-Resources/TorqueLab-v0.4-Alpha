@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-
+$LabParamsStyle = "OptStyleA";
 
 //==============================================================================
 //Initialize plugin data
@@ -37,7 +37,7 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 
 	%array.cfgObject = %cfgObject;
 	%array.groupLink = %group@"_"@%name;
-	%array.style = "OptStyleA";
+
 
 	if (%prefGroup $= "")
 		%prefGroup = %name;

@@ -43,6 +43,7 @@ function execSceneEd(%loadGui) {
 	execPattern("tlab/sceneEditor/manager/*.cs");
 	execPattern("tlab/sceneEditor/dialogs/*.cs");
 	execPattern("tlab/sceneEditor/pages/*.cs");
+	execPattern("tlab/sceneEditor/creator/*.cs");
 	execPattern("tlab/sceneEditor/ambientManager/*.cs");
 }
 //------------------------------------------------------------------------------

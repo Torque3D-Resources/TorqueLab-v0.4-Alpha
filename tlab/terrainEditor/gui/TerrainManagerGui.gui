@@ -101,7 +101,7 @@
             sbUsesNAColor = "0";
             reverseTextList = "0";
             bitmapBounds = "16 16";
-            text = "FarmWood_Terrain";
+            text = "TerrainTile_x0y0";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -305,7 +305,7 @@
                sinkAllKeyEvents = "0";
                password = "0";
                passwordMask = "*";
-               text = "levels/FarmDemo/FarmWoodDemo/terrain_src";
+               text = "levels/FarmDemo/FarmRiver/terrain_src/";
                maxLength = "1024";
                docking = "Client";
                margin = "2 2 0 24";
@@ -523,7 +523,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "Target";
+                  text = "Target/";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "2 2 0 24";
@@ -779,7 +779,7 @@
                               sinkAllKeyEvents = "0";
                               password = "0";
                               passwordMask = "*";
-                              text = "FarmWood_Terrain";
+                              text = "TerrainTile_x0y0";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -899,7 +899,7 @@
                               sinkAllKeyEvents = "0";
                               password = "0";
                               passwordMask = "*";
-                              text = "levels/FarmDemo/FarmWoodDemo/FarmWood_Demo.ter";
+                              text = "levels/FarmDemo/FarmRiver/FarmRiver.ter";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -909,7 +909,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 18";
-                              extent = "264 19";
+                              extent = "264 18";
                               minExtent = "8 2";
                               horizSizing = "left";
                               vertSizing = "bottom";
@@ -1019,7 +1019,7 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c2290.531";
+                                 text = "\c2244.656";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1089,7 +1089,7 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c3-1.86365";
+                                 text = "\c315.9688";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1159,7 +1159,7 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c4288.668";
+                                 text = "\c4260.625";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1390,7 +1390,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Terrain blocks list:\c2 gvGrassMeadow01\ngvGrass01_Dirt\ngvDirt01_Light\ngvRock01A\ngvRock01B\ngvRockSharp01\ngvDirtDry01\n";
+                              text = "Terrain blocks list:\c2 std_grass\nstd_grass_lush\nstd_pebbles\nstd_cliffs\nstd_cliffs_grey\nstd_sand_yellow\nstd_grass_steep\n";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1467,7 +1467,7 @@
                            margin = "0 6 0 6";
                            defaultHeight = "56";
                            expanded = "1";
-                           clickCollapse = "1";
+                           clickCollapse = "0";
                            hideHeader = "0";
                            autoCollapseSiblings = "0";
                            position = "0 0";
@@ -1585,7 +1585,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
-                                    text = "levels/FarmDemo/FarmWoodDemo/FarmWood_Demo.ter";
+                                    text = "levels/FarmDemo/FarmRiver/FarmRiver.ter";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -1736,7 +1736,7 @@
                                     sinkAllKeyEvents = "0";
                                     password = "0";
                                     passwordMask = "*";
-                                    text = "2";
+                                    text = "4";
                                     maxLength = "1024";
                                     docking = "Right";
                                     margin = "0 14 0 0";
@@ -1746,7 +1746,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "187 0";
-                                    extent = "51 19";
+                                    extent = "51 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
@@ -1766,7 +1766,7 @@
                                     range = "0 10";
                                     ticks = "99";
                                     snap = "1";
-                                    value = "2";
+                                    value = "4";
                                     position = "6 19";
                                     extent = "226 11";
                                     minExtent = "8 2";
@@ -1849,7 +1849,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "148 2";
-                                    extent = "88 19";
+                                    extent = "88 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
@@ -1927,7 +1927,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "144 3";
-                                    extent = "93 19";
+                                    extent = "186 19";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -2008,7 +2008,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "148 2";
-                                    extent = "88 19";
+                                    extent = "88 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
@@ -2089,7 +2089,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "148 2";
-                                    extent = "88 19";
+                                    extent = "88 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
@@ -2281,7 +2281,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "levels/FarmDemo/FarmWoodDemo/terrain_src";
+                           text = "levels/FarmDemo/FarmRiver/terrain_src/";
                            maxLength = "1024";
                            docking = "Client";
                            margin = "2 2 0 24";
@@ -2291,7 +2291,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "75 2";
-                           extent = "447 19";
+                           extent = "447 20";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2389,7 +2389,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "53 2";
-                           extent = "469 19";
+                           extent = "469 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -2477,7 +2477,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "Target";
+                           text = "Target/";
                            maxLength = "1024";
                            docking = "Client";
                            margin = "2 2 0 24";
@@ -2487,7 +2487,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "47 2";
-                           extent = "475 19";
+                           extent = "475 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3305,7 +3305,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvGrassMeadow01";
+                              text = "Material:\c1 std_grass";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -3448,7 +3448,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvGrass01_Dirt";
+                              text = "Material:\c1 std_grass_lush";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -3591,7 +3591,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvDirt01_Light";
+                              text = "Material:\c1 std_pebbles";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -3734,7 +3734,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvRock01A";
+                              text = "Material:\c1 std_cliffs";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -3877,7 +3877,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvRock01B";
+                              text = "Material:\c1 std_cliffs_grey";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -4020,7 +4020,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvRockSharp01";
+                              text = "Material:\c1 std_sand_yellow";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -4163,7 +4163,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Material:\c1 gvDirtDry01";
+                              text = "Material:\c1 std_grass_steep";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 6 4";
@@ -4379,7 +4379,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsBoxDarkC";
+                        profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "GuiToolTipProfile";
@@ -4388,7 +4388,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
-                        new GuiStackControl() {
+                        new GuiStackControl(TMG_ImportOptions) {
                            stackingType = "Vertical";
                            horizStacking = "Left to Right";
                            vertStacking = "Top to Bottom";
@@ -4399,7 +4399,7 @@
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
                            position = "0 0";
-                           extent = "260 348";
+                           extent = "260 479";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -4645,7 +4645,7 @@
                                  sbUsesNAColor = "0";
                                  reverseTextList = "0";
                                  bitmapBounds = "16 16";
-                                 text = "AlphaMaps_v1_Alpha1.png";
+                                 text = "hmA.png";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -4692,7 +4692,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiTextCtrl() {
-                                 text = "FarmWood_Terrain_heightmap";
+                                 text = "TerrainTile_x0y0_hm_4_245";
                                  maxLength = "1024";
                                  docking = "Client";
                                  margin = "2 0 2 0";
@@ -4931,7 +4931,7 @@
                                           sinkAllKeyEvents = "0";
                                           password = "0";
                                           passwordMask = "*";
-                                          text = "2";
+                                          text = "4";
                                           maxLength = "1024";
                                           docking = "Client";
                                           margin = "2 2 0 0";
@@ -5008,7 +5008,7 @@
                                           sinkAllKeyEvents = "0";
                                           password = "0";
                                           passwordMask = "*";
-                                          text = "290.531";
+                                          text = "244.656";
                                           maxLength = "1024";
                                           docking = "Client";
                                           margin = "2 2 0 0";
@@ -5096,6 +5096,7 @@
                                           hovertime = "1000";
                                           isContainer = "0";
                                           internalName = "flipAxisCheck";
+                                          superClass = "TMG_FlipAxisCheck";
                                           canSave = "1";
                                           canSaveDynamicFields = "0";
                                        };
@@ -5125,7 +5126,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiBitmapCtrl(TMG_ImportHeightMapBmp) {
-                                    bitmap = "levels/FarmDemo/FarmWoodDemo/terrain_src/TerData/FarmWood_Terrain/FarmWood_Terrain_heightmap.png";
+                                    bitmap = "levels/FarmDemo/FarmRiver/terrain_src//TerData/TerrainTile_x0y0/TerrainTile_x0y0_hm_4_245.png";
                                     wrap = "0";
                                     position = "2 2";
                                     extent = "76 76";
@@ -5138,6 +5139,34 @@
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                                 new GuiIconButtonCtrl(TMG_GenerateHeightmapButton) {
+                                    buttonMargin = "4 4";
+                                    iconBitmap = "tlab/terrainEditor/gui/images/heightmapNotGenerated.png";
+                                    iconLocation = "Left";
+                                    sizeIconToButton = "1";
+                                    makeIconSquare = "0";
+                                    textLocation = "Left";
+                                    textMargin = "4";
+                                    autoSize = "0";
+                                    groupNum = "-1";
+                                    buttonType = "PushButton";
+                                    useMouseEvents = "0";
+                                    position = "2 2";
+                                    extent = "76 76";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsButtonDark";
+                                    visible = "0";
+                                    active = "1";
+                                    command = "TMG.prepareHeightmap();";
+                                    tooltipProfile = "GuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "0";
+                                    hidden = "1";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
                                  };
@@ -5377,7 +5406,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
-                                 text = "FarmWood_Terrain";
+                                 text = "TerrainTile_x0y0";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -5446,7 +5475,7 @@
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
                               };
-                              new GuiCheckBoxCtrl() {
+                              new GuiCheckBoxCtrl(TMG_CenterTerrainCheckbox) {
                                  text = "Center terrain (Custom Z only)";
                                  groupNum = "-1";
                                  buttonType = "ToggleButton";
@@ -5463,7 +5492,6 @@
                                  tooltipProfile = "GuiToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
-                                 internalName = "flipAxisCheck";
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
                               };
@@ -5517,7 +5545,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
-                                       text = "-17.0824";
+                                       text = "0";
                                        maxLength = "1024";
                                        margin = "0 0 0 0";
                                        padding = "0 0 0 0";
@@ -5593,7 +5621,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
-                                       text = "-1024";
+                                       text = "-2048";
                                        maxLength = "1024";
                                        margin = "0 0 0 0";
                                        padding = "0 0 0 0";
@@ -5669,7 +5697,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
-                                       text = "-1024";
+                                       text = "-2048";
                                        maxLength = "1024";
                                        margin = "0 0 0 0";
                                        padding = "0 0 0 0";
@@ -5783,6 +5811,384 @@
                                  canSaveDynamicFields = "0";
                               };
                            };
+                           new GuiContainer() {
+                              docking = "None";
+                              margin = "6 6 6 6";
+                              padding = "0 0 0 0";
+                              anchorTop = "1";
+                              anchorBottom = "0";
+                              anchorLeft = "1";
+                              anchorRight = "0";
+                              position = "0 348";
+                              extent = "260 131";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsBoxDarkA";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "1";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+
+                              new GuiContainer() {
+                                 docking = "Top";
+                                 margin = "4 0 4 4";
+                                 padding = "0 0 0 0";
+                                 anchorTop = "1";
+                                 anchorBottom = "0";
+                                 anchorLeft = "1";
+                                 anchorRight = "0";
+                                 position = "4 4";
+                                 extent = "252 20";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsBoxDarkB";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "1";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+
+                                 new GuiTextCtrl() {
+                                    text = "More terrain import options";
+                                    maxLength = "1024";
+                                    docking = "Client";
+                                    margin = "0 2 0 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "0 0";
+                                    extent = "252 18";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsTextBase_H1_C";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "0";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                              };
+                              new GuiTabBookCtrl(TMG_LayerOptionsBook111) {
+                                 tabPosition = "Top";
+                                 tabMargin = "7";
+                                 minTabWidth = "64";
+                                 tabHeight = "17";
+                                 allowReorder = "0";
+                                 defaultPage = "-1";
+                                 selectedPage = "0";
+                                 frontTabPadding = "0";
+                                 docking = "Client";
+                                 margin = "4 0 0 0";
+                                 padding = "0 0 0 0";
+                                 anchorTop = "1";
+                                 anchorBottom = "0";
+                                 anchorLeft = "1";
+                                 anchorRight = "0";
+                                 position = "0 28";
+                                 extent = "260 103";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "GuiTabBookProfile";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "GuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "1";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+
+                                 new GuiTabPageCtrl() {
+                                    fitBook = "1";
+                                    text = "L3DT";
+                                    maxLength = "1024";
+                                    docking = "Client";
+                                    margin = "0 0 0 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "0 17";
+                                    extent = "260 86";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsBoxDarkB_Top";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "GuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "1";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+
+                                    new GuiContainer() {
+                                       docking = "Client";
+                                       margin = "6 6 6 6";
+                                       padding = "0 0 0 0";
+                                       anchorTop = "1";
+                                       anchorBottom = "0";
+                                       anchorLeft = "1";
+                                       anchorRight = "0";
+                                       position = "6 6";
+                                       extent = "248 74";
+                                       minExtent = "8 2";
+                                       horizSizing = "right";
+                                       vertSizing = "bottom";
+                                       profile = "ToolsBoxDarkA";
+                                       visible = "1";
+                                       active = "1";
+                                       tooltipProfile = "GuiToolTipProfile";
+                                       hovertime = "1000";
+                                       isContainer = "1";
+                                       canSave = "1";
+                                       canSaveDynamicFields = "0";
+
+                                       new GuiStackControl() {
+                                          stackingType = "Vertical";
+                                          horizStacking = "Left to Right";
+                                          vertStacking = "Top to Bottom";
+                                          padding = "4";
+                                          dynamicSize = "1";
+                                          dynamicNonStackExtent = "0";
+                                          dynamicPos = "0";
+                                          changeChildSizeToFit = "1";
+                                          changeChildPosition = "1";
+                                          position = "1 0";
+                                          extent = "253 73";
+                                          minExtent = "16 16";
+                                          horizSizing = "right";
+                                          vertSizing = "bottom";
+                                          profile = "ToolsDefaultProfile";
+                                          visible = "1";
+                                          active = "1";
+                                          tooltipProfile = "ToolsGuiToolTipProfile";
+                                          hovertime = "1000";
+                                          isContainer = "1";
+                                          canSave = "1";
+                                          canSaveDynamicFields = "0";
+
+                                          new GuiContainer() {
+                                             docking = "Top";
+                                             margin = "0 0 0 0";
+                                             padding = "0 0 0 0";
+                                             anchorTop = "1";
+                                             anchorBottom = "0";
+                                             anchorLeft = "1";
+                                             anchorRight = "0";
+                                             position = "0 0";
+                                             extent = "253 50";
+                                             minExtent = "8 2";
+                                             horizSizing = "right";
+                                             vertSizing = "bottom";
+                                             profile = "ToolsBoxDarkC";
+                                             visible = "1";
+                                             active = "1";
+                                             tooltipProfile = "ToolsGuiToolTipProfile";
+                                             hovertime = "1000";
+                                             isContainer = "1";
+                                             canSave = "1";
+                                             canSaveDynamicFields = "0";
+
+                                             new GuiTextCtrl() {
+                                                text = "Add layers from Alpha XML Data";
+                                                maxLength = "1024";
+                                                margin = "0 0 0 0";
+                                                padding = "0 0 0 0";
+                                                anchorTop = "1";
+                                                anchorBottom = "0";
+                                                anchorLeft = "1";
+                                                anchorRight = "0";
+                                                position = "3 2";
+                                                extent = "267 12";
+                                                minExtent = "8 2";
+                                                horizSizing = "right";
+                                                vertSizing = "bottom";
+                                                profile = "ToolsTextBase";
+                                                visible = "1";
+                                                active = "1";
+                                                tooltipProfile = "ToolsGuiToolTipProfile";
+                                                hovertime = "1000";
+                                                isContainer = "0";
+                                                canSave = "1";
+                                                canSaveDynamicFields = "0";
+                                             };
+                                             new GuiTextCtrl() {
+                                                text = "SrcA/AlphaMaps_v1.xml";
+                                                maxLength = "1024";
+                                                margin = "0 0 0 0";
+                                                padding = "0 0 0 0";
+                                                anchorTop = "1";
+                                                anchorBottom = "0";
+                                                anchorLeft = "0";
+                                                anchorRight = "1";
+                                                position = "0 15";
+                                                extent = "253 12";
+                                                minExtent = "8 2";
+                                                horizSizing = "right";
+                                                vertSizing = "bottom";
+                                                profile = "ToolsTextFX_S1";
+                                                visible = "1";
+                                                active = "1";
+                                                tooltipProfile = "ToolsGuiToolTipProfile";
+                                                hovertime = "1000";
+                                                isContainer = "0";
+                                                internalName = "l3dtXMLText";
+                                                canSave = "1";
+                                                canSaveDynamicFields = "0";
+                                             };
+                                             new GuiButtonCtrl() {
+                                                text = "Browse...";
+                                                groupNum = "-1";
+                                                buttonType = "PushButton";
+                                                useMouseEvents = "0";
+                                                position = "3 31";
+                                                extent = "85 19";
+                                                minExtent = "8 2";
+                                                horizSizing = "left";
+                                                vertSizing = "bottom";
+                                                profile = "ToolsButtonProfile";
+                                                visible = "1";
+                                                active = "1";
+                                                command = "TMG.selectL3DTAlphaXml();";
+                                                tooltipProfile = "ToolsGuiToolTipProfile";
+                                                hovertime = "1000";
+                                                isContainer = "0";
+                                                canSave = "1";
+                                                canSaveDynamicFields = "0";
+                                             };
+                                             new GuiButtonCtrl() {
+                                                text = "Load all maps";
+                                                groupNum = "-1";
+                                                buttonType = "PushButton";
+                                                useMouseEvents = "0";
+                                                position = "99 31";
+                                                extent = "106 19";
+                                                minExtent = "8 2";
+                                                horizSizing = "left";
+                                                vertSizing = "bottom";
+                                                profile = "ToolsButtonProfile";
+                                                visible = "1";
+                                                active = "1";
+                                                command = "TMG.readL3DTAlphaXml();";
+                                                tooltipProfile = "ToolsGuiToolTipProfile";
+                                                hovertime = "1000";
+                                                isContainer = "0";
+                                                canSave = "1";
+                                                canSaveDynamicFields = "0";
+                                             };
+                                          };
+                                          new GuiContainer() {
+                                             docking = "Top";
+                                             margin = "0 0 0 0";
+                                             padding = "0 0 0 0";
+                                             anchorTop = "1";
+                                             anchorBottom = "0";
+                                             anchorLeft = "1";
+                                             anchorRight = "0";
+                                             position = "0 54";
+                                             extent = "253 19";
+                                             minExtent = "8 2";
+                                             horizSizing = "right";
+                                             vertSizing = "bottom";
+                                             profile = "ToolsBoxDarkC";
+                                             visible = "1";
+                                             active = "1";
+                                             tooltipProfile = "ToolsGuiToolTipProfile";
+                                             hovertime = "1000";
+                                             isContainer = "1";
+                                             canSave = "1";
+                                             canSaveDynamicFields = "0";
+
+                                             new GuiCheckBoxCtrl() {
+                                                text = "Append new map data to current list";
+                                                groupNum = "-1";
+                                                buttonType = "ToggleButton";
+                                                useMouseEvents = "0";
+                                                position = "4 2";
+                                                extent = "238 15";
+                                                minExtent = "8 2";
+                                                horizSizing = "right";
+                                                vertSizing = "bottom";
+                                                profile = "ToolsCheckBoxProfile_S1";
+                                                visible = "1";
+                                                active = "1";
+                                                tooltipProfile = "GuiToolTipProfile";
+                                                hovertime = "1000";
+                                                isContainer = "0";
+                                                internalName = "l3dtAppendXML";
+                                                superClass = "L3DT_AppendCheck";
+                                                canSave = "1";
+                                                canSaveDynamicFields = "0";
+                                             };
+                                          };
+                                       };
+                                    };
+                                 };
+                                 new GuiTabPageCtrl() {
+                                    fitBook = "1";
+                                    text = "WorldMachine";
+                                    maxLength = "1024";
+                                    docking = "Client";
+                                    margin = "0 0 0 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "0 17";
+                                    extent = "260 86";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "GuiDefaultProfile";
+                                    visible = "0";
+                                    active = "1";
+                                    tooltipProfile = "GuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "1";
+                                    hidden = "1";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+
+                                    new GuiContainer() {
+                                       docking = "Bottom";
+                                       margin = "6 6 6 6";
+                                       padding = "0 0 0 0";
+                                       anchorTop = "1";
+                                       anchorBottom = "0";
+                                       anchorLeft = "1";
+                                       anchorRight = "0";
+                                       position = "6 26";
+                                       extent = "248 54";
+                                       minExtent = "8 2";
+                                       horizSizing = "right";
+                                       vertSizing = "bottom";
+                                       profile = "ToolsBoxDarkC";
+                                       visible = "1";
+                                       active = "1";
+                                       tooltipProfile = "GuiToolTipProfile";
+                                       hovertime = "1000";
+                                       isContainer = "1";
+                                       canSave = "1";
+                                       canSaveDynamicFields = "0";
+                                    };
+                                 };
+                              };
+                           };
                         };
                         new GuiStackControl() {
                            stackingType = "Vertical";
@@ -5865,13 +6271,13 @@
                      new GuiContainer() {
                         docking = "Top";
                         margin = "6 6 6 6";
-                        padding = "0 0 0 0";
+                        padding = "0 10 10 10";
                         anchorTop = "1";
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 6";
-                        extent = "261 140";
+                        extent = "261 236";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -5884,19 +6290,41 @@
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
-                        new GuiStackControl() {
-                           stackingType = "Vertical";
-                           horizStacking = "Left to Right";
-                           vertStacking = "Top to Bottom";
-                           padding = "2";
-                           dynamicSize = "1";
-                           dynamicNonStackExtent = "0";
-                           dynamicPos = "0";
-                           changeChildSizeToFit = "1";
-                           changeChildPosition = "1";
-                           position = "5 5";
-                           extent = "260 132";
-                           minExtent = "16 16";
+                        new GuiTextCtrl() {
+                           text = "Export terrain data options";
+                           maxLength = "1024";
+                           docking = "Top";
+                           margin = "2 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "10 2";
+                           extent = "241 18";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsTextBase_H1_C";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "0";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+                        };
+                        new GuiContainer() {
+                           docking = "Top";
+                           margin = "0 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "10 20";
+                           extent = "241 79";
+                           minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
                            profile = "ToolsBoxDarkA";
@@ -5908,130 +6336,152 @@
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
-                           new GuiTextCtrl() {
-                              text = "Export terrain data options";
-                              maxLength = "1024";
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 0";
-                              extent = "260 18";
-                              minExtent = "8 2";
+                           new GuiStackControl(TMG_ExportTypeRadios) {
+                              stackingType = "Vertical";
+                              horizStacking = "Left to Right";
+                              vertStacking = "Top to Bottom";
+                              padding = "0";
+                              dynamicSize = "1";
+                              dynamicNonStackExtent = "0";
+                              dynamicPos = "0";
+                              changeChildSizeToFit = "1";
+                              changeChildPosition = "1";
+                              position = "10 5";
+                              extent = "221 69";
+                              minExtent = "16 16";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBase_H1_C";
+                              profile = "GuiDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "0";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-                           };
-                           new GuiContainer() {
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 20";
-                              extent = "260 32";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsBoxDarkA";
-                              visible = "0";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "GuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
-                              hidden = "1";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+
+                              new GuiRadioCtrl() {
+                                 text = "Export heightmap only";
+                                 groupNum = "2";
+                                 buttonType = "RadioButton";
+                                 useMouseEvents = "0";
+                                 position = "0 0";
+                                 extent = "221 23";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsRadioProfile";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "GuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "0";
+                                 internalName = "exportHeightMap";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+                              };
+                              new GuiRadioCtrl() {
+                                 text = "Export texture maps only";
+                                 groupNum = "2";
+                                 buttonType = "RadioButton";
+                                 useMouseEvents = "0";
+                                 position = "0 23";
+                                 extent = "221 23";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsRadioProfile";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "GuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "0";
+                                 internalName = "exportTextureMap";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+                              };
+                              new GuiRadioCtrl() {
+                                 text = "Export height and texture maps";
+                                 groupNum = "2";
+                                 buttonType = "RadioButton";
+                                 useMouseEvents = "0";
+                                 position = "0 46";
+                                 extent = "221 23";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsRadioProfile";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "GuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "0";
+                                 internalName = "exportAll";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+                              };
+                           };
+                        };
+                        new GuiContainer() {
+                           docking = "Client";
+                           margin = "0 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "10 99";
+                           extent = "241 127";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsBoxDarkA";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "1";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+
+                           new GuiStackControl() {
+                              stackingType = "Vertical";
+                              horizStacking = "Left to Right";
+                              vertStacking = "Top to Bottom";
+                              padding = "3";
+                              dynamicSize = "1";
+                              dynamicNonStackExtent = "0";
+                              dynamicPos = "0";
+                              changeChildSizeToFit = "1";
+                              changeChildPosition = "1";
+                              position = "10 10";
+                              extent = "221 105";
+                              minExtent = "16 16";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "GuiDefaultProfile";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "1";
                               canSave = "1";
                               canSaveDynamicFields = "0";
 
                               new GuiButtonCtrl() {
-                                 text = "Export current maps to source";
+                                 text = "Browse to export folder...";
                                  groupNum = "-1";
                                  buttonType = "PushButton";
                                  useMouseEvents = "0";
-                                 position = "8 4";
-                                 extent = "243 24";
+                                 position = "0 0";
+                                 extent = "221 24";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
                                  profile = "ToolsButtonProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "TMG.exportTerrainLayersToPath(TMG.SourceFolder,\"png\");TMG.updateMaterialLayers();";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                           };
-                           new GuiContainer() {
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 20";
-                              extent = "260 36";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsBoxDarkA";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "1";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-
-                              new GuiButtonCtrl() {
-                                 text = "Target folder";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "9 13";
-                                 extent = "83 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportEverything(TMG.targetFolder,true);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiTextCtrl() {
-                                 text = "Export height and texture maps";
-                                 maxLength = "1024";
-                                 margin = "0 0 0 0";
-                                 padding = "0 0 0 0";
-                                 anchorTop = "1";
-                                 anchorBottom = "0";
-                                 anchorLeft = "1";
-                                 anchorRight = "0";
-                                 position = "0 0";
-                                 extent = "260 10";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsTextBase_C";
-                                 visible = "1";
-                                 active = "1";
+                                 command = "TMG.exportTerrainData();";
                                  tooltipProfile = "ToolsGuiToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -6039,19 +6489,19 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiButtonCtrl() {
-                                 text = "Browse ...";
+                                 text = "Export to source folder";
                                  groupNum = "-1";
                                  buttonType = "PushButton";
                                  useMouseEvents = "0";
-                                 position = "179 13";
-                                 extent = "70 19";
+                                 position = "0 27";
+                                 extent = "221 24";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
+                                 profile = "ToolsButtonProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "TMG.exportEverything();";
+                                 command = "TMG.exportTerrainData(\"Source\");";
                                  tooltipProfile = "ToolsGuiToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -6059,84 +6509,19 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiButtonCtrl() {
-                                 text = "Source folder";
+                                 text = "Export to target folder";
                                  groupNum = "-1";
                                  buttonType = "PushButton";
                                  useMouseEvents = "0";
-                                 position = "95 13";
-                                 extent = "83 19";
+                                 position = "0 54";
+                                 extent = "221 24";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
+                                 profile = "ToolsButtonProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "TMG.exportEverything(TMG.sourceFolder,true);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                           };
-                           new GuiContainer() {
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 58";
-                              extent = "260 36";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsBoxDarkA";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "1";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-
-                              new GuiButtonCtrl() {
-                                 text = "Target folder";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "9 13";
-                                 extent = "83 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportHeightMap(TMG.targetFolder,true);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiTextCtrl() {
-                                 text = "Export heightmap ONLY";
-                                 maxLength = "1024";
-                                 margin = "0 0 0 0";
-                                 padding = "0 0 0 0";
-                                 anchorTop = "1";
-                                 anchorBottom = "0";
-                                 anchorLeft = "1";
-                                 anchorRight = "0";
-                                 position = "0 0";
-                                 extent = "260 10";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsTextBase_C";
-                                 visible = "1";
-                                 active = "1";
+                                 command = "TMG.exportTerrainData(\"Target\");";
                                  tooltipProfile = "ToolsGuiToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -6144,144 +6529,19 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiButtonCtrl() {
-                                 text = "Browse ...";
+                                 text = "Export to default folder";
                                  groupNum = "-1";
                                  buttonType = "PushButton";
                                  useMouseEvents = "0";
-                                 position = "179 13";
-                                 extent = "69 19";
+                                 position = "0 81";
+                                 extent = "221 24";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
+                                 profile = "ToolsButtonProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "TMG.exportHeightMapToFile();";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiButtonCtrl() {
-                                 text = "Source folder";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "95 13";
-                                 extent = "83 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportHeightMap(TMG.sourceFolder,true);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                           };
-                           new GuiContainer() {
-                              margin = "0 0 0 0";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 96";
-                              extent = "260 36";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsBoxDarkA";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "1";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-
-                              new GuiButtonCtrl() {
-                                 text = "Target folder";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "10 13";
-                                 extent = "83 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportTerrainLayersToPath(TMG.targetFolder);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiTextCtrl() {
-                                 text = "Export texture maps ONLY";
-                                 maxLength = "1024";
-                                 margin = "0 0 0 0";
-                                 padding = "0 0 0 0";
-                                 anchorTop = "1";
-                                 anchorBottom = "0";
-                                 anchorLeft = "1";
-                                 anchorRight = "0";
-                                 position = "0 0";
-                                 extent = "260 10";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsTextBase_C";
-                                 visible = "1";
-                                 active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiButtonCtrl() {
-                                 text = "Browse ...";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "179 13";
-                                 extent = "70 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportTerrainLayersToPath();";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiButtonCtrl() {
-                                 text = "Source folder";
-                                 groupNum = "-1";
-                                 buttonType = "PushButton";
-                                 useMouseEvents = "0";
-                                 position = "95 13";
-                                 extent = "83 19";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsButtonProfile_S1";
-                                 visible = "1";
-                                 active = "1";
-                                 command = "TMG.exportTerrainLayersToPath(TMG.sourceFolder);";
+                                 command = "TMG.exportTerrainData(\"Terrain\");";
                                  tooltipProfile = "ToolsGuiToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -6351,7 +6611,7 @@
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
                            position = "1 0";
-                           extent = "259 378";
+                           extent = "259 243";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -6433,7 +6693,7 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "levels/FarmDemo/FarmWoodDemo/terrain_src";
+                                 text = "levels/FarmDemo/FarmRiver/terrain_src/";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -6538,7 +6798,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 16";
-                                 extent = "235 19";
+                                 extent = "235 18";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -6648,7 +6908,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
-                                 text = "Target";
+                                 text = "Target/";
                                  maxLength = "1024";
                                  docking = "Client";
                                  margin = "0 0 0 22";
@@ -6658,7 +6918,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 16";
-                                 extent = "237 19";
+                                 extent = "237 20";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -6979,360 +7239,6 @@
                                     superClass = "TMG_AutoExportLayerRadio";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
-                                 };
-                              };
-                           };
-                           new GuiContainer() {
-                              docking = "Bottom";
-                              margin = "6 6 6 6";
-                              padding = "0 0 0 0";
-                              anchorTop = "1";
-                              anchorBottom = "0";
-                              anchorLeft = "1";
-                              anchorRight = "0";
-                              position = "0 247";
-                              extent = "259 131";
-                              minExtent = "8 2";
-                              horizSizing = "right";
-                              vertSizing = "bottom";
-                              profile = "ToolsBoxDarkB";
-                              visible = "1";
-                              active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
-                              hovertime = "1000";
-                              isContainer = "1";
-                              canSave = "1";
-                              canSaveDynamicFields = "0";
-
-                              new GuiTextCtrl() {
-                                 text = "Third party terrain tools helpers";
-                                 maxLength = "1024";
-                                 margin = "0 0 0 0";
-                                 padding = "0 0 0 0";
-                                 anchorTop = "1";
-                                 anchorBottom = "0";
-                                 anchorLeft = "1";
-                                 anchorRight = "0";
-                                 position = "0 0";
-                                 extent = "260 20";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "ToolsTextBase_H1_C";
-                                 visible = "1";
-                                 active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "0";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-                              };
-                              new GuiTabBookCtrl(TMG_LayerOptionsBook1) {
-                                 tabPosition = "Top";
-                                 tabMargin = "7";
-                                 minTabWidth = "64";
-                                 tabHeight = "17";
-                                 allowReorder = "0";
-                                 defaultPage = "-1";
-                                 selectedPage = "1";
-                                 frontTabPadding = "0";
-                                 docking = "Client";
-                                 margin = "20 0 0 0";
-                                 padding = "0 0 0 0";
-                                 anchorTop = "1";
-                                 anchorBottom = "0";
-                                 anchorLeft = "1";
-                                 anchorRight = "0";
-                                 position = "0 20";
-                                 extent = "259 111";
-                                 minExtent = "8 2";
-                                 horizSizing = "right";
-                                 vertSizing = "bottom";
-                                 profile = "GuiTabBookProfile";
-                                 visible = "1";
-                                 active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
-                                 hovertime = "1000";
-                                 isContainer = "1";
-                                 canSave = "1";
-                                 canSaveDynamicFields = "0";
-
-                                 new GuiTabPageCtrl() {
-                                    fitBook = "1";
-                                    text = "L3DT";
-                                    maxLength = "1024";
-                                    docking = "Client";
-                                    margin = "0 0 0 0";
-                                    padding = "0 0 0 0";
-                                    anchorTop = "1";
-                                    anchorBottom = "0";
-                                    anchorLeft = "1";
-                                    anchorRight = "0";
-                                    position = "0 17";
-                                    extent = "259 94";
-                                    minExtent = "8 2";
-                                    horizSizing = "right";
-                                    vertSizing = "bottom";
-                                    profile = "GuiDefaultProfile";
-                                    visible = "0";
-                                    active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
-                                    hovertime = "1000";
-                                    isContainer = "1";
-                                    hidden = "1";
-                                    canSave = "1";
-                                    canSaveDynamicFields = "0";
-
-                                    new GuiContainer() {
-                                       docking = "Client";
-                                       margin = "6 6 6 6";
-                                       padding = "0 0 0 0";
-                                       anchorTop = "1";
-                                       anchorBottom = "0";
-                                       anchorLeft = "1";
-                                       anchorRight = "0";
-                                       position = "6 6";
-                                       extent = "247 82";
-                                       minExtent = "8 2";
-                                       horizSizing = "right";
-                                       vertSizing = "bottom";
-                                       profile = "ToolsBoxDarkC";
-                                       visible = "1";
-                                       active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
-                                       hovertime = "1000";
-                                       isContainer = "1";
-                                       canSave = "1";
-                                       canSaveDynamicFields = "0";
-
-                                       new GuiStackControl() {
-                                          stackingType = "Vertical";
-                                          horizStacking = "Left to Right";
-                                          vertStacking = "Top to Bottom";
-                                          padding = "4";
-                                          dynamicSize = "1";
-                                          dynamicNonStackExtent = "0";
-                                          dynamicPos = "0";
-                                          changeChildSizeToFit = "1";
-                                          changeChildPosition = "1";
-                                          position = "1 0";
-                                          extent = "253 73";
-                                          minExtent = "16 16";
-                                          horizSizing = "right";
-                                          vertSizing = "bottom";
-                                          profile = "ToolsDefaultProfile";
-                                          visible = "1";
-                                          active = "1";
-                                          tooltipProfile = "ToolsGuiToolTipProfile";
-                                          hovertime = "1000";
-                                          isContainer = "1";
-                                          canSave = "1";
-                                          canSaveDynamicFields = "0";
-
-                                          new GuiContainer() {
-                                             docking = "Top";
-                                             margin = "0 0 0 0";
-                                             padding = "0 0 0 0";
-                                             anchorTop = "1";
-                                             anchorBottom = "0";
-                                             anchorLeft = "1";
-                                             anchorRight = "0";
-                                             position = "0 0";
-                                             extent = "253 50";
-                                             minExtent = "8 2";
-                                             horizSizing = "right";
-                                             vertSizing = "bottom";
-                                             profile = "ToolsBoxDarkB";
-                                             visible = "1";
-                                             active = "1";
-                                             tooltipProfile = "ToolsGuiToolTipProfile";
-                                             hovertime = "1000";
-                                             isContainer = "1";
-                                             canSave = "1";
-                                             canSaveDynamicFields = "0";
-
-                                             new GuiTextCtrl() {
-                                                text = "Add layers from Alpha XML Data";
-                                                maxLength = "1024";
-                                                margin = "0 0 0 0";
-                                                padding = "0 0 0 0";
-                                                anchorTop = "1";
-                                                anchorBottom = "0";
-                                                anchorLeft = "1";
-                                                anchorRight = "0";
-                                                position = "3 2";
-                                                extent = "267 12";
-                                                minExtent = "8 2";
-                                                horizSizing = "right";
-                                                vertSizing = "bottom";
-                                                profile = "ToolsTextBase";
-                                                visible = "1";
-                                                active = "1";
-                                                tooltipProfile = "ToolsGuiToolTipProfile";
-                                                hovertime = "1000";
-                                                isContainer = "0";
-                                                canSave = "1";
-                                                canSaveDynamicFields = "0";
-                                             };
-                                             new GuiTextCtrl() {
-                                                text = "SrcA/AlphaMaps_v1.xml";
-                                                maxLength = "1024";
-                                                margin = "0 0 0 0";
-                                                padding = "0 0 0 0";
-                                                anchorTop = "1";
-                                                anchorBottom = "0";
-                                                anchorLeft = "0";
-                                                anchorRight = "1";
-                                                position = "0 15";
-                                                extent = "253 12";
-                                                minExtent = "8 2";
-                                                horizSizing = "right";
-                                                vertSizing = "bottom";
-                                                profile = "ToolsTextFX_S1";
-                                                visible = "1";
-                                                active = "1";
-                                                tooltipProfile = "ToolsGuiToolTipProfile";
-                                                hovertime = "1000";
-                                                isContainer = "0";
-                                                internalName = "l3dtXMLText";
-                                                canSave = "1";
-                                                canSaveDynamicFields = "0";
-                                             };
-                                             new GuiButtonCtrl() {
-                                                text = "Browse...";
-                                                groupNum = "-1";
-                                                buttonType = "PushButton";
-                                                useMouseEvents = "0";
-                                                position = "3 31";
-                                                extent = "85 19";
-                                                minExtent = "8 2";
-                                                horizSizing = "left";
-                                                vertSizing = "bottom";
-                                                profile = "ToolsButtonProfile";
-                                                visible = "1";
-                                                active = "1";
-                                                command = "TMG.selectL3DTAlphaXml();";
-                                                tooltipProfile = "ToolsGuiToolTipProfile";
-                                                hovertime = "1000";
-                                                isContainer = "0";
-                                                canSave = "1";
-                                                canSaveDynamicFields = "0";
-                                             };
-                                             new GuiButtonCtrl() {
-                                                text = "Load all maps";
-                                                groupNum = "-1";
-                                                buttonType = "PushButton";
-                                                useMouseEvents = "0";
-                                                position = "99 31";
-                                                extent = "106 19";
-                                                minExtent = "8 2";
-                                                horizSizing = "left";
-                                                vertSizing = "bottom";
-                                                profile = "ToolsButtonProfile";
-                                                visible = "1";
-                                                active = "1";
-                                                command = "TMG.readL3DTAlphaXml();";
-                                                tooltipProfile = "ToolsGuiToolTipProfile";
-                                                hovertime = "1000";
-                                                isContainer = "0";
-                                                canSave = "1";
-                                                canSaveDynamicFields = "0";
-                                             };
-                                          };
-                                          new GuiContainer() {
-                                             docking = "Top";
-                                             margin = "0 0 0 0";
-                                             padding = "0 0 0 0";
-                                             anchorTop = "1";
-                                             anchorBottom = "0";
-                                             anchorLeft = "1";
-                                             anchorRight = "0";
-                                             position = "0 54";
-                                             extent = "253 19";
-                                             minExtent = "8 2";
-                                             horizSizing = "right";
-                                             vertSizing = "bottom";
-                                             profile = "ToolsBoxDarkB";
-                                             visible = "1";
-                                             active = "1";
-                                             tooltipProfile = "ToolsGuiToolTipProfile";
-                                             hovertime = "1000";
-                                             isContainer = "1";
-                                             canSave = "1";
-                                             canSaveDynamicFields = "0";
-
-                                             new GuiCheckBoxCtrl() {
-                                                text = "Append new map data to current list";
-                                                groupNum = "-1";
-                                                buttonType = "ToggleButton";
-                                                useMouseEvents = "0";
-                                                position = "4 2";
-                                                extent = "238 15";
-                                                minExtent = "8 2";
-                                                horizSizing = "right";
-                                                vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
-                                                visible = "1";
-                                                active = "1";
-                                                tooltipProfile = "GuiToolTipProfile";
-                                                hovertime = "1000";
-                                                isContainer = "0";
-                                                internalName = "l3dtAppendXML";
-                                                superClass = "L3DT_AppendCheck";
-                                                canSave = "1";
-                                                canSaveDynamicFields = "0";
-                                             };
-                                          };
-                                       };
-                                    };
-                                 };
-                                 new GuiTabPageCtrl() {
-                                    fitBook = "1";
-                                    text = "WorldMachine";
-                                    maxLength = "1024";
-                                    docking = "Client";
-                                    margin = "0 0 0 0";
-                                    padding = "0 0 0 0";
-                                    anchorTop = "1";
-                                    anchorBottom = "0";
-                                    anchorLeft = "1";
-                                    anchorRight = "0";
-                                    position = "0 17";
-                                    extent = "259 94";
-                                    minExtent = "8 2";
-                                    horizSizing = "right";
-                                    vertSizing = "bottom";
-                                    profile = "GuiDefaultProfile";
-                                    visible = "1";
-                                    active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
-                                    hovertime = "1000";
-                                    isContainer = "1";
-                                    canSave = "1";
-                                    canSaveDynamicFields = "0";
-
-                                    new GuiContainer() {
-                                       docking = "Bottom";
-                                       margin = "6 6 6 6";
-                                       padding = "0 0 0 0";
-                                       anchorTop = "1";
-                                       anchorBottom = "0";
-                                       anchorLeft = "1";
-                                       anchorRight = "0";
-                                       position = "6 6";
-                                       extent = "247 82";
-                                       minExtent = "8 2";
-                                       horizSizing = "right";
-                                       vertSizing = "bottom";
-                                       profile = "ToolsBoxDarkC";
-                                       visible = "1";
-                                       active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
-                                       hovertime = "1000";
-                                       isContainer = "1";
-                                       canSave = "1";
-                                       canSaveDynamicFields = "0";
-                                    };
                                  };
                               };
                            };
@@ -8299,7 +8205,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvGrassMeadow01";
+                                    text = "Material:\c1 std_grass";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -8404,7 +8310,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33096);";
+                                    command = "TMG.removeLayerMap(63138);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -8646,7 +8552,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c20_gvGrassMeadow01";
+                                    text = "Default Alpha Map -\c20_std_grass";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -8662,7 +8568,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33115,0);";
+                                    command = "TMG.selectLayerMapMenu(63157,0);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -8761,7 +8667,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_0_std_grass.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -8877,7 +8783,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvGrass01_Dirt";
+                                    text = "Material:\c1 std_grass_lush";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -8982,7 +8888,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33121);";
+                                    command = "TMG.removeLayerMap(63163);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -9224,7 +9130,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c21_gvGrass01_Dirt";
+                                    text = "Default Alpha Map -\c21_std_grass_lush";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -9240,7 +9146,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33140,1);";
+                                    command = "TMG.selectLayerMapMenu(63182,1);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -9339,7 +9245,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_1_std_grass_lush.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -9455,7 +9361,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvDirt01_Light";
+                                    text = "Material:\c1 std_pebbles";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -9560,7 +9466,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33146);";
+                                    command = "TMG.removeLayerMap(63188);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -9802,7 +9708,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c22_gvDirt01_Light";
+                                    text = "Default Alpha Map -\c22_std_pebbles";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -9818,7 +9724,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33165,2);";
+                                    command = "TMG.selectLayerMapMenu(63207,2);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -9917,7 +9823,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_2_std_pebbles.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -10033,7 +9939,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvRock01A";
+                                    text = "Material:\c1 std_cliffs";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -10138,7 +10044,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33171);";
+                                    command = "TMG.removeLayerMap(63213);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -10380,7 +10286,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c23_gvRock01A";
+                                    text = "Default Alpha Map -\c23_std_cliffs";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -10396,7 +10302,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33190,3);";
+                                    command = "TMG.selectLayerMapMenu(63232,3);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -10495,7 +10401,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_3_std_cliffs.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -10611,7 +10517,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvRock01B";
+                                    text = "Material:\c1 std_cliffs_grey";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -10716,7 +10622,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33196);";
+                                    command = "TMG.removeLayerMap(63238);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -10958,7 +10864,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c24_gvRock01B";
+                                    text = "Default Alpha Map -\c24_std_cliffs_grey";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -10974,7 +10880,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33215,4);";
+                                    command = "TMG.selectLayerMapMenu(63257,4);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -11073,7 +10979,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_4_std_cliffs_grey.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -11189,7 +11095,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvRockSharp01";
+                                    text = "Material:\c1 std_sand_yellow";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -11294,7 +11200,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33221);";
+                                    command = "TMG.removeLayerMap(63263);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -11536,7 +11442,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c25_gvRockSharp01";
+                                    text = "Default Alpha Map -\c25_std_sand_yellow";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -11552,7 +11458,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33240,5);";
+                                    command = "TMG.selectLayerMapMenu(63282,5);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -11651,7 +11557,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_5_std_sand_yellow.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";
@@ -11767,7 +11673,7 @@
                                  canSaveDynamicFields = "0";
 
                                  new GuiTextCtrl() {
-                                    text = "Material:\c1 gvDirtDry01";
+                                    text = "Material:\c1 std_grass_steep";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -11872,7 +11778,7 @@
                                     profile = "ToolsButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.removeLayerMap(33246);";
+                                    command = "TMG.removeLayerMap(63288);";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     tooltip = "Changes the softness curve";
                                     hovertime = "1000";
@@ -12114,7 +12020,7 @@
                                     sbUsesNAColor = "0";
                                     reverseTextList = "0";
                                     bitmapBounds = "16 16";
-                                    text = "Default Alpha Map -\c26_gvDirtDry01";
+                                    text = "Default Alpha Map -\c26_std_grass_steep";
                                     maxLength = "1024";
                                     margin = "0 0 0 0";
                                     padding = "0 0 0 0";
@@ -12130,7 +12036,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "TMG.selectLayerMapMenu(33265,6);";
+                                    command = "TMG.selectLayerMapMenu(63307,6);";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -12229,7 +12135,7 @@
                               canSaveDynamicFields = "0";
 
                               new GuiBitmapButtonCtrl() {
-                                 bitmap = "core/art/unavailable";
+                                 bitmap = "levels/FarmDemo/FarmRiver/terrain_src/SrcA/TerrainTile_x0y0_layerMap_6_std_grass_steep.png";
                                  bitmapMode = "Stretched";
                                  autoFitExtents = "0";
                                  useModifiers = "0";

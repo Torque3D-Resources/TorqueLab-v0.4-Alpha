@@ -42,7 +42,7 @@ function Lab::SaveCurrentMission(%this,%saveAs) {
 	if (%start !$= "levels")
 		%saveAs = true;
 
-	if(!$Pref::disableSaving && !isWebDemo()) {
+	if(!$Pref::disableSaving) {
 		if(EditorGui.saveAs || %saveAs)
 			%this.SaveMissionAs();
 		else

@@ -25,6 +25,14 @@ function MaterialEditorPlugin::initParamsArray( %this,%array ) {
 //==============================================================================
 //------------------------------------------------------------------------------
 // Material Editor
+
+
+//==============================================================================
+// Plugin Object Callbacks - Called from TLab plugin management scripts
+//==============================================================================
+
+//==============================================================================
+// Called when TorqueLab is launched for first time
 function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
 	%this.customPalette = "SceneEditorPalette";
@@ -72,7 +80,9 @@ function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 	MaterialEditorGui.rows = "0 230";
 	MaterialEditorGui.updateSizes();
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the Plugin is activated (Active TorqueLab plugin)
 function MaterialEditorPlugin::onActivated( %this ) {
 	MaterialEditorGui.rows = "0 230";
 	MaterialEditorGui.updateSizes();
@@ -97,18 +107,68 @@ function MaterialEditorPlugin::onActivated( %this ) {
 	hide(matEd_addCubemapWindow);
 	matEd_addCubemapWindow.setVisible(0);
 }
-
-function MaterialEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
-	WEditorPlugin.onEditMenuSelect( %editMenu );
-}
-
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the Plugin is deactivated (active to inactive transition)
 function MaterialEditorPlugin::onDeactivated( %this ) {
 	if($wasInWireFrameMode)
 		$gfx::wireframe = true;
 
 	WEditorPlugin.onDeactivated();
-	MaterialEditorGui.quit();
+		// if we quit, restore with notDirty
+	if(MaterialEditorGui.materialDirty) {
+		//keep on doing this
+		MaterialEditorGui.copyMaterials( notDirtyMaterial, materialEd_previewMaterial );
+		MaterialEditorGui.copyMaterials( notDirtyMaterial, MaterialEditorGui.currentMaterial );
+		MaterialEditorGui.guiSync( materialEd_previewMaterial );
+		materialEd_previewMaterial.flush();
+		materialEd_previewMaterial.reload();
+		MaterialEditorGui.currentMaterial.flush();
+		MaterialEditorGui.currentMaterial.reload();
+	}
+
+	if( isObject(MaterialEditorGui.currentMaterial) ) {
+		MaterialEditorGui.lastMaterial = MaterialEditorGui.currentMaterial.getName();
+	}
+
+	MaterialEditorGui.setMaterialNotDirty();
+	// First delete the model so that it releases
+	// material instances that use the preview materials.
+	matEd_previewObjectView.deleteModel();
+	// Now we can delete the preview materials and shaders
+	// knowing that there are no matinstances using them.
+	matEdCubeMapPreviewMat.delete();
+	materialEd_previewMaterial.delete();
+	materialEd_justAlphaMaterial.delete();
+	materialEd_justAlphaShader.delete();
+	$MaterialEditor_MaterialsLoaded = false;
+	
 	SceneEditorToolbar.setVisible( false );
 	
 	Parent::onDeactivated(%this);
 }
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called from TorqueLab after plugin is initialize to set needed settings
+function MaterialEditorPlugin::onPluginCreated( %this ) {
+	
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Called when the mission file has been saved
+function MaterialEditorPlugin::onSaveMission( %this, %file ) {
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when TorqueLab is closed
+function MaterialEditorPlugin::onEditorSleep( %this ) {
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Called when editor is selected from menu
+function MaterialEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
+	WEditorPlugin.onEditMenuSelect( %editMenu );
+}
+//------------------------------------------------------------------------------

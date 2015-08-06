@@ -4,102 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-//==============================================================================
-function MaterialEditorGui::prepareActiveObject( %this, %override ) {
-	%obj = $Lab::materialEditorList;
 
-	if( MaterialEditorGui.currentObject == %obj && !%override)
-		return;
-
-	// TSStatics and ShapeBase objects should have getModelFile methods
-	if( %obj.isMethod( "getModelFile" ) ) {
-		MaterialEditorGui.currentObject = %obj;
-		SubMaterialSelector.clear();
-		MaterialEditorGui.currentMeshMode = "Model";
-		MaterialEditorGui.setMode();
-
-		for(%j = 0; %j < MaterialEditorGui.currentObject.getTargetCount(); %j++) {
-			%target = MaterialEditorGui.currentObject.getTargetName(%j);
-			%count = SubMaterialSelector.getCount();
-			SubMaterialSelector.add(%target);
-		}
-	} else { // Other classes that support materials if possible
-		%canSupportMaterial = false;
-
-		for( %i = 0; %i < %obj.getFieldCount(); %i++ ) {
-			%fieldName = %obj.getField(%i);
-
-			if( %obj.getFieldType(%fieldName) !$= "TypeMaterialName" )
-				continue;
-
-			if( !%canSupportMaterial ) {
-				MaterialEditorGui.currentObject = %obj;
-				SubMaterialSelector.clear();
-				SubMaterialSelector.add(%fieldName, 0);
-			} else {
-				%count = SubMaterialSelector.getCount();
-				SubMaterialSelector.add(%fieldName, %count);
-			}
-
-			%canSupportMaterial = true;
-		}
-
-		if( !%canSupportMaterial ) // Non-relevant classes get returned
-			return;
-
-		MaterialEditorGui.currentMeshMode = "EditorShape";
-		MaterialEditorGui.setMode();
-	}
-
-	%id = SubMaterialSelector.findText( MaterialEditorGui.currentMaterial.mapTo );
-
-	if( %id != -1 )
-		SubMaterialSelector.setSelected( %id );
-	else
-		SubMaterialSelector.setSelected(0);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// SubMaterial(Material Target) -- Supports different ways to grab the
-// material from the dropdown list. We're here either because-
-// 1. We have switched over from another editor with an object locked in the
-//    $Lab::materialEditorList variable
-// 2. We have selected an object using the Object Editor via the Material Editor
-//==============================================================================
-function SubMaterialSelector::onSelect( %this ) {
-	%material = "";
-
-	if( MaterialEditorGui.currentMeshMode $= "Model" )
-		%material = getMapEntry( %this.getText() );
-	else
-		%material = MaterialEditorGui.currentObject.getFieldValue( %this.getText() );
-
-	%origMat = %material;
-
-	if(%material$="")
-		%origMat = %material = %this.getText();
-
-	// if there is no material attached to that objects material field or the
-	// object does not have a valid method to grab a material
-	if( !isObject( %material ) ) {
-		// look for a newMaterial name to grab
-		// addiitonally, convert "." to "_" in case we have something like: "base.texname" as a material name
-		// at the end we will have generated material name: "base_texname_mat"
-		%material = getUniqueName( strreplace(%material, ".", "_") @ "_mat" );
-		new Material(%material) {
-			diffuseMap[0] = %origMat;
-			mapTo = %origMat;
-			parentGroup = RootGroup;
-		};
-		eval( "MaterialEditorGui.currentObject." @ strreplace(%this.getText(),".","_") @ " = " @ %material @ ";");
-
-		if( MaterialEditorGui.currentObject.isMethod("postApply") )
-			MaterialEditorGui.currentObject.postApply();
-	}
-
-	MaterialEditorGui.prepareActiveMaterial( %material.getId() );
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 // Helper functions to help load and update the preview and active material
 //------------------------------------------------------------------------------
@@ -135,6 +40,11 @@ function MaterialEditorGui::setActiveMaterial( %this, %material ) {
 		return;
 	}
 
+	if (strFind(%material.getFilename(),"tlab") || %material.getFilename() $= "") {
+		devlog("Changind material filename from:",%material.getFilename(),"To",$Pref::MaterialEditorGui::DefaultMaterialFile);
+		%material.setFilename($Pref::MaterialEditorGui::DefaultMaterialFile);
+	}
+	
 	MaterialEditorGui.currentMaterial = %material;
 	MaterialEditorGui.lastMaterial = %material;
 	%this.setActiveMaterialFile(%material);
@@ -167,6 +77,7 @@ function MaterialEditorGui::setActiveMaterialFile( %this, %material ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp) {	
+	devLog(" MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
 	MaterialEditorGui.setMaterialDirty();
 
 	if(%value $= "")
@@ -266,4 +177,5 @@ function MaterialEditorGui::updateActiveMaterialName(%this, %name) {
 	// Material.
 	MaterialEditorGui.updateMaterialReferences( MissionGroup, %action.oldName, %action.newName );
 }
+
 
