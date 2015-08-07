@@ -12,10 +12,10 @@ function Lab::loadEditorFrameMainDefaults(%this) {
 	$LabGui_EditorFrameMain_Column_Thin = "0.8055";
 	$LabGui_EditorFrameMain_Column_Normal = "0.75";
 	$LabGui_EditorFrameMain_Column_Large = "0.6666";
-	$LabGui_EditorFrameMain_SizeMode = "Normal";
 	$LabGui_EditorFrameMain_BorderWidth = "4";
 	
-	$LabGui_EditorFrameMain_Locked = true;
+	$LabCfg_EditorUI_ToolFrameLocked = "0";
+	$LabCfg_EditorUI_ToolFrameSize = "Normal";
 	
 	$LabGui_ForceToolsSize = true;
 	
@@ -25,98 +25,79 @@ Lab.loadEditorFrameMainDefaults();
 //==============================================================================
 // EditorFrameMain Functions
 //==============================================================================
+function EditorFrameMain::onWake(%this) {	
+	Lab.setupEditorFrameMain();		
+}
+
 //==============================================================================
-function Lab::setEditorFrameMainLocked(%this,%sizeMode) {
+function Lab::setEditorToolFrameSize(%this,%sizeMode) {
 	%size = $LabGui_EditorFrameMain_Column_[%sizeMode];
 	if (%size $= "")
 		return;
 	
-	$LabGui_EditorFrameMain_SizeMode = %sizeMode;
+	$LabCfg_EditorUI_ToolFrameSize = %sizeMode;
 	%this.setupEditorFrameMain();
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
-function Lab::setEditorFrameMainSize(%this,%sizeMode) {
-	%size = $LabGui_EditorFrameMain_Column_[%sizeMode];
-	if (%size $= "")
-		return;
-	
-	$LabGui_EditorFrameMain_SizeMode = %sizeMode;
-	%this.setupEditorFrameMain();
-}
-//------------------------------------------------------------------------------
-function Lab::setupDefaultEditorFrameMain(%this) {
-	$LabGui_EditorFrameMain_SizeMode = InterfaceEditor_Param.getCfg("EditorFrameMain");
-	$LabGui_ForceToolsSize = InterfaceEditor_Param.getCfg("locked");
-	%this.setupEditorFrameMain();
-}
-//==============================================================================
-function Lab::setupEditorFrameMain(%this,%defaultSize,%mode) {
+function Lab::setupEditorFrameMain(%this,%setDefaults) {
 	EditorFrameMain.frameMinExtent(1,280,100);
 	
-	if (%defaultSize !$= ""){
-		if (%mode $= "")
-			%mode = "Normal";
-		$LabGui_EditorFrameMain_Column_[%mode] = mClamp(%defaultSize,0,1);
-	}
+	if (%setDefaults){
+		$LabCfg_EditorUI_ToolFrameSize = InterfaceEditor_Param.getCfg("ToolFrameSize");
+		$LabCfg_EditorUI_ToolFrameLocked = InterfaceEditor_Param.getCfg("ToolFrameLocked");
+	}	
 	
-	%columnRatio = $LabGui_EditorFrameMain_Column_[$LabGui_EditorFrameMain_SizeMode];
-	%sideCol = EditorFrameMain.lastToolsCol;
-	if (%sideCol $= "" || $LabGui_ForceToolsSize )
-		%sideCol = mCeil(EditorFrameMain.extent.x * %columnRatio);
+	//Leave if no tools for active plugin	
+	if (!Lab.currentEditor.useTools)
+		return;
 
-	EditorFrameMain.columns =  
+	%columnRatio = $LabGui_EditorFrameMain_Column_[$LabCfg_EditorUI_ToolFrameSize];
+	%sideCol = EditorFrameMain.lastToolsCol;
+	if (%sideCol $= "" || $LabCfg_EditorUI_ToolFrameLocked )
+		%sideCol = mCeil(EditorFrameMain.extent.x * %columnRatio);
+		
 	EditorFrameMain.columns = "0" SPC %sideCol;
 	EditorFrameMain.updateSizes();
 	
-	if ($LabGui_EditorFrameMain_Locked && EditorFrameMain.borderWidth !$= "0")
-		%this.lockEditorFrameMain(true);
-	else if (!$LabGui_EditorFrameMain_Locked && EditorFrameMain.borderWidth $= "0")
-		%this.lockEditorFrameMain(false);
+	if ($LabCfg_EditorUI_ToolFrameLocked && EditorFrameMain.borderWidth !$= "0")
+		%this.lockEditorToolFrame(true);
+	else if (!$LabCfg_EditorUI_ToolFrameLocked && EditorFrameMain.borderWidth $= "0")
+		%this.lockEditorToolFrame(false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::lockEditorFrameMain(%this,%locked) {
+function Lab::lockEditorToolFrame(%this,%locked) {
 	if (%locked){
 		EditorFrameMain.borderEnable = "alwaysOff";
 		EditorFrameMain.borderMovable = "alwaysOff";
 		EditorFrameMain.borderWidth = "0";
+		EditorFrameMain.updateSizes();
 		return;
 	}
 	EditorFrameMain.borderEnable = "alwaysOn";
 	EditorFrameMain.borderMovable = "alwaysOn";
-	EditorFrameMain.borderWidth = $LabGui_EditorFrameMain_BorderWidth;		
+	EditorFrameMain.borderWidth = $LabGui_EditorFrameMain_BorderWidth;	
+	EditorFrameMain.updateSizes();	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Plugin GuiFrameSetCtrl Functions
 //==============================================================================
 //==============================================================================
-function Lab::checkPluginTools(%this) {
-	%currentPlugin = Lab.currentEditor;
-	
-	%toolsGui = %currentPlugin.toolsGui;
-	
-	
-	
-	if (!%currentPlugin.useTools){
-		%this.hidePluginTools();
-		return;
-	}
-	if (getWordCount(EditorFrameMain.columns) <= 1){
-		%this.showPluginTools();
-	}
-	
-}
-//------------------------------------------------------------------------------
 
 //==============================================================================
-function Lab::togglePluginTools(%this) {
-	if (getWordCount(EditorFrameMain.columns) > 1){
+//Called from Toolbar and TerrainManager
+function Lab::togglePluginTools(%this) {		
+	if (getWordCount(EditorFrameMain.columns) > 1){		
 		%this.hidePluginTools();
 		return false;
 	}
-	else {
+	else if (!Lab.currentEditor.useTools){
+		return false;
+	}
+	else {		
 		%this.showPluginTools();
 		return true;
 	}
@@ -124,7 +105,8 @@ function Lab::togglePluginTools(%this) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function Lab::checkPluginTools(%this) {
+//Called from EditorPlugin::activateGui
+function Lab::checkPluginTools(%this) {	
 	%currentPlugin = Lab.currentEditor;
 	if (!%currentPlugin.useTools){
 		%this.hidePluginTools();
@@ -141,10 +123,12 @@ function Lab::hidePluginTools(%this) {
 	EditorFrameMain.lastToolsCol = getWord(EditorFrameMain.columns,1);
 	EditorFrameMain.columns = "0";
 	EditorFrameMain.updateSizes();
+	devLog("Tools Hidden",EditorFrameMain.columns);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::showPluginTools(%this) {
+	devLog("showPluginTools",Lab.currentEditor.useTools);
 	Lab.setupEditorFrameMain();	
 }
 //------------------------------------------------------------------------------

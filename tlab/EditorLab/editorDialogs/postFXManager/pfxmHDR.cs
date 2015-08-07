@@ -32,7 +32,7 @@ function EPostFxManager::buildParamsHDR( %this ) {
 
 	
 	%arCfg.group[%gid++] = "ColorShift Settings" TAB "StackType Header;;Stack StackColor";	
-	%arCfg.setVal("enableBlueShift",       "" TAB "Color shift amount (0 = disabled)" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("enableBlueShift",       "" TAB "Color shift amount (0 = disabled)" TAB "SliderEdit" TAB "range>>0 2" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("EPostFxPage_ColorShiftSelect",       "" TAB "" TAB "CloneCtrl" TAB "" TAB "" TAB %gid);
 
 	buildParamsArray(%arCfg,false);

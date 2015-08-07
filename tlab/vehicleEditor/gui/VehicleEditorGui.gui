@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiContainer(ShapeEdPreviewGui) {
+%guiContent = new GuiContainer(VehicleEditorGui) {
    docking = "Client";
    margin = "0 0 0 0";
    padding = "0 0 0 0";
@@ -47,7 +47,7 @@
       canSave = "1";
       canSaveDynamicFields = "0";
    };
-   new GuiShapeEdPreview(ShapeEdShapeView) {
+   new GuiShapeEdPreview(VehicleEdView) {
       editSun = "0";
       selectedNode = "-1";
       selectedObject = "-1";

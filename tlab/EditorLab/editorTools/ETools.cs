@@ -53,13 +53,15 @@ function ETools::showTool(%this,%tool) {
 		return;
 	}
 	%this.fitIntoParents();
-	
+	%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+	if (isObject(%toggler))
+		%toggler.setStateOn(true);
 	ETools.visible = true;
 
 	%dlg.setVisible(true);
 		
 	if (isObject(%dlg.linkedButton))
-		%dlg.linkedButton.setStateOn(%dlg.visible);
+		%dlg.linkedButton.setStateOn(true);
 		
 	if (%dlg.isMethod("onShow"))
 		%dlg.onShow();
@@ -71,7 +73,9 @@ function ETools::hideTool(%this,%tool) {
 	%dlg = %this.findObjectByInternalName(%tool,true);
 	
 
-
+%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+	if (isObject(%toggler))
+		%toggler.setStateOn(false);
 
 	%dlg.setVisible(false);
 	
@@ -84,7 +88,7 @@ function ETools::hideTool(%this,%tool) {
 		%this.visible = 0;
 		
 	if (isObject(%dlg.linkedButton))
-		%dlg.linkedButton.setStateOn(%dlg.visible);
+		%dlg.linkedButton.setStateOn(false);
 		
 	if (%dlg.isMethod("onHide"))
 		%dlg.onHide();

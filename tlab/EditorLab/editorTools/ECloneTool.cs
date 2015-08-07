@@ -12,7 +12,7 @@ $ECloneToolContainers = "ECloneTool SEPbuilder_CloneTool";
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneTool::toggleVisibility( %this ) {
 	ETools.toggleTool("CloneTool");
-	SETB_ObjectTools-->CloneToolButton.setStateOn(%this.visible);
+
 
 	if ( %this.visible  ) {
 		//%this.selectWindow();

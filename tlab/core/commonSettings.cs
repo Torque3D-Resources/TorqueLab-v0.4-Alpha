@@ -47,13 +47,13 @@ $FrameMainSizes = "Thin Normal Large";
 	//Binds and inputs
 	%gid = 0;
 	%ar = %this.newParamsArray("Editor","Interface","",true);
-	%ar.prefGroup = "$LabGui_EditorFrameMain_";
+	%ar.prefGroup = "$LabCfg_EditorUI_";
 	%ar.autoSyncPref = true;
 	
 	//%ar.style = "StyleA";
 	%ar.group[%gid++] = "Main editor frame";	
-	%ar.setVal("SizeMode",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorFrameMainSize(*val*);" TAB %gid);
-	%ar.setVal("Locked",      "Normal" TAB "Lock side frame resizing" TAB "Checkbox" TAB "ff>>gg" TAB "Lab.lockEditorFrameMain(*val*);" TAB %gid);
+	%ar.setVal("ToolFrameSize",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorToolFrameSize(*val*);" TAB %gid);
+	%ar.setVal("ToolFrameLocked",      "0" TAB "Lock side frame resizing" TAB "Checkbox" TAB "ff>>gg" TAB "Lab.lockEditorToolFrame(*val*);" TAB %gid);
 //==============================================================================
 //WORLD EDITOR SETTINGS
 	//Camera

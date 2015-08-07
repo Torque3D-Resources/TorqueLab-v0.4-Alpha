@@ -44,7 +44,7 @@ function EPostFxManager::onSleep(%this) {
 		SEP_GroundCover.add(TMG_GroundCoverClone-->MainContainer);
 }
 //------------------------------------------------------------------------------
-
+//EPostFxManager.init(true);
 //==============================================================================
 function EPostFxManager::init(%this,%forceInit,%notInitialized) {
 	//devLog("EPostFxManager::init(%this,%forceInit,%notInitialized)",%forceInit,%notInitialized);

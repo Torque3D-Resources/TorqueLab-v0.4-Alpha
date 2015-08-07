@@ -22,6 +22,7 @@ function EPostFxManager::initPresets(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+//EPostFxManager.updatePresetMenu();
 function EPostFxManager::updatePresetMenu(%this) {
 	%searchFolder = $EPostFx_PresetFolder@"/*.pfx.cs";
 	PFXM_PresetMenu.clear();
@@ -99,6 +100,8 @@ function EPostFxManager::selectPresetFileSave(%this) {
 //==============================================================================
 function EPostFxManager::savePresetsToFile(%this,%file) {
 	%useStockFormat = EPostFxManager_Main-->storeAsStockPreset.isStateOn();
+	EPostFxManager.saveMissionPresets(%file);
+	/*
 	if (%useStockFormat){
 		EPostFxManager.saveMissionPresets(%file);
 	}
@@ -116,7 +119,7 @@ function EPostFxManager::savePresetsToFile(%this,%file) {
 		}
 		
 		export("$PostFxPreset_*", %file);		
-	}
+	}*/
 
 
 	info("PostFX Presets exported to file:",%file);
@@ -131,7 +134,7 @@ function EPostFxManager::saveMissionPresets(%this,%postFxFile) {
 		%missionFile = $Client::MissionFile;
 		%postFxFile = strreplace(%missionFile,".mis",".postfxpreset.cs");
 	}
-	%postFxFile = strreplace(%missionFile,".pfx.",".postfxpreset.");
+	//%postFxFile = strreplace(%missionFile,".pfx.",".postfxpreset.");
 	$PostFXPresetFormat = "Stock";
 	//Convert some fields to work with stock templates (Those are bad set in templates, not torquelab)
 	$GeneralPostFx::ColorCorrectionRamp = $HDRPostFx::ColorCorrectionRamp;
@@ -175,6 +178,11 @@ function EPostFxManager::loadPresetsFromFile(%this,%file) {
 		return false;
 	$PostFXPresetFormat = "";
 	exec(%file);
+	%this.loadStockPresets();
+	info("PostFX Presets imported from file:",%file,"With Format:",$PostFXPresetFormat);
+	%this.applyPostFXSettings();
+	return true;
+	/*
 	if (strFind(%file,"postfxpreset")){
 		devLog("Loding stock presets",%file);
 		%this.loadStockPresets();
@@ -184,11 +192,11 @@ function EPostFxManager::loadPresetsFromFile(%this,%file) {
 	}
 	info("PostFX Presets imported from file:",%file,"With Format:",$PostFXPresetFormat);
 	%this.applyPostFXSettings();
-	return true;
+	return true;*/
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function EPostFxManager::loadLabPresets(%this) {	
+/*function EPostFxManager::loadLabPresets(%this) {	
 	foreach$(%field in $EPostFx_PostFxList SPC "PostFX"){			
 				%value = $PostFxPreset_["Enabled",%field];
 				if (%value $= "")
@@ -204,7 +212,7 @@ function EPostFxManager::loadLabPresets(%this) {
 			}
 		}
 }
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------*/
 //==============================================================================
 function EPostFxManager::loadStockPresets(%this) {
 	

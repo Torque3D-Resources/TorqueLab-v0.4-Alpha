@@ -10,7 +10,7 @@ new GuiStackControl(StackStartToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "0 0";
-   extent = "102 32";
+   extent = "134 32";
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -26,12 +26,12 @@ new GuiStackControl(StackStartToolbar) {
    canSaveDynamicFields = "1";
       alwaysFirst = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6346";
-      disabledGroup = "6347";
-      EditorContainer = "4077";
+      defaultStack = "6325";
+      disabledGroup = "6326";
+      EditorContainer = "4056";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6348";
+      stackLists = "6327";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -67,7 +67,7 @@ new GuiStackControl(StackStartToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "102 32";
+      extent = "134 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -171,7 +171,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "6346";
+            toolbar = "6325";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -202,7 +202,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "6346";
+            toolbar = "6325";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -233,7 +233,36 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "2";
             originalParent = "7046";
-            toolbar = "6346";
+            toolbar = "6325";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "1 1";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/VisibilitySettings.png";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         makeIconSquare = "0";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "104 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "ETools.toggleTool(\"VisibilityLayers\");";
+         tooltipProfile = "ToolsGuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "VisibilityLayersToggle";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -242,7 +271,7 @@ new GuiStackControl(StackStartToolbar) {
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "104 0";
+         position = "136 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -287,7 +316,7 @@ new GuiStackControl(StackStartToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "104 0";
+      position = "136 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";
