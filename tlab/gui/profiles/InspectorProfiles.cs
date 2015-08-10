@@ -20,11 +20,15 @@ singleton GuiControlProfile( GuiInspectorProfile  : ToolsDefaultProfile ) {
 //==============================================================================
 // GuiPopUpMenuProfile - Default profile might overwrite one used in game
 //------------------------------------------------------------------------------
+// This PopupProfile is used by the coded GuiInspector system and shouldn't be used
+// in  Torque3D project so the tools profile don't get overrided. If such profile is
+// declared somewhere else, it will be overwritten with the tools one. If no tools 
+//are loaded, the GuiPopupProfile won't be overidden...
+//------------------------------------------------------------------------------
 //GuiPopUpMenuProfile Item
-//delObj(GuiPopUpMenuProfile_Item);
-if (!isObject(GuiPopUpMenuProfile_Item))
-	singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
-	{
+delObj(GuiPopUpMenuProfile_Item);
+singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
+{
 		modal = "1";
 		fontSize = "18";
 		fontColors[1] = "255 160 0 255";
@@ -42,13 +46,12 @@ if (!isObject(GuiPopUpMenuProfile_Item))
 		fontColors[3] = "254 3 62 255";
 		fontColorNA = "3 206 254 255";
 		fontColorSEL = "254 3 62 255";		
-	};
+};
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
-//delObj(GuiPopUpMenuProfile_List);
-if (!isObject(GuiPopUpMenuProfile_List))
-	singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
-	{
+delObj(GuiPopUpMenuProfile_List);
+singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
+{
 		modal = "1";
 		fontSize = "18";
 		fontColors[1] = "255 160 0 255";
@@ -67,11 +70,13 @@ if (!isObject(GuiPopUpMenuProfile_List))
 		fontColorNA = "3 206 254 255";
 		fontColorSEL = "254 3 62 255";
 		profileForChildren = "GuiPopUpMenuProfile_Item";
-	};
+};
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
-delObj(GuiPopUpMenuProfile_List);
-if (!isObject(GuiPopUpMenuProfile))
+if (isObject(GuiPopUpMenuProfile) && GuiPopUpMenuProfile.category !$= "Tools"){
+	warnLog("GuiPopupMenuProfile was declared outside of TorqueLab. It shouldn't be used in project and it will be overwritten with TorqueLab profile");
+}
+delObj(GuiPopUpMenuProfile);
 singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
 {   
    hasBitmapArray     = "1";
@@ -100,31 +105,7 @@ singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
   
 };
 //------------------------------------------------------------------------------
-//GuiPopUpMenuProfile Menu
-//delObj(GuiPopUpMenuProfile);
-if (!isObject(GuiPopUpMenuProfile))
-	singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
-	{   
-	  hasBitmapArray     = "1";
-	  profileForChildren = "ToolsDropdownProfile_List";
-		bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
-		fontSize = "15";
-		justify = "Center";
-		fillColor = "242 241 241 255";  
-		fillColorHL = "228 228 235 255";
-		fontColors[1] = "255 160 0 255";
-		fontColors[2] = "3 206 254 255";
-		fontColorHL = "255 160 0 255";
-		fontColorNA = "3 206 254 255";
-		autoSizeWidth = "0";
-		autoSizeHeight = "0";
-		fontType = "Davidan";
-		modal = "1";
-		fontColors[3] = "254 3 62 255";
-		fontColorSEL = "254 3 62 255";
-		bevelColorLL = "Magenta";
-	};
-//------------------------------------------------------------------------------
+
 
 //==============================================================================
 //ToolsButtonProfile - Default profile might overwrite on used in game

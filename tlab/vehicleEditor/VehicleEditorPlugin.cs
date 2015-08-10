@@ -10,7 +10,7 @@ $Lab_REP_DefaultNodeWidthRange = "0 50";
 //==============================================================================
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function VehicleEditorPlugin::initParamsArray( %this,%cfgArray ) {
+function VehicleEditorPlugin::initParamsArray( %this,%array ) {
 	%array.group[%gId++] = "Grid settings";
 	%array.setVal("ShowGrid",       "1" TAB "ShowGrid" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
 	%array.setVal("GridSize",       "0.1" TAB "GridSize" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);

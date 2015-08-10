@@ -10,8 +10,8 @@
 //==============================================================================
 
 //==============================================================================
-singleton GuiControlProfile(ToolsFillAccentA : ToolsDefaultProfile) {
-    fillColor = "14 151 226 255";
+singleton GuiControlProfile(ToolsFillAccentB : ToolsDefaultProfile) {
+    fillColor = "17 45 58 255";
     opaque = "1";
     bevelColorHL = "Fuchsia";
     fontType = "Aileron";
@@ -22,11 +22,13 @@ singleton GuiControlProfile(ToolsFillAccentA : ToolsDefaultProfile) {
     fontColor = "88 1 192 255";
     category = "ToolsFills";
     fillColorNA = "255 255 255 255";
+   fontColors[3] = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsFillAccentB : ToolsFillAccentA) {
+singleton GuiControlProfile(ToolsFillAccentC : ToolsFillAccentA) {
     opaque = "1";
-    fillColor = "17 45 58 255";
+    fillColor = "101 136 166 255";
     fontColors[0] = "88 1 192 255";
     fontColor = "88 1 192 255";
     fontColors[1] = "0 0 0 255";
@@ -75,6 +77,8 @@ singleton GuiControlProfile(ToolsFillDarkA : ToolsDefaultProfile) {
    fontColorLinkHL = "Fuchsia";
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
+   fontColors[3] = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
 };
 singleton GuiControlProfile(ToolsFillDarkB : ToolsFillDarkA)
 {

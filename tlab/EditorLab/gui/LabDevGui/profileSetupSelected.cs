@@ -7,6 +7,8 @@
 function LabDevGui::selectSetupProfile( %this,%profile ) {	
 	LabDevGui.setupProfile = %profile;
 	
+	%styleObj = $LabStyleCurrentGroup.findObjectByInternalName(%profile.getName(),true);
+	LDG.styleObj = %styleObj;
 	if (!isObject(arGuiProfilesSetupData))
 		Lab.initProfilesSetupData(false,true);
 	

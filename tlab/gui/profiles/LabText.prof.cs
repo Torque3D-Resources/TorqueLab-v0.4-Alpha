@@ -264,7 +264,7 @@ singleton GuiControlProfile(ToolsTextAlt : ToolsDefaultProfile) {
    fontColorLinkHL = "3 254 148 255";
     fontType = "Anson Regular";
     fillColor = "238 236 240 255";
-    bevelColorHL = "Magenta";
+    bevelColorHL = "255 0 255 255";
     justify = "left";
     category = "ToolsText";
    fontSize = "16";

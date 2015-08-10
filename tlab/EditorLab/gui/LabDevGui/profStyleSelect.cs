@@ -62,11 +62,13 @@ function LDG::importProfileStyle( %this,%style ) {
 //==============================================================================
 function LDG::saveProfileStyle( %this,%style ) {	
 	if (%style $= "")
-		%style = $LabProfileStyleActive;
+		%style = LDG_ProfileStylesNameEdit.getText();
 	if (%style $= "")
 		return;
 		
-	Lab.exportCurrentProfilesStyle(%style);	
+	Lab.exportCurrentProfilesStyle(%style);
+	$LabProfileStyleActive = %style;
+	%this.updateProfileStylesList();
 }
 //------------------------------------------------------------------------------
 

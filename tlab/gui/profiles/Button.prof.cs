@@ -34,6 +34,8 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
    fontColors[6] = "255 0 255 255";
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
+   fontColors[3] = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
@@ -50,8 +52,15 @@ singleton GuiControlProfile( ToolsButtonDark : ToolsButtonProfile ) {
    fontType = "Anson Regular";
    fontColors[9] = "255 0 255 255";
    fontColors[6] = "255 0 255 255";
+   fontColors[8] = "Fuchsia";
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
 };
 //------------------------------------------------------------------------------
+singleton GuiControlProfile(ToolsButtonDark_L : ToolsButtonDark)
+{
+   justify = "left";
+};
 
 //==============================================================================
 //ToolsButtonHighlight Style - Special style for highlighting stuff

@@ -60,7 +60,9 @@ function initProfileSetupParams(%this) {
 	%ar.setVal("Font_Tools_Fx_Thin",      "" TAB "Font Tools Fx Thin" TAB "DropdownEdit" TAB "fieldList>>$LabFontData_List" TAB "" TAB %gid);	
 	%ar.setVal("Font_Tools_Alt_Std",       "" TAB "Font Tools Alt Std" TAB "DropdownEdit" TAB "fieldList>>$LabFontData_List" TAB "" TAB %gid);	
 	%ar.setVal("Font_Tools_Alt_Strong",    "" TAB "Font Tools Alt Strong" TAB "DropdownEdit" TAB "fieldList>>$LabFontData_List" TAB "" TAB %gid);	
-	%ar.setVal("Font_Tools_Alt_Thin",      "" TAB "Font Tools Alt Thin" TAB "DropdownEdit" TAB "fieldList>>$LabFontData_List" TAB "" TAB %gid);		
+	%ar.setVal("Font_Tools_Alt_Thin",      "" TAB "Font Tools Alt Thin" TAB "DropdownEdit" TAB "fieldList>>$LabFontData_List" TAB "" TAB %gid);	
+	
+	
 	
 	buildParamsArray(%ar,true);
 	Lab.profileSetupArray = %ar;

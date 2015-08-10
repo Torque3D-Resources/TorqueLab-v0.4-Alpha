@@ -9,7 +9,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "110 0";
+   position = "142 0";
    extent = "796 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,11 +26,11 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11827";
-      disabledGroup = "11828";
-      EditorContainer = "4056";
+      defaultStack = "12014";
+      disabledGroup = "12015";
+      EditorContainer = "4064";
       plugin = "MeshRoadEditor";
-      stackLists = "11829 11838";
+      stackLists = "12016 12025";
 
    new GuiContainer() {
       margin = "0 0 0 0";

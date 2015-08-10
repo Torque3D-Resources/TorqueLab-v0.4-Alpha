@@ -13,6 +13,8 @@ function MRoadManager::Init(%this){
 	MREP_NodeListModeMenu.add("Width & Depth",1);
 	MREP_NodeListModeMenu.add("Full edit",2);
 	MREP_NodeListModeMenu.setSelected(0);
+	
+	MRoadManager.autoCollapsePill = true;
 }
 
 function MREP_NodeListModeMenu::onSelect(%this,%id,%text){

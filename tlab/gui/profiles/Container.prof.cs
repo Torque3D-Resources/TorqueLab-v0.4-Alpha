@@ -57,6 +57,14 @@ singleton GuiControlProfile(ToolsWindowPanel : ToolsWindowProfile)
    textOffset = "8 1";
    fontColors[3] = "255 255 255 255";
    fontColorSEL = "255 255 255 255";
+   fontColors[9] = "255 0 255 255";
+   fillColorHL = "228 228 235 255";
+   fillColorNA = "255 255 255 255";
+   fillColorSEL = "98 100 137 255";
+   borderColor = "200 200 200 255";
+   fontType = "Aileron Bold";
+   fontSize = "16";
+   fontColors[7] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsWindowPanelA : ToolsWindowPanel)

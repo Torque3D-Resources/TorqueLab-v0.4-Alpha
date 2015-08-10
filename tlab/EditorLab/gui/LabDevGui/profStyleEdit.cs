@@ -29,6 +29,9 @@ function LDG::initProfileStyleParams(%this) {
 	%ar.setVal("fontColorSEL",       "" TAB "fontColorSEL (3)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	
 	%ar.setVal("fontColorLink",       "" TAB "fontColorLink (4)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	
 	%ar.setVal("fontColorLinkHL",       "" TAB "fontColorLinkHL (5)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	
+	
+	%ar.group[%gid++] = "Style and layout settings" TAB "Columns 0 130";
+	%ar.setVal("bitmap",     "" TAB "bitmap" TAB "FileSelect" TAB "file>>tlab/gui/styles/" TAB "LDG.styleObj" TAB %gid);	
 	//%ar.setVal("fontColors6",       "" TAB "fontColor (6)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	
 	//%ar.setVal("fontColors7",       "" TAB "fontColor (7)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	
 	//%ar.setVal("fontColors8",       "" TAB "fontColor (8)" TAB "ColorEdit" TAB "mode>>int" TAB "LDG.styleObj" TAB %gid);	

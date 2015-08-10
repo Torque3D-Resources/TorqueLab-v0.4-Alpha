@@ -18,7 +18,7 @@
    canSaveDynamicFields = "1";
       enabled = "1";
       isDecoy = "0";
-      previousGui = "4437";
+      previousGui = "4064";
       setupProfile = "1733";
       tooltipWidth = "500";
 
@@ -1952,7 +1952,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1400 839";
+            extent = "1560 839";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1975,7 +1975,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "1400 424";
+               extent = "1560 424";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -2910,7 +2910,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 424";
-               extent = "1400 415";
+               extent = "1560 415";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -5583,7 +5583,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "656 4";
-                  extent = "740 407";
+                  extent = "900 407";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -7271,7 +7271,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1400 839";
+            extent = "1560 839";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -7566,7 +7566,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiPaneControl() {
-                              caption = "Default color settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 0";
@@ -7584,7 +7584,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20209";
+                                 frameSet = "22474";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -8418,7 +8418,7 @@
                                        };
                                        new GuiColorPickerCtrl() {
                                           baseColor = "0.94902 0.94902 0.94902 1";
-                                          pickColor = "0 0 0 1";
+                                          pickColor = "Black";
                                           selectorGap = "1";
                                           displayMode = "Pallete";
                                           actionOnMove = "1";
@@ -8850,7 +8850,7 @@
                               };
                            };
                            new GuiPaneControl() {
-                              caption = "Custom color settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 236";
@@ -8868,7 +8868,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20213";
+                                 frameSet = "22478";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -9217,7 +9217,7 @@
                               };
                            };
                            new GuiPaneControl() {
-                              caption = "Color Ids ->\c9 Text \c0Settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 304";
@@ -9235,7 +9235,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20217";
+                                 frameSet = "22482";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -10632,7 +10632,7 @@
                               };
                            };
                            new GuiPaneControl() {
-                              caption = "Color Ids ->\c9 TextAlt \c0Settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 564";
@@ -10650,7 +10650,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20221";
+                                 frameSet = "22486";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -12047,7 +12047,7 @@
                               };
                            };
                            new GuiPaneControl() {
-                              caption = "Game font settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 824";
@@ -12065,7 +12065,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20225";
+                                 frameSet = "22490";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -13385,7 +13385,7 @@
                               };
                            };
                            new GuiPaneControl() {
-                              caption = "Tools font settings";
+                              caption = "A Pane";
                               collapsable = "1";
                               barBehindText = "1";
                               position = "0 1060";
@@ -13403,7 +13403,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "20229";
+                                 frameSet = "22494";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -14844,7 +14844,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "439 0";
-               extent = "961 839";
+               extent = "1121 839";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -14875,7 +14875,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "961 750";
+                  extent = "1121 750";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -14907,7 +14907,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "310 27";
-                     extent = "646 716";
+                     extent = "806 716";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14930,7 +14930,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "8 20";
-                        extent = "630 4";
+                        extent = "790 4";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -15480,7 +15480,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "630 4";
+                           extent = "790 4";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -15710,7 +15710,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 750";
-                  extent = "961 89";
+                  extent = "1121 89";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -15740,7 +15740,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "515 4";
+                     position = "675 4";
                      extent = "446 85";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -15900,7 +15900,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 4";
-                     extent = "515 85";
+                     extent = "675 85";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15976,7 +15976,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1880 1077";
+            extent = "1560 839";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -16008,7 +16008,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "330 1077";
+               extent = "330 839";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -16031,7 +16031,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "8 24";
-                  extent = "314 1045";
+                  extent = "314 807";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -16119,7 +16119,7 @@
                            sbUsesNAColor = "0";
                            reverseTextList = "0";
                            bitmapBounds = "16 16";
-                           text = "Default";
+                           text = "DarkBasic";
                            maxLength = "1024";
                            docking = "Client";
                            margin = "0 0 0 0";
@@ -16149,7 +16149,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "Default";
+                           text = "DarkBasic";
                            maxLength = "1024";
                            docking = "None";
                            margin = "1 2 6 26";
@@ -16390,7 +16390,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 112";
-                     extent = "306 927";
+                     extent = "306 689";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16421,7 +16421,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "4 4";
-                        extent = "298 919";
+                        extent = "298 681";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -16456,8 +16456,8 @@
                            compareToObjectID = "1";
                            canRenameObjects = "1";
                            renameInternal = "0";
-                           position = "0 4";
-                           extent = "298 2";
+                           position = "4 4";
+                           extent = "146 126";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -16492,7 +16492,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "330 0";
-               extent = "1550 1077";
+               extent = "1230 839";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -16523,7 +16523,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "20 32";
-                  extent = "1510 1025";
+                  extent = "1190 787";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -16562,7 +16562,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiPaneControl() {
-                        caption = "Fill Color settings";
+                        caption = "A Pane";
                         collapsable = "1";
                         barBehindText = "1";
                         position = "0 0";
@@ -16580,7 +16580,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            columnCount = "2";
-                           frameSet = "20707";
+                           frameSet = "22974";
                            offsetY = "22";
 
                         new GuiFrameSetCtrl() {
@@ -17159,7 +17159,7 @@
                                     canSaveDynamicFields = "0";
                                  };
                                  new GuiColorPickerCtrl() {
-                                    baseColor = "Magenta";
+                                    baseColor = "1 0 1 1";
                                     pickColor = "0 0 0 1";
                                     selectorGap = "1";
                                     displayMode = "Pallete";
@@ -17187,7 +17187,7 @@
                         };
                      };
                      new GuiPaneControl() {
-                        caption = "Font Type and Color settings";
+                        caption = "A Pane";
                         collapsable = "1";
                         barBehindText = "1";
                         position = "0 116";
@@ -17205,7 +17205,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            columnCount = "2";
-                           frameSet = "20711";
+                           frameSet = "22978";
                            offsetY = "22";
 
                         new GuiFrameSetCtrl() {
@@ -17940,7 +17940,7 @@
                                     canSaveDynamicFields = "0";
                                  };
                                  new GuiColorPickerCtrl() {
-                                    baseColor = "1 0 1 1";
+                                    baseColor = "Magenta";
                                     pickColor = "0 0 0 1";
                                     selectorGap = "1";
                                     displayMode = "Pallete";

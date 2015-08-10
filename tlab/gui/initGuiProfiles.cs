@@ -20,7 +20,7 @@ for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%
 exec("tlab/gui/profiles/editorProfiles.cs");
 exec("tlab/gui/profiles/inspectorProfiles.cs");
 
-execpattern("tlab/gui/profiles/styles/*.cs");
+//execpattern("tlab/gui/profiles/styles/*.cs");
 //Lab.initProfileStyleData();
 
 //exec("tlab/gui/profiles/ColorPanel.prof.cs");
