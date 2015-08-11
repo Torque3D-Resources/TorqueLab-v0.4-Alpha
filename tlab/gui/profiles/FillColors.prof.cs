@@ -163,6 +163,7 @@ singleton GuiControlProfile(ToolsFillLightC : ToolsFillLightA) {
     fontColors[1] = "Black";
     fontColors[6] = "255 0 255 255";
     fontColorHL = "Black";
+   fillColorNA = "White";
 };
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------

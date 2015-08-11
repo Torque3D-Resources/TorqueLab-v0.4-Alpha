@@ -53,6 +53,9 @@ function RiverEditorPlugin::onActivated( %this ) {
 	// Allow the Gui to setup.
 	//RiverEditorGui.onEditorActivated();
 	Parent::onActivated(%this);
+	RiverManager.autoCollapsePill = true;
+	RiverManager.showPositionEdit = false;
+	RiverEd_PropertiesBook.selectPage(0);
 }
 
 function RiverEditorPlugin::onDeactivated( %this ) {

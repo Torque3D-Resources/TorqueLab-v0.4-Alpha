@@ -6,8 +6,10 @@
 //RoadManager.updateRoadData();
 function RoadManager::updateRoadData(%this){
 	%road = RoadManager.currentRoad;
-	if (!isObject(%road))
+	if (!isObject(%road)){
+		REP_NodePillStack.clear();
 		return;
+	}
 	%this.noNodeUpdate = true;	
 	if (RoadManager.nodeListModeId $= "")	
 		RoadManager.nodeListModeId = "0";
@@ -49,8 +51,7 @@ function RoadManager::updateRoadData(%this){
 
 //------------------------------------------------------------------------------
 $NoNodeUpd = true;
-function RoadManager::selectNode(%this,%nodeId,%noUpdate){
-	devLog("selectNode",%nodeId);
+function RoadManager::selectNode(%this,%nodeId,%noUpdate){	
 	if (!isObject(RoadEditorGui.road)){
 		warnLog("Can't select a node if no road is selected...");
 		return;
@@ -66,8 +67,7 @@ function RoadManager::selectNode(%this,%nodeId,%noUpdate){
 
 //==============================================================================
 function RoadManager::onNodeSelected(%this,%nodeId){
-	if (%this.noNodeUpdate){
-		warnLog("No node update callbacks is ON");
+	if (%this.noNodeUpdate){		
 		return;
 	}
 	if (%nodeId $= ""){
@@ -78,7 +78,7 @@ function RoadManager::onNodeSelected(%this,%nodeId){
 		RoadManager.selectNode(0);
 		return;
 	}
-	devLog("onNodeSelected",%nodeId);
+	
 	foreach(%ctrl in REP_NodePillStack){
 		%active = false;
 		if (%ctrl.nodeId $= %nodeId)

@@ -29,7 +29,8 @@ execPattern("tlab/core/guiHelpers/*.cs");
 	
 	
 	exec("tlab/core/classBase/popupMenu.cs");
-	exec("tlab/core/classBase/guiInspector.cs");
+	exec("tlab/core/classBase/guiInspector.cs");	
+	exec("tlab/core/classBase/Inspector.cs");
 	exec("tlab/core/classBase/guiTreeViewCtrl.cs");
 	exec("tlab/core/classBase/guiSwatchButtonCtrl.cs");
 }

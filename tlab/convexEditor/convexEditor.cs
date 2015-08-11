@@ -30,10 +30,10 @@ singleton GuiControlProfile( ConvexEditorProfile ) {
 singleton GuiControlProfile (GuiDisabledTextEditProfile) {
 	opaque = false;
 	border = 0;
-	bitmap = "./textEdit";
+	bitmap = "tlab/meshRoadEditor/textEdit";
 	borderColor = "255 255 255 200";
 	fontColor = "0 0 0";
-	fontColorHL = "255 255 255";
+	fontColorHL = "White";
 	fontColorNA = "128 128 128";
 	textOffset = "4 2";
 	autoSizeWidth = false;
@@ -41,6 +41,8 @@ singleton GuiControlProfile (GuiDisabledTextEditProfile) {
 	tab = false;
 	canKeyFocus = false;
 	category = "Editor";
+   fontColors[1] = "White";
+   fontColors[2] = "128 128 128 255";
 };
 
 singleton GuiControlProfile (GuiSimpleBorderProfile) {

@@ -13,9 +13,12 @@ function GLab::initProfileParams( %this ) {
 	$GLab_FontList = $GLab::FontList;
    %arCfg = createParamsArray("GLab_Profile",GLab_ProfileParamStack);
    %arCfg.updateFunc = "GLab.updateProfileParam";
-   %arCfg.style = "ProfileSet";
+   %arCfg.finalUpdateFunc = "GLab.finalUpdateProfileParam";
+   %arCfg.style = "StyleA";
+   %arCfg.mouseAreaClass = "GLab_FieldInfoMouse";
    %arCfg.groupFieldId = 5;
-   
+   %arCfg.useNewSystem = true;
+   %arCfg.customUpdateOnly = true;
       %arCfg.group[%gid++] = "General settings";
       %arCfg.setVal("name",       "" TAB "Name" TAB "TextEdit_75" TAB "" TAB "$GLab_SelectedObject" TAB %gid);   
   %arCfg.setVal("category",       "" TAB "Category" TAB "dropdown_75" TAB "itemList>>$GLab_ProfileCategories" TAB "$GLab_SelectedObject" TAB %gid); 
@@ -30,19 +33,34 @@ function GLab::initProfileParams( %this ) {
    %arCfg.group[%gid++] = "Font settings";
    %arCfg.setVal("fontType",        "" TAB "fontType" TAB "dropdownEdit" TAB "fieldList>>$GLab_FullFontList;;guiGroup>>ggFontTypesGLab" TAB "$GLab_SelectedObject"  TAB %gid);
    %arCfg.setVal("fontSize",        "" TAB "fontSize" TAB "TextEdit_sml" TAB "" TAB "$GLab_SelectedObject"  TAB %gid);
-   %arCfg.setVal("fontColor",        "" TAB "fontColor" TAB "Color" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
-   %arCfg.setVal("fontColorHL",        "" TAB "fontColorHL" TAB "Color" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
-   %arCfg.setVal("fontColorNA",        "" TAB "fontColorNA" TAB "Color" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
-   %arCfg.setVal("fontColorSEL",        "" TAB "fontColorSEL" TAB "Color" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColor",        "" TAB "fontColor" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColorHL",        "" TAB "fontColorHL [1]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColorNA",        "" TAB "fontColorNA [2]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColorSEL",        "" TAB "fontColorSEL [3]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColorLink",        "" TAB "fontColorLink [4]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+	%arCfg.setVal("fontColorLinkHL",        "" TAB "fontColorLinkHL [5]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+   %arCfg.setVal("fontColors_6",        "" TAB "fontColor [6]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+    %arCfg.setVal("fontColors_7",        "" TAB "fontColor [7]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+     %arCfg.setVal("fontColors_8",        "" TAB "fontColor [8]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+      %arCfg.setVal("fontColors_9",        "" TAB "fontColor [9]" TAB "ColorEdit" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
    %arCfg.setVal("textOffset",       "" TAB "textOffset" TAB "TextEdit" TAB "" TAB "$GLab_SelectedObject" TAB %gid);
-
+	
+	
+	// fontColor = fontColors[0]
+// fontColorHL = fontColors[1]
+// fontColorNA = fontColors[2]
+// fontColorSEL = fontColors[3]
+// fontColorLink = fontColors[4]
+// fontColorLinkHL = fontColors[5]
    
    %arCfg.group[%gid++] = "Fill colors";
-    %arCfg.setVal("opaque",       "" TAB "Filling is opaque?" TAB "Checkbox" TAB "" TAB "$GLab_SelectedObject" TAB %gid);
+	%arCfg.setVal("opaque",       "" TAB "Filling is opaque?" TAB "Checkbox" TAB "" TAB "$GLab_SelectedObject" TAB %gid);
    %arCfg.setVal("fillColor",        "" TAB "fillColor" TAB "ColorSlider" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
    %arCfg.setVal("fillColorHL",        "" TAB "fillColorHL" TAB "ColorSlider" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
    %arCfg.setVal("fillColorSEL",        "" TAB "fillColorSEL" TAB "ColorSlider" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
    %arCfg.setVal("fillColorNA",        "" TAB "fillColorNA" TAB "ColorSlider" TAB "mode>>int" TAB "$GLab_SelectedObject"  TAB %gid);
+	
+
 
   //%arCfg.setVal("profileTest",       "" TAB "ProfileTest" TAB "dropdown" TAB "itemGroup::GameProfileGroup" TAB "$GLab_SelectedObject" TAB %gid);
    %arCfg.group[%gid++] = "Border settings";   
@@ -75,31 +93,40 @@ function GLab::initProfileParams( %this ) {
 //==============================================================================
 //==============================================================================
 // Called when a field have been changed
-function GLab::updateProfileParam( %this, %field,%value,%paramArray,%noUpdate,%arg3,%ctrl ) { 
-  devLog("GLab updateProfileParam Ctrl",%ctrl,"Array",%paramArray,"field",%field);
+function GLab::updateProfileParam( %this, %fieldData,%value,%ctrl,%paramArray,%isAltCommand,%arg3 ) { 
+  logc("GLab updateProfileParam Ctrl",%ctrl,"Array",%paramArray,"field",%fieldData,"IsAlt",%isAltCommand);
    if (%value $= ""){
       warnLog("Can't set a profile field to empty yet");
       return;
    }
-   %arIndex = %paramArray.getIndexFromKey(%field);
+   %fieldWords = strreplace(%fieldData,"_"," ");
+   %field = getWord(%fieldWords,0);
+   %fieldId = getWord(%fieldWords,1);
+   %arIndex = %paramArray.getIndexFromKey(%fieldData);
    %data = %paramArray.getValue(%arIndex);      
    %objGlobal = getField(%data,4);
+   
+  
    eval("%obj = "@%objGlobal@";");
    //As now, the %syncObj should be a valid object directly 
    if (!isObject(%obj)){
       warnlog("Profile param sync obj is invalid object!!");      
        return;
    }	
-   if ((%field $= "colorFont" || %field $= "colorFill") && !$GLab_EmbedColorSetInProfile){
-   	devLog("Color set changed for field:",%field,"Value",%value);
+   if ((%field $= "colorFont" || %field $= "colorFill") && !$GLab_EmbedColorSetInProfile){   
    	GLab.setProfileColorFromSet(%value,%field);
    	return;
    }
    
    if (%noUpdate)
       return;
-   GLab.updateProfileField(%obj,%field,%value);
+	
+	
+   GLab.updateProfileField(%obj,%fieldData,%value,%fieldId);
    
+   if (%isAltCommand){   
+   	GLab.updateProfileChildsField( %obj,%fieldData);
+   }
    %ctrl = %paramArray.container.findObjectByInternalName(%field,true);
    //if (isObject(%ctrl))
   	// %ctrl.updateFriends();
@@ -122,16 +149,26 @@ function GLab::syncProfileParamArray( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Sync the current profile values into the params objects
-function GLab::syncProfileField( %this,%field,%data ) { 
+function GLab::syncProfileField( %this,%fieldData,%data ) { 
+	 devLog("syncProfileField Field",%fieldData,"Data:",%data);
+	 
+	  %fieldWords = strreplace(%fieldData,"_"," ");
+   %field = getWord(%fieldWords,0);
+   %fieldId = getWord(%fieldWords,1);
+    %realField = %field;
+	if (%fieldId !$= ""){
+		%realField = %field@"["@%fieldId@"]";
+		devLog("syncProfileField Real field set with index:",%realField);
+	}
     %paramArray = $GLab_ProfileParams;   
    if (%data $= ""){
-      %index = %paramArray.getIndexFromKey(%field);
+      %index = %paramArray.getIndexFromKey(%fieldData);
       %data = %paramArray.getValue(%index); 
    }
       
-   %pData = %paramArray.pData[%field];
-      %dataPill = %paramArray.pill[%field];      
-      %title = %paramArray.title[%field]; 
+   %pData = %paramArray.pData[%fieldData];
+      %dataPill = %paramArray.pill[%fieldData];      
+      %title = %paramArray.title[%fieldData]; 
       
      
      
@@ -151,7 +188,7 @@ function GLab::syncProfileField( %this,%field,%data ) {
       }	
       
        %ownList = $ProfOwnedFields[%syncObj.getName()];
-      %ownField = strFind(%ownList,%field);
+      %ownField = strFind(%ownList,%realField);
       
       
       %dataPill.fieldTitle = %dataPill-->fieldTitle;
@@ -161,12 +198,13 @@ function GLab::syncProfileField( %this,%field,%data ) {
       }
       %dataPill-->fieldTitle.text = %titleText;
       
-      %value = %syncObj.getFieldValue(%field);  
+      %value = %syncObj.getFieldValue(%field,%fieldId);  
       
       
-      
+     
       if (%value $= "") return;
-      %ctrl = %paramArray.container.findObjectByInternalName(%field,true);
+      %ctrl = %paramArray.container.findObjectByInternalName(%fieldData,true);
+       devLog("Field",%field,"Sync:",%ctrl,"Class:",%ctrl.getCLassName());
       %ctrl.setTypeValue(%value); 
    	%ctrl.updateFriends();
 }

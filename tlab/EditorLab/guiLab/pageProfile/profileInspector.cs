@@ -35,8 +35,13 @@ function GLab_ProfileInspector::onFieldRenamed( %this, %object, %oldFieldName, %
 
 
 function GLab_ProfileInspector::onInspectorFieldModified( %this, %object, %fieldName, %arrayIndex, %oldValue, %newValue ) {
-   logd("GLab_ProfileInspector::onInspectorFieldModified(%object, %fieldName, %arrayIndex, %oldValue, %newValue)",%object, %fieldName, %arrayIndex, %oldValue, %newValue);
-    GLab.setProfileDirty( %object, true );
+   devLog("GLab_ProfileInspector::onInspectorFieldModified(%object, %fieldName, %arrayIndex, %oldValue, %newValue)",%object, %fieldName, %arrayIndex, %oldValue, %newValue);
+   
+  
+    GLab.setProfileDirty( %object, true );  
+    if (strFind(%arrayIndex,"null"))
+    	%arrayIndex = "";
+	 GLab.updateProfileChildsField( %object,%fieldName SPC %arrayIndex,%newValue);
     //GuiEditor.setProfileDirty( %object, true );
 
 }

@@ -30,3 +30,4 @@ function MeshRoadInspector::onFieldSelected( %this, %fieldName, %fieldTypeStr, %
 function MeshRoadTreeView::onInspect(%this, %obj) {
 	MeshRoadInspector.inspect(%obj);
 }
+

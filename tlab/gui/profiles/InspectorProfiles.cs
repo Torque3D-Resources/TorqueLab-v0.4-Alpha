@@ -14,6 +14,7 @@ singleton GuiControlProfile( GuiInspectorProfile  : ToolsDefaultProfile ) {
     tab = true;
     category = "Editor";
    fontSize = "15";
+   fontColors[7] = "Magenta";
 };
 //------------------------------------------------------------------------------
 
@@ -30,22 +31,26 @@ delObj(GuiPopUpMenuProfile_Item);
 singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
 {
 		modal = "1";
-		fontSize = "18";
+		fontSize = "22";
 		fontColors[1] = "255 160 0 255";
 		fontColorHL = "255 160 0 255";
 		autoSizeWidth = "1";
 		autoSizeHeight = "1";
-		fillColorSEL = "199 152 15 240";
+		fillColorSEL = "0 255 6 255";
 		opaque = "1";
 		bevelColorHL = "255 0 255 255";
 		fontColors[0] = "0 0 0 255";
 		fontColor = "0 0 0 255";
-		fillColor = "0 1 16 255";
-		fillColorHL = "180 113 18 169";
-		fontColors[2] = "3 206 254 255";
-		fontColors[3] = "254 3 62 255";
-		fontColorNA = "3 206 254 255";
-		fontColorSEL = "254 3 62 255";		
+		fillColor = "242 241 240 255";
+		fillColorHL = "228 228 235 255";
+		fontColors[2] = "0 0 0 255";
+		fontColors[3] = "255 255 255 255";
+		fontColorNA = "0 0 0 255";
+		fontColorSEL = "255 255 255 255";		
+   fillColorNA = "255 255 255 255";
+   borderThickness = "1";
+   fontType = "Arial";
+   fontColors[7] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
@@ -80,28 +85,32 @@ delObj(GuiPopUpMenuProfile);
 singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
 {   
    hasBitmapArray     = "1";
-   fontSize = "15";
+   fontSize = "16";
    fontColors[1] = "255 160 0 255";
    fontColorHL = "255 160 0 255";
    autoSizeWidth = "0";
-   autoSizeHeight = "1";
+   autoSizeHeight = "0";
    modal = "1";
    fillColor = "242 241 241 255";
    fillColorHL = "228 228 235 255";
    fontColors[2] = "3 206 254 255";
    fontColorNA = "3 206 254 255";
-   profileForChildren = "ToolsDropdownProfile_List";
+   profileForChildren = "GuiDropdownProfile_List";
    fillColorSEL = "98 100 137 255";
    fontColors[3] = "254 3 62 255";
    fontColorSEL = "254 3 62 255";
-   opaque = "0";
+   opaque = "1";
    bevelColorHL = "255 0 255 255";
    fontColors[0] = "0 0 0 255";
    fontColor = "0 0 0 255";
-   fontType = "Davidan";
-   justify = "Center";
-   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
+   fontType = "Lato bold";
+   justify = "Left";
+   bitmap = "art/gui/DarkLab/element-assets/GuiDropdownProfile_S1.png";
    category = "Tools";
+   fillColorNA = "255 255 255 255";
+   borderThickness = "1";
+   fontColors[7] = "255 0 255 255";
+   textOffset = "4 -1";
   
 };
 //------------------------------------------------------------------------------
@@ -175,7 +184,6 @@ singleton GuiControlProfile( GuiInspectorButtonProfile : ToolsButtonProfile ) {
     fontColors[2] = "200 200 200 255";
     fontColorNA = "200 200 200 255";
     bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
-    fixedExtent = "0";
    bevelColorLL = "Magenta";
    textOffset = "0 2";
    autoSizeWidth = "1";
@@ -406,6 +414,7 @@ singleton GuiControlProfile( InspectorTypeCheckboxProfile : GuiInspectorFieldPro
     textOffset = "4 0";
     category = "Editor";
     modal = true;
+   bevelColorLL = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 

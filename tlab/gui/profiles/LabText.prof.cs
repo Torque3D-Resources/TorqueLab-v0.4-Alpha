@@ -99,7 +99,7 @@ singleton GuiControlProfile(ToolsTextBase_L1_R : ToolsTextBase_L1) {
 singleton GuiControlProfile(ToolsTextBase_H1 : ToolsTextBase) {
     fontType = "Gotham Bold";
     fillColor = "238 236 240 255";
-    bevelColorHL = "Magenta";
+    bevelColorHL = "255 0 255 255";
     justify = "Left";
     category = "ToolsText";
     fontSize = "17";
@@ -119,6 +119,7 @@ singleton GuiControlProfile(ToolsTextBase_H1 : ToolsTextBase) {
    fontColorSEL = "254 3 62 255";
    fontColorLink = "238 255 0 255";
    fontColorLinkHL = "3 254 148 255";
+   cursorColor = "Black";
 
 };
 singleton GuiControlProfile(ToolsTextBase_H1_C : ToolsTextBase_H1) {
@@ -155,7 +156,7 @@ singleton GuiControlProfile(ToolsTextFX : ToolsDefaultProfile) {
     fontColor = "254 224 97 255";
     fontType = "Lato";
     fillColor = "238 236 240 255";
-    bevelColorHL = "Magenta";
+    bevelColorHL = "255 0 255 255";
     justify = "left";
     category = "ToolsText";
    fontSize = "15";
@@ -181,6 +182,7 @@ singleton GuiControlProfile(ToolsTextFX_C : ToolsTextFX) {
    fontColorSEL = "254 3 62 255";
    fontColorLink = "238 255 0 255";
    fontColorLinkHL = "3 254 148 255";
+   cursorColor = "Black";
 };
 singleton GuiControlProfile(ToolsTextFX_R : ToolsTextFX) {
     locked = true;
@@ -209,6 +211,8 @@ singleton GuiControlProfile(ToolsTextFX_L1 : ToolsTextFX) {
 singleton GuiControlProfile(ToolsTextFX_L1_C : ToolsTextFX_L1) {
     locked = true;
     justify = "Center";
+   fontColors[5] = "Magenta";
+   fontColorLinkHL = "Magenta";
 };
 singleton GuiControlProfile(ToolsTextFX_L1_R : ToolsTextFX_L1) {
     locked = true;
@@ -223,10 +227,13 @@ singleton GuiControlProfile(ToolsTextFX_L1_R : ToolsTextFX_L1) {
 singleton GuiControlProfile(ToolsTextFX_H1 : ToolsTextFX) {
     fontColor = "0 255 231 208";
     fillColor = "238 236 240 255";
-    bevelColorHL = "Magenta";
+    bevelColorHL = "255 0 255 255";
     justify = "Left";
     category = "ToolsText";   
     fontSize = "24";
+   fontColors[0] = "0 255 231 208";
+   fontColors[4] = "255 0 255 255";
+   fontColorLink = "255 0 255 255";
 
 };
 singleton GuiControlProfile(ToolsTextFX_H1_C : ToolsTextFX_H1) {
@@ -236,6 +243,8 @@ singleton GuiControlProfile(ToolsTextFX_H1_C : ToolsTextFX_H1) {
 singleton GuiControlProfile(ToolsTextFX_H1_R : ToolsTextFX_H1) {
     locked = true;
     justify = "Right";
+   fontColors[3] = "White";
+   fontColorSEL = "White";
 };
 //------------------------------------------------------------------------------
 
@@ -303,6 +312,7 @@ singleton GuiControlProfile(ToolsTextAlt_S1 : ToolsTextAlt) {
 singleton GuiControlProfile(ToolsTextAlt_S1_C : ToolsTextAlt_S1) {
     locked = true;
     justify = "Center";
+   fillColorNA = "TransparentWhite";
 };
 singleton GuiControlProfile(ToolsTextAlt_S1_R : ToolsTextAlt_S1) {
     locked = true;

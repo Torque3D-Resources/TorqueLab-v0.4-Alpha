@@ -17,11 +17,11 @@ RoadManager.currentRoad = %road;
 		RoadEditorPlugin.selectedRoad = %road;
 		RoadEditorPlugin.selectedMaterial = %road.Material;
 		RoadEditorToolbar-->changeActiveMaterialBtn.active = 1;
-		RoadManager.updateRoadData();
+		
 		//Lab.getDecalRoadNodes();
 	} else
 		%this.noRoadSelected();
-
+RoadManager.updateRoadData();
 	RoadInspector.inspect( %road );
 	RoadTreeView.buildVisibleTree(true);
 

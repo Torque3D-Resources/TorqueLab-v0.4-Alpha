@@ -51,7 +51,7 @@ function MRoadManager::linkInvert(%this){
 		else
 			MRoadManager.linkedList = strRemoveWord(MRoadManager.linkedList,%pill.nodeId);
 	}
-	devLog("Link inverted from:",%startList,"To:",MRoadManager.linkedList);
+
 }
 
 function MREP_LinkNodeCheck::onClick(%this){
@@ -62,8 +62,7 @@ function MREP_LinkNodeCheck::onClick(%this){
 			MRoadManager.linkedList = strAddWord(MRoadManager.linkedList,%pill.nodeId,true);
 		else
 			MRoadManager.linkedList = strRemoveWord(MRoadManager.linkedList,%pill.nodeId);
-	devLog("Link Node Click from:",%linked,"To:",%this.isStateOn());
-	devLog("Link List=",MRoadManager.linkedList);
+	
 }
 
 function MRoadManager::updateLinkList(%this){
@@ -72,5 +71,5 @@ function MRoadManager::updateLinkList(%this){
 		if (%pill.linkCheck.isStateOn())
 			MRoadManager.linkedList = strAddWord(MRoadManager.linkedList,%pill.nodeId,true);
 	}
-	devLog("Link List=",MRoadManager.linkedList);
+	
 }

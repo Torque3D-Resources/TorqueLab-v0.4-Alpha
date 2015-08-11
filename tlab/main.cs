@@ -21,7 +21,7 @@ $Lab::materialEditorList = "";
 
 // These must be loaded first, in this order, before anything else is loaded
 $Lab::loadFirst = "sceneEditor";
-
+$Lab::loadLast = "";
 // These folders must be skipped for initial load
 $LabIgnoreEnableFolderList = "debugger forestEditor levels";
 
@@ -129,13 +129,25 @@ package Lab {
             if (!%enabledEd && !$ToolFolder[%tmpFolder]) {
                 continue;
             }
+            if (strFind($Lab::loadLast,$editors[%i])){
+            	%finalLoadList = strAddWord(%finalLoadList,$editors[%i]);
+            	continue;
+        		}
             exec( "./" @ $editors[%i] @ "/main.cs" );
 
             %initializeFunction = "initialize" @ $editors[%i];
             if( isFunction( %initializeFunction ) )
                 call( %initializeFunction );
         }
-		
+			foreach$(%editor in %finalLoadList){
+				devLog("Loading last editor:",%editor);
+				exec( "./" @ %editor @ "/main.cs" );
+
+            %initializeFunction = "initialize" @ %editor;
+            if( isFunction( %initializeFunction ) )
+                call( %initializeFunction );
+			}
+				
         // Popuplate the default SimObject icons that
         // are used by the various editors.
         EditorIconRegistry::loadFromPath( "tlab/gui/icons/class_assets/" );

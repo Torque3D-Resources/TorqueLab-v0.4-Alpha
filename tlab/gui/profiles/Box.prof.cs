@@ -19,8 +19,8 @@ singleton GuiControlProfile( ToolsBoxDarkA : ToolsDefaultProfile ) {
    hasBitmapArray = "1";
    fillColor = "19 40 55 255";
    fontType = "Anson Regular";
-   fontColors[4] = "Magenta";
-   fontColorLink = "Magenta";
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
    bevelColorLL = "Magenta";
    fontColors[3] = "255 255 255 255";
    fontColorSEL = "255 255 255 255";
@@ -81,6 +81,8 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
 singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
 {
    bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC_Top.png";
+   fontColors[5] = "Magenta";
+   fontColorLinkHL = "Magenta";
 };
 
 
@@ -140,6 +142,7 @@ singleton GuiControlProfile(ToolsBoxPanelProfile : ToolsDefaultProfile)
    fontColors[0] = "254 254 254 255";
    fontColor = "254 254 254 255";
    textOffset = "2 6";
+   fontColors[9] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 

@@ -92,11 +92,7 @@ function MREP_SingleNodeEdit::onValidate(%this){
 function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 	
 	%this.noNodeUpdate = true;
-	if (%isLink)
-		devLog("Linked Node:",%node,"Field",%field,"Value",%value);
-	else
-		devLog("Node:",%node,"Field",%field,"Value",%value);
-	
+		
 	if (%node $= "")
 		%node = MeshRoadEditorGui.getSelectedNode();
 	else
@@ -118,7 +114,6 @@ function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.x = %value;
 			MeshRoadEditorGui.setNodePosition(%position);
-			devLog("PosX",%value,"Full",%position);
 		case "PosY":
 			%posDiff = %position.y - %value;			
 			%position = MeshRoadEditorGui.getNodePosition();
@@ -127,7 +122,6 @@ function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.y = %value;
 			MeshRoadEditorGui.setNodePosition(%position);
-			devLog("PosY",%value,"Full",%position);
 		case "PosZ":
 			%posDiff = %position.z - %value;			
 			%position = MeshRoadEditorGui.getNodePosition();
@@ -136,7 +130,6 @@ function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.z = %value;
 			MeshRoadEditorGui.setNodePosition(%position);
-			devLog("PosZ",%value,"Full",%position);
 		case "position":			
 			if (%isLink){
 				%position = MeshRoadEditorGui.getNodePosition();
@@ -144,7 +137,6 @@ function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			} else {
 				%position = MeshRoadEditorGui.getNodePosition();
 				%posDiff = VectorSub(%value,%position);
-				devLog("Position:",%position,"NewPos:",%value,"Diff",%posDiff);
 			}
 					
 			MeshRoadEditorGui.setNodePosition(%value);
@@ -154,7 +146,6 @@ function MRoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			if (%nodeLink $= %node)
 				continue;
 			if (%posDiff !$= ""){				
-				devLog("Using Pos Diff",%posDiff,"For:",%value);
 				%value = %posDiff;
 			}
 			%this.updateNodeSetting(%nodeLink,%field,%value,true);

@@ -48,6 +48,7 @@ function initializeRiverEditor() {
 	%map.bindCmd( keyboard, "x", "RiverEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "RiverEditorShowRoadBtn.performClick();", "" );
 	RiverEditorPlugin.map = %map;
+	$RiverManager = newScriptObject("RiverManager");
 	// RiverEditorPlugin.initSettings();
 }
 function execRiverEd(%loadGui) {
@@ -62,7 +63,8 @@ function execRiverEd(%loadGui) {
 
 	exec( "tlab/riverEditor/riverEditorGui.cs" );
 	exec( "tlab/riverEditor/RiverEditorPlugin.cs" );
-	execPattern("tlab/riverEditor/manager/*.cs");
+	execPattern("tlab/riverEditor/scripts/*.cs");
+	execPattern("tlab/riverEditor/nodeManager/*.cs");
 }
 
 function destroyRiverEditor() {

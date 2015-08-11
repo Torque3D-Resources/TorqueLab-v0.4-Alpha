@@ -103,6 +103,7 @@ singleton GuiControlProfile(ToolsDropdownProfile_L1 : ToolsDropdownProfile)
    bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_L1.png";
    fontSize = "15";
    justify = "Center";
+   bevelColorLL = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -119,27 +120,33 @@ singleton GuiControlProfile(ToolsDropdownBase_Item : ToolsDefaultProfile)
    autoSizeWidth = "1";
    autoSizeHeight = "1";
    fillColorSEL = "0 255 6 255";
+   fontColors[5] = "Magenta";
+   fontColors[7] = "255 0 255 255";
+   fontColorLinkHL = "Magenta";
 };
 //------------------------------------------------------------------------------
 //DropdownBasic List
-singleton GuiControlProfile (ToolsDropdownBase_List : ToolsDefaultProfile)
+singleton GuiControlProfile (ToolsDropdownBase : ToolsDefaultProfile)
 {   
-   hasBitmapArray     = false;
-   fontSize = "18";
+   hasBitmapArray     = "1";
+   fontSize = "17";
    fontColors[1] = "255 160 0 255";
    fontColorHL = "255 160 0 255";
-   autoSizeWidth = "1";
-   autoSizeHeight = "1";
+   autoSizeWidth = "0";
+   autoSizeHeight = "0";
    modal = "1";
-   fillColor = "25 25 25 205";
-   fillColorHL = "180 113 18 169";
+   fillColor = "242 241 241 255";
+   fillColorHL = "228 228 235 255";
    fontColors[2] = "3 206 254 255";
    fontColorNA = "3 206 254 255";
-   profileForChildren = "ToolsDropdownBase_Item";
-   fillColorSEL = "199 152 15 240";
+   profileForChildren = "ToolsDropdownBase_List";
+   fillColorSEL = "99 101 138 156";
    fontColors[3] = "254 3 62 255";
    fontColorSEL = "254 3 62 255";
    opaque = "1";
+   fontType = "Davidan";
+   fontColors[7] = "255 0 255 255";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownBase.png";
   
 };
 //------------------------------------------------------------------------------
@@ -163,6 +170,7 @@ singleton GuiControlProfile (ToolsDropdownBase : ToolsDefaultProfile)
    fontColors[3] = "254 3 62 255";
    fontColorSEL = "254 3 62 255";
    bevelColorLL = "Magenta";
+   fontColors[7] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 //==============================================================================

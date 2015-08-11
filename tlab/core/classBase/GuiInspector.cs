@@ -244,3 +244,4 @@ function EditorInspectorBase::getFullFilePath( %field ) {
 	} else
 		return makeFullPath( %fileName, getMainDotCsDir() );
 }
+

@@ -48,15 +48,25 @@ function GLab::findParentFieldSource(%this,%profileName,%field ) {
 
 //==============================================================================
 // Update a single profile field and set profile dirty if changed
-function GLab::updateProfileField(%this,%profile,%field,%value,%notDirty ) {  
-   %isDirty = !%notDirty;
+function GLab::updateProfileField(%this,%profile,%fieldData,%value,%updateChilds ) {  
+    
+	%fieldWords = strreplace(%fieldData,"_"," ");
+   %field = getWord(%fieldWords,0);
+   %fieldId = getWord(%fieldWords,1);
    
+   %realField = %field;
+	if (%fieldId !$= ""){
+		%realField = %field@"["@%fieldId@"]";
+		devLog("Real field set with index:",%realField);
+	}
+		
+		
   if (%field $= "colorFont" ||%field $= "colorFont"){
 	 	warnLog("We are not saving color sets in profile anymore:",%field);
 	 	return;
 	 }
 	 
-   if (%isDirty && %field $= "fontSize"){
+   if (%field $= "fontSize"){
        if (strstr($ProfStoreFieldProfiles["fontSize"],%profile.getName()) !$= "-1")
       {
          $ProfStoreFieldDefault[%profile.getName(),"fontSize"] = %value;
@@ -65,7 +75,7 @@ function GLab::updateProfileField(%this,%profile,%field,%value,%notDirty ) {
    %profileName = %profile.getName(); 
    if ($GLab::SaveParentProfileField){
       %ownList = $ProfOwnedFields[%profile.getName()];
-      %ownField = strFind(%ownList,%field);
+      %ownField = strFind(%ownList,%realField);
       if (!%ownField){
          //This is a parent field         
          %parent = %this.findParentFieldSource(%profileName,%field);
@@ -79,21 +89,9 @@ function GLab::updateProfileField(%this,%profile,%field,%value,%notDirty ) {
 		}
    }
    
-      //Check if parent field
-  // %current =  %profile.getFieldValue(%field); 
-   //if (%current $= %value && %notDirty){
-   	//devLog(%profile.getName(),"Skipping, same value",%current,"New",%value);
-       //GLab.updateProfileChildsField( %profile,%field,%value);
-      //return;
-   //}
-	%this.setProfileFieldValue(%profile,%field,%value);
-  // %profile.setFieldValue(%field,%value);  
-   //Update the childs with new value so changes are applied to them also
-   //GLab.updateProfileChildsField( %profile,%field,%value);
-   //GLab.setProfileDirty( %profile, true );
    
-  // if (%field $= "colorFont" ||%field $= "colorFont")
-   //	GLab.updateSingleProfileColors(%profile,%field);
+	%this.setProfileFieldValue(%profile,%fieldWords,%value,!%updateChilds);
+  
    
    if ($GLab_UpdateColorsOnSetChanged && strFind($ProfileUpdateColorList,%field))
    {
@@ -104,33 +102,47 @@ function GLab::updateProfileField(%this,%profile,%field,%value,%notDirty ) {
 
 //==============================================================================
 // Update a single profile field and set profile dirty if changed
-function GLab::setProfileFieldValue(%this,%profile,%field,%value,%skipChildren ) {  
+function GLab::setProfileFieldValue(%this,%profile,%fieldData,%value,%skipChildren ) {  
 	%current =  %profile.getFieldValue(%field); 
    if (%current $= %value)
    	return;
-   	
-	%profile.setFieldValue(%field,%value);  
+	
+	%field = getWord(%fieldData,0);
+	%fieldId = getWord(%fieldData,1);
+	devLog("setProfileFieldValue Field",%field,"Field ID",%fieldId);
+	
+	%profile.setFieldValue(%field,%value,%fieldId);  
 	GLab.setProfileDirty( %profile, true );
 	
 	if(!%skipChildren)
-		GLab.updateProfileChildsField( %profile,%field,%value);
+		GLab.updateProfileChildsField( %profile,%fieldData);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-//GLab.updateChildrensField("ToolsTextFX","fontType");
-function GLab::updateProfileChildsField(%this,%profile,%field,%subLevel ) {
-   if ($ProfChilds[%profile.getName()] $= "")
+//GLab.updateProfileChildsField("ToolsButtonDark","fontcolors 1");
+function GLab::updateProfileChildsField(%this,%profile,%fieldData,%subLevel ) {
+   if ($ProfChilds[%profile.getName()] $= ""){
+   	devLog("NoChilds for profile:",%profile.getName());
       return;
+   }
       
 	 if (%field $= "colorFont" ||%field $= "colorFont"){
 	 	warnLog("Trying to store invalid field to childrens:",%field);
 	 	return;
 	 }
-      
-	%value = %profile.getFieldValue(%field);
+	%field = getWord(%fieldData,0);
+	%fieldId = getWord(%fieldData,1);
+	devLog(%profile.getName(),"Cild Field",%field,"Field ID",%fieldId,"Value",%value);
+	%value = %profile.getFieldValue(%field,%fieldId);
+	
+	if (%field $= "Name"){
+		warnLog("Trying to update child name which is really bad...Aborted! Profile",%profile.getName(),"Name",%value);
+		return;
+	}
 
    foreach$(%child in $ProfChilds[%profile.getName()]){
+   	devLog("Child is ",%child,"Wonded Fields:",$ProfOwnedFields[%child]);
       %ownField = strstr($ProfOwnedFields[%child],%field);
       if (%ownField !$= "-1" ){
          continue;
@@ -139,9 +151,10 @@ function GLab::updateProfileChildsField(%this,%profile,%field,%subLevel ) {
       	warnLog("SKIPPING Trying to update an invalid child:",%child);
          continue;
       }
-      devLog(%child.getName(),"Child field:",%field,"Set to:",%value);
-      %child.setFieldValue(%field,%value);
-       GLab.updateProfileChildsField( %child,%field,%subLevel++);
+      devLog(%child,"Child field:",%field,"Set to:",%value);
+      //%this.setProfileFieldValue(%child,%fieldData,%value,false);
+      %child.setFieldValue(%field,%value,%fieldId);
+       GLab.updateProfileChildsField( %child,%fieldData,%subLevel++);
        
       
    }  

@@ -22,6 +22,9 @@
 singleton GuiControlProfile (ForestEditorProfile) {
 	canKeyFocus = true;
 	category = "Editor";
+   fontColors[4] = "Magenta";
+   fontColors[9] = "255 0 255 255";
+   fontColorLink = "Magenta";
 };
 function initializeForestEditor() {
 

@@ -75,10 +75,7 @@ function REP_SingleNodeEdit::onValidate(%this){
 function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 	
 	%this.noNodeUpdate = true;
-	if (%isLink)
-		devLog("Linked Node:",%node,"Field",%field,"Value",%value);
-	else
-		devLog("Node:",%node,"Field",%field,"Value",%value);
+	
 	
 	if (%node $= "")
 		%node = RoadEditorGui.getSelectedNode();
@@ -97,7 +94,7 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.x = %value;
 			RoadEditorGui.setNodePosition(%position);
-			devLog("PosX",%value,"Full",%position);
+			
 		case "PosY":
 			%posDiff = %position.y - %value;			
 			%position = RoadEditorGui.getNodePosition();
@@ -106,7 +103,7 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.y = %value;
 			RoadEditorGui.setNodePosition(%position);
-			devLog("PosY",%value,"Full",%position);
+			
 		case "PosZ":
 			%posDiff = %position.z - %value;			
 			%position = RoadEditorGui.getNodePosition();
@@ -115,7 +112,7 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			else
 				%position.z = %value;
 			RoadEditorGui.setNodePosition(%position);
-			devLog("PosZ",%value,"Full",%position);
+			
 		case "position":			
 			if (%isLink){
 				%position = RoadEditorGui.getNodePosition();
@@ -123,7 +120,7 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 			} else {
 				%position = RoadEditorGui.getNodePosition();
 				%posDiff = VectorSub(%value,%position);
-				devLog("Position:",%position,"NewPos:",%value,"Diff",%posDiff);
+				
 			}
 					
 			RoadEditorGui.setNodePosition(%value);
@@ -132,8 +129,8 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 		foreach$(%nodeLink in RoadManager.linkedList){			
 			if (%nodeLink $= %node)
 				continue;
-			if (%posDiff !$= ""){				
-				devLog("Using Pos Diff",%posDiff,"For:",%value);
+			if (%posDiff !$= ""){			
+				
 				%value = %posDiff;
 			}
 			%this.updateNodeSetting(%nodeLink,%field,%value,true);
@@ -147,7 +144,7 @@ function RoadManager::updateNodeSetting(%this,%node,%field,%value,%isLink){
 //==============================================================================
 function RoadManager::updateNodeCtrlSetting(%this,%ctrl){
 	//%pill = RoadManager.getParentPill(%ctrl);
-	devLog("%ctrl",%ctrl,%ctrl.pill);
+
 	%pill = %ctrl.pill;
 	%node = %pill.nodeId;
 	%fields = strreplace(%ctrl.internalName,"_"," ");

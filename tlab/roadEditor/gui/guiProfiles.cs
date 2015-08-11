@@ -10,6 +10,8 @@ singleton GuiControlProfile( RoadEditorProfile ) {
 	opaque = true;
 	fillColor = "192 192 192 192";
 	category = "Editor";
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 //==============================================================================

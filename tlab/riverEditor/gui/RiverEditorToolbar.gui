@@ -9,7 +9,7 @@ new GuiStackControl(RiverEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "142 0";
    extent = "424 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -25,12 +25,12 @@ new GuiStackControl(RiverEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12583";
-      disabledGroup = "12584";
-      EditorContainer = "4062";
+      defaultStack = "12840";
+      disabledGroup = "12841";
+      EditorContainer = "4060";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RiverEditor";
-      stackLists = "12585 12602";
+      stackLists = "12842 12859";
 
    new GuiContainer() {
       margin = "0 0 0 0";

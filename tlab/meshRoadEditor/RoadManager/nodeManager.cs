@@ -23,7 +23,7 @@ function MRoadManager::updateRoadData(%this){
 		%nodeDepth = MeshRoadEditorGui.getNodeDepth();		
 		%nodeNormal = MeshRoadEditorGui.getNodeNormal();
 		
-		devLog("Node:",%id,"Pos",%nodePos,"Normal",%nodeNormal,"Width",%nodeWidth,"Depth",%nodeDepth);
+		
 		
 		MRoadManager.nodeData[%id] = %nodePos TAB %nodeNormal TAB %nodeWidth TAB %nodeDepth;
 		%id++;
@@ -51,7 +51,7 @@ function MRoadManager::updateRoadData(%this){
 //------------------------------------------------------------------------------
 $NoNodeUpd = true;
 function MRoadManager::selectNode(%this,%nodeId,%noUpdate){
-	devLog("selectNode",%nodeId);
+	
 	if (!isObject(MeshRoadEditorGui.road)){
 		warnLog("Can't select a node if no road is selected...");
 		return;
@@ -67,15 +67,14 @@ function MRoadManager::selectNode(%this,%nodeId,%noUpdate){
 
 //==============================================================================
 function MRoadManager::onNodeSelected(%this,%nodeId){
-	if (%this.noNodeUpdate){
-		warnLog("No node update callbacks is ON");
+	if (%this.noNodeUpdate){		
 		return;
 	}
 	if (%nodeId $= "-1" || %nodeId $= ""){
 		MRoadManager.selectNode(0);
 		return;
 	}
-	devLog("onNodeSelected",%nodeId);
+	
 	foreach(%ctrl in MREP_NodePillStack){
 		%active = false;
 		if (%ctrl.nodeId $= %nodeId)

@@ -7,7 +7,7 @@
 //==============================================================================
 function initializeRoadEditor() {
 	echo( " - Initializing Road and Path Editor" );
-	execRoadEd(true);
+	execREP(true);
 	
 	Lab.createPlugin("RoadEditor","Road Editor");
 	Lab.addPluginEditor("RoadEditor",RoadEditorGui);

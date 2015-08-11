@@ -41,6 +41,7 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
 singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
 {
    fontSize = "14";
+   fontColors[9] = "Magenta";
 };
 
 //==============================================================================
@@ -49,17 +50,28 @@ singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
 singleton GuiControlProfile( ToolsButtonDark : ToolsButtonProfile ) {
     bitmap = "tlab/gui/assets/button-assets/GuiButtonDark.png";
      border = "-2";
-   fontType = "Anson Regular";
-   fontColors[9] = "255 0 255 255";
+   fontType = "Gotham Bold";
+   fontColors[9] = "57 117 73 255";
    fontColors[6] = "255 0 255 255";
    fontColors[8] = "Fuchsia";
-   fontColors[4] = "Fuchsia";
-   fontColorLink = "Fuchsia";
+   fontColors[4] = "255 0 255 255";
+   fontColorLink = "255 0 255 255";
+   fontColors[0] = "254 254 254 255";
+   fontColors[1] = "0 0 0 255";
+   fontColors[2] = "200 200 200 255";
+   fontColors[3] = "255 255 255 255";
+   fontColor = "254 254 254 255";
+   fontColorHL = "0 0 0 255";
+   fontColorNA = "200 200 200 255";
+   fontColorSEL = "255 255 255 255";
+   fontColors1 = "255 0 0 255";
+   fontColors_90 = "37 113 57 255";
+   textOffset = "0 0";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonDark_L : ToolsButtonDark)
 {
-   justify = "left";
+   justify = "left";    
 };
 
 //==============================================================================
@@ -171,30 +183,33 @@ singleton GuiControlProfile( ToolsCheckBoxProfile_Cancel : ToolsCheckBoxProfile 
 //==============================================================================
 //ToolsRadioProfile Style
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsRadioProfile : ToolsDefaultProfile)
+singleton GuiControlProfile(ToolsRadioProfile_L1 : ToolsDefaultProfile)
 {
 	fillColor = "254 253 253 255";
 	fillColorHL = "221 221 221 255";
 	fillColorNA = "200 200 200 255";
-	fontSize = "17";
-	textOffset = "19 10";
-	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile.png";
+	fontSize = "14";
+	textOffset = "16 10";
+	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_L1.png";
 	hasBitmapArray = "1";
 	fontColors[0] = "250 250 250 255";
 	fontColor = "250 250 250 255";
    border = "0";
    fontColors[2] = "Black";
    fontColorNA = "Black";
-   justify = "Left";
-   fontType = "Lato bold";
+   justify = "Center";
+   fontType = "Gotham Bold";
    category = "Tools";
-   fontColors[8] = "255 0 255 255";
+   fontColors[8] = "Magenta";
+   fontColors[7] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 //ToolsRadioProfile Large #1 
 singleton GuiControlProfile( ToolsRadioProfile_L1 : ToolsRadioProfile ) {
 	bitmap = "tlab/gui/assets/button-assets/GuiRadioProfile_L1.png";
    fontSize = "14";
+   fontColors[8] = "255 0 255 255";
+   cursorColor = "Black";
    
 };
 //------------------------------------------------------------------------------
@@ -204,12 +219,13 @@ singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
    fontSize = "12";
    justify = "Left";
    textOffset = "16 5";
+   fontColors[8] = "255 0 255 255";
 };
 //==============================================================================
 // Swatch Button Profile -> Used in stock code (Do not remove)
 //==============================================================================
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(GuiSwatchButtonProfile : ToolsDefaultProfile)
+singleton GuiControlProfile(ToolsSwatchButtonProfile : ToolsDefaultProfile)
 {
 	fillColor = "254 253 253 255";
 	fillColorHL = "221 221 221 255";
@@ -229,6 +245,8 @@ singleton GuiControlProfile(GuiSwatchButtonProfile : ToolsDefaultProfile)
 singleton GuiControlProfile(ToolsSwatchButtonProfile : GuiSwatchButtonProfile)
 {
 	 category = "Tools";
+   fontColors[2] = "Black";
+   fontColorNA = "Black";
 };
 //------------------------------------------------------------------------------
 

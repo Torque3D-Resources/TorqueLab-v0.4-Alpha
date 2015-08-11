@@ -21,12 +21,13 @@
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    superClass = "FrameSetPluginTools";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       currentLayer = "0";
@@ -137,8 +138,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "4 26";
-         extent = "352 96";
+         position = "8 28";
+         extent = "344 90";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -160,7 +161,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "71 2";
+            position = "63 2";
             extent = "271 18";
             minExtent = "8 8";
             horizSizing = "left";
@@ -191,7 +192,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "4 26";
-            extent = "344 70";
+            extent = "336 64";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -227,7 +228,7 @@
                canRenameObjects = "1";
                renameInternal = "0";
                position = "0 0";
-               extent = "344 21";
+               extent = "336 21";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -869,19 +870,18 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "4 -63";
+                        position = "4 -9";
                         extent = "328 79";
                         minExtent = "16 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsDefaultProfile";
-                        visible = "0";
+                        visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "SamplesStack";
-                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -1010,7 +1010,7 @@
                                     groupNum = "-1";
                                     buttonType = "PushButton";
                                     useMouseEvents = "0";
-                                    position = "-25 0";
+                                    position = "0 0";
                                     extent = "20 20";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -1271,7 +1271,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 18";
+                                          extent = "105 19";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1281,7 +1281,7 @@
                                           tooltipProfile = "GuiToolTipProfile";
                                           hovertime = "1000";
                                           isContainer = "1";
-                                          internalName = "PosZ";
+                                          internalName = "PosX";
                                           superClass = "REP_NodeEdit";
                                           canSave = "1";
                                           canSaveDynamicFields = "0";
@@ -1329,7 +1329,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 18";
+                                          extent = "105 19";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1339,7 +1339,7 @@
                                           tooltipProfile = "GuiToolTipProfile";
                                           hovertime = "1000";
                                           isContainer = "1";
-                                          internalName = "PosZ";
+                                          internalName = "PosY";
                                           superClass = "REP_NodeEdit";
                                           canSave = "1";
                                           canSaveDynamicFields = "0";
@@ -1471,7 +1471,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 17";
-               extent = "330 585";
+               extent = "330 601";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1701,7 +1701,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 40";
-                  extent = "330 545";
+                  extent = "330 561";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -1740,7 +1740,6 @@
                      superClass = "EditorInspectorBase";
                      canSave = "1";
                      canSaveDynamicFields = "0";
-
                   };
                };
             };

@@ -34,7 +34,7 @@ new GuiControlProfile (ToolsDefaultProfile) {
     fontColorHL = "0 0 0";
     fontColorNA = "0 0 0";
     fontColorSEL= "255 255 255";
-
+ fontColors[5] = "255 0 255 255";
     // bitmap information
     bitmapBase = "";
     textOffset = "0 0";
@@ -50,6 +50,7 @@ new GuiControlProfile (ToolsDefaultProfile) {
 
     category = "Tools";
    borderThickness = "0";
+   fontColors[9] = "255 0 255 255";
     // sounds
     //soundButtonDown = "";
     //soundButtonOver = "";
@@ -93,16 +94,25 @@ new GuiControlProfile (ToolsGuiToolTipProfile) {
     fontColor = "0 0 0";
 
     category = "Tools";
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
 };
 
 singleton GuiControlProfile( ToolsGuiModelessDialogProfile : ToolsDefaultProfile ) {
     modal = false;
     category = "Tools";
+   bevelColorHL = "Magenta";
+   fontColors[3] = "White";
+   fontColors[7] = "255 0 255 255";
+   fontColorSEL = "White";
 };
 
 singleton GuiControlProfile( ToolsDefaultProfile_NoModal : ToolsDefaultProfile ) {
     modal = false;
     category = "Tools";
+   fontColors[5] = "Fuchsia";
+   fontColors[7] = "255 0 255 255";
+   fontColorLinkHL = "Fuchsia";
 };
 
 
@@ -232,6 +242,8 @@ singleton GuiControlProfile (ToolsGuiMenuBarProfile  : ToolsDefaultProfile) {
    autoSizeWidth = "1";
    autoSizeHeight = "1";
    borderColor = "0 148 255 67";
+   fontColors[7] = "255 0 255 255";
+   fontColors[9] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 //==============================================================================

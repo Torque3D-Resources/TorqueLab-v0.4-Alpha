@@ -123,7 +123,7 @@
                tabHeight = "21";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "2";
+               selectedPage = "0";
                frontTabPadding = "0";
                docking = "Client";
                margin = "0 0 0 0";
@@ -163,12 +163,11 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -860,6 +859,7 @@
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "colorEdit";
+                                 class = "AggregateBox";
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
 
@@ -4699,11 +4699,12 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -12788,7 +12789,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1000 676";
+                  extent = "1416 808";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -14295,7 +14296,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1000 676";
+                  extent = "1416 808";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -16179,7 +16180,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 21";
-                  extent = "1000 676";
+                  extent = "1416 808";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -19712,7 +19713,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1560 796";
+            extent = "1424 841";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";

@@ -84,6 +84,9 @@ singleton GuiControlProfile(ToolsTextEditDark_S1 : ToolsTextEditDark)
 //ToolsTextEditDark Blue border variation
 singleton GuiControlProfile( ToolsTextEditDark_Num : ToolsTextEditDark ) {  
     numbersOnly = true;
+   fillColorNA = "TransparentWhite";
+   fontColors[9] = "Fuchsia";
+   cursorColor = "Black";
 };
 //------------------------------------------------------------------------------
 

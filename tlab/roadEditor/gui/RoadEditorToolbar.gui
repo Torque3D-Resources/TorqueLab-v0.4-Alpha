@@ -9,7 +9,7 @@ new GuiStackControl(RoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "326 0";
    extent = "538 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12701";
-      disabledGroup = "12702";
-      EditorContainer = "4062";
+      defaultStack = "12984";
+      disabledGroup = "12985";
+      EditorContainer = "4060";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "12703 12712 12728";
+      stackLists = "12986 12995 13011";
 
    new GuiContainer() {
       margin = "0 0 0 0";
