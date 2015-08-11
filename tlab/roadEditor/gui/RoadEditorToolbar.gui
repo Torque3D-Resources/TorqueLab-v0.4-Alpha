@@ -9,7 +9,7 @@ new GuiStackControl(RoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "110 0";
+   position = "142 0";
    extent = "538 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -28,7 +28,7 @@ new GuiStackControl(RoadEditorToolbar) {
       defaultParent = "GuiGroup";
       defaultStack = "12701";
       disabledGroup = "12702";
-      EditorContainer = "4064";
+      EditorContainer = "4062";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
       stackLists = "12703 12712 12728";
@@ -514,7 +514,6 @@ new GuiStackControl(RoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "Mat_gcDirtPathA_Rocky1A_2t";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+/*
 //==============================================================================
 // Node Width Adjustement functions
 //==============================================================================
@@ -19,7 +19,7 @@ function REP::setNodeWidth( %this, %node,%width,%skipPillUpdate ) {
 	%stack = RoadEditorTools-->nodeStack;
 	%nodePill = %stack.findObjectByInternalName(%node);
 
-	if (!isObject(%nodePill) /*|| %skipPillUpdate*/)
+	if (!isObject(%nodePill) )
 		return;
 
 	%nodePill-->WidthEdit.setValue(%width);
@@ -145,3 +145,4 @@ function REPGlobalWidthEdit::onTabComplete( %this,%val ) {
 	devLog("REPGlobalWidthEdit::onTabComplete",%this,%val);
 }
 //------------------------------------------------------------------------------
+*/

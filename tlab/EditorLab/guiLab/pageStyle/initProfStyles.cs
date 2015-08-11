@@ -8,6 +8,6 @@ $LabProfileStyleActive = "";
 //==============================================================================
 function GLab::initProfileStyles(%this) {
 	%this.updateProfileStylesList();
-	
+	%this.initProfileStyleParams();
 }
 //------------------------------------------------------------------------------

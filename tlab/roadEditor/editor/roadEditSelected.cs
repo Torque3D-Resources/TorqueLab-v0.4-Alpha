@@ -10,14 +10,15 @@
 //==============================================================================
 function RoadEditorGui::onRoadSelected( %this, %road ) {
 	%this.road = %road;
-
+RoadManager.currentRoad = %road;
 	// Update the materialEditorList
 	if(isObject( %road )) {
 		$Lab::materialEditorList = %road.getId();
 		RoadEditorPlugin.selectedRoad = %road;
 		RoadEditorPlugin.selectedMaterial = %road.Material;
 		RoadEditorToolbar-->changeActiveMaterialBtn.active = 1;
-		Lab.getDecalRoadNodes();
+		RoadManager.updateRoadData();
+		//Lab.getDecalRoadNodes();
 	} else
 		%this.noRoadSelected();
 
@@ -88,6 +89,7 @@ function RoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		RoadEditorProperties-->width.setActive( true );
 		RoadEditorProperties-->width.setValue( %this.getNodeWidth() );
 	}
+	RoadManager.onNodeSelected(%nodeIdx);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

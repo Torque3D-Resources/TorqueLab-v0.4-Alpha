@@ -34,6 +34,8 @@ function GLab_ProfileStylesMenu::onSelect( %this,%id,%text ) {
 
 //==============================================================================
 function GLab::selectProfileStyle( %this,%style,%apply ) {	
+	if (%style !$= $LabProfileStyleActive)
+		GLab_StyleUpdatedInfo.visible = 1;
 	$LabProfileStyleActive = %style;
 	GLab_ProfileStylesNameEdit.setText(%style);	
 	

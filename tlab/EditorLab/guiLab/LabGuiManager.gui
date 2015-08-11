@@ -1911,8 +1911,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "5 27";
-         extent = "600 699";
+         position = "5 61";
+         extent = "600 665";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -1933,7 +1933,7 @@
             tabHeight = "17";
             allowReorder = "0";
             defaultPage = "-1";
-            selectedPage = "0";
+            selectedPage = "1";
             frontTabPadding = "0";
             docking = "Client";
             margin = "4 4 4 4";
@@ -1943,7 +1943,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "4 4";
-            extent = "592 691";
+            extent = "592 657";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1973,11 +1973,12 @@
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "ToolsBoxTitleDark";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -2573,7 +2574,7 @@
                                              anchorLeft = "1";
                                              anchorRight = "0";
                                              position = "83 0";
-                                             extent = "203 24";
+                                             extent = "203 19";
                                              minExtent = "8 2";
                                              horizSizing = "width";
                                              vertSizing = "bottom";
@@ -2861,8 +2862,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -2958,8 +2959,8 @@
                                                 profile = "GuiPopUpMenuProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3046,8 +3047,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -3164,8 +3165,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl(33143,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl(33143,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl(29147,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl(29147,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3261,8 +3262,8 @@
                                                 profile = "GuiPopUpMenuProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3408,8 +3409,8 @@
                                                 profile = "GuiPopUpMenuProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3504,8 +3505,8 @@
                                                 profile = "GuiPopUpMenuProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3658,7 +3659,6 @@
                                                    sbUsesNAColor = "0";
                                                    reverseTextList = "0";
                                                    bitmapBounds = "16 16";
-                                                   text = "Arial";
                                                    maxLength = "1024";
                                                    margin = "0 0 0 0";
                                                    padding = "0 0 0 0";
@@ -3674,8 +3674,8 @@
                                                    profile = "GuiPopUpMenuProfile";
                                                    visible = "1";
                                                    active = "1";
-                                                   command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                   altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                   command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                   altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                    tooltipProfile = "GuiToolTipProfile";
                                                    hovertime = "1000";
                                                    isContainer = "1";
@@ -3705,8 +3705,8 @@
                                                    profile = "GuiTextEditProfile";
                                                    visible = "1";
                                                    active = "1";
-                                                   command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                   altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                   command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                   altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                    tooltipProfile = "GuiToolTipProfile";
                                                    hovertime = "1000";
                                                    isContainer = "1";
@@ -3804,8 +3804,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -3895,8 +3895,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -3986,8 +3986,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4077,8 +4077,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4168,8 +4168,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4266,8 +4266,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -4405,8 +4405,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4494,8 +4494,8 @@
                                                 profile = "GuiSliderProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "33206.AlphaChanged($ThisControl);";
-                                                altCommand = "33206.AlphaChanged($ThisControl);";
+                                                command = "29210.AlphaChanged($ThisControl);";
+                                                altCommand = "29210.AlphaChanged($ThisControl);";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4519,8 +4519,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4608,8 +4608,8 @@
                                                 profile = "GuiSliderProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "33212.AlphaChanged($ThisControl);";
-                                                altCommand = "33212.AlphaChanged($ThisControl);";
+                                                command = "29216.AlphaChanged($ThisControl);";
+                                                altCommand = "29216.AlphaChanged($ThisControl);";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4633,8 +4633,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4722,8 +4722,8 @@
                                                 profile = "GuiSliderProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "33218.AlphaChanged($ThisControl);";
-                                                altCommand = "33218.AlphaChanged($ThisControl);";
+                                                command = "29222.AlphaChanged($ThisControl);";
+                                                altCommand = "29222.AlphaChanged($ThisControl);";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4747,8 +4747,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4836,8 +4836,8 @@
                                                 profile = "GuiSliderProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "33224.AlphaChanged($ThisControl);";
-                                                altCommand = "33224.AlphaChanged($ThisControl);";
+                                                command = "29228.AlphaChanged($ThisControl);";
+                                                altCommand = "29228.AlphaChanged($ThisControl);";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -4847,7 +4847,7 @@
                                                 canSaveDynamicFields = "0";
                                              };
                                              new GuiColorPickerCtrl() {
-                                                baseColor = "1 1 1 1";
+                                                baseColor = "White";
                                                 pickColor = "0 0 0 1";
                                                 selectorGap = "1";
                                                 displayMode = "Pallete";
@@ -4861,8 +4861,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5010,8 +5010,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -5108,8 +5108,8 @@
                                                 profile = "GuiTextEditDark_Blue";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "1";
@@ -5199,8 +5199,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5290,8 +5290,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5381,8 +5381,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5520,8 +5520,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5608,8 +5608,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5696,8 +5696,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5784,8 +5784,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5872,8 +5872,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -5960,8 +5960,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -6048,8 +6048,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -6136,8 +6136,8 @@
                                                 profile = "GuiCheckBoxProfile_S1";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -6227,8 +6227,8 @@
                                                 profile = "GuiDefaultProfile";
                                                 visible = "1";
                                                 active = "1";
-                                                command = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
-                                                altCommand = "updateParamArrayCtrl($ThisControl,\"LGTools.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                command = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
+                                                altCommand = "updateParamArrayCtrl($ThisControl,\"GLab.updateProfileParam\",\"arGLab_ProfileParam\",\"\",\"\");";
                                                 tooltipProfile = "GuiToolTipProfile";
                                                 hovertime = "1000";
                                                 isContainer = "0";
@@ -7226,17 +7226,16 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 17";
-               extent = "592 674";
+               extent = "592 640";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "ToolsBoxTitleDark";
-               visible = "0";
+               visible = "1";
                active = "1";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -7258,7 +7257,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "236 674";
+                  extent = "236 640";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -7281,7 +7280,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 24";
-                     extent = "220 642";
+                     extent = "220 608";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -7369,7 +7368,7 @@
                               sbUsesNAColor = "0";
                               reverseTextList = "0";
                               bitmapBounds = "16 16";
-                              text = "Default";
+                              text = "DarkBasic";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -7399,7 +7398,7 @@
                               sinkAllKeyEvents = "0";
                               password = "0";
                               passwordMask = "*";
-                              text = "Default";
+                              text = "DarkBasic";
                               maxLength = "1024";
                               docking = "None";
                               margin = "1 2 6 26";
@@ -7522,7 +7521,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "4 590";
+                        position = "4 556";
                         extent = "212 46";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -7591,7 +7590,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "4 62";
-                        extent = "212 524";
+                        extent = "212 490";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -7622,7 +7621,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "4 4";
-                           extent = "204 516";
+                           extent = "204 482";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -7658,7 +7657,7 @@
                               canRenameObjects = "1";
                               renameInternal = "0";
                               position = "4 4";
-                              extent = "146 126";
+                              extent = "146 147";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -7693,7 +7692,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "236 0";
-                  extent = "356 674";
+                  extent = "356 640";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -7724,7 +7723,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 24";
-                     extent = "340 642";
+                     extent = "340 608";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -7781,11 +7780,11 @@
                            canSave = "1";
                            canSaveDynamicFields = "1";
                               columnCount = "2";
-                              frameSet = "32104";
+                              frameSet = "19457";
                               offsetY = "22";
 
                            new GuiFrameSetCtrl() {
-                              columns = "0 164";
+                              columns = "0 130";
                               rows = "0";
                               borderWidth = "4";
                               borderColor = "120 255 0 255";
@@ -7824,7 +7823,7 @@
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
                                  position = "0 0";
-                                 extent = "160 94";
+                                 extent = "126 94";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7846,7 +7845,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7872,7 +7871,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -7896,7 +7895,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 24";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7922,7 +7921,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -7946,7 +7945,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 48";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7972,7 +7971,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -7996,7 +7995,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 72";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8022,7 +8021,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8049,8 +8048,8 @@
                                  dynamicPos = "0";
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
-                                 position = "164 0";
-                                 extent = "161 94";
+                                 position = "130 0";
+                                 extent = "195 94";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8073,7 +8072,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8093,6 +8092,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "53 53 53 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -8102,7 +8102,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8120,13 +8120,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0.207843 0.207843 0.207843 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -8153,7 +8153,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 24";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8173,6 +8173,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "221 221 221 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -8182,7 +8183,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8200,13 +8201,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0.866667 0.866667 0.866667 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -8233,7 +8234,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 48";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8253,6 +8254,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "200 200 200 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -8262,7 +8264,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8280,13 +8282,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0.784314 0.784314 0.784314 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -8313,7 +8315,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 72";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8333,6 +8335,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "99 101 138 156";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -8342,7 +8345,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8360,13 +8363,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0.388235 0.396078 0.541176 0.611765";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -8406,11 +8409,11 @@
                            canSave = "1";
                            canSaveDynamicFields = "1";
                               columnCount = "2";
-                              frameSet = "32108";
+                              frameSet = "19461";
                               offsetY = "22";
 
                            new GuiFrameSetCtrl() {
-                              columns = "0 164";
+                              columns = "0 130";
                               rows = "0";
                               borderWidth = "4";
                               borderColor = "120 255 0 255";
@@ -8449,7 +8452,7 @@
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
                                  position = "0 0";
-                                 extent = "160 166";
+                                 extent = "126 166";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8471,7 +8474,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8497,7 +8500,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8521,7 +8524,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 24";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8547,7 +8550,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8571,7 +8574,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 48";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8597,7 +8600,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8621,7 +8624,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 72";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8647,7 +8650,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8671,7 +8674,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 96";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8697,7 +8700,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8721,7 +8724,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 120";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8747,7 +8750,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8771,7 +8774,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 144";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8797,7 +8800,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8824,8 +8827,8 @@
                                  dynamicPos = "0";
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
-                                 position = "164 0";
-                                 extent = "161 166";
+                                 position = "130 0";
+                                 extent = "195 166";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -8848,7 +8851,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8868,6 +8871,7 @@
                                        sbUsesNAColor = "0";
                                        reverseTextList = "0";
                                        bitmapBounds = "16 16";
+                                       text = "Gotham Bold";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "0 0 0 0";
@@ -8877,7 +8881,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "0 0";
-                                       extent = "161 22";
+                                       extent = "195 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8908,7 +8912,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 1";
-                                       extent = "132 18";
+                                       extent = "166 18";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8934,7 +8938,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 24";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -8954,6 +8958,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "236 236 236 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -8963,7 +8968,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -8981,13 +8986,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0.92549 0.92549 0.92549 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9014,7 +9019,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 48";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9034,6 +9039,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "0 0 0 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -9043,7 +9049,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9061,13 +9067,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0 0 0 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9094,7 +9100,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 72";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9114,6 +9120,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "0 0 0 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -9123,7 +9130,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9141,13 +9148,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "0 0 0 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9174,7 +9181,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 96";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9194,6 +9201,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "255 255 255 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -9203,7 +9211,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9221,13 +9229,13 @@
                                        canSaveDynamicFields = "0";
                                     };
                                     new GuiColorPickerCtrl() {
-                                       baseColor = "1 0 1 1";
+                                       baseColor = "1 1 1 1";
                                        pickColor = "0 0 0 1";
                                        selectorGap = "1";
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9254,7 +9262,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 120";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9274,6 +9282,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "255 0 255 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -9283,7 +9292,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9307,7 +9316,7 @@
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9334,7 +9343,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 144";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9354,6 +9363,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "255 0 255 255";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "1 1 6 26";
@@ -9363,7 +9373,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "6 1";
-                                       extent = "129 20";
+                                       extent = "163 20";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9387,7 +9397,7 @@
                                        displayMode = "Pallete";
                                        actionOnMove = "1";
                                        showReticle = "1";
-                                       position = "138 0";
+                                       position = "172 0";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9427,11 +9437,11 @@
                            canSave = "1";
                            canSaveDynamicFields = "1";
                               columnCount = "2";
-                              frameSet = "32112";
+                              frameSet = "19465";
                               offsetY = "22";
 
                            new GuiFrameSetCtrl() {
-                              columns = "0 164";
+                              columns = "0 130";
                               rows = "0";
                               borderWidth = "4";
                               borderColor = "120 255 0 255";
@@ -9470,7 +9480,7 @@
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
                                  position = "0 0";
-                                 extent = "160 22";
+                                 extent = "126 22";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -9492,7 +9502,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "160 22";
+                                    extent = "126 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9518,7 +9528,7 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "4 0";
-                                       extent = "154 22";
+                                       extent = "120 22";
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
@@ -9545,8 +9555,8 @@
                                  dynamicPos = "0";
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
-                                 position = "164 0";
-                                 extent = "161 22";
+                                 position = "130 0";
+                                 extent = "195 22";
                                  minExtent = "16 16";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -9568,7 +9578,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 0";
-                                    extent = "161 22";
+                                    extent = "195 22";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -9587,7 +9597,7 @@
                                        groupNum = "-1";
                                        buttonType = "PushButton";
                                        useMouseEvents = "0";
-                                       position = "139 1";
+                                       position = "173 1";
                                        extent = "20 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -9609,6 +9619,7 @@
                                        sinkAllKeyEvents = "0";
                                        password = "0";
                                        passwordMask = "*";
+                                       text = "tlab/gui/styles/DarkBasic/container-assets/GuiWindowProfile.png";
                                        maxLength = "1024";
                                        docking = "Client";
                                        margin = "2 2 2 22";
@@ -9618,15 +9629,15 @@
                                        anchorLeft = "1";
                                        anchorRight = "0";
                                        position = "2 2";
-                                       extent = "137 18";
+                                       extent = "171 18";
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
                                        profile = "ToolsTextEditDark";
                                        visible = "1";
                                        active = "1";
-                                       command = "syncParamArrayCtrl(32184,\"\",\"arProfileStyleParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl(32184,\"\",\"arProfileStyleParam\",\"\",\"\");";
+                                       command = "syncParamArrayCtrl(19537,\"\",\"arProfileStyleParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl(19537,\"\",\"arProfileStyleParam\",\"\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
@@ -15629,6 +15640,70 @@
             visible = "1";
             active = "1";
             command = "GLab.saveAllDirtyProfiles();";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
+      new GuiContainer(GLab_StyleUpdatedInfo) {
+         docking = "Top";
+         margin = "0 0 4 4";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "9 27";
+         extent = "592 34";
+         minExtent = "8 2";
+         horizSizing = "width";
+         vertSizing = "height";
+         profile = "ToolsBoxTitleDark";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "MainArea";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiButtonCtrl() {
+            text = "Refresh GUI";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            position = "324 4";
+            extent = "264 26";
+            minExtent = "8 2";
+            horizSizing = "left";
+            vertSizing = "center";
+            profile = "GuiButtonMain";
+            visible = "1";
+            active = "1";
+            command = "GLab.reloadCurrentGUI();";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+         new GuiMLTextCtrl() {
+            lineSpacing = "2";
+            allowColorChars = "0";
+            maxChars = "-1";
+            text = "The GUI style has been changed. Some changes will be updated once GUI is refresh.";
+            useURLMouseCursor = "0";
+            position = "0 0";
+            extent = "308 30";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsTextBase_ML";
+            visible = "1";
+            active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
