@@ -32,15 +32,15 @@ function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {
 		//eval(%command);
 	}
 	
-	if (%isPicked || $AutoColor){
+	if (%isPicked || %this.autoColor){
 		if (isObject(%this.colorEditCtrl)) {		
-			%command = %this.colorEditCtrl.command;
+			%command = %this.colorEditCtrl.altCommand;
 			%command = strreplace(%command,"$ThisControl",%this.colorEditCtrl.getId());		
 			eval(%command);
 			
 		}
 		else {
-			%command = %this.command;
+			%command = %this.altCommand;
 			%command = strreplace(%command,"$ThisControl",%this.getId());
 			%command = strreplace(%command,"syncParamArrayCtrl","syncParamArrayCtrlData");		
 			eval(%command);

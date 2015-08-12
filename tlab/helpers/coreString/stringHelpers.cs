@@ -333,11 +333,11 @@ function ColorIntToFloat( %color,%length ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Empty Editor Gui
-function ColorFloatLength(%this,%color,%length) {
-	%color.r = mFloatLength(%color.r,%this.floatLength);
-	%color.g = mFloatLength(%color.g,%this.floatLength);
-	%color.b = mFloatLength(%color.b,%this.floatLength);
-	%color.a = mFloatLength(%color.a,%this.floatLength);
+function ColorFloatLength(%color,%length) {
+	%color.r = mFloatLength(%color.r,%length);
+	%color.g = mFloatLength(%color.g,%length);
+	%color.b = mFloatLength(%color.b,%length);
+	%color.a = mFloatLength(%color.a,%length);	
 	return %color;
 }
 //------------------------------------------------------------------------------

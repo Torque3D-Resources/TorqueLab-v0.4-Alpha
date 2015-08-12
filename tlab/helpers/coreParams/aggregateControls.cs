@@ -139,7 +139,7 @@ function AggregateBox::getValue(%this) {
 //==============================================================================
 // updateFromChild-> called by child controls to propagate a new value, and to trigger the onAction() callback.
 function AggregateBox::updateFromChild(%this, %child) {
-	%val = %child.getValue();	
+	%val = %child.getTypeValue();	
 	
 	%this.setValue(%val, %child);
 	%this.onAction();	

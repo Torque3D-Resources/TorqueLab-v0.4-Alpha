@@ -67,7 +67,7 @@ function appendObjectToFile(%obj,%file,%prepend) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function getLoadFilename(%filespec, %callback, %currentFile) {
+function getLoadFilename(%filespec, %callback, %currentFile,%returnArg1,%returnArg2) {
 	if (Canvas.isCursorOn()){
 		Canvas.CursorOff();
 		%showCursor = true;
@@ -84,7 +84,12 @@ function getLoadFilename(%filespec, %callback, %currentFile) {
 		%dlg.DefaultPath = filePath(%currentFile);
 
 	if ( %dlg.Execute() ) {
-		eval(%callback @ "(\"" @ %dlg.FileName @ "\");");
+		%evalCallback = %callback @ "(\"" @ %dlg.FileName @ "\");";
+	
+		if (%returnArg1 !$= "")
+			%evalCallback = %callback @ "(\"" @ %dlg.FileName @ "\",\""@%returnArg1@"\",\""@%returnArg2@"\");";			
+		
+		eval(%evalCallback);
 		$Lab::FileDialogs::LastFilePath = filePath( %dlg.FileName );
 	}
 
@@ -218,15 +223,16 @@ function loadFileText( %file) {
 }
 
 //==============================================================================
-// Get the World coords from a screen pos (X Y Depth)
-function getFileFolder(%file,%depth) {
+// Get the parent folder of a file or path (Set depth for deeper folder)
+function getParentFolder(%file,%depth) {
 	if (%depth $= "")
 		%depth = 0;
 
 	%folder = filePath(%file);
-	%folder = strReplace(%folder,"/"," ");
+	%folder = trim(strReplace(%folder,"/"," "));
 	%folderId = getWordCount(%folder) - 1 - %depth;
 	%lastFolder = getWord(%folder,%folderId);
+	
 	return %lastFolder;
 }
 //------------------------------------------------------------------------------

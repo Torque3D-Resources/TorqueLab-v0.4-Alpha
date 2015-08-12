@@ -52,10 +52,10 @@ function buildParamsArray( %array,%syncAfter ) {
 	//Check if a updateFunction is supplied
 	if (%array.useNewSystem) {
 		%array.common["command"] = "syncParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"\",\"\");";
-		%array.common["altCommand"] = "syncParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"\",\"\");";
+		%array.common["altCommand"] = "syncParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"1\",\"\");";
 	} else {
 		%array.common["command"] = "updateParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"\",\"\");";
-		%array.common["altCommand"] = "updateParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"\",\"\");";
+		%array.common["altCommand"] = "updateParamArrayCtrl($ThisControl,\""@%array.updateFunc@"\",\""@%array.getName()@"\",\"1\",\"\");";
 	}
 
 	%groupFieldId = 6;
@@ -251,9 +251,21 @@ function buildParamsArray( %array,%syncAfter ) {
 			%fid++;
 			continue;
 		}
-
+		
 		%pData.pill = cloneObject(%pData.Widget);
-
+	%pData.pill.updField = %pData.setting;
+	%pData.pill.updObj = %pData.syncObjs;
+	
+	if (%array.mouseAreaClass !$= ""){
+		%mouseArea = %pData.pill-->MouseArea;
+		if (isObject(%mouseArea)){
+			show(%mouseArea);
+			%mouseArea.fitIntoParents();
+			%mouseArea.superClass = %array.mouseAreaClass;
+			devLog("Mouse area activated with clasS:",%mouseArea.superClass);
+		}
+	}
+	%pData.pill.paramObj = %array;
 		if (%multiCol > 0) {
 			//Get the leftData Type from tooltip and set tooltip empty
 			%leftData = %pData.pill.tooltip;
@@ -365,6 +377,7 @@ function buildParamsArray( %array,%syncAfter ) {
 				%ctrlHolder.validationType = %pData.validation;
 				%ctrlHolder.friend.validationType = %pData.validation;
 			}
+			
 		}
 
 		//Get the GuiCtrl which have the setting as internal name

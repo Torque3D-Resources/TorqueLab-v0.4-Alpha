@@ -12,16 +12,51 @@ function buildParamColor( %pData ) {
 	%colorPicker.command = %pData.Command;
 	%colorPicker.altCommand = %pData.AltCommand;
 	%colorPicker.internalName = %pData.InternalName;
-	%checkbox.variable = %pData.Variable;
+	
 	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
 	%colorPicker.lockedAlpha = %noAlpha;
-
+	%colorPicker.noAlpha = %noAlpha;
 	if(%pData.Option[%pData.Setting,"mode"] $= "int")
 		%colorPicker.isIntColor = true;
+	
+	if(%pData.Option[%pData.Setting,"auto"] !$= "")
+		%colorPicker.autoColor = true;
+		
+	%floatLength = %pData.Option[%pData.Setting,"flen"];
+	if (%floatLength > 0){
+		%colorPicker.floatLength = %floatLength;
+	}
 		
 	return %colorPicker;
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+// RPE_DatablockEditor.buildInterface();
+function buildParamColorEdit( %pData ) {
+	
+	%colorPicker = buildParamColor(%pData);	
+
+
+	
+	%textEdit = %pData.pill-->TextEdit;
+	%textEdit.command = %pData.Command;
+	%textEdit.altCommand = %pData.AltCommand;
+	%textEdit.internalName = %pData.Setting@"__ColorEdit";
+	%textEdit.setting = %pData.Setting;
+	%textEdit.colorPickerCtrl = %colorPicker;
+	%textEdit.superClass = "GuiColorEditCtrl";
+	%textEdit.isIntColor = %colorPicker.isIntColor;
+	%textEdit.noAlpha = %colorPicker.noAlpha;
+	
+	%colorPicker.colorEditCtrl = %textEdit;
+	%colorPicker.syncCtrls = %textEdit;
+	
+	%textEdit.floatLength = %colorPicker.floatLength;
+	
+	return %colorPicker;
+}
+//------------------------------------------------------------------------------
+
 //==============================================================================
 // RPE_DatablockEditor.buildInterface();
 function buildParamColorInt( %pData ) {
@@ -133,56 +168,11 @@ function buildParamColorSliderEdit( %pData ) {
 	%textEdit = %pData.pill-->TextEdit;
 	%textEdit.command = %pData.Command;
 	%textEdit.altCommand = %pData.AltCommand;
-	%textEdit.internalName = %pData.Setting@"_ColorEdit";
+	%textEdit.internalName = %pData.Setting@"__ColorEdit";
 	%textEdit.colorPickerCtrl = %colorPicker;
 	%textEdit.superClass = "GuiColorEditCtrl";
 	%textEdit.isIntColor = %isIntColor;
 	%textEdit.alphaSlider = %alphaSlider;
-	
-	%colorPicker.colorEditCtrl = %textEdit;
-	%colorPicker.syncCtrls = %textEdit;
-	
-	%floatLength = %pData.Option[%pData.Setting,"flen"];
-	if (%floatLength > 0){
-		%colorPicker.floatLength = %floatLength;
-		%textEdit.floatLength = %floatLength;
-	}
-	return %colorPicker;
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// RPE_DatablockEditor.buildInterface();
-function buildParamColorEdit( %pData ) {
-	%isIntColor = false;
-	if(%pData.Option[%pData.Setting,"mode"] $= "int")
-		%isIntColor = true;
-	%pData.pill-->field.text = %pData.Title;
-	
-	//ColorPicker ctrl update
-	%colorPicker = %pData.pill-->colorPicker;
-	%colorPicker.command = %pData.Command;
-	%colorPicker.altCommand = %pData.AltCommand;
-	%colorPicker.internalName = %pData.InternalName;
-	
-	%checkbox.variable = %pData.Variable;
-	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
-	%colorPicker.lockedAlpha = %noAlpha;
-	%colorPicker.noAlpha = %noAlpha;
-	
-
-	if(%pData.Option[%pData.Setting,"mode"] $= "int")
-		%colorPicker.isIntColor = true;
-
-	
-	%textEdit = %pData.pill-->TextEdit;
-	%textEdit.command = %pData.Command;
-	%textEdit.altCommand = %pData.AltCommand;
-	%textEdit.internalName = %pData.Setting@"_ColorEdit";
-	%textEdit.setting = %pData.Setting;
-	%textEdit.colorPickerCtrl = %colorPicker;
-	%textEdit.superClass = "GuiColorEditCtrl";
-	%textEdit.isIntColor = %isIntColor;
-	%textEdit.noAlpha = %noAlpha;
 	
 	%colorPicker.colorEditCtrl = %textEdit;
 	%colorPicker.syncCtrls = %textEdit;

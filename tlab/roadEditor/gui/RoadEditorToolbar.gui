@@ -9,7 +9,7 @@ new GuiStackControl(RoadEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "326 0";
+   position = "142 0";
    extent = "538 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12984";
-      disabledGroup = "12985";
-      EditorContainer = "4060";
+      defaultStack = "12981";
+      disabledGroup = "12982";
+      EditorContainer = "4057";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "12986 12995 13011";
+      stackLists = "12983 12992 13008";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -514,6 +514,7 @@ new GuiStackControl(RoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
+            text = "No road selected";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

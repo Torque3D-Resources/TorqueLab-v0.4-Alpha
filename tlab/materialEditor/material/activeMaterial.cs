@@ -77,7 +77,7 @@ function MaterialEditorGui::setActiveMaterialFile( %this, %material ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp) {	
-	devLog(" MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
+	logc(" MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
 	MaterialEditorGui.setMaterialDirty();
 
 	if(%value $= "")

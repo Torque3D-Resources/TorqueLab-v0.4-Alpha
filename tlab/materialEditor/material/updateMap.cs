@@ -7,7 +7,7 @@
 //==============================================================================
 //Select a texture for a material map type 
 function MaterialEditorGui::openMapFile( %this, %defaultFileName ) {
-	devLog("MaterialEditorGui::openMapFile", %defaultFileName );
+	logc("MaterialEditorGui::openMapFile", %defaultFileName );
 	
 		%filters = MaterialEditorGui.textureFormats;
 		

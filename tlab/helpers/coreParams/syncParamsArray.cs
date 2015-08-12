@@ -12,7 +12,7 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 	for( ; %i < %paramArray.count() ; %i++) {
 		%field = %paramArray.getKey(%i);
 		%paramData = %paramArray.getValue(%i);
-		%fieldWords = strReplace(%field,"_"," ");
+		%fieldWords = strReplace(%field,"__"," ");
 		%fieldClean = getWord(%fieldWords,0);
 		%special = getWord(%fieldWords,1);
 		//Set Value empty
