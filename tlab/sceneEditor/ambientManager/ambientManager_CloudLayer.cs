@@ -109,13 +109,13 @@ function SEP_AmbientManager::updateCloudLayerField( %this,%field, %value,%layerI
 		return;
 	}
 	
-	
+	LabObj.set(%obj,%field,%value,%layerId);
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value,%layerId);
+	//%obj.setFieldValue(%field,%value,%layerId);
 	EWorldEditor.isDirty = true;
 	%this.setCloudLayerDirty(true);  
-	CloudLayerInspector.refresh();
-	CloudLayerInspector.apply();
+	//CloudLayerInspector.refresh();
+	//CloudLayerInspector.apply();
 	syncParamArray(SEP_AmbientManager.CloudLayerParamArray);
 }
 //------------------------------------------------------------------------------

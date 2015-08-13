@@ -16,7 +16,15 @@ function ETools::initTools(%this) {
 
 //==============================================================================
 function ETools::toggleTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+		
+	if (!isObject(%dlg)){
+		warnLog("Trying to toggle invalid tool:",%tool);
+		return;
+	}
 	%this.fitIntoParents();
 	
 	ETools.visible = true;
@@ -47,7 +55,11 @@ function ETools::toggleTool(%this,%tool) {
 
 //==============================================================================
 function ETools::showTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+
 	if(!isObject(%dlg)){
 		warnLog("Trying to show invalid tools dialog for tool:",%tool,"Dlg",%dlg);
 		return;
@@ -70,7 +82,11 @@ function ETools::showTool(%this,%tool) {
 
 //==============================================================================
 function ETools::hideTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+	
 	
 
 %toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);

@@ -1664,8 +1664,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 2";
    };
-   new ScriptObject(ToolsWindowProfile_Dark_TechStyle) {
-      internalName = "ToolsWindowProfile_Dark";
+   new ScriptObject(ToolsWindowProfile_TechStyle) {
+      internalName = "ToolsWindowProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -4627,8 +4627,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTreeViewProfile_Dark_TechStyle) {
-      internalName = "ToolsTreeViewProfile_Dark";
+   new ScriptObject(ToolsTreeViewProfile_TechStyle) {
+      internalName = "ToolsTreeViewProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";

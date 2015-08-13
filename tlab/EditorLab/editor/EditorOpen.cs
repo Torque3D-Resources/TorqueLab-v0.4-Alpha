@@ -59,8 +59,8 @@ function EditorGui::onWake( %this ) {
 		%plugin.onEditorWake();
 	}
 	
-	//Reset the GameLabGui to default state
-	GameLabGui.reset();
+	//Reset the TLabGameGui to default state
+	TLabGameGui.reset();
 
 	// Push the ActionMaps in the order that we want to have them
 	// before activating an editor plugin, so that if the plugin

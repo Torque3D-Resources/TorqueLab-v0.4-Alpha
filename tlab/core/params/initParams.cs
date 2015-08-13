@@ -29,6 +29,7 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 	%array.displayName = %name;
 	%array.container = %container;
 	%array.paramCallback = "Lab.onParamBuild";
+	
 	%array.group = %group;
 	%array.useNewSystem = true;
 	//If no cfgObject supplied, simply use the new array as object

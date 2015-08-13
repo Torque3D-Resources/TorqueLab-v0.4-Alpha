@@ -66,7 +66,7 @@ function SEP_AmbientManager::getBasicCloudTexture( %this,%layer ) {
 	{
 		devLog("Cursor is on");
 		Canvas.cursorOff();
-	//	GameLabGui.noCursor = 0;
+	//	TLabGameGui.noCursor = 0;
 	}*/
 	%this.currentBasicClouds = %layer;
    %currentFile = $GLab_SelectedObject.bitmap;
@@ -103,13 +103,13 @@ function SEP_AmbientManager::updateBasicCloudField( %this,%field, %value,%layerI
 		return;
 	}
 	
-	
+	LabObj.set(%obj,%field,%value,%layerId);
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value,%layerId);
+	//%obj.setFieldValue(%field,%value,%layerId);
 	EWorldEditor.isDirty = true;
 	%this.setBasicCloudsDirty(true);  
-	BasicCloudsInspector.refresh();
-	BasicCloudsInspector.apply();
+	//BasicCloudsInspector.refresh();
+	//BasicCloudsInspector.apply();
 	syncParamArray(SEP_AmbientManager.BasicCloudsParamArray);
 }
 //------------------------------------------------------------------------------
@@ -145,17 +145,20 @@ function SEP_AmbientManager::initBasicCloudsData( %this ) {
 //==============================================================================
 function SEP_AmbientManager::selectBasicClouds(%this,%obj) {
 	logd("SEP_AmbientManager::selectBasicClouds(%this,%obj)",%this,%obj);
-if (isObject(%obj)) {
-	%name = %obj.getName();
-	%id = %obj;
-	%inspectThis = %obj;
-}
+	if (isObject(%obj)) {
+		%name = %obj.getName();
+		%id = %obj;
+		%inspectThis = %obj;
+		Lab.inspect(%inspectThis);
+	}
 
 	
 	%this.selectedBasicClouds = %id;
 	%this.selectedBasicCloudsName = %name;
 	%this.setBasicCloudsDirty();
-	BasicCloudsInspector.inspect(	%inspectThis);
+	
+	
+	//BasicCloudsInspector.inspect(	%inspectThis);
 	syncParamArray(SEP_AmbientManager.BasicCloudsParamArray,true);
 }
 //------------------------------------------------------------------------------

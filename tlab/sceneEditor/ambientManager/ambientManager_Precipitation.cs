@@ -98,7 +98,8 @@ function SEP_PrecipitationManager::selectPrecipitation(%this,%objId) {
 	if (%name $= "")
 		%name = "Precipitation \c2-\c1 " @ %objId.getId();
 	%this.selectedPrecipitationName = %name;
-	PrecipitationInspector.inspect(%objId);
+	//PrecipitationInspector.inspect(%objId);
+	Lab.inspect(%objId);
 	%this.setDirty();
 	%datablock = %objId.dataBlock;
 	SEP_PrecipitationDataMenu.setSelected(%datablock.getId());
@@ -170,10 +171,11 @@ function SEP_PrecipitationManager::updateFieldValue(%this,%field,%value) {
 	if (%currentValue $= %value) {		
 		return;
 	}
-
-	PrecipitationInspector.apply();
+	
+	LabObj.set(%obj,%field,%value);
+	//PrecipitationInspector.apply();
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value);
+	//%obj.setFieldValue(%field,%value);
 	EWorldEditor.isDirty = true;
 	%this.setDirty(true);
 }

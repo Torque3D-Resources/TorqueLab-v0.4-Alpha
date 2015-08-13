@@ -9,6 +9,7 @@ function Lab::initLabEditor( %this ) {
 	if( !isObject( "Lab_PM" ) )
 		new PersistenceManager( Lab_PM );
 
+	$LabObj = newScriptObject("LabObj");
 	new SimGroup(ToolLabGuiGroup);
 	$LabPluginGroup = newSimSet("LabPluginGroup");
 	newSimSet( ToolGuiSet );

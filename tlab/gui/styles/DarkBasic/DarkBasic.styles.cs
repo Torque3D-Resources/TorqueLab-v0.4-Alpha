@@ -1702,7 +1702,7 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "16 10";
    };
-   new ScriptObject(ToolsWindowProfile_DarkBasicStyle) {
+   new ScriptObject(ToolsWindowProfileBasicStyle) {
       internalName = "ToolsWindowProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -1740,8 +1740,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 2";
    };
-   new ScriptObject(ToolsWindowProfile_Dark_DarkBasicStyle) {
-      internalName = "ToolsWindowProfile_Dark";
+   new ScriptObject(ToolsWindowProfile_DarkBasicStyle) {
+      internalName = "ToolsWindowProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -1816,8 +1816,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 1";
    };
-   new ScriptObject(ToolsWindowPanelA_DarkBasicStyle) {
-      internalName = "ToolsWindowPanelA";
+   new ScriptObject(ToolsWindowPanel_DarkBasicStyle) {
+      internalName = "ToolsWindowPanel";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -4666,7 +4666,7 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTreeViewProfile_DarkBasicStyle) {
+   new ScriptObject(ToolsTreeViewProfileBasicStyle) {
       internalName = "ToolsTreeViewProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -4704,8 +4704,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTreeViewProfile_Dark_DarkBasicStyle) {
-      internalName = "ToolsTreeViewProfile_Dark";
+   new ScriptObject(ToolsTreeViewProfile_DarkBasicStyle) {
+      internalName = "ToolsTreeViewProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";

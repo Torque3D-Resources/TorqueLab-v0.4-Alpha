@@ -83,13 +83,15 @@ function SEP_LegacySkyManager::updateField( %this,%field, %value,%obj ) {
  			return;
 		}
 	}
-	SceneInspector.inspect(%obj);
+	
+	//SceneInspector.inspect(%obj);
 	%currentValue = %obj.getFieldValue(%field);
 	if (%currentValue $= %value) {		
 		return;
 	}
-	SceneInspector.apply(%obj);
-	%obj.setFieldValue(%field,%value,%layerId);
+	LabObj.set(%obj,%field,%value);
+	//SceneInspector.apply(%obj);
+	//%obj.setFieldValue(%field,%value,%layerId);
 	EWorldEditor.isDirty = true;
 	%this.setDirtyObject(%obj,true);  
 	

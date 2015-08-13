@@ -114,7 +114,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
 
-		exec("tlab/EditorLab/gui/GameLabGui.gui");
+		exec("tlab/EditorLab/gui/TLabGameGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
 	}
@@ -132,7 +132,7 @@ function tlabExecGui(%loadGui ) {
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
 
-	exec("tlab/EditorLab/gui/GameLabGui.cs");
+	exec("tlab/EditorLab/gui/TLabGameGui.cs");
 }
 tlabExecGui(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecGui");

@@ -105,7 +105,7 @@ singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
    fontColor = "0 0 0 255";
    fontType = "Lato bold";
    justify = "Left";
-   bitmap = "art/gui/DarkLab/element-assets/GuiDropdownProfile_S1.png";
+   bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile.png";
    category = "Tools";
    fillColorNA = "255 255 255 255";
    borderThickness = "1";

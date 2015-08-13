@@ -201,6 +201,8 @@ function GuiEditor::switchToWorldEditor( %this ) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::enableMenuItems(%this, %val) {
+	if( !isObject( %this.menuBar ) )
+		return;
 	%menu = GuiEditCanvas.menuBar->EditMenu.getID();
 	%menu.enableItem( 3, %val ); // cut
 	%menu.enableItem( 4, %val ); // copy
@@ -768,6 +770,8 @@ function GuiEditorTabBook::onWake( %this ) {
 
 function GuiEditorTabBook::onTabSelected( %this, %text, %index ) {
 	%sidebar = GuiEditorSidebar;
+	if (!isObject(%sidebar))
+		return;
 	%name = %this.getObject( %index ).getInternalName();
 
 	switch$( %name ) {
@@ -860,7 +864,7 @@ function GuiEditorSnapCheckBox::onAction(%this) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditorGui::onWake( %this ) {
-	GHGuiEditor.setStateOn( 1 );
+	GuiEdToggle.setStateOn( 1 );
 
 	if( !isObject( %this->SelectControlsDlg ) ) {
 		%this.add( GuiEditorSelectDlg );

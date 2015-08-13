@@ -3,13 +3,13 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$LabGameMap.bindCmd(keyboard, "ctrl 0", "GameLabGui.toggleMe();");
-$LabGameMap.bindCmd(keyboard, "ctrl i", "GameLabGui.toggleCursor();");
+$LabGameMap.bindCmd(keyboard, "ctrl 0", "TLabGameGui.toggleMe();");
+$LabGameMap.bindCmd(keyboard, "ctrl i", "TLabGameGui.toggleCursor();");
 $LabGameMap.bindCmd(keyboard, "ctrl m", "Lab.toggleGameDlg(\"SceneEditorDialogs\",\"AmbientManager\");");
 
 //==============================================================================
-function GameLabGui::onWake( %this ) {	
-	%menu = GameLabGui-->dialogMenu;
+function TLabGameGui::onWake( %this ) {	
+	%menu = TLabGameGui-->dialogMenu;
 	if (isObject(Lab.currentGameDlg))
 		%menu.setSelected(Lab.currentGameDlg.getId(),false);
 	else
@@ -19,7 +19,7 @@ function GameLabGui::onWake( %this ) {
 
 //------------------------------------------------------------------------------
 //==============================================================================
-function GameLabGui::onSleep( %this ) {	
+function TLabGameGui::onSleep( %this ) {	
 	hideCursor();
 	$LabGameMap.push();
 	//Canvas.schedule(300,"hideCursor");
@@ -30,35 +30,35 @@ function GameLabGui::onSleep( %this ) {
 	
 
 //==============================================================================
-function GameLabGui::toggleMe( %this ) {
-	toggleDlg(GameLabGui);
+function TLabGameGui::toggleMe( %this ) {
+	toggleDlg(TLabGameGui);
 	//if (%this.isVisible())
-	//	GameLabGui.schedule(300,"toggleCursor",true);
+	//	TLabGameGui.schedule(300,"toggleCursor",true);
 }
 
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function GameLabGuiDialogMenu::onSelect( %this,%id,%text ) {	
+function TLabGameGuiDialogMenu::onSelect( %this,%id,%text ) {	
 	if (%id == 0){
-		GameLabGui.reset();
+		TLabGameGui.reset();
 		return;
 	}
-	GameLabGui.showDlg(%id);
+	TLabGameGui.showDlg(%id);
 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// GameLabGui -> Show Dialogs in game
+// TLabGameGui -> Show Dialogs in game
 //==============================================================================
 
 //==============================================================================
-function GameLabGui::getDlgObject( %this,%dlg,%child ) {
+function TLabGameGui::getDlgObject( %this,%dlg,%child ) {
 	%dlgCtrl = %dlg;
 	if (%child !$= "" && isObject(%dlg)){
 		%dlgCtrl = %dlg.findObjectByInternalName(%child);
 		
-		//If not to default parent try with GameLabGui
+		//If not to default parent try with TLabGameGui
 		if (!isObject(%dlgCtrl))
 			%dlgCtrl = %this.findObjectByInternalName(%child);
 	}
@@ -68,15 +68,15 @@ function GameLabGui::getDlgObject( %this,%dlg,%child ) {
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function Lab::toggleGameDlg(%this,%dlg,%child) {
-	%dlgCtrl = GameLabGui.getDlgObject(%dlg,%child );		
+	%dlgCtrl = TLabGameGui.getDlgObject(%dlg,%child );		
 	if (!isObject(%dlgCtrl))
 		return;	
 	
 	
 	if (Lab.currentGameDlg $= %dlgCtrl)
-		GameLabGui.hideDlg(%dlg,%child);
+		TLabGameGui.hideDlg(%dlg,%child);
 	else	
-		GameLabGui.showDlg(%dlg,%child);
+		TLabGameGui.showDlg(%dlg,%child);
 	return;
 	if (isObject(Lab.currentGameDlg)){
 		Lab.currentGameDlg.editorParent.add(Lab.currentGameDlg);
@@ -87,20 +87,20 @@ function Lab::toggleGameDlg(%this,%dlg,%child) {
 	%dlgCtrl.editorParent = %dlgCtrl.parentGroup;
 	
 	%pluginName = %dlgCtrl.editorParent.pluginObj.displayName;
-	GameLabGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
-	GameLabGui.add(%dlgCtrl);
+	TLabGameGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
+	TLabGameGui.add(%dlgCtrl);
 	Lab.currentGameDlg = %dlgCtrl;
 	%dlgCtrl.visible = 1;
-	pushDlg(GameLabGui);
-	//GameLabGui.schedule(300,"toggleCursor",true);
+	pushDlg(TLabGameGui);
+	//TLabGameGui.schedule(300,"toggleCursor",true);
 }
 //------------------------------------------------------------------------------
 
 
 //==============================================================================
-function GameLabGui::showDlg( %this,%dlg,%child ) {	
+function TLabGameGui::showDlg( %this,%dlg,%child ) {	
 	%dlgCtrl = %this.getDlgObject(%dlg,%child );	
-	//If not to default parent try with GameLabGui
+	//If not to default parent try with TLabGameGui
 	if (!isObject(%dlgCtrl)){
 		warnLog("Trying to show invalid GameLab Dialog:",%dlg,%child);
 		return;
@@ -115,27 +115,27 @@ function GameLabGui::showDlg( %this,%dlg,%child ) {
 	%dlgCtrl.editorParent = %dlgCtrl.parentGroup;
 	
 	%pluginName = %dlgCtrl.editorParent.pluginObj.displayName;
-	GameLabGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
-	GameLabGui.add(%dlgCtrl);
+	TLabGameGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
+	TLabGameGui.add(%dlgCtrl);
 	Lab.currentGameDlg = %dlgCtrl;
 	%dlgCtrl.visible = 1;
 	
-	pushDlg(GameLabGui);
-	//GameLabGui.schedule(300,"toggleCursor",true);
-GameLabGui.clearChildResponder();
+	pushDlg(TLabGameGui);
+	//TLabGameGui.schedule(300,"toggleCursor",true);
+TLabGameGui.clearChildResponder();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function GameLabGui::hideDlg( %this,%dlg,%child ) {
+function TLabGameGui::hideDlg( %this,%dlg,%child ) {
 	%dlgCtrl.editorParent.add(%dlgCtrl);
 		%dlgCtrl.visible = 0;
-		popDlg(GameLabGui);
+		popDlg(TLabGameGui);
 		Lab.currentGameDlg = "";
 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function GameLabGui::closeAll( %this ) {
+function TLabGameGui::closeAll( %this ) {
 	Lab.currentGameDlg = "";
 	foreach(%ctrl in 	%this){
 		if (%ctrl.internalName $= "infoContainer")
@@ -152,7 +152,7 @@ function GameLabGui::closeAll( %this ) {
 
 
 //==============================================================================
-function GameLabGui::toggleCursor( %this,%show ) {
+function TLabGameGui::toggleCursor( %this,%show ) {
 	%button = %this-->toggleCursorButton;
 	%button.text = "Toggle cursor (ctrl + i)";	
 	%button.active = true;
@@ -170,20 +170,20 @@ function GameLabGui::toggleCursor( %this,%show ) {
 		
 	
 	$HudCtrl.makeFirstResponder(!Canvas.isCursorOn());
-	GameLabGui.makeFirstResponder(Canvas.isCursorOn());
+	TLabGameGui.makeFirstResponder(Canvas.isCursorOn());
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function GameLabGui::setNoCursor( %this,%noCursor ) {
-	GameLabGui.noCursor = %noCursor;
+function TLabGameGui::setNoCursor( %this,%noCursor ) {
+	TLabGameGui.noCursor = %noCursor;
 
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function GameLabGui::reset( %this ) {
-	//Make sure all Dlg in GameLabGui have been returned to editor
-	foreach(%ctrl in GameLabGui){
+function TLabGameGui::reset( %this ) {
+	//Make sure all Dlg in TLabGameGui have been returned to editor
+	foreach(%ctrl in TLabGameGui){
 		if (%ctrl.internalName $= "infoContainer")
 			continue;
 		if (isObject(%ctrl.editorParent)){

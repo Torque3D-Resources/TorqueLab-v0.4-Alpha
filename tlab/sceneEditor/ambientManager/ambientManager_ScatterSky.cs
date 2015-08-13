@@ -93,7 +93,8 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 	%this.selectedScatterSky = %obj;
 	%this.selectedScatterSkyName = %obj.getName();
 	%this.setDirtyObject(%obj);
-	ScatterSkyInspector.inspect(	%obj);
+	Lab.addInspect(%obj);
+	//ScatterSkyInspector.inspect(	%obj);
 	syncParamArray(SEP_ScatterSkyManager.paramArray);
 }
 //------------------------------------------------------------------------------
@@ -144,15 +145,17 @@ function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj) {
 	//}
 	
 	//if (%obj.getClassName() !$= "ScatterSky")
-		//SceneInspector.inspect(%obj);
-	SceneInspector.inspect(%obj);
-	SceneInspector.apply();	
+	//SceneInspector.inspect(%obj);
+	LabObj.set(%obj,%field,%value);
+	
+	//SceneInspector.inspect(%obj);
+	//SceneInspector.apply();	
 	//if (%obj.getClassName() $= "ScatterSky")
 	//	ScatterSkyInspector.apply();
 	//else
 		//SceneInspector.apply();
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value);
+
 	EWorldEditor.isDirty = true;
 	%this.setDirtyObject(%obj,true);
 }

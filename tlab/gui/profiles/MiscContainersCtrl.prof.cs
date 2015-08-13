@@ -1,12 +1,19 @@
 //==============================================================================
-// TorqueLab ->
+// TorqueLab -> Default Containers Profiles
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
 
-
 //==============================================================================
-//Editor Initialization callbacks
+// GuiFrameSetCtrl Profiles
 //==============================================================================
 //==============================================================================
-//FONTS -> Change the font to all profile or only those specified in the list
+singleton GuiControlProfile (ToolsGuiFrameSetProfile) {
+    fillcolor = "255 255 255";
+    borderColor = "246 245 244";
+    border = 1;
+    opaque = true;
+    border = true;
+    category = "Tools";
+};
+//------------------------------------------------------------------------------
