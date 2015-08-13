@@ -10,6 +10,9 @@ function initializeGuiEditor() {
 
 	if (!isObject(GuiLab))
 		$GuiLab = new scriptObject("GuiLab");
+		
+	delObj(GuiEdMap);
+	new ActionMap(GuiEdMap);
 
 	// GUIs.
 	execGuiEdit(true);

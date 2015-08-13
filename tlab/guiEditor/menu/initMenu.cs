@@ -3,11 +3,12 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$NativeMenu = true;
+$NativeMenu = false;
 $NativeMenuMode = "Auto";
 /// Create the Gui Editor menu bar.
 //GuiEditCanvas.onCreateMenu
 function GuiEditCanvas::onCreateMenu(%this) {
+	
 	GuiEditCanvas.initGuiEdMenuData();
 	delObj(%this.menuBar);
 	if ($NativeMenu) {

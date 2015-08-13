@@ -50,7 +50,7 @@ function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::activateSkyObj(%this,%obj) {
-	devLog("SEP_AmbientManager::activateSkyObj(%this,%obj)",%this,%obj);
+	logd("SEP_AmbientManager::activateSkyObj(%this,%obj)",%this,%obj);
 	
 	if (isObject(%obj)){
 		//if (%text.getClassName() $= "ScatterSky")
@@ -70,6 +70,7 @@ function SEP_AmbientManager::activateSkyObj(%this,%obj) {
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_AmbientManager.updateSkySystemData
 function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
+	logd("SEP_AmbientManager::updateSkySystemData(%this)");
 	if (%build){
 		SEP_ScatterSkyManager.buildParams();	
 		SEP_LegacySkyManager.buildParams();
@@ -331,7 +332,7 @@ function SEP_AmbientManager::createNewLecacySky( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::backupCurrentSky( %this ) {
-
+devLog("SEP_AmbientManager::backupCurrentSky(%this)");
 	
 	
 	%currentObj = %this.getSkySystemObject();

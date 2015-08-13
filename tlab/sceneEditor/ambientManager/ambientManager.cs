@@ -22,6 +22,7 @@ function SceneEditorDialogs::onActivated( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::onShow( %this ) {	
+	devLog("SEP_AmbientManager::onShow");
 	EPostFxManager.moveToGui(SEP_PostFXManager_Clone);	
 	
 	hide(SEP_SkySystemCreator);	
@@ -53,13 +54,15 @@ function SEP_AmbientManager::onPostEditorSave(%this) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::initDialog( %this ) {
-	logd("SEP_AmbientManager::initDialog(%this)");
+	
 
 	if (!isObject(SEP_AmbientManager_PM))
 		new PersistenceManager(SEP_AmbientManager_PM);
 		
 	SEP_AmbientBook.selectPage($SEP_AmbientBook_PageId);
 	
+	if (!isObject(MissionGroup))
+		return;
 	%this.getSkySystemObject();
 	
 	

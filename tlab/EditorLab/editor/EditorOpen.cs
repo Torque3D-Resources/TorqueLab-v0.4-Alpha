@@ -50,6 +50,8 @@ function Editor::open(%this) {
 //==============================================================================
 // EditorGui OnWake -> When the EditorGui is rendered
 function EditorGui::onWake( %this ) {
+	
+	
 	Lab.setInitialCamera();
 	//EHWorldEditor.setStateOn( 1 );
 	startFileChangeNotifications();
@@ -98,6 +100,9 @@ function EditorGui::onSetContent(%this, %oldContent) {
 
 //==============================================================================
 function Lab::initializeEditorGui( %this ) {
+	%this.prepareAllPluginsGui();
+	ETools.initTools();
+	
 	EWorldEditor.isDirty = false;
 	ETerrainEditor.isDirty = false;
 	ETerrainEditor.isMissionDirty = false;

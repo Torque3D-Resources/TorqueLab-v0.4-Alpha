@@ -760,7 +760,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -789,7 +789,7 @@
                                     canSaveDynamicFields = "0";
                                  };
                                  new GuiColorPickerCtrl() {
-                                    baseColor = "1 0 1 1";
+                                    baseColor = "Fuchsia";
                                     pickColor = "0 0 0 1";
                                     selectorGap = "1";
                                     displayMode = "Pallete";
@@ -900,7 +900,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     hidden = "1";
                                     canSave = "1";
@@ -1138,7 +1138,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -1323,7 +1323,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "0 0";
-                              extent = "331 406";
+                              extent = "331 442";
                               minExtent = "16 16";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -2295,6 +2295,74 @@
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "checkbox_32";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+
+                                 new GuiTextCtrl() {
+                                    text = "Fieldname";
+                                    maxLength = "1024";
+                                    docking = "Client";
+                                    margin = "1 0 32 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "32 1";
+                                    extent = "299 31";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsTextBaseA_S1";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "1";
+                                    internalName = "field";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                                 new GuiCheckBoxCtrl() {
+                                    text = "Button";
+                                    groupNum = "-1";
+                                    buttonType = "ToggleButton";
+                                    useMouseEvents = "0";
+                                    position = "7 9";
+                                    extent = "15 16";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsCheckBoxProfile";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "0";
+                                    internalName = "checkbox";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                              };
+                              new GuiContainer() {
+                                 margin = "0 0 0 0";
+                                 padding = "0 0 0 0";
+                                 anchorTop = "1";
+                                 anchorBottom = "0";
+                                 anchorLeft = "1";
+                                 anchorRight = "0";
+                                 position = "0 410";
+                                 extent = "331 32";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsBoxDarkC";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "1";
+                                 internalName = "Custom";
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
 
@@ -4485,7 +4553,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -4623,7 +4691,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -6341,7 +6409,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -6479,7 +6547,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -7263,7 +7331,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -9005,7 +9073,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -9143,7 +9211,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -10686,7 +10754,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -10824,7 +10892,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -12499,7 +12567,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -12637,7 +12705,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -12955,7 +13023,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -13048,7 +13116,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -13141,7 +13209,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -13285,7 +13353,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13370,7 +13438,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13457,7 +13525,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13567,7 +13635,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13706,7 +13774,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13819,7 +13887,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13904,7 +13972,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -13993,7 +14061,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -14153,7 +14221,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14245,7 +14313,7 @@
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
-                                       internalName = "mouseArea";
+                                       internalName = "MouseArea";
                                        superClass = "GLab_FieldInfoMouse";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
@@ -14462,7 +14530,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14555,7 +14623,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14648,7 +14716,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14741,7 +14809,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14834,7 +14902,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -14978,7 +15046,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15063,7 +15131,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15150,7 +15218,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15261,7 +15329,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15374,7 +15442,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15459,7 +15527,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15548,7 +15616,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -15708,7 +15776,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -15800,7 +15868,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -15892,7 +15960,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -15984,7 +16052,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -16129,7 +16197,7 @@
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
-                                       internalName = "mouseArea";
+                                       internalName = "MouseArea";
                                        superClass = "GLab_FieldInfoMouse";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
@@ -17668,7 +17736,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -17806,7 +17874,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -18646,7 +18714,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -19502,7 +19570,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -19640,7 +19708,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -20556,7 +20624,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -20649,7 +20717,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -20742,7 +20810,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -20886,7 +20954,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -20971,7 +21039,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21058,7 +21126,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21168,7 +21236,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21307,7 +21375,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21420,7 +21488,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21505,7 +21573,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21594,7 +21662,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -21754,7 +21822,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -21846,7 +21914,7 @@
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
-                                       internalName = "mouseArea";
+                                       internalName = "MouseArea";
                                        superClass = "GLab_FieldInfoMouse";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
@@ -22037,7 +22105,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -22130,7 +22198,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -22223,7 +22291,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -22316,7 +22384,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -22409,7 +22477,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -22553,7 +22621,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -22638,7 +22706,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -22725,7 +22793,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -22836,7 +22904,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -22949,7 +23017,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -23034,7 +23102,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -23123,7 +23191,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -23283,7 +23351,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -23375,7 +23443,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -23467,7 +23535,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -23559,7 +23627,7 @@
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
-                                    internalName = "mouseArea";
+                                    internalName = "MouseArea";
                                     superClass = "GLab_FieldInfoMouse";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
@@ -23704,7 +23772,7 @@
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
-                                       internalName = "mouseArea";
+                                       internalName = "MouseArea";
                                        superClass = "GLab_FieldInfoMouse";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
@@ -25217,7 +25285,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -25355,7 +25423,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -26169,7 +26237,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -27025,7 +27093,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";
@@ -27163,7 +27231,7 @@
                               tooltipProfile = "ToolsGuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
-                              internalName = "mouseArea";
+                              internalName = "MouseArea";
                               superClass = "GLab_FieldInfoMouse";
                               canSave = "1";
                               canSaveDynamicFields = "0";

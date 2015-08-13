@@ -37,3 +37,8 @@ singleton GuiControlProfile( ToolsTreeViewProfile : ToolsDefaultProfile ) {
    fontColors[0] = "238 240 211 255";
 };
 //------------------------------------------------------------------------------
+
+singleton GuiControlProfile(ToolsTreeViewProfile_S1 : ToolsTreeViewProfile)
+{
+   fontSize = "14";
+};

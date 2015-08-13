@@ -330,6 +330,7 @@ function GuiEditCanvas::quit( %this ) {
 	GuiGroup.add(GuiEditorGui);
 	// we must not delete a window while in its event handler, or we foul the event dispatch mechanism
 	%this.schedule(10, delete);
+	GuiEdMap.pop();
 	$InGuiEditor = false;
 	Canvas.setContent(GuiEditor.initialContent);
 

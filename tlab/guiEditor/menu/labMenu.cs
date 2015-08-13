@@ -36,7 +36,7 @@ function GuiEditCanvas::createLabMenu(%this) {
 
 //==============================================================================
 function GuiEditCanvas::addMenuBind(%this,%bind,%command) {
-	EditorMap.bindCmd(keyboard, %bind, %command, "");
+	GuiEdMap.bindCmd(keyboard, %bind, %command, "");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
