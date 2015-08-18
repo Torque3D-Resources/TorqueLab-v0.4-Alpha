@@ -173,7 +173,7 @@ function EPostFxManager::selectPresetFileLoad(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EPostFxManager::loadPresetsFromFile(%this,%file) {
-	devLog(" EPostFxManager::loadPresetsFromFile");
+	logd(" EPostFxManager::loadPresetsFromFile");
 	if (!isFile(%file))
 		return false;
 	$PostFXPresetFormat = "";

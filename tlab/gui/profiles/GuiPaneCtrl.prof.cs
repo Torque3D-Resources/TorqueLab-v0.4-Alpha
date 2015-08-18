@@ -32,6 +32,7 @@ singleton GuiControlProfile(ToolsPanelDarkA : ToolsPanelProfile)
    fontColors[4] = "Fuchsia";
    fontColorLink = "Fuchsia";
    bitmap = "tlab/gui/assets/container-assets/GuiPanelDarkA.png";
+   category = "ToolsContainers";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA)

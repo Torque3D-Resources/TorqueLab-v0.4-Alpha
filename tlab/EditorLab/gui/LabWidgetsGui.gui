@@ -68,7 +68,7 @@
          tabHeight = "21";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "0";
+         selectedPage = "2";
          frontTabPadding = "0";
          docking = "Client";
          margin = "22 0 0 0";
@@ -77,8 +77,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 30";
-         extent = "1424 862";
+         position = "0 22";
+         extent = "1400 817";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -108,11 +108,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkA";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -123,7 +124,7 @@
                tabHeight = "21";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "0";
+               selectedPage = "3";
                frontTabPadding = "0";
                docking = "Client";
                margin = "0 0 0 0";
@@ -163,11 +164,12 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -789,7 +791,7 @@
                                     canSaveDynamicFields = "0";
                                  };
                                  new GuiColorPickerCtrl() {
-                                    baseColor = "Fuchsia";
+                                    baseColor = "1 0 1 1";
                                     pickColor = "0 0 0 1";
                                     selectorGap = "1";
                                     displayMode = "Pallete";
@@ -1323,7 +1325,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "0 0";
-                              extent = "331 442";
+                              extent = "331 466";
                               minExtent = "16 16";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -2402,6 +2404,49 @@
                                     horizSizing = "right";
                                     vertSizing = "bottom";
                                     profile = "ToolsCheckBoxProfile";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "0";
+                                    internalName = "checkbox";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                              };
+                              new GuiContainer() {
+                                 margin = "0 0 0 0";
+                                 padding = "0 0 0 0";
+                                 anchorTop = "1";
+                                 anchorBottom = "0";
+                                 anchorLeft = "1";
+                                 anchorRight = "0";
+                                 position = "0 446";
+                                 extent = "331 20";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsBoxDarkC";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "1";
+                                 internalName = "checkbox_only";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+
+                                 new GuiCheckBoxCtrl() {
+                                    text = "Button";
+                                    groupNum = "-1";
+                                    buttonType = "ToggleButton";
+                                    useMouseEvents = "0";
+                                    position = "3 0";
+                                    extent = "331 20";
+                                    minExtent = "8 2";
+                                    horizSizing = "width";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsCheckBoxProfile_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
@@ -7407,12 +7452,11 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -19781,17 +19825,16 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 21";
-            extent = "1424 841";
+            extent = "1400 796";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 

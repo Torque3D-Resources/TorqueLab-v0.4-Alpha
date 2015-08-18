@@ -35,6 +35,8 @@ function Editor::close(%this, %gui) {
 	//Restore the Client COntrolling Object
 	if (isObject( Lab.clientWasControlling))
 		LocalClientConnection.setControlObject( Lab.clientWasControlling );
+		
+	EditorMap.pop();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

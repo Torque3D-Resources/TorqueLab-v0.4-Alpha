@@ -38,6 +38,7 @@ function VehicleEditorPlugin::onWorldEditorStartup( %this ) {
 //==============================================================================
 function VehicleEditorPlugin::onActivated( %this ) {	
 	Parent::onActivated(%this);
+	VEP.initDataTree();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

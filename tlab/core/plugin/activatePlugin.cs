@@ -57,6 +57,8 @@ function EditorPlugin::onActivated( %this ) {
 
 	if (isObject(%this.dialogs))
 		%this.dialogs.onActivatedDialogs();
+		
+	Lab.checkPluginTools();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

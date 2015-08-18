@@ -110,8 +110,9 @@ function GuiEditCanvas::addSubmenuItem(%this,%menuTarget,%menuItem,%submenuItemT
 /// %menuItemId 	Index id of the selected menu item
 /// %menuItemText 	Text of the selected menu item
 function GuiEd_MenuBar::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	//devLog("GuiEd_MenuBar::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
+	logd("GuiEd_MenuBar::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
 	%callBack =  $GuiEdMenuCallback[%menuId,%menuItemId,%menuItemText];
+	
 	eval(%callBack);
 }
 //------------------------------------------------------------------------------
@@ -147,9 +148,3 @@ function GuiEd_MenuBar::onSubmenuSelect(%this,%submenuId,%submenuText) {
 	//devLog("GuiEd_MenuBar::onSubmenuSelect(%this,%submenuId,%submenuText)",%this,%submenuId,%submenuText);
 }
 //------------------------------------------------------------------------------
-function GuiEd_MenuBar::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	devLog("GuiEd_MenuBar::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
-	%callBack =  $GuiEdMenuCallback[%menuId,%menuItemId,%menuItemText];
-	devLog("%callBack",%callBack);
-	eval(%callBack);
-}

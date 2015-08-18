@@ -132,12 +132,14 @@ new GuiControlProfile(ToolsGuiEditorTabPage) {
     border = false;
     fontColor = "0 0 0";
     fontColorHL = "0 0 0";
-    fixedExtent = false;
+    fixedExtent = 0;
     justify = "center";
     canKeyFocus = false;
     bitmap = "tlab/gui/icons/default/tab";
     hasBitmapArray = true;
     category = "Tools";
+   fontColors[5] = "Magenta";
+   fontColorLinkHL = "Magenta";
 };
 
 

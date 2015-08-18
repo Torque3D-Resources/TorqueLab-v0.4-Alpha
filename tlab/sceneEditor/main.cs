@@ -25,6 +25,8 @@ function initializeSceneEditor() {
 	$SEPtools = newScriptObject("SEPtools");
 	$SceneObjectGroupSet = newSimSet(SceneObjectGroupSet);
 	$SceneCreator = newScriptObject("SceneCreator");
+	$sepVM = newScriptObject("sepVM");
+	$sepVM_TempDatablocks = newSimGroup("sepVM_TempDatablocks");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -45,5 +47,6 @@ function execSceneEd(%loadGui) {
 	execPattern("tlab/sceneEditor/pages/*.cs");
 	execPattern("tlab/sceneEditor/creator/*.cs");
 	execPattern("tlab/sceneEditor/ambientManager/*.cs");
+	execPattern("tlab/sceneEditor/vehicleManager/*.cs");
 }
 //------------------------------------------------------------------------------

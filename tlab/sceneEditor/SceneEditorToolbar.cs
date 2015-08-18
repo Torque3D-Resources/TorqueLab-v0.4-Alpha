@@ -91,3 +91,4 @@ function SceneEditorPlugin::onGridSizeSliderChanged(%this,%slider) {
 	EWorldEditor.syncGui();
 }
 //------------------------------------------------------------------------------------
+

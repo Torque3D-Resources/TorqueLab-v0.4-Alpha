@@ -122,13 +122,11 @@ function Lab::checkPluginTools(%this) {
 function Lab::hidePluginTools(%this) {
 	EditorFrameMain.lastToolsCol = getWord(EditorFrameMain.columns,1);
 	EditorFrameMain.columns = "0";
-	EditorFrameMain.updateSizes();
-	devLog("Tools Hidden",EditorFrameMain.columns);
+	EditorFrameMain.updateSizes();	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::showPluginTools(%this) {
-	devLog("showPluginTools",Lab.currentEditor.useTools);
 	Lab.setupEditorFrameMain();	
 }
 //------------------------------------------------------------------------------

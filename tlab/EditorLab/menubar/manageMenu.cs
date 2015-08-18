@@ -7,6 +7,7 @@
 //==============================================================================
 function Lab::initMenubar(%this) {
 	if (!$Cfg_UseCoreMenubar) {
+		exec("tlab/EditorLab/menubar/defineMenus.cs");
 		exec("tlab/EditorLab/menubar/labstyle/menubarScript.cs");
 		exec("tlab/EditorLab/menubar/labstyle/buildWorldMenu.cs");
 		Lab.initLabMenuData(true);

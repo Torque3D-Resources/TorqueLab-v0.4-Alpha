@@ -56,7 +56,7 @@ function execGuiEdit(%execGui,%execMainGui) {
 	exec( "tlab/guiEditor/scripts/functionControls.cs" );
 	execPattern( "tlab/guiEditor/lab/*.cs" );
 	execPattern( "tlab/guiEditor/menu/*.cs" );
-
+	execPattern( "tlab/guiEditor/system/*.cs" );
 }
 
 function destroyGuiEditor() {

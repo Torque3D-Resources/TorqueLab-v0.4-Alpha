@@ -29,7 +29,7 @@ function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
-	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%text);
+	logd("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%text);
 	%obj = %id;
 	if (!isObject(%obj))
 		return;
@@ -174,8 +174,9 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
+
 function SEP_AmbientManager::createNewSkySystem( %this ) {
-	devLog("SEP_AmbientManager::createNewSkySystem(%this)");
+	logd("SEP_AmbientManager::createNewSkySystem(%this)");
 
 	%type = SEP_AmbientManager.createSkyType;
 	if (%type $= "ScatterSky")

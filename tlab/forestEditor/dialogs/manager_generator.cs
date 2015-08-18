@@ -31,14 +31,22 @@ function FEP_Manager::initDataGenerator( %this ) {
 function FEP_Manager::dataGenFolder( %this, %path ) {
 	%path = makeRelativePath(%path );
 	devLog("Path os",%path);
-	FEP_ForestDataGenerator-->sourceFolder.setText(%path);
+	
+	foreach$(%cont in "FEP_ToolsQuickGenerator FEP_ForestDataGenerator"){
+		%cont.findObjectByInternalName(%field,true);
+		%cont-->sourceFolder.setText(%path);
+	}	
+	//FEP_ForestDataGenerator-->sourceFolder.setText(%path);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function FEP_Manager::generateForestData( %this, %path ) {
+function FEP_Manager::generateForestData( %this, %quick ) {
 	%baseFolder = FEP_ForestDataGenerator-->sourceFolder.getText();
 	%name = FEP_ForestDataGenerator-->groupName.getText();
+	
 	%prefix = FEP_ForestDataGenerator-->prefix.getText();	
+	if(%quick)
+		%prefix = "Qck";
 	%settingContainer = FEP_ForestDataGenerator-->settings;
 	buildForestDataFromFolder(%baseFolder,%name,%prefix,%settingContainer,$FEP_GeneratorDeleteExistBrush,$FEP_GeneratorLevelItemsMode);
 	
@@ -82,5 +90,18 @@ function FEP_Manager::doOpenDialog( %this, %filter, %callback ) {
 		FEP_Manager.dataGenFolder(%dlg.FileName);
 
 	%dlg.delete();
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function FEP_GeneratorEdit::onValidate( %this ) {
+	%field = %this.internalName;
+	
+	foreach$(%cont in "FEP_ToolsQuickGenerator FEP_ForestDataGenerator"){
+		%ctrl = %cont.findObjectByInternalName(%field,true);
+		if (!isObject(%ctrl))
+			continue;
+		%ctrl.setText(%this.getText());
+	}	
 }
 //------------------------------------------------------------------------------

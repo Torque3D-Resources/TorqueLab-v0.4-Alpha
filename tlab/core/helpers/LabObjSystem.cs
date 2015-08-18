@@ -30,7 +30,9 @@ function LabObj::set(%this,%obj,%field,%value,%fieldId) {
 	if (%initialValue !$= %value){
 		Lab_PM.setDirty(%obj);
 		info(Lab_PM.getDirtyObjectCount()," objects are dirty in Lab_PM");
+		return true;
 	}	
+	return false;
 }
 //------------------------------------------------------------------------------
 
@@ -49,7 +51,7 @@ function LabObj::saveAll(%this) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LabObj::save(%this,%obj) {
+function LabObj::save(%this,%obj,%force) {
 	if (!Lab_PM.isDirty(%obj)){
 		if (%force){
 			info(%obj,"Object is not dirty but we will force it");

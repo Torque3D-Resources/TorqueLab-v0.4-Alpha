@@ -75,6 +75,7 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
    bevelColorLL = "255 0 255 255";
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
+   bevelColorHL = "Magenta";
 };
 //------------------------------------------------------------------------------
 
@@ -117,6 +118,8 @@ singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
    fontSize = "17";
    fontColors[0] = "222 222 222 255";
    fontColor = "222 222 222 255";
+   fontColors[4] = "Magenta";
+   fontColorLink = "Magenta";
 };
 //------------------------------------------------------------------------------
 

@@ -26,7 +26,7 @@ function LDG::updateProfileStylesList( %this,%profile ) {
 			%selected = %sId;
 	}
 	
-	LDG_ProfileStylesMenu.setSelected(%selected,true);
+	LDG_ProfileStylesMenu.setSelected(%selected,false);
 }
 //------------------------------------------------------------------------------
 

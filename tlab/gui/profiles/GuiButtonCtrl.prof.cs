@@ -36,6 +36,7 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
    fontColorLink = "255 0 255 255";
    fontColors[3] = "255 255 255 255";
    fontColorSEL = "255 255 255 255";
+   fontColors[7] = "Magenta";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
@@ -50,7 +51,7 @@ singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
 singleton GuiControlProfile( ToolsButtonDark : ToolsButtonProfile ) {
     bitmap = "tlab/gui/assets/button-assets/GuiButtonDark.png";
      border = "-2";
-   fontType = "Gotham Bold";
+   fontType = "Anson Regular";
    fontColors[9] = "57 117 73 255";
    fontColors[6] = "255 0 255 255";
    fontColors[8] = "Fuchsia";
@@ -67,6 +68,7 @@ singleton GuiControlProfile( ToolsButtonDark : ToolsButtonProfile ) {
    fontColors1 = "255 0 0 255";
    fontColors_90 = "37 113 57 255";
    textOffset = "0 0";
+   fontColors[7] = "255 0 255 255";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsButtonDark_L : ToolsButtonDark)

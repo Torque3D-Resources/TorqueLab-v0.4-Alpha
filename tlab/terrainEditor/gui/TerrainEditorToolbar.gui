@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13656";
-      disabledGroup = "13657";
-      EditorContainer = "3928";
+      defaultStack = "14240";
+      disabledGroup = "14241";
+      EditorContainer = "4001";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "13658 13667 13693";
+      stackLists = "14242 14251 14277";
 
    new GuiContainer() {
       margin = "0 0 0 0";

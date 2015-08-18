@@ -114,6 +114,12 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "-------------";
 	$LabMenuItem[%id,%itemId++] = "Open disabled plugins bin" TAB "" TAB "Lab.openDisabledPluginsBin();";
 	$LabMenuItem[%id,%itemId++] = "Customize Interface" TAB "" TAB "ETools.toggleTool(\"GuiCustomizer\");";
+		$LabMenuItem[%id,%itemId++] = "----------------------";
+	$LabMenuItem[%id,%itemId++] = "Auto arrange MissionGroup Root" TAB "" TAB "SEP_ScenePage.organizeMissionGroup();";
+	$LabMenuItem[%id,%itemId++] = "Auto arrange MissionGroup" TAB "" TAB "SEP_ScenePage.organizeMissionGroup(5);";
+	$LabMenuItem[%id,%itemId++] = "----------------------";
+		$LabMenuItem[%id,%itemId++] = "Capture current view as level preview" TAB "" TAB "Lab.setCurrentViewAsPreview();";
+	$LabMenuItem[%id,%itemId++] = "Set next screenshot as preview" TAB "" TAB "Lab.setNextScreenShotPreview();";
 	
 	%itemId = -1;
 	$LabMenu[%id++] = "Camera";
@@ -161,14 +167,12 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "Editors";
 	$LabMenuEditorSubMenu = %id SPC %itemId;
 	$LabMenuEditorNextId = -1;
-	$LabMenuItem[%id,%itemId++] = "Capture current view as level preview" TAB "" TAB "Lab.setCurrentViewAsPreview();";
-	$LabMenuItem[%id,%itemId++] = "Set next screenshot as preview" TAB "" TAB "Lab.setNextScreenShotPreview();";
-	$LabMenuItem[%id,%itemId++] = "----------------------";
+
 	$LabMenuItem[%id,%itemId++] = "Toggle GroundCover Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"GroundCover\");";
 	$LabMenuItem[%id,%itemId++] = "Toggle Ambient Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"AmbientManager\");";
-	$LabMenuItem[%id,%itemId++] = "----------------------";
-	$LabMenuItem[%id,%itemId++] = "Auto arrange MissionGroup Root" TAB "" TAB "SEP_ScenePage.organizeMissionGroup();";
-	$LabMenuItem[%id,%itemId++] = "Auto arrange MissionGroup" TAB "" TAB "SEP_ScenePage.organizeMissionGroup(5);";
+	$LabMenuItem[%id,%itemId++] = "Toggle Vehicle Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
+	$LabMenuItem[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);";
+
 	%itemId = -1; 
 	$LabMenu[%id++] = "Help";
 	$LabMenuItem[%id,%itemId++] = "Online Documentation..." TAB "Alt F1" TAB "gotoWebPage(EWorldEditor.documentationURL);";

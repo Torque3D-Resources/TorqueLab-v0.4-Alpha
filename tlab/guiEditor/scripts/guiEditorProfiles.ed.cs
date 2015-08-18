@@ -129,7 +129,7 @@ function GuiEditor::forceSaveProfile( %this, %profile ) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::saveProfile( %this, %profile, %fileName,%forced ) {
-	devLog("GuiEditor::saveProfile",%profile.getname(),"Dirty?",GuiEditorProfilesPM.isDirty( %profile ));
+	logc("GuiEditor::saveProfile",%profile.getname(),"Dirty?",GuiEditorProfilesPM.isDirty( %profile ));
 	%this.checkPM();
 
 	if( !GuiEditorProfilesPM.isDirty( %profile )
@@ -160,7 +160,7 @@ function GuiEditor::saveProfile( %this, %profile, %fileName,%forced ) {
 	//Mud-H Modified to work with GUI style system and save changes to the selected style.
 	//If not Style profile object found it will save as usual: GuiEditorProfilesPM.saveDirtyObject( %profile );
 	// saveSingleProfileStyleChanges(%profile);
-	devLog("Save dirty profile:",%profile.getname());
+	
 	GuiEditorProfilesPM.saveDirtyObject( %profile );
 	// Save the object.
 	// Clear its dirty state.
@@ -198,7 +198,7 @@ function fixNameId(%pid) {
 	GuiEditorProfilesTree.editItem( %id, %fixName, %pid );
 }
 function GuiEditor::setProfileDirty( %this, %profile, %value, %noCheck ) {
-	devLog("GuiEditor::setProfileDirty",%profile.getname(),"Value?",%value);
+	logd("GuiEditor::setProfileDirty",%profile.getname(),"Value?",%value);
 	%this.checkPM();
 
 	if( %value ) {
@@ -210,7 +210,7 @@ function GuiEditor::setProfileDirty( %this, %profile, %value, %noCheck ) {
 
 			// Add the profile to the dirty set.
 			GuiEditorProfilesPM.setDirty( %profile );
-			devLog("GuiEditor::setProfileDirty",%profile.getname(),"Dirty?",GuiEditorProfilesPM.isDirty( %profile ));
+			
 			// Show the item as dirty in the tree.
 			%id = GuiEditorProfilesTree.findItemByValue( %profile.getId() );
 			GuiEditorProfilesTree.editItem( %id, GuiEditorProfilesTree.getItemText( %id ) SPC "*", %profile.getId() );

@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ForestEditorDialogs) {
    position = "0 0";
-   extent = "1498 1058";
+   extent = "1542 1058";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -19,8 +19,8 @@
       currentMatIndex = "0";
       currentMatInternalName = "fhDirtGrassA";
       currentMatObject = "1860";
-      defaultParent = "guiGroup";
-      EditorContainer = "4195";
+      defaultParent = "GuiGroup";
+      EditorContainer = "4081";
       editorParent = "EditorFrameTools";
       isDlg = "1";
       lastLayerId = "101";
@@ -73,8 +73,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "6 24";
-         extent = "189 299";
+         position = "8 24";
+         extent = "185 297";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -104,11 +104,11 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "189 299";
+            extent = "185 297";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsScrollProfile_Dark_T50";
+            profile = "GuiScrollProfile";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -128,7 +128,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "0 3";
-               extent = "189 262";
+               extent = "185 262";
                minExtent = "152 16";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -152,7 +152,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 0";
-                  extent = "189 32";
+                  extent = "185 32";
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -173,7 +173,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "189 32";
+                     extent = "185 32";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -202,7 +202,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "141 2";
+                        position = "137 2";
                         extent = "39 19";
                         minExtent = "8 16";
                         horizSizing = "left";
@@ -247,11 +247,10 @@
                         snap = "0";
                         value = "20";
                         position = "2 21";
-                        extent = "181 13";
+                        extent = "177 13";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        guiGroup = "FEP_Slider_Pressure";
                         profile = "ToolsSliderProfile";
                         visible = "1";
                         active = "1";
@@ -276,7 +275,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 36";
-                  extent = "189 32";
+                  extent = "185 32";
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -297,7 +296,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "189 32";
+                     extent = "185 32";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -318,11 +317,10 @@
                         snap = "0";
                         value = "23";
                         position = "2 21";
-                        extent = "184 13";
+                        extent = "180 13";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        guiGroup = "FEP_Slider_Hardness";
                         profile = "ToolsSliderProfile";
                         visible = "1";
                         active = "1";
@@ -348,7 +346,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "146 2";
+                        position = "142 2";
                         extent = "40 19";
                         minExtent = "8 16";
                         horizSizing = "left";
@@ -400,7 +398,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 72";
-                  extent = "189 92";
+                  extent = "185 92";
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -421,7 +419,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "189 30";
+                     extent = "185 30";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -449,7 +447,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "124 2";
+                        position = "120 2";
                         extent = "39 19";
                         minExtent = "8 16";
                         horizSizing = "left";
@@ -494,11 +492,10 @@
                         snap = "0";
                         value = "3";
                         position = "2 21";
-                        extent = "184 13";
+                        extent = "180 13";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        guiGroup = "FEP_Slider_BrushSize";
                         profile = "ToolsSliderProfile";
                         visible = "1";
                         active = "1";
@@ -522,7 +519,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "0";
-                        position = "167 2";
+                        position = "163 2";
                         extent = "18 18";
                         minExtent = "8 2";
                         horizSizing = "left";
@@ -547,7 +544,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 30";
-                     extent = "189 62";
+                     extent = "185 62";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -596,7 +593,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 19";
-                        extent = "187 41";
+                        extent = "183 41";
                         minExtent = "150 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -617,7 +614,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "187 41";
+                           extent = "183 41";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -823,7 +820,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 168";
-                  extent = "189 94";
+                  extent = "185 94";
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -844,7 +841,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "189 32";
+                     extent = "185 32";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -865,11 +862,10 @@
                         snap = "0";
                         value = "1";
                         position = "2 21";
-                        extent = "184 13";
+                        extent = "180 13";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        guiGroup = "FEP_Slider_GlobalScale";
                         profile = "ToolsSliderProfile";
                         visible = "1";
                         active = "1";
@@ -918,7 +914,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "127 2";
+                        position = "123 2";
                         extent = "36 19";
                         minExtent = "8 16";
                         horizSizing = "left";
@@ -947,7 +943,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "0";
-                        position = "167 2";
+                        position = "163 2";
                         extent = "18 18";
                         minExtent = "8 2";
                         horizSizing = "left";
@@ -972,7 +968,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 32";
-                     extent = "189 62";
+                     extent = "185 62";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1021,7 +1017,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 19";
-                        extent = "187 41";
+                        extent = "183 41";
                         minExtent = "150 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -1042,7 +1038,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "187 41";
+                           extent = "183 41";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -1264,13 +1260,14 @@
       horizSizing = "right";
       vertSizing = "bottom";
       profile = "ToolsWindowProfile";
-      visible = "1";
+      visible = "0";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       langTableMod = "Default";
       internalName = "ForestManager";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
 
@@ -1301,7 +1298,7 @@
          tabPosition = "Top";
          tabMargin = "7";
          minTabWidth = "64";
-         tabHeight = "17";
+         tabHeight = "21";
          allowReorder = "0";
          defaultPage = "-1";
          selectedPage = "2";
@@ -1313,8 +1310,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "10 50";
-         extent = "549 513";
+         position = "12 50";
+         extent = "545 511";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -1339,8 +1336,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "549 496";
+            position = "0 21";
+            extent = "545 490";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1386,7 +1383,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "541 488";
+               extent = "537 482";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1408,7 +1405,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "8 0";
-                  extent = "248 488";
+                  extent = "244 482";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -1476,7 +1473,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 30";
-                     extent = "232 454";
+                     extent = "228 448";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1499,7 +1496,7 @@
                         dynamicPos = "1";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "143 0";
+                        position = "139 0";
                         extent = "89 20";
                         minExtent = "16 16";
                         horizSizing = "left";
@@ -1644,11 +1641,11 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 26";
-                        extent = "220 422";
+                        extent = "216 416";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsScrollProfile_Dark_T50";
+                        profile = "GuiScrollProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1680,7 +1677,7 @@
                            canRenameObjects = "1";
                            renameInternal = "1";
                            position = "3 3";
-                           extent = "214 2";
+                           extent = "210 147";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -1709,7 +1706,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 -1";
-                        extent = "137 21";
+                        extent = "137 19";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -1735,7 +1732,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "265 0";
-                  extent = "273 488";
+                  extent = "269 482";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -1803,7 +1800,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 40";
-                     extent = "257 394";
+                     extent = "253 388";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -2899,7 +2896,7 @@
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
                            position = "0 9";
-                           extent = "241 170";
+                           extent = "241 174";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2922,7 +2919,7 @@
                               hideHeader = "0";
                               autoCollapseSiblings = "0";
                               position = "0 0";
-                              extent = "241 170";
+                              extent = "241 174";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -2946,7 +2943,7 @@
                                  dynamicPos = "0";
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
-                                 position = "0 27";
+                                 position = "0 31";
                                  extent = "241 137";
                                  minExtent = "16 16";
                                  horizSizing = "width";
@@ -3023,7 +3020,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3032,7 +3029,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3054,11 +3051,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "brushScaleScalar_slider";
+                                       internalName = "brushScaleScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3124,7 +3121,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3133,7 +3130,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3155,11 +3152,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "brushSinkScalar_slider";
+                                       internalName = "brushSinkScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3225,7 +3222,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3234,7 +3231,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3256,11 +3253,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "brushElevationScalar_slider";
+                                       internalName = "brushElevationScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3326,7 +3323,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3335,7 +3332,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3357,11 +3354,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "brushSlopeScalar_slider";
+                                       internalName = "brushSlopeScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3379,7 +3376,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "8 8";
-                        extent = "241 378";
+                        extent = "237 372";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -3404,7 +3401,7 @@
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
                            position = "0 9";
-                           extent = "241 170";
+                           extent = "241 174";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -3427,7 +3424,7 @@
                               hideHeader = "0";
                               autoCollapseSiblings = "0";
                               position = "0 0";
-                              extent = "241 170";
+                              extent = "241 174";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -3451,7 +3448,7 @@
                                  dynamicPos = "0";
                                  changeChildSizeToFit = "1";
                                  changeChildPosition = "1";
-                                 position = "0 27";
+                                 position = "0 31";
                                  extent = "241 137";
                                  minExtent = "16 16";
                                  horizSizing = "width";
@@ -3528,7 +3525,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3537,7 +3534,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3559,11 +3556,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "groupScaleScalar_slider";
+                                       internalName = "groupScaleScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3629,7 +3626,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3638,7 +3635,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3660,11 +3657,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "groupSinkScalar_slider";
+                                       internalName = "groupSinkScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3730,7 +3727,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3739,7 +3736,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3761,11 +3758,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "groupElevationScalar_slider";
+                                       internalName = "groupElevationScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3831,7 +3828,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "179 0";
+                                       position = "190 0";
                                        extent = "50 19";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -3840,7 +3837,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
@@ -3862,11 +3859,11 @@
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
-                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
+                                       altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
                                        tooltipProfile = "ToolsGuiToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
-                                       internalName = "groupSlopeScalar_slider";
+                                       internalName = "groupSlopeScalar__slider";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
                                     };
@@ -3884,8 +3881,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "8 442";
-                     extent = "257 42";
+                     position = "8 436";
+                     extent = "253 42";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -3903,7 +3900,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "0";
-                        position = "38 8";
+                        position = "36 8";
                         extent = "180 29";
                         minExtent = "8 2";
                         horizSizing = "center";
@@ -3934,8 +3931,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "549 496";
+            position = "0 21";
+            extent = "545 490";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -3981,7 +3978,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "541 488";
+               extent = "537 482";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -4003,7 +4000,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "8 0";
-                  extent = "248 488";
+                  extent = "244 482";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -4071,7 +4068,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 30";
-                     extent = "232 454";
+                     extent = "228 448";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -4094,7 +4091,7 @@
                         dynamicPos = "1";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "143 0";
+                        position = "139 0";
                         extent = "89 20";
                         minExtent = "16 16";
                         horizSizing = "left";
@@ -4239,11 +4236,11 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 26";
-                        extent = "220 422";
+                        extent = "216 416";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsScrollProfile_Dark_T50";
+                        profile = "GuiScrollProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -4275,7 +4272,7 @@
                            canRenameObjects = "1";
                            renameInternal = "1";
                            position = "3 3";
-                           extent = "204 2247";
+                           extent = "200 4242";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -4304,7 +4301,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 -1";
-                        extent = "137 21";
+                        extent = "137 19";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -4330,7 +4327,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "265 0";
-                  extent = "273 488";
+                  extent = "269 482";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -4398,7 +4395,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "8 40";
-                     extent = "257 394";
+                     extent = "253 388";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -4468,8 +4465,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "8 442";
-                     extent = "257 42";
+                     position = "8 436";
+                     extent = "253 42";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -4487,7 +4484,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "0";
-                        position = "38 8";
+                        position = "36 8";
                         extent = "180 29";
                         minExtent = "8 2";
                         horizSizing = "center";
@@ -4509,7 +4506,7 @@
          };
          new GuiTabPageCtrl(FEP_ForestDataGenerator) {
             fitBook = "1";
-            text = "Data generator";
+            text = "Brush Generator";
             maxLength = "1024";
             docking = "Client";
             margin = "0 0 0 0";
@@ -4518,8 +4515,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "549 496";
+            position = "0 21";
+            extent = "545 490";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -4541,7 +4538,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 6";
-               extent = "537 119";
+               extent = "533 119";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -4590,7 +4587,7 @@
                   dynamicSize = "0";
                   padding = "0 0 0 0";
                   position = "0 31";
-                  extent = "537 64";
+                  extent = "533 64";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -5013,7 +5010,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 26";
-                  extent = "529 45";
+                  extent = "525 45";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -5050,9 +5047,9 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiDynamicCtrlArrayControl() {
-                     colCount = "4";
+                     colCount = "3";
                      colSize = "130";
-                     rowCount = "1";
+                     rowCount = "2";
                      rowSize = "32";
                      rowSpacing = "2";
                      colSpacing = "2";
@@ -5062,7 +5059,7 @@
                      dynamicSize = "0";
                      padding = "0 0 0 0";
                      position = "0 31";
-                     extent = "529 64";
+                     extent = "525 64";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -5383,7 +5380,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "396 0";
+                        position = "0 34";
                         extent = "130 32";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5491,7 +5488,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 23";
-                     extent = "528 21";
+                     extent = "524 19";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -5502,6 +5499,7 @@
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "sourceFolder";
+                     superClass = "FEP_GeneratorEdit";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -5535,7 +5533,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 71";
-                  extent = "529 40";
+                  extent = "525 40";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -5572,9 +5570,9 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiDynamicCtrlArrayControl() {
-                     colCount = "4";
+                     colCount = "3";
                      colSize = "130";
-                     rowCount = "1";
+                     rowCount = "2";
                      rowSize = "32";
                      rowSpacing = "2";
                      colSpacing = "2";
@@ -5584,7 +5582,7 @@
                      dynamicSize = "0";
                      padding = "0 0 0 0";
                      position = "0 31";
-                     extent = "529 64";
+                     extent = "525 64";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -5905,7 +5903,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "396 0";
+                        position = "0 34";
                         extent = "130 32";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6004,7 +6002,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "Name";
+                     text = "Quick";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -6013,7 +6011,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 14";
-                     extent = "429 21";
+                     extent = "425 19";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -6024,6 +6022,7 @@
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "groupName";
+                     superClass = "FEP_GeneratorEdit";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -6036,7 +6035,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "444 1";
+                     position = "440 1";
                      extent = "77 10";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -6056,7 +6055,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "Name";
+                     text = "[Data prefix]";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -6064,8 +6063,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "443 15";
-                     extent = "76 21";
+                     position = "439 15";
+                     extent = "76 19";
                      minExtent = "8 2";
                      horizSizing = "left";
                      vertSizing = "bottom";
@@ -6090,7 +6089,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 137";
-               extent = "537 102";
+               extent = "533 102";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -6551,7 +6550,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "0";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -6703,7 +6702,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "0";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -6779,7 +6778,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "0";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -6977,7 +6976,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "90";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -7053,7 +7052,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "0";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -7251,7 +7250,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "1000";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -7327,7 +7326,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "1";
+                           text = "-1000";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -7387,7 +7386,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 251";
-               extent = "537 54";
+               extent = "533 54";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -7452,7 +7451,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 317";
-               extent = "537 43";
+               extent = "533 43";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -7556,7 +7555,7 @@
                groupNum = "-1";
                buttonType = "PushButton";
                useMouseEvents = "0";
-               position = "314 464";
+               position = "310 464";
                extent = "223 25";
                minExtent = "8 2";
                horizSizing = "left";
@@ -7583,8 +7582,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "549 496";
+            position = "0 21";
+            extent = "545 490";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -7607,7 +7606,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "166 488";
+               extent = "166 482";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";

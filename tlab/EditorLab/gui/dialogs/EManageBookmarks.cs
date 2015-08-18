@@ -143,7 +143,7 @@ function CameraBookmark::onGroupRemove( %this ) {
 		%pos = CameraBookmarks.getObjectIndex( %this );
 
 		if( %pos != -1 ) {
-			EditorCameraBookmarks.deleteItem( %pos );
+			//EditorCameraBookmarks.deleteItem( %pos );
 			EManageBookmarks.deleteBookmark( %this, %pos );
 		}
 	}

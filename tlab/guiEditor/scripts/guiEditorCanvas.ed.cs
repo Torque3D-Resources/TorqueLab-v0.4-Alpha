@@ -319,26 +319,3 @@ function GuiEditCanvas::revert( %this ) {
 }
 
 //---------------------------------------------------------------------------------------------
-
-function GuiEditCanvas::close( %this ) {
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditCanvas::quit( %this ) {
-	%this.close();
-	GuiGroup.add(GuiEditorGui);
-	// we must not delete a window while in its event handler, or we foul the event dispatch mechanism
-	%this.schedule(10, delete);
-	GuiEdMap.pop();
-	$InGuiEditor = false;
-	Canvas.setContent(GuiEditor.initialContent);
-
-	// Canvas.setContent(GuiEditor.lastContent);
-
-	//Temp fix to disable MLAA when in GUI editor
-	if( isObject(MLAAFx) && $MLAAFxGuiEditorTemp==true ) {
-		MLAAFx.isEnabled = true;
-		$MLAAFxGuiEditorTemp = false;
-	}
-}

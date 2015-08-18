@@ -192,6 +192,7 @@ singleton GuiControlProfile(ToolsTextFX_R : ToolsTextFX) {
 //==============================================================================
 singleton GuiControlProfile(ToolsTextFX_S1 : ToolsTextFX) {
     fontSize = "18";
+   cursorColor = "Black";
 };
 singleton GuiControlProfile(ToolsTextFX_S1_C : ToolsTextFX_S1) {
     locked = true;

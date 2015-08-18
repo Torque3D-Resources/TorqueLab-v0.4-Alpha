@@ -13,6 +13,8 @@ $InGuiEditor = false;
 $MLAAFxGuiEditorTemp = false;
 //==============================================================================
 function GuiEdit( %loadLast ) {
+	devLog("SHOULDNT HAPPEN ANYMORE!!! --> 	GuiEdit");
+	
 	if (Canvas.isFullscreen()) {
 		LabMsgOK("Windowed Mode Required", "Please switch to windowed mode to access the GUI Editor.");
 		return;
@@ -64,48 +66,7 @@ function GuiEditContent( %content ) {
 	GuiEditor.openForEditing( %content );
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function toggleGuiEditor( %make ) {
-	if( %make ) {
-		GuiEditor.forceContent = "";
 
-		if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui ) {
-			if (EditorGui.isAwake()) {
-				GuiEditor.forceContent = EditorGui;
-			}
-
-			toggleEditor( true );
-		}
-
-		GuiEdit();
-		// Cancel the scheduled event to prevent
-		// the level from cycling after it's duration
-		// has elapsed.
-		cancel($Game::Schedule);
-	}
-}
-function toggleLastGuiEditor( %make ) {
-	if( %make ) {
-		GuiEditor.forceContent = "";
-
-		if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui ) {
-			if (EditorGui.isAwake()) {
-				GuiEditor.forceContent = EditorGui;
-			}
-
-			toggleEditor( true );
-		}
-
-		GuiEdit(true);
-		// Cancel the scheduled event to prevent
-		// the level from cycling after it's duration
-		// has elapsed.
-		cancel($Game::Schedule);
-	}
-}
-GlobalActionMap.bind( keyboard, "f10", toggleGuiEditor );
-GlobalActionMap.bind( keyboard, "ctrl f10", toggleLastGuiEditor );
-//------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
 //    Methods.
@@ -191,7 +152,7 @@ function GuiEditor::switchToWorldEditor( %this ) {
 	if( GuiEditorContent.getObject( 0 ) == EditorGui.getId() )
 		%editingWorldEditor = true;
 
-	GuiEdit();
+	ToggleGuiEdit();
 
 	if( !$missionRunning )
 		EditorNewLevel();

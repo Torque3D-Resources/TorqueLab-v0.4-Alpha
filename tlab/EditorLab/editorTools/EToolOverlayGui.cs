@@ -39,7 +39,7 @@ function EOverlay::hideDlg(%this,%dlg,%decoyMode) {
 //==============================================================================
 
 //==============================================================================
-function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%value) {
+function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%startValue) {
 	
 
 	%slider = EToolOverlay-->SliderMouseDlg;
@@ -56,7 +56,7 @@ function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%value) 
 	}
 	if (%slider.ticks > 0)
 		%slider.snap = true;
-%slider.setValue(%value);
+%slider.setValue(%startValue);
 	if (%topCenterPos !$= "")
 		%slider.topCenterPos = %topCenterPos;
 	else

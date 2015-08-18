@@ -15,7 +15,7 @@ function toggleEditor(%make) {
 		%timerId = startPrecisionTimer();
 
 		if( $InGuiEditor )
-			GuiEdit();
+			ToggleGuiEdit();
 
 		//Check if a mission have been loaded
 		if( !$missionRunning ) {

@@ -21,7 +21,7 @@ function GLab::updateProfileStylesList( %this,%profile ) {
 			%selected = %sId;
 	}
 	
-	GLab_ProfileStylesMenu.setSelected(%selected,true);
+	GLab_ProfileStylesMenu.setSelected(%selected,false);
 }
 //------------------------------------------------------------------------------
 

@@ -34,7 +34,8 @@ function Lab::importProfilesStyle(%this,%style) {
 			}
 		}	
 	}
-	
+		info("New style applied to TorqueLab interface:",%style);
+
 
 }
 //------------------------------------------------------------------------------

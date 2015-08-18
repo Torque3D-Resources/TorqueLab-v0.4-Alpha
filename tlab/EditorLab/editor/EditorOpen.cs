@@ -10,6 +10,7 @@ function Editor::open(%this) {
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
 
+
 	Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 
@@ -64,6 +65,10 @@ function EditorGui::onWake( %this ) {
 	//Reset the TLabGameGui to default state
 	TLabGameGui.reset();
 
+	if(Canvas.getContent() == GuiEditorGui.getId()){
+		warnLog("EditorGui::OnWake while in GuiEditor so leave now!");
+		return;
+	}
 	// Push the ActionMaps in the order that we want to have them
 	// before activating an editor plugin, so that if the plugin
 	// installs an ActionMap, it will be highest on the stack.

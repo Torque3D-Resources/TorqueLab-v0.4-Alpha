@@ -14,7 +14,7 @@
 singleton GuiControlProfile( ToolsWindowProfile : ToolsDefaultProfile ) {
     opaque = "0";
     border = "0";
-     fillColor = "20 25 31 255";
+     fillColor = "2 2 2 255";
     fillColorHL = "221 221 221";
     fillColorNA = "200 200 200";
     fontColor = "236 236 236 255";
@@ -28,10 +28,12 @@ singleton GuiControlProfile( ToolsWindowProfile : ToolsDefaultProfile ) {
     justify = "left";
     category = "ToolsContainers";
     fontType = "Gotham Bold";
-    fontSize = "17";
+    fontSize = "19";
     fontColors[0] = "236 236 236 255";
     cursorColor = "0 0 0 255";
    fontColors[7] = "255 0 255 255";
+   fontColors[5] = "Fuchsia";
+   fontColorLinkHL = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 
@@ -56,6 +58,7 @@ singleton GuiControlProfile(ToolsWindowPanel : ToolsWindowProfile)
    fontType = "Aileron Bold";
    fontSize = "16";
    fontColors[7] = "Fuchsia";
+   bevelColorLL = "Black";
 };
 //------------------------------------------------------------------------------
 
