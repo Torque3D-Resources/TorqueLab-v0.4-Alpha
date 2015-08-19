@@ -15,6 +15,11 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		%fieldWords = strReplace(%field,"__"," ");
 		%fieldClean = getWord(%fieldWords,0);
 		%special = getWord(%fieldWords,1);
+		
+	
+
+		
+		
 		//Set Value empty
 		%value = "";
 
@@ -24,19 +29,18 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		}
 
 		%ctrl = %paramArray.container.findObjectByInternalName(%field,true);
-
 		if (!isObject(%ctrl)) {
-			warnLog("Couln't find a valid GuiControl holding the value for field:",%field,"Inside:",%paramArray.container);
+			devLog("Couln't find a valid GuiControl holding the value for field:",%field,"Inside:",%paramArray.container);
 			continue;
 		}
-
+	
 		//===========================================================================
 		// PrefGroup autosyncing will add the field to the prefGroup and store the value inside
 		//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 		if (%paramArray.autoSyncPref $= "1"||%paramArray.autoSyncPref) {
 			%prefGroup = %paramArray.prefGroup;
 			eval("%value = "@%prefGroup@%fieldClean@";");
-
+			
 			if (%value !$= "") {
 				setParamCtrlValue(%ctrl,%value,%field,%paramArray);
 				continue;
@@ -44,8 +48,9 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		}
 
 		//---------------------------------------------------------------------------
-		%syncDataStr = getField(%paramData,4);
-
+		
+		%syncDataStr = getField(%paramData,%paramArray.syncObjsField);
+		
 
 		if (%syncDataStr $= "")
 			continue;
@@ -54,8 +59,8 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		foreach$(%data in %syncDataStr) {
 				//If data is an object, get the value from it
 			eval("%dataObj = "@%data@";");
-			if (isObject(%dataObj)) {				
-				%value = %dataObj.getFieldValue(%field);
+			if (isObject(%dataObj)) {	
+				%value = %dataObj.getFieldValue(%field);					
 			}
 			//If data start with $, it might be a full global
 			else if (getSubStr(%data,0,1) $= "$") {
@@ -68,16 +73,20 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 			}
 
 			//If we got a value, get out of here
-			if (%value !$= "") {
+			if (%value !$= "") {				 
 				paramLog(%field,"Param update from Sync Data:",%data,"Value:",%value);
 				break;
+				
 			}
 		}
 
-		if (%value $= "" && !%keepEmptyValue)
+		if (%value $= "" && !%keepEmptyValue){
+			paramLog("Param update from Sync Data:",%data,"Value:",%value);
 			continue;
+		}
 
 		//Set the GuiControl value using the common function
+		
 		setParamCtrlValue(%ctrl,%value,%field,%paramArray);
 	}
 }

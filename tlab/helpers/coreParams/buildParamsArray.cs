@@ -31,6 +31,10 @@ function buildParamsArray( %array,%syncAfter ) {
 	%guiSource = $ParamsArray_WidgetPrefix@%guiStyle;
 	
 	if (!isObject(%guiSource)){
+		if (%array.pillCreatedCheck){
+			%checkPill = %array.container.findObjectByInternalName(%pData.setting, true);
+			devLog("CheckPill = ",%checkPill);
+		}
 		warnLog("Can't build params because the widgets source is invalid:",%guiSource);
 		return;
 	}
@@ -184,47 +188,40 @@ function buildParamsArray( %array,%syncAfter ) {
 	for( %i = 0; %i < %array.count() ; %i++) {
 		%field = %array.getKey(%i);
 		%data = %array.getValue(%i);
-		%pData = newScriptObject("paramDataHolder");
-		%groupFieldId = getFieldCount(%data) - 1;
+		%pData = newScriptObject("paramDataHolder");		
 		%pData.Setting = %field;
-		%pData.Default = getField(%data,0);
-		%pData.Title = getField(%data,1);
-		%pData.Type = getField(%data,2);
-		%pData.Options = getField(%data,3);
-		%pData.syncObjs = getField(%data,4);
-
+		
+		if (%array.noDefaults){			
+			%newdata = "" TAB %data;
+			%array.setVal(%field,%newdata);			
+			%data = %newData;
+		}
+		%groupFieldId = getFieldCount(%data) - 1;
+		%fieldId = -1;
+		
+		
+		
+		%pData.Default = getField(%data,%fieldId++);
+		%pData.Title = getField(%data,%fieldId++);
+		%pData.Type = getField(%data,%fieldId++);
+		%pData.Options = getField(%data,%fieldId++);
+		%pData.syncObjs = getField(%data,%fieldId++);
+		%array.syncObjsField = %fieldId;		
+		
+		//if (%array.noDefaults)
+			//%pData.Default = getField(%data,%fieldId++);
+		
+		
 		if(%groupFieldId > 5)
-			%pData.validation = getField(%data,5);
+			%pData.validation = getField(%data,%fieldId++);
 
 		%pData.srcData = getWord(%pData.syncObjs,0);
 
 		if (%pData.Type $= "None")
 			continue;
 
-		%pData.groupId = getField(%data,%groupFieldId);
-
-		if (%pData.groupId $= "")
-			%pData.groupId = "1";
-
-		%basePillCtrl = %groupCtrl[%pData.groupId];
-		if (%basePillCtrl.addDirect)
-			%pData.parentCtrl = %basePillCtrl;
-		else
-			%pData.parentCtrl = %basePillCtrl-->stackCtrl;
-			
-		if (%pData.Type $= "CloneCtrl"){			
-			%ctrlHolder = %pData.setting.deepClone();
-			%ctrlHolder.visible = 1;
-			%pData.setting.visible = 0;
-			%pData.parentCtrl.add(%ctrlHolder);	
-			%removeKeyList = strAddWord(%removeKeyList,%field);		
-			continue;
-		}
-
-		if (!isObject(%pData.parentCtrl)) {
-			paramLog("Param skipped due to invalid parent ctrl! Skipped setting=",%pData.Setting);
-			continue;
-		}
+		
+		
 
 		%pData.Command = %array.common["Command"];
 		%pData.AltCommand = %array.common["AltCommand"];
@@ -245,14 +242,53 @@ function buildParamsArray( %array,%syncAfter ) {
 		}
 		
 		%pData.Widget = %cloneFromGui.findObjectByInternalName(%pillSrc,true);
-
-		if(!isObject(%pData.Widget)) {
-			paramLog("Couldn't find widget for setting type:",%pData.Type,"This setting building is skipped WidgetSource:",%pData.Widget);
-			%fid++;
-			continue;
-		}
 		
-		%pData.pill = cloneObject(%pData.Widget);
+		//If array only, it will use existing pills
+		if (%array.arrayOnly || %groupCtrl[1] $= ""){
+		
+			%checkPill = %array.container.findObjectByInternalName(%pData.setting, true);
+			
+			%pData.pill = %checkPill;
+			%pData.pill.updField = %pData.setting;
+			%pData.pill.updObj = %pData.syncObjs;
+			//devLog(%pData.setting,"Is already Built CheckPill = ",%checkPill);
+			continue;			
+		}
+			
+			%pData.groupId = getField(%data,%groupFieldId);
+
+		if (%pData.groupId $= "")
+			%pData.groupId = "1";
+
+
+			%basePillCtrl = %groupCtrl[%pData.groupId];
+			if (%basePillCtrl.addDirect)
+				%pData.parentCtrl = %basePillCtrl;
+			else
+				%pData.parentCtrl = %basePillCtrl-->stackCtrl;
+				
+			if (%pData.Type $= "CloneCtrl"){			
+				%ctrlHolder = %pData.setting.deepClone();
+				%ctrlHolder.visible = 1;
+				%pData.setting.visible = 0;
+				%pData.parentCtrl.add(%ctrlHolder);	
+				%removeKeyList = strAddWord(%removeKeyList,%field);		
+				continue;
+			}
+
+			if (!isObject(%pData.parentCtrl)) {
+				paramLog("Param skipped due to invalid parent ctrl! Skipped setting=",%pData.Setting);
+				continue;
+			}
+		
+			if(!isObject(%pData.Widget)) {
+				paramLog("Couldn't find widget for setting type:",%pData.Type,"This setting building is skipped WidgetSource:",%pData.Widget);
+				%fid++;
+				continue;
+			}
+			
+			%pData.pill = cloneObject(%pData.Widget);
+		
 	%pData.pill.updField = %pData.setting;
 	%pData.pill.updObj = %pData.syncObjs;
 	
@@ -360,7 +396,8 @@ function buildParamsArray( %array,%syncAfter ) {
 			eval("%ctrlHolder = buildParam"@%pData.Category@"(%pData);");
 		else
 			paramLog("Couldn't create the param, there's no function for that control type:",%pData.Category);
-
+	
+		
 		//=============================================================
 		//The Pills are set for the specific type, do final update before adding to stack
 		//-------------------------------------------------------------
@@ -398,7 +435,7 @@ function buildParamsArray( %array,%syncAfter ) {
 		%array.pill[%field] = %pData.pill;
 		%array.title[%field] =  %pData.pill-->fieldTitle.text;
 		//=============================================================
-		//New pill created, add it to stack
+		//New pill created, add it to stack	
 		%pData.parentCtrl.add(%pData.pill);
 
 		if (%multiCol > 0) {
@@ -409,13 +446,16 @@ function buildParamsArray( %array,%syncAfter ) {
 		}
 
 		%array.pData[%field] = %pData;
-
+		
+		
 		if (%array.paramCallback !$= "")
 			eval(%array.paramCallback@"(%array,%field,%pData);");
+	
 	}
 
 	if (%multiCol > 0) {
 	}
+	
 	
 	//Removed keys of ctrl we don't want to sync
 	foreach$(%key in %removeKeyList){
