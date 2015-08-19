@@ -70,7 +70,7 @@ function PluginDlg::onActivatedDialogs( %this ) {
 			%showThis = true;
 			
 		}		
-		else {
+		else if (%obj.closeOnActivate){
 			%obj.visible = "0";
 		}
 	}
@@ -168,8 +168,10 @@ function PluginDlg::checkState( %this ) {
 
 //==============================================================================
 function PluginDlg::onSleep( %this ) {
-	foreach(%ctrl in %this)
-		hide(%ctrl);
+	foreach(%ctrl in %this){
+		if (%ctrl.closeOnActivate)
+			hide(%ctrl);
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================

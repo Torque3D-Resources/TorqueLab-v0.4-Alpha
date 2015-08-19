@@ -97,7 +97,7 @@ function SEP_AmbientManager::setCloudLayerTexture( %this,%file ) {
 //==============================================================================
 // Sync the current profile values into the params objects
 function SEP_AmbientManager::updateCloudLayerField( %this,%field, %value,%layerId ) { 
-	devLog("SEP_AmbientManager::updateCloudLayerField( %this,%field, %value,%layerId )",%this,%field, %value,%layerId );
+	logd("SEP_AmbientManager::updateCloudLayerField( %this,%field, %value,%layerId )",%this,%field, %value,%layerId );
  	%obj = %this.selectedCloudLayer;
 
 	if (!isObject(%obj)) {
@@ -122,8 +122,7 @@ function SEP_AmbientManager::selectCloudLayer(%this,%obj) {
 
 	if (!isObject(%obj)) {
 		%this.selectedCloudLayer = "";
-		%this.selectedCloudLayerName = "";
-		CloudLayerInspector.inspect("");
+		%this.selectedCloudLayerName = "";		
 		syncParamArray(%this.CloudLayerParamArray);
 		return;
 	}
@@ -209,7 +208,7 @@ function SEP_AmbientManager::createCloudLayer(%this) {
       };
 	%group = SceneCreatorWindow.getActiveSimGroup();
 	%group.add(%obj);
-	
+	%obj.setFileName(MissionGroup.getFileName());
 	SEP_CloudLayerMenu.add(%obj.getName(),%obj.getId());
 	SEP_CloudLayerMenu.setSelected(%obj.getId());
 }

@@ -100,7 +100,7 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 
 		if (isObject(%testObj)) {
 			%testObj.setFieldValue(%field,%value);
-			devLog("Obj:",%syncData,"Field",%field,"Value",%value);
+			//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
 		}
 		//Check for a standard global starting with $
 		else if (getSubStr(%syncData,0,1) $= "$") {

@@ -19,10 +19,13 @@ function LabObj::inspect(%this,%obj,%doApply) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabObj::update(%this,%obj,%field,%value,%fieldId) {
-	logb("LabObj::update(%this,%obj,%field,%value,%fieldId)",%obj.getName(),%field,%value,%fieldId);
+	logd("LabObj::update(%this,%obj,%field,%value,%fieldId)",%obj.getName(),%field,%value,%fieldId);
 	%initialValue = %obj.getFieldValue(%field);
 	LabInspect.inspect(%obj);
-	%obj.setFieldValue(%field,%value,%fieldId);	
+	if (%fieldId !$= "")
+		%obj.setFieldValue(%field,%value,%fieldId);	
+	else
+		%obj.setFieldValue(%field,%value);	
 	LabInspect.apply();
 	
 	

@@ -90,12 +90,14 @@ function GuiControl::getTypeValue( %this ) {
 		%value = %this.isStateOn();
 	case "Color":
 		%value = %this.BaseColor ;
-		
+		if (getWordCount(%value) <= 3)
+	 		%value = %value SPC 1;
+	 		
 		if (%this.isIntColor){
 	   	%value = ColorFloatToInt(%value);			
 	   
 	   }
-	 
+	 	
 		
 	case "MenuId":
 		%value = %this.getSelected();

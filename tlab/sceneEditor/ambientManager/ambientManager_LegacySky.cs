@@ -74,8 +74,7 @@ function SEP_LegacySkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg
 // Sync the current profile values into the params objects
 function SEP_LegacySkyManager::updateField( %this,%field, %value,%obj ) { 
 	devLog("SEP_LegacySkyManager::updateField( %this,%field, %value,%obj )",%this,%field, %value,%obj );	
-	
-	
+		
 	if (!isObject(%obj)){
 		eval("%obj = "@%obj@";");
 		if (!isObject(%obj)){
@@ -83,19 +82,14 @@ function SEP_LegacySkyManager::updateField( %this,%field, %value,%obj ) {
  			return;
 		}
 	}
-	
-	//SceneInspector.inspect(%obj);
-	%currentValue = %obj.getFieldValue(%field);
-	if (%currentValue $= %value) {		
-		return;
-	}
-	LabObj.set(%obj,%field,%value);
-	//SceneInspector.apply(%obj);
-	//%obj.setFieldValue(%field,%value,%layerId);
-	EWorldEditor.isDirty = true;
-	%this.setDirtyObject(%obj);  
-	
-	//syncParamArray(SEP_AmbientManager.FogParamArray);
+	//For fogScale, we need to update the levelInfo fogCOlor also	
+	if (%field $= "fogColor"){
+		LabObj.set(theLevelInfo,"defaultFogColor",%value,"");		
+	}		
+		
+	LabObj.set(%obj,%field,%value);	
+
+	%this.setDirtyObject(%obj); 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -109,6 +103,9 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 		%this.selectedSkyBox = "";
 		return;
 	}
+	if (theLevelInfo.defaultFogColor !$= "")
+		LabObj.set(theLevelInfo,"fogColor",theLevelInfo.defaultFogColor);		
+		
 	%this.selectedSunObj = %obj;
 	%this-->legacySkyTitle.text = "Sky type:\c2 Sun+SkyBox \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedSun = %obj;
@@ -123,7 +120,7 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 	}
 	
 	
-	
+	LabObj.Inspect(%obj);
 	syncParamArray(SEP_LegacySkyManager.paramArray);
 }
 //------------------------------------------------------------------------------
@@ -135,32 +132,11 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 function SEP_LegacySkyManager::setDirtyObject(%this,%obj,%isDirty) {
 	logd("SEP_LegacySkyManager::setDirtyObject(%this,%obj,%isDirty)",%this,%obj,%isDirty);
 	
-	if (!isObject(%obj))
+	%isDirty = SEP_AmbientManager.setDirtyObject(%obj,%isDirty);
+	if (%isDirty $= "") //If object is invalid it will return empty string
 		return;
-		
-	if (%isDirty !$= ""){
-		LabObj.setDirty(%obj,%isDirty);
-	}
 	
-	if (%isDirty)
-		EWorldEditor.isDirty = true;
-	%isDirty = LabObj.isDirty(%obj);
-	SEP_LegacySkySaveButton.active = %isDirty;
-	return;
-	if (isObject(%obj)){
-		SEP_AmbientManager.setObjectDirty(%obj,%isDirty);
-	
-		if (%isDirty){
-			%this.dirtyList = strAddWord(%this.dirtyList,%obj.getId(),true);
-		} else {
-			%this.dirtyList = strRemoveWord(%this.dirtyList,%obj.getId());
-		}
-	}
-	
-	%legacyIsDirty = false;
-	if (getWordCount(%this.dirtyList) > 0)
-		%legacyIsDirty = true;
-	SEP_LegacySkySaveButton.active = %legacyIsDirty;
+	SEP_ScatterSkySaveButton.active = %isDirty;		
 }
 //------------------------------------------------------------------------------
 

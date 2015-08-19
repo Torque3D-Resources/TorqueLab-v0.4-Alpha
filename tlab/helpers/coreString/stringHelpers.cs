@@ -334,10 +334,12 @@ function ColorIntToFloat( %color,%length ) {
 //==============================================================================
 // Empty Editor Gui
 function ColorFloatLength(%color,%length) {
+	devLog("Start color float length:",%color,"Length:",%length);
 	%color.r = mFloatLength(%color.r,%length);
 	%color.g = mFloatLength(%color.g,%length);
 	%color.b = mFloatLength(%color.b,%length);
 	%color.a = mFloatLength(%color.a,%length);	
+	devLog("End color float length:",%color);
 	return %color;
 }
 //------------------------------------------------------------------------------
