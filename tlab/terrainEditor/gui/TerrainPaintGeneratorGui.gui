@@ -49,7 +49,7 @@
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsWindowProfile_Dark";
+      profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -72,7 +72,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -139,7 +139,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsTreeViewProfile_Dark";
+               profile = "ToolsTreeViewProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "GuiToolTipProfile";
@@ -163,7 +163,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -262,7 +262,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -497,7 +497,7 @@
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsWindowProfile_Dark";
+      profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -648,7 +648,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_Blue";
+                  profile = "ToolsTextEditDark";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -749,7 +749,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_Blue";
+                  profile = "ToolsTextEditDark";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -866,7 +866,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -965,7 +965,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      variable = "$TPG_ValueStore1";
@@ -1099,7 +1099,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      variable = "$TPG_ValueStore2";
@@ -1233,7 +1233,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      variable = "$TPG_ValueStore3";
@@ -1367,7 +1367,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark_Blue";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      variable = "$TPG_ValueStore4";
@@ -1451,7 +1451,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1563,7 +1563,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1655,7 +1655,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1992,7 +1992,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "TerrainPaintGeneratorGui.layerSelected($ThisControl);";
@@ -2045,7 +2045,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2075,7 +2075,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2240,7 +2240,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2270,7 +2270,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2463,7 +2463,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue";
+                        profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2615,7 +2615,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsPanelColorA";
+                  profile = "ToolsFillAccentA";
                   visible = "0";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2707,7 +2707,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkA";
+                        profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2759,7 +2759,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
+                           profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2789,7 +2789,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
+                           profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2808,7 +2808,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkA";
+                        profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2860,7 +2860,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
+                           profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2890,7 +2890,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
+                           profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2909,7 +2909,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkA";
+                        profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2937,7 +2937,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_Blue";
+                           profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2956,7 +2956,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsPanelDarkA";
+                        profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -3252,7 +3252,7 @@
          minExtent = "8 2";
          horizSizing = "left";
          vertSizing = "bottom";
-         profile = "ToolsRolloutProfile_Thin";
+         profile = "ToolsRolloutProfile_S1";
          visible = "0";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -3492,7 +3492,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TPG_DefaultHeightMin";
@@ -3570,7 +3570,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark_Blue";
+                                 profile = "ToolsTextEditDark";
                                  visible = "1";
                                  active = "1";
                                  variable = "$TPG_DefaultHeightMax";
@@ -3701,7 +3701,7 @@
          minExtent = "8 2";
          horizSizing = "center";
          vertSizing = "center";
-         profile = "ToolsWindowProfile_Dark";
+         profile = "ToolsWindowProfile";
          visible = "0";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -4232,7 +4232,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkA";
+               profile = "ToolsFillDarkA";
                visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -5032,7 +5032,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsWindowProfile_Dark";
+         profile = "ToolsWindowProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -5199,7 +5199,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         variable = "$TPG_DefaultHeightMin";
@@ -5278,7 +5278,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         variable = "$TPG_DefaultHeightMax";

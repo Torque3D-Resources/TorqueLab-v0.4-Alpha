@@ -13,6 +13,8 @@ $InGuiEditor = false;
 $MLAAFxGuiEditorTemp = false;
 //==============================================================================
 function GuiEdit( %loadLast ) {
+	devLog("SHOULDNT HAPPEN ANYMORE!!! --> 	GuiEdit");
+	
 	if (Canvas.isFullscreen()) {
 		LabMsgOK("Windowed Mode Required", "Please switch to windowed mode to access the GUI Editor.");
 		return;
@@ -59,52 +61,12 @@ function GuiEditContent( %content ) {
 	if( !isObject( GuiEditCanvas ) )
 		new GuiControl( GuiEditCanvas, EditorGuiGroup );
 
+	GuiEdMap.push();
 	$InGuiEditor = true;
 	GuiEditor.openForEditing( %content );
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function toggleGuiEditor( %make ) {
-	if( %make ) {
-		GuiEditor.forceContent = "";
 
-		if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui ) {
-			if (EditorGui.isAwake()) {
-				GuiEditor.forceContent = EditorGui;
-			}
-
-			toggleEditor( true );
-		}
-
-		GuiEdit();
-		// Cancel the scheduled event to prevent
-		// the level from cycling after it's duration
-		// has elapsed.
-		cancel($Game::Schedule);
-	}
-}
-function toggleLastGuiEditor( %make ) {
-	if( %make ) {
-		GuiEditor.forceContent = "";
-
-		if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui ) {
-			if (EditorGui.isAwake()) {
-				GuiEditor.forceContent = EditorGui;
-			}
-
-			toggleEditor( true );
-		}
-
-		GuiEdit(true);
-		// Cancel the scheduled event to prevent
-		// the level from cycling after it's duration
-		// has elapsed.
-		cancel($Game::Schedule);
-	}
-}
-GlobalActionMap.bind( keyboard, "f10", toggleGuiEditor );
-GlobalActionMap.bind( keyboard, "ctrl f10", toggleLastGuiEditor );
-//------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
 //    Methods.
@@ -190,7 +152,7 @@ function GuiEditor::switchToWorldEditor( %this ) {
 	if( GuiEditorContent.getObject( 0 ) == EditorGui.getId() )
 		%editingWorldEditor = true;
 
-	GuiEdit();
+	ToggleGuiEdit();
 
 	if( !$missionRunning )
 		EditorNewLevel();
@@ -201,6 +163,8 @@ function GuiEditor::switchToWorldEditor( %this ) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::enableMenuItems(%this, %val) {
+	if( !isObject( %this.menuBar ) )
+		return;
 	%menu = GuiEditCanvas.menuBar->EditMenu.getID();
 	%menu.enableItem( 3, %val ); // cut
 	%menu.enableItem( 4, %val ); // copy
@@ -257,9 +221,12 @@ function GuiEditor::redo(%this) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::updateUndoMenu(%this) {
+	
 	%uman = %this.getUndoManager();
 	%nextUndo = %uman.getNextUndoName();
 	%nextRedo = %uman.getNextRedoName();
+	if (!isObject(GuiEditCanvas.menuBar))
+		return;
 	%editMenu = GuiEditCanvas.menuBar->editMenu;
 	%editMenu.setItemName( 0, "Undo " @ %nextUndo );
 	%editMenu.setItemName( 1, "Redo " @ %nextRedo );
@@ -768,6 +735,8 @@ function GuiEditorTabBook::onWake( %this ) {
 
 function GuiEditorTabBook::onTabSelected( %this, %text, %index ) {
 	%sidebar = GuiEditorSidebar;
+	if (!isObject(%sidebar))
+		return;
 	%name = %this.getObject( %index ).getInternalName();
 
 	switch$( %name ) {
@@ -860,7 +829,7 @@ function GuiEditorSnapCheckBox::onAction(%this) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditorGui::onWake( %this ) {
-	GHGuiEditor.setStateOn( 1 );
+	GuiEdToggle.setStateOn( 1 );
 
 	if( !isObject( %this->SelectControlsDlg ) ) {
 		%this.add( GuiEditorSelectDlg );
@@ -881,16 +850,20 @@ function GuiEditorGui::onWake( %this ) {
 
 	if( !GuiEditorToolbox.isInitialized )
 		GuiEditorToolbox.initialize();
+		
+	if (isObject(GuiEditCanvas.menuBar)){
+		
 
-	// Set up initial menu toggle states.
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, GuiEditor.snapToEdges );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, GuiEditor.snapToCenters );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, GuiEditor.snapToGuides );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, GuiEditor.snapToControls );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, GuiEditor.snapToCanvas );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, GuiEditor.snap2Grid );
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, GuiEditor.drawGuides );
-	GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, GuiEditor.fullBoxSelection );
+		// Set up initial menu toggle states.
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, GuiEditor.snapToEdges );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, GuiEditor.snapToCenters );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, GuiEditor.snapToGuides );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, GuiEditor.snapToControls );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, GuiEditor.snapToCanvas );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, GuiEditor.snap2Grid );
+		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, GuiEditor.drawGuides );
+		GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, GuiEditor.fullBoxSelection );
+	}
 	// Sync toolbar buttons.
 	GuiEditorSnapCheckBox.setStateOn( GuiEditor.snap2Grid );
 	GuiEditorEdgeSnapping_btn.setStateOn( GuiEditor.snapToEdges );

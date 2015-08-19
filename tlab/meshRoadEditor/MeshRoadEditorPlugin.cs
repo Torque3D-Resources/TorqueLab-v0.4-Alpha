@@ -7,7 +7,8 @@ function MeshRoadEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
 	// Add ourselves to the Editor Settings window
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::onActivated( %this ) {
 	EWToolsPaletteArray->MeshRoadEditorAddRoadMode.performClick();
 	EditorGui.bringToFront( MeshRoadEditorGui );
@@ -24,9 +25,12 @@ function MeshRoadEditorPlugin::onActivated( %this ) {
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo("Mesh road editor.");
 	EditorGuiStatusBar.setSelection("");
+	
+	MRoadManager.Init();
 	Parent::onActivated(%this);
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::onDeactivated( %this ) {
 	
 	// Restore the previous Gizmo
@@ -35,7 +39,8 @@ function MeshRoadEditorPlugin::onDeactivated( %this ) {
 	//GlobalGizmoProfile.alignment = %this.prevGizmoAlignment;
 	Parent::onDeactivated(%this);
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
 	%hasSelection = false;
 
@@ -48,22 +53,28 @@ function MeshRoadEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
 	%editMenu.enableItem( 6, %hasSelection ); // Delete
 	%editMenu.enableItem( 8, false ); // Deselect
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::handleDelete( %this ) {
 	MeshRoadEditorGui.deleteNode();
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::handleEscape( %this ) {
 	return MeshRoadEditorGui.onEscapePressed();
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::isDirty( %this ) {
 	return MeshRoadEditorGui.isDirty;
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function MeshRoadEditorPlugin::onSaveMission( %this, %missionFile ) {
 	if( MeshRoadEditorGui.isDirty ) {
 		MissionGroup.save( %missionFile );
 		MeshRoadEditorGui.isDirty = false;
 	}
 }
+//------------------------------------------------------------------------------
+//==============================================================================

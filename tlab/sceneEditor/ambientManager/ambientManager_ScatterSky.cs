@@ -16,20 +16,18 @@ function SEP_ScatterSkyManager::buildParams( %this ) {
 	%arCfg.setVal("exposure",       "" TAB "Sky exposure" TAB "SliderEdit" TAB "range>>0 50;;tickAt>>0.1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("brightness",       "" TAB "Sun brightness" TAB "SliderEdit" TAB "range>>0 2;;tickAt>>0.01" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("sunScale",       "" TAB "sunScale" TAB "ColorSlider" TAB "mode>>float;;flen>>2" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("ambientScale",       "" TAB "ambientScale" TAB "ColorSlider" TAB "mode>>float;;validate>>flen 2" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	
+	%arCfg.setVal("ambientScale",       "" TAB "ambientScale" TAB "ColorSlider" TAB "mode>>float;;flen>>2" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);	
 	%arCfg.setVal("flareScale",       "" TAB "flareScale" TAB "SliderEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	
 	%arCfg.group[%gid++] = "Sky & Sun settings" TAB "Stack StackA";
 	%arCfg.setVal("rayleighScattering",       "" TAB "rayleighScattering" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	//%arCfg.setVal("fogScale",       "" TAB "fogScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("zOffset",       "" TAB "zOffset" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("ambientScale",       "" TAB "ambientScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("sunSize",       "" TAB "sunSize" TAB "SliderEdit" TAB "range>>0 10" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("colorizeAmount",       "" TAB "colorizeAmount" TAB "SliderEdit" TAB "range>>0 5" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("colorize",       "" TAB "colorize" TAB "ColorSlider" TAB "mode>>float" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	%arCfg.setVal("colorize",       "" TAB "colorize" TAB "ColorSliderEdit" TAB "mode>>float" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("azimuth",       "" TAB "azimuth" TAB "SliderEdit" TAB "range>>0 360;;validate>>flen 1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("elevation",       "" TAB "elevation" TAB "SliderEdit" TAB "range>>0 90" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	%arCfg.setVal("elevation",       "" TAB "elevation" TAB "SliderEdit" TAB "range>>0 360" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	
 	%arCfg.group[%gid++] = "Fog settings" TAB "Stack StackA";
 	%arCfg.setVal("fogScale",       "" TAB "Fog Color" TAB "ColorEdit" TAB "mode>>float;;flen>>2;;noAlpha>>1" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);	
@@ -54,10 +52,10 @@ function SEP_ScatterSkyManager::buildParams( %this ) {
 	
 	
 %arCfg.group[%gid++] = "Night settings" TAB "Stack StackB";
-	%arCfg.setVal("moonAzimuth",       "" TAB "moonAzimuth" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("moonElevation",       "" TAB "moonElevation" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("moonEnabled",       "" TAB "moonEnabled" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
-	%arCfg.setVal("moonScale",       "" TAB "moonScale" TAB "TextEdit" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	%arCfg.setVal("moonAzimuth",       "" TAB "moonAzimuth" TAB "SliderEdit" TAB "range>>0 360" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+%arCfg.setVal("moonElevation",       "" TAB "moonElevation" TAB "SliderEdit" TAB "range>>0 360" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	%arCfg.setVal("moonEnabled",       "" TAB "moonEnabled" TAB "Checkbox" TAB "" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
+	%arCfg.setVal("moonScale",       "" TAB "moonScale" TAB "SliderEdit" TAB "range>>0 10" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("moonLightColor",       "" TAB "moonLightColor" TAB "ColorSlider" TAB "mode>>float" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("nightColor",       "" TAB "nightColor" TAB "ColorSlider" TAB "mode>>float"TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
 	%arCfg.setVal("nightFogColor",       "" TAB "nightFogColor" TAB "ColorSlider" TAB "mode>>float" TAB "SEP_ScatterSkyManager.selectedScatterSky" TAB %gid);
@@ -85,16 +83,18 @@ function SEP_ScatterSkyManager::selectScatterSky(%this,%obj) {
 	logd("SEP_ScatterSkyManager::selectScatterSky(%this,%obj)",%this,%obj);
 
 	if (!isObject(%obj)) {
+		%this.selectedSunObj = "";
 		%this.selectedScatterSky = "";
 		%this.selectedScatterSkyName = "";
 		return;
 	}
-	
+	%this.selectedSunObj = %obj;
 	%this-->scatterSkyTitle.text = "Sky type:\c2 ScatterSky \c1-> \c3" @ %obj.getName() @"\c0 Properties";
 	%this.selectedScatterSky = %obj;
 	%this.selectedScatterSkyName = %obj.getName();
 	%this.setDirtyObject(%obj);
-	ScatterSkyInspector.inspect(	%obj);
+	Lab.addInspect(%obj);
+	//ScatterSkyInspector.inspect(	%obj);
 	syncParamArray(SEP_ScatterSkyManager.paramArray);
 }
 //------------------------------------------------------------------------------
@@ -120,6 +120,7 @@ function SEP_ScatterSkyManager::toggleInspectorMode(%this) {
 
 //==============================================================================
 function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj) {	
+	logc("SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj)",%this,%field,%value,%obj);
 	if (%obj $= "")
 		%obj = %this.selectedScatterSky;
 		
@@ -133,23 +134,28 @@ function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj) {
 		}
 	}
 	
-	if (%obj.getClassName() !$= "ScatterSky")
-		SceneInspector.inspect(%obj);
+	
 		
 		
 
 	%currentValue = %obj.getFieldValue(%field);
 
-	if (%currentValue $= %value) {		
-		return;
-	}
+	//if (%currentValue $= %value) {		
+	//	return;
+	//}
 	
-	if (%obj.getClassName() $= "ScatterSky")
-		ScatterSkyInspector.apply();
-	else
-		SceneInspector.apply();
+	//if (%obj.getClassName() !$= "ScatterSky")
+	//SceneInspector.inspect(%obj);
+	LabObj.set(%obj,%field,%value);
+	
+	//SceneInspector.inspect(%obj);
+	//SceneInspector.apply();	
+	//if (%obj.getClassName() $= "ScatterSky")
+	//	ScatterSkyInspector.apply();
+	//else
+		//SceneInspector.apply();
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value);
+
 	EWorldEditor.isDirty = true;
 	%this.setDirtyObject(%obj,true);
 }
@@ -157,7 +163,7 @@ function SEP_ScatterSkyManager::updateFieldValue(%this,%field,%value,%obj) {
 
 //==============================================================================
 function SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg1,%arg2) {
-	logd("SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg1,%arg2)",%this,%field,%value,%ctrl,%array,%arg1,%arg2);
+	logc("SEP_ScatterSkyManager::updateParam(%this,%field,%value,%ctrl,%array,%arg1,%arg2)",%this,%field,%value,%ctrl,%array,%arg1,%arg2);
 	
 	%arrayValue = %array.getVal(%field);
 	%obj = getField(%arrayValue,4);	

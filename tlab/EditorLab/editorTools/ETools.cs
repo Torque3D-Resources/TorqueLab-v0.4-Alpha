@@ -16,7 +16,15 @@ function ETools::initTools(%this) {
 
 //==============================================================================
 function ETools::toggleTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+		
+	if (!isObject(%dlg)){
+		warnLog("Trying to toggle invalid tool:",%tool);
+		return;
+	}
 	%this.fitIntoParents();
 	
 	ETools.visible = true;
@@ -47,19 +55,25 @@ function ETools::toggleTool(%this,%tool) {
 
 //==============================================================================
 function ETools::showTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+
 	if(!isObject(%dlg)){
 		warnLog("Trying to show invalid tools dialog for tool:",%tool,"Dlg",%dlg);
 		return;
 	}
 	%this.fitIntoParents();
-	
+	%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+	if (isObject(%toggler))
+		%toggler.setStateOn(true);
 	ETools.visible = true;
 
 	%dlg.setVisible(true);
 		
 	if (isObject(%dlg.linkedButton))
-		%dlg.linkedButton.setStateOn(%dlg.visible);
+		%dlg.linkedButton.setStateOn(true);
 		
 	if (%dlg.isMethod("onShow"))
 		%dlg.onShow();
@@ -68,10 +82,16 @@ function ETools::showTool(%this,%tool) {
 
 //==============================================================================
 function ETools::hideTool(%this,%tool) {
-	%dlg = %this.findObjectByInternalName(%tool,true);
+	if (isObject(%tool))
+		%dlg = %tool;
+	else
+		%dlg = %this.findObjectByInternalName(%tool,true);
+	
 	
 
-
+%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+	if (isObject(%toggler))
+		%toggler.setStateOn(false);
 
 	%dlg.setVisible(false);
 	
@@ -84,7 +104,7 @@ function ETools::hideTool(%this,%tool) {
 		%this.visible = 0;
 		
 	if (isObject(%dlg.linkedButton))
-		%dlg.linkedButton.setStateOn(%dlg.visible);
+		%dlg.linkedButton.setStateOn(false);
 		
 	if (%dlg.isMethod("onHide"))
 		%dlg.onHide();

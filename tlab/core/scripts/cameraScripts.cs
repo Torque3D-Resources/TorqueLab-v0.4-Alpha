@@ -42,7 +42,7 @@ function Lab::SyncEditorGui() {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::CreateCameraViewContextMenu(%this) {
-	if( !isObject( LGM.contextMenuField ) )
+	if( !isObject( GLab.contextMenuField ) )
 		Lab.contextMenuCamView = new PopupMenu() {
 		superClass = "MenuBuilder";
 		isPopup = true;
@@ -63,7 +63,7 @@ function Lab::showCameraViewContextMenu( %this ) {
 		Lab.CreateCameraViewContextMenu();
 
 	//Lab.contextMenuField.setItem(0,"-->"@%this.linkedField@"<-- Field Options","");
-	//Lab.contextMenuField.setItem(2,"-->"@$LGM_SelectedProfile@"<-- Profile Options","");
-	//$LGM_ProfileFieldContext = %this.linkedField;
+	//Lab.contextMenuField.setItem(2,"-->"@$GLab_SelectedProfile@"<-- Profile Options","");
+	//$GLab_ProfileFieldContext = %this.linkedField;
 	Lab.contextMenuCamView.showPopup( Canvas );
 }

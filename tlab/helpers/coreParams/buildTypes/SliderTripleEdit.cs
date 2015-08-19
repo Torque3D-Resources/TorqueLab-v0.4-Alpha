@@ -48,7 +48,7 @@ function buildParamSliderTripleEdit( %pData ) {
 
 				%slider.command = %pData.Command;
 				%slider.altCommand = %pData.AltCommand;
-				%slider.internalName = %pData.InternalName@"_slider";
+				%slider.internalName = %pData.InternalName@"__slider";
 				%slider.variable = %pData.Variable;
 				if (%pData.Value !$= "")
 					%slider.setValue(%pData.Value);
@@ -73,7 +73,7 @@ function buildParamSliderTripleEdit( %pData ) {
 				%slider1.range = %range1;
 				%slider1.command = %pData.Command;
 				%slider1.altCommand = %pData.AltCommand;
-				%slider1.internalName = %pData.InternalName@"_slider1";
+				%slider1.internalName = %pData.InternalName@"__slider1";
 				%slider1.variable = %pData.Variable;
 				if (%pData.Value !$= "")
 					%slider1.setValue(%pData.Value);
@@ -98,7 +98,7 @@ function buildParamSliderTripleEdit( %pData ) {
 				%slider2.range = %range2;
 				%slider2.command = %pData.Command;
 				%slider2.altCommand = %pData.AltCommand;
-				%slider2.internalName = %pData.InternalName@"_slider2";
+				%slider2.internalName = %pData.InternalName@"__slider2";
 				%slider2.variable = %pData.Variable;
 				if (%pData.Value !$= "")
 					%slider2.setValue(%pData.Value);

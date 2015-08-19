@@ -8,10 +8,10 @@
 //==============================================================================
 //==============================================================================
 function Lab::initAllPluginsDialogs( %this ) {
-	%gameLabGuis = "";
+	%TLabGameGuis = "";
 	foreach(%gui in LabDialogGuiSet) {	
 		foreach(%dlg in %gui){
-			//If gameName is set, this gui is available in game (GameLabGui)			
+			//If gameName is set, this gui is available in game (TLabGameGui)			
 			
 			%dlg.visible = 0;
 		}		
@@ -23,8 +23,8 @@ function Lab::initAllPluginsDialogs( %this ) {
 
 //==============================================================================
 function Lab::initGameLabDialogs( %this ) {
-	GameLabGui.reset();
-	%mainGui = GameLabGui;
+	TLabGameGui.reset();
+	%mainGui = TLabGameGui;
 	%menu = %mainGui-->dialogMenu;
 	%menu.clear();
 	%menu.add("Select a dialog" ,0);
@@ -121,9 +121,9 @@ function PluginDlg::hideDlg( %this, %dlg ) {
 //==============================================================================
 function PluginDlg::closeSelf( %this,%dlgCtrl ) {
 	
-	//Check is the dlg is used as GameLabGui
-	if (%dlgCtrl.parentGroup $= GameLabGui){
-		GameLabGui.closeAll();
+	//Check is the dlg is used as TLabGameGui
+	if (%dlgCtrl.parentGroup $= TLabGameGui){
+		TLabGameGui.closeAll();
 	}
 	%this.hideDlgCtrl(%dlgCtrl);
 	

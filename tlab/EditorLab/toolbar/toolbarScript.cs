@@ -58,7 +58,7 @@ function Lab::initToolbarGroup(%this,%gui) {
 		%disabledDropContainer =  new GuiContainer() {
 			extent = %gui.extent;
 			horizSizing = "width";
-			profile = "ToolsPanelDarkA";
+			profile = "ToolsFillDarkA";
 			internalName = %gui.getName();
 			superClass = "PluginToolbarEnd";
 		};
@@ -66,7 +66,7 @@ function Lab::initToolbarGroup(%this,%gui) {
 	}
 
 	LabGeneratedSet.add(EToolbarDisabledDrop); //Dont save those with EditorGui
-	%disabledDropContainer.profile = "ToolsPanelDarkA_T50";
+	%disabledDropContainer.profile = "ToolsFillDarkA_T50";
 	%disabledDropContainer.pluginName = %pluginName;
 	%disabledDropContainer.setPosition(%gui.position.x,%gui.position.y);
 	hide(%disabledDropContainer);

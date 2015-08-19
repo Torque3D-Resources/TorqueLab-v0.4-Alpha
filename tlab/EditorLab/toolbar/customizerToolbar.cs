@@ -42,7 +42,7 @@ function Lab::createNewToolbarIconGroup(%this) {
 		position = "472 0";
 		extent = "68 30";
 		minExtent = "4 16";
-		profile = "ToolsPanelDarkB";
+		profile = "ToolsFillDarkB";
 		visible = "1";
 		active = "1";
 		internalName = "NewToolbarGroup";
@@ -51,7 +51,7 @@ function Lab::createNewToolbarIconGroup(%this) {
 			position = "0 0";
 			extent = "16 30";
 			minExtent = "4 2";
-			profile = "ToolsPanelDarkB";
+			profile = "ToolsFillDarkB";
 			visible = "1";
 			active = "1";
 			tooltipProfile = "ToolsGuiToolTipProfile";

@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-
+$LabParamsStyle = "OptStyleA";
 
 //==============================================================================
 //Initialize plugin data
@@ -17,17 +17,19 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 	if (%container $= "")
 		%container = %name@"ParamStack";
 
+	%name = strreplace(%name," ","_");
 	%arrayName = %name;
-
 	if (%useLongName)
 		%arrayName = %group@%name;
-
+		
+	
 	%fullName = %arrayName@"_Param";
 	%array = newArrayObject(%fullName,LabParamsGroup,"ParamArray");
 	%array.internalName = %name;
 	%array.displayName = %name;
 	%array.container = %container;
 	%array.paramCallback = "Lab.onParamBuild";
+	
 	%array.group = %group;
 	%array.useNewSystem = true;
 	//If no cfgObject supplied, simply use the new array as object
@@ -36,7 +38,7 @@ function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
 
 	%array.cfgObject = %cfgObject;
 	%array.groupLink = %group@"_"@%name;
-	%array.style = "LabCfgB_304";
+
 
 	if (%prefGroup $= "")
 		%prefGroup = %name;

@@ -67,7 +67,8 @@ function toggleVisible(%obj,%child) {
 //==============================================================================
 /// Clone an object and make source invisible
 function cloneObject( %source,%name,%internalName,%parent ) {
-   delObj(%name);
+	if (%name !$= "")
+   	delObj(%name);
 	%clone = %source.deepClone();
 	%clone.setVisible(true);
 	if (%internalName !$= "")

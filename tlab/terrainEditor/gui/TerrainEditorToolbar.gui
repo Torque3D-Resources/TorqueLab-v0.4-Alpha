@@ -9,7 +9,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "142 0";
    extent = "618 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "12491";
-      disabledGroup = "12492";
-      EditorContainer = "4920";
+      defaultStack = "14405";
+      disabledGroup = "14406";
+      EditorContainer = "4007";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "12493 12502 12528";
+      stackLists = "14407 14416 14442";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -72,7 +72,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -95,7 +95,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -290,7 +290,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -313,7 +313,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -371,7 +371,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -486,7 +486,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -601,7 +601,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -716,7 +716,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -882,7 +882,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsPanelDarkB";
+      profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -905,7 +905,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          minExtent = "4 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkB";
+         profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

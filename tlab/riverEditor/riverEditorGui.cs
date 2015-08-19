@@ -91,15 +91,17 @@ function RiverEditorGui::onRiverSelected( %this, %river ) {
 	%this.river = %river;
 	RiverInspector.inspect( %river );
 	RiverTreeView.buildVisibleTree(true);
-
+RiverManager.currentRiver = %river;
 	if( RiverTreeView.getSelectedObject() != %river ) {
 		RiverTreeView.clearSelection();
 		%treeId = RiverTreeView.findItemByObjectId( %river );
 		RiverTreeView.selectItem( %treeId );
 	}
+	RiverManager.updateRiverData();
 }
 
 function RiverEditorGui::onNodeSelected( %this, %nodeIdx ) {
+	devLog("RiverEditorGui::onNodeSelected( %this, %nodeIdx )",%nodeIdx);
 	RiverEditorGui.selectedNode = %nodeIdx;
 
 	if ( %nodeIdx == -1 ) {
@@ -130,13 +132,16 @@ function RiverEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		RiverEditorOptionsWindow-->CurrentDepthSlider.setActive( true );
 		RiverEditorOptionsWindow-->CurrentDepthSlider.setValue( %this.getNodeDepth() );
 	}
+	RiverManager.onNodeSelected(%nodeIdx,true);
 }
 
 function RiverEditorGui::onNodeModified( %this, %nodeIdx ) {
+	devLog("RiverEditorGui::onNodeModified( %this, %nodeIdx )",%nodeIdx);
 	RiverEditorOptionsWindow-->position.setValue( %this.getNodePosition() );
 	RiverEditorOptionsWindow-->rotation.setValue( %this.getNodeNormal() );
 	RiverEditorOptionsWindow-->width.setValue( %this.getNodeWidth() );
 	RiverEditorOptionsWindow-->depth.setValue( %this.getNodeDepth() );
+	RiverManager.onNodeModified(%nodeIdx);
 }
 
 function RiverEditorGui::editNodeDetails( %this ) {
@@ -146,30 +151,7 @@ function RiverEditorGui::editNodeDetails( %this ) {
 	%this.setNodeDepth( RiverEditorOptionsWindow-->depth.getText() );
 }
 
-function RiverInspector::inspect( %this, %obj ) {
-	%name = "";
 
-	if ( isObject( %obj ) )
-		%name = %obj.getName();
-	else
-		RiverFieldInfoControl.setText( "" );
-
-	//RiverInspectorNameEdit.setValue( %name );
-	Parent::inspect( %this, %obj );
-}
-
-function RiverInspector::onInspectorFieldModified( %this, %object, %fieldName, %arrayIndex, %oldValue, %newValue ) {
-	// Same work to do as for the regular WorldEditor Inspector.
-	Inspector::onInspectorFieldModified( %this, %object, %fieldName, %arrayIndex, %oldValue, %newValue );
-}
-
-function RiverInspector::onFieldSelected( %this, %fieldName, %fieldTypeStr, %fieldDoc ) {
-	RiverFieldInfoControl.setText( "<font:ArialBold:14>" @ %fieldName @ "<font:ArialItalic:14> (" @ %fieldTypeStr @ ") " NL "<font:Arial:14>" @ %fieldDoc );
-}
-
-function RiverTreeView::onInspect(%this, %obj) {
-	RiverInspector.inspect(%obj);
-}
 
 function RiverTreeView::onSelect(%this, %obj) {
 	RiverEditorGui.road = %obj;
@@ -195,30 +177,37 @@ function RiverEditorGui::prepSelectionMode( %this ) {
 //------------------------------------------------------------------------------
 function ERiverEditorSelectModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Select";
 }
 
 function ERiverEditorAddModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Add";
 }
 
 function ERiverEditorMoveModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Move";
 }
 
 function ERiverEditorRotateModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Rotate";
 }
 
 function ERiverEditorScaleModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Scale";
 }
 
 function ERiverEditorInsertModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Insert";
 }
 
 function ERiverEditorRemoveModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo(%this.ToolTip);
+	RiverManager.toolMode = "Remove";
 }
 
 function RiverDefaultWidthSliderCtrlContainer::onWake(%this) {

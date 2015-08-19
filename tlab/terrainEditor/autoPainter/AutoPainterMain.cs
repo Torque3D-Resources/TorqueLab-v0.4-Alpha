@@ -23,10 +23,7 @@ TPG_Window-->saveGroupButton.active = false;
 	TPG_StoredValues-->v3.setText("");
 	TPG_StoredValues-->v4.setText("");
 	TPG_StackLayers.clear();
-	TPG_LayerFolderMenu.clear();
-	TPG_LayerFolderMenu.add("TerrainEditor",0);
-	TPG_LayerFolderMenu.add("CurrentLevel",1);
-	TPG_LayerFolderMenu.setSelected(0);
+	
 	$TerrainPaintGeneratorGui_Initialized = true;
 	TPG_StepModeCheckbox.setStateOn(false);
 }

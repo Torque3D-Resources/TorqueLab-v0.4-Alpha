@@ -10,19 +10,32 @@ function initializeGuiEditor() {
 
 	if (!isObject(GuiLab))
 		$GuiLab = new scriptObject("GuiLab");
+	
+	$GuiEd = new scriptObject("GuiEd");
+	
+	delObj(GuiEdMap);
+	new ActionMap(GuiEdMap);
 
 	// GUIs.
 	execGuiEdit(true);
 }
-function execGuiEdit(%execGui) {
+function execGuiEdit(%execGui,%execMainGui) {
+	
 	if (%execGui) {
-		exec( "./gui/guiEditor.ed.gui" );
+		%execMainGui = true;		
 		exec( "./gui/guiEditorNewGuiDialog.ed.gui" );
 		exec( "./gui/guiEditorPrefsDlg.ed.gui" );
 		exec( "./gui/guiEditorSelectDlg.ed.gui" );
 		exec( "./gui/EditorChooseGUI.ed.gui" );
 		exec( "./gui/LabWidgetBuilderDlg.gui" );
 		exec( "tlab/guiEditor/gui/GuiEditFieldDuplicator.gui" );
+	}
+	if (%execMainGui){
+		exec( "./gui/guiEditor.ed.gui" );
+	}
+
+	if (!isObject(GuiEditor)) {
+		addGuiEditorCtrl();
 	}
 
 	// Scripts.
@@ -44,7 +57,11 @@ function execGuiEdit(%execGui) {
 	exec( "./gui/LabWidgetBuilderDlg.cs" );
 	exec( "tlab/guiEditor/scripts/functionControls.cs" );
 	execPattern( "tlab/guiEditor/lab/*.cs" );
+	execPattern( "tlab/guiEditor/menu/*.cs" );
+	execPattern( "tlab/guiEditor/system/*.cs" );
+
 }
 
 function destroyGuiEditor() {
 }
+

@@ -31,30 +31,30 @@ $LabStyleLightColor[1] = "127 143 154 255";
 $LabStyleLightColor[2] = "101 136 166 255";
 $LabStyleLightColor[3] = "101 136 166 255";
 
-%list = "ToolsPanelColorA";
+%list = "ToolsFillAccentA";
 $LabProfilesStyleColor[1] = %list;
-%list = "ToolsPanelColorB";
+%list = "ToolsFillAccentB";
 $LabProfilesStyleColor[2] = %list;
-%list = "ToolsPanelColorC";
+%list = "ToolsFillAccentC";
 $LabProfilesStyleColor[3] = %list;
 
-%list = "ToolsPanelDarkA";
+%list = "ToolsFillDarkA";
 $LabProfilesStyleBackground[1] = %list;
-%list = "ToolsPanelDarkB";
+%list = "ToolsFillDarkB";
 $LabProfilesStyleBackground[2] = %list;
-%list = "ToolsPanelDarkC";
+%list = "ToolsFillDarkC";
 $LabProfilesStyleBackground[3] = %list;
 
-%list = "ToolsPanelDarkA";
+%list = "ToolsFillDarkA";
 $LabProfilesStyleDarkColor[1] = %list;
-%list = "ToolsPanelDarkB";
+%list = "ToolsFillDarkB";
 $LabProfilesStyleDarkColor[2] = %list;
-%list = "ToolsPanelDarkC";
+%list = "ToolsFillDarkC";
 $LabProfilesStyleDarkColor[3] = %list;
 
-%list = "ToolsPanelLightA";
+%list = "ToolsFillLightA";
 $LabProfilesStyleLightColor[1] = %list;
-%list = "ToolsPanelLightB";
+%list = "ToolsFillLightB";
 $LabProfilesStyleLightColor[2] = %list;
-%list = "ToolsPanelLightC";
+%list = "ToolsFillLightC";
 $LabProfilesStyleLightColor[3] = %list;

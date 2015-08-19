@@ -37,7 +37,7 @@ function buildParamSliderText( %pData ) {
 				%slider.skipPrecision = true;
 				%slider.command = %pData.Command;
 				%slider.altCommand = %pData.AltCommand;
-				%slider.internalName = %pData.InternalName@"_slider";
+				%slider.internalName = %pData.InternalName@"__slider";
 				%slider.variable = %pData.Variable;
 				if (%pData.Value !$= "")
 					%slider.setValue(%pData.Value);

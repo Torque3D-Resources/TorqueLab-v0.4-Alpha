@@ -10,19 +10,19 @@ $BasicClouds::Default_["texture2"] = "art/gfx/skies/clouds/cloud3.png";
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_AmbientManager.buildBasicCloudsParams();
 function SEP_AmbientManager::buildBasicCloudsParams( %this ) {
-	%arCfg = createParamsArray("SEP_BasicClouds",SEP_BasicClouds);
+	%arCfg = createParamsArray("SEP_BasicClouds",SEP_BasicClouds_StockParam);
 	%arCfg.updateFunc = "SEP_AmbientManager.updateBasicCloudsParam";
 	//%arCfg.style = "LabCfgB_304";
 	%arCfg.useNewSystem = true;
-
+	//%arCfg.arrayOnly = true;
 	//%arCfg.group[%gid++] = "Cloud Layer #1" TAB "Stack StackA";
 	%arCfg.setVal("layerEnabled[0]",       "" TAB "Enabled" TAB "Checkbox" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
-	%arCfg.setVal("texture[]",       "" TAB "Texture" TAB "FileSelect" TAB "callback>>SEP_AmbientManager.getBasicCloudTexture(0);" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
+	%arCfg.setVal("texture[0]",       "" TAB "Texture" TAB "FileSelect" TAB "callback>>SEP_AmbientManager.getBasicCloudTexture(0);" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texScale[0]",       "" TAB "Layer scale" TAB "SliderEdit" TAB "range>>0 5" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texDirection[0]",       "" TAB "Layer direction" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texSpeed[0]",       "" TAB "Layer speed" TAB "SliderEdit" TAB "range>>0 5" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texOffset[0]",       "" TAB "Layer offset" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
-	%arCfg.setVal("height[0]",       "" TAB "Layer heigth" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
+	%arCfg.setVal("height[0]",       "" TAB "Layer heigth0" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 
 	//%arCfg.group[%gid++] = "Cloud Layer #2" TAB "Stack StackA";
 
@@ -32,7 +32,7 @@ function SEP_AmbientManager::buildBasicCloudsParams( %this ) {
 	%arCfg.setVal("texDirection[1]",       "" TAB "Layer direction" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texSpeed[1]",       "" TAB "Layer speed" TAB "SliderEdit" TAB "range>>0 5" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texOffset[1]",       "" TAB "Layer offset" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
-	%arCfg.setVal("height[1]",       "" TAB "Layer heigth" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
+	%arCfg.setVal("height[1]",       "" TAB "Layer heigth1" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	
 	//%arCfg.group[%gid++] = "Cloud Layer #3" TAB "Stack StackA";
 
@@ -42,7 +42,7 @@ function SEP_AmbientManager::buildBasicCloudsParams( %this ) {
 	%arCfg.setVal("texDirection[2]",       "" TAB "Layer direction" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texSpeed[2]",       "" TAB "Layer speed" TAB "SliderEdit" TAB "range>>0 5" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	%arCfg.setVal("texOffset[2]",       "" TAB "Layer offset" TAB "TextEdit" TAB "" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
-	%arCfg.setVal("height[2]",       "" TAB "Layer heigth" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
+	%arCfg.setVal("height[2]",       "" TAB "Layer heigth2" TAB "SliderEdit" TAB "range>>0 10;;tickAt 1" TAB "SEP_AmbientManager.selectedBasicClouds" TAB %gid);
 	//buildParamsArray(%arCfg,false);
 	%this.BasicCloudsParamArray = %arCfg;
 }
@@ -66,10 +66,10 @@ function SEP_AmbientManager::getBasicCloudTexture( %this,%layer ) {
 	{
 		devLog("Cursor is on");
 		Canvas.cursorOff();
-	//	GameLabGui.noCursor = 0;
+	//	TLabGameGui.noCursor = 0;
 	}*/
 	%this.currentBasicClouds = %layer;
-   %currentFile = $LGM_SelectedObject.bitmap;
+   %currentFile = $GLab_SelectedObject.bitmap;
    //Canvas.cursorOff();
    getLoadFilename("*.*|*.*", "SEP_AmbientManager.setBasicCloudTexture", %currentFile);
 }
@@ -89,7 +89,7 @@ function SEP_AmbientManager::setBasicCloudTexture( %this,%file ) {
 function SEP_AmbientManager::updateBasicCloudField( %this,%field, %value,%layerId ) { 
 	devLog("SEP_AmbientManager::updateBasicCloudField( %this,%field, %value,%layerId )",%this,%field, %value,%layerId );
 	
-	SEP_AmbientManager.buildBasicCloudsParams();
+	//SEP_AmbientManager.buildBasicCloudsParams();
  	%obj = %this.selectedBasicClouds;
 
 	if (!isObject(%obj)) {
@@ -97,19 +97,14 @@ function SEP_AmbientManager::updateBasicCloudField( %this,%field, %value,%layerI
 		return;
 	}
 
-	%currentValue = %obj.getFieldValue(%field,%layerId);
-
-	if (%currentValue $= %value) {		
-		return;
-	}
 	
-	
+	LabObj.set(%obj,%field,%value,%layerId);
 	//eval("%obj."@%checkField@" = %value;");
-	%obj.setFieldValue(%field,%value,%layerId);
+	//%obj.setFieldValue(%field,%value,%layerId);
 	EWorldEditor.isDirty = true;
-	%this.setBasicCloudsDirty(true);  
-	BasicCloudsInspector.refresh();
-	BasicCloudsInspector.apply();
+	%this.setBasicCloudsDirty();  
+	//BasicCloudsInspector.refresh();
+	//BasicCloudsInspector.apply();
 	syncParamArray(SEP_AmbientManager.BasicCloudsParamArray);
 }
 //------------------------------------------------------------------------------
@@ -145,25 +140,37 @@ function SEP_AmbientManager::initBasicCloudsData( %this ) {
 //==============================================================================
 function SEP_AmbientManager::selectBasicClouds(%this,%obj) {
 	logd("SEP_AmbientManager::selectBasicClouds(%this,%obj)",%this,%obj);
-if (isObject(%obj)) {
-	%name = %obj.getName();
-	%id = %obj;
-	%inspectThis = %obj;
-}
+	if (isObject(%obj)) {
+		%name = %obj.getName();
+		%id = %obj;
+		%inspectThis = %obj;
+		Lab.inspect(%inspectThis);
+	}
 
 	
-	%this.selectedBasicClouds = %id;
+	SEP_AmbientManager.selectedBasicClouds = %id;
 	%this.selectedBasicCloudsName = %name;
 	%this.setBasicCloudsDirty();
-	BasicCloudsInspector.inspect(	%inspectThis);
+	
+	
+	//BasicCloudsInspector.inspect(	%inspectThis);
 	syncParamArray(SEP_AmbientManager.BasicCloudsParamArray,true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::saveBasicCloudsObject(%this) {
 	devLog("SEP_AmbientManager::saveBasicCloudsObject(%this)",%this);
-	%obj = %this.selectedBasicClouds;
+	%obj = %this.selectedBasicClouds;	
+		
+	if (!isObject(%obj)) {
+		warnLog("Can't save BasicClouds because none is selected. Tried wth:",%obj);
+		return;
+	}
 
+	LabObj.save(%obj);
+	%this.setCloudLayerDirty(false);
+	return;
+	
 	if (SEP_AmbientManager.missionIsDirty){
 		SEP_AmbientManager_PM.setDirty(MissionGroup);
 		SEP_AmbientManager_PM.saveDirtyObject(MissionGroup);
@@ -171,12 +178,7 @@ function SEP_AmbientManager::saveBasicCloudsObject(%this) {
 		%this.setBasicCloudsDirty(false);
 		return;
 	}
-		
-	if (!isObject(%obj)) {
-		warnLog("Can't save BasicClouds because none is selected. Tried wth:",%obj);
-		return;
-	}
-
+	
 	if (!SEP_AmbientManager_PM.isDirty(%obj)) {
 		warnLog("Object is not dirty, nothing to save");
 		return;
@@ -188,17 +190,11 @@ function SEP_AmbientManager::saveBasicCloudsObject(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_AmbientManager::setBasicCloudsDirty(%this,%isDirty) {
-	logd("SEP_AmbientManager::setBasicCloudsDirty(%this,%isDirty)",%this,%isDirty);
+function SEP_AmbientManager::setBasicCloudsDirty(%this) {
+	logd("SEP_AmbientManager::setBasicCloudsDirty(%this)",%this);
 	%obj = %this.selectedBasicClouds;
-
-	if (%isDirty $="")
-		%isDirty = SEP_AmbientManager_PM.isDirty(%obj);
-	else if ( !SEP_AmbientManager_PM.isDirty(%obj) && %isDirty)
-		SEP_AmbientManager_PM.setDirty( %obj );
-	else if ( SEP_AmbientManager_PM.isDirty(%obj) && !%isDirty)
-		SEP_AmbientManager_PM.removeDirty( %obj );
-
+	%isDirty = LabObj.isDirty(%obj);
+	
 	%this.isDirty = %isDirty;
 	SEP_BasicCloudsSaveButton.active = %isDirty;
 }

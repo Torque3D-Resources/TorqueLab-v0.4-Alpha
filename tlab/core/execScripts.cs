@@ -23,12 +23,14 @@ function tlabExecCore( %loadGui ) {
 	execPattern("tlab/core/scripts/*.cs");
 	execPattern("tlab/core/common/*.cs");
 	execPattern("tlab/core/params/*.cs");
-
+	execPattern("tlab/core/guiManagement/*.cs");
+execPattern("tlab/core/guiHelpers/*.cs");
 	
 	
 	
 	exec("tlab/core/classBase/popupMenu.cs");
-	exec("tlab/core/classBase/guiInspector.cs");
+	exec("tlab/core/classBase/guiInspector.cs");	
+	exec("tlab/core/classBase/Inspector.cs");
 	exec("tlab/core/classBase/guiTreeViewCtrl.cs");
 	exec("tlab/core/classBase/guiSwatchButtonCtrl.cs");
 }
@@ -73,7 +75,7 @@ function tlabExecEditor(%loadGui ) {
 	exec("tlab/EditorLab/editor/EditorOpen.cs");
 	exec("tlab/EditorLab/editor/EditorClose.cs");
 	exec("tlab/EditorLab/editor/EditorScript.cs");
-	exec("tlab/EditorLab/editor/manageGui.cs");
+
 	exec("tlab/EditorLab/editor/generalFunctions.cs");
 	execPattern("tlab/EditorLab/editor/worldEditor/*.cs");
 	execPattern("tlab/EditorLab/editor/features/*.cs");
@@ -111,9 +113,10 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/core/scriptEditorDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
-		exec("tlab/EditorLab/gui/core/LabDevGui.gui");
-		exec("tlab/EditorLab/gui/GameLabGui.gui");
+
+		exec("tlab/EditorLab/gui/TLabGameGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
+		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
@@ -124,11 +127,12 @@ function tlabExecGui(%loadGui ) {
 	
 	execPattern("tlab/EditorLab/gui/MaterialSelector/*.cs");
 	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
+	execPattern("tlab/EditorLab/gui/LabDevGui/*.cs");
 	
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
-	exec("tlab/EditorLab/gui/core/LabDevGui.cs");
-	exec("tlab/EditorLab/gui/GameLabGui.cs");
+
+	exec("tlab/EditorLab/gui/TLabGameGui.cs");
 }
 tlabExecGui(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecGui");
@@ -136,21 +140,14 @@ tlabExecGui(!$LabGuiExeced);
 //Old Settings Dialog for temporary references
 function tlabExecDialogs(%loadGui ) {
 	if (%loadGui) {
-		exec("tlab/EditorLab/gui/dialogs/ESelectObjects.gui");
-		exec("tlab/EditorLab/gui/dialogs/EManageBookmarks.gui");
-		exec("tlab/EditorLab/gui/dialogs/ESceneManager.gui");
-		exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.gui");
-		exec("tlab/EditorLab/gui/dialogs/ColladaImportProgress.gui");
+		execPattern("tlab/EditorLab/gui/dialogs/*.gui");
 		execPattern("tlab/EditorLab/editorDialogs/*.gui");
 		execPattern("tlab/EditorLab/gui/debugTools/*.gui");
 	}
 
-	exec("tlab/EditorLab/gui/dialogs/EObjectSelection.cs");
-	exec("tlab/EditorLab/gui/dialogs/ESelectObjects.cs");
-	exec("tlab/EditorLab/gui/dialogs/EManageBookmarks.cs");
-	exec("tlab/EditorLab/gui/dialogs/ESceneManager.cs");
+
 	exec("tlab/EditorLab/gui/commonDialogs.cs");
-	exec("tlab/EditorLab/gui/dialogs/ColladaImportDlg.cs");
+	execPattern("tlab/EditorLab/gui/dialogs/*.cs");
 	execPattern("tlab/EditorLab/editorDialogs/*.cs");
 	execPattern("tlab/EditorLab/gui/debugTools/*.cs");
 }
@@ -161,7 +158,7 @@ tlabExecDialogs(!$LabGuiExeced);
 //------------------------------------------------------------------------------
 //Old Settings Dialog for temporary references
 function tlabExecTools(%loadGui ) {
-	if (%loadGui) {		
+	if (%loadGui) {	
 		execPattern("tlab/EditorLab/editorTools/*.gui");		
 	}	
 	execPattern("tlab/EditorLab/editorTools/*.cs");	

@@ -17,11 +17,14 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("AutoCreatePrefab",       "1" TAB "Create prefab automatically" TAB "Checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.group[%groupId++] = "MissionGroup Organizer";
 	%array.setVal("CoreGroup",       "mgCore" TAB "Core Objects Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
-	%array.setVal("AmbientGroup",       "mgAmbient" TAB "Ambient Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("SceneObjectsGroup",       "mgSceneObjects" TAB "Ambient Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("EnvironmentGroup",       "mgEnvironment" TAB "Environment Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("TSStaticGroup",       "mgMapModels" TAB "TSStatic Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("SpawnGroup",       "PlayerDropPoints" TAB "Spawn Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("Vehicle",       "Vehicle" TAB "Vehicle Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("MiscObjectGroup",       "mgMiscObject" TAB "Misc. Objects Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("ShapeGroup",       "mgShapeGroup" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	
 }
 //------------------------------------------------------------------------------
 

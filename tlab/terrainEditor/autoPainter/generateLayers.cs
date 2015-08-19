@@ -47,7 +47,8 @@ function TPG::generateLayerGroup(%this) {
 	show(TPG_GenerateProgressWindow);
 	TPG_GenerateLayerStack.clear();
 
-	foreach(%layer in TPG_LayerGroup) {
+	foreach(%ctrl in TPG_StackLayers) {
+		%layer = %ctrl.layerObj;
 		if (%layer.inactive)
 			continue;			
 		
@@ -116,7 +117,8 @@ function TPG::startGeneration(%this) {
 	$TPG_Generating = true;
 	TPG.generatorSteps = "";
 
-	foreach(%layer in TPG_LayerGroup) {
+	foreach(%ctrl in TPG_StackLayers) {
+		%layer = %ctrl.layerObj;
 		if (%layer.inactive)
 			continue;
 		

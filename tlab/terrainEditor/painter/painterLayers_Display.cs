@@ -18,9 +18,9 @@ function EPainter::setDisplayModes( %this ) {
 	hide(EPainter_LayerCompactSrc);
 	hide(EPainter_LayerMixedSrc);
 	EPainter_DisplayMode.clear();
-	EPainter_DisplayMode.add("Compact listing",0);
-	EPainter_DisplayMode.add("Detailled only",1);
-	EPainter_DisplayMode.add("Mixed listing",2);
+	EPainter_DisplayMode.add("Mixed listing",0);
+	EPainter_DisplayMode.add("Compact listing",1);
+	EPainter_DisplayMode.add("Detailled only",2);	
 	EPainter_DisplayMode.add("Extended only",3);
 	EPainter_DisplayMode.setSelected($EPainter_DisplayMode,true);
 }
@@ -31,7 +31,7 @@ function EPainter_DisplayMode::onSelect( %this,%id,%text ) {
 		//return;
 
 	$EPainter_DisplayMode = %id;
-	EPainter-->optionMode2.visible = 0;
+	EPainter-->optionMode0.visible = 0;
 	EPainter.updateLayers();
 	eval("EPainter-->optionMode"@$EPainter_DisplayMode@".visible = true;");
 }
@@ -52,15 +52,19 @@ function EPainter::updateLayers( %this, %matIndex ) {
 	// TerrainMaterial internal names which we can use to find
 	// the actual material data in TerrainMaterialSet.
 	%mats = ETerrainEditor.getMaterials();
-
-	if ($EPainter_DisplayMode $= "1")
-		%ctrlSrc = EPainter_LayerSrc;
-	else if ($EPainter_DisplayMode $= "2")
-		%ctrlSrc = EPainter_LayerMixedSrc;
-	else if ($EPainter_DisplayMode $= "3")
-		%ctrlSrc = EPainter_LayerExtendedSrc;
-	else
-		%ctrlSrc = EPainter_LayerCompactSrc;
+	
+	switch$($EPainter_DisplayMode){
+		case "0":
+			%ctrlSrc = EPainter_LayerMixedSrc;
+		case "1":
+			%ctrlSrc = EPainter_LayerCompactSrc;
+		case "2":
+			%ctrlSrc = EPainter_LayerSrc;
+		case "3":
+			%ctrlSrc = EPainter_LayerExtendedSrc;
+		default:
+			%ctrlSrc = EPainter_LayerMixedSrc;
+	}
 
 	// %listWidth = getWord( EPainterStack.getExtent(), 0 );
 	hide(EPainter_LayerSrc);
@@ -118,7 +122,7 @@ function EPainter::updateLayers( %this, %matIndex ) {
 				%fieldCtrl.superClass = "PainterLayerEdit";
 				%fieldCtrl.nameCtrl = %ctrl-->matName;
 			}
-		} else if ($EPainter_DisplayMode $= "2") {		
+		} else if ($EPainter_DisplayMode $= "0") {		
 			%ctrl-->extendButton.baseCtrl = %ctrl;
 			%ctrl-->detailButton.baseCtrl = %ctrl;
 			%compactCtrl = %ctrl-->compactCtrl;
@@ -307,7 +311,7 @@ function EPainter::updateSelectedLayerList( %this,%ctrl) {
 	%ctrl.isActiveCtrl.visible = 1;
 	
 	//If AutoCollapse true and display mode = mixes, collapse all layers
-	if ($EPainter_DisplayMode $= "2" && $EPainter_AutoCollapse){		
+	if ($EPainter_DisplayMode $= "0" && $EPainter_AutoCollapse){		
 		foreach(%layerCtrl in EPainterStack){
 			if (%layerCtrl.text $= "New layer")
 				continue;

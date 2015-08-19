@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 $LabMsgMargin["Top"] = 29;
-$LabMsgMargin["Bottom"] = 47;
+$LabMsgMargin["Bottom"] = 37;
 
 $LabMsgButtons["Ok"] = "Ok";
 $LabMsgButtons["OkCancel"] = "Ok" TAB "Cancel";
@@ -31,10 +31,10 @@ function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%cal
 	%dlg.text = %title;
 	%dlg-->messageArea.setText(%message);
 	%dlg-->messageArea.forceReflow();
-	%scrollExtent = %dlg-->messageArea.getExtent();
-	%scrollExtent.y += 4;
-	%dlg-->scroll.setExtent( %scrollExtent);
-	%dlg.extent.y = $LabMsgMargin["Top"] + %scrollExtent.y + $LabMsgMargin["Bottom"];
+	%msgExtent = %dlg-->messageArea.getExtent();
+	//%scrollExtent.y += 4;
+	//%dlg-->scroll.setExtent( %scrollExtent);
+	%dlg.extent.y = $LabMsgMargin["Top"] + %msgExtent.y + $LabMsgMargin["Bottom"];
 
 	for(; %i < 3; %i++) {
 		%text = getField(%buttonData,%i);

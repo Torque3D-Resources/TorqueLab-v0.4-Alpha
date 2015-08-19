@@ -51,10 +51,17 @@ function GuiControl::setTypeValue( %this,%value,%updateFriends ) {
 	case "Checkbox":
 		%this.setStateOn(%value);
 	case "Color":
-	   if (%this.isIntColor)
+	   if (%this.isIntColor){
+	   	if (getWord(%value,3) $="")
+	   		%value = setWord(%value,3,"255");
+			
 	     %this.BaseColor = ColorIntToFloat(%value);
-		else
+	   }
+		else {
+			if (getWord(%value,3) $="")
+	   		%value = setWord(%value,3,"1");
 		   %this.BaseColor = %value;
+		}
 		%this.updateColor();
 	case "Text":
 		%this.setText(%value);
@@ -83,6 +90,13 @@ function GuiControl::getTypeValue( %this ) {
 		%value = %this.isStateOn();
 	case "Color":
 		%value = %this.BaseColor ;
+		
+		if (%this.isIntColor){
+	   	%value = ColorFloatToInt(%value);			
+	   
+	   }
+	 
+		
 	case "MenuId":
 		%value = %this.getSelected();
 

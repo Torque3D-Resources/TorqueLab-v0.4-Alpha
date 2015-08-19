@@ -3,24 +3,55 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+$GuiEditDuplicator_extent[0] = "184 323";
+$GuiEditDuplicator_extent[1] = "184 474";
 
+GuiEdMap.bindCmd(keyboard, "ctrl numpad0", "Lab.setDuplicatorSource();","");
+GuiEdMap.bindCmd(keyboard, "ctrl numpaddecimal", "Lab.toggleDuplicator();","");
+GuiEdMap.bindCmd(keyboard, "ctrl numpadenter", "Lab.copyDuplicatorToSelection();","");
 //==============================================================================
 // Field Duplicator
 //==============================================================================
-%fs = "extent position command altCommand tooltip internalName horizSizing vertSizing profile";
-$GuiEditDuplicator_fields = %fs;
+%fs = "profile margin padding extent horizSizing vertSizing docking";
+$GuiEditDuplicator_general_fields = %fs;
 
+%fs = "position command altCommand tooltip internalName";
+$GuiEditDuplicator_individual_fields = %fs;
+$GuiEditDuplicator_fields = $GuiEditDuplicator_general_fields SPC $GuiEditDuplicator_individual_fields;
 //==============================================================================
 //Lab.buildDuplicatorParams();
 function Lab::buildDuplicatorParams(%this) {
+	%srcPill = GuiEdit_DuplicatorFields-->checkboxSample;
+	hide(%srcPill);
+	
+	GuiEdit_DuplicatorFieldsStack_General.clear();	
+	foreach$(%field in $GuiEditDuplicator_general_fields){
+		%pill = cloneObject(%srcPill);
+		%check = %pill-->checkbox;
+		%check.text = %field;
+		%check.internalName = %field;
+		%check.variable = "$GuiEditDuplicator_"@%field;
+		GuiEdit_DuplicatorFieldsStack_Individual.add(%pill);
+	}
+	GuiEdit_DuplicatorFieldsStack_Individual.clear();
+	foreach$(%field in $GuiEditDuplicator_individual_fields){
+		%pill = cloneObject(%srcPill);
+		%check = %pill-->checkbox;
+		%check.text = %field;
+		%check.internalName = %field;
+		%check.variable = "$GuiEditDuplicator_"@%field;
+		GuiEdit_DuplicatorFieldsStack_Individual.add(%pill);
+	}
+	return;
+	
 	%arCfg = createParamsArray("GuiEdit_Duplicator",GuiEdit_DuplicatorStack);
 	%arCfg.updateFunc = "Lab.updateGuiEditDuplicatorField";
-	//%arCfg.style = "LabCfgB_304";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
 
 	%arCfg.group[%gid++] = "Select fields to copy";
 	foreach$(%field in $GuiEditDuplicator_fields)
-		%arCfg.setVal(%field,       "" TAB %field TAB "Checkbox" TAB "variable>>$GuiEditDuplicator_"@%field TAB "$GuiEditDuplicator_" TAB %gid);	
+		%arCfg.setVal(%field,       "" TAB %field TAB "checkbox_only" TAB "variable>>$GuiEditDuplicator_"@%field TAB "$GuiEditDuplicator_" TAB %gid);	
 	
 	buildParamsArray(%arCfg,true);
 }
@@ -35,6 +66,31 @@ function Lab::updateGuiEditDuplicatorField(%this,%field,%value,%ctrl) {
 //Lab.toggleDuplicator();
 function Lab::toggleDuplicator(%this) {
 	toggleDlg(GuiEditFieldDuplicator);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Lab.toggleDuplicator();
+function Lab::toggleIndividualFields(%this) {
+	%visible = 1;
+	if (GuiEdit_DuplicatorScroll_Individual.visible)
+		%visible = 0;
+
+	%extent = $GuiEditDuplicator_extent[%visible];
+	GuiEdit_DuplicatorScroll_Individual.visible = %visible;
+	GuiEditFieldDuplicator-->showIndividuals.setStateOn(%visible);	
+	GuiEdit_DuplicatorFields.setExtent(%extent.x,%extent.y);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function GEFD_IndividualMouse::onMouseUp(%this,%mod,%point,%clicks) {
+	Lab.toggleIndividualFields();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Lab.toggleDuplicator();
+function Lab::selectAllGeneralFields(%this,%value) {
+	foreach$(%field in $GuiEditDuplicator_general_fields)
+		eval("$GuiEditDuplicator_"@%field@"= "@%value@";");	
 }
 //------------------------------------------------------------------------------
 

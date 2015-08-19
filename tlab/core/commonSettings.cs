@@ -25,9 +25,9 @@ function Lab::initCommonParams( %this ) {
 	%ar.group[%gid++] = "General Lab Editor settings";
 	%ar.setVal("undoLimit",       "40" TAB "undoLimit" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("TorsionPath",       "C:\Program Files (x86)\Torsion" TAB "Path to Torsion" TAB "TextEdit" TAB "" TAB "$Cfg_TorsionPath" TAB %gid);
+	%ar.setVal("TorsionPath",       "C:\Program Files (x86)\Torsion" TAB "Path to Torsion" TAB "TextEdit_2l" TAB "" TAB "$Cfg_TorsionPath" TAB %gid);
 	%ar.setVal("useNativeMenu",       "0" TAB "Use the native menu" TAB "Checkbox" TAB "" TAB "Lab.setNativeMenuSystem(**);" TAB %gid);
-	%ar.setVal("newLevelFile",       "tlab/levels/BlankRoom.mis" TAB "newLevelFile" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("newLevelFile",       "tlab/levels/BlankRoom.mis" TAB "newLevelFile" TAB "FileSelect" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("levelsDirectory",       "levels" TAB "levelsDirectory" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	//Camera
 	%gid = 0;
@@ -42,26 +42,39 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
 //==============================================================================
+//Interface EDITOR SETTINGS
+$FrameMainSizes = "Thin Normal Large";
+	//Binds and inputs
+	%gid = 0;
+	%ar = %this.newParamsArray("Editor","Interface","",true);
+	%ar.prefGroup = "$LabCfg_EditorUI_";
+	%ar.autoSyncPref = true;
+	
+	//%ar.style = "StyleA";
+	%ar.group[%gid++] = "Main editor frame";	
+	%ar.setVal("ToolFrameSize",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorToolFrameSize(*val*);" TAB %gid);
+	%ar.setVal("ToolFrameLocked",      "0" TAB "Lock side frame resizing" TAB "Checkbox" TAB "ff>>gg" TAB "Lab.lockEditorToolFrame(*val*);" TAB %gid);
+//==============================================================================
 //WORLD EDITOR SETTINGS
 	//Camera
 	%gid = 0;
 	%ar = %this.newParamsArray("Colors","WorldEditor");
 	%ar.group[%gid++] = "World editor colors settings";
-	%ar.setVal("gizmoGridColor",       "102 102 102 100" TAB "Gizmo grid color" TAB "ColorInt" TAB "" TAB "Lab.setGizmoGridColor(**);" TAB %gid);
-	%ar.setVal("gridColor",       "102 102 102 100" TAB "gridColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("gridOriginColor",      "255 255 255 100"  TAB "gridOriginColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("gridMinorTickColor",     "51 51 51 100"     TAB "gridMinorTickColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("objectTextColor",        "255 255 255 255" TAB "objectTextColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("objMouseOverColor",       "0 255 0 255"   TAB "objMouseOverColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("objMouseOverSelectColor",     "0 0 255 255"    TAB "objMouseOverSelectColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("objSelectColor",   "255 0 0 255"      TAB "objSelectColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("faceSelectColor",     "255 255 0 255"   TAB "faceSelectColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("selectionBoxColor",     "255 255 0 255"    TAB "selectionBoxColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("raceSelectColor",     "255 255 0 255"   TAB "raceSelectColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("popupBackgroundColor",     "100 100 100 255"   TAB "popupBackgroundColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("popupTextColor",     "255 255 0 255"   TAB "popupTextColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("dragRectColor",     "255 255 0 255"   TAB "Drag rectangle" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("uvEditorHandleColor",     "255 255 0 255"   TAB "uvEditorHandleColor" TAB "ColorInt" TAB "" TAB "EWorldEditor" TAB %gid);
+	
+	%ar.setVal("gridColor",       "102 102 102 100" TAB "gridColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("gridOriginColor",      "255 255 255 100"  TAB "gridOriginColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("gridMinorTickColor",     "51 51 51 100"     TAB "gridMinorTickColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("objectTextColor",        "255 255 255 255" TAB "objectTextColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("objMouseOverColor",       "0 255 0 255"   TAB "objMouseOverColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("objMouseOverSelectColor",     "0 0 255 255"    TAB "objMouseOverSelectColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("objSelectColor",   "255 0 0 255"      TAB "objSelectColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("faceSelectColor",     "255 255 0 255"   TAB "faceSelectColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("selectionBoxColor",     "255 255 0 255"    TAB "selectionBoxColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("raceSelectColor",     "255 255 0 255"   TAB "raceSelectColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("popupBackgroundColor",     "100 100 100 255"   TAB "popupBackgroundColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("popupTextColor",     "255 255 0 255"   TAB "popupTextColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("dragRectColor",     "255 255 0 255"   TAB "Drag rectangle" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("uvEditorHandleColor",     "255 255 0 255"   TAB "uvEditorHandleColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
 	//Camera
 	%gid = 0;
 	%ar = %this.newParamsArray("GridUnit","WorldEditor");
@@ -87,6 +100,7 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("renderPopupBackground",       "1" TAB "renderPopupBackground" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("renderSelectionBox",       "1" TAB "renderSelectionBox" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("showMousePopupInfo",       "1" TAB "showMousePopupInfo" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
+	
 	//Misc
 	%gid = 0;
 	%ar = %this.newParamsArray("Misc","WorldEditor");
@@ -104,8 +118,8 @@ function Lab::initCommonParams( %this ) {
 //Gizmo
 	%gid = 0;
 	%ar = %this.newParamsArray("AxisGizmo","WorldEditor");
-	%ar.group[%gid++] = "Axis gizmo settings";
-	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorInt" TAB "" TAB "Lab.setGizmoGridColor(**);" TAB %gid);
+	%ar.group[%gid++] = "Axis gizmo settings";	
+	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorSlider" TAB "mode>>int" TAB "Lab.setGizmoGridColor(*val*);" TAB %gid);
 	%ar.setVal("gridSize",       "10" TAB "gridSize" TAB "SliderEdit" TAB "range>>0 200" TAB "Lab.setGizmoGridSize(**);" TAB %gid);
 	%ar.setVal("planeDim",       "500" TAB "planeDim" TAB "SliderEdit" TAB "range>>0 1000" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("screenLength",       "100" TAB "Gizmo size" TAB "SliderEdit" TAB "range>>0 200;;validate>>flen 2" TAB "GlobalGizmoProfile" TAB "flen 1" TAB %gid);
@@ -123,6 +137,7 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("renderPlaneHashes",       "1" TAB "renderPlaneHashes" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderSolid",       "0" TAB "renderSolid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderMoveGrid",       "1" TAB "renderMoveGrid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
+	
 	
 }
 //------------------------------------------------------------------------------

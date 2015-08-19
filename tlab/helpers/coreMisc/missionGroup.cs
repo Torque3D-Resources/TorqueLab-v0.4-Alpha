@@ -11,8 +11,7 @@
 //==============================================================================
 // SEP_GroundCover.getMissionGroundCover();
 function getMissionObjectClassList( %class ) {	
-	%list = checkMissionSimGroupForClass(MissionGroup,%class);
-	devLog("MissonObj List for class:",%class,"=",%list);
+	%list = checkMissionSimGroupForClass(MissionGroup,%class);	
 	return %list;
 }
 //------------------------------------------------------------------------------
@@ -23,8 +22,7 @@ function checkMissionSimGroupForClass(%group,%class ) {
 		if (%obj.getClassname() $= %class) {
 			%list = strAddWord(%list,%obj.getId());
 		} else if (%obj.getClassname() $= "SimGroup") {
-			%listAdd = checkMissionSimGroupForClass(%obj,%class);
-			devLog("Adding SubList:",%listAdd,"To MainList",%list);
+			%listAdd = checkMissionSimGroupForClass(%obj,%class);		
 			%list = strAddWord(%list,%listAdd);
 			
 		}
@@ -32,6 +30,8 @@ function checkMissionSimGroupForClass(%group,%class ) {
 	return %list;
 }
 //------------------------------------------------------------------------------
+
+
 //==============================================================================
 // Update the GuiControl data field depending of the Class
 //==============================================================================

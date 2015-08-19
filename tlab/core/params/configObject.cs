@@ -78,6 +78,7 @@ function LabCfg::setCfg( %this,%field,%value,%isDefault ) {
 		LabCfg.setValue(  %field,%value);
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
 function Lab::addDefaultSetting( %this,%field, %default ) {
@@ -151,6 +152,124 @@ function Lab::resetPatternSettings( %this,%pattern,%paramGroup ) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::getAllConfigs( %this ) {
+	LPD_ConfigNameMenu.clear();
+	for(%file = findFirstFile("tlab/core/configs/*.xml"); %file !$= ""; %file = findNextFile("tlab/core/configs/*.xml")) {
+		%fileBase = fileBase(%file);
+		//if (%fileBase $= "default")
+		//	continue;
+			
+		%fileName = %fileBase;
+		LPD_ConfigNameMenu.add(%fileName,%cid++);
+		if (LabCfg.currentCfgFile $= %fileName)
+			%selected = %cid;
+	}
+	if (LabCfg.currentCfgFile $= "")
+		LabCfg.currentCfgFile = "config";	
+		
+	LPD_ConfigNameEdit.setText(LabCfg.currentCfgFile);		
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::loadSelectedCfg( %this ) {
+	%fileText = LPD_ConfigNameEdit.getText();
+	%filename = fileBase(%fileText)@".xml";	
+	%cfg = "tlab/core/configs/"@%filename;
+	if (!isFile(%cfg))
+		return;
+	
+	LabCfg.file = %cfg;
+	Lab.initConfigSystem();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::loadBaseCfg( %this ) {
+	%cfg = "tlab/core/configs/config.xml";
+	%fileName = "config.xml";
+	if (!isFile(%cfg)){
+		LabCfg.file = %cfg;
+		LabCfg.write();
+		%fileName = "default.xml";
+		%cfg = "tlab/core/configs/default.xml";
+	}
+		
+	if (!isFile(%cfg)){
+		LabCfg.file = "tlab/core/configs/default.xml";
+		LabCfg.write();
+		LPD_ConfigNameEdit.setText("default.xml");
+		
+		devLog("No default config found, creating new one with current settings");
+		return;
+	}
+	LPD_ConfigNameEdit.setText(%fileName);
+	LabCfg.file = %cfg;
+	Lab.initConfigSystem();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::saveSelectedCfg( %this,%forced ) {
+	%fileText = LPD_ConfigNameEdit.getText();
+	if (%fileText $= "default" && !%forced){
+		LabMsgYesNo("Warning! Overwritting default config","You are about to overwrite the default config file which can cause problem if some settings are corrupted. We recommend to not" SPC
+			"overwrite the file and use a custom file name instead. Do you want to proceed with overwritting default config?","LabCfg.saveSelectedCfg(true);","");
+			return;
+	}
+	%filename = fileBase(%fileText)@".xml";	
+	%cfg = "tlab/core/configs/"@%filename;
+	
+	
+	LabCfg.file = %cfg;
+	LabCfg.currentCfgFile = fileBase(%fileText);
+	LabCfg.write();
+	LabCfg.getAllConfigs();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LPD_ConfigNameMenu::onSelect( %this,%id,%text ) {
+	%fileText = %text;
+	%filename = fileBase(%fileText)@".xml";	
+	%cfg = "tlab/core/configs/"@%filename;
+	if (!isFile(%cfg))
+		return;
+	LPD_ConfigNameEdit.setText(%text);
+	LabCfg.file = %cfg;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::writeBaseConfig( %this,%default ) {
+	%cfg = "tlab/core/configs/config.xml";
+	
+	LabCfg.file = %cfg;
+	LabCfg.write();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::saveDefaults( %this ) {
+	%file = LabCfg.file;
+	LabCfg.file = "tlab/core/configs/default.xml";
+	LabCfg.write();
+	LabCfg.file = %file;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function LabCfg::resetDefaults( %this ) {
+	%file = LabCfg.file;
+	LabCfg.file = "tlab/core/configs/default.xml";
+	LabCfg.read();
+	LabCfg.file = %file;
+	
+}
+//------------------------------------------------------------------------------
 /*
 
 DefineConsoleMethod(Settings, setValue, void, (const char * settingName, const char * value), (""), "settingObj.setValue(settingName, value);")

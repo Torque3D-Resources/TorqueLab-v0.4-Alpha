@@ -7,7 +7,7 @@
 //==============================================================================
 function initializeRoadEditor() {
 	echo( " - Initializing Road and Path Editor" );
-	execRoadEd(true);
+	execREP(true);
 	
 	Lab.createPlugin("RoadEditor","Road Editor");
 	Lab.addPluginEditor("RoadEditor",RoadEditorGui);
@@ -33,12 +33,14 @@ function initializeRoadEditor() {
 	%map.bindCmd( keyboard, "x", "RoadEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "RoadEditorShowRoadBtn.performClick();", "" );
 	RoadEditorPlugin.map = %map;
+	
+	$RoadManager = newScriptObject("RoadManager");
 	//RoadEditorPlugin.initSettings();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Load all the Scripts and GUIs (if specified)
-function execRoadEd(%loadGui) {
+function execREP(%loadGui) {
 	if (%loadGui) {
 		exec( "tlab/roadEditor/gui/guiProfiles.cs" );
 		exec( "tlab/roadEditor/gui/roadEditorGui.gui" );

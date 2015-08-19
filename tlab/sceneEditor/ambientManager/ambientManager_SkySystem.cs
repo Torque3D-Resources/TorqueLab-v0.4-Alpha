@@ -28,9 +28,9 @@ function SEP_ScatterSkySystemMenu::OnSelect(%this,%id,%text) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_SkySelectMenu::OnSelect(%this,%id,%obj) {
-	devLog("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%obj);
-	
+function SEP_SkySelectMenu::OnSelect(%this,%id,%text) {
+	logd("SEP_SkySelectMenu::OnSelect(%this,%id,%obj)",%this,%id,%text);
+	%obj = %id;
 	if (!isObject(%obj))
 		return;
 	SEP_AmbientManager.hideAllSkyObjects(true);
@@ -41,16 +41,16 @@ function SEP_SkySelectMenu::OnSelect(%this,%id,%obj) {
 	SEP_AmbientManager.getSkySystemObject();
 	
 	if (%obj.getClassName() $= "Sun")
-			SEP_LegacySkyManager.selectSky(%obj);
-		else if (%obj.getClassName() $= "ScatterSky")
-			SEP_ScatterSkyManager.selectScatterSky(%obj);
+		SEP_LegacySkyManager.selectSky(%obj);
+	else if (%obj.getClassName() $= "ScatterSky")
+		SEP_ScatterSkyManager.selectScatterSky(%obj);
 		
 	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_AmbientManager::activateSkyObj(%this,%obj) {
-	devLog("SEP_AmbientManager::activateSkyObj(%this,%obj)",%this,%obj);
+	logd("SEP_AmbientManager::activateSkyObj(%this,%obj)",%this,%obj);
 	
 	if (isObject(%obj)){
 		//if (%text.getClassName() $= "ScatterSky")
@@ -70,6 +70,7 @@ function SEP_AmbientManager::activateSkyObj(%this,%obj) {
 // Prepare the default config array for the Scene Editor Plugin
 //SEP_AmbientManager.updateSkySystemData
 function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
+	logd("SEP_AmbientManager::updateSkySystemData(%this)");
 	if (%build){
 		SEP_ScatterSkyManager.buildParams();	
 		SEP_LegacySkyManager.buildParams();
@@ -83,28 +84,33 @@ function SEP_AmbientManager::updateSkySystemData( %this,%build ) {
 	foreach$(%obj in %list){
 		//if (!%obj.isBackup)
 			//continue;		
-		if (%obj $= %this.skySystemObj)
-			%select = %id;
+		if (%obj $= SEP_AmbientManager.skySystemObj)
+			%select = %obj.getId();
 		%name = %obj.getName();
 		if (%name $= "")
 			%name = %obj.getClassName()@"\c2-\c1"@%obj.getId();
-		devLog("Adding mode:",%name);
-		SEP_SkySelectMenu.add(%name,%id);
+		
+		SEP_SkySelectMenu.add(%name,%obj.getId());
+		if (%select $= "")
+			%select = %obj.getId();
 		%id++;
 	}
-	devLog("ID=",%id);
+	
 	//if (%id $= "1")
 	//	hide(AMD_SelectSkyContainer);
 	//else
 		//show(AMD_SelectSkyContainer);
-		
-	SEP_SkySelectMenu.setSelected(%select,false);
+		%update = false;
+	if (!isObject(%this.selectedSunObj))
+		%update = true;
+	
+	SEP_SkySelectMenu.setSelected(%select,%update);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::getSkySystemObject( %this ) {
-	devLog("SEP_AmbientManager::getSkySystemObject(%this)");
+	
 	%this.skySystemObj = "";
 	%this.scatterSkyObj = "";
 	%this.sunObj = "";
@@ -161,15 +167,16 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 	}
 	
 	//%this.activateSkyObj(%this.skySystemObj);
-	info("AmbientManager detected the Sky System:",%this.skySystem,"Using object",%this.skySystemObj);
+	
 	return %this.skySystemObj;
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
+//SEP_AmbientManager.createNewSkySystem();
 function SEP_AmbientManager::createNewSkySystem( %this ) {
-	devLog("SEP_AmbientManager::createNewSkySystem(%this)");
+	logd("SEP_AmbientManager::createNewSkySystem(%this)");
 
 	%type = SEP_AmbientManager.createSkyType;
 	if (%type $= "ScatterSky")
@@ -179,7 +186,7 @@ function SEP_AmbientManager::createNewSkySystem( %this ) {
 	
 	//Rebuild Fog Params since they depend of type of sky system
 	SEP_AmbientManager.updateSkySystemData();
-	%this.buildFogParams();
+	//%this.buildFogParams();
 	
 	hide(SEP_SkySystemCreator);
 	
@@ -189,7 +196,7 @@ function SEP_AmbientManager::createNewSkySystem( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::createNewScatterSky( %this ) {
-	devLog("SEP_AmbientManager::createNewScatterSky(%this)");
+	
 	
 	%backup = SEP_SkySystemCreator-->backupCurrentSystem.isStateOn();
 	if (%backup)
@@ -253,7 +260,7 @@ function SEP_AmbientManager::createNewScatterSky( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::createNewLecacySky( %this ) {
-	devLog("SEP_AmbientManager::createNewLecacySky(%this)");
+
 	%backup = SEP_SkySystemCreator-->backupCurrentSystem.isStateOn();
 	if (%backup)
 		%this.backupCurrentSky();
@@ -326,19 +333,20 @@ function SEP_AmbientManager::createNewLecacySky( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_AmbientManager::backupCurrentSky( %this ) {
-	devLog("SEP_AmbientManager::backupCurrentSky(%this)");
+devLog("SEP_AmbientManager::backupCurrentSky(%this)");
 	
 	
 	%currentObj = %this.getSkySystemObject();
 	if (isObject(%currentObj)){
-		%name = %currentObj.getName()@"_Backup";
-		delObj(%name);
-		%backupObj = %currentObj.deepClone();
-		%backupObj.setName(%name);
+		//%name = %currentObj.getName()@"_Backup";
+		//delObj(%name);
+		%backupObj = %currentObj;
+		//%backupObj = %currentObj.deepClone();
+		//%backupObj.setName(%name);
 		%backupObj.hidden = true;
 		//%backupObj = newScriptObject("ScatterSkyBackup",MissionGroup);
 		%backupObj.isBackup = true;
-		MissionGroup.add(%backupObj);
+		//MissionGroup.add(%backupObj);
 		//%backupObj.assignFieldsFrom(%scatterSkyObj);
 	}
 	
@@ -351,13 +359,14 @@ function SEP_AmbientManager::backupCurrentSky( %this ) {
 				continue;
 			}
 			
-			%name = %obj.getName()@"_Backup";
-			delObj(%name);
-			%backupSkyBox = %obj.deepClone();
-			%backupSkyBox.setName(%name);
+			//%name = %obj.getName()@"_Backup";
+			//delObj(%name);
+			%backupSkyBox = %obj;
+			//%backupSkyBox = %obj.deepClone();
+			//%backupSkyBox.setName(%name);
 			%backupSkyBox.hidden = true;
 			%backupSkyBox.isBackup = true;
-			MissionGroup.add(%backupSkyBox);
+			//MissionGroup.add(%backupSkyBox);
 			%backupObj.mySkyBox = %backupSkyBox;
 			
 			break;

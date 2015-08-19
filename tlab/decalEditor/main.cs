@@ -15,12 +15,13 @@ function initializeDecalEditor() {
 	exec( "tlab/decalEditor/decalEditorActions.cs" );
 	exec( "tlab/decalEditor/DecalEditorPlugin.cs" );
 	exec( "tlab/decalEditor/DecalEditorParams.cs" );
+	Lab.createPlugin("DecalEditor");
 	// Add ourselves to EditorGui, where all the other tools reside
 	Lab.addPluginEditor("DecalEditor",   DecalEditorGui);
 	Lab.addPluginGui("DecalEditor",DecalEditorTools);
 	Lab.addPluginPalette("DecalEditor",   DecalEditorPalette);
 	DecalEditorTabBook.selectPage( 0 );
-	Lab.createPlugin("DecalEditor");
+	
 	DecalEditorPlugin.editorGui = DecalEditorGui;
 	%map = new ActionMap();
 	%map.bindCmd( keyboard, "5", "EDecalEditorAddDecalBtn.performClick();", "" );

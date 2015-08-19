@@ -90,3 +90,20 @@ function RoadDefaultWidthSliderCtrlContainer::onWake(%this) {
 	RoadDefaultWidthSliderCtrlContainer-->slider.setValue(RoadDefaultWidthTextEditContainer-->textEdit.getText());
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+
+function RoadEditorGui::setDefaultMaterial(%this,%matName) {
+	RoadEditorGui.setFieldValue("materialName",%matName);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+
+function RoadEditorGui::setActiveMaterial(%this,%matName) {
+	if (!isObject(RoadEditorGui.road))
+		return;
+		
+	RoadEditorGui.road.setFieldValue("Material",%matName);
+	RoadInspector.refresh();
+	
+}
+//------------------------------------------------------------------------------

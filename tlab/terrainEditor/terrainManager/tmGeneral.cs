@@ -9,16 +9,79 @@
 //==============================================================================
 
 //==============================================================================
-function TMG::updateTerrainField(%this,%field,%value) {
-	%terrain = TMG.activeTerrain;
-	%terrain.setFieldValue(%field,%value);
+// Manage the terrain name
+//==============================================================================
+//==============================================================================
+// Sync the current profile values into the params objects
+function TMG::applyTerrainName( %this ) { 	
+	%newName = TMG_ActiveTerrainNameEdit.getText();
+	if (%newName $= TMG.activeTerrain.getName())
+		return;
 	
+	if (isObject(%newName)){
+		warnLog("There's already an object using that name:",%newName);
+		return;
+	}
+	TMG.activeTerrain.setName(%newName);
+	TMG.setActiveTerrain(TMG.activeTerrain);
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+// Sync the current profile values into the params objects
+function TMG_ActiveTerrainNameEdit::onValidate( %this ) { 	
+	%newName = TMG_ActiveTerrainNameEdit.getText();
+	if (%newName $= TMG.activeTerrain.getName()){
+		TMG_ActiveTerrainNameApply.active = 0;
+		return;	
+	}
+	
+	TMG_ActiveTerrainNameApply.active = 1;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Manage the terrain file
+//==============================================================================
 
 //==============================================================================
 // Sync the current profile values into the params objects
-function TMG::getTerrainFile( %this ) { 	
+function TMG::relocateTerrainFile( %this ) { 
+	%newFile = TMG_ActiveTerrainFileEdit.getText();
+  if (%newFile $= TMG.activeTerrain.terrainFile){
+		TMG_ActiveTerrainFileApply.active = 0;
+		return;	
+	}
+	%fileBase = fileBase(%newFile);
+	%filePath = filePath(%newFile);
+	%file = %filePath@"/"@%fileBase@".ter";
+	TMG.saveTerrain(TMG.activeTerrain,%file);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::saveTerrain(%this,%obj,%file) {	
+	if (%obj $= "")
+		%obj = TMG.activeTerrain;
+		
+	if (!isObject(%obj))
+		return;
+	if (%file $= "")
+		%file = addFilenameToPath(filePath(MissionGroup.getFileName()),%obj.getName(),"ter");	
+	
+	%obj.save(%file);
+	TMG.schedule(500,"updateTerrainFile",%obj,%file);
+	devLog("Terrain:",%obj.getName(),"Saved to",%file);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TMG::updateTerrainFile(%this,%obj,%file) {	
+	if (!isObject(%obj))
+		return;
+	%obj.setFieldValue("terrainFile",%file);
+	devLog("Terrain:",%obj.getName(),"terrainFileSet to",%file);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Sync the current profile values into the params objects
+function TMG::getTerrainFile( %this ) { 		
 	
    %currentFile = TMG.activeTerrain.terrainFile;
    //Canvas.cursorOff();
@@ -28,13 +91,24 @@ function TMG::getTerrainFile( %this ) {
 //==============================================================================
 // Sync the current profile values into the params objects
 function TMG::setTerrainFile( %this,%file ) { 
-   
-  %filename = makeRelativePath( %file, getMainDotCsDir() );     
-   %this.updateTerrainField("terrainFile",%filename);
+	%fileBase = fileBase(%file);
+	%filePath = filePath(%file);
+	%newFile = %filePath@"/"@%fileBase@".ter";
+
+  %filename = makeRelativePath( %newFile, getMainDotCsDir() ); 
+  TMG.saveTerrain(TMG.activeTerrain, %filename);   
+   //%this.updateTerrainField("terrainFile",%filename);
 
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+function TMG::updateTerrainField(%this,%field,%value) {
+	%terrain = TMG.activeTerrain;
+	%terrain.setFieldValue(%field,%value);
+	
+}
+//------------------------------------------------------------------------------
 
 
 //==============================================================================
@@ -73,8 +147,7 @@ function TMG_GeneralMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mous
 	
 }
 //==============================================================================
-function TMG::showGeneralMaterialDlg( %this,%pill ) {
-	devLog("TMG::showGeneralMaterialDlg( %this,%pill )", %this,%pill );
+function TMG::showGeneralMaterialDlg( %this,%pill ) {	
 	if (!isObject(%pill)) {
 		warnLog("Invalid layer to change material");
 		return;
@@ -89,13 +162,9 @@ function TMG::showGeneralMaterialDlg( %this,%pill ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Callback from TerrainMaterialDlg returning selected material info
-function TMG_GeneralMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
-	devLog(" TMG_LayerMaterialChangeCallback ( %mat, %matIndex, %activeIdx )", %mat, %matIndex, %activeIdx );
-	
-	TMG_LayerMaterialChangeCallback(%mat, %matIndex, %activeIdx );
-	
-	EPainter_TerrainMaterialUpdateCallback(%mat, %matIndex);
-	
+function TMG_GeneralMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {	
+	TMG_LayerMaterialChangeCallback(%mat, %matIndex, %activeIdx );	
+	EPainter_TerrainMaterialUpdateCallback(%mat, %matIndex);	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

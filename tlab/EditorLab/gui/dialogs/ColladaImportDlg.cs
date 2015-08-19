@@ -415,7 +415,7 @@ function ColladaImportDlg::loadLights(%this) {
 	}
 }
 
-function updateTSShapeLoadProgress(%progress, %msg) {
+function updateTSShapeLoadProgressUI(%progress, %msg) {
 	// Check if the loading GUI is visible and use that instead of the
 	// separate import progress GUI if possible
 	if ( isObject(DlgLoadingLevel) && DlgLoadingLevel.isAwake() ) {
