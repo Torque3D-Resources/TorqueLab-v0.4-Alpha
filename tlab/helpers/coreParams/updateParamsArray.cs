@@ -78,48 +78,23 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 	//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 	if (%array.autoSyncPref $= "1"||%array.autoSyncPref) {
 		%prefGroup = %array.prefGroup;
-		eval(%prefGroup@%field@" = %value;");
+		paramLog("AutoPref Eval",%prefGroup@%field@" = %value;");
+		eval(%prefGroup@%field@" = \""@%value@"\";");
 	}
 
 	//---------------------------------------------------------------------------
 
 	// Call the specific update function is set
 	if (%updateFunc !$= "" && %array.customUpdateOnly) {
-		devLog("Calling custom update only func:",%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);",%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);
+		paramLog("Calling custom update only func:",%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);",%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);
 		eval(%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);");
 		return;
 	}
 
 //===========================================================================
-//Check for data that need to be synced with new value
-	if (!%array.noDirectSync) { //Skip Direct Sync if specified
-		%data = %array.getVal(%field);
-		%syncData = getField(%data,4);
-		//Check for a standard global starting with $
-		eval("%testObj = "@%syncData@";");
+//Check for data that need to be synced with new value	
+	setParamFieldValue(%array,%field,%value);		
 
-		if (isObject(%testObj)) {
-			%testObj.setFieldValue(%field,%value);
-			//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
-		}
-		//Check for a standard global starting with $
-		else if (getSubStr(%syncData,0,1) $= "$") {
-			eval(%syncData @" = %value;");
-		}
-		//Check for a function template by searching for );
-		else if (strFind(%syncData,");")) {
-			//Replace *val* occurance with value
-			if (strFind(%syncData,"*val*")) {
-				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
-				eval(%command);
-			}
-			//Replace ** occurance with value (Old way)
-			else if (strFind(%syncData,"**")) {
-				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
-				eval(%command);
-			}
-		}
-	}
 
 //---------------------------------------------------------------------------
 
@@ -160,6 +135,62 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 	// Unless noFriends is specified, try to update agregated friends
 	if (!%ctrl.noFriends)
 		%ctrl.updateFriends();
+}
+
+//==============================================================================
+// Generic updateRenderer method
+function setParamFieldValue( %array, %field,%value) {
+	%data = %array.getVal(%field);
+	%syncData = getField(%data,4);
+	
+	if (%array.noDirectSync || %syncData $= "") 
+		return false;
+		//Check for a standard global starting with $
+		
+		if (isObject(%syncData)) {
+				%syncData.setFieldValue(%field,%value);
+				//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
+			}
+			
+	
+		else if (getSubStr(%syncData,0,1) $= "$") {
+			%lastChar = getSubStr(%syncData,strlen(%syncData)-1,1);
+			if (%lastChar $= ":" || %lastChar $= "_"){
+				paramLog(%syncData,"LabParams::updateParamSyncData HalfPref eval",%syncData@%field@" = %value;" );
+				//Incomplete global, need to add the field
+				eval(%syncData@%field@" = %value;");
+				return;
+			}
+			paramLog(%syncData,"LabParams::updateParamSyncData FullGlobal eval",%syncData@%field@" = %value;" );
+			eval(%syncData @" = %value;");
+			return;
+		}
+		else if (strFind(%syncData,"::")) {
+		paramLog(%syncData,"LabParams::updateParamSyncData prefGroup eval",%paramArray.prefGroup@%syncData@" = %value;" );
+			eval(%paramArray.prefGroup@%syncData@" = %value;");
+			return;
+		} 
+		//Check for a function template by searching for );
+		else if (strFind(%syncData,");")) {
+			//Replace *val* occurance with value
+			if (strFind(%syncData,"*val*")) {
+				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
+				eval(%command);
+			}
+			//Replace ** occurance with value (Old way)
+			else if (strFind(%syncData,"**")) {
+				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
+				eval(%command);
+			}
+		}
+		else if (strFind(%syncData,".")) {
+			eval("%testObj = "@%syncData@";");
+
+			if (isObject(%testObj)) {
+				%testObj.setFieldValue(%field,%value);
+				//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
+			}
+		}
 }
 //==============================================================================
 // Generic updateRenderer method
@@ -225,5 +256,53 @@ function setParamCtrlValue(%ctrl,%value,%field,%paramArray) {
 
 	foreach$(%syncCtrl in %ctrl.syncCtrls)
 		%syncCtrl.setTypeValue(%value);
+}
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+function getParamValue(%paramArray,%field) {
+	%data = %paramArray.getVal(%field);
+		%syncData = getField(%data,4);
+	
+	//Stilll here, try to get the control
+	%container = %paramArray.container;
+	%ctrl = %container.findObjectByInternalName(%field,true);
+	if (isObject(%ctrl)){
+		%value = %ctrl.getTypeValue();		
+		return %value;
+	}
+	
+	//Skip Direct Sync if specified
+	if (isObject(%syncData)) {
+		%value = %syncData.getFieldValue(%field);
+		return %value;	
+	}	
+	
+		//Check for a standard global starting with $
+	if (getSubStr(%syncData,0,1) $= "$") {
+			%lastChar = getSubStr(%syncData,strlen(%syncData)-1,1);
+			if (%lastChar $= ":" || %lastChar $= "_"){
+				//Incomplete global, need to add the field
+				eval("%value = "@%syncData@%field@";");
+				return %value;
+			}
+			eval("%value = "@%syncData@";");			
+			return %value;
+	}
+	if (strFind(%syncData,"::")) {		
+			eval("%value = "@%paramArray.prefGroup@%syncData@";");		
+			return %value;
+	} 
+	
+	if (strFind(%syncData,".")) {
+		//Check for a standard global starting with $
+		eval("%testObj = "@%syncData@";");
+		if (isObject(%testObj)) {
+			%value = %testObj.getFieldValue(%field);
+			return %value;				
+		}
+	}
+	
+	
 }
 //------------------------------------------------------------------------------

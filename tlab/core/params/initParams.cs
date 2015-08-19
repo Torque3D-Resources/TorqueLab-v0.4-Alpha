@@ -4,23 +4,34 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-$LabParamsStyle = "OptStyleA";
+$LabParamsStyle = "StyleA";
 
 //==============================================================================
 //Initialize plugin data
-function Lab::newParamsArray(%this,%name,%group,%cfgObject,%useLongName) {
-	if (%name $= "") {
+function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName) {
+	if (%nameFlds $= "") {
 		warnLog("You need to specify a name for the settings which is unique in this type");
 		return;
 	}
-
+	
+	%name = getField(%nameFlds,0);
+	%nameCode = getField(%nameFlds,1);
+	if (%nameCode $= "")
+		%nameCode = %name;
+	
+	%group = getField(%groupFlds,0);
+	%groupCode = getField(%groupFlds,1);
+	if (%groupCode $= "")
+		%groupCode = %group;
+	
+	devLog("Name:",%name,%nameCode,"Group:",%group,%groupCode);
 	if (%container $= "")
 		%container = %name@"ParamStack";
 
 	%name = strreplace(%name," ","_");
 	%arrayName = %name;
 	if (%useLongName)
-		%arrayName = %group@%name;
+		%arrayName = %groupCode@%nameCode;
 		
 	
 	%fullName = %arrayName@"_Param";

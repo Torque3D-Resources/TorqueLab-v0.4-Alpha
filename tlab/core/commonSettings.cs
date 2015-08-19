@@ -17,8 +17,8 @@ function Lab::initCommonParams( %this ) {
 	%gid = 0;
 	%ar = %this.newParamsArray("Input","Common","",true);
 	%ar.group[%gid++] = "Mouse settings";
-	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "sliderOnly" TAB "range>>0 1.5;;precision>>2" TAB "$Cfg_MouseSpeed" TAB %gid);
-	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "sliderOnly" TAB "range>>0 3.15;;precision>>2" TAB "$Cfg_MouseScrollSpeed" TAB %gid);
+	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "$Cfg_MouseSpeed" TAB %gid);
+	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "$Cfg_MouseScrollSpeed" TAB %gid);
 	//General
 	%gid = 0;
 	%ar = %this.newParamsArray("General","Common","",true);
@@ -32,8 +32,11 @@ function Lab::initCommonParams( %this ) {
 	//Camera
 	%gid = 0;
 	%ar = %this.newParamsArray("Camera","Common");
+	%ar.prefGroup = "$Camera::";
+	%ar.autoSyncPref = true;
 	%ar.group[%gid++] = "Camera views settings";
-	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "sliderOnly" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("mouvementSpeed",      "1" TAB "Camera movement speed" TAB "sliderEdit" TAB "range>>0 500;;tickat>>1" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
 	%ar.setVal("CamViewEnabled",       "1" TAB "CamViewEnabled" TAB "CheckBox" TAB "" TAB "ECamViewGui.setState(**);" TAB %gid);
 	%ar.setVal("cameraDisplayMode",       "Standard Camera" TAB "Initial Camera Mode" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("cameraDisplayType",       $EditTsCtrl::DisplayTypePerspective TAB "cameraDisplayType" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
@@ -41,6 +44,45 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("orthoFOV",       "50" TAB "orthoFOV" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
+	
+	//Camera
+	%gid = 0;
+	%ar = %this.newParamsArray("Dev","Common");
+	%ar.prefGroup = "$Camera::";
+	%ar.autoSyncPref = true;
+	%ar.group[%gid++] = "Development settings";
+	%ar.setVal("mouvementSpeed",      "1" TAB "Camera movement speed" TAB "sliderEdit" TAB "range>>0 500;;tickat>>1" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("CamViewEnabled",       "1" TAB "CamViewEnabled" TAB "CheckBox" TAB "" TAB "ECamViewGui.setState(**);" TAB %gid);
+	%ar.setVal("cameraDisplayMode",       "Standard Camera" TAB "Initial Camera Mode" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("cameraDisplayType",       $EditTsCtrl::DisplayTypePerspective TAB "cameraDisplayType" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("LaunchInFreeview",       "1" TAB "Launch with free view" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("orthoFOV",       "50" TAB "orthoFOV" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
+	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
+	
+//==============================================================================
+//Development EDITOR SETTINGS
+
+	//Binds and inputs
+	%gid = 0;
+	%ar = %this.newParamsArray("Console","Development" TAB "Dev","",true);
+	%ar.prefGroup = "$pref::Console::";
+	%ar.autoSyncPref = true;
+
+	//%ar.style = "StyleA";
+	%ar.group[%gid++] = "Main editor frame";	
+	%ar.setVal("TraceLogLevel",      "1" TAB "TraceLogLevel" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowNotes",      "1" TAB "ShowNotes" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowInfos",      "1" TAB "ShowInfos" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("DevLogLevel",      "1" TAB "DevLogLevel" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowParamLog",      "1" TAB "ShowParamLog" TAB "Checkbox" TAB "" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseLog",      "0" TAB "MouseLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseDragLog",      "0" TAB "MouseDragLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseDragLogDelay",      "0.8" TAB "MouseDragLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseMoveLog",      "0" TAB "MouseMoveLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseMoveLogDelay",      "0.8" TAB "MouseMoveLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
+	
 //==============================================================================
 //Interface EDITOR SETTINGS
 $FrameMainSizes = "Thin Normal Large";

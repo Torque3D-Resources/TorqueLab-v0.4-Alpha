@@ -11,6 +11,8 @@ function Lab::initConfigSystem( %this,%defaults ) {
 	$LabConfigArrayGroup = newSimGroup("LabConfigArrayGroup");
 	exec("tlab/core/commonSettings.cs");
 	LabParamsGroup.clear();
+	
+
 	%this.initCommonParams();
 	%this.initAllPluginConfig();
 	if (%defaults)
@@ -20,6 +22,7 @@ function Lab::initConfigSystem( %this,%defaults ) {
 	//FIXME Rebuild params everytime for development but should be optimized later
 	LabParamsDlg.rebuildAll();
 	Lab.initDefaultSettings();
+	
 }
 //------------------------------------------------------------------------------
 
@@ -58,6 +61,34 @@ function Lab::setParamArrayDefaults(%this,%array) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+// Set params settings group to their default value
+//==============================================================================
+//==============================================================================
+function Lab::writeCurrentParamsConfig(%this) {
+	foreach(%array in LabParamsGroup)
+		%this.writeParamConfig(%array);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::writeParamConfig(%this,%array) {
+	%pattern = strreplace(%array.groupLink,"_","/");
+	LabCfg.beginGroup( %pattern, true );
+	%i = 0;
+	
+	for( ; %i < %array.count() ; %i++) {
+		%field = %array.getKey(%i);
+		%data = %array.getValue(%i);
+		%default = getWord(%data,0);	
+		
+		%value = getParamValue(%array,%field);		
+		%array.setCfg( %field,%value,false );
+	
+	}
+
+	LabCfg.endGroup();
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 // OLD System kept for reference showing how to read SettingObject file

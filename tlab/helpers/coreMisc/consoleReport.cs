@@ -6,10 +6,9 @@
 // logging with something slightly more advanced and flexible. You can define
 // the levels of logging to only show the logs that you need.
 //==============================================================================
-$pref::Dev::TraceLogLevel = 5;
+
 $pref::Console::ShowNotes = 1;
 $pref::Console::ShowInfos = 1;
-$pref::Dev::ReportLevel = 1;
 
 //==============================================================================
 // Advanced echo functions that display up to 9 arguments in color

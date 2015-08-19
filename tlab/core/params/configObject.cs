@@ -57,7 +57,8 @@ function ParamArray::getCfg( %this,%field ) {
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
 function ParamArray::setCfg( %this,%field,%value,%isDefault ) {
-	%pattern = strreplace(%this.groupLink,"_","/");
+	
+	%pattern = strreplace(%this.groupLink,"_","/");	
 	LabCfg.beginGroup( %pattern, true );
 	LabCfg.setCfg(%field,%value,%isDefault);
 	LabCfg.endGroup( );

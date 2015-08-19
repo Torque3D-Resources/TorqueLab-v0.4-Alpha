@@ -27,6 +27,7 @@ function LabParams::syncArray( %this,%paramArray,%syncTarget ) {
 //==============================================================================
 // Sync the current profile values into the params objects
 function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget ) {
+	paramLog("LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )",%this,%paramArray,%field,%data,%syncTarget );
 	%cfgObj = %paramArray.cfgObject;
 
 	if (isObject(%cfgObj)) {
@@ -56,6 +57,7 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 //==============================================================================
 // Sync the current profile values into the params objects
 function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
+	paramLog("LabParams::updateParamSyncData( %this,%field,%value,%paramArray )",%this,%field,%value,%paramArray );
 	%pill = %paramArray.pill[%field];
 	
 	if (isObject(%pill)) {
@@ -70,9 +72,72 @@ function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
 //==============================================================================
 function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
 	paramLog("LabParams::updateParamSyncData( %this,%field,%value,%paramArray )",%this,%field,%value,%paramArray );
-	%data = %paramArray.getVal(%field);
-	%syncData = getField(%data,4);
+	
+	//setParamFieldValue(%paramArray,%field,%value);	
+	return;
+	//Skip Direct Sync if specified
+	if (isObject(%syncData)) {
+		%syncData.setFieldValue(%field,%value);
+		return;
+		//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
+	}
+	
+	
+		//Check for a standard global starting with $
+	if (getSubStr(%syncData,0,1) $= "$") {
+			%lastChar = getSubStr(%syncData,strlen(%syncData)-1,1);
+			if (%lastChar $= ":" || %lastChar $= "_"){
+				paramLog(%syncData,"LabParams::updateParamSyncData HalfPref eval",%syncData@%field@" = %value;" );
+				//Incomplete global, need to add the field
+				eval(%syncData@%field@" = %value;");
+				return;
+			}
+			paramLog(%syncData,"LabParams::updateParamSyncData FullGlobal eval",%syncData@%field@" = %value;" );
+			eval(%syncData @" = %value;");
+			return;
+	}
+	if (strFind(%syncData,"::")) {
+		paramLog(%syncData,"LabParams::updateParamSyncData prefGroup eval",%paramArray.prefGroup@%syncData@" = %value;" );
+			eval(%paramArray.prefGroup@%syncData@" = %value;");
+			return;
+	} 
+	/*if (strFind(%syncData,"**")) {
+			%func = strreplace(%syncData,"**","\""@%value@"\"");
+			devLog("Syncing a callback function:",%syncData,"Converted to:",%func);
+			eval(%func);
+			return;
+	}*/
+	//Check for a function template by searching for );
+	if (strFind(%syncData,");")) {
+		//Replace *val* occurance with value
+		if (strFind(%syncData,"*val*")) {
+			%command = strreplace(%syncData,"*val*","\""@%value@"\"");
+			paramLog(%syncData,"LabParams::updateParamSyncData Func *val* eval",%command);
+			eval(%command);
+			return;
+		}
+		//Replace ** occurance with value (Old way)
+		else if (strFind(%syncData,"**")) {
+			%command = strreplace(%syncData,"**","\""@%value@"\"");
+			paramLog(%syncData,"LabParams::updateParamSyncData Func ** eval",%command);
+			eval(%command);
+			return;
+		}
+		
+	}
+	else if (strFind(%syncData,".")) {
+		paramLog(%syncData,"LabParams::updateParamSyncData Last ObjCheck eval","%testObj = "@%syncData@";");
+		//Check for a standard global starting with $
+		eval("%testObj = "@%syncData@";");
+		if (isObject(%testObj)) {
+			%testObj.setFieldValue(%field,%value);
+			return;				
+		}
+	}
+}
 
+//---------------------------------------------------------------------------
+/*
 	if ( %syncData !$="") {
 		if (isObject(%syncData)) {
 			eval(%syncData@"."@%field@" = %value;");
@@ -94,8 +159,8 @@ function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
 		} else {
 			paramLog("Sync data is unknown:",%syncData);
 		}
-	}
-}
+	}*/
+//}
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -105,9 +170,7 @@ function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
 //==============================================================================
 function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 ) {
 	paramLog("LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 )",%this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 );
-	%cfgObj = %paramArray.cfgObject;
-	%data = %paramArray.getVal(%field);	
-	
+	%cfgObj = %paramArray.cfgObject;	
 	
 	if (isObject(%cfgObj)) {
 		%cfgObj.setCfg(%field,%value);
@@ -117,9 +180,9 @@ function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,
 		return false;
 	}
 
-	%ctrl.updateFriends();
-	%this.updateParamSyncData(%field,%value,%paramArray);
-	%this.setParamPillValue(%field,%value,%paramArray);
+	//%ctrl.updateFriends();
+	//%this.updateParamSyncData(%field,%value,%paramArray);
+	//%this.setParamPillValue(%field,%value,%paramArray);
 }
 //------------------------------------------------------------------------------
 function LabParams::updateParamFromCtrl( %this,%ctrl,%field,%value,%paramArray ) {
