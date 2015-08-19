@@ -57,14 +57,23 @@ function SceneCreatorWindow::addMissionObjectIcon( %this, %class, %name, %buildf
 	// If we don't find a specific function for building an
 	// object then fall back to the stock one
 	%method = "build" @ %buildfunc;
-
+	devLog("Method = ",%method);
 	if( !ObjectBuilderGui.isMethod( %method ) )
 		%method = "build" @ %class;
-
+	
 	if( !ObjectBuilderGui.isMethod( %method ) )
-		%cmd = "return new " @ %class @ "();";
-	else
+		%method = "build" @ %class;
+		
+	if( !ObjectBuilderGui.isMethod( %method ) ){
+		%func = "build" @ %buildfunc;
+		if (isFunction("build" @ %buildfunc))
+			%cmd = "return build" @ %buildfunc @ "();";
+		else
+			%cmd = "return new " @ %class @ "();";
+	}
+	else{
 		%cmd = "ObjectBuilderGui." @ %method @ "();";
+	}
 
 	%ctrl.altCommand = "ObjectBuilderGui.newObjectCallback = \"SceneCreatorWindow.onFinishCreateObject\"; SceneCreatorWindow.createObject( \"" @ %cmd @ "\" );";
 	%ctrl.iconBitmap = EditorIconRegistry::findIconByClassName( %class );

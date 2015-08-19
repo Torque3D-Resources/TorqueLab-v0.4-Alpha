@@ -10,7 +10,8 @@ function Editor::open(%this) {
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
 
-	Lab.attachEditorGuis();
+
+	Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 
 	if( !LabEditor.isInitialized )
@@ -20,7 +21,7 @@ function Editor::open(%this) {
 
 	//Set the wanted plugin activated
 	if (!isObject(Lab.currentEditor))
-		Lab.currentEditor = Lab.defaultPlugin;
+		Lab.currentEditor = Lab.defaultPlugin;	
 
 	Lab.setEditor( Lab.currentEditor, true );
 	EditorGui.previousGui = Canvas.getContent();
@@ -39,11 +40,19 @@ function Editor::open(%this) {
 	//Callbacks used by plugins
 	Lab.OnEditorOpen();
 	EditorFrameWorld.pushToBack(EditorFrameTools);
+	
+
+	EditorGuiToolbarStack.bringToFront(EditorGuiToolbarStack-->FirstToolbarGroup);
+	EditorGuiToolbarStack.pushToBack(EditorGuiToolbarStack-->LastToolbarGroup);
+	
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // EditorGui OnWake -> When the EditorGui is rendered
 function EditorGui::onWake( %this ) {
+	
+	
 	Lab.setInitialCamera();
 	//EHWorldEditor.setStateOn( 1 );
 	startFileChangeNotifications();
@@ -53,9 +62,13 @@ function EditorGui::onWake( %this ) {
 		%plugin.onEditorWake();
 	}
 	
-	//Reset the GameLabGui to default state
-	GameLabGui.reset();
+	//Reset the TLabGameGui to default state
+	TLabGameGui.reset();
 
+	if(Canvas.getContent() == GuiEditorGui.getId()){
+		warnLog("EditorGui::OnWake while in GuiEditor so leave now!");
+		return;
+	}
 	// Push the ActionMaps in the order that we want to have them
 	// before activating an editor plugin, so that if the plugin
 	// installs an ActionMap, it will be highest on the stack.
@@ -92,6 +105,9 @@ function EditorGui::onSetContent(%this, %oldContent) {
 
 //==============================================================================
 function Lab::initializeEditorGui( %this ) {
+	%this.prepareAllPluginsGui();
+	ETools.initTools();
+	
 	EWorldEditor.isDirty = false;
 	ETerrainEditor.isDirty = false;
 	ETerrainEditor.isMissionDirty = false;
@@ -131,6 +147,16 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.addGui( EManageSFXParameters ,"Dialog");
 	Lab.addGui( ESelectObjects ,"Dialog");
 	
+	
+
+	Lab.addGui( EPostFxManager ,"EditorDlg");
+	
+	
+	Lab.addGui( StackStartToolbar ,"Toolbar",true);
+	Lab.addGui( StackEndToolbar ,"Toolbar",true);
+	
+	StackStartToolbar.isCommon = true;
+	StackEndToolbar.isCommon = true;
 	EWorldEditor.init();
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();
@@ -180,6 +206,10 @@ function Lab::initializeEditorGui( %this ) {
 	Lab.initCoreGuis();
 	Lab.resizeEditorGui();
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");
+	
+	Lab.initAllToolbarGroups();
+	
+	Lab.initToolbarTrash();
 	
 }
 //------------------------------------------------------------------------------

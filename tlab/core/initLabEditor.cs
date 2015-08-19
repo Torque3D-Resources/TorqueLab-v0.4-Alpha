@@ -9,6 +9,7 @@ function Lab::initLabEditor( %this ) {
 	if( !isObject( "Lab_PM" ) )
 		new PersistenceManager( Lab_PM );
 
+	$LabObj = newScriptObject("LabObj");
 	new SimGroup(ToolLabGuiGroup);
 	$LabPluginGroup = newSimSet("LabPluginGroup");
 	newSimSet( ToolGuiSet );
@@ -25,6 +26,8 @@ function Lab::initLabEditor( %this ) {
 	%this.initEditorGui();
 	%this.initMenubar();
 	%this.initParamsSystem();
+	
+	 exec("tlab/EditorLab/guiLab/initGuiLab.cs");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -40,29 +43,38 @@ function Lab::initEditorGui( %this ) {
 	newSimSet("LabEditorGuiSet");
 	newSimSet("LabExtraGuiSet");
 	newSimSet("LabToolbarGuiSet");
+	newSimSet("LabGeneratedSet");
+	newSimSet("LabToolbarStartGuiSet");
 	newSimSet("LabPaletteGuiSet");
 	newSimSet("LabDialogGuiSet");
 	newSimSet("LabSettingGuiSet");
+	newSimSet("LabEditorDlgSet");
+	newSimSet("EditorDetachedGuis");
+	
 	$LabPalletteContainer = EditorGui-->ToolsPaletteContainer;
 	$LabPalletteArray = EditorGui-->ToolsPaletteArray;
 	$LabPluginsArray = EditorGui-->PluginsArray;
 	$LabWorldContainer = EditorGui-->WorldContainer;
 	$LabSettingContainer = EditorGui-->SettingContainer;
 	$LabToolbarContainer = EditorGui-->ToolbarContainer;
+	$LabToolbarEndContainer = EditorGui-->ToolbarContainerEnd;
+	$LabToolbarStartContainer = EditorGui-->ToolbarContainerStart;
 	$LabDialogContainer = EditorGui-->ToolsContainer;
 	$LabEditorContainer = EditorGui-->EditorContainer;
 	$LabExtraContainer = EditorGui-->ExtraContainer;
-	EditorFrameMain.frameMinExtent(1,280,100);
+	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // All the plugins scripts have been loaded
 function Lab::pluginInitCompleted( %this ) {
-	%this.prepareAllPluginsGui();
-	ETools.initTools();
+	//%this.prepareAllPluginsGui();
+	//ETools.initTools();
 	//Prepare the Settings
-	%this.initConfigSystem();
+	Lab.initConfigSystem();
+	
+	
 }
 //------------------------------------------------------------------------------
 

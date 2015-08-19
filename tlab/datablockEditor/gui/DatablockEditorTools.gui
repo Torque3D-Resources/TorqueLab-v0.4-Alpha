@@ -67,7 +67,7 @@
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsWindowProfile_Dark";
+      profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -97,7 +97,7 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -265,7 +265,7 @@
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTreeViewProfile_Dark";
+                  profile = "ToolsTreeViewProfile";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -481,7 +481,7 @@
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
-      profile = "ToolsWindowProfile_Dark";
+      profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -525,7 +525,7 @@
             minExtent = "64 20";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -634,7 +634,7 @@
             minExtent = "64 64";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -690,7 +690,7 @@
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsPanelDarkB";
+                  profile = "ToolsFillDarkB";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -716,7 +716,7 @@
             minExtent = "64 48";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkB";
+            profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";

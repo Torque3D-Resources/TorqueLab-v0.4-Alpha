@@ -3,28 +3,34 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::toggleToolbarCamSpeedSlider( %this,%sourceObj ) {
-//Canvas.pushDialog(softSnapSizeSliderCtrlContainer);
+//==============================================================================
+function Lab::setCameraMoveSpeedCtrl(%this, %ctrl) {
+	%value = %ctrl.getTypeValue();
+	%this.setCameraMoveSpeed(%value);
+	//%ctrl.updateFriends();
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::setCameraMoveSpeed(%this, %speed) {
+	// Update Toolbar TextEdit
+	EditorGuiToolbarStack-->CameraSpeedEdit.setText(%speed);
+	//EWorldEditorCameraSpeed.setText( %value );
+	$Camera::movementSpeed = %speed;
+	//EditorGuiToolbarStack-->CameraMoveSpeed.setTypeValue(%value);	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::toggleToolbarCamSpeedSlider(%this, %sourceObj) {
 	%srcPos = %sourceObj.getRealPosition();
 	%srcPos.y += %sourceObj.extent.y;
-	EOverlay.toggleSlider("2",%srcPos,"range \t 0.1 500 \n altCommand \t Lab.updateCamSpeedSliderMenuBar( $ThisControl );",$Camera::movementSpeed,1);
+	%range = "1 1000";
+	%ticks = getTicksFromRange(%range,"1");
+	EOverlay.toggleSlider("2",%srcPos,"range \t "@%range@" \n ticks \t "@%ticks@"\n altCommand \t Lab.setCameraMoveSpeedCtrl($ThisControl);",$Camera::movementSpeed);
 }
-//==============================================================================
-function Lab::updateCamSpeedSliderMenuBar(%this, %slider) {
-	// Update Toolbar TextEdit
+//------------------------------------------------------------------------------
 
-	%value = %slider.getValue();
-	%value = mFloatLength(%value,1);
 
-	EWorldEditorCameraSpeed.setText( %value );
-	$Camera::movementSpeed = %value;
-	CameraSpeedDropdownContainer-->TextEdit.setTypeValue(%value);
-
-	
-
-	// Update Editor
-	//EditorCameraSpeedOptions.checkRadioItem(0, 6, -1);
-}
 
 //==============================================================================
 function EWorldEditorToggleCamera::toggleBitmap(%this) {

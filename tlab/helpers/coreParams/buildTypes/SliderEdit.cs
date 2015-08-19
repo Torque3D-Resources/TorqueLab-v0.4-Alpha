@@ -47,13 +47,17 @@ function buildParamSliderEdit( %pData ) {
 
 				%slider.command = %pData.Command;
 				%slider.altCommand = %pData.AltCommand;
-				%slider.internalName = %pData.InternalName@"_slider";
+				%slider.internalName = %pData.InternalName@"__slider";
 				%slider.variable = %pData.Variable;
 				if (%pData.Value !$= "")
 					%slider.setValue(%pData.Value);
 
 				%slider.tooltip = %tooltip;
 				%slider.hovertime = %tooltipDelay;
+			
+				
+				%slider.extent.y = %pData.Widget-->Slider.extent.y;
+				
 				%pData.pill-->field.tooltip = %tooltip;
 				%pData.pill-->field.hovertime = %tooltipDelay;
 				%textEdit.tooltip = %tooltip;

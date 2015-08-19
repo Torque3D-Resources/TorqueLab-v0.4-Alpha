@@ -3,7 +3,8 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$TPG_AutoStepGeneration = true;
+$TPG_AutoStepGeneration = "1";
+$TPG_StepGenerationMode = "1";
 //==============================================================================
 // Terrain Paint Generator - Terrain Paint Generation Functions
 //==============================================================================
@@ -18,14 +19,13 @@ function TPG::generateLayerGroup(%this) {
 		%layer.inactive = false;
 		%layer.failedSettings = "";
 		if ( !%layer.activeCtrl.isStateOn()) {
-			%layer.inactive = true;
-			devLog("Skipping inactive layer:",%layer.matInternalName);
+			%layer.inactive = true;			
 			continue;
 		}
 	
 		
 		%layer.fieldsValidated = false;
-		%validated = %this.validateLayerSettings(%layer,true);
+		%validated = %this.validateLayerObjSetting(%layer,true);
 		
 			if (strFind(%layer.matInternalName,"*"))
 		 	%layer.failedSettings = "Invalid material assigned to layer, please select a valid from the menu";	
@@ -47,7 +47,8 @@ function TPG::generateLayerGroup(%this) {
 	show(TPG_GenerateProgressWindow);
 	TPG_GenerateLayerStack.clear();
 
-	foreach(%layer in TPG_LayerGroup) {
+	foreach(%ctrl in TPG_StackLayers) {
+		%layer = %ctrl.layerObj;
 		if (%layer.inactive)
 			continue;			
 		
@@ -83,6 +84,14 @@ TPG_GenerateProgressWindow-->reportText.text = %layerId SPC "layers  are ready t
 //					"We recommend you to save your work before proceeding with automated painting. Are you sure you want to start the painting process?","TPG.schedule(1000,\"startGeneration\");");
 	//%this.schedule(1000,"startGeneration");
 }
+function TPG::toggleStepMode(%this,%checkbox) {
+	return;
+	if (%checkbox.isStateOn())
+		$TPG_AutoStepGeneration = "0";
+	else
+		$TPG_AutoStepGeneration = "1";
+}
+
 //------------------------------------------------------------------------------
 function TPG_ReportButton::onClick(%this) {
 	devLog("OnCLick");
@@ -101,31 +110,26 @@ function TPG_ReportButton::onClick(%this) {
 //==============================================================================
 // Start the generation process now that everything is validated
 function TPG::startGeneration(%this) {
+	
 	if ($TPG_Generating) return;
-
+	
 	TPG.generationStartTime = $Sim::Time;
 	$TPG_Generating = true;
 	TPG.generatorSteps = "";
 
-	foreach(%layer in TPG_LayerGroup) {
+	foreach(%ctrl in TPG_StackLayers) {
+		%layer = %ctrl.layerObj;
 		if (%layer.inactive)
 			continue;
-
-		if ($TPG_StepGeneration)
-			TPG.generatorSteps = strAddWord(TPG.generatorSteps,%layer.getId());
-		else if ($TPG_AutoStepGeneration)
-			TPG.generatorSteps = strAddWord(TPG.generatorSteps,%layer.getId());
-		else
-			%this.generateLayer(%layer);
+		
+		TPG.generatorSteps = strAddWord(TPG.generatorSteps,%layer.getId());
+	
 	}
 
 	$TPG_Generating = false;
 	//TPG_GenerateProgressWindow.setVisible(false);
+	%this.doGenerateLayerStep(200);
 
-	if ($TPG_StepGeneration)
-		%this.doGenerateLayerStep(500);
-	else if ($TPG_AutoStepGeneration)
-		%this.doGenerateLayerStep(200);
 }
 //------------------------------------------------------------------------------
 
@@ -140,7 +144,7 @@ function TPG::doGenerateLayerStep(%this,%delay) {
 	TPG_GenerateProgressWindow-->reportText.text ="Processing layer:" SPC %layer.matInternalName @"." SPC getWordCount(TPG.generatorSteps) SPC "left to process.";
 	TPG.generatorSteps = removeWord(TPG.generatorSteps,0);
 	$TPG_LayerStartTime = $Sim::Time;
-	devLog(%layer.matInternalName," Start time:",$TPG_LayerStartTime,"From sim:",$Sim::Time);
+	
 	%this.schedule(%delay,"generateLayer",%layer,true);
 }
 //==============================================================================
@@ -152,44 +156,58 @@ function TPG::generateLayer(%this,%layer,%stepMode) {
 	%heightMax = %layer.getFieldValue("heightMax");
 	%slopeMin = %layer.getFieldValue("slopeMin");
 	%slopeMax = %layer.getFieldValue("slopeMax");
-	%coverage = %layer.getFieldValue("coverage");
-
-	if (!%layer.useTerrainHeight) {
-		%heightMin += $Lab_TerrainZ;
-		%heightMax += $Lab_TerrainZ;
-	}
+	%coverage = %layer.getFieldValue("coverage");	
+	
+	%terrain = ETerrainEditor.getActiveTerrain();
+	%heightMin_w = getWord(%terrain.position,2) + %heightMin;
+	%heightMax_w = getWord(%terrain.position,2) + %heightMax;
 	
 	if (%stepMode)
-		info("Step Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin, %heightMax, %slopeMin, %slopeMax,"Coverage",%coverage);
+		info("Step Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin_w@"("@%heightMin@")", %heightMax_w@"("@%heightMax@")", %slopeMin, %slopeMax,"Coverage",%coverage);
 	else
 		info("Painting terrain with Mat Index",%layer.matIndex,"Name",%layer.matInternalName,"Height and Slope",%heightMin, %heightMax, %slopeMin, %slopeMax,"Coverage",%coverage);
 
-	ETerrainEditor.autoMaterialLayer(%heightMin, %heightMax, %slopeMin, %slopeMax,%coverage);
-	%this.generateLayerCompleted(%layer,%stepMode);
+	ETerrainEditor.autoMaterialLayer(%heightMin_w, %heightMax_w, %slopeMin, %slopeMax,%coverage);
+	%this.generateLayerCompleted(%layer);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Tell the engine to generate a layer with approved settings
-function TPG::generateLayerCompleted(%this,%layer,%stepMode) {
+function TPG::generateLayerCompleted(%this,%layer) {
 	TPG.generationTotalTime = $Sim::Time - TPG.generationStartTime;
 	%layerTime = $Sim::Time - $TPG_LayerStartTime;
-	devLog(%layer.matInternalName," Start time:",$TPG_LayerStartTime,"New Sim:",$Sim::Time,"Diff",%layerTime);
 	%pill = TPG_GenerateLayerStack.findObjectByInternalName(%layer.internalName,true);
-	%pill-->duration.text = mFloatLength(%layerTime,2) SPC "sec";
-	if (%stepMode && getWord(TPG.generatorSteps,0) !$= ""){
-		
-		if ($TPG_AutoStepGeneration)
+	%pill-->duration.text = mFloatLength(%layerTime,2) SPC "sec";	
+
+	//Get next layer step, if empty, process is completed
+	%nextStep = getWord(TPG.generatorSteps,0);	
+	if (%nextStep !$= ""){
+		//Call next step now if we are in Auto Step Generation mode, else wait for next step confirmation			
+		if (!TPG_StepModeCheckbox.isStateOn())
 			TPG.doGenerateLayerStep(200);
 		else
-			LabMsgYesNo(%layer.matInternalName SPC "step completed","Do you want to proceed with next step:" SPC getWord(TPG.generatorSteps,0).matInternalName SPC "?","TPG.doGenerateLayerStep(500);");
+			LabMsgYesNo(%layer.matInternalName SPC "step completed","Do you want to proceed with next step:" SPC getWord(TPG.generatorSteps,0).matInternalName SPC "?","TPG.doGenerateLayerStep(500);","TPG.generateProcessCompleted();");
 	}
 	else{
-		$TPG_GenerationStatus = "Completed";
-		TPG_GenerateProgressWindow-->reportText.text ="All layers have been processed. It took " @ TPG.generationTotalTime @ "sec to complete";
-		TPG_GenerateProgressWindow-->reportButton.text = "Close report";
-		TPG_GenerateProgressWindow-->reportButton.active = 1;
-		//LabMsgOk("Terrain painting completed","All layers have been successfully painted over the terrain. It took" SPC TPG.generationTotalTime SPC "to complete the process.");
+		%this.generateProcessCompleted();		
 	}
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Tell the engine to generate a layer with approved settings
+function TPG::generateProcessCompleted(%this) {	
+	if (TPG.generatorSteps !$= "")
+		%result = "Process cancelled. ("@getWordCount(TPG.generatorSteps)@" unprocessed).";
+	else
+		%result = "All layers have been processed.";
+		
+	TPG.generatorSteps = "";	
+			
+	$TPG_GenerationStatus = "Completed";
+	TPG_GenerateProgressWindow-->reportText.text = %result SPC "Process time:\c1 " @ TPG.generationTotalTime @ " sec";
+	TPG_GenerateProgressWindow-->reportButton.text = "Close report";
+	TPG_GenerateProgressWindow-->reportButton.active = 1;	
 }
 //------------------------------------------------------------------------------

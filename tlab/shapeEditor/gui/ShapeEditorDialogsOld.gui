@@ -43,7 +43,7 @@
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "top";
-      profile = "ToolsPanelDarkA";
+      profile = "ToolsFillDarkA";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -75,7 +75,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsPanelDarkA";
+         profile = "ToolsFillDarkA";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -97,7 +97,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsPanelDarkA";
+            profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -618,7 +618,7 @@
       minExtent = "210 253";
       horizSizing = "left";
       vertSizing = "bottom";
-      profile = "ToolsWindowProfile_Dark";
+      profile = "ToolsWindowProfile";
       visible = "0";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -650,7 +650,7 @@
          minExtent = "8 -500";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookProfile_S1";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -699,7 +699,7 @@
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkB";
+               profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -767,7 +767,7 @@
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkA";
+               profile = "ToolsFillDarkA";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -838,7 +838,7 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
-               profile = "ToolsPanelDarkB";
+               profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1031,7 +1031,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.detailSize";
@@ -1626,7 +1626,7 @@
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkB";
+               profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1694,7 +1694,7 @@
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "ToolsPanelDarkB";
+               profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1794,7 +1794,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
@@ -1848,7 +1848,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
@@ -1925,7 +1925,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
@@ -2047,7 +2047,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
@@ -2123,7 +2123,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_Blue_S1";
+                        profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
@@ -2176,7 +2176,7 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkA";
+            profile = "ToolsFillDarkA";
             visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2411,7 +2411,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
@@ -2462,7 +2462,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.updateSelectedMount();";
@@ -2538,7 +2538,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.updateSelectedMount();";
@@ -2637,7 +2637,7 @@
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.setMountThreadSequence();";
@@ -2740,7 +2740,7 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkA";
+            profile = "ToolsFillDarkA";
             visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -3304,7 +3304,7 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsPanelDarkA";
+            profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -3420,7 +3420,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.editCollision();";
@@ -3495,7 +3495,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsDropdownProfile_Thin";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.editCollision();";
@@ -4241,7 +4241,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsPanelDarkA_T50";
+                  profile = "ToolsFillDarkA_T50";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";

@@ -10,6 +10,8 @@ function paramOpt(  ) {
 
 function LabParamsDlg::onWake( %this ) {
 	hide(%this-->ParamStyles);
+	LabParamsTree.expandAllGroups(true);
+	LabCfg.getAllConfigs();
 }
 //==============================================================================
 function LabParamsDlg::rebuildAll( %this ) {
@@ -45,6 +47,8 @@ function LabParamsDlg::buildAllParams( %this ) {
 		%paramArray.optContainer = %newContainer;
 		LabParamsTree.addParam(%paramArray);
 		%paramArray.container = %newContainer-->Params_Stack;
+		
+		%paramArray.style = $LabParamsStyle;
 		buildParamsArray(%paramArray);
 		LabParams.syncArray(%paramArray,true);
 	}
@@ -84,34 +88,43 @@ function LabParamsDlg::clearSettingsContainer( %this ) {
 //==============================================================================
 function LabParamsTree::rebuildAll( %this ) {
 	LabParamsTree.clear();
+	LabParamsTree.groupList = "";
 	LabParamsDlg.clearSettingsContainer();
 	LabParamsDlg.buildAllParams(true);
-	LabParamsTree.buildVisibleTree();
+	%this.expandAllGroups();
+	%this.buildVisibleTree();
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // LabParamsTree Callbacks
 //==============================================================================
-
 //==============================================================================
-function LabParamsTree::onSelect( %this,%itemId ) {
+function LabParamsTree::expandAllGroups( %this,%buildTree ) {
+	foreach$(%id in  LabParamsTree.groupList)
+		LabParamsTree.expandItem(%id);
+	
+	if (%buildTree)
+		%this.buildVisibleTree();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function LabParamsTree::onSelect( %this,%itemId ) {	
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);
+	%value = %this.getItemValue(%itemId);	
+	%itemObj = $LabParamsItemObj[%itemId];
+	//devLog("LabParamsTree onSelect:",%itemId,"Text",%text,"Value",%value,"ItemObj",%itemObj);
+	if (isObject(%itemObj)) {
+		LabParamsDlg.setSelectedSettings(%itemObj);
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onMouseUp( %this,%itemId,%clicks ) {
-	devLog("LabParamsTree::onMouseUp( %this,%itemId,%clicks )",%this,%itemId,%clicks );
 	%itemObj = $LabParamsItemObj[%itemId];
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);
-	devLog("LabParamsTree::onMouseUp Text",%text,"Value",%value );
-
-	if (isObject(%itemObj)) {
-		LabParamsDlg.setSelectedSettings(%itemObj);
-	} else {
-	}
+	%value = %this.getItemValue(%itemId);	
+	return;	
 }
 //------------------------------------------------------------------------------
 
@@ -127,6 +140,7 @@ function LabParamsTree::addSettingGroup( %this,%group) {
 
 	if( %groupId == 0 ) {
 		%groupId = %tree.insertItem( 0, %groupTitle,%group );
+		LabParamsTree.groupList = strAddWord(LabParamsTree.groupList,%groupId,true);
 	}
 
 	return %groupId;

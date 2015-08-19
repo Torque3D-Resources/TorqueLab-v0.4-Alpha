@@ -8,12 +8,12 @@ function TerrainPainterPlugin::initParamsArray( %this,%cfgArray ) {
 	%gid = 1;
 	%cfgArray.group[%gid] = "Action values";
 	%cfgArray.setVal("maxBrushSize",       "40 40" TAB "maxBrushSize" TAB "TextEdit" TAB "" TAB "ETerrainEditor" TAB %gid);
-	%cfgArray.setVal("BrushSize",       "2" TAB "brushSize" TAB "TextEdit" TAB "" TAB "TPP_BrushManager.validateBrushSize(**);" TAB %gid);
-	%cfgArray.setVal("BrushType",       "box" TAB "brushType" TAB "TextEdit" TAB "" TAB "ETerrainEditor.setBrushType(**);" TAB %gid);
-	%cfgArray.setVal("BrushPressure",       "1" TAB "brushPressure" TAB "TextEdit" TAB "" TAB "TPP_BrushManager.validateBrushPressure(**);" TAB %gid);
-	%cfgArray.setVal("BrushSoftness",       "1" TAB "brushSoftness" TAB "TextEdit" TAB "" TAB "TPP_BrushManager.validateBrushSoftness(**);" TAB %gid);
-	%cfgArray.setVal("BrushSlopeMin",       "1" TAB "BrushSlopeMin" TAB "TextEdit" TAB "" TAB "TPP_BrushManager.validateBrushSlopeMin(**);" TAB %gid);
-	%cfgArray.setVal("BrushSlopeMax",       "1" TAB "BrushSlopeMax" TAB "TextEdit" TAB "" TAB "TPP_BrushManager.validateBrushSlopeMax(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSize",       "2" TAB "brushSize" TAB "TextEdit" TAB "" TAB "TEP_BrushManager.validateBrushSize(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushType",       "box" TAB "brushType" TAB "TextEdit" TAB "" TAB "ETerrainEditor.setBrushType(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushPressure",       "50" TAB "brushPressure" TAB "TextEdit" TAB "" TAB "TEP_BrushManager.validateBrushPressure(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSoftness",       "50" TAB "brushSoftness" TAB "TextEdit" TAB "" TAB "TEP_BrushManager.validateBrushSoftness(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSlopeMin",       "0" TAB "BrushSlopeMin" TAB "TextEdit" TAB "" TAB "TEP_BrushManager.validateBrushSlopeMin(**);" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSlopeMax",       "90" TAB "BrushSlopeMax" TAB "TextEdit" TAB "" TAB "TEP_BrushManager.validateBrushSlopeMax(**);" TAB %gid);
 	%gid = 2;
 	%cfgArray.group[%gid] = "Action values";
 	%cfgArray.setVal("adjustHeightVal",       "10" TAB "adjustHeightVal" TAB "TextEdit" TAB "" TAB "ETerrainEditor"  TAB %gid);
@@ -67,6 +67,8 @@ function TerrainPainterPlugin::onWorldEditorStartup( %this ) {
 	%map.bindCmd( keyboard, "-", "TPG.getCurrentSlope();", "" );// +1 Brush Size
 	TPG.map = %map;
 	//TPP_BrushManager.validateBrushSlopeMin(%this.defaultBrushSlopeMin);
+	TPG_Window-->groupName.setText("Default");
+	TPG_Window-->groupFolders.setText("");
 }
 
 function TerrainPainterPlugin::onActivated( %this ) {
@@ -87,6 +89,8 @@ function TerrainPainterPlugin::onActivated( %this ) {
 	EPainter.onActivated();
 	TerrainPainterPlugin.syncBrushInfo();
 	EditorGuiStatusBar.setSelection("");
+	
+	
 }
 
 function TerrainPainterPlugin::onDeactivated( %this ) {
@@ -97,8 +101,10 @@ function TerrainPainterPlugin::onDeactivated( %this ) {
 	//EWTerrainPainterToolbar.setVisible(false);
 	//ETerrainEditor.setVisible( false );
 }
-
-function TerrainPainterPlugin::syncBrushInfo( %this ) {
+//TerrainPainterPlugin.syncBrushInfo
+function TerrainPainterPlugin::syncBrushInfo( %this ) {	
+	
+	
 	// Update gui brush info
 	PaintBrushSizeTextEditContainer-->textEdit.text = getWord(ETerrainEditor.getBrushSize(), 0);
 	PaintBrushSlopeControl-->SlopeMinAngle.text = ETerrainEditor.getSlopeLimitMinAngle();
@@ -107,7 +113,6 @@ function TerrainPainterPlugin::syncBrushInfo( %this ) {
 	%brushType = ETerrainEditor.getBrushType();
 	eval( "EWTerrainPainterToolbar-->" @ %brushType @ ".setStateOn(1);" );
 }
-
 
 
 function TerrainPainterPlugin::keyboardModifyBrushSize( %this, %amt) {

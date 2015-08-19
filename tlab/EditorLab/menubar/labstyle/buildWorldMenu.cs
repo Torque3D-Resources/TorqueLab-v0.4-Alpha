@@ -7,6 +7,7 @@
 
 //==============================================================================
 function Lab::buildMenu(%this) {
+	Lab.setActiveMenu(LabMenu);
 	Lab.clearMenus();
 	%menuId = 0;
 

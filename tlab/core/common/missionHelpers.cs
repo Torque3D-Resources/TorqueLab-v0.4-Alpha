@@ -29,6 +29,8 @@ function Lab::setNextScreenShotPreview(%this) {
 //==============================================================================
 // SEP_GroundCover.getMissionGroundCover();
 function Lab::getMissionObjectClassList( %this,%class ) {
+	if (!isObject(MissionGroup))
+		return "-1";
 	%this.missionObjectClassList = "";
 	%this.checkMissionSimGroupForClass(MissionGroup,%class);
 	%list = %this.missionObjectClassList;

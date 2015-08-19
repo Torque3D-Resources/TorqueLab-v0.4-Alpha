@@ -58,7 +58,7 @@ function buildForestDataFromFolder(%baseFolder,%name,%prefix,%settingContainer,%
 	}
 
 	if (%name $= "")
-		%name = getFileFolder(%baseFolder);
+		%name = getParentFolder(%baseFolder);
 
 	%prefixItem = "FI_";
 
@@ -81,7 +81,7 @@ function buildForestDataFromFolder(%baseFolder,%name,%prefix,%settingContainer,%
 		%subFolders = trim(strreplace(%subFolders,"/"," "));
 
 		if (%subFolders $= "")
-			%subFolders = getFileFolder(%filePath);
+			%subFolders = getParentFolder(%filePath);
 
 		%level = 1;
 		%parentGroup = %rootGroup;

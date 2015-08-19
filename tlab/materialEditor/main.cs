@@ -44,14 +44,11 @@ function execMEP(%loadGui) {
 	}
 
 	// Load Client Scripts.
-	exec("./scripts/materialEditor.cs");
-	exec("./scripts/materialEditorUndo.cs");
+
 	exec("./MaterialEditorPlugin.cs");
-	exec("./base/ME_MaterialCore.cs");
-	exec("./base/ME_MaterialActive.cs");
-	exec("./base/ME_MaterialGui.cs");
-	exec("./base/ME_MaterialUpdate.cs");
-	exec("./base/ME_MaterialCubemap.cs");
+	execPattern("tlab/materialEditor/scripts/*.cs");
+	execPattern("tlab/materialEditor/scene/*.cs");
+	execPattern("tlab/materialEditor/material/*.cs");
 	execPattern("tlab/materialEditor/guiScripts/*.cs");
 }
 function destroyMaterialEditor() {

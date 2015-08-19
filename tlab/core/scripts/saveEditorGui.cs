@@ -13,7 +13,7 @@ function Lab::saveEditorGui(%this,%filename) {
 	if (!Lab.editorGuisDetached) {
 		warnLog("Undetached Editor Saving disabled");
 		return;
-		Lab.detachEditorGuis();
+		Lab.detachAllEditorGuis();
 		%reattach = true;
 	}
 
@@ -72,6 +72,6 @@ function Lab::saveEditorGui(%this,%filename) {
 		LabMsgOkCancel( "Error writing to file", "There was an error writing to file '" @ %filename @ "'. The file may be read-only.", "Ok", "Error" );
 
 	if (%reattach) {
-		Lab.attachEditorGuis();
+		Lab.attachAllEditorGuis();
 	}
 }

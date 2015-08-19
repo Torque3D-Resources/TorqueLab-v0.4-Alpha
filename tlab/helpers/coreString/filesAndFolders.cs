@@ -67,7 +67,7 @@ function appendObjectToFile(%obj,%file,%prepend) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function getLoadFilename(%filespec, %callback, %currentFile) {
+function getLoadFilename(%filespec, %callback, %currentFile,%returnArg1,%returnArg2) {
 	if (Canvas.isCursorOn()){
 		Canvas.CursorOff();
 		%showCursor = true;
@@ -84,7 +84,12 @@ function getLoadFilename(%filespec, %callback, %currentFile) {
 		%dlg.DefaultPath = filePath(%currentFile);
 
 	if ( %dlg.Execute() ) {
-		eval(%callback @ "(\"" @ %dlg.FileName @ "\");");
+		%evalCallback = %callback @ "(\"" @ %dlg.FileName @ "\");";
+	
+		if (%returnArg1 !$= "")
+			%evalCallback = %callback @ "(\"" @ %dlg.FileName @ "\",\""@%returnArg1@"\",\""@%returnArg2@"\");";			
+		
+		eval(%evalCallback);
 		$Lab::FileDialogs::LastFilePath = filePath( %dlg.FileName );
 	}
 
@@ -169,7 +174,7 @@ function isImageFile(%file) {
 }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-function getFolderName( %filter, %callback,%startFolder,%title ) {
+function getFolderName( %filter, %callback,%startFolder,%title,%extraArg1,%extraArg2 ) {
 	if (%title $= "")
 		%title = "Select Export Folder";
 
@@ -181,15 +186,21 @@ function getFolderName( %filter, %callback,%startFolder,%title ) {
 		MustExist = true;
 		MultipleFiles = false;
 	};
-
+	
+	
+	 
 	if(%dlg.Execute()) {
 		%relativePath = makeRelativePath(%dlg.FileName);
-		%cb = %callback@"(\""@%relativePath@"/\");";
+		%cb = %callback@"(\""@%relativePath@"/\", \""@%extraArg1@"\" ,  \""@%extraArg2@"\" );";
+		//if (%addArgs !$= "")
+			//%cb = %callback@"(\""@%relativePath@"/\""@%addArgs@");";
+		//%cb = %callback@"(\""@%args@"/\");";
 		devLog("Callback is:",%cb,"Relative:",makeRelativePath(%dlg.FileName));
 		eval(%cb);
 	}
 
 	%dlg.delete();
+	
 }
 
 //--------------------------------------------------------------------------
@@ -212,15 +223,16 @@ function loadFileText( %file) {
 }
 
 //==============================================================================
-// Get the World coords from a screen pos (X Y Depth)
-function getFileFolder(%file,%depth) {
+// Get the parent folder of a file or path (Set depth for deeper folder)
+function getParentFolder(%file,%depth) {
 	if (%depth $= "")
 		%depth = 0;
 
 	%folder = filePath(%file);
-	%folder = strReplace(%folder,"/"," ");
+	%folder = trim(strReplace(%folder,"/"," "));
 	%folderId = getWordCount(%folder) - 1 - %depth;
 	%lastFolder = getWord(%folder,%folderId);
+	
 	return %lastFolder;
 }
 //------------------------------------------------------------------------------
@@ -346,3 +358,28 @@ function listDirectory(%path) {
 		%file = findNextFile(%path);
 	}
 }
+
+//==============================================================================
+function addFilenameToPath(%path, %filename, %extension) {
+	%fullName = strreplace(%filename,"/","");
+	if (%extension !$= "")
+		%fullName = %fullName @"."@%extension;
+	
+	%fullPath = strreplace(%path @"/"@%fullName,"//","/");
+	%relPath = makeRelativePath(%fullPath);
+	return %relPath;
+	
+	
+}	
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function validatePath(%path, %makeRelative) {
+	%path = strreplace(%path,"//","/");
+	
+	if (%makeRelative)
+		%path = makeRelativePath(%path);
+	
+	return %path;
+}	
+//------------------------------------------------------------------------------

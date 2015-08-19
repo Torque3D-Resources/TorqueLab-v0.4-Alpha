@@ -7,6 +7,34 @@
 //==============================================================================
 // Update the GuiControl data field depending of the Class
 //==============================================================================
+
+//==============================================================================
+// SEP_GroundCover.getMissionGroundCover();
+function getMissionObjectClassList( %class ) {	
+	%list = checkMissionSimGroupForClass(MissionGroup,%class);	
+	return %list;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function checkMissionSimGroupForClass(%group,%class ) {
+	foreach(%obj in %group) {
+		if (%obj.getClassname() $= %class) {
+			%list = strAddWord(%list,%obj.getId());
+		} else if (%obj.getClassname() $= "SimGroup") {
+			%listAdd = checkMissionSimGroupForClass(%obj,%class);		
+			%list = strAddWord(%list,%listAdd);
+			
+		}
+	}
+	return %list;
+}
+//------------------------------------------------------------------------------
+
+
+//==============================================================================
+// Update the GuiControl data field depending of the Class
+//==============================================================================
 //----------------------------------------------------------------------------
 // A function used in order to easily parse the MissionGroup for classes . I'm pretty
 // sure at this point the function can be easily modified to search the any group as well.

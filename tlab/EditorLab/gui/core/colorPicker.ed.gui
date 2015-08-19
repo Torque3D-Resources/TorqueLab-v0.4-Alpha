@@ -299,6 +299,7 @@ $ColorCallbackType   = 1;  // ColorI
 // This function pushes the color picker dialog and returns to a callback the selected value
 function GetColorI( %currentColor, %callback, %root, %updateCallback, %cancelCallback )
 {
+	devLog("GetColorI",%currentColor);
    $ColorPickerSignal = 1; 
    $ColorPickerCallback = %callback;
    $ColorPickerCancelCallback = %cancelCallback;
@@ -337,6 +338,7 @@ function GetColorI( %currentColor, %callback, %root, %updateCallback, %cancelCal
 
 function GetColorF( %currentColor, %callback, %root, %updateCallback, %cancelCallback )
 {
+	devLog("GetColorF",%currentColor);
    $ColorPickerSignal = 1; 
    $ColorPickerCallback = %callback;
    $ColorPickerCancelCallback = %cancelCallback;

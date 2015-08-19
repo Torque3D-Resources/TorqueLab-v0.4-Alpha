@@ -35,6 +35,7 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable) {
 		alwaysOn = %alwaysEnable;
 		pluginOrder = %pluginOrder;
 		shortPlugin = %shortObjName;
+		useTools = false;
 	};
 	LabPluginGroup.add(%pluginObj);
 
@@ -89,29 +90,7 @@ function Lab::initPluginConfig(%this,%pluginObj) {
 	//%pluginObj.pluginOrder =  %pluginObj.checkCfg("pluginOrder","99");
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-//Set a plugin as active (Selected Editor Plugin)
-/*
-function Lab::activatePlugin(%this,%pluginObj) {
-   //Reset some default Plugin values
-   Lab.fitCameraGui = ""; //Used by GuiShapeEdPreview to Fit camera on object
-   //Call the Plugin Object onActivated method if exist
-	if(%pluginObj.isMethod("onActivated"))
-		%pluginObj.onActivated();
 
-   %this.activatePluginGui(%pluginObj);
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
-//Set a plugin as inactive (Not Selected Editor Plugin)
-function Lab::deactivatePlugin(%this,%pluginObj) {
-   //Call the Plugin Object onDeactivated method if exist
-	if(%pluginObj.isMethod("onDeactivated"))
-		%pluginObj.onDeactivated();
-}
-*/
-//------------------------------------------------------------------------------
 //==============================================================================
 //Allow the plugin to be selected in editor
 function Lab::enablePlugin(%this,%pluginObj,%enabled,%showLog) {

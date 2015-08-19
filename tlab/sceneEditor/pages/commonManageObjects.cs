@@ -27,27 +27,6 @@ function SceneCreatorWindow::getActiveSimGroup( %this) {
 }
 //------------------------------------------------------------------------------
 
-function SceneCreatorWindow::registerMissionObject( %this, %class, %name, %buildfunc, %group ) {
-	if( !isClass(%class) )
-		return;
-
-	if ( %name $= "" )
-		%name = %class;
-
-	if ( %this.currentGroup !$= "" && %group $= "" )
-		%group = %this.currentGroup;
-
-	if ( %class $= "" || %group $= "" ) {
-		warn( "SceneCreatorWindow::registerMissionObject, invalid parameters!" );
-		return;
-	}
-
-	%args = new ScriptObject();
-	%args.val[0] = %class;
-	%args.val[1] = %name;
-	%args.val[2] = %buildfunc;
-	%this.array.push_back( %group, %args );
-}
 
 function SceneCreatorWindow::getNewObjectGroup( %this ) {
 	return %this.objectGroup;

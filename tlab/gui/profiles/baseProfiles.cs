@@ -34,7 +34,7 @@ new GuiControlProfile (ToolsDefaultProfile) {
     fontColorHL = "0 0 0";
     fontColorNA = "0 0 0";
     fontColorSEL= "255 255 255";
-
+ fontColors[5] = "255 0 255 255";
     // bitmap information
     bitmapBase = "";
     textOffset = "0 0";
@@ -50,6 +50,7 @@ new GuiControlProfile (ToolsDefaultProfile) {
 
     category = "Tools";
    borderThickness = "0";
+   fontColors[9] = "255 0 255 255";
     // sounds
     //soundButtonDown = "";
     //soundButtonOver = "";
@@ -93,16 +94,25 @@ new GuiControlProfile (ToolsGuiToolTipProfile) {
     fontColor = "0 0 0";
 
     category = "Tools";
+   fontColors[4] = "Fuchsia";
+   fontColorLink = "Fuchsia";
 };
 
 singleton GuiControlProfile( ToolsGuiModelessDialogProfile : ToolsDefaultProfile ) {
     modal = false;
     category = "Tools";
+   bevelColorHL = "Magenta";
+   fontColors[3] = "White";
+   fontColors[7] = "255 0 255 255";
+   fontColorSEL = "White";
 };
 
 singleton GuiControlProfile( ToolsDefaultProfile_NoModal : ToolsDefaultProfile ) {
     modal = false;
     category = "Tools";
+   fontColors[5] = "Fuchsia";
+   fontColors[7] = "255 0 255 255";
+   fontColorLinkHL = "Fuchsia";
 };
 
 
@@ -122,12 +132,14 @@ new GuiControlProfile(ToolsGuiEditorTabPage) {
     border = false;
     fontColor = "0 0 0";
     fontColorHL = "0 0 0";
-    fixedExtent = false;
+    fixedExtent = 0;
     justify = "center";
     canKeyFocus = false;
     bitmap = "tlab/gui/icons/default/tab";
     hasBitmapArray = true;
     category = "Tools";
+   fontColors[5] = "Magenta";
+   fontColorLinkHL = "Magenta";
 };
 
 
@@ -207,7 +219,7 @@ singleton GuiControlProfile (ToolsGuiMenuBarProfile  : ToolsDefaultProfile) {
     opaque = true;
     border = "1";
     category = "Tools";
-   fillColor = "48 48 48 255";
+   fillColor = "0 0 0 255";
    fontType = "Gotham Book";
    fontSize = "18";
    fontColors[0] = "0 226 255 255";
@@ -232,13 +244,15 @@ singleton GuiControlProfile (ToolsGuiMenuBarProfile  : ToolsDefaultProfile) {
    autoSizeWidth = "1";
    autoSizeHeight = "1";
    borderColor = "0 148 255 67";
+   fontColors[7] = "255 0 255 255";
+   fontColors[9] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
 // MenuBar Items
 singleton GuiControlProfile( ToolsGuiMenuProfile : ToolsGuiMenuBarProfile) {
     opaque = true;
-    fillcolor = "41 41 41 193";
+    fillcolor = "29 29 29 194";
     fontColor = "206 243 254 255";
     fontColorHL = "64 222 254 255";   
     category = "Tools";

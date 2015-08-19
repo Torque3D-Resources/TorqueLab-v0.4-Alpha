@@ -14,7 +14,8 @@ function EditorGui::handleEscape( %this ) {
 		%result = Lab.currentEditor.handleEscape();
 
 	if ( !%result ) {
-		MessageBoxYesNoCancel( "Leaving the game?", "Are you sure you want to exit the level and go back to main menu? If you want to leave editor and test your level press NO? If you don't know what you are doing, hit CANCEL...", "disconnect();", "Editor.close();","" );
+		LabMsgYesNo( "Leaving the game?", "Are you sure you want to exit the level and go back to main menu? If you want to leave editor and test your level press NO?" SPC
+			"If you don't know what you are doing, hit CANCEL...", "disconnect();", "Editor.close();","" );
 		//Editor.close($HudCtrl);
 	}
 }
@@ -35,6 +36,8 @@ function Editor::close(%this, %gui) {
 	//Restore the Client COntrolling Object
 	if (isObject( Lab.clientWasControlling))
 		LocalClientConnection.setControlObject( Lab.clientWasControlling );
+		
+	EditorMap.pop();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -51,7 +54,7 @@ function EditorGui::onSleep( %this ) {
 		Lab.storePluginsToolbarState();
 
 	Lab.saveAllPluginData();
-	LabCfg.write();
+	LabCfg.writeBaseConfig();
 	// Remove the editor's ActionMaps.
 	EditorMap.pop();
 	MoveMap.pop();
@@ -77,7 +80,7 @@ function EditorGui::onUnsetContent(%this, %newContent) {
 // Shutdown the EditorGui-> Called from the onExit function
 function EditorGui::shutdown( %this ) {
 	// Store settings.
-	LabCfg.write();
+	LabCfg.writeBaseConfig();
 	// Deactivate current editor.
 	if ( isObject( Lab.currentEditor ) && Lab.currentEditor.isActivated)
 		Lab.currentEditor.onDeactivated();

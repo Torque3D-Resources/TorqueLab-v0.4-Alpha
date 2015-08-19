@@ -90,7 +90,7 @@ function EditorInspectorBase::onAdd( %this ) {
 		new PopupMenu( EditorInspectorBaseProfileFieldPopup ) {
 		superClass = "MenuBuilder";
 		isPopup = true;
-		item[ 0 ] = "Edit Profile" TAB "" TAB "if( !$InGuiEditor ) toggleGuiEditor( true ); GuiEditor.editProfile( %this.inspectorField.getData() );";
+		item[ 0 ] = "Edit Profile" TAB "" TAB "if( !$InGuiEditor ) toggleGuiEditor(  ); GuiEditor.editProfile( %this.inspectorField.getData() );";
 		item[ 1 ] = "Jump to Definition in Torsion" TAB "" TAB "EditorOpenDeclarationInTorsion( %this.inspectorField.getData() );";
 		item[ 2 ] = "Inspect Object" TAB "" TAB "inspectObject( %this.inspectorField.getData() );";
 		item[ 3 ] = "-";
@@ -244,3 +244,4 @@ function EditorInspectorBase::getFullFilePath( %field ) {
 	} else
 		return makeFullPath( %fileName, getMainDotCsDir() );
 }
+

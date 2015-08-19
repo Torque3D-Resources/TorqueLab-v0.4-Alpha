@@ -4,10 +4,16 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 /*
- LabMenu.addMenu("MyFirstMenu",0);
-   LabMenu.addMenuItem(0,"MyFirstItem",0,"Ctrl numpad0",-1);
-   LabMenu.addSubmenuItem("MyFirstMenu","MyFirstItem","MyFirstSubItem",0,"",-1);
+ Lab.ActiveMenu.addMenu("MyFirstMenu",0);
+   Lab.ActiveMenu.addMenuItem(0,"MyFirstItem",0,"Ctrl numpad0",-1);
+   Lab.ActiveMenu.addSubmenuItem("MyFirstMenu","MyFirstItem","MyFirstSubItem",0,"",-1);
    */
+
+//==============================================================================
+function Lab::setActiveMenu(%this,%menu) {
+	Lab.activeMenu = %menu;
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::addMenuBind(%this,%bind,%command) {
@@ -18,8 +24,8 @@ function Lab::addMenuBind(%this,%bind,%command) {
 function Lab::addMenu(%this,%group,%id) {
 	if (%id $= "") %id = 1;
 
-	LabMenu.addMenu(%group,%id);
-	LabMenu.menuList = trim(LabMenu.menuList SPC %group);
+	Lab.ActiveMenu.addMenu(%group,%id);
+	Lab.ActiveMenu.menuList = trim(Lab.ActiveMenu.menuList SPC %group);
 }
 //------------------------------------------------------------------------------
 
@@ -40,8 +46,8 @@ function Lab::addMenuItem(%this,%menu,%menuItemText,%menuItemId,%accelerator,%ch
 		%this.addMenuBind(%accelerator,%callBack);
 	}
 
-	LabMenu.addMenuItem(%menu,%menuItemText,%menuItemId,%accelerator,%checkGroup);
-	LabMenu.menuItemList[%menu] = trim(LabMenu.menuItemList[%menu] SPC %menuItemText);
+	Lab.ActiveMenu.addMenuItem(%menu,%menuItemText,%menuItemId,%accelerator,%checkGroup);
+	Lab.ActiveMenu.menuItemList[%menu] = trim(Lab.ActiveMenu.menuItemList[%menu] SPC %menuItemText);
 }
 //------------------------------------------------------------------------------
 
@@ -56,8 +62,8 @@ function Lab::addSubmenuItem(%this,%menuTarget,%menuItem,%submenuItemText,%subme
 	   %submenuItemId 	Id for the new submenu
 	   %accelerator 	Accelerator key for the new submenu
 	   %checkGroup 	Which check group the new submenu should be in, or -1 for none.
-	   LabMenu.setMenuItemSubmenuState(1,1,true);
-	    LabMenu.addSubmenuItem(1,1,"Sub",0,"",-1);
+	   Lab.ActiveMenu.setMenuItemSubmenuState(1,1,true);
+	    Lab.ActiveMenu.addSubmenuItem(1,1,"Sub",0,"",-1);
 	*/
 	$LabMenuCallback[%menuTarget,%submenuItemId,%submenuItemText] = getField($LabMenuSubMenuItem[%menuTarget,%menuItem,%submenuItemId],2);
 
@@ -66,35 +72,35 @@ function Lab::addSubmenuItem(%this,%menuTarget,%menuItem,%submenuItemText,%subme
 		%this.addMenuBind(%accelerator,%callBack);
 	}
 
-	LabMenu.addSubmenuItem(%menuTarget,%menuItem,%submenuItemText,%submenuItemId,%accelerator,%checkGroup);
+	Lab.ActiveMenu.addSubmenuItem(%menuTarget,%menuItem,%submenuItemText,%submenuItemId,%accelerator,%checkGroup);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::ClearMenus(%this) {
-	LabMenu.clearMenus("","");
+	Lab.ActiveMenu.clearMenus("","");
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::ClearMenusItems(%this,%menu) {
-	LabMenu.ClearMenusItems(%menu);
+	Lab.ActiveMenu.ClearMenusItems(%menu);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::removeMenu(%this,%menu) {
-	LabMenu.removeMenu(%menu);
+	Lab.ActiveMenu.removeMenu(%menu);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::removeMenuItem(%this,%menu,%item) {
-	LabMenu.removeMenuItem(%menu,%item);
+	Lab.ActiveMenu.removeMenuItem(%menu,%item);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::setCheckmarkBitmapIndex(%this,%index) {
-	LabMenu.setCheckmarkBitmapIndex(%index);
+	Lab.ActiveMenu.setCheckmarkBitmapIndex(%index);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -106,7 +112,7 @@ function Lab::setMenuBitmapIndex(%this,%menuTarget,%bitmapindex,%bitmaponly,%dra
 	%bitmapindex 	Bitmap index to set for the menu
 	%bitmaponly 	If true, only the bitmap will be rendered
 	%drawborder 	If true, a border will be drawn around the menu.*/
-	LabMenu.setMenuBitmapIndex(%menuTarget,%bitmapindex,%bitmaponly,%drawborder);
+	Lab.ActiveMenu.setMenuBitmapIndex(%menuTarget,%bitmapindex,%bitmaponly,%drawborder);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -118,7 +124,7 @@ function Lab::setMenuItemBitmap(%this,%menuTarget,%menuItem,%bitmapIndex) {
 	%menuItem 	Menu item to affect
 	%bitmapIndex 	Bitmap index to set the menu item to
 	*/
-	LabMenu.setMenuItemBitmap(%menuTarget,%menuItem,%bitmapIndex);
+	Lab.ActiveMenu.setMenuItemBitmap(%menuTarget,%menuItem,%bitmapIndex);
 }
 //------------------------------------------------------------------------------
 
@@ -132,7 +138,7 @@ function Lab::setMenuItemChecked(%this,%menuTarget,%menuItem,%checked) {
 	%checked 	Whether we are setting it to checked or not
 
 	*/
-	LabMenu.setMenuItemBitmap(%menuTarget,%menuItem,%checked);
+	Lab.ActiveMenu.setMenuItemBitmap(%menuTarget,%menuItem,%checked);
 }
 //------------------------------------------------------------------------------
 
@@ -148,7 +154,7 @@ function Lab::setMenuItemChecked(%this,%menuTarget,%menuItemTarget,%enabled) {
 	%enabled 	Boolean enable / disable value.
 
 	*/
-	LabMenu.setMenuItemChecked(%menuTarget,%menuItemTarget,%enabled);
+	Lab.ActiveMenu.setMenuItemChecked(%menuTarget,%menuItemTarget,%enabled);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -159,9 +165,9 @@ function Lab::setMenuItemSubmenuState(%this,%menuTarget,%menuItem,%isSubmenu) {
 	%menuTarget 	Menu to affect a submenu in
 	%menuItem 	Menu item to affect
 	%isSubmenu 	Whether or not the menuItem will become a subMenu or not
-	LabMenu.setMenuItemSubmenuState(0,2,true);
+	Lab.ActiveMenu.setMenuItemSubmenuState(0,2,true);
 	*/
-	LabMenu.setMenuItemSubmenuState(%menuTarget,%menuItem,%isSubmenu);
+	Lab.ActiveMenu.setMenuItemSubmenuState(%menuTarget,%menuItem,%isSubmenu);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -174,7 +180,7 @@ function Lab::setMenuItemText(%this,%menuTarget,%menuItem,%newMenuItemText) {
 	%newMenuItemText 	New menu text
 
 	*/
-	LabMenu.setMenuItemText(%menuTarget,%menuItem,%newMenuItemText);
+	Lab.ActiveMenu.setMenuItemText(%menuTarget,%menuItem,%newMenuItemText);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -189,7 +195,7 @@ function Lab::setMenuItemVisible(%this,%menuTarget,%menuItem,%isVisible) {
 	%isVisible 	Visible state to set the menu item to.
 
 	*/
-	LabMenu.setMenuItemVisible(%menuTarget,%menuItem,%isVisible);
+	Lab.ActiveMenu.setMenuItemVisible(%menuTarget,%menuItem,%isVisible);
 }
 //------------------------------------------------------------------------------
 
@@ -207,7 +213,7 @@ function Lab::setMenuMargins(%this,%horizontalMargin,%verticalMargin,%bitmapToTe
 	%bitmapToTextSpacing 	Number of pixels between a menu's bitmap and text.
 
 	*/
-	LabMenu.setMenuMargins(%horizontalMargin,%verticalMargin,%bitmapToTextSpacing);
+	Lab.ActiveMenu.setMenuMargins(%horizontalMargin,%verticalMargin,%bitmapToTextSpacing);
 }
 //------------------------------------------------------------------------------
 
@@ -221,7 +227,7 @@ function Lab::setMenuText(%this,%menuTarget,%newMenuText) {
 
 
 	*/
-	LabMenu.setMenuText(%menuTarget,%newMenuText);
+	Lab.ActiveMenu.setMenuText(%menuTarget,%newMenuText);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -235,7 +241,7 @@ function Lab::setMenuVisible(%this,%menuTarget,%visible) {
 
 
 	*/
-	LabMenu.setMenuVisible(%menuTarget,%visible);
+	Lab.ActiveMenu.setMenuVisible(%menuTarget,%visible);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -251,7 +257,7 @@ function Lab::setSubmenuItemChecked(%this,%menuTarget,%menuItem,%submenuItemText
 
 
 	*/
-	LabMenu.setSubmenuItemChecked(%menuTarget,%menuItem,%submenuItemText,%checked);
+	Lab.ActiveMenu.setSubmenuItemChecked(%menuTarget,%menuItem,%submenuItemText,%checked);
 }
 //------------------------------------------------------------------------------
 
@@ -262,32 +268,26 @@ function Lab::setSubmenuItemChecked(%this,%menuTarget,%menuItem,%submenuItemText
 //==============================================================================
 
 //==============================================================================
+/// LabMenu::onMenuItemSelect Called whenever an item in a menu is selected.
+/// Parameters:
+/// %menuId 	Index id of the menu which contains the selected menu item
+/// %menuText 	Text of the menu which contains the selected menu item
+/// %menuItemId 	Index id of the selected menu item
+/// %menuItemText 	Text of the selected menu item
 function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	/* Called whenever an item in a menu is selected.
-
-	Parameters:
-	%menuId 	Index id of the menu which contains the selected menu item
-	%menuText 	Text of the menu which contains the selected menu item
-	%menuItemId 	Index id of the selected menu item
-	%menuItemText 	Text of the selected menu item
-
-	*/
-
-		
+	//devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);		
 	%callBack =  $LabMenuCallback[%menuId,%menuItemId,%menuItemText];
 	eval(%callBack);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LabMenu::onMenuSelect(%this,%menuId,%menuText) {
-	/* Called whenever a menu is selected.
-
-	Parameters:
-	menuId 	Index id of the clicked menu
-	menuText 	Text of the clicked menu
-
-	*/
+/// LabMenu::onMenuSelect Called whenever a menu is selected.
+/// Parameters:
+/// menuId 	Index id of the clicked menu
+/// menuText 	Text of the clicked menu
+function LabMenu::onMenuSelect(%this,%menuId,%menuText) {	
+	//devLog("LabMenu::onMenuSelect(%this,%menuId,%menuText)",%this,%menuId,%menuText);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -302,15 +302,13 @@ function LabMenu::onMouseInMenu(%this,%isInMenu) {
 	*/
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
+/// LabMenu::onSubmenuSelect Called whenever a submenu is selected.
+/// Parameters:
+/// submenuId 	Index id of the clicked submenu
+/// submenuText 	Text of the clicked submenu
 function LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText) {
-	/* Called whenever a submenu is selected.
-
-	Parameters:
-	submenuId 	Id of the selected submenu
-	submenuText 	Text of the selected submenu
-
-
-	*/
+	//devLog("LabMenu::onSubmenuSelect(%this,%submenuId,%submenuText)",%this,%submenuId,%submenuText);
 }
 //------------------------------------------------------------------------------

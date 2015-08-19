@@ -24,12 +24,13 @@ function initializeRiverEditor() {
 	echo(" % - Initializing River Editor");
 	execRiverEd(true);
 	// Add ourselves to EditorGui, where all the other tools reside
+	Lab.createPlugin("RiverEditor","River Editor");
 	Lab.addPluginEditor("RiverEditor",RiverEditorGui);
 	Lab.addPluginGui("RiverEditor",RiverEditorTools);
 	Lab.addPluginToolbar("RiverEditor",RiverEditorToolbar);
 	Lab.addPluginPalette("RiverEditor",   RiverEditorPalette);
 	Lab.addPluginDlg("RiverEditor",RiverEditorDialogs);
-	Lab.createPlugin("RiverEditor","River Editor");
+	
 	RiverEditorPlugin.editorGui = RiverEditorGui;
 	$RiverEd = newScriptObject("RiverEd");
 	%map = new ActionMap();
@@ -47,6 +48,7 @@ function initializeRiverEditor() {
 	%map.bindCmd( keyboard, "x", "RiverEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "RiverEditorShowRoadBtn.performClick();", "" );
 	RiverEditorPlugin.map = %map;
+	$RiverManager = newScriptObject("RiverManager");
 	// RiverEditorPlugin.initSettings();
 }
 function execRiverEd(%loadGui) {
@@ -61,7 +63,8 @@ function execRiverEd(%loadGui) {
 
 	exec( "tlab/riverEditor/riverEditorGui.cs" );
 	exec( "tlab/riverEditor/RiverEditorPlugin.cs" );
-	execPattern("tlab/riverEditor/manager/*.cs");
+	execPattern("tlab/riverEditor/scripts/*.cs");
+	execPattern("tlab/riverEditor/nodeManager/*.cs");
 }
 
 function destroyRiverEditor() {

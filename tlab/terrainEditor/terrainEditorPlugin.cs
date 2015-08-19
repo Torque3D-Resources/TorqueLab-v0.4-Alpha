@@ -28,11 +28,11 @@ function TerrainEditorPlugin::initParamsArray( %this,%cfgArray ) {
 	%cfgArray.setVal("slopeMinAngle",       "0" TAB "slopeMinAngle" TAB "TextEdit" TAB "" TAB "ETerrainEditor.setSlopeLimitMinAngle(**);" TAB %gid);
 	%cfgArray.setVal("slopeMaxAngle",       "90" TAB "slopeMaxAngle" TAB "TextEdit" TAB "" TAB "ETerrainEditor.setSlopeLimitMaxAngle(**);" TAB %gid);
 	%cfgArray.group[%gid++] = "Default values";
-	%cfgArray.setVal("DefaultBrushSize",       "2" TAB "Default brush size" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSize",       "8" TAB "Default brush size" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
 	%cfgArray.setVal("DefaultBrushType",       "box" TAB "Default brush type" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
-	%cfgArray.setVal("DefaultBrushPressure",       "1" TAB "Default brush pressure" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
-	%cfgArray.setVal("DefaultBrushSoftness",       "1" TAB "Default brush softness" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
-	%cfgArray.setVal("DefaultBrushSetHeight",       "1" TAB "Default brush set height" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
+	%cfgArray.setVal("DefaultBrushPressure",       "43" TAB "Default brush pressure" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSoftness",       "43" TAB "Default brush softness" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
+	%cfgArray.setVal("DefaultBrushSetHeight",       "100" TAB "Default brush set height" TAB "TextEdit" TAB "" TAB "TerrainEditorPlugin" TAB %gid);
 }
 
 function TerrainEditorPlugin::initBinds( %this ) {
@@ -77,6 +77,8 @@ function TerrainEditorPlugin::onWorldEditorStartup( %this ) {
 	TerrainEditorPlugin.setParam("BrushPressure",TerrainEditorPlugin.defaultBrushPressure);
 	TerrainEditorPlugin.setParam("BrushSoftness",TerrainEditorPlugin.defaultBrushSoftness);
 	TerrainEditorPlugin.setParam("BrushSetHeight",TerrainEditorPlugin.defaultBrushSetHeight);
+	
+	TEP_BrushManager.init();
 }
 
 function TerrainEditorPlugin::onActivated( %this ) {

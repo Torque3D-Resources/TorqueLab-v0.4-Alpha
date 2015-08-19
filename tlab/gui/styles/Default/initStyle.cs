@@ -38,7 +38,7 @@ $LabStyleLightColor[2] = "101 136 166 255";
 $LabStyleLightColor[3] = "101 136 166 255";
 
 $LabStyleDarkHL = "32 32 34 255";
-%list = "ToolsPanelDarkA GuiInspectorFieldProfile GuiInspectorStackProfile GuiInspectorDynamicFieldProfile";
+%list = "ToolsFillDarkA GuiInspectorFieldProfile GuiInspectorStackProfile GuiInspectorDynamicFieldProfile";
 $StyleColorGroup["DarkColor1"] = "fillColor Background1\tfillColorHL DarkHL\tfontColorHL FontColor2\tfontColor FontColor1";
 $StyleColorGroupProfiles["DarkColor1"] = %list;
 
@@ -48,30 +48,30 @@ $StyleColorGroupProfiles["DarkEdit"] = %list;
 
 
 $LabStyleGroups["Default"] = "DarkColor1 DarkEdit";
-%list = "ToolsPanelColorA";
+%list = "ToolsFillAccentA";
 $LabProfilesStyleColor[1] = %list;
-%list = "ToolsPanelColorB";
+%list = "ToolsFillAccentB";
 $LabProfilesStyleColor[2] = %list;
-%list = "ToolsPanelColorC";
+%list = "ToolsFillAccentC";
 $LabProfilesStyleColor[3] = %list;
 
-%list = "ToolsPanelDarkA";
+%list = "ToolsFillDarkA";
 $LabProfilesStyleBackground[1] = %list;
-%list = "ToolsPanelDarkB GuiInspectorStackProfile";
+%list = "ToolsFillDarkB GuiInspectorStackProfile";
 $LabProfilesStyleBackground[2] = %list;
-%list = "ToolsPanelDarkC";
+%list = "ToolsFillDarkC";
 $LabProfilesStyleBackground[3] = %list;
 
-%list = "ToolsPanelDarkA";
+%list = "ToolsFillDarkA";
 $LabProfilesStyleDarkColor[1] = %list;
-%list = "ToolsPanelDarkB";
+%list = "ToolsFillDarkB";
 $LabProfilesStyleDarkColor[2] = %list;
-%list = "ToolsPanelDarkC";
+%list = "ToolsFillDarkC";
 $LabProfilesStyleDarkColor[3] = %list;
 
-%list = "ToolsPanelLightA";
+%list = "ToolsFillLightA";
 $LabProfilesStyleLightColor[1] = %list;
-%list = "ToolsPanelLightB";
+%list = "ToolsFillLightB";
 $LabProfilesStyleLightColor[2] = %list;
-%list = "ToolsPanelLightC";
+%list = "ToolsFillLightC";
 $LabProfilesStyleLightColor[3] = %list;

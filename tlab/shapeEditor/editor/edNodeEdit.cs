@@ -378,5 +378,6 @@ function ShapeEdNodes::onEditTransform( %this ) {
 }
 
 function ShapeEdShapeView::onEditNodeTransform( %this, %node, %txfm, %gizmoID ) {
+	devLog("ShapeEdShapeView::onEditNodeTransform");
 	ShapeEditor.doEditNodeTransform( %node, %txfm, 1, %gizmoID );
 }

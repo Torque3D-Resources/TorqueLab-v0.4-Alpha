@@ -29,6 +29,10 @@ singleton GuiControlProfile (EditorToolButtonProfile) {
     opaque = true;
     border = 2;
     category = "Editor";
+   bevelColorHL = "Fuchsia";
+   fontColors[0] = "Black";
+   fontColors[9] = "255 0 255 255";
+   fontColor = "Black";
 };
 
 singleton GuiControlProfile (EditorTextProfile) {
@@ -95,6 +99,8 @@ singleton GuiControlProfile( EPainterBorderButtonProfile : ToolsDefaultProfile )
     fontColorHL = "255 0 0";
     fontColorSEL = "0 0 255";
     category = "Editor";
+   fontColors[1] = "255 0 0 255";
+   fontColors[3] = "0 0 255 255";
 };
 
 singleton GuiControlProfile( EPainterDragDropProfile ) {

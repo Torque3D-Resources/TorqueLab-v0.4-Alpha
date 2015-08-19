@@ -26,6 +26,8 @@ function hide(%obj,%child) {
 		return false;
 
 	%hideMe.setVisible(false);
+	if (%hideMe.isMethod("onHide"))
+			%hideMe.onHide();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -38,7 +40,10 @@ function show(%obj,%child) {
    }
 	if (!isObject(%showMe))
 		return false;
+	
 	%showMe.setVisible(true);
+	if (%showMe.isMethod("onShow"))
+			%showMe.onShow();		
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -52,9 +57,9 @@ function toggleVisible(%obj,%child) {
    if (!isObject(%toggleMe))
 		return false;
 	if (%toggleMe.visible)
-		hide(%toggleMe);
+		hide(%toggleMe);		
 	else
-		show(%toggleMe);
+		show(%toggleMe);	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -62,7 +67,8 @@ function toggleVisible(%obj,%child) {
 //==============================================================================
 /// Clone an object and make source invisible
 function cloneObject( %source,%name,%internalName,%parent ) {
-   delObj(%name);
+	if (%name !$= "")
+   	delObj(%name);
 	%clone = %source.deepClone();
 	%clone.setVisible(true);
 	if (%internalName !$= "")

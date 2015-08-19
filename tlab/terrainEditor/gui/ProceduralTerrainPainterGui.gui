@@ -262,7 +262,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         Variable = "$TPPSlopeMin";  
+         Variable = "$TPG_DefaultSlopeMin";  
          tooltipprofile = "ToolsGuiToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
@@ -289,7 +289,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         Variable = "$TPPSlopeMax";  
+         Variable = "$TPG_DefaultSlopeMax";  
          tooltipprofile = "ToolsGuiToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
@@ -308,19 +308,3 @@
    };  
 };  
 //--- OBJECT WRITE END ---  
-  
-$TPPHeightMin = -10000;  
-$TPPHeightMax = 10000;  
-$TPPSlopeMin = 0;  
-$TPPSlopeMax = 90;  
-  
-function autoLayers() 
-{  
-   Canvas.pushDialog(ProceduralTerrainPainterGui);  
-}  
-  
-function generateProceduralTerrainMask() 
-{  
-   Canvas.popDialog(ProceduralTerrainPainterGui);  
-   ETerrainEditor.autoMaterialLayer($TPPHeightMin, $TPPHeightMax, $TPPSlopeMin, $TPPSlopeMax);  
-}  

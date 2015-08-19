@@ -8,10 +8,10 @@
 //==============================================================================
 //==============================================================================
 function Lab::initAllPluginsDialogs( %this ) {
-	%gameLabGuis = "";
+	%TLabGameGuis = "";
 	foreach(%gui in LabDialogGuiSet) {	
 		foreach(%dlg in %gui){
-			//If gameName is set, this gui is available in game (GameLabGui)			
+			//If gameName is set, this gui is available in game (TLabGameGui)			
 			
 			%dlg.visible = 0;
 		}		
@@ -23,8 +23,8 @@ function Lab::initAllPluginsDialogs( %this ) {
 
 //==============================================================================
 function Lab::initGameLabDialogs( %this ) {
-	GameLabGui.reset();
-	%mainGui = GameLabGui;
+	TLabGameGui.reset();
+	%mainGui = TLabGameGui;
 	%menu = %mainGui-->dialogMenu;
 	%menu.clear();
 	%menu.add("Select a dialog" ,0);
@@ -100,39 +100,48 @@ function PluginDlg::showDlg( %this, %dlg,%alwaysOn ) {
 	%dlgCtrl.alwaysOn = %alwaysOn;
 	if (!isObject(%dlgCtrl))
 		return;
-	
-	if(%dlgCtrl.isMethod("onShow"))
-		%dlgCtrl.onShow();
 	if (!%dlgCtrl.isVisible()) 
-		show(%dlgCtrl);		
+		show(%dlgCtrl);
 	
 	show(%this);	
+	if(%dlgCtrl.isMethod("onShow"))
+		%dlgCtrl.onShow();
+	
+	
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function PluginDlg::hideDlg( %this, %dlg ) {
 	%this.fitIntoParents();
 	%dlgCtrl = %this.findObjectByInternalName(%dlg);
-	%dlgCtrl.alwaysOn = false;
-	if (!isObject(%dlgCtrl))
-		return;
-
-	if (!%dlgCtrl.isVisible()) 
-		return;
-		
-	hide(%dlgCtrl);
-	%this.checkState();
+	%this.hideDlgCtrl(%dlgCtrl);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function PluginDlg::closeSelf( %this,%dlgCtrl ) {
 	
-	//Check is the dlg is used as GameLabGui
-	if (%dlgCtrl.parentGroup $= GameLabGui){
-		GameLabGui.closeAll();
+	//Check is the dlg is used as TLabGameGui
+	if (%dlgCtrl.parentGroup $= TLabGameGui){
+		TLabGameGui.closeAll();
 	}
+	%this.hideDlgCtrl(%dlgCtrl);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::hideDlgCtrl( %this, %dlgCtrl ) {
+	if (!isObject(%dlgCtrl))
+		return;
 		
+	%dlgCtrl.alwaysOn = false;	
+
+	//if (!%dlgCtrl.isVisible()) 
+		//return;
 	hide(%dlgCtrl);
+	if(%dlgCtrl.isMethod("onShow"))
+		%dlgCtrl.onHide();	
+	
 	%this.checkState();
 }
 //------------------------------------------------------------------------------
@@ -161,5 +170,25 @@ function PluginDlg::checkState( %this ) {
 function PluginDlg::onSleep( %this ) {
 	foreach(%ctrl in %this)
 		hide(%ctrl);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::onPreEditorSave(%this) {	
+	devLog("PluginDlg::onPreEditorSave",%this);
+	//Check if a onPreEditorSave method is found in sub dialogs
+	foreach(%ctrl in %this){
+		if (%ctrl.isMethod("onPreEditorSave"))
+			%ctrl.onPreEditorSave();
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function PluginDlg::onPostEditorSave(%this) {	
+	devLog("PluginDlg::onPostEditorSave",%this);
+	//Check if a onPreEditorSave method is found in sub dialogs
+	foreach(%ctrl in %this){
+		if (%ctrl.isMethod("onPostEditorSave"))
+			%ctrl.onPostEditorSave();
+	}
 }
 //------------------------------------------------------------------------------
