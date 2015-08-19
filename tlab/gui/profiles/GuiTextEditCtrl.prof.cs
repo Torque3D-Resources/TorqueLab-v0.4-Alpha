@@ -69,6 +69,7 @@ singleton GuiControlProfile( ToolsTextEditDark : ToolsTextEditProfile ) {
    fontColorNA = "254 227 83 255";
    fontColorSEL = "254 185 5 255";
    fontColors[7] = "255 0 255 255";
+   fontColors[6] = "Magenta";
 };
 
 

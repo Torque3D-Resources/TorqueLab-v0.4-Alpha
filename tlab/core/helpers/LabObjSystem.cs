@@ -9,9 +9,17 @@
 //==============================================================================
 //Editor Initialization callbacks
 //==============================================================================
-
+//==============================================================================
+function LabObj::inspect(%this,%obj,%doApply) {
+	LabInspect.inspect(%obj);
+	if (%doApply)
+		LabInspect.apply();	
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function LabObj::update(%this,%obj,%field,%value,%fieldId) {
+	logb("LabObj::update(%this,%obj,%field,%value,%fieldId)",%obj.getName(),%field,%value,%fieldId);
 	%initialValue = %obj.getFieldValue(%field);
 	LabInspect.inspect(%obj);
 	%obj.setFieldValue(%field,%value,%fieldId);	
@@ -49,7 +57,12 @@ function LabObj::saveAll(%this) {
 	
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+function LabObj::isDirty(%this,%obj) {
+	return Lab_PM.isDirty(%obj);
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function LabObj::save(%this,%obj,%force) {
 	if (!Lab_PM.isDirty(%obj)){
@@ -65,5 +78,71 @@ function LabObj::save(%this,%obj,%force) {
 		
 	Lab_PM.saveDirtyObject(%obj);
 	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function LabObj::setDirty(%this,%obj,%dirty) {
+	%isDirty = Lab_PM.isDirty(%obj);
+	if (!%isDirty && %dirty){		
+			info(%obj,"Object is not dirty but we will force it");
+			Lab_PM.setDirty(%obj);
+	}
+	else if (%isDirty && !%dirty){
+		info(%obj,"Removing dirty Object is not dirty but we will force it");
+			Lab_PM.removeDirty(%obj);
+	}	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// TorqueLab Global Inspector (EGlobalInspector GUI)
+//==============================================================================
+function LabInspect::update(%this,%obj,%field,%value,%fieldId) {
+	%this.set(%obj,%field,%value,%fieldId);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function LabInspect::set(%this,%obj,%field,%value,%fieldId) {
+	LabInspect.inspect(%obj);
+	%obj.setFieldValue(%field,%value,%fieldId);	
+	LabInspect.apply();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::inspect(%this,%obj,%doApply) {
+	LabInspect.inspect(%obj);
+	if (%doApply)
+		LabInspect.apply();
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function Lab::addInspect(%this,%obj) {
+	LabInspect.addInspect(%obj);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::apply(%this,%obj) {
+	LabInspect.apply();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::getInspectObject(%this) {
+	return LabInspect.getInspectObject();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::getNumInspectObjects(%this) {
+	return LabInspect.getNumInspectObjects();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::refreshInspect(%this) {
+	LabInspect.refresh();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::removeInspect(%this,%obj) {
+	LabInspect.removeInspect(%obj);
 }
 //------------------------------------------------------------------------------

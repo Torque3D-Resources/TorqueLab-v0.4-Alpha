@@ -14,7 +14,8 @@ function EditorGui::handleEscape( %this ) {
 		%result = Lab.currentEditor.handleEscape();
 
 	if ( !%result ) {
-		MessageBoxYesNoCancel( "Leaving the game?", "Are you sure you want to exit the level and go back to main menu? If you want to leave editor and test your level press NO? If you don't know what you are doing, hit CANCEL...", "disconnect();", "Editor.close();","" );
+		LabMsgYesNo( "Leaving the game?", "Are you sure you want to exit the level and go back to main menu? If you want to leave editor and test your level press NO?" SPC
+			"If you don't know what you are doing, hit CANCEL...", "disconnect();", "Editor.close();","" );
 		//Editor.close($HudCtrl);
 	}
 }

@@ -7,57 +7,7 @@ $VisibilityOptionsLoaded = false;
 $VisibilityClassLoaded = false;
 $EVisibilityLayers_Initialized = false;
 
-//==============================================================================
-function LabInspect::update(%this,%obj,%field,%value,%fieldId) {
-	%this.set(%obj,%field,%value,%fieldId);
-	
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function LabInspect::set(%this,%obj,%field,%value,%fieldId) {
-	LabInspect.inspect(%obj);
-	%obj.setFieldValue(%field,%value,%fieldId);	
-	LabInspect.apply();
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::inspect(%this,%obj,%doApply) {
-	LabInspect.inspect(%obj);
-	if (%doApply)
-		LabInspect.apply();
-}
-//------------------------------------------------------------------------------
 
-//==============================================================================
-function Lab::addInspect(%this,%obj) {
-	LabInspect.addInspect(%obj);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::apply(%this,%obj) {
-	LabInspect.apply();
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::getInspectObject(%this) {
-	return LabInspect.getInspectObject();
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::getNumInspectObjects(%this) {
-	return LabInspect.getNumInspectObjects();
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::refreshInspect(%this) {
-	LabInspect.refresh();
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function Lab::removeInspect(%this,%obj) {
-	LabInspect.removeInspect(%obj);
-}
-//------------------------------------------------------------------------------
 /*
 
 virtual void GuiInspector::addInspect	(	(id object,(bool autoSync=true)) 		 ) 	[virtual]

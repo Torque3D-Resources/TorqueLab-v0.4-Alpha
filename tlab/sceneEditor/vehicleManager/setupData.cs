@@ -11,6 +11,10 @@ function sepVM::updateParam( %this,%field,%value,%ctrl,%array,%arg1,%arg2 ) {
 	%data = %array.getVal(%field);	
 	%updObj = getField(%data,%array.syncObjsField);	
 	%isDirty = LabObj.set(%updObj,%field,%value);
+	if ($sepVM_ApplyChangeToDatablock){
+		%updData = %updObj.internalName;
+		%isDirty = LabObj.set(%updData,%field,%value);
+	}
 	if (%isDirty){
 		%menu = $sepVM_DataClassMenu[%updObj.getName()];
 		%menu.setText(%updObj.internalName @ "*");		
@@ -21,44 +25,15 @@ function sepVM::updateParam( %this,%field,%value,%ctrl,%array,%arg1,%arg2 ) {
 
 
 //==============================================================================
-//%field,%value,%ctrl,%array,%arg1,%arg2
-function sepVM::cloneDatablock( %this,%class,%type,%obj ) {
-	logd("sepVM::cloneDatablock( %this,%class,%type,%obj )",%class,%type,%obj);
+//sepVM.rebuildAllParams
+function sepVM::rebuildAllParams( %this ) {
+	logd("sepVM::rebuildAllParams( %this)",%this);
 	
-	
-	%name = %class@"_"@%type@"_vm_clone";
-	delObj(%name);	
-	%newObj = %obj.deepClone();
-	%newObj.setName(%name);	
-	%newObj.internalName = %obj.getName();	
-	//eval("sepVM."@%class@%type@" = %newObj;");	
-	switch$(%type){
-		case "Vehicle":
-			sepVM_WheeledCloneCtrl-->cloneTextVehicle.text = "Target:\c2" SPC %obj.getName();
-			syncParamArray(arsepVM_WheeledVehicleParam);		
-		case "tire1":
-			Wheeled_Vehicle_vm_clone.tireData1 = %obj.getName();
-			sepVM.setDirty(Wheeled_Vehicle_vm_clone);
-			syncParamArray(arsepVM_WheeledWheels1Param);
-		case "spring1":
-			Wheeled_Vehicle_vm_clone.springData1 = %obj.getName();
-			sepVM.setDirty(Wheeled_Vehicle_vm_clone);
-			syncParamArray(arsepVM_WheeledWheels1Param);
-		case "tire2":
-		Wheeled_Vehicle_vm_clone.tireData2 = %obj.getName();
-			sepVM.setDirty(Wheeled_Vehicle_vm_clone);
-			syncParamArray(arsepVM_WheeledWheels2Param);	
-		case "spring2":
-		Wheeled_Vehicle_vm_clone.springData2 = %obj.getName();
-			sepVM.setDirty(Wheeled_Vehicle_vm_clone);
-			syncParamArray(arsepVM_WheeledWheels2Param);	
-	}	
-	
-	$sepVM_DataClassMenu[%name].setText(%obj.getName());
-	%newObj.setFileName("art/datablocks/vehicles/devonly/tmpData.cs");
-	sepVM_TempDatablocks.add(%newObj);	
+	exec("tlab/sceneEditor/vehicleManager/paramsWheeledVehicle.cs");
+	%this.buildWheeledParams();
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
 //sepVM.applyChanges
 function sepVM::applyChanges( %this ) {
@@ -72,7 +47,7 @@ function sepVM::applyChanges( %this ) {
 		%srcData = %obj.internalName;	
 		%srcData.assignFieldsFrom(%obj);
 		
-		Lab_PM.removeField(%srcData,"test");
+		%this.cleanWheeledData(%srcData);		
 		Lab_PM.removeField(%srcData,"internalName");
 		LabObj.save(%srcData,true);
 		Lab_PM.removeDirty(%obj);

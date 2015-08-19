@@ -1,15 +1,15 @@
 # TorqueLab v0.4 - Alpha Release
 **Alpha version warning (Messy scripts and unused files present)**
-This is the first stabilized release which would lead to first beta once tested and reported issues fixed. Some components still can produced unexpected crash and those would be fixed as soon as possible once reported. If you use this TorqueLab release, please report any major issues to the GitHub issue system or on the official TorqueLab forum: http://www.nordiklab.com/forum/torquelab . 
+This is an alpha release and might have issues that could cause Torque3D engine crash. Version 0.4 seem to be very stable, no crash have been experienced with it on our test setup but some issues might cause crash for other test environment. If you experience a crash, please report it with the most informations you can on the GitHub issues page or on our public forum dedicated to TorqueLab: http://www.nordiklab.com/forum/torquelab 
 
-For those looking for a 100% stable T3D editor, please wait for the incoming Beta release.
-
+**Before testing TorqueLab, make sure you have applied the minimal code changes (see details below).**
 ## Developer notes
-This is mostly a personal project that I decided to share with others because I think it make it easier to manage T3D projects than default T3D editors. TorqueLab is based on default T3D tools scripts which I have rearranged to be more modular and easier to edit. The scripts are not all optimized yet and some formatting are not looking good, I will try to improve the scripts during the development.
-[https://github.com/NordikLab/TorqueLab/wiki/Unfinished-plugin-ports](https://github.com/NordikLab/TorqueLab/wiki/Unfinished-plugin-ports "Unfinished plugins ports")
+This is mostly a personal project that I decided to share with others because I think it make it easier to manage T3D projects than default T3D editors. TorqueLab is based on default T3D tools scripts which I have rearranged to be more modular and easier to edit. The scripts are not all optimized yet and some formatting are not looking good, I will keep improving the scripts during the development.
 
 ## What's TorqueLab
 TorqueLab is a completly revamping on the native Torque3D game editors (tools folder). The initial releases doesn't provide much new features, the work is focus on the scripts structure and the interface. Once those are completed, new features would be added.
+TorqueLab use my personal scripts helpers library which is included in the repository files. It contain only the required helpers (core), if you'd like to have a look at the entire library, visit the [ HelpersLab GitHub Page]( https://github.com/NordikLab/HelpersLab "HelpersLab GitHub Page")
+
 For more informations, visit the official TorqueLab Wiki:
 [https://github.com/NordikLab/TorqueLab/wiki](https://github.com/NordikLab/TorqueLab/wiki "TorqueLab Official Wiki")
 
@@ -34,9 +34,6 @@ Visit the special wiki pages for advanced instruction about how to install Torqu
 For git based installation that allow to quickly pull new changes into your project, please visit the installation page.
 [https://github.com/NordikLab/TorqueLab/wiki/Installation](https://github.com/NordikLab/TorqueLab/wiki/Installation "TorqueLab Installation WiKi")
 
-## Notes
-* TorqueLab will work without any code changes but some features might requires some changes in the code. Those would be disabled unless you make the needed changes.
-* For current Pre-Alpha version, I have included my personnal helpers scripts since some are use in TorqueLab. I will make sure to embed those used inside TorqueLab in future release.
 
 ## Known major issues
-* The Clone on object drag function is not working since it require some code change to work. I will examine to see if I can get it to work without code changes. If not, I will post the code changes needed. 
+* None reported for now

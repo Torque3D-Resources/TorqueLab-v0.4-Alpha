@@ -99,7 +99,8 @@ function SEP_PrecipitationManager::selectPrecipitation(%this,%objId) {
 		%name = "Precipitation \c2-\c1 " @ %objId.getId();
 	%this.selectedPrecipitationName = %name;
 	//PrecipitationInspector.inspect(%objId);
-	Lab.inspect(%objId);
+	LabObj.inspect(%objId);
+	//Lab.inspect(%objId);
 	%this.setDirty();
 	%datablock = %objId.dataBlock;
 	SEP_PrecipitationDataMenu.setSelected(%datablock.getId());
@@ -128,7 +129,9 @@ function SEP_PrecipitationManager::saveObject(%this) {
 		warnLog("Can't save precipitation because none is selected. Tried wth:",%obj);
 		return;
 	}
-
+	LabObj.save(%obj);
+	%this.setDirty();
+	return;
 	if (!SEP_AmbientManager_PM.isDirty(%obj)) {
 		warnLog("Object is not dirty, nothing to save");
 		return;
@@ -143,14 +146,12 @@ function SEP_PrecipitationManager::saveObject(%this) {
 function SEP_PrecipitationManager::setDirty(%this,%isDirty) {
 	logd("SEP_PrecipitationManager::setDirty(%this,%isDirty)",%this,%isDirty);
 	%obj = %this.selectedPrecipitation;
-
-	if (%isDirty $="")
-		%isDirty = SEP_AmbientManager_PM.isDirty(%obj);
-	else if ( !SEP_AmbientManager_PM.isDirty(%obj) && %isDirty)
-		SEP_AmbientManager_PM.setDirty( %obj );
-	else if ( SEP_AmbientManager_PM.isDirty(%obj) && !%isDirty)
-		SEP_AmbientManager_PM.removeDirty( %obj );
-
+	if (%isDirty !$= ""){
+		LabObj.setDirty(%obj,%isDirty);
+	}
+	
+	%isDirty = LabObj.isDirty(%obj);
+	
 	%this.isDirty = %isDirty;
 	SEP_PrecipitationSaveButton.active = %isDirty;
 }
@@ -208,7 +209,10 @@ SEP_PrecipitationManager.dataFieldList = %f1;
 function SEP_PrecipitationManager::saveDatablock(%this) {
 	logd("SEP_PrecipitationManager::updateDataFieldValue(%this,%field,%value)",%this,%field,%value);
 	%data = %this.selectedPrecipitationData;
-
+	
+	LabObj.save(%data);
+	%this.setDataDirty();
+	return;
 	if ( !SEP_AmbientManager_PM.isDirty(%data)) {
 		warnLog("Datablock is not dirty");
 		return;
@@ -234,28 +238,26 @@ function SEP_PrecipitationManager::updateDataFieldValue(%this,%field,%value) {
 		return;
 	}
 
-	//eval("%obj."@%checkField@" = %value;");
-	%data.setFieldValue(%field,%value);
-	%this.setDataDirty(true);
+LabObj.set(%data,%field,%value);
+	
+	%this.setDataDirty();
 	%ctrl = SEP_PrecipitationDataProperties.findObjectByInternalName(%field,true);
 
 	if (isObject(%ctrl))
 		%ctrl.setTypeValue(%value);
-
-	PrecipitationDataInspector.apply();
+		
+	//PrecipitationDataInspector.apply();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_PrecipitationManager::setDataDirty(%this,%isDirty) {
 	logd("SEP_PrecipitationManager::setDataDirty(%this,%isDirty)",%this,%isDirty);
 	%data = %this.selectedPrecipitationData;
-
-	if (%isDirty $="") {
-		%isDirty = SEP_AmbientManager_PM.isDirty(%data);
-	} else if ( !SEP_AmbientManager_PM.isDirty(%data) && %isDirty)
-		SEP_AmbientManager_PM.setDirty( %data );
-	else if ( SEP_AmbientManager_PM.isDirty(%data) && !%isDirty)
-		SEP_AmbientManager_PM.removeDirty( %data );
+	if (%isDirty !$= ""){
+		LabObj.setDirty(%data,%isDirty);
+	}
+	
+	%isDirty = LabObj.isDirty(%data);	
 
 	%this.dataIsDirty = %isDirty;
 	SEP_PrecipitationDataSaveButton.active = %isDirty;
@@ -273,9 +275,10 @@ function SEP_PrecipitationManager::selectPrecipitationData(%this,%dataId) {
 	logd("SEP_PrecipitationManager::selectPrecipitation(%this,%dataId)",%this,%dataId);
 	%this.selectedPrecipitationData = %dataId;
 	%this.selectedPrecipitationDataName = %dataId.getName();
+	//%this.setDataDirty();
+	//PrecipitationDataInspector.inspect(%dataId);
+	LabObj.inspect(%dataId);
 	%this.setDataDirty();
-	PrecipitationDataInspector.inspect(%dataId);
-
 	foreach$(%field in SEP_PrecipitationManager.dataFieldList) {
 		%ctrl = SEP_PrecipitationDataProperties.findObjectByInternalName(%field,true);
 
@@ -289,6 +292,8 @@ function SEP_PrecipitationManager::selectPrecipitationData(%this,%dataId) {
 	}
 
 	%this.updateFieldValue("data"@"Block",%this.selectedPrecipitationDataName);
+	
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -3,12 +3,19 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+$sepVM_WheeledBook_PageId = 0;
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function sepVM::initWheeledPage( %this ) {
 	%this.updateWheeledDatablocks();
 	%this.updateWheeledSystems();
+	sepVM_WheeledBook.selectPage($sepVM_WheeledBook_PageId);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function sepVM_WheeledBook::onTabSelected(  %this,%text,%index ) {
+	$sepVM_WheeledBook_PageId = %index;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -64,13 +71,11 @@ function sepVM_WheeledDataMenu::onSelect( %this,%id,%text ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {	
-	
-	
-//	devLog("sepVM_WheeledDataMenu onSelect",%id,%data,"Type",%type,"TypeId",%typeId);
+function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {		
+	devLog("sepVM selectWheeledData",%id,%data,"Type",%type,"TypeId",%typeId);
 //	eval("sepVM.Wheeled"@%field@" = %data;");
 %field = %type@%typeId;
-	sepVM.cloneDatablock("Wheeled",%field,%data);
+	sepVM.cloneWheeledDatablock("Wheeled",%field,%data);
 	
 	
 	if (%type $= "Vehicle"){
@@ -93,7 +98,7 @@ function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {
 					}
 					else {
 						%id = %posId[%pos];
-						sepVM.cloneDatablock("Wheeled",%dataType@%id,%checkData1);
+						sepVM.cloneWheeledDatablock("Wheeled",%dataType@%id,%checkData1);
 						//eval("sepVM.Wheeled"@%dataType@%id@" = %checkData1;");
 						eval("seVM_WheeledDataMenu_"@%dataType@%id@".setText(%checkData1);");
 						
@@ -103,7 +108,7 @@ function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {
 				}
 			}
 			else {
-				sepVM.cloneDatablock("Wheeled",%dataType@"1",%checkData);
+				sepVM.cloneWheeledDatablock("Wheeled",%dataType@"1",%checkData);
 			//	eval("sepVM.Wheeled"@%dataType@"1 = %checkData;");
 				devlog("sepVM.Wheeled"@%dataType@"1","Set as:",%checkData);
 			}

@@ -120,6 +120,8 @@ function TLabGameGui::showDlg( %this,%dlg,%child ) {
 	Lab.currentGameDlg = %dlgCtrl;
 	%dlgCtrl.visible = 1;
 	
+	%this.lastLoadedDlg = %dlg;
+	
 	pushDlg(TLabGameGui);
 	//TLabGameGui.schedule(300,"toggleCursor",true);
 TLabGameGui.clearChildResponder();

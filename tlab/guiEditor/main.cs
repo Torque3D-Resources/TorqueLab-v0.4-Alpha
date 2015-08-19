@@ -10,7 +10,9 @@ function initializeGuiEditor() {
 
 	if (!isObject(GuiLab))
 		$GuiLab = new scriptObject("GuiLab");
-		
+	
+	$GuiEd = new scriptObject("GuiEd");
+	
 	delObj(GuiEdMap);
 	new ActionMap(GuiEdMap);
 
@@ -57,6 +59,7 @@ function execGuiEdit(%execGui,%execMainGui) {
 	execPattern( "tlab/guiEditor/lab/*.cs" );
 	execPattern( "tlab/guiEditor/menu/*.cs" );
 	execPattern( "tlab/guiEditor/system/*.cs" );
+
 }
 
 function destroyGuiEditor() {

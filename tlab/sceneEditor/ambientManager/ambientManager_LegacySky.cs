@@ -93,7 +93,7 @@ function SEP_LegacySkyManager::updateField( %this,%field, %value,%obj ) {
 	//SceneInspector.apply(%obj);
 	//%obj.setFieldValue(%field,%value,%layerId);
 	EWorldEditor.isDirty = true;
-	%this.setDirtyObject(%obj,true);  
+	%this.setDirtyObject(%obj);  
 	
 	//syncParamArray(SEP_AmbientManager.FogParamArray);
 }
@@ -135,6 +135,18 @@ function SEP_LegacySkyManager::selectSky(%this,%obj) {
 function SEP_LegacySkyManager::setDirtyObject(%this,%obj,%isDirty) {
 	logd("SEP_LegacySkyManager::setDirtyObject(%this,%obj,%isDirty)",%this,%obj,%isDirty);
 	
+	if (!isObject(%obj))
+		return;
+		
+	if (%isDirty !$= ""){
+		LabObj.setDirty(%obj,%isDirty);
+	}
+	
+	if (%isDirty)
+		EWorldEditor.isDirty = true;
+	%isDirty = LabObj.isDirty(%obj);
+	SEP_LegacySkySaveButton.active = %isDirty;
+	return;
 	if (isObject(%obj)){
 		SEP_AmbientManager.setObjectDirty(%obj,%isDirty);
 	
@@ -154,7 +166,21 @@ function SEP_LegacySkyManager::setDirtyObject(%this,%obj,%isDirty) {
 
 //==============================================================================
 // Sync the current profile values into the params objects
-function SEP_LegacySkyManager::saveData( %this ) { 		
+function SEP_LegacySkyManager::saveData( %this ) { 
+	%sun = %this.selectedSun;
+	if (isObject(%sun)){
+		LabObj.save(%sun);
+		%this.setDirtyObject(%sun);
+	}
+	
+	%skyBox = %this.selectedSkyBox;
+	if (isObject(%skyBox)){
+		LabObj.save(%skyBox);
+		%this.setDirtyObject(%skyBox);
+	}
+	return;
+	LabObj.save(%obj);
+	%this.setDirty();
 	
 	foreach$(%obj in %this.dirtyList){
 		if(SEP_AmbientManager_PM.isDirty(%obj))

@@ -174,7 +174,7 @@ function SEP_AmbientManager::getSkySystemObject( %this ) {
 
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-
+//SEP_AmbientManager.createNewSkySystem();
 function SEP_AmbientManager::createNewSkySystem( %this ) {
 	logd("SEP_AmbientManager::createNewSkySystem(%this)");
 

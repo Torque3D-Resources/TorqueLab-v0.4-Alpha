@@ -9,8 +9,10 @@
 function SEP_AmbientManager::buildCloudLayerParams( %this ) {
 	%arCfg = createParamsArray("SEP_CloudLayer",SEP_CloudLayer);
 	%arCfg.updateFunc = "SEP_AmbientManager.updateCloudLayerParam";
-	%arCfg.style = "LabCfgB_230";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
+	%arCfg.noDirectSync = true;
+	
 
 		%arCfg.group[%gid++] = "CloudLayer Overall" TAB "Stack StackA";
 
@@ -102,18 +104,12 @@ function SEP_AmbientManager::updateCloudLayerField( %this,%field, %value,%layerI
 		warnLog("Can't update ground cover value because none is selected. Tried wth:",%obj);
 		return;
 	}
-
-	%currentValue = %obj.getFieldValue(%field,%layerId);
-
-	if (%currentValue $= %value) {		
-		return;
-	}
 	
 	LabObj.set(%obj,%field,%value,%layerId);
 	//eval("%obj."@%checkField@" = %value;");
 	//%obj.setFieldValue(%field,%value,%layerId);
-	EWorldEditor.isDirty = true;
-	%this.setCloudLayerDirty(true);  
+	
+	%this.setCloudLayerDirty();  
 	//CloudLayerInspector.refresh();
 	//CloudLayerInspector.apply();
 	syncParamArray(SEP_AmbientManager.CloudLayerParamArray);
@@ -135,7 +131,8 @@ function SEP_AmbientManager::selectCloudLayer(%this,%obj) {
 	%this.selectedCloudLayer = %obj;
 	%this.selectedCloudLayerName = %obj.getName();
 	%this.setCloudLayerDirty();
-	CloudLayerInspector.inspect(	%obj);
+	LabObj.inspect(%obj);
+	//CloudLayerInspector.inspect(	%obj);
 	syncParamArray(%this.CloudLayerParamArray);
 }
 //------------------------------------------------------------------------------
@@ -143,20 +140,22 @@ function SEP_AmbientManager::selectCloudLayer(%this,%obj) {
 function SEP_AmbientManager::saveCloudLayerObject(%this) {
 	logd("SEP_AmbientManager::saveCloudLayerObject(%this)",%this);
 	%obj = %this.selectedCloudLayer;
-
+	
 	if (!isObject(%obj)) {
 		warnLog("Can't save CloudLayer because none is selected. Tried wth:",%obj);
 		return;
 	}
-
+	LabObj.save(%obj);
+	%this.setCloudLayerDirty(false);
+	return;
 	if (!SEP_AmbientManager_PM.isDirty(%obj)) {
 		warnLog("Object is not dirty, nothing to save");
 		return;
 	}
 
 	//SEP_AmbientManager_PM.setDirty(%obj);
-	SEP_AmbientManager_PM.saveDirtyObject(%obj);
-	%this.setCloudLayerDirty(false);
+	//SEP_AmbientManager_PM.saveDirtyObject(%obj);
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -164,15 +163,18 @@ function SEP_AmbientManager::setCloudLayerDirty(%this,%isDirty) {
 	logd("SEP_AmbientManager::setCloudLayerDirty(%this,%isDirty)",%this,%isDirty);
 	%obj = %this.selectedCloudLayer;
 
-	if (%isDirty $="")
-		%isDirty = SEP_AmbientManager_PM.isDirty(%obj);
-	else if ( !SEP_AmbientManager_PM.isDirty(%obj) && %isDirty)
-		SEP_AmbientManager_PM.setDirty( %obj );
-	else if ( SEP_AmbientManager_PM.isDirty(%obj) && !%isDirty)
-		SEP_AmbientManager_PM.removeDirty( %obj );
-
-	%this.isDirty = %isDirty;
-	SEP_CloudLayerSaveButton.active = %isDirty;
+	%labIsDirty = LabObj.isDirty(%obj);
+	if (%isDirty !$= ""){
+		if (%isDirty && !%labIsDirty){
+			warnLog("Trying to set CloudLayer different dirty state");
+			LabObj.setDirty(%obj,%isDirty);
+		}
+		%labIsDirty = LabObj.isDirty(%obj);
+	}
+	if (%labIsDirty)
+		EWorldEditor.isDirty = true;
+	%this.isDirty = %labIsDirty;
+	SEP_CloudLayerSaveButton.active = %labIsDirty;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

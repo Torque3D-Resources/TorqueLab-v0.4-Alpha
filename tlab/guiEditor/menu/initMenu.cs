@@ -114,10 +114,10 @@ function GuiEditCanvas::initGuiEdMenuData(%this,%buildAfter) {
 	$GuiEdMenuItem[%id,%itemId++] = "Send to Back" TAB "" TAB "GuiEditor.PushToBack();";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
 	$GuiEdMenu[%id++] = "LabLayout";
-	$GuiEdMenuItem[%id,%itemId = 0] = "Align Left" TAB %cmdCtrl SPC "Left" TAB "Lab.AlignCtrlToParent(\"left\");";
-	$GuiEdMenuItem[%id,%itemId++] = "Align Right" TAB %cmdCtrl SPC "Left" TAB "Lab.AlignCtrlToParent(\"right\");";
-	$GuiEdMenuItem[%id,%itemId++] = "Align Top" TAB %cmdCtrl SPC "Left" TAB "Lab.AlignCtrlToParent(\"top\");";
-	$GuiEdMenuItem[%id,%itemId++] = "Align Bottom" TAB %cmdCtrl SPC "Left" TAB "Lab.AlignCtrlToParent(\"bottom\");";
+	$GuiEdMenuItem[%id,%itemId = 0] = "Align Left" TAB %cmdCtrl SPC "Left" TAB "GuiEd.AlignCtrlToParent(\"left\");";
+	$GuiEdMenuItem[%id,%itemId++] = "Align Right" TAB %cmdCtrl SPC "Left" TAB "GuiEd.AlignCtrlToParent(\"right\");";
+	$GuiEdMenuItem[%id,%itemId++] = "Align Top" TAB %cmdCtrl SPC "Left" TAB "GuiEd.AlignCtrlToParent(\"top\");";
+	$GuiEdMenuItem[%id,%itemId++] = "Align Bottom" TAB %cmdCtrl SPC "Left" TAB "GuiEd.AlignCtrlToParent(\"bottom\");";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
 	$GuiEdMenuItem[%id,%itemId++] = "Force into Parent-" TAB "Alt g" TAB "Lab.forceCtrlInsideParent( );";
 	$GuiEdMenuItem[%id,%itemId++] = "-";

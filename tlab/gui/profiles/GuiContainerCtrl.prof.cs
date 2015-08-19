@@ -53,7 +53,7 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
    fontColorSEL = "29 104 143 255";
    fontColorLink = "238 255 0 255";
    fontColorLinkHL = "252 189 81 255";
-   bevelColorLL = "255 0 255 255";
+   bevelColorLL = "Fuchsia";
    bevelColorHL = "Magenta";
 };
 //------------------------------------------------------------------------------

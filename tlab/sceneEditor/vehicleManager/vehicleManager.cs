@@ -4,15 +4,29 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 $sepVM_MainBook_PageId = 0;
-
+$sepVM_ApplyChangeToDatablock = false;
 //==============================================================================
 // OnWake and OnSleep Callbacks
 //==============================================================================
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_VehicleManager::onWake( %this ) {
+	devLog("SEP_VehicleManager::onWake");
 	sepVM.initWheeledPage();
 	sepVM.buildWheeledParams();
+	sepVM.initPresetsData();
+	if (isObject(LocalClientConnection.vehicle)){
+		%vehicle = LocalClientConnection.vehicle;	
+		devLog("Auto selecting Client vehicle",%vehicle);	
+	} else if (EWorldEditor.getSelectionSize() > 0){
+		if (EWorldEditor.getSelectedObject(0).isMemberOfClass("Vehicle")){
+			%vehicle = EWorldEditor.getSelectedObject(0);	
+			devLog("Auto selecting selected scene vehicle",	%vehicle);
+		}
+	}
+		
+	if (isObject(%vehicle))
+		sepVM.selectWheeledData(%vehicle.getDatablock(),"Vehicle");
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -28,7 +42,7 @@ function SEP_VehicleManager::onSleep( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_VehicleManager::onShow( %this ) {	
-	logd("SEP_VehicleManager::onShow");
+	devLog("SEP_VehicleManager::onShow");
 	
 }
 //------------------------------------------------------------------------------
