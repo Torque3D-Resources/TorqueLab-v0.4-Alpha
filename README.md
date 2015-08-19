@@ -31,9 +31,5 @@ Visit the special wiki pages for advanced instruction about how to install Torqu
 
 **You need to add few code changes to use TorqueLab, some of for extra features but some are needed else the game will crash when loading the editor. Instruction to add those changes are provide in installation page.**
 
-For git based installation that allow to quickly pull new changes into your project, please visit the installation page.
-[https://github.com/NordikLab/TorqueLab/wiki/Installation](https://github.com/NordikLab/TorqueLab/wiki/Installation "TorqueLab Installation WiKi")
-
-
 ## Known major issues
 * None reported for now
