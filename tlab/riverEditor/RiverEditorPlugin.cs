@@ -56,6 +56,7 @@ function RiverEditorPlugin::onActivated( %this ) {
 	RiverManager.autoCollapsePill = true;
 	RiverManager.showPositionEdit = false;
 	RiverEd_PropertiesBook.selectPage(0);
+	RiverManager.updateRiverData();
 }
 
 function RiverEditorPlugin::onDeactivated( %this ) {

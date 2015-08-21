@@ -5,6 +5,7 @@
 // Create quickly a set of GUI based on a template
 //==============================================================================
 
+//==============================================================================
 function initializeGuiEditor() {
 	echo( " % - Initializing Gui Editor" );
 
@@ -18,7 +19,11 @@ function initializeGuiEditor() {
 
 	// GUIs.
 	execGuiEdit(true);
+	
+	Lab.initTemplateManager();
 }
+//------------------------------------------------------------------------------
+//==============================================================================
 function execGuiEdit(%execGui,%execMainGui) {
 	
 	if (%execGui) {
@@ -29,9 +34,11 @@ function execGuiEdit(%execGui,%execMainGui) {
 		exec( "./gui/EditorChooseGUI.ed.gui" );
 		exec( "./gui/LabWidgetBuilderDlg.gui" );
 		exec( "tlab/guiEditor/gui/GuiEditFieldDuplicator.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateManager.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateEditor.gui" );
 	}
 	if (%execMainGui){
-		exec( "./gui/guiEditor.ed.gui" );
+		exec( "tlab/guiEditor/gui/guiEditor.ed.gui" );
 	}
 
 	if (!isObject(GuiEditor)) {
@@ -61,7 +68,8 @@ function execGuiEdit(%execGui,%execMainGui) {
 	execPattern( "tlab/guiEditor/system/*.cs" );
 
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function destroyGuiEditor() {
 }
-
+//------------------------------------------------------------------------------

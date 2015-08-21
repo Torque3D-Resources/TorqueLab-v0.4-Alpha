@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13768";
-      disabledGroup = "13769";
-      EditorContainer = "4007";
+      defaultStack = "14948";
+      disabledGroup = "14949";
+      EditorContainer = "4009";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "13770 13779 13795";
+      stackLists = "14950 14959 14975";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -514,7 +514,7 @@ new GuiStackControl(RoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "No road selected";
+            text = "Mat_gcDirtPathA_1C_2t";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

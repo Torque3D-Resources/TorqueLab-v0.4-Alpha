@@ -18,12 +18,12 @@ function tlabExecCore( %loadGui ) {
 		execPattern("tlab/core/*.gui");			
 	}
 
-	execPattern("tlab/core/plugin/*.cs");
+	
 	execPattern("tlab/core/helpers/*.cs");
 	execPattern("tlab/core/scripts/*.cs");
 	execPattern("tlab/core/common/*.cs");
 	execPattern("tlab/core/params/*.cs");
-	execPattern("tlab/core/guiManagement/*.cs");
+	
 execPattern("tlab/core/guiHelpers/*.cs");
 	
 	
@@ -40,7 +40,7 @@ tlabExecCore(!$LabGuiExeced);
 
 //------------------------------------------------------------------------------
 //Load the Editor Menubar Scripts
-
+/*
 function tlabExecMenubar( %loadGui ) {
 	exec("tlab/EditorLab/menubar/manageMenu.cs");
 	exec("tlab/EditorLab/menubar/defineMenus.cs");
@@ -50,45 +50,37 @@ function tlabExecMenubar( %loadGui ) {
 	exec("tlab/EditorLab/menubar/native/buildNativeMenu.cs");
 	exec("tlab/EditorLab/menubar/native/lightingMenu.cs");
 }
-tlabExecMenubar(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecMenubar");
+//tlabExecMenubar(!$LabGuiExeced);
+%execAll = strAddWord(%execAll,"tlabExecMenubar");*/
 //------------------------------------------------------------------------------
 
 
-//------------------------------------------------------------------------------
-//Load the Editor Main Gui
-
-function tlabExecScene(%loadGui ) {
-	execPattern("tlab/EditorLab/scene/*.cs");
-}
-tlabExecScene(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecScene");
 //------------------------------------------------------------------------------
 //Load the LabGui (Cleaned EditorGui files)
 function tlabExecEditor(%loadGui ) {
 	if (%loadGui) {
-		exec("tlab/EditorLab/editor/gui/EditorGui.gui");
+		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
 		
 	}
 
-	exec("tlab/EditorLab/editor/EditorOpen.cs");
-	exec("tlab/EditorLab/editor/EditorClose.cs");
-	exec("tlab/EditorLab/editor/EditorScript.cs");
-
-	exec("tlab/EditorLab/editor/generalFunctions.cs");
-	execPattern("tlab/EditorLab/editor/worldEditor/*.cs");
-	execPattern("tlab/EditorLab/editor/features/*.cs");
+	exec("tlab/EditorLab/EditorOpen.cs");
+	exec("tlab/EditorLab/EditorClose.cs");
+	exec("tlab/EditorLab/EditorScript.cs");
+	exec("tlab/EditorLab/EditorActivate.cs");
+execPattern("tlab/EditorLab/guiSystem/*.cs");
+	execPattern("tlab/EditorLab/worldEditor/*.cs");
+	execPattern("tlab/EditorLab/plugin/*.cs");
 }
 tlabExecEditor(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecEditor");
 //------------------------------------------------------------------------------
 //Load the Tools scripts (Toolbar and special functions)
-function tlabExecToolbar(%loadGui ) {
+/*function tlabExecToolbar(%loadGui ) {
 	execPattern("tlab/EditorLab/toolbar/*.cs");
 }
 tlabExecToolbar(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecToolbar");
+%execAll = strAddWord(%execAll,"tlabExecToolbar");*/
 
 //------------------------------------------------------------------------------
 //Load the LabGui Ctrl (Cleaned EditorGui files)

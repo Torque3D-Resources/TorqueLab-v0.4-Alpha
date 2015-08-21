@@ -26,13 +26,13 @@ EditorMap.bind(keyboard,"delete",EditorGlobalDelete);
 //==============================================================================
 function getEditorMouseAdjustAmount(%val) {
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_MouseSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_Common_Input_MouseSpeed;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function getEditorMouseScrollAdjustAmount(%val) {
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_MouseScrollSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_Common_Input_MouseScrollSpeed;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

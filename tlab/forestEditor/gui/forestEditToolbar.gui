@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11513";
-      disabledGroup = "11514";
-      EditorContainer = "4007";
+      defaultStack = "11522";
+      disabledGroup = "11523";
+      EditorContainer = "4009";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "11515 11523";
+      stackLists = "11524 11532";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -351,7 +351,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "11522";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -421,7 +421,7 @@ new GuiStackControl(ForestEditToolbar) {
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "3.4";
+            text = "0.1";
             maxLength = "3";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -442,7 +442,7 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "globalScaleEdit";
+            internalName = "GlobalScale";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -470,7 +470,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "11522";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -560,7 +560,7 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "BrushHardness";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -588,7 +588,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "11522";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -657,7 +657,7 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "brushPressure";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -665,7 +665,7 @@ new GuiStackControl(ForestEditToolbar) {
             range = "0 100";
             ticks = "0";
             snap = "0";
-            value = "100";
+            value = "0";
             position = "2 21";
             extent = "112 13";
             minExtent = "8 2";
@@ -706,7 +706,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "11522";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -784,7 +784,7 @@ new GuiStackControl(ForestEditToolbar) {
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "71 0";
+            position = "72 0";
             extent = "42 19";
             minExtent = "8 16";
             horizSizing = "left";
@@ -797,7 +797,7 @@ new GuiStackControl(ForestEditToolbar) {
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "BrushSize";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

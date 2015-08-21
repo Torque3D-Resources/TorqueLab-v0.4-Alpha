@@ -35,7 +35,7 @@ function MaterialEditorGui::establishMaterials(%this,%forced) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorGui::open(%this) {
-	devLog("MaterialEditorGui::open(%this)");
+	logc("MaterialEditorGui::open(%this)",%this);
 	MaterialEditorGui.establishMaterials();
 	// We hide these specific windows here due too there non-modal nature.
 	// These guis are also pushed onto Canvas, which means they shouldn't be parented

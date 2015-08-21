@@ -245,9 +245,9 @@ function LPD_ConfigNameMenu::onSelect( %this,%id,%text ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
-function LabCfg::writeBaseConfig( %this,%default ) {
+function LabCfg::writeBaseConfig( %this ) {
 	%cfg = "tlab/core/configs/config.xml";
-	
+	Lab.writeCurrentParamsConfig();
 	LabCfg.file = %cfg;
 	LabCfg.write();
 }

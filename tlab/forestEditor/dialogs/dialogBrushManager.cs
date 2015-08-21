@@ -31,7 +31,7 @@ function FEP_BrushManager::setBrushPressure( %this,%ctrl ) {
 
 	if (isObject(%ctrl)) {
 		%brushPressure = %ctrl.getValue();
-		ForestEditorPlugin.brushPressure = %brushPressure;
+		ForestEditorPlugin.brushPressure = %brushPressure;		
 	}
 
 	//Convert float to closest integer
@@ -41,16 +41,8 @@ function FEP_BrushManager::setBrushPressure( %this,%ctrl ) {
 	%newPressure = %clampPressure * 100;
 	%formatPressure = mFloatLength(%newPressure,1);
 
-%ctrl.updateFriends();
-	//Set the validated value to control and update friends if there's any
-	//Set the validated value to control and update friends if there's any
-	foreach(%slider in $GuiGroup_FEP_Slider_Pressure) {
-		%slider.setValue(%formatPressure);
-		%slider.updateFriends();
-	}
+	%this.syncBrushCtrls("brushPressure",%formatPressure);
 
-	// %ctrl.setValue(%formatPressure);
-	//%ctrl.updateFriends();
 	ForestEditorPlugin.setParam("BrushPressure",%formatPressure);
 }
 //------------------------------------------------------------------------------
@@ -61,7 +53,7 @@ function FEP_BrushManager::setBrushHardness( %this,%ctrl ) {
 
 	if (isObject(%ctrl)) {
 		%brushHardness = %ctrl.getValue();
-		ForestEditorPlugin.brushHardness = %brushHardness;
+		ForestEditorPlugin.brushHardness = %brushHardness;		
 	}
 
 	//Convert float to closest integer
@@ -72,15 +64,8 @@ function FEP_BrushManager::setBrushHardness( %this,%ctrl ) {
 	%newHardness = %clampHardness * 100;
 	%formatHardness = mFloatLength(%newHardness,1);
 
-%ctrl.updateFriends();
-	//Set the validated value to control and update friends if there's any
-	foreach(%slider in $GuiGroup_FEP_Slider_Hardness) {
-		%slider.setValue(%formatHardness);
-		%slider.updateFriends();
-	}
+%this.syncBrushCtrls("brushHardness",%formatHardness);
 
-	// %ctrl.setValue(%formatHardness);
-	//%ctrl.updateFriends();
 	ForestEditorPlugin.setParam("BrushHardness",%formatHardness);
 }
 //------------------------------------------------------------------------------
@@ -95,27 +80,15 @@ function FEP_BrushManager::setGlobalScale( %this,%ctrl ) {
 
 	%minScaleSize = "0.1";
 	%maxScaleSize = "10";
-	//if (%ctrl $= "")
-	//%ctrl = $ThisControl;
-	//%val = %ctrl.getValue();
+	
 	%value = mClamp(%value,%minScaleSize,%maxScaleSize);
-	%value = mFloatLength(%value,2);
-	%ctrl.setValue(%value);
-	//%ctrl.setValue(%val);
+	%value = mFloatLength(%value,2);	
+	
 	$Forest::GlobalScale = %value;
-	%ctrl.updateFriends();
-	devLog("setGlobalScale",%value);
-	//Set the validated value to control and update friends if there's any
-	foreach(%slider in $GuiGroup_FEP_Slider_GlobalScale) {
-		%slider.setValue(%value);
-		%slider.updateFriends();
-	}
 
-	//%syncWith = %ctrl.getParent().internalName;
-	//if (!isObject(%syncWith))
-	//	return;
-	//%syncWith-->globalScaleSlider.setValue(%val);
-	//%syncWith-->globalScaleEdit.setValue(%val);
+	%this.syncBrushCtrls("globalScale",%value);
+
+	
 	ForestEditorPlugin.setParam("GlobalScale",%value);
 }
 //------------------------------------------------------------------------------
@@ -125,16 +98,13 @@ function FEP_BrushManager::setBrushSize( %this,%ctrl ) {
 
 	if (isObject(%ctrl)) {
 		%value = %this.validateBrushSize(%ctrl.getValue());
-		ForestEditorPlugin.brushSize = %value;
+		ForestEditorPlugin.brushSize = %value;		
 	}
 
+	%this.syncBrushCtrls("brushSize",%value);
 	ForestToolBrush.size = %value;
 
-	foreach(%slider in $GuiGroup_FEP_Slider_BrushSize) {
-		%slider.setValue(%value);
-		%slider.updateFriends();
-	}
-%ctrl.updateFriends();
+
 	ForestEditorPlugin.setParam("BrushSize",%value);
 }
 //------------------------------------------------------------------------------
@@ -153,6 +123,8 @@ function FEP_BrushManager::validateBrushSize( %this,%size ) {
 }
 //------------------------------------------------------------------------------
 
+
+
 //==============================================================================
 // Brush Options Setting Functions
 //==============================================================================
@@ -165,20 +137,21 @@ function TPP_BrushManagerSizeRangeEdit::onValidate( %this ) {
 	%value = %this.getText();
 	%rangeFull = $FEP_BrushManager_[%group,"Range","Min"] SPC $FEP_BrushManager_[%group,"Range","Max"];
 	%min = ETerrainEditor.getSlopeLimitMinAngle();
-
+/*
 	foreach(%ctrl in $GuiGroup_FEP_Slider_SlopeMin) {
 		
 		%ctrl.range = %rangeFull;
 		%ctrl.setValue(%min);
 	}
-
+*/
 	%max = ETerrainEditor.getSlopeLimitMaxAngle();
-
+/*
 	foreach(%ctrl in $GuiGroup_FEP_Slider_SlopeMax) {
 		
 		%ctrl.range = %rangeFull;
 		%ctrl.setValue(%max);
 	}
+	*/
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -213,5 +186,18 @@ function FEP_BrushManager::doBrushOption( %this,%group,%type,%field,%value ) {
 			%ctrl.setValue(%value);
 		}
 	}
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function FEP_BrushManager::syncBrushCtrls( %this,%data,%value ) {
+	//PossibleData = globalScale BrushHardness brushPressure BrushSize
+	foreach$(%ctrl in "FEP_BrushManager ForestEditToolbar"){
+		%dataCtrl = %ctrl.findObjectByInternalName(%data,true);
+		if (!isObject(%dataCtrl))
+			continue;
+		%dataCtrl.setValue(%value);
+		%dataCtrl.updateFriends();
+	}	
 }
 //------------------------------------------------------------------------------

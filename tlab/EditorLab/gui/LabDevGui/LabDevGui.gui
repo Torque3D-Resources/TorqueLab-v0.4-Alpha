@@ -51,7 +51,7 @@
          tabHeight = "21";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "6";
+         selectedPage = "7";
          frontTabPadding = "0";
          docking = "Client";
          margin = "20 20 20 20";
@@ -7584,7 +7584,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18254";
+                                 frameSet = "18432";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -8868,7 +8868,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18258";
+                                 frameSet = "18436";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -9235,7 +9235,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18262";
+                                 frameSet = "18440";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -10650,7 +10650,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18266";
+                                 frameSet = "18444";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -12065,7 +12065,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18270";
+                                 frameSet = "18448";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -13403,7 +13403,7 @@
                               canSave = "1";
                               canSaveDynamicFields = "1";
                                  columnCount = "2";
-                                 frameSet = "18274";
+                                 frameSet = "18452";
                                  offsetY = "22";
 
                               new GuiFrameSetCtrl() {
@@ -16581,7 +16581,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            columnCount = "2";
-                           frameSet = "18573";
+                           frameSet = "18751";
                            offsetY = "22";
 
                         new GuiFrameSetCtrl() {
@@ -17206,7 +17206,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            columnCount = "2";
-                           frameSet = "18577";
+                           frameSet = "18755";
                            offsetY = "22";
 
                         new GuiFrameSetCtrl() {
@@ -18227,7 +18227,7 @@
                         canSave = "1";
                         canSaveDynamicFields = "1";
                            columnCount = "2";
-                           frameSet = "18581";
+                           frameSet = "18759";
                            offsetY = "22";
 
                         new GuiFrameSetCtrl() {
@@ -18425,8 +18425,8 @@
                                     profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
-                                    command = "syncParamArrayCtrl(18653,\"\",\"arProfileStyleParam\",\"\",\"\");";
-                                    altCommand = "syncParamArrayCtrl(18653,\"\",\"arProfileStyleParam\",\"1\",\"\");";
+                                    command = "syncParamArrayCtrl(18831,\"\",\"arProfileStyleParam\",\"\",\"\");";
+                                    altCommand = "syncParamArrayCtrl(18831,\"\",\"arProfileStyleParam\",\"1\",\"\");";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -18459,11 +18459,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -19768,6 +19769,234 @@
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
+               };
+               new guiNodeGraphCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+                  position = "280 66";
+                  extent = "84 93";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new guiWebGraphCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+                  position = "286 285";
+                  extent = "64 64";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+            };
+         };
+         new GuiTabPageCtrl() {
+            fitBook = "1";
+            text = "NodeGraph";
+            maxLength = "1024";
+            docking = "Client";
+            margin = "0 0 0 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "0 21";
+            extent = "1400 839";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsBoxDarkC";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsGuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiWindowCtrl() {
+               text = "Profiles styles";
+               resizeWidth = "1";
+               resizeHeight = "1";
+               canMove = "1";
+               canClose = "1";
+               canMinimize = "1";
+               canMaximize = "1";
+               canCollapse = "0";
+               edgeSnap = "1";
+               docking = "Left";
+               margin = "0 0 0 0";
+               padding = "12 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "0 0";
+               extent = "330 839";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsWindowPanel";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  columnCount = "2";
+
+               new GuiContainer() {
+                  docking = "Client";
+                  margin = "4 0 0 0";
+                  padding = "4 4 4 4";
+                  anchorTop = "1";
+                  anchorBottom = "0";
+                  anchorLeft = "1";
+                  anchorRight = "0";
+                  position = "8 24";
+                  extent = "314 807";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsBoxDarkC";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "1";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+            };
+            new GuiWindowCtrl() {
+               text = "GuiFrameSetCtrl Columns";
+               resizeWidth = "1";
+               resizeHeight = "1";
+               canMove = "1";
+               canClose = "1";
+               canMinimize = "1";
+               canMaximize = "1";
+               canCollapse = "0";
+               edgeSnap = "1";
+               docking = "Client";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "330 0";
+               extent = "1070 839";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsWindowPanel";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  columnCount = "2";
+
+               new guiWebGraphCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "1";
+                  position = "286 285";
+                  extent = "64 64";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new guiMainEditorCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "1";
+                  position = "0 0";
+                  extent = "476 266";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "1";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new guiNodeGraphCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "1";
+                  position = "371 494";
+                  extent = "124 93";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new guiNodeGraphCtrl() {
+                  text = "Button";
+                  groupNum = "-1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "1";
+                  position = "609 346";
+                  extent = "124 93";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiDefaultProfile";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
                };
             };
          };

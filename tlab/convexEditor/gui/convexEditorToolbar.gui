@@ -9,7 +9,7 @@ new GuiStackControl(ConvexEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "142 0";
    extent = "102 32";
    minExtent = "16 16";
    horizSizing = "width";
@@ -26,12 +26,12 @@ new GuiStackControl(ConvexEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11181";
-      disabledGroup = "11182";
-      EditorContainer = "4007";
+      defaultStack = "11244";
+      disabledGroup = "11245";
+      EditorContainer = "4009";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ConvexEditor";
-      stackLists = "11183";
+      stackLists = "11246";
 
    new GuiContainer() {
       margin = "0 0 0 0";

@@ -24,7 +24,7 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 	if (%groupCode $= "")
 		%groupCode = %group;
 	
-	devLog("Name:",%name,%nameCode,"Group:",%group,%groupCode);
+	
 	if (%container $= "")
 		%container = %name@"ParamStack";
 

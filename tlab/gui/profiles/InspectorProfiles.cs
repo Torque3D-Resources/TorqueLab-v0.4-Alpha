@@ -132,14 +132,16 @@ singleton GuiControlProfile( GuiButtonProfile : ToolsDefaultProfile ) {
     fontColors[0] = "254 254 254 255";
     fontColors[2] = "200 200 200 255";
     fontColorNA = "200 200 200 255";
-    bitmap = "tlab/gui/assets/button-assets/GuiButtonProfile.png";
+    bitmap = "art/gui/Futura/buttons-assets/GuiButtonProfile.png";
     hasBitmapArray = "1";
     fixedExtent = "0";
-   bevelColorLL = "Magenta";
+   bevelColorLL = "Fuchsia";
    textOffset = "0 2";
    autoSizeWidth = "1";
    autoSizeHeight = "1";
     modal = true;
+   fontColors[1] = "Black";
+   fontColorHL = "Black";
 };
 //------------------------------------------------------------------------------
 

@@ -149,7 +149,7 @@ function SEP_ScatterSkyManager::setDirtyObject(%this,%obj,%isDirty) {
 	%objIsDirty = SEP_AmbientManager.setDirtyObject(%obj,%isDirty);
 	if (%objIsDirty $= "-1") //If object is invalid it will return empty string
 		return;
-	devLog("setDirtyObject isDirty",%objIsDirty);
+	
 	SEP_ScatterSkySaveButton.active = %objIsDirty;	
 }
 //------------------------------------------------------------------------------

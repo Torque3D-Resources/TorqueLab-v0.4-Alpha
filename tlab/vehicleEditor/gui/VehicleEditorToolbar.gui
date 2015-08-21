@@ -26,12 +26,12 @@ new GuiStackControl(VehicleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "16844";
-      disabledGroup = "16845";
-      EditorContainer = "4007";
+      defaultStack = "18024";
+      disabledGroup = "18025";
+      EditorContainer = "4009";
       editorParent = "EditorGuiToolbarStack";
       plugin = "VehicleEditor";
-      stackLists = "16846";
+      stackLists = "18026";
 
    new GuiContainer() {
       margin = "0 0 0 0";

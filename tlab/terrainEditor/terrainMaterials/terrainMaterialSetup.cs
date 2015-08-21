@@ -6,27 +6,21 @@
 //==============================================================================
 function TerrainMatDlgActiveNameEdit::onValidate( %this ) {
 	devLog("TerrainMatDlgActiveNameEdit::onValidate",%this.getText());
-	TerrainMaterialDlg.setMaterialName(%this.getText());	
+	TerrainMaterialDlg.setMaterialName(%this.getText());
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainMaterialDlg::nameAltCommand( %this, %newName ) {
 	devLog("TerrainMaterialDlg::nameAltCommand",%newName);
-	
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TMD_MaterialEdit::onValidate( %this ) {	
-	devLog("TMD_MaterialEdit onValidate");
+function TMD_MaterialEdit::onValidate( %this ) {
 	//if (!isObject(%this.activeMat)) return;
-	
 	//%this.mat.setFieldValue(%this.internalName,%this.getText());
 	//EPainter.setMaterialDirty( %this.mat,%this.nameCtrl );
-	
 	TerrainMaterialDlg.dirtyMat[TerrainMaterialDlg.activeMat] = true;
 	TerrainMaterialDlg-->saveMatButton.setActive(true);
-	
 }
 //------------------------------------------------------------------------------
 
@@ -51,7 +45,7 @@ function TerrainMaterialDlg::setMaterialName( %this, %newName ) {
 function TerrainMaterialDlg::changeBase( %this ) {
 	%ctrl = %this-->baseTexCtrl;
 	%file = %ctrl.bitmap;
-	devLog("changeBase File:",%file);
+
 	if( getSubStr( %file, 0 , 6 ) $= "tlab/" )
 		%file = "";
 
@@ -73,7 +67,7 @@ function TerrainMaterialDlg::changeBase( %this ) {
 function TerrainMaterialDlg::changeDetail( %this ) {
 	%ctrl = %this-->detailTexCtrl;
 	%file = %ctrl.bitmap;
-devLog("changeDetail File:",%file);
+
 	if( getSubStr( %file, 0 , 6 ) $= "tlab/" )
 		%file = "";
 
@@ -95,7 +89,7 @@ devLog("changeDetail File:",%file);
 function TerrainMaterialDlg::changeMacro( %this ) {
 	%ctrl = %this-->macroTexCtrl;
 	%file = %ctrl.bitmap;
-devLog("changeMacro File:",%file);
+
 	if( getSubStr( %file, 0 , 6 ) $= "tlab/" )
 		%file = "";
 
@@ -117,7 +111,7 @@ devLog("changeMacro File:",%file);
 function TerrainMaterialDlg::changeNormal( %this ) {
 	%ctrl = %this-->normTexCtrl;
 	%file = %ctrl.bitmap;
-devLog("changeNormal File:",%file);
+
 	if( getSubStr( %file, 0 , 6 ) $= "tlab/" )
 		%file = "";
 
@@ -152,17 +146,16 @@ function TerrainMaterialDlg::activateMaterialCtrls( %this, %active ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function TerrainMaterialDlg::setActiveMaterial( %this, %mat ) {	
-
+function TerrainMaterialDlg::setActiveMaterial( %this, %mat ) {
 	if (  isObject( %mat ) &&
 			%mat.isMemberOfClass( TerrainMaterial ) ) {
 		if(  isObject( %mat.matSource ) &&
 				%mat.matSource.isMemberOfClass( TerrainMaterial ) ) {
 			warnLog("The material loaded is linked to another material:",%mat.matSource.getName());
 		}
+
 		%this.canSaveDirty = true;
-		%this.activeMat = %mat;				
-	
+		%this.activeMat = %mat;
 		%this-->matNameCtrl.setText( %mat.internalName );
 
 		if (%mat.diffuseMap $= "") {
@@ -207,7 +200,7 @@ function TerrainMaterialDlg::setActiveMaterial( %this, %mat ) {
 		%this.activeMat = 0;
 		%this.activateMaterialCtrls( false );
 	}
-	
+
 	%this.setCloningSource(%this.activeMat);
 	%this.updateMaterialMapping(%this.activeMat);
 }
@@ -219,10 +212,9 @@ function TerrainMaterialDlg::saveAllDirty( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainMaterialDlg::saveActiveDirty( %this ) {
-		%this.saveDirtyMaterial( %this.activeMat );
+	%this.saveDirtyMaterial( %this.activeMat );
 	// Save all changes.
 	ETerrainMaterialPersistMan.saveDirty();
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -232,10 +224,11 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 			!%mat.isMemberOfClass( TerrainMaterial ) )
 		return;
 
-	if (!%this.canSaveDirty){
+	if (!%this.canSaveDirty) {
 		warnLog("Save dirty is disabled. Material skipped:",%mat.internalName);
 		return;
 	}
+
 	/*if(  isObject( %mat.matSource ) )	{
 		if (%mat.matSource.isMemberOfClass( TerrainMaterial )){
 		LabMsgOk("Can't save linked material","The current material is linked to:" SPC %mat.matSource.getName() SPC ". To avoid linkage issues, it's not possible to save the current material. Please apply the changes you want to the source material!");
@@ -295,10 +288,9 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 																		%mat.macroSize == %macroSize &&
 																		%mat.macroStrength == %macroStrength &&
 																		%mat.macroDistance == %macroDistance &&
-																		%mat.parallaxScale == %parallaxScale ){
-		warnLog("No change detected, skipping save for mat:",%mat.internalName);
+																		%mat.parallaxScale == %parallaxScale ) {
 		return;
-		}
+	}
 
 	// Make sure the material name is unique.
 

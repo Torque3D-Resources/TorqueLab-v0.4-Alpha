@@ -44,7 +44,7 @@ function ForestEditorPlugin::onWorldEditorStartup( %this ) {
 
 	ForestEditMeshTree.open( ForestItemDataSet );
 	ForestEditTabBook.selectPage(0);
-	ForestEditToolbar-->globalScaleEdit.setValue("1");
+	ForestEditToolbar-->globalScale.setValue("1");
 	//FEP_ForestManager.init();
 	ForestEditorPlugin.brushPressure = ForestEditorCfg.defaultBrushPressure;
 	FEP_BrushManager.setBrushPressure();

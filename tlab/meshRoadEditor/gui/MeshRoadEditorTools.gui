@@ -907,7 +907,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "GuiButtonProfile";
+                        profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";
@@ -1034,7 +1034,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "GuiButtonProfile";
+                        profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";
@@ -1161,7 +1161,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "GuiButtonProfile";
+                        profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";

@@ -27,7 +27,7 @@ function Lab::initLabEditor( %this ) {
 	%this.initMenubar();
 	%this.initParamsSystem();
 	
-	 exec("tlab/EditorLab/guiLab/initGuiLab.cs");
+	 exec("tlab/EditorLab/editorDialogs/guiLab/initGuiLab.cs");
 }
 //------------------------------------------------------------------------------
 //==============================================================================

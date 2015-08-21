@@ -133,10 +133,21 @@ function GuiEditor::openForEditing( %this, %content ) {
 
 	if( !isObject( GuiEditorProfileChangeManager ) )
 		new SimGroup( GuiEditorProfileChangeManager );
+	
+//	if (isObject(%this.lastContent)){
+	//	if (%this.lastContent.isMethod("onGuiEditEnd"))
+	//		%this.lastContent.onGuiEditEnd();
+	//}
+			
+
+	//if (%content.isMethod("onGuiEditStart"))
+		//%content.onGuiEditStart();
 
 	// clear the undo manager if we're switching controls.
 	if( %this.lastContent != %content )
 		GuiEditor.getUndoManager().clearAll();
+		
+		
 
 	GuiEditor.setFirstResponder();
 	%this.updateUndoMenu();

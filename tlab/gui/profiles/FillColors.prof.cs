@@ -65,9 +65,9 @@ singleton GuiControlProfile(ToolsFillDarkB : ToolsDefaultProfile) {
     fillColor = "34 35 35 255";
     fontColors[0] = "88 1 192 255";
     fontColor = "88 1 192 255";
-    fontColors[1] = "0 0 0 255";
+    fontColors[1] = "Black";
     fontColors[6] = "255 0 255 255";
-    fontColorHL = "0 0 0 255";
+    fontColorHL = "Black";
     fontColors[9] = "Magenta";
     fontColors[7] = "255 0 255 255";
     fillColorHL = "228 228 235 255";
@@ -80,7 +80,7 @@ singleton GuiControlProfile(ToolsFillDarkB : ToolsDefaultProfile) {
    fontColorLink = "255 0 255 255";
    fontColors[3] = "255 255 255 255";
    fontColorSEL = "255 255 255 255";
-   bevelColorLL = "Magenta";
+   bevelColorLL = "Fuchsia";
    fontColors[8] = "Magenta";
 };
 singleton GuiControlProfile(ToolsFillDarkB : ToolsFillDarkA)

@@ -17,8 +17,8 @@ function Lab::initCommonParams( %this ) {
 	%gid = 0;
 	%ar = %this.newParamsArray("Input","Common","",true);
 	%ar.group[%gid++] = "Mouse settings";
-	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "$Cfg_MouseSpeed" TAB %gid);
-	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "$Cfg_MouseScrollSpeed" TAB %gid);
+	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "" TAB %gid);
+	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "" TAB %gid);
 	//General
 	%gid = 0;
 	%ar = %this.newParamsArray("General","Common","",true);
@@ -45,21 +45,7 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
 	
-	//Camera
-	%gid = 0;
-	%ar = %this.newParamsArray("Dev","Common");
-	%ar.prefGroup = "$Camera::";
-	%ar.autoSyncPref = true;
-	%ar.group[%gid++] = "Development settings";
-	%ar.setVal("mouvementSpeed",      "1" TAB "Camera movement speed" TAB "sliderEdit" TAB "range>>0 500;;tickat>>1" TAB "$Camera::movementSpeed"TAB %gid);
-	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
-	%ar.setVal("CamViewEnabled",       "1" TAB "CamViewEnabled" TAB "CheckBox" TAB "" TAB "ECamViewGui.setState(**);" TAB %gid);
-	%ar.setVal("cameraDisplayMode",       "Standard Camera" TAB "Initial Camera Mode" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("cameraDisplayType",       $EditTsCtrl::DisplayTypePerspective TAB "cameraDisplayType" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("LaunchInFreeview",       "1" TAB "Launch with free view" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("orthoFOV",       "50" TAB "orthoFOV" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
+	
 	
 //==============================================================================
 //Development EDITOR SETTINGS
@@ -69,6 +55,7 @@ function Lab::initCommonParams( %this ) {
 	%ar = %this.newParamsArray("Console","Development" TAB "Dev","",true);
 	%ar.prefGroup = "$pref::Console::";
 	%ar.autoSyncPref = true;
+	%ar.prefModeOnly = true;
 
 	//%ar.style = "StyleA";
 	%ar.group[%gid++] = "Main editor frame";	

@@ -21,13 +21,12 @@
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    superClass = "FrameSetPluginTools";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       currentLayer = "0";
@@ -35,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4149";
+      EditorContainer = "4094";
       editorParent = "4505";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -143,7 +142,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsBoxTitleDark";
+         profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -374,7 +373,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 130";
+      position = "0 129";
       extent = "360 690";
       minExtent = "8 2";
       horizSizing = "right";
@@ -391,7 +390,7 @@
       new GuiContainer(RoadEditorProperties) {
          docking = "Client";
          margin = "3 3 3 3";
-         padding = "20 4 4 4";
+         padding = "4 4 4 4";
          anchorTop = "1";
          anchorBottom = "0";
          anchorLeft = "1";
@@ -410,29 +409,6 @@
          canSave = "1";
          canSaveDynamicFields = "0";
 
-         new GuiTextCtrl() {
-            text = "Selected node properties";
-            maxLength = "1024";
-            margin = "0 0 0 0";
-            padding = "0 0 0 0";
-            anchorTop = "1";
-            anchorBottom = "0";
-            anchorLeft = "1";
-            anchorRight = "0";
-            position = "4 2";
-            extent = "299 10";
-            minExtent = "8 2";
-            horizSizing = "right";
-            vertSizing = "bottom";
-            profile = "ToolsTextBase_H1";
-            visible = "1";
-            active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
-            hovertime = "1000";
-            isContainer = "0";
-            canSave = "1";
-            canSaveDynamicFields = "0";
-         };
          new GuiTabBookCtrl(RoadEd_TabBook) {
             tabPosition = "Top";
             tabMargin = "7";
@@ -440,7 +416,7 @@
             tabHeight = "17";
             allowReorder = "0";
             defaultPage = "-1";
-            selectedPage = "0";
+            selectedPage = "1";
             frontTabPadding = "0";
             docking = "Client";
             margin = "0 0 0 0";
@@ -449,8 +425,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "4 20";
-            extent = "330 618";
+            position = "4 4";
+            extent = "330 634";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -475,16 +451,17 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 17";
-               extent = "330 601";
+               extent = "330 617";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "ToolsBoxDarkC_Top";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -565,7 +542,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 23";
-                  extent = "322 574";
+                  extent = "322 590";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -587,7 +564,7 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "3 3";
+                     position = "3 2";
                      extent = "163 13";
                      minExtent = "8 2";
                      horizSizing = "right";
@@ -598,7 +575,6 @@
                      tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
-                     internalName = "roadNodePageTitle";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -634,7 +610,7 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "1 1";
+                        position = "65 1";
                         extent = "184 20";
                         minExtent = "16 16";
                         horizSizing = "center";
@@ -745,7 +721,7 @@
                         dynamicPos = "0";
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
-                        position = "1 0";
+                        position = "33 0";
                         extent = "248 20";
                         minExtent = "16 16";
                         horizSizing = "center";
@@ -822,7 +798,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 70";
-                     extent = "314 500";
+                     extent = "314 516";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -876,12 +852,13 @@
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsDefaultProfile";
-                        visible = "1";
+                        visible = "0";
                         active = "1";
                         tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "SamplesStack";
+                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -1142,7 +1119,7 @@
                                     vertSizing = "bottom";
                                     profile = "ToolsTextEditDark_S1";
                                     visible = "1";
-                                    active = "1";
+                                    active = "0";
                                     tooltipProfile = "ToolsGuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
@@ -1271,7 +1248,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 19";
+                                          extent = "105 18";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1329,7 +1306,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 19";
+                                          extent = "105 18";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1471,34 +1448,33 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 17";
-               extent = "330 601";
+               extent = "330 617";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsDefaultProfile";
-               visible = "0";
+               profile = "ToolsBoxDarkC_Top";
+               visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
                new GuiContainer() {
                   docking = "Top";
-                  margin = "0 0 0 0";
+                  margin = "6 0 6 6";
                   padding = "0 0 0 0";
                   anchorTop = "1";
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 0";
-                  extent = "330 34";
+                  position = "6 6";
+                  extent = "318 34";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsDefaultProfile";
+                  profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1521,7 +1497,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1591,7 +1567,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "3 6";
+                        position = "8 6";
                         extent = "55 10";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -1615,11 +1591,11 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "114 0";
-                     extent = "214 34";
+                     extent = "202 34";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1637,20 +1613,21 @@
                         passwordMask = "*";
                         text = "10";
                         maxLength = "3";
-                        margin = "0 0 0 0";
+                        docking = "Client";
+                        margin = "6 6 0 4";
                         padding = "0 0 0 0";
                         anchorTop = "1";
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "38 2";
-                        extent = "174 19";
+                        position = "33 6";
+                        extent = "165 22";
                         minExtent = "8 16";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsTextEditDark";
                         visible = "1";
-                        active = "1";
+                        active = "0";
                         altCommand = "RoadEditorGui.editNodeDetails();";
                         tooltipProfile = "ToolsGuiToolTipProfile";
                         hovertime = "1000";
@@ -1662,14 +1639,15 @@
                      new GuiTextCtrl() {
                         text = "Pos:";
                         maxLength = "1024";
-                        margin = "0 0 0 0";
+                        docking = "Left";
+                        margin = "0 0 6 0";
                         padding = "0 0 0 0";
                         anchorTop = "1";
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "3 10";
-                        extent = "27 10";
+                        position = "6 0";
+                        extent = "27 34";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -1691,21 +1669,21 @@
                   lockHorizScroll = "1";
                   lockVertScroll = "0";
                   constantThumbHeight = "0";
-                  childMargin = "0 0";
+                  childMargin = "4 4";
                   mouseWheelScrollSpeed = "-1";
                   docking = "Client";
-                  margin = "6 0 0 0";
+                  margin = "6 6 6 6";
                   padding = "0 0 0 0";
                   anchorTop = "1";
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 40";
-                  extent = "330 561";
+                  position = "6 46";
+                  extent = "318 565";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
-                  profile = "ToolsScrollProfile";
+                  profile = "ToolsScrollProfile_Dark";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1716,6 +1694,7 @@
 
                   new GuiInspector(RoadInspector) {
                      dividerMargin = "5";
+                     dividerPos = "0.65";
                      showCustomFields = "1";
                      stackingType = "Vertical";
                      horizStacking = "Left to Right";
@@ -1726,8 +1705,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "3 3";
-                     extent = "314 668";
+                     position = "4 -1";
+                     extent = "300 668";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1758,7 +1737,7 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "bottom";
-         profile = "ToolsFillDarkA";
+         profile = "GuiDefaultProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";

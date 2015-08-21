@@ -19,6 +19,7 @@ function Lab::initConfigSystem( %this,%defaults ) {
 		LabCfg.resetDefaults();
 	else
 		LabCfg.read();
+	Lab.readAllConfigArray(true);
 	//FIXME Rebuild params everytime for development but should be optimized later
 	LabParamsDlg.rebuildAll();
 	Lab.initDefaultSettings();
@@ -93,33 +94,30 @@ function Lab::writeParamConfig(%this,%array) {
 //==============================================================================
 // OLD System kept for reference showing how to read SettingObject file
 //==============================================================================
-function Lab::readAllConfigArray(%this) {
+function Lab::readAllConfigArray(%this,%setEmptyToDefault) {
 	foreach(%array in LabParamsGroup)
-		%this.readConfigArray(%array);
+		%this.readConfigArray(%array,%setEmptyToDefault);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::readConfigArray(%this,%array) {
+function Lab::readConfigArray(%this,%array,%setEmptyToDefault) {
 	%pattern = strreplace(%array.groupLink,"_","/");
 	LabCfg.beginGroup( %pattern, true );
-	%i = 0;
-
+	%i = 0;	
 	for( ; %i < %array.count() ; %i++) {
 		%field = %array.getKey(%i);
-		%value = LabCfg.value( %field );
+		%value = LabCfg.value( %field );	
+		if (%setEmptyToDefault){
+			if ($Cfg_[%array.groupLink,%field] $= "")
+				$Cfg_[%array.groupLink,%field] = %value;
+			if($CfgParams_[%array.groupLink,%field] $= "")
+				$CfgParams_[%array.groupLink,%field] = %value;
+			continue;
+		}
 		$Cfg_[%array.groupLink,%field] = %value;
-		$CfgParams_[%array.groupLink,%field] = %value;
 	}
 
 	LabCfg.endGroup();
-	return;
-	//Not needed anymore, there's a simplier system to sync the params
-	%i = 0;
-
-	for( ; %i < %array.count() ; %i++) {
-		%field = %array.getKey(%i);
-		%value = $Cfg_[%array.groupLink,%field];
-		%this.updateConfigFieldValue(%array,%field,%value);
-	}
+	
 }
 //------------------------------------------------------------------------------

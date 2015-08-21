@@ -260,18 +260,19 @@ function setParamCtrlValue(%ctrl,%value,%field,%paramArray) {
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-function getParamValue(%paramArray,%field) {
+function getParamValue(%paramArray,%field,%fromData) {
 	%data = %paramArray.getVal(%field);
 		%syncData = getField(%data,4);
 	
-	//Stilll here, try to get the control
-	%container = %paramArray.container;
-	%ctrl = %container.findObjectByInternalName(%field,true);
-	if (isObject(%ctrl)){
-		%value = %ctrl.getTypeValue();		
-		return %value;
+	//If fromData true, we want to get the value using syncdata only
+	if (!%fromData){
+		%container = %paramArray.container;
+		%ctrl = %container.findObjectByInternalName(%field,true);
+		if (isObject(%ctrl)){
+			%value = %ctrl.getTypeValue();		
+			return %value;
+		}
 	}
-	
 	//Skip Direct Sync if specified
 	if (isObject(%syncData)) {
 		%value = %syncData.getFieldValue(%field);

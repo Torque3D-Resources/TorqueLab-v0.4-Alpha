@@ -9,7 +9,7 @@ new GuiStackControl(ParticleEditorToolbar) {
    dynamicPos = "1";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "142 0";
    extent = "84 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,9 +26,9 @@ new GuiStackControl(ParticleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13096";
-      disabledGroup = "13097";
-      EditorContainer = "4007";
+      defaultStack = "14277";
+      disabledGroup = "14278";
+      EditorContainer = "4009";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ParticleEditor";
       preventReordering = "0";

@@ -15,7 +15,9 @@ function MRoadManager::Init(%this){
 	MREP_NodeListModeMenu.setSelected(0);
 	
 	MRoadManager.autoCollapsePill = true;
-}
+	MRoadManager.updateRoadData();
+	hide(REP_NodePillSampleStack);
+}	
 
 function MREP_NodeListModeMenu::onSelect(%this,%id,%text){
 	MRoadManager.setNodeListModeId(%id);
