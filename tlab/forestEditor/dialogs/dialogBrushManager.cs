@@ -27,12 +27,13 @@ function FEP_BrushManager::onWake( %this ) {
 //==============================================================================
 // Set the pressure of the brush
 function FEP_BrushManager::setBrushPressure( %this,%ctrl ) {
-	%brushPressure = ForestEditorPlugin.brushPressure;
+	if (ForestEditorPlugin.brushPressure $= "")		
+		ForestEditorPlugin.brushPressure = ForestEditorPlugin.getCfg("defaultBrushPressure");
 
-	if (isObject(%ctrl)) {
+	if (isObject(%ctrl)) 		
 		%brushPressure = %ctrl.getValue();
-		ForestEditorPlugin.brushPressure = %brushPressure;		
-	}
+	else
+		%brushPressure = ForestEditorPlugin.brushPressure;	
 
 	//Convert float to closest integer
 	%convPressure = %brushPressure/100;
@@ -42,19 +43,21 @@ function FEP_BrushManager::setBrushPressure( %this,%ctrl ) {
 	%formatPressure = mFloatLength(%newPressure,1);
 
 	%this.syncBrushCtrls("brushPressure",%formatPressure);
-
+	ForestEditorPlugin.brushPressure = %formatPressure;		
 	ForestEditorPlugin.setParam("BrushPressure",%formatPressure);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Set the pressure of the brush
 function FEP_BrushManager::setBrushHardness( %this,%ctrl ) {
-	%brushHardness = ForestEditorPlugin.brushHardness;
+		if (ForestEditorPlugin.brushHardness $= "")		
+		ForestEditorPlugin.brushHardness = ForestEditorPlugin.getCfg("defaultBrushHardness");
 
-	if (isObject(%ctrl)) {
+	if (isObject(%ctrl)) 		
 		%brushHardness = %ctrl.getValue();
-		ForestEditorPlugin.brushHardness = %brushHardness;		
-	}
+	else
+		%brushHardness = ForestEditorPlugin.brushHardness;			
+	
 
 	//Convert float to closest integer
 	// %brushHardness = %ctrl.getValue();
@@ -65,18 +68,19 @@ function FEP_BrushManager::setBrushHardness( %this,%ctrl ) {
 	%formatHardness = mFloatLength(%newHardness,1);
 
 %this.syncBrushCtrls("brushHardness",%formatHardness);
-
+ForestEditorPlugin.brushHardness = %formatHardness;
 	ForestEditorPlugin.setParam("BrushHardness",%formatHardness);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function FEP_BrushManager::setGlobalScale( %this,%ctrl ) {
-	%value = ForestEditorPlugin.globalScale;
+	if (ForestEditorPlugin.globalScale $= "")		
+		ForestEditorPlugin.globalScale = ForestEditorPlugin.getCfg("defaultGlobalScale");
 
-	if (isObject(%ctrl)) {
+	if (isObject(%ctrl)) 		
 		%value = %ctrl.getValue();
-		ForestEditorPlugin.globalScale = %value;
-	}
+	else
+		%value = ForestEditorPlugin.globalScale;			
 
 	%minScaleSize = "0.1";
 	%maxScaleSize = "10";
@@ -88,23 +92,24 @@ function FEP_BrushManager::setGlobalScale( %this,%ctrl ) {
 
 	%this.syncBrushCtrls("globalScale",%value);
 
-	
+	ForestEditorPlugin.globalScale = %value;
 	ForestEditorPlugin.setParam("GlobalScale",%value);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function FEP_BrushManager::setBrushSize( %this,%ctrl ) {
-	%value = ForestEditorPlugin.brushSize;
+	if (ForestEditorPlugin.brushSize $= "")		
+		ForestEditorPlugin.brushSize = ForestEditorPlugin.getCfg("defaultBrushSize");
 
-	if (isObject(%ctrl)) {
-		%value = %this.validateBrushSize(%ctrl.getValue());
-		ForestEditorPlugin.brushSize = %value;		
-	}
-
+	if (isObject(%ctrl)) 		
+		%value = %ctrl.getValue();
+	else
+		%value = ForestEditorPlugin.brushSize;		
+	
 	%this.syncBrushCtrls("brushSize",%value);
 	ForestToolBrush.size = %value;
 
-
+	ForestEditorPlugin.brushSize = %value;
 	ForestEditorPlugin.setParam("BrushSize",%value);
 }
 //------------------------------------------------------------------------------

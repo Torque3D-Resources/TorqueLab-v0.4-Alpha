@@ -356,7 +356,7 @@
                canRenameObjects = "0";
                renameInternal = "0";
                position = "0 0";
-               extent = "204 756";
+               extent = "145 105";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -603,12 +603,12 @@
             };
             new GuiTabBookCtrl() {
                tabPosition = "Top";
-               tabMargin = "12";
+               tabMargin = "20";
                minTabWidth = "64";
-               tabHeight = "17";
+               tabHeight = "20";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "0";
+               selectedPage = "1";
                frontTabPadding = "0";
                docking = "Client";
                margin = "4 4 4 4";
@@ -622,7 +622,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsTabBookCurve";
+               profile = "ToolsTabBookMain";
                visible = "1";
                active = "1";
                tooltipProfile = "GuiToolTipProfile";
@@ -642,17 +642,18 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 17";
-                  extent = "325 298";
+                  position = "0 16";
+                  extent = "325 299";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -665,7 +666,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 4";
-                     extent = "187 290";
+                     extent = "317 291";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -689,7 +690,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 0";
-                        extent = "181 16";
+                        extent = "311 16";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -719,7 +720,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 22";
-                        extent = "175 262";
+                        extent = "305 263";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -755,7 +756,7 @@
                            canRenameObjects = "0";
                            renameInternal = "0";
                            position = "4 4";
-                           extent = "196 147";
+                           extent = "196 42";
                            minExtent = "140 8";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -784,11 +785,12 @@
                      horizSizing = "right";
                      vertSizing = "bottom";
                      profile = "ToolsBoxDarkB";
-                     visible = "1";
+                     visible = "0";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
+                     hidden = "1";
                      canSave = "1";
                      canSaveDynamicFields = "0";
 
@@ -802,7 +804,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "6 0";
+                        position = "6 -1";
                         extent = "116 16";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -876,18 +878,17 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 17";
-                  extent = "325 298";
+                  position = "0 20";
+                  extent = "325 295";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };
@@ -916,7 +917,7 @@
             canSaveDynamicFields = "0";
 
             new GuiTextCtrl() {
-               text = "Class:\c1 GuiContainer \c1\c0-Name:\c2 tplGui_NewTestA";
+               text = "Class:\c1 GuiTabBookCtrl \c1\c0-Name:\c2 SceneEditorTree";
                maxLength = "1024";
                docking = "Top";
                margin = "0 0 6 0";
@@ -942,12 +943,12 @@
             };
             new GuiTabBookCtrl() {
                tabPosition = "Top";
-               tabMargin = "12";
+               tabMargin = "20";
                minTabWidth = "64";
-               tabHeight = "17";
+               tabHeight = "20";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "0";
+               selectedPage = "1";
                frontTabPadding = "0";
                docking = "Client";
                margin = "8 4 4 4";
@@ -961,7 +962,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsTabBookCurve";
+               profile = "ToolsTabBookMain";
                visible = "1";
                active = "1";
                tooltipProfile = "GuiToolTipProfile";
@@ -981,17 +982,18 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 17";
-                  extent = "325 291";
+                  position = "0 16";
+                  extent = "325 292";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -1028,7 +1030,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 23";
-                     extent = "149 264";
+                     extent = "149 265";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1082,7 +1084,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 22";
-                        extent = "137 236";
+                        extent = "137 237";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -1485,7 +1487,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "161 23";
-                     extent = "160 264";
+                     extent = "160 265";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1539,7 +1541,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 22";
-                        extent = "148 236";
+                        extent = "148 237";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -1945,18 +1947,17 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 17";
-                  extent = "325 291";
+                  position = "0 20";
+                  extent = "325 288";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };

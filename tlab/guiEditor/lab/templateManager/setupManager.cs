@@ -9,8 +9,8 @@ function Lab::initTemplateManager(%this) {
 	$TplManager = newScriptObject("TplManager");
 	$TplManagerGroup = newSimGroup("TplManagerGroup");
 }
-//==============================================================================
 //------------------------------------------------------------------------------
+//==============================================================================
 function TplManager::checkSave(%this,%obj) {
 	if (LabObj.isDirty(TplManager.tplRootGui)) {
 		info("Saving changes to GUI");
@@ -20,7 +20,9 @@ function TplManager::checkSave(%this,%obj) {
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 function TplManager::saveTemplates(%this) {
-	GuiEditCanvas.save( false, true );
+	//GuiEditCanvas.save( false, true );
+	GuiEdTemplateGroup.setFilename("tlab/guiEditor/gui/GuiEdTemplateGroup.gui");
+	GuiEditCanvas.save( GuiEdTemplateGroup, true );
 	geTM_SaveTplButton.active = 0;
 	TplManager.isDirty = false;
 }

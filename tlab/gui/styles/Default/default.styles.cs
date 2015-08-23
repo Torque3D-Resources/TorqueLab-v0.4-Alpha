@@ -1816,8 +1816,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTabBookProfile_DefaultStyle) {
-      internalName = "ToolsTabBookProfile";
+   new ScriptObject(ToolsTabBookMain_DefaultStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1855,8 +1855,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 8";
    };
-   new ScriptObject(ToolsTabBookProfile_S1_DefaultStyle) {
-      internalName = "ToolsTabBookProfile_S1";
+   new ScriptObject(ToolsTabBookMain_DefaultStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1894,8 +1894,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookBasic_DefaultStyle) {
-      internalName = "ToolsTabBookBasic";
+   new ScriptObject(ToolsTabBookMain_DefaultStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1932,8 +1932,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookColor_DefaultStyle) {
-      internalName = "ToolsTabBookColor";
+   new ScriptObject(ToolsTabBookMain_DefaultStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2311,8 +2311,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 3";
    };
-   new ScriptObject(ToolsTabBookCurve_DefaultStyle) {
-      internalName = "ToolsTabBookCurve";
+   new ScriptObject(ToolsTabBookMain_DefaultStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";

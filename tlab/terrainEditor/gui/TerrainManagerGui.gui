@@ -553,12 +553,12 @@
       };
       new GuiTabBookCtrl(TMG_MainBook) {
          tabPosition = "Top";
-         tabMargin = "14";
+         tabMargin = "20";
          minTabWidth = "64";
-         tabHeight = "21";
+         tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "1";
+         selectedPage = "0";
          frontTabPadding = "0";
          docking = "Client";
          margin = "4 4 4 4";
@@ -572,7 +572,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsTabBookProfile";
+         profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -592,18 +592,17 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 21";
-            extent = "900 565";
+            position = "0 20";
+            extent = "900 566";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC_Top";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -616,7 +615,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 6";
-               extent = "570 553";
+               extent = "570 554";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -802,7 +801,6 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "Active terrain textures used:\c2 7";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -869,7 +867,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Active terrain textures used:\c2 7";
                               maxLength = "1024";
                               docking = "Top";
                               margin = "0 0 0 0";
@@ -1019,7 +1016,6 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c2244.656";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1089,7 +1085,6 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c315.9688";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1159,7 +1154,6 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiTextCtrl() {
-                                 text = "\c4260.625";
                                  maxLength = "1024";
                                  margin = "0 0 0 0";
                                  padding = "0 0 0 0";
@@ -1206,7 +1200,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Active terrain textures used:\c2 7";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1252,7 +1245,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "All terrains textures used:\c2 7";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1298,7 +1290,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Total terrain blocks:\c2 1";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1344,7 +1335,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Total block materials:\c2 7";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1390,7 +1380,6 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "Terrain blocks list:\c2 std_grass\nstd_grass_lush\nstd_pebbles\nstd_cliffs\nstd_cliffs_grey\nstd_sand_yellow\nstd_grass_steep\n";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -1660,6 +1649,7 @@
                                        linkedField = "castShadows";
                                  };
                                  new GuiCheckBoxCtrl() {
+                                    text = "Button";
                                     groupNum = "-1";
                                     buttonType = "ToggleButton";
                                     useMouseEvents = "0";
@@ -2129,7 +2119,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 278";
-                  extent = "570 275";
+                  extent = "570 276";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2513,7 +2503,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "12 130";
-                     extent = "263 137";
+                     extent = "263 138";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -2942,7 +2932,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "279 134";
-                     extent = "279 133";
+                     extent = "279 134";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -2975,7 +2965,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "580 6";
-               extent = "314 553";
+               extent = "314 554";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -3079,7 +3069,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "12 68";
-                  extent = "290 475";
+                  extent = "290 476";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -4275,17 +4265,18 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 21";
-            extent = "900 565";
+            position = "0 16";
+            extent = "900 570";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC_Top";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -4298,7 +4289,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 6";
-               extent = "273 553";
+               extent = "273 558";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -4328,7 +4319,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "273 553";
+                  extent = "273 558";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -4353,7 +4344,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 17";
-                     extent = "273 536";
+                     extent = "273 541";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -4375,7 +4366,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "6 6";
-                        extent = "261 524";
+                        extent = "261 529";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -4536,7 +4527,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.changeHeightmapMode($ThisControl);";
@@ -4558,7 +4549,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.changeHeightmapMode($ThisControl);";
@@ -4580,7 +4571,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     command = "TMG.changeHeightmapMode($ThisControl);";
@@ -5116,7 +5107,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsFillDarkA";
+                                 profile = "GuiDefaultProfile";
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "ToolsGuiToolTipProfile";
@@ -5887,7 +5878,7 @@
                                  tabHeight = "17";
                                  allowReorder = "0";
                                  defaultPage = "-1";
-                                 selectedPage = "0";
+                                 selectedPage = "1";
                                  frontTabPadding = "0";
                                  docking = "Client";
                                  margin = "4 0 0 0";
@@ -5927,11 +5918,12 @@
                                     horizSizing = "right";
                                     vertSizing = "bottom";
                                     profile = "ToolsBoxDarkB_Top";
-                                    visible = "1";
+                                    visible = "0";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
+                                    hidden = "1";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
 
@@ -6155,12 +6147,11 @@
                                     horizSizing = "right";
                                     vertSizing = "bottom";
                                     profile = "GuiDefaultProfile";
-                                    visible = "0";
+                                    visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
-                                    hidden = "1";
                                     canSave = "1";
                                     canSaveDynamicFields = "0";
 
@@ -6370,7 +6361,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile";
+                                 profile = "GuiRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "GuiToolTipProfile";
@@ -6390,7 +6381,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile";
+                                 profile = "GuiRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "GuiToolTipProfile";
@@ -6410,7 +6401,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile";
+                                 profile = "GuiRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  tooltipProfile = "GuiToolTipProfile";
@@ -7166,7 +7157,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7187,7 +7178,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7208,7 +7199,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7229,7 +7220,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7256,7 +7247,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "285 6";
-               extent = "609 553";
+               extent = "609 558";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -7500,7 +7491,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 24";
-                  extent = "609 529";
+                  extent = "609 534";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -7799,7 +7790,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7820,7 +7811,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "0";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7842,7 +7833,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "0";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7864,7 +7855,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "0";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -7886,7 +7877,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsRadioProfile_S1";
+                                    profile = "GuiRadioProfile";
                                     visible = "0";
                                     active = "1";
                                     tooltipProfile = "GuiToolTipProfile";
@@ -8401,7 +8392,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -8422,7 +8413,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -8444,7 +8435,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -8466,7 +8457,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -8488,7 +8479,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -8979,7 +8970,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9000,7 +8991,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9022,7 +9013,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9044,7 +9035,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9066,7 +9057,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9557,7 +9548,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9578,7 +9569,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9600,7 +9591,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9622,7 +9613,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -9644,7 +9635,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10135,7 +10126,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10156,7 +10147,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10178,7 +10169,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10200,7 +10191,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10222,7 +10213,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10713,7 +10704,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10734,7 +10725,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10756,7 +10747,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10778,7 +10769,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -10800,7 +10791,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11291,7 +11282,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11312,7 +11303,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11334,7 +11325,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11356,7 +11347,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11378,7 +11369,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11869,7 +11860,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11890,7 +11881,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11912,7 +11903,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11934,7 +11925,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -11956,7 +11947,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsRadioProfile_S1";
+                                       profile = "GuiRadioProfile";
                                        visible = "0";
                                        active = "1";
                                        tooltipProfile = "GuiToolTipProfile";
@@ -12176,8 +12167,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 21";
-            extent = "900 565";
+            position = "0 16";
+            extent = "900 570";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -12246,7 +12237,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 35";
-               extent = "892 526";
+               extent = "892 531";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -12271,8 +12262,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 21";
-            extent = "900 565";
+            position = "0 16";
+            extent = "900 570";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";

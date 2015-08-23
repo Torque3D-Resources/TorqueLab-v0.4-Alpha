@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4529";
+      EditorContainer = "4091";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "BlankWhite";
       livePreview = "1";
@@ -46,7 +46,7 @@
       textureFormats = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";
 
    new GuiWindowCtrl(DecalPreviewWindow) {
-      text = "Instance Properties";
+      text = "Template Properties";
       resizeWidth = "0";
       resizeHeight = "0";
       canMove = "0";
@@ -116,7 +116,7 @@
             changeChildSizeToFit = "1";
             changeChildPosition = "1";
             position = "3 3";
-            extent = "247 337";
+            extent = "247 602";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
@@ -143,7 +143,7 @@
                horizSizing = "width";
                vertSizing = "bottom";
                profile = "ToolsRolloutProfile";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
@@ -151,6 +151,7 @@
                internalName = "instancePreview";
                class = "BehaviorQuickEditRollout";
                superClass = "LBQuickEditRollout";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -252,7 +253,7 @@
                horizSizing = "width";
                vertSizing = "bottom";
                profile = "ToolsRolloutProfile";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
@@ -260,6 +261,7 @@
                internalName = "InstanceProperties";
                class = "BehaviorQuickEditRollout";
                superClass = "LBQuickEditRollout";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -323,7 +325,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -397,7 +399,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -472,7 +474,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -548,7 +550,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -627,7 +629,7 @@
                horizSizing = "width";
                vertSizing = "bottom";
                profile = "ToolsRolloutProfile_S1";
-               visible = "0";
+               visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
@@ -635,7 +637,6 @@
                internalName = "TemplatePreview";
                class = "BehaviorQuickEditRollout";
                superClass = "LBQuickEditRollout";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -738,7 +739,7 @@
                horizSizing = "width";
                vertSizing = "bottom";
                profile = "ToolsRolloutProfile_S1";
-               visible = "0";
+               visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
@@ -746,12 +747,12 @@
                internalName = "TemplateProperties";
                class = "BehaviorQuickEditRollout";
                superClass = "LBQuickEditRollout";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
                new GuiInspector(DecalInspector) {
                   dividerMargin = "5";
+                  dividerPos = "0.65";
                   groupFilters = "+General,+SimBase,+Decal,+Rendering,+Texturing";
                   showCustomFields = "1";
                   stackingType = "Vertical";
@@ -776,7 +777,6 @@
                   isContainer = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
-
                };
             };
          };
@@ -837,12 +837,12 @@
 
          new GuiTabBookCtrl(DecalEditorTabBook) {
             tabPosition = "Top";
-            tabMargin = "12";
+            tabMargin = "20";
             minTabWidth = "64";
-            tabHeight = "21";
+            tabHeight = "20";
             allowReorder = "0";
             defaultPage = "-1";
-            selectedPage = "1";
+            selectedPage = "0";
             frontTabPadding = "0";
             docking = "Client";
             margin = "1 1 1 1";
@@ -856,7 +856,7 @@
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "ToolsTabBookProfile_S1";
+            profile = "ToolsTabBookMain";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -876,19 +876,18 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 20";
-               extent = "349 167";
+               position = "0 19";
+               extent = "256 583";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
-               profile = "ToolsFillDarkA";
-               visible = "0";
+               profile = "GuiDefaultProfile";
+               visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "instanceTab";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -909,7 +908,7 @@
                   anchorLeft = "0";
                   anchorRight = "0";
                   position = "4 4";
-                  extent = "341 159";
+                  extent = "248 575";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -945,7 +944,7 @@
                      canRenameObjects = "1";
                      renameInternal = "0";
                      position = "3 3";
-                     extent = "335 42";
+                     extent = "242 42";
                      minExtent = "8 8";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -976,12 +975,13 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
-               profile = "ToolsFillDarkA";
-               visible = "1";
+               profile = "GuiDefaultProfile";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -1021,7 +1021,7 @@
                      colorBullet = "1";
                      mirrorSet = "DecalDataSet";
                      position = "3 3";
-                     extent = "242 68";
+                     extent = "242 2";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1048,8 +1048,8 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "252 31";
-         extent = "20 20";
+         position = "192 31";
+         extent = "80 20";
          minExtent = "16 16";
          horizSizing = "left";
          vertSizing = "bottom";
@@ -1080,14 +1080,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonDark";
-            visible = "0";
+            visible = "1";
             active = "1";
             command = "DecalPMan.saveDirty(); DecalInspector::removeDirty();";
             tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Save All";
             hovertime = "1000";
             isContainer = "0";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -1109,13 +1108,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonDark";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Retarget missing decals to an existing decal datablock";
             hovertime = "1000";
             isContainer = "0";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -1131,19 +1129,18 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "20 0";
+            position = "40 0";
             extent = "20 20";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonDark";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             tooltip = "Create New Decal Template";
             hovertime = "1000";
             isContainer = "0";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -1159,7 +1156,7 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "0 0";
+            position = "60 0";
             extent = "20 20";
             minExtent = "8 2";
             horizSizing = "right";

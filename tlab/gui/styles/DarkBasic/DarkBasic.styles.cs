@@ -2082,8 +2082,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTabBookProfile_DarkBasicStyle) {
-      internalName = "ToolsTabBookProfile";
+   new ScriptObject(ToolsTabBookMain_DarkBasicStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2121,8 +2121,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 8";
    };
-   new ScriptObject(ToolsTabBookProfile_S1_DarkBasicStyle) {
-      internalName = "ToolsTabBookProfile_S1";
+   new ScriptObject(ToolsTabBookMain_DarkBasicStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2160,8 +2160,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookBasic_DarkBasicStyle) {
-      internalName = "ToolsTabBookBasic";
+   new ScriptObject(ToolsTabBookMain_DarkBasicStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2198,8 +2198,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookColor_DarkBasicStyle) {
-      internalName = "ToolsTabBookColor";
+   new ScriptObject(ToolsTabBookMain_DarkBasicStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2236,8 +2236,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookCurve_DarkBasicStyle) {
-      internalName = "ToolsTabBookCurve";
+   new ScriptObject(ToolsTabBookMain_DarkBasicStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";

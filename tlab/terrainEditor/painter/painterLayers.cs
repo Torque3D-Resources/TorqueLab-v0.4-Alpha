@@ -45,7 +45,7 @@ function EPainter::setPaintLayer( %this, %matIndex) {
 	%pill.isActiveCtrl.visible = 1;
 
 	if (!isObject( %terrainMat )) {
-		warnLog("Set Paint Layer to invalid material:",%terrainMat);
+		warnLog("Index",%matIndex,"Set Paint Layer to invalid material. From Button:",%ctrl,%ctrl.terrainMat);
 		return;
 	}
 

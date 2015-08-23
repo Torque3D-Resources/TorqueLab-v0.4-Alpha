@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4094";
+      EditorContainer = "4091";
       editorParent = "4505";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -373,7 +373,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 129";
+      position = "0 130";
       extent = "360 690";
       minExtent = "8 2";
       horizSizing = "right";
@@ -411,9 +411,9 @@
 
          new GuiTabBookCtrl(RoadEd_TabBook) {
             tabPosition = "Top";
-            tabMargin = "7";
+            tabMargin = "20";
             minTabWidth = "64";
-            tabHeight = "17";
+            tabHeight = "20";
             allowReorder = "0";
             defaultPage = "-1";
             selectedPage = "1";
@@ -430,7 +430,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsTabBookCurve";
+            profile = "ToolsTabBookMain";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -450,8 +450,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 17";
-               extent = "330 617";
+               position = "0 16";
+               extent = "330 618";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -542,7 +542,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 23";
-                  extent = "322 590";
+                  extent = "322 591";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -798,7 +798,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 70";
-                     extent = "314 516";
+                     extent = "314 517";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1248,7 +1248,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 18";
+                                          extent = "105 19";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1306,7 +1306,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "105 18";
+                                          extent = "105 19";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1388,7 +1388,7 @@
                                           anchorLeft = "1";
                                           anchorRight = "0";
                                           position = "2 16";
-                                          extent = "106 18";
+                                          extent = "106 19";
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "top";
@@ -1447,8 +1447,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 17";
-               extent = "330 617";
+               position = "0 20";
+               extent = "330 614";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1679,7 +1679,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "6 46";
-                  extent = "318 565";
+                  extent = "318 562";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";

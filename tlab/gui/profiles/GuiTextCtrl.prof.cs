@@ -256,7 +256,7 @@ singleton GuiControlProfile(ToolsTextFX_H1_R : ToolsTextFX_H1) {
 //==============================================================================
 //==============================================================================
 singleton GuiControlProfile(ToolsTextAlt : ToolsDefaultProfile) {
-    fontColors[0] = "0 30 255 255";
+    fontColors[0] = "150 108 18 255";
    fontColors[1] = "252 189 81 255";
    fontColors[2] = "254 227 83 255";
    fontColors[3] = "254 3 62 255";
@@ -266,7 +266,7 @@ singleton GuiControlProfile(ToolsTextAlt : ToolsDefaultProfile) {
    fontColors[7] = "254 236 3 255";
    fontColors[8] = "254 3 43 255";
    fontColors[9] = "3 48 248 255";
-   fontColor = "0 30 255 255";
+   fontColor = "150 108 18 255";
    fontColorHL = "252 189 81 255";
    fontColorNA = "254 227 83 255";
    fontColorSEL = "254 3 62 255";

@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4094";
+      EditorContainer = "4091";
       editorParent = "4027";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -131,12 +131,12 @@
       };
       new GuiTabBookCtrl(ForestEditTabBook) {
          tabPosition = "Top";
-         tabMargin = "10";
+         tabMargin = "20";
          minTabWidth = "60";
-         tabHeight = "17";
+         tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "0";
          frontTabPadding = "0";
          docking = "Client";
          margin = "4 0 0 0";
@@ -150,7 +150,7 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookCurve";
+         profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -170,19 +170,18 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 16";
-            extent = "344 222";
+            position = "0 19";
+            extent = "344 219";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC_Top";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "BrushesTab";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -281,7 +280,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 26";
-               extent = "336 192";
+               extent = "336 189";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -517,18 +516,19 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "344 221";
+            position = "0 16";
+            extent = "344 222";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "GeneratorTab";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -942,7 +942,7 @@
                            tooltipProfile = "ToolsGuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
-                           internalName = "globalScale";
+                           internalName = "GlobalScale";
                            canSave = "1";
                            canSaveDynamicFields = "0";
                         };
@@ -1862,13 +1862,12 @@
          horizSizing = "left";
          vertSizing = "bottom";
          profile = "ToolsDefaultProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "BrushButtonGroup";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 

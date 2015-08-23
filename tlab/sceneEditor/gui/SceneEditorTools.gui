@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4083";
+      EditorContainer = "4091";
       editorParent = "4505";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -79,9 +79,9 @@
 
       new GuiTabBookCtrl(SceneEditorTreeTabBook) {
          tabPosition = "Top";
-         tabMargin = "10";
+         tabMargin = "20";
          minTabWidth = "44";
-         tabHeight = "17";
+         tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
          selectedPage = "0";
@@ -98,7 +98,7 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookCurve";
+         profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -119,8 +119,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "340 203";
+            position = "0 20";
+            extent = "340 200";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -360,7 +360,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 32";
-               extent = "328 165";
+               extent = "328 162";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -396,7 +396,7 @@
                   canRenameObjects = "1";
                   renameInternal = "1";
                   position = "0 0";
-                  extent = "180 357";
+                  extent = "245 21";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1222,7 +1222,7 @@
                   canRenameObjects = "1";
                   renameInternal = "1";
                   position = "0 0";
-                  extent = "100 21";
+                  extent = "8 8";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1248,8 +1248,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "340 204";
+            position = "0 32";
+            extent = "340 188";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -1617,7 +1617,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "height";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "0";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1717,7 +1717,7 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
-               profile = "ToolsFillDarkA";
+               profile = "GuiDefaultProfile";
                visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1745,7 +1745,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 95";
-               extent = "332 105";
+               extent = "332 89";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -1771,7 +1771,7 @@
                   dynamicSize = "0";
                   padding = "0 0 0 0";
                   position = "0 0";
-                  extent = "332 105";
+                  extent = "332 89";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -10671,9 +10671,9 @@
 
       new GuiTabBookCtrl(SceneEditorModeTab) {
          tabPosition = "Top";
-         tabMargin = "12";
+         tabMargin = "20";
          minTabWidth = "64";
-         tabHeight = "21";
+         tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
          selectedPage = "0";
@@ -10690,7 +10690,7 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsTabBookProfile_S1";
+         profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -10711,8 +10711,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 21";
-            extent = "338 503";
+            position = "0 20";
+            extent = "338 504";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -10765,7 +10765,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 8";
-               extent = "322 442";
+               extent = "322 443";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -10823,7 +10823,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "8 458";
+               position = "8 459";
                extent = "322 37";
                minExtent = "8 8";
                horizSizing = "width";

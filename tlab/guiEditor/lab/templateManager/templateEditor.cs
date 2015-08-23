@@ -7,6 +7,11 @@
 //==============================================================================
 function GuiEdTemplateEditor::onWake(%this) {
 	devLog("GuiEdTemplateEditor::onWake(%this)");
+	if (!isObject(GuiEdTemplateGroup))
+		exec( "tlab/guiEditor/gui/GuiEdTemplateGroup.gui" );
+		
+	GuiEdTemplateContainer.add(GuiEdTemplateGroup);
+	GuiEdTemplateContainer.bringToFront(GuiEdTemplateGroup);
 
 	if (GuiEditor.lastContent.getName() $= "GuiEdTemplateEditor") {
 		devLog("Not in editor");
@@ -17,6 +22,20 @@ function GuiEdTemplateEditor::onWake(%this) {
 		TplManager.schedule(200,"showBrowser");
 }
 //==============================================================================
+//==============================================================================
+function GuiEdTemplateEditor::onPreEditorSave(%this) {	
+	GuiGroup.add(GuiEdTemplateGroup);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function GuiEdTemplateEditor::onPostEditorSave(%this) {	
+	GuiEdTemplateContainer.add(GuiEdTemplateGroup);
+	GuiEdTemplateContainer.bringToFront(GuiEdTemplateGroup);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+
+//------------------------------------------------------------------------------
 //==============================================================================
 function GuiEdTemplateEditor::onSleep(%this) {
 	devLog("GuiEdTemplateEditor::onSleep(%this)");

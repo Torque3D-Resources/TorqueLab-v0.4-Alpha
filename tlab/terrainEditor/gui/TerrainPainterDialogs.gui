@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(TerrainPainterDialogs) {
    position = "0 0";
-   extent = "1150 820";
+   extent = "1146 820";
    minExtent = "8 2";
    horizSizing = "width";
    vertSizing = "height";
@@ -20,7 +20,7 @@
       currentMatInternalName = "fhDirtGrassA";
       currentMatObject = "1860";
       defaultParent = "GuiGroup";
-      EditorContainer = "5290";
+      EditorContainer = "4089";
       editorParent = "EditorFrameTools";
       isDlg = "1";
       lastLayerId = "101";
@@ -67,9 +67,9 @@
 
       new GuiTabBookCtrl() {
          tabPosition = "Top";
-         tabMargin = "7";
+         tabMargin = "20";
          minTabWidth = "64";
-         tabHeight = "17";
+         tabHeight = "16";
          allowReorder = "0";
          defaultPage = "-1";
          selectedPage = "1";
@@ -86,7 +86,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsTabBookProfile_S1";
+         profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
@@ -106,8 +106,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "370 427";
+            position = "0 16";
+            extent = "370 428";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -322,8 +322,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 17";
-            extent = "370 427";
+            position = "0 16";
+            extent = "370 428";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -421,7 +421,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -520,7 +520,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -621,7 +621,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -720,7 +720,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsFillDarkA";
+                     profile = "GuiDefaultProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsGuiToolTipProfile";
@@ -1635,7 +1635,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "0 0";
+                     position = "142 0";
                      extent = "151 25";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -1655,7 +1655,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "157 0";
+                     position = "299 0";
                      extent = "168 25";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -1675,7 +1675,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "331 0";
+                     position = "473 0";
                      extent = "136 25";
                      minExtent = "8 2";
                      horizSizing = "left";

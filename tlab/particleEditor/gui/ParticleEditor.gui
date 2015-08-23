@@ -27,10 +27,11 @@
    tooltipProfile = "ToolsGuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
+   superClass = "FrameSetPluginTools";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      EditorContainer = "5260";
+      EditorContainer = "4091";
       editorParent = "5261";
       enabled = "1";
       minSize = "50 50";
@@ -39,12 +40,12 @@
 
    new GuiTabBookCtrl(PE_TabBook) {
       tabPosition = "Top";
-      tabMargin = "8";
+      tabMargin = "20";
       minTabWidth = "64";
-      tabHeight = "17";
+      tabHeight = "20";
       allowReorder = "0";
       defaultPage = "-1";
-      selectedPage = "0";
+      selectedPage = "1";
       frontTabPadding = "0";
       docking = "Client";
       margin = "0 0 0 0";
@@ -53,12 +54,12 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "6 24";
-      extent = "268 790";
+      position = "8 24";
+      extent = "264 788";
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "height";
-      profile = "ToolsTabBookProfile_S1";
+      profile = "ToolsTabBookMain";
       visible = "1";
       active = "1";
       tooltipProfile = "ToolsGuiToolTipProfile";
@@ -84,12 +85,13 @@
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsFillDarkA";
-         visible = "1";
+         profile = "GuiDefaultProfile";
+         visible = "0";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -134,7 +136,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "3 3";
-               extent = "249 605";
+               extent = "249 796";
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -343,7 +345,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 26";
-                  extent = "249 150";
+                  extent = "249 154";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -368,7 +370,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
+                     position = "4 29";
                      extent = "241 125";
                      minExtent = "16 16";
                      horizSizing = "width";
@@ -853,8 +855,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 176";
-                  extent = "249 150";
+                  position = "0 180";
+                  extent = "249 154";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -879,7 +881,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
+                     position = "4 29";
                      extent = "241 125";
                      minExtent = "16 16";
                      horizSizing = "width";
@@ -1309,8 +1311,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 326";
-                  extent = "249 150";
+                  position = "0 334";
+                  extent = "249 154";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1335,7 +1337,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
+                     position = "4 29";
                      extent = "241 125";
                      minExtent = "16 16";
                      horizSizing = "width";
@@ -1851,8 +1853,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 476";
-                  extent = "249 108";
+                  position = "0 488";
+                  extent = "249 112";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1877,7 +1879,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
+                     position = "4 29";
                      extent = "241 83";
                      minExtent = "16 16";
                      horizSizing = "width";
@@ -2244,12 +2246,12 @@
                   caption = "Blending";
                   margin = "4 4 4 0";
                   defaultHeight = "40";
-                  expanded = "0";
+                  expanded = "1";
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 584";
-                  extent = "249 21";
+                  position = "0 600";
+                  extent = "249 196";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -2274,7 +2276,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
+                     position = "4 29";
                      extent = "241 167";
                      minExtent = "16 16";
                      horizSizing = "width";
@@ -2830,18 +2832,17 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "0 17";
-         extent = "369 1011";
+         position = "0 20";
+         extent = "264 768";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
-         profile = "ToolsFillDarkA";
-         visible = "0";
+         profile = "GuiDefaultProfile";
+         visible = "1";
          active = "1";
          tooltipProfile = "ToolsGuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -2861,7 +2862,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "369 1011";
+            extent = "264 768";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -2885,7 +2886,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "1 3";
-               extent = "369 578";
+               extent = "264 594";
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -2900,7 +2901,7 @@
 
                new GuiControl(PEP_ParticleSelector_Control) {
                   position = "0 0";
-                  extent = "369 26";
+                  extent = "264 26";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -2928,7 +2929,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 4";
-                     extent = "295 18";
+                     extent = "190 18";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -2958,7 +2959,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "4 4";
-                     extent = "271 19";
+                     extent = "166 19";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -2985,7 +2986,7 @@
                      fillRowFirst = "0";
                      dynamicSize = "1";
                      padding = "0 0 0 0";
-                     position = "302 2";
+                     position = "197 2";
                      extent = "60 20";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -3093,7 +3094,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 26";
-                  extent = "369 125";
+                  extent = "264 129";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -3118,8 +3119,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
-                     extent = "361 100";
+                     position = "4 29";
+                     extent = "256 100";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -3140,7 +3141,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "361 52";
+                        extent = "256 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3249,7 +3250,7 @@
                            buttonType = "ToggleButton";
                            useMouseEvents = "0";
                            position = "55 14";
-                           extent = "631 18";
+                           extent = "526 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3279,7 +3280,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "55 31";
-                           extent = "667 19";
+                           extent = "562 19";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3299,7 +3300,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 18";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3317,7 +3318,7 @@
                      };
                      new GuiControl() {
                         position = "0 52";
-                        extent = "361 8";
+                        extent = "256 8";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3334,7 +3335,7 @@
                            bitmap = "tlab/gui/assets/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
-                           extent = "360 2";
+                           extent = "255 2";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3350,7 +3351,7 @@
                      };
                      new GuiControl() {
                         position = "0 60";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3374,7 +3375,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3392,7 +3393,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "800";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3423,7 +3424,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3442,7 +3443,7 @@
                      };
                      new GuiControl() {
                         position = "0 80";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3466,7 +3467,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3484,7 +3485,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "300";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3515,7 +3516,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3542,8 +3543,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 151";
-                  extent = "369 113";
+                  position = "0 155";
+                  extent = "264 117";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -3568,8 +3569,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
-                     extent = "361 88";
+                     position = "4 29";
+                     extent = "256 88";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -3584,7 +3585,7 @@
 
                      new GuiControl() {
                         position = "0 0";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3608,7 +3609,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "655 18";
+                           extent = "550 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3626,7 +3627,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "0";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3657,7 +3658,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3676,7 +3677,7 @@
                      };
                      new GuiControl() {
                         position = "0 20";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3700,7 +3701,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3718,7 +3719,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "-0.83";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3749,7 +3750,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3768,7 +3769,7 @@
                      };
                      new GuiControl() {
                         position = "0 40";
-                        extent = "361 8";
+                        extent = "256 8";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3785,7 +3786,7 @@
                            bitmap = "tlab/gui/assets/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
-                           extent = "360 2";
+                           extent = "255 2";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3801,7 +3802,7 @@
                      };
                      new GuiControl() {
                         position = "0 48";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3818,7 +3819,7 @@
                         new GuiBitmapCtrl() {
                            bitmap = "tlab/gui/assets/gfx/separator-h";
                            wrap = "0";
-                           position = "274 0";
+                           position = "169 0";
                            extent = "2 18";
                            minExtent = "0 0";
                            horizSizing = "left";
@@ -3843,7 +3844,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3861,7 +3862,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "-0.100122";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3892,7 +3893,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3911,7 +3912,7 @@
                      };
                      new GuiControl() {
                         position = "0 68";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -3935,7 +3936,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3953,7 +3954,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "0.997067";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -3984,7 +3985,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4011,8 +4012,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 264";
-                  extent = "369 93";
+                  position = "0 272";
+                  extent = "264 97";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -4037,8 +4038,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
-                     extent = "361 68";
+                     position = "4 29";
+                     extent = "256 68";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -4053,7 +4054,7 @@
 
                      new GuiControl() {
                         position = "0 0";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4070,7 +4071,7 @@
                         new GuiBitmapCtrl() {
                            bitmap = "tlab/gui/assets/gfx/separator-h";
                            wrap = "0";
-                           position = "274 0";
+                           position = "169 0";
                            extent = "2 18";
                            minExtent = "0 0";
                            horizSizing = "left";
@@ -4095,7 +4096,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "655 18";
+                           extent = "550 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4113,7 +4114,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "-180";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4144,7 +4145,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4163,7 +4164,7 @@
                      };
                      new GuiControl() {
                         position = "0 20";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4180,7 +4181,7 @@
                         new GuiBitmapCtrl() {
                            bitmap = "tlab/gui/assets/gfx/separator-h";
                            wrap = "0";
-                           position = "274 0";
+                           position = "169 0";
                            extent = "2 18";
                            minExtent = "0 0";
                            horizSizing = "left";
@@ -4205,7 +4206,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4223,7 +4224,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "180";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4254,7 +4255,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4273,7 +4274,7 @@
                      };
                      new GuiControl() {
                         position = "0 40";
-                        extent = "361 8";
+                        extent = "256 8";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4290,7 +4291,7 @@
                            bitmap = "tlab/gui/assets/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
-                           extent = "360 2";
+                           extent = "255 2";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4306,7 +4307,7 @@
                      };
                      new GuiControl() {
                         position = "0 48";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4330,7 +4331,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4348,7 +4349,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "1";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4379,7 +4380,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4406,8 +4407,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 357";
-                  extent = "369 221";
+                  position = "0 369";
+                  extent = "264 225";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -4432,8 +4433,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 25";
-                     extent = "361 196";
+                     position = "4 29";
+                     extent = "256 196";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -4448,7 +4449,7 @@
 
                      new GuiControl() {
                         position = "0 0";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4471,7 +4472,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "655 18";
+                           extent = "550 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4490,7 +4491,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "1";
-                           position = "247 0";
+                           position = "142 0";
                            extent = "18 18";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4513,7 +4514,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "1";
-                           position = "274 0";
+                           position = "169 0";
                            extent = "18 18";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4536,7 +4537,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "1";
-                           position = "301 0";
+                           position = "196 0";
                            extent = "18 18";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4559,7 +4560,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "1";
-                           position = "328 0";
+                           position = "223 0";
                            extent = "18 18";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4579,7 +4580,7 @@
                      };
                      new GuiControl() {
                         position = "0 20";
-                        extent = "361 8";
+                        extent = "256 8";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4596,7 +4597,7 @@
                            bitmap = "tlab/gui/assets/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
-                           extent = "360 2";
+                           extent = "255 2";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4612,7 +4613,7 @@
                      };
                      new GuiControl() {
                         position = "0 28";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4636,7 +4637,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4655,7 +4656,7 @@
                            snap = "0";
                            value = "0.997986";
                            position = "49 2";
-                           extent = "255 12";
+                           extent = "251 12";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4685,7 +4686,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4704,7 +4705,7 @@
                      };
                      new GuiControl() {
                         position = "0 48";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4728,7 +4729,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4746,7 +4747,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "1.99902";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4777,7 +4778,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4796,7 +4797,7 @@
                      };
                      new GuiControl() {
                         position = "0 68";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4820,7 +4821,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4838,7 +4839,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "2.49954";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4869,7 +4870,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4888,7 +4889,7 @@
                      };
                      new GuiControl() {
                         position = "0 88";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4912,7 +4913,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4930,7 +4931,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "1";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4961,7 +4962,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -4980,7 +4981,7 @@
                      };
                      new GuiControl() {
                         position = "0 108";
-                        extent = "361 8";
+                        extent = "256 8";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4997,7 +4998,7 @@
                            bitmap = "tlab/gui/assets/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
-                           extent = "360 2";
+                           extent = "255 2";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5013,7 +5014,7 @@
                      };
                      new GuiControl() {
                         position = "0 116";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5037,7 +5038,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5055,7 +5056,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "0";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5086,7 +5087,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5105,7 +5106,7 @@
                      };
                      new GuiControl() {
                         position = "0 136";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5129,7 +5130,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5147,7 +5148,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "0.494118";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5178,7 +5179,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5197,7 +5198,7 @@
                      };
                      new GuiControl() {
                         position = "0 156";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5221,7 +5222,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5239,7 +5240,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "1";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5270,7 +5271,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5289,7 +5290,7 @@
                      };
                      new GuiControl() {
                         position = "0 176";
-                        extent = "361 20";
+                        extent = "256 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5313,7 +5314,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "1 0";
-                           extent = "693 18";
+                           extent = "588 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5331,7 +5332,7 @@
                            ticks = "0";
                            snap = "0";
                            value = "1";
-                           position = "246 2";
+                           position = "141 2";
                            extent = "58 12";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -5362,7 +5363,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "310 0";
+                           position = "205 0";
                            extent = "36 19";
                            minExtent = "8 2";
                            horizSizing = "left";

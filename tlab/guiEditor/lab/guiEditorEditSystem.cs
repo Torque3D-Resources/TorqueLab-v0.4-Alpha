@@ -33,17 +33,15 @@ function Lab::cloneGuiEditor(%this) {
 }
 
 function Lab::convertClonedGuiEditor(%this) {
+	if ($InGuiEditor)
+		GuiEd.closeEditor();
 	%fileWrite = getFileWriteObj("tlab/guiEditor/gui/backup/guiEditor.tmp.gui");
 	%fileWrite.writeLine("//--- OBJECT WRITE BEGIN ---");
 	%fileWrite.writeObject(GuiEditorGui, "%guiContent = ");
 	%fileWrite.writeLine("//--- OBJECT WRITE END ---");
 	closeFileObj(%fileWrite);
 
-	if ($InGuiEditor) {
-		%loadEditor = true;
-		Lab.lastGuiEditSource = GuiEditor.lastContent;
-		GuiEditCanvas.quit();
-	}
+	
 	delObj(CloneEditorGui);
 	exec("tlab/guiEditor/gui/CloneEditorGui.gui");
 	delObj(GuiEditorGui);
@@ -88,7 +86,7 @@ function Lab::convertClonedGuiEditor(%this) {
 	addGuiEditorCtrl();
 	
 	if (%loadEditor)
-		schedule(500,"","GuiEdit");	
+		GuiEd.schedule(500,"launchEditor",true);	
 }
 
 function addGuiEditorCtrl(%reset) {

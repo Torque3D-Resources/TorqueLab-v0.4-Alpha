@@ -20,7 +20,8 @@ function initializeGuiEditor() {
 	// GUIs.
 	execGuiEdit(true);
 	
-	Lab.initTemplateManager();
+	//GuiEd.initGuiEditor();
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -36,9 +37,11 @@ function execGuiEdit(%execGui,%execMainGui) {
 		exec( "tlab/guiEditor/gui/GuiEditFieldDuplicator.gui" );
 		exec( "tlab/guiEditor/gui/GuiEdTemplateManager.gui" );
 		exec( "tlab/guiEditor/gui/GuiEdTemplateEditor.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateGroup.gui" );
 	}
-	if (%execMainGui){
+	if (%execMainGui){		
 		exec( "tlab/guiEditor/gui/guiEditor.ed.gui" );
+		exec( "tlab/guiEditor/gui/CloneEditorGui.gui" );
 	}
 
 	if (!isObject(GuiEditor)) {
@@ -66,6 +69,7 @@ function execGuiEdit(%execGui,%execMainGui) {
 	execPattern( "tlab/guiEditor/lab/*.cs" );
 	execPattern( "tlab/guiEditor/menu/*.cs" );
 	execPattern( "tlab/guiEditor/system/*.cs" );
+	GuiEd.InitGuiEditor();
 
 }
 //------------------------------------------------------------------------------

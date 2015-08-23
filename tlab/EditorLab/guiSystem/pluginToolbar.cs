@@ -22,9 +22,10 @@ function Lab::updatePluginIconOrder(%this,%isDefault) {
 	for ( %i = 0; %i < %count; %i++ ) {
 		%icon = ToolsToolbarArray.getObject(%i);
 		%icon.pluginObj.pluginOrder = %i+1;
-		if (%isDefault){
-			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);		
-		}
+		if (%isDefault)
+			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);			
+		else
+			%icon.pluginObj.setCfg("pluginOrder",%icon.pluginObj.pluginOrder);			
 	}
 }
 //------------------------------------------------------------------------------
@@ -41,6 +42,7 @@ function Lab::sortPluginsBar(%this,%default) {
 	else
 		ToolsToolbarArray.sort("sortPluginByOrder");
 	ToolsToolbarArray.refresh();
+	%this.updatePluginIconOrder();
 }
 //------------------------------------------------------------------------------
 
@@ -64,10 +66,10 @@ function sortPluginByOrder(%objA,%objB) {
 //function that takes two object arguments A and B and returns -1 if A is less, 1 if B is less, and 0 if both are equal.
 function sortPluginByDefaultOrder(%objA,%objB) {
 	
-		if ( %objA.pluginObj.getCfg("pluginOrder") > %objB.pluginObj.getCfg("pluginOrder"))
+		if ( %objA.pluginObj.getCfg("pluginOrderDefault") > %objB.pluginObj.getCfg("pluginOrderDefault"))
 			return "1";
 
-		if ( %objA.pluginObj.getCfg("pluginOrder") < %objB.pluginObj.getCfg("pluginOrder"))
+		if ( %objA.pluginObj.getCfg("pluginOrderDefault") < %objB.pluginObj.getCfg("pluginOrderDefault"))
 			return "-1";
 
 		return "0";

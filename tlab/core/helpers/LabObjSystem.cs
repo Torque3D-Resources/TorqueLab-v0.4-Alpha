@@ -150,3 +150,16 @@ function Lab::removeInspect(%this,%obj) {
 	LabInspect.removeInspect(%obj);
 }
 //------------------------------------------------------------------------------
+
+//==============================================================================
+//LabObj.saveList($HLabProfile_DirtyGui_ToolsTabBookMain);
+function LabObj::saveProfileList(%this,%list) {
+	foreach$(%obj in %list){
+		if (!isObject(%obj))
+			continue;
+		Lab_PM.setDirty(%obj);
+		devLog(%obj,"added to dirty list");
+	}
+	Lab_PM.saveDirty();	
+}
+//------------------------------------------------------------------------------

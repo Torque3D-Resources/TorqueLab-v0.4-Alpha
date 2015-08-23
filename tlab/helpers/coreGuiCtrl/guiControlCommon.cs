@@ -14,6 +14,15 @@ function GuiControl::onAdd	(%this) {
 	if (!isObject(%this.profile)){
 		warnLog(%this.getName(),%this.getClassName()," have an invalid profile:",%this.profile);
 	}
+	/*if (%this.profile $= "ToolsTabBookMain"){
+		if (%this.tabMargin !$= "20" || %this.tabHeight !$= "16"){			
+			%this.setFieldValue("tabMargin","20");
+			%this.setFieldValue("tabHeight","16");	
+			devLog("Dirty GUI in file:",%this.getFilename());
+			//$HLabProfile_DirtyGui_ToolsTabBookMain = strAddWord($HLabProfile_DirtyGui_ToolsTabBookMain,%this.getId(),true);
+		}
+	}*/
+	
 }
 //------------------------------------------------------------------------------
 

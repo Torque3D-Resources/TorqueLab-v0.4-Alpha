@@ -44,11 +44,11 @@ function ForestEditorPlugin::onWorldEditorStartup( %this ) {
 
 	ForestEditMeshTree.open( ForestItemDataSet );
 	ForestEditTabBook.selectPage(0);
-	ForestEditToolbar-->globalScale.setValue("1");
-	//FEP_ForestManager.init();
-	ForestEditorPlugin.brushPressure = ForestEditorCfg.defaultBrushPressure;
-	FEP_BrushManager.setBrushPressure();
 	
+	FEP_BrushManager.setBrushPressure();
+	FEP_BrushManager.setBrushHardness();
+	FEP_BrushManager.setBrushSize();
+	FEP_BrushManager.setGlobalScale();	
 }
 
 function ForestEditorPlugin::onWorldEditorShutdown( %this ) {

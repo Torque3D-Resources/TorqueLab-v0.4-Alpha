@@ -1816,8 +1816,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTabBookProfile_TechStyle) {
-      internalName = "ToolsTabBookProfile";
+   new ScriptObject(ToolsTabBookMain_TechStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1855,8 +1855,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 8";
    };
-   new ScriptObject(ToolsTabBookProfile_S1_TechStyle) {
-      internalName = "ToolsTabBookProfile_S1";
+   new ScriptObject(ToolsTabBookMain_TechStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1894,8 +1894,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookBasic_TechStyle) {
-      internalName = "ToolsTabBookBasic";
+   new ScriptObject(ToolsTabBookMain_TechStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -1932,8 +1932,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 0";
    };
-   new ScriptObject(ToolsTabBookColor_TechStyle) {
-      internalName = "ToolsTabBookColor";
+   new ScriptObject(ToolsTabBookMain_TechStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -2311,8 +2311,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 3";
    };
-   new ScriptObject(ToolsTabBookCurve_TechStyle) {
-      internalName = "ToolsTabBookCurve";
+   new ScriptObject(ToolsTabBookMain_TechStyle) {
+      internalName = "ToolsTabBookMain";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";

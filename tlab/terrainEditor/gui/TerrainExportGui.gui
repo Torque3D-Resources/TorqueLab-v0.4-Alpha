@@ -5,7 +5,7 @@
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "ToolsGuiOverlayProfile";
+   profile = "GuiDefaultProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "ToolsGuiToolTipProfile";
@@ -56,8 +56,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "9 31";
-         extent = "317 229";
+         position = "12 28";
+         extent = "311 231";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -87,7 +87,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "4 18";
-            extent = "309 207";
+            extent = "303 209";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -105,7 +105,7 @@
                fitParentWidth = "1";
                colorBullet = "1";
                position = "3 3";
-               extent = "303 17";
+               extent = "297 17";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -151,8 +151,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "9 264";
-         extent = "317 121";
+         position = "12 263";
+         extent = "311 121";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -167,12 +167,12 @@
 
          new GuiTabBookCtrl() {
             tabPosition = "Top";
-            tabMargin = "7";
+            tabMargin = "20";
             minTabWidth = "64";
-            tabHeight = "17";
+            tabHeight = "20";
             allowReorder = "0";
             defaultPage = "-1";
-            selectedPage = "0";
+            selectedPage = "1";
             frontTabPadding = "0";
             docking = "Client";
             margin = "0 0 0 0";
@@ -182,11 +182,11 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "317 121";
+            extent = "311 121";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsTabBookProfile_S1";
+            profile = "ToolsTabBookMain";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsGuiToolTipProfile";
@@ -212,11 +212,12 @@
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "ToolsFillDarkB";
-               visible = "1";
+               visible = "0";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -369,7 +370,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "levels/TerfdsfsfdsrainDemo/terrainExport";
+                        text = "levels/Boost/FarmHill/FH_MiniB/terrainExport";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -489,18 +490,17 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 17";
-               extent = "317 104";
+               position = "0 20";
+               extent = "311 101";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "ToolsFillDarkB";
-               visible = "0";
+               visible = "1";
                active = "1";
                tooltipProfile = "ToolsGuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
 
@@ -557,7 +557,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "0 70";
+                  position = "0 67";
                   extent = "107 24";
                   minExtent = "8 2";
                   horizSizing = "right";
@@ -600,7 +600,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "201 69";
+                  position = "195 66";
                   extent = "107 26";
                   minExtent = "8 2";
                   horizSizing = "left";
