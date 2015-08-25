@@ -8,7 +8,7 @@
    profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -43,7 +43,7 @@
       visible = "1";
       active = "1";
       accelerator = "escape";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "window";
@@ -66,7 +66,7 @@
          profile = "ToolsFillDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -95,7 +95,7 @@
             profile = "ToolsScrollProfile_Dark_T50";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -131,7 +131,7 @@
                profile = "ToolsTreeViewProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -155,7 +155,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -177,7 +177,7 @@
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -200,7 +200,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -223,7 +223,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "nodes";
@@ -247,7 +247,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -270,7 +270,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "meshes";
@@ -294,7 +294,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -317,7 +317,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "polygons";
@@ -341,7 +341,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -364,7 +364,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "materials";
@@ -388,7 +388,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -411,7 +411,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "lights";
@@ -435,7 +435,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -458,7 +458,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "animations";
@@ -482,7 +482,7 @@
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -505,7 +505,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -532,7 +532,7 @@
                profile = "ToolsDropdownProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Method used to determine LOD for meshes in the model";
                hovertime = "1000";
                isContainer = "0";
@@ -562,7 +562,7 @@
                profile = "ToolsTextEditProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Detail size for all meshes in this model (when LOD type is SingleSize)";
                hovertime = "1000";
                isContainer = "0";
@@ -587,7 +587,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -615,7 +615,7 @@
                visible = "1";
                active = "1";
                altCommand = "ColladaImportTreeView.refresh(\"materials\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "materialPrefix";
@@ -639,7 +639,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -667,7 +667,7 @@
                visible = "1";
                active = "1";
                altCommand = "ColladaImportTreeView.refresh(\"nodes\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "alwaysImport";
@@ -691,7 +691,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -719,7 +719,7 @@
                visible = "1";
                active = "1";
                altCommand = "ColladaImportTreeView.refresh(\"nodes\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "neverImport";
@@ -743,7 +743,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -771,7 +771,7 @@
                visible = "1";
                active = "1";
                altCommand = "ColladaImportTreeView.refresh(\"nodes\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "alwaysImportMesh";
@@ -795,7 +795,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -823,7 +823,7 @@
                visible = "1";
                active = "1";
                altCommand = "ColladaImportTreeView.refresh(\"nodes\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "neverImportMesh";
@@ -847,7 +847,7 @@
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -867,7 +867,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.updateOverrideUpAxis($ThisControl.getValue());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Overrides the <up_axis> specified in the DAE file";
                hovertime = "1000";
                isContainer = "0";
@@ -896,7 +896,7 @@
                profile = "ToolsDropdownProfile";
                visible = "1";
                active = "0";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "upAxis";
@@ -917,7 +917,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.updateOverrideScale($ThisControl.getValue());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Overrides the <unit> scale specified in the DAE file";
                hovertime = "1000";
                isContainer = "0";
@@ -947,7 +947,7 @@
                profile = "ToolsTextEditProfile";
                visible = "1";
                active = "0";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "scale";
@@ -967,7 +967,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Ignores <scale> elements within <node>s to fix issues with some models";
                hovertime = "1000";
                isContainer = "0";
@@ -988,7 +988,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Translates model so the origin is at the center";
                hovertime = "1000";
                isContainer = "0";
@@ -1009,7 +1009,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Translates model so the origin is at the bottom";
                hovertime = "1000";
                isContainer = "0";
@@ -1030,7 +1030,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Forces update of materials.cs (even if Materials already exist)";
                hovertime = "1000";
                isContainer = "0";
@@ -1055,7 +1055,7 @@
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1074,7 +1074,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Loads the lights from the DAE file and adds them to the current scene.";
                hovertime = "1000";
                isContainer = "0";
@@ -1099,7 +1099,7 @@
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1119,7 +1119,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.readDtsConfig();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -1139,7 +1139,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.writeDtsConfig();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -1159,7 +1159,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.onOK();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Load the COLLADA model";
                hovertime = "1000";
                isContainer = "0";
@@ -1180,7 +1180,7 @@
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.onCancel();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Exit without loading the COLLADA model";
                hovertime = "1000";
                isContainer = "0";
@@ -1204,7 +1204,7 @@
             profile = "ToolsRolloutProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1228,7 +1228,7 @@
                profile = "ToolsDefaultProfile";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                hidden = "1";
@@ -1250,7 +1250,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1273,7 +1273,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -1294,7 +1294,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::overrideUpAxis";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Overrides the <up_axis> specified in the DAE file";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1315,7 +1315,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::adjustCenter";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Translates model so the origin is at the center";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1336,7 +1336,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::adjustFloor";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Translates model so the origin is at the bottom";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1357,7 +1357,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::forceUpdateMaterials";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Forces update of materials.cs (even if Materials already exist)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1378,7 +1378,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::ignoreNodeScale";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Ignores <scale> elements within <node>s to fix issues with some models";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1399,7 +1399,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::overrideScale";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Overrides the <unit> scale specified in the DAE file";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1420,7 +1420,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::loadLights";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Loads the lights from the DAE file and adds them to the current scene.";
                   hovertime = "1000";
                   isContainer = "0";

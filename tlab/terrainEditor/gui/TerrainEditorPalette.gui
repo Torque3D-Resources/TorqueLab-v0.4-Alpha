@@ -8,7 +8,7 @@
    profile = "ToolsBoxDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainEditor";
@@ -37,7 +37,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( brushAdjustHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Grab Terrain (1)";
       hovertime = "750";
       isContainer = "0";
@@ -64,7 +64,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( raiseHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Raise Height (2)";
       hovertime = "750";
       isContainer = "0";
@@ -91,7 +91,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( lowerHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Lower Height (3)";
       hovertime = "750";
       isContainer = "0";
@@ -118,7 +118,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( smoothHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Smooth (4)";
       hovertime = "750";
       isContainer = "0";
@@ -145,7 +145,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( smoothSlope );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Smooth Slope (5)";
       hovertime = "750";
       isContainer = "0";
@@ -172,7 +172,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( paintNoise );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Paint Noise (6)";
       hovertime = "750";
       isContainer = "0";
@@ -199,7 +199,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( flattenHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Flatten (7)";
       hovertime = "750";
       isContainer = "0";
@@ -226,7 +226,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( setHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Set Height (8)";
       hovertime = "750";
       isContainer = "0";
@@ -253,7 +253,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( setEmpty );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Clear Terrain (9)";
       hovertime = "750";
       isContainer = "0";
@@ -280,7 +280,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( clearEmpty );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Restore Terrain (0)";
       hovertime = "750";
       isContainer = "0";

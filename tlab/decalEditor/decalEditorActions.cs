@@ -50,6 +50,9 @@ function BaseDecalEdAction::undo(%this) {
 function DecalEditorGui::doEditNodeDetails(%this, %instanceId, %transformData, %gizmo) {
 	%action = %this.createAction(ActionEditNodeDetails, "Edit Decal Transform");
 	%action.instanceId = %instanceId;
+	if (%action.newTransformData !$= %transformData)
+		DecalEd_SaveAllInstanceButton.active = true;
+		
 	%action.newTransformData = %transformData;
 
 	if( %gizmo )
@@ -81,32 +84,4 @@ function ActionEditNodeDetails::undo(%this) {
 		DecalEditorGui.syncNodeDetails();
 		DecalEditorGui.selectDecal( %this.instanceId );
 	}
-}
-
-//------------------------------------------------------------------------------
-// Delete Decal Datablocks
-
-// This functionality solely depends on the undo/redo datablock callbacks in
-// source.
-
-function DecalEditorGui::redoDeleteDecalDatablock( %this, %datablock ) {
-	// Remove the object from file and place a filter
-	if( %datablock.getFilename() !$= "" ) {
-		DecalPMan.removeDirty( %datablock );
-		DecalPMan.removeObjectFromFile( %datablock );
-	}
-
-	DecalDataList.addFilteredItem( %datablock );
-}
-
-function DecalEditorGui::undoDeleteDecalDatablock( %this, %datablock ) {
-	// Replace the object in file and remove the filter
-	%filename = %datablock.getFilename();
-
-	if( %datablock.getFilename() !$= "" ) {
-		DecalPMan.setDirty( %datablock, %filename );
-		DecalPMan.saveDirty();
-	}
-
-	DecalDataList.removeFilteredItem( %datablock );
 }

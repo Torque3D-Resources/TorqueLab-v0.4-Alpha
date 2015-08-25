@@ -31,7 +31,7 @@ singleton GuiControlProfile(ToolsPanelDarkA : ToolsPanelProfile)
 {
    fontColors[4] = "Fuchsia";
    fontColorLink = "Fuchsia";
-   bitmap = "tlab/gui/assets/container-assets/GuiPanelDarkA.png";
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkA.png";
    category = "ToolsContainers";
 };
 //------------------------------------------------------------------------------
@@ -39,13 +39,13 @@ singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA)
 {
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
-   bitmap = "tlab/gui/assets/container-assets/GuiPanelDarkC.png";
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC.png";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsPanelDarkC : ToolsPanelDarkA)
 {
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
-   bitmap = "tlab/gui/assets/container-assets/GuiPanelDarkC.png";
+   bitmap = "tlab/gui/assets/container-assets/GuiBoxDarkC.png";
 };
 //------------------------------------------------------------------------------

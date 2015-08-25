@@ -142,8 +142,8 @@ function Editor::checkActiveLoadDone() {
 package EditorDisconnectOverride {
 	function disconnect() {
 		if ( isObject( Editor ) && Editor.isEditorEnabled() ) {
-			if (isObject( MainMenuGui ))
-				Editor.close("MainMenuGui");
+			if (isObject( $TLab_defaultGui ))
+				Editor.close($TLab_defaultGui);
 		}
 
 		Parent::disconnect();

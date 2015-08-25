@@ -31,7 +31,7 @@ singleton GuiControlProfile( ToolsButtonProfile : ToolsDefaultProfile ) {
    autoSizeHeight = "1";
    borderThickness = "0";
    fontColors[9] = "255 0 255 255";
-   fontColors[6] = "255 0 255 255";
+   fontColors[6] = "Fuchsia";
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
    fontColors[3] = "255 255 255 255";
@@ -138,7 +138,7 @@ singleton GuiControlProfile( ToolsCheckBoxProfile : ToolsDefaultProfile ) {
     fontColorNA = "200 200 200";
     fixedExtent = 1;
     justify = "left";
-    bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile.png";
     hasBitmapArray = true;
     category = "Tools";
     fontType = "Gotham Book";
@@ -151,28 +151,28 @@ singleton GuiControlProfile( ToolsCheckBoxProfile : ToolsDefaultProfile ) {
 //------------------------------------------------------------------------------
 //ToolsCheckBoxProfile Small #1
 singleton GuiControlProfile( ToolsCheckBoxProfile_S1 : ToolsCheckBoxProfile ) {
-	bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_S1.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_S1.png";
    fontSize = "14";
    
 };
 //------------------------------------------------------------------------------
 //ToolsCheckBoxProfile Large #1
 singleton GuiControlProfile( ToolsCheckBoxProfile_L1 : ToolsCheckBoxProfile ) {
-	bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_L1.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_L1.png";
    fontSize = "22";
    
 };
 //------------------------------------------------------------------------------
 //ToolsCheckBoxProfile_S1 Variation for list
 singleton GuiControlProfile( ToolsCheckBoxProfile_List : ToolsCheckBoxProfile ) {
-	bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_List.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_List.png";
    fontSize = "16";
    
 };
 //------------------------------------------------------------------------------
 //ToolsCheckBoxProfile_S1 Variation for cancel
 singleton GuiControlProfile( ToolsCheckBoxProfile_Cancel : ToolsCheckBoxProfile ) {
-	bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_Cancel.png";
+	bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_Cancel.png";
    fontSize = "22";
    
 };
@@ -185,7 +185,7 @@ singleton GuiControlProfile( ToolsCheckBoxProfile_Cancel : ToolsCheckBoxProfile 
 //==============================================================================
 //ToolsRadioProfile Style
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsRadioProfile_L1 : ToolsDefaultProfile)
+singleton GuiControlProfile(ToolsRadioProfile : ToolsDefaultProfile)
 {
 	fillColor = "254 253 253 255";
 	fillColorHL = "221 221 221 255";

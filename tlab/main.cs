@@ -15,6 +15,11 @@ if (isFile(%helpersLab))
 // Path to the folder that contains the editors we will load.
 $Lab::resourcePath = "tlab/";
 
+if (isObject($pref::UI::defaultGui))
+	$TLab_defaultGui = $pref::UI::defaultGui;
+else
+	$TLab_defaultGui = "MainMenuGui";
+	
 $LabGameMap = "moveMap";
 // Global holding material list for active simobject
 $Lab::materialEditorList = "";

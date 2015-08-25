@@ -8,7 +8,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "MeshRoadEditorToolbar";
@@ -43,7 +43,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "PluginStack";
@@ -69,7 +69,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "ToolbarGroup";
@@ -92,7 +92,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "GroupDivider";
@@ -110,7 +110,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -126,7 +126,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
@@ -156,7 +156,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             visible = "1";
             active = "1";
             variable = "$MeshRoad::showRoad";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Show Road Texture (V)";
             hovertime = "1000";
             isContainer = "0";
@@ -186,7 +186,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             visible = "1";
             active = "1";
             variable = "$MeshRoad::showSpline";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Show Spline (Z)";
             hovertime = "1000";
             isContainer = "0";
@@ -216,7 +216,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             visible = "1";
             active = "1";
             variable = "$MeshRoad::wireframe";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Show Wireframe (X)";
             hovertime = "1000";
             isContainer = "0";
@@ -240,7 +240,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsBoxDarkC";
             visible = "0";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "SubStackEnd";
@@ -257,10 +257,10 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "SubStackEndImg";
@@ -288,7 +288,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "ToolbarGroup";
@@ -311,7 +311,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "GroupDivider";
@@ -329,7 +329,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -345,7 +345,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
@@ -369,7 +369,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             class = "AggregateBox";
@@ -393,7 +393,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsTextBase_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -409,7 +409,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
@@ -431,7 +431,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultWidth\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "slider";
@@ -461,7 +461,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultWidth\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "TextEdit";
@@ -484,7 +484,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsFillDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             class = "AggregateBox";
@@ -508,7 +508,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsTextBase_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -524,7 +524,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
@@ -546,7 +546,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultDepth\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "slider";
@@ -576,7 +576,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                command = "$ThisControl.syncObj(MeshRoadEditorGui,\"DefaultDepth\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "TextEdit";
@@ -599,7 +599,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsFillDarkB";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -622,7 +622,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsTextBase_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -646,7 +646,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                variable = "RoadEditorGui.materialName";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "defaultMaterial";
@@ -663,7 +663,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "MouseStart";
@@ -685,7 +685,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                visible = "1";
                active = "1";
                command = "materialSelector.showDialog(\"MeshRoadEditorGui.showDefaultMaterialSaveDialog\",\"TOP\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                superClass = "ToolbarIcon";
@@ -708,7 +708,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
             profile = "ToolsBoxDarkC";
             visible = "0";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "SubStackEnd";
@@ -725,10 +725,10 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "SubStackEndImg";
@@ -753,7 +753,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          profile = "ToolsDefaultProfile";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "DisabledIcons";
@@ -782,7 +782,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       hidden = "1";
@@ -807,7 +807,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          variable = "$MeshRoad::showSpline";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Spline (Z)";
          hovertime = "1000";
          isContainer = "0";
@@ -833,7 +833,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          variable = "$MeshRoad::wireframe";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Wireframe (X)";
          hovertime = "1000";
          isContainer = "0";
@@ -859,7 +859,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          variable = "$MeshRoad::showRoad";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "ToolbarIcon";
@@ -876,7 +876,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       profile = "ToolsGuiTransparentProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       hidden = "1";
@@ -900,7 +900,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -929,7 +929,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          command = "MeshRoadEditorGui.DefaultWidth = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "TextEdit";
@@ -954,7 +954,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          command = "Canvas.pushDialog(MeshRoadDefaultWidthSliderCtrlContainer);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes Default Road Width";
          hovertime = "750";
          isContainer = "0";
@@ -972,7 +972,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       profile = "ToolsGuiTransparentProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       hidden = "1";
@@ -996,7 +996,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -1025,7 +1025,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          command = "MeshRoadEditorGui.DefaultDepth = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "TextEdit";
@@ -1050,7 +1050,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          visible = "1";
          active = "1";
          command = "Canvas.pushDialog(MeshRoadDefaultDepthSliderCtrlContainer);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes Default Road Depth";
          hovertime = "750";
          isContainer = "0";
@@ -1074,7 +1074,7 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
       profile = "ToolsBoxDarkC";
       visible = "0";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "StackEnd";
@@ -1091,10 +1091,10 @@ new GuiControl(MeshRoadEditorToolbar,EditorGuiGroup) {
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "StackEndImg";

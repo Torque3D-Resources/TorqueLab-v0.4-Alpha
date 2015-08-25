@@ -14,12 +14,12 @@ $GLab_ProfileCategories = "GameContainer GameButton GameText GameElement GameLis
 $GLab_FontList = "Davidan\tBoostSSK\tBrela\tCarval\tCrimson Text\tLuthier Regular\tRoboto Slab Regular\tWP DOMINO novel";
 
 $GLab::TabId = 0;
-$GLab_SelectedObject = "GuiDefaultProfile";
+$GLab_SelectedObject = "ToolsDefaultProfile";
 
 $GLab_Caption_NoFieldSelected = "Click field name to select";
 $GLab_Text_FieldStarMean = "*  \c1= \c2Field value is set in a parent profile";
 
-$GLab_ShowEditorsProfile = false;
+
 $GLab_ShowGameProfile = true;
 
 $GLab_UpdateColorsOnSetChanged = true;
@@ -34,8 +34,11 @@ function initGuiLab(%loadGui){
 	
 	  newScriptObject("GLab");
  newScriptObject("LGTools");
+ 
+ 	$arProfData = newArrayObject("arProfData");
+  exec("tlab/EditorLab/editorDialogs/guiLab/prefs.cs");   
  /*
-	 exec("tlab/EditorLab/editorDialogs/guiLab/prefs.cs");   
+	
   
    if (%loadGui)
       exec("tlab/EditorLab/editorDialogs/guiLab/LabGuiManager.gui");

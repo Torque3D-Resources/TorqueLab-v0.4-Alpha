@@ -6,7 +6,9 @@
 
 //==============================================================================
 function initializeVehicleEditor() {
+	return;
 	echo( " - Initializing Vehicle Editor" );
+	
 	execVEP(true);
 	
 	Lab.createPlugin("VehicleEditor","Vehicle Editor");

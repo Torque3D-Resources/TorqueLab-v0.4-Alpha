@@ -271,7 +271,7 @@ function EPainter::updateLayers( %this, %matIndex ) {
 		buttonType = "PushButton";
 		sizeIconToButton = true;
 		makeIconSquare = true;
-		tooltipprofile = "ToolsGuiToolTipProfile";
+		tooltipprofile = "ToolsToolTipProfile";
 		text = "New Layer";
 		tooltip = "New Layer";
 		command = "TerrainMaterialDlg.show( " @ %matCount @ ", 0, EPainter_TerrainMaterialAddCallback );";

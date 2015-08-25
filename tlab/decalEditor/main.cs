@@ -7,14 +7,9 @@
 function initializeDecalEditor() {
 	echo(" % - Initializing Decal Editor");
 	$decalDataFile = "art/decals/managedDecalData.cs";
-	exec( "tlab/decalEditor/decalEditor.cs" );
-	exec( "./gui/decalEditorGui.gui" );
-	exec( "./gui/decalEditorTools.gui" );
-	exec( "./gui/decalEditorPalette.gui" );
-	exec( "tlab/decalEditor/decalEditorGui.cs" );
-	exec( "tlab/decalEditor/decalEditorActions.cs" );
-	exec( "tlab/decalEditor/DecalEditorPlugin.cs" );
-	exec( "tlab/decalEditor/DecalEditorParams.cs" );
+	
+	execDecalEd(true);
+	
 	Lab.createPlugin("DecalEditor");
 	// Add ourselves to EditorGui, where all the other tools reside
 	Lab.addPluginEditor("DecalEditor",   DecalEditorGui);
@@ -33,6 +28,21 @@ function initializeDecalEditor() {
 	new PersistenceManager( DecalPMan );
 }
 
+function execDecalEd(%loadGui) {
+
+	if (%loadGui){
+		exec( "tlab/decalEditor/gui/decalEditorGui.gui" );
+	exec( "tlab/decalEditor/gui/decalEditorTools.gui" );
+	exec( "tlab/decalEditor/gui/decalEditorPalette.gui" );
+	}
+	
+	exec( "tlab/decalEditor/decalEditorGui.cs" );
+	exec( "tlab/decalEditor/decalEditorActions.cs" );
+	exec( "tlab/decalEditor/DecalEditorPlugin.cs" );
+	exec( "tlab/decalEditor/DecalEditorParams.cs" );
+	execPattern("tlab/decalEditor/instance/*.cs" );
+	execPattern( "tlab/decalEditor/library/*.cs" );
+}
 function destroyDecalEditor() {
 }
 

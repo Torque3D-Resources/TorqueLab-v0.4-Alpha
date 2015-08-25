@@ -255,7 +255,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 		MinExtent = "8 2";
 		canSave = "1";
 		Visible = "1";
-		tooltipprofile = "ToolsGuiToolTipProfile";
+		tooltipprofile = "ToolsToolTipProfile";
 		hovertime = "1000";
 		canSaveDynamicFields = "0";
 		caption = %parameter.getInternalName();
@@ -269,7 +269,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 			MinExtent = "421 94";
 			canSave = "1";
 			Visible = "1";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			canSaveDynamicFields = "0";
 			new GuiTextCtrl() {
@@ -290,7 +290,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -312,7 +312,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -334,7 +334,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -356,7 +356,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -378,7 +378,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -400,7 +400,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -422,7 +422,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				canSaveDynamicFields = "0";
 			};
@@ -440,7 +440,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "valueSlider";
 				canSaveDynamicFields = "0";
@@ -468,7 +468,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "valueField";
 				canSaveDynamicFields = "0";
@@ -489,7 +489,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "resetButton";
 				canSaveDynamicFields = "0";
@@ -510,7 +510,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "deleteButton";
 				canSaveDynamicFields = "0";
@@ -537,7 +537,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "channelDropdown";
 				canSaveDynamicFields = "0";
@@ -565,7 +565,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "descriptionField";
 				canSaveDynamicFields = "0";
@@ -593,7 +593,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "tagsField";
 				canSaveDynamicFields = "0";
@@ -621,7 +621,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "defaultField";
 				canSaveDynamicFields = "0";
@@ -649,7 +649,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "rangeMaxField";
 				canSaveDynamicFields = "0";
@@ -677,7 +677,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "rangeMinField";
 				canSaveDynamicFields = "0";
@@ -698,7 +698,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "localCheckbox";
 				canSaveDynamicFields = "0";
@@ -724,7 +724,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				MinExtent = "8 2";
 				canSave = "1";
 				Visible = "1";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				internalName = "sourceDropdown";
 				canSaveDynamicFields = "0";

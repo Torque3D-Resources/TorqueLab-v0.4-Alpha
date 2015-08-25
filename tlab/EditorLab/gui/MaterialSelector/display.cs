@@ -296,7 +296,7 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 				isDecoy = "0";
 				Visible = "1";
 				Command = "MaterialSelector.schedule(0, selectPage, " @ %i @ ");";
-				tooltipprofile = "ToolsGuiToolTipProfile";
+				tooltipprofile = "ToolsToolTipProfile";
 				hovertime = "1000";
 				text = %i+1;
 				groupNum = "-1";

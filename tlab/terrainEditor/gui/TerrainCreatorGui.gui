@@ -8,7 +8,7 @@
    profile = "ToolsGuiOverlayProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -41,7 +41,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -69,7 +69,7 @@
          profile = "ToolsTextEditProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "theName";
@@ -93,7 +93,7 @@
          profile = "ToolsTextBase_H1_R";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -112,7 +112,7 @@
          profile = "ToolsRadioProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "flatRadio";
@@ -132,7 +132,7 @@
          profile = "ToolsRadioProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "noiseRadio";
@@ -156,7 +156,7 @@
          profile = "ToolsTextBase_H1_R";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -179,7 +179,7 @@
          profile = "ToolsTextBase_H1_R";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -206,7 +206,7 @@
          profile = "ToolsDropdownProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "theRezList";
@@ -234,7 +234,7 @@
          profile = "ToolsDropdownProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "theMaterialList";
@@ -268,7 +268,7 @@
          active = "1";
          command = "Canvas.popDialog( CreateNewTerrainGui );";
          accelerator = "return";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -301,7 +301,7 @@
          active = "1";
          command = "CreateNewTerrainGui.create();";
          accelerator = "escape";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";

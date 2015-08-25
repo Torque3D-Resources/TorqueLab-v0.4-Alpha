@@ -14,7 +14,7 @@
    profile = "ToolsFillDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "GuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -36,7 +36,7 @@
       profile = "ToolsGuiMenuBarProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -52,7 +52,7 @@
          profile = "ToolsGuiMenuProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "LabMenu";
@@ -76,7 +76,7 @@
       profile = "ToolsBoxDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -97,10 +97,10 @@
          minExtent = "16 16";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -121,10 +121,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -151,7 +151,7 @@
                visible = "1";
                active = "1";
                command = "ToggleGuiEdit(); Editor.close($HudCtrl);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Play Game";
                hovertime = "1000";
                isContainer = "0";
@@ -184,7 +184,7 @@
                profile = "ToolsButtonDark";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Gui Editor";
                hovertime = "1000";
                isContainer = "0";
@@ -218,7 +218,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.switchToWorldEditor();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "World Editor";
                hovertime = "1000";
                isContainer = "0";
@@ -243,7 +243,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -261,10 +261,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -292,7 +292,7 @@
                profile = "ToolsDropdownProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -311,10 +311,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -342,7 +342,7 @@
                profile = "ToolsDropdownProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -364,10 +364,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -393,7 +393,7 @@
                profile = "ToolsButtonDark";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Snap gui controls to a grid. Modify grid size under edit.";
                hovertime = "1000";
                isContainer = "0";
@@ -427,7 +427,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.toggleEdgeSnap();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggles Edge Smart Snapping";
                hovertime = "1000";
                isContainer = "0";
@@ -461,7 +461,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.toggleCenterSnap();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggles Center Smart Snapping";
                hovertime = "1000";
                isContainer = "0";
@@ -490,10 +490,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -520,7 +520,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(0);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align Left";
                hovertime = "1000";
                isContainer = "0";
@@ -554,7 +554,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(1);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Center Vertically ";
                hovertime = "1000";
                isContainer = "0";
@@ -588,7 +588,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(2);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align Right";
                hovertime = "1000";
                isContainer = "0";
@@ -617,10 +617,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -647,7 +647,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(3);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align Top";
                hovertime = "1000";
                isContainer = "0";
@@ -681,7 +681,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(7);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Center Horizontally";
                hovertime = "1000";
                isContainer = "0";
@@ -715,7 +715,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(4);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align Bottom";
                hovertime = "1000";
                isContainer = "0";
@@ -744,10 +744,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -774,7 +774,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.PushToBack();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Send to Back";
                hovertime = "1000";
                isContainer = "0";
@@ -808,7 +808,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.BringToFront();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Send to Front";
                hovertime = "1000";
                isContainer = "0";
@@ -833,7 +833,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -857,7 +857,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -884,7 +884,7 @@
                visible = "1";
                active = "1";
                command = "GuiEd.AlignCtrlToParent(\"left\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align to left";
                hovertime = "1000";
                isContainer = "0";
@@ -918,7 +918,7 @@
                visible = "1";
                active = "1";
                command = "GuiEd.AlignCtrlToParent(\"right\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align to right";
                hovertime = "1000";
                isContainer = "0";
@@ -952,7 +952,7 @@
                visible = "1";
                active = "1";
                command = "GuiEd.AlignCtrlToParent(\"top\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align to top";
                hovertime = "1000";
                isContainer = "0";
@@ -986,7 +986,7 @@
                visible = "1";
                active = "1";
                command = "GuiEd.AlignCtrlToParent(\"bottom\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Align to bottom";
                hovertime = "1000";
                isContainer = "0";
@@ -1014,7 +1014,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1047,7 +1047,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$GuiEditorAlignMargin";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1071,7 +1071,7 @@
                   profile = "ToolsTextBase_S1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1090,7 +1090,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -1111,10 +1111,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1141,7 +1141,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(6);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Distribute Horizontally";
                hovertime = "1000";
                isContainer = "0";
@@ -1175,7 +1175,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.Justify(5);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Distribute Vertically";
                hovertime = "1000";
                isContainer = "0";
@@ -1204,10 +1204,10 @@
             minExtent = "16 16";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1234,7 +1234,7 @@
                visible = "1";
                active = "1";
                command = "Lab.toggleDuplicator();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggle the field duplicator dialog";
                hovertime = "1000";
                isContainer = "0";
@@ -1268,7 +1268,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.fitIntoParents( true, false );";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Fit into parent width";
                hovertime = "1000";
                isContainer = "0";
@@ -1302,7 +1302,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.fitIntoParents( false, true );";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Fit into parent width";
                hovertime = "1000";
                isContainer = "0";
@@ -1336,7 +1336,7 @@
                visible = "1";
                active = "1";
                command = "GuiEditor.fitIntoParents();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Fit into parent";
                hovertime = "1000";
                isContainer = "0";
@@ -1370,7 +1370,7 @@
                visible = "1";
                active = "1";
                command = "TplManager.toggleBrowser();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggle the field duplicator dialog";
                hovertime = "1000";
                isContainer = "0";
@@ -1410,7 +1410,7 @@
       profile = "ToolsBoxDarkA";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -1425,7 +1425,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1454,7 +1454,7 @@
             profile = "ToolsScrollProfile_Dark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1469,7 +1469,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1486,7 +1486,7 @@
                   profile = "ToolsGuiBackFillProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -1501,7 +1501,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1525,7 +1525,7 @@
                   profile = "ToolsTextEditProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -1546,10 +1546,10 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1579,7 +1579,7 @@
             profile = "ToolsTabBookMain";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1604,7 +1604,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "guiPage";
@@ -1635,7 +1635,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1656,7 +1656,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1675,10 +1675,10 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1707,7 +1707,7 @@
                            profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "GuiTreeViewFilterText";
@@ -1732,7 +1732,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "GuiTreeViewFilterClearButton";
@@ -1764,7 +1764,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1800,7 +1800,7 @@
                            profile = "ToolsTreeViewProfile_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1823,7 +1823,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1853,7 +1853,7 @@
                         profile = "ToolsTabBookMain";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1878,7 +1878,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "0";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            hidden = "1";
@@ -1909,7 +1909,7 @@
                               profile = "ToolsScrollProfile_Dark";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -1936,7 +1936,7 @@
                                  profile = "ToolsGuiTransparentProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  superClass = "EditorInspectorBase";
@@ -1957,10 +1957,10 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "GuiDefaultProfile";
+                              profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -1990,7 +1990,7 @@
                                  profile = "ToolsScrollProfile_Dark";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2009,7 +2009,7 @@
                                     profile = "ToolsTextBase_ML";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     canSave = "1";
@@ -2037,7 +2037,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2064,10 +2064,10 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "GuiDefaultProfile";
+                              profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -2089,7 +2089,7 @@
                                  profile = "ToolsBoxDarkA";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2113,7 +2113,7 @@
                                     profile = "ToolsTextBase";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -2137,7 +2137,7 @@
                                     profile = "ToolsTextBase";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "tplTargetInfo";
@@ -2157,7 +2157,7 @@
                                     profile = "ToolsButtonProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     internalName = "tplSetSourceButton";
@@ -2181,7 +2181,7 @@
                                  profile = "ToolsBoxDarkA";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2205,7 +2205,7 @@
                                     profile = "ToolsTextBase";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -2224,7 +2224,7 @@
                                     profile = "ToolsButtonProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     internalName = "tplApplyButton";
@@ -2249,7 +2249,7 @@
                                     profile = "ToolsTextBase";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "tplTemplateInfo";
@@ -2274,7 +2274,7 @@
                               profile = "ToolsBoxDarkB";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -2296,7 +2296,7 @@
                                  profile = "ToolsBoxDarkA";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2325,7 +2325,7 @@
                                     profile = "ToolsTextEditDark";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     class = "GuiTreeViewFilterText";
@@ -2351,7 +2351,7 @@
                                     visible = "1";
                                     active = "1";
                                     command = "GuiEditorTemplateFilter.reset();";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     canSave = "1";
@@ -2374,7 +2374,7 @@
                                  profile = "ToolsBoxDarkA";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2402,7 +2402,7 @@
                                     profile = "ToolsDropdownProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -2434,7 +2434,7 @@
                               profile = "ToolsScrollProfile_Dark";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -2457,10 +2457,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "GuiDefaultProfile";
+                                 profile = "ToolsDefaultProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2481,7 +2481,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "NewTestA";
@@ -2504,7 +2504,7 @@
                                        profile = "ToolsBoxDarkB";
                                        visible = "0";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "selected";
@@ -2530,7 +2530,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "category";
@@ -2555,7 +2555,7 @@
                                        profile = "ToolsTextBase";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "name";
@@ -2569,10 +2569,10 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "height";
-                                       profile = "GuiDefaultProfile";
+                                       profile = "ToolsDefaultProfile";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "mouse";
@@ -2596,7 +2596,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "NewTesB";
@@ -2619,7 +2619,7 @@
                                        profile = "ToolsBoxDarkB";
                                        visible = "0";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "selected";
@@ -2645,7 +2645,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "category";
@@ -2670,7 +2670,7 @@
                                        profile = "ToolsTextBase";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "name";
@@ -2684,10 +2684,10 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "height";
-                                       profile = "GuiDefaultProfile";
+                                       profile = "ToolsDefaultProfile";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "mouse";
@@ -2711,7 +2711,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "NewTesB1";
@@ -2734,7 +2734,7 @@
                                        profile = "ToolsBoxDarkB";
                                        visible = "0";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "selected";
@@ -2760,7 +2760,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "category";
@@ -2785,7 +2785,7 @@
                                        profile = "ToolsTextBase";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "name";
@@ -2799,10 +2799,10 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "height";
-                                       profile = "GuiDefaultProfile";
+                                       profile = "ToolsDefaultProfile";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "mouse";
@@ -2826,7 +2826,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "NewTesB11";
@@ -2849,7 +2849,7 @@
                                        profile = "ToolsBoxDarkB";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "selected";
@@ -2874,7 +2874,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "category";
@@ -2899,7 +2899,7 @@
                                        profile = "ToolsTextBase";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "name";
@@ -2913,10 +2913,10 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "height";
-                                       profile = "GuiDefaultProfile";
+                                       profile = "ToolsDefaultProfile";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "mouse";
@@ -2940,7 +2940,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "LabGuiTools";
@@ -2963,7 +2963,7 @@
                                        profile = "ToolsBoxDarkB";
                                        visible = "0";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "selected";
@@ -2989,7 +2989,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "category";
@@ -3014,7 +3014,7 @@
                                        profile = "ToolsTextBase";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        internalName = "name";
@@ -3028,10 +3028,10 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "height";
-                                       profile = "GuiDefaultProfile";
+                                       profile = "ToolsDefaultProfile";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "GuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "mouse";
@@ -3057,7 +3057,7 @@
                               profile = "ToolsBoxDarkC";
                               visible = "0";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               hidden = "1";
@@ -3080,7 +3080,7 @@
                                  profile = "ToolsBoxDarkB";
                                  visible = "0";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "selected";
@@ -3106,7 +3106,7 @@
                                  profile = "ToolsTextBase_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "category";
@@ -3131,7 +3131,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "name";
@@ -3145,10 +3145,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "height";
-                                 profile = "GuiDefaultProfile";
+                                 profile = "ToolsDefaultProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "mouse";
@@ -3180,7 +3180,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "toolboxPage";
@@ -3212,7 +3212,7 @@
                   profile = "ToolsScrollProfile_Dark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -3236,7 +3236,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3258,7 +3258,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -3285,7 +3285,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -3314,7 +3314,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GameTSCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GameTSCtrl\n\nA control that renders a 3D view from the current control object.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3344,7 +3344,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiModelView );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiModelView\n\nA control that shows a TSShape model.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3374,7 +3374,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiObjectView );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiObjectView\n\nA control that shows a TSShape model.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3400,7 +3400,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -3427,7 +3427,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -3456,7 +3456,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBitmapButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBitmapButtonCtrl\n\nA button control rendered entirely from bitmaps.\nThe individual button states are represented with separate bitmaps.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3486,7 +3486,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBitmapButtonTextCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBitmapButtonTextCtrl\n\nAn extension of GuiBitmapButtonCtrl that also renders a text\nlabel on the button.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3516,7 +3516,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBorderButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBorderButtonCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3546,7 +3546,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiButtonBaseCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiButtonBaseCtrl\n\nA basic button control.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3576,7 +3576,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiButtonCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3606,7 +3606,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiCheckBoxCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiCheckBoxCtrl\n\nA toggle button that displays a text label and an on/off checkbox.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3636,7 +3636,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiGradientSwatchCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiGradientSwatchCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3666,7 +3666,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiIconButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiIconButtonCtrl\n\nA button control that displays an icon on the button in addition\nto the optional text label.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3696,7 +3696,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( guiMainEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "guiMainEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3726,7 +3726,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( guiNodeGraphCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "guiNodeGraphCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3756,7 +3756,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiRadioCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiRadioCtrl\n\nA button control with a radio box and a text label.\nThis control is used in groups where multiple radio buttons\npresent a range of options out of which one can be chosen.\nA radio button automatically signals its siblings when it is\ntoggled on.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3786,7 +3786,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiSwatchButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiSwatchButtonCtrl\n\nA color swatch button.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3816,7 +3816,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiToggleButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiToggleButtonCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3846,7 +3846,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiToolboxButtonCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiToolboxButtonCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3876,7 +3876,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( guiWebGraphCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "guiWebGraphCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3902,7 +3902,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -3929,7 +3929,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -3958,7 +3958,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiAutoScrollCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiAutoScrollCtrl\n\nA container that automatically scrolls its child control upwards.\nCan be used, for example, for credits screens.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -3988,7 +3988,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiContainer );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiContainer\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4018,7 +4018,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiControlArrayControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiControlArrayControl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4048,7 +4048,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDynamicCtrlArrayControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDynamicCtrlArrayControl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4078,7 +4078,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiFormCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiFormCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4108,7 +4108,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiFrameSetCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiFrameSetCtrl\n\nA container that allows to subdivide its space into rows and columns.\nChild controls are assigned to the cells row by row.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4138,7 +4138,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiPaneControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiPaneControl\n\nA container that wraps a single child control displaying a header\nwith a caption above it.  If enabled, the pane can be collapsed and expanded\nby clicking the header.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4168,7 +4168,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiPanel );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiPanel\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4198,7 +4198,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiRolloutCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiRolloutCtrl\n\nA container that displays a header with a caption on top of its child control\nthat when clicked collapses/expands the control to/from just the header.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4228,7 +4228,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiScrollCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiScrollCtrl\n\nA container that allows to view a larger GUI control inside its smaller area by providing horizontal and/or vertical scroll bars.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4258,7 +4258,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiSplitContainer );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiSplitContainer\n\nA container that splits its area between two child controls.\nThe split ratio can be dynamically adjusted with a handle control between the two children.\nSplitting can be either horizontal or vertical.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4288,7 +4288,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiStackControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiStackControl\n\nA container that stacks its children horizontally or vertically.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4318,7 +4318,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTabBookCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTabBookCtrl\n\nA control that allows to select from a set of tabbed pages.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4348,7 +4348,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTabPageCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTabPageCtrl\n\nA page in a GuiTabBookCtrl.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4378,7 +4378,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiWindowCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiWindowCtrl\n\nA control that shows an independent window inside the canvas.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4404,7 +4404,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -4431,7 +4431,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -4460,7 +4460,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiControl\n\nBase class for GUI controls. Can also be used as a generic container.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4490,7 +4490,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiOffscreenCanvas );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiOffscreenCanvas\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4516,7 +4516,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -4543,7 +4543,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -4572,7 +4572,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( CreatorTree );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "CreatorTree\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4602,7 +4602,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( DbgFileView );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "DbgFileView\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4632,7 +4632,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( EditManager );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "EditManager\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4662,7 +4662,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( EditTSCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "EditTSCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4692,7 +4692,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( ForestEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "ForestEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4722,7 +4722,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiColorPickerCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiColorPickerCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4752,7 +4752,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiConsole );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiConsole\n\nControl that displays the console log text.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4782,7 +4782,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiConsoleEditCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiConsoleEditCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4812,7 +4812,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiConsoleTextCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiConsoleTextCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4842,7 +4842,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiConvexEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiConvexEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4872,7 +4872,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDecalEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDecalEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4902,7 +4902,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiEaseViewCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiEaseViewCtrl\n\nControl that display an EaseF curve.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4932,7 +4932,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiGradientCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiGradientCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4962,7 +4962,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiInspector );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiInspector\n\nA control that allows to edit the properties of one or more SimObjects.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4992,7 +4992,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMaterialCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMaterialCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5022,7 +5022,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMaterialPreview );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMaterialPreview\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5052,7 +5052,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMeshRoadEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMeshRoadEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5082,7 +5082,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMissionAreaEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMissionAreaEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5112,7 +5112,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiNavEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiNavEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5142,7 +5142,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiParticleGraphCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiParticleGraphCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5172,7 +5172,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiRiverEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiRiverEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5202,7 +5202,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiRoadEditorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiRoadEditorCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5232,7 +5232,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiShapeEdPreview );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiShapeEdPreview\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5262,7 +5262,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTerrPreviewCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTerrPreviewCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5292,7 +5292,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiVariableInspector );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiVariableInspector\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5322,7 +5322,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( TerrainEditor );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "TerrainEditor\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5352,7 +5352,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( WorldEditor );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "WorldEditor\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5378,7 +5378,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -5405,7 +5405,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -5434,7 +5434,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiClockHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiClockHud\n\nBasic HUD clock. Displays the current simulation time offset from some base.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5464,7 +5464,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiCrossHairHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiCrossHairHud\n\nBasic cross hair hud. Reacts to state of control object.\nAlso displays health bar for named objects under the cross hair.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5494,7 +5494,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDriverInfoHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDriverInfoHud\n\nDisplays name and damage of ShapeBase objects in its bounds.\nMust be a child of a GuiTSCtrl and a server connection must be present.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5524,7 +5524,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiGameListMenuCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiGameListMenuCtrl\n\nBase class for cross platform menu controls that are gamepad friendly.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5554,7 +5554,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiGameListOptionsCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiGameListOptionsCtrl\n\nA control for showing pages of options that are gamepad friendly.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5584,7 +5584,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiHealthBarHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiHealthBarHud\n\nA basic health bar. Shows the damage value of the current\nPlayerObjectType control object.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5614,7 +5614,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiHealthTextHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiHealthTextHud\n\nShows the damage or energy level of the current\nPlayerObjectType control object as a numerical text display.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5644,7 +5644,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMessageVectorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMessageVectorCtrl\n\nA chat HUD control that displays messages from a MessageVector.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5674,7 +5674,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiNitroHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiNitroHud\n\nA basic health bar. Shows the damage value of the current\nPlayerObjectType control object.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5704,7 +5704,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiShapeNameHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiShapeNameHud\n\nDisplays name and damage of ShapeBase objects in its bounds.\nMust be a child of a GuiTSCtrl and a server connection must be present.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5734,7 +5734,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiSpeedometerHud );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiSpeedometerHud\n\nDisplays the speed of the current Vehicle-based control object.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5760,7 +5760,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -5787,7 +5787,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -5816,7 +5816,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBitmapBorderCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBitmapBorderCtrl\n\nA control that renders a skinned border.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5846,7 +5846,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBitmapCtrl\n\nA control that displays a single, static image from a file.\nThe bitmap can either be tiled or stretched inside the control.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5876,7 +5876,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiChunkedBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiChunkedBitmapCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5906,7 +5906,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiFadeinBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiFadeinBitmapCtrl\n\nA control that shows a bitmap.  It fades the bitmap in a set amount of time,\nthen waits a set amount of time, and finally fades the bitmap back out in\nanother set amount of time.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5936,7 +5936,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiIdleCamFadeBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiIdleCamFadeBitmapCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5966,7 +5966,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMissionAreaCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMissionAreaCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5996,7 +5996,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTheoraCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTheoraCtrl\n\nA control for playing Theora videos.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6022,7 +6022,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -6049,7 +6049,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -6078,7 +6078,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDirectoryFileListCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDirectoryFileListCtrl\n\nA control that displays a list of files from within a single\ndirectory in the game file system.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6108,7 +6108,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiFileTreeCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiFileTreeCtrl\n\nA control that displays a hierarchical tree view of a path in the game file system.\nNote that to enable expanding/collapsing of directories, the control must be\nplaced inside a GuiScrollCtrl.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6138,7 +6138,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiListBoxCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiListBoxCtrl\n\nLinear list of text items.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6168,7 +6168,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiPopUpMenuCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiPopUpMenuCtrl\n\nA control that allows to select a value from a drop-down list.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6198,7 +6198,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiPopUpMenuCtrlEx );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiPopUpMenuCtrlEx\n\nA control that allows to select a value from a drop-down list.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6228,7 +6228,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTextListCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTextListCtrl\n\nA control that displays text in tabular form.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6258,7 +6258,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTreeViewCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTreeViewCtrl\n\nHierarchical list of text items with optional icons.\nCan also be used to inspect SimObject hierarchies.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6284,7 +6284,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -6311,7 +6311,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -6340,7 +6340,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDecoyCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDecoyCtrl\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6370,7 +6370,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiDragAndDropControl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiDragAndDropControl\n\nA special control that implements drag&drop behavior.\nThe control will notify other controls as it moves across the canvas.\nContent can be attached through dynamic fields or child objects.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6400,7 +6400,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiFilterCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiFilterCtrl\n\nA control that displays a Catmull-Rom spline through a number of control points\nand allows to edit the Y-coordinates of the control points to adjust the curve.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6430,7 +6430,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiGraphCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiGraphCtrl\n\nA control that allows to plot curve graphs.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6460,7 +6460,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiInputCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiInputCtrl\n\nA control that locks the mouse and reports all keyboard input events to script.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6490,7 +6490,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMenuBar );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMenuBar\n\n";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6520,7 +6520,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMouseEventCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMouseEventCtrl\n\nA control that relays all mouse events to script.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6550,7 +6550,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiRectHandles );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiRectHandles\n\nDraws a box with handles for the user to manipulate.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6580,7 +6580,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiScriptNotifyCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiScriptNotifyCtrl\n\nA control that implements various script callbacks for\ncertain GUI events.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6610,7 +6610,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiSeparatorCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiSeparatorCtrl\n\nA control that renders a horizontal or vertical separator with\nan optional text label (horizontal only). ";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6636,7 +6636,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -6663,7 +6663,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -6692,7 +6692,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiBubbleTextCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiBubbleTextCtrl\n\nA single-line text control that displays its text in a multi-line\npopup when clicked.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6722,7 +6722,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMLTextCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMLTextCtrl\n\nA control that displays multiple lines of text.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6752,7 +6752,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiMLTextEditCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiMLTextEditCtrl\n\nA control that allows to edit multiple lines of text.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6782,7 +6782,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTextCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTextCtrl\n\nA control that displays a single line of text.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6812,7 +6812,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTextEditCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTextEditCtrl\n\nA control that allows to edit a single line of text. ";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6838,7 +6838,7 @@
                         profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiEditorToolboxRolloutCtrl";
@@ -6865,7 +6865,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "array";
@@ -6894,7 +6894,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiProgressBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiProgressBitmapCtrl\n\nA control that shows a horizontal progress bar that is rendered\nby repeating a bitmap.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6924,7 +6924,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiProgressCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiProgressCtrl\n\nA control that display a horizontal progress bar.  The bar is\nrendered using as a filled rectangle (properties determined by profile).";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6954,7 +6954,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiSliderCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiSliderCtrl\n\nA control that implements a horizontal or vertical slider to\nselect/represent values in a certain range.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6984,7 +6984,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTextEditSliderBitmapCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTextEditSliderBitmapCtrl\n\nA text control that display a numeric value and bitmapped up/down sliders.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7014,7 +7014,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createControl( GuiTextEditSliderCtrl );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "GuiTextEditSliderCtrl\n\nA text that shows a numeric value and up/down arrows to\nincrease/decrease the value.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7046,7 +7046,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "profilesPage";
@@ -7078,7 +7078,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -7100,7 +7100,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -7119,10 +7119,10 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -7143,10 +7143,10 @@
                            minExtent = "16 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -7170,7 +7170,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.revertProfile( GuiEditorProfilesTree.getSelectedProfile() );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Revert Changes to the Selected Profile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7196,7 +7196,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createNewProfile( GuiEditorProfilesTree.getSelectedProfile().getName(), GuiEditorProfilesTree.getSelectedProfile() );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Create New Profile by Copying the Selected Profile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7222,7 +7222,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.createNewProfile( \"Unnamed\" );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Create New Profile with Default Values";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7248,7 +7248,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.showDeleteProfileDialog( GuiEditorProfilesTree.getSelectedProfile() );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Delete Selected Profile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7280,7 +7280,7 @@
                            profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "GuiTreeViewFilterText";
@@ -7305,7 +7305,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            class = "GuiTreeViewFilterClearButton";
@@ -7337,7 +7337,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -7373,7 +7373,7 @@
                            profile = "ToolsTreeViewProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -7396,7 +7396,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -7415,10 +7415,10 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -7446,7 +7446,7 @@
                            profile = "ToolsTextEditDark";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -7467,10 +7467,10 @@
                            minExtent = "16 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "GuiDefaultProfile";
+                           profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -7494,7 +7494,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.showSaveProfileDialog( GuiEditorProfileFileName.getText() );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Save the currently selected profile to a different file.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7519,7 +7519,7 @@
                               visible = "1";
                               active = "1";
                               command = "GuiEditor.saveProfile( GuiEditorProfilesTree.getSelectedProfile(), GuiEditorProfileFileName.getText() );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Save the currently selected profile.";
                               hovertime = "1000";
                               isContainer = "0";
@@ -7552,7 +7552,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -7579,7 +7579,7 @@
                            profile = "ToolsGuiTransparentProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            superClass = "EditorInspectorBase";
@@ -7600,10 +7600,10 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "GuiDefaultProfile";
+                        profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -7622,7 +7622,7 @@
                            profile = "ToolsTextBase_ML";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -7651,7 +7651,7 @@
       profile = "ToolsBoxDarkA";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -7673,7 +7673,7 @@
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -7692,7 +7692,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -7715,7 +7715,7 @@
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -7747,7 +7747,7 @@
       profile = "ToolsWindowProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "SelectControlsDlg";
@@ -7765,7 +7765,7 @@
          profile = "ToolsGuiGroupBorderProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -7794,7 +7794,7 @@
             profile = "ToolsScrollProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -7818,7 +7818,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "classList";
@@ -7840,7 +7840,7 @@
             visible = "1";
             active = "1";
             command = "GuiEditorSelectDlg.selectAllInClassList( true );";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -7860,10 +7860,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiTextProfile";
+            profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -7883,7 +7883,7 @@
             visible = "1";
             active = "1";
             command = "GuiEditorSelectDlg.selectAllInClassList( false );";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -7899,7 +7899,7 @@
          profile = "ToolsGuiGroupBorderProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -7919,10 +7919,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiTextProfile";
+            profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -7941,7 +7941,7 @@
             profile = "ToolsCheckBoxProfile_S1";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "retainSelection";
@@ -7961,7 +7961,7 @@
             profile = "ToolsCheckBoxProfile_S1";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "createSelectionSet";
@@ -7990,7 +7990,7 @@
             profile = "ToolsTextEditProfile";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "selectionSetName";
@@ -8019,7 +8019,7 @@
             profile = "ToolsTextEditProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "namePattern";
@@ -8040,10 +8040,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiTextProfile";
+            profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -8069,7 +8069,7 @@
             profile = "ToolsDropdownProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "groupList";
@@ -8086,7 +8086,7 @@
          profile = "ToolsGuiGroupBorderProfile";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -8116,7 +8116,7 @@
             profile = "ToolsScrollProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -8140,7 +8140,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "filterList";
@@ -8161,7 +8161,7 @@
             profile = "ToolsButtonProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -8181,10 +8181,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiTextProfile";
+            profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -8203,7 +8203,7 @@
             profile = "ToolsButtonProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -8224,7 +8224,7 @@
          visible = "1";
          active = "1";
          command = "GuiEditorSelectDlg.onSelectObjects(true);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -8244,7 +8244,7 @@
          visible = "1";
          active = "1";
          command = "GuiEditorSelectDlg.onSelectObjects(false);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";

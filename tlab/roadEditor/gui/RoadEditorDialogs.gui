@@ -8,7 +8,7 @@
    profile = "ToolsGuiModelessDialogProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    langTableMod = "Default";
@@ -55,7 +55,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       langTableMod = "Default";
@@ -79,7 +79,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -102,7 +102,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -126,7 +126,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -147,7 +147,7 @@
                profile = "ToolsFillDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                class = "AggregateBox";
@@ -168,7 +168,7 @@
                   visible = "1";
                   active = "1";
                   command = "$ThisControl.syncObj(RoadEditorGui,\"DefaultWidth\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "slider";
@@ -198,7 +198,7 @@
                   visible = "1";
                   active = "1";
                   command = "$ThisControl.syncObj(RoadEditorGui,\"DefaultWidth\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "TextEdit";
@@ -222,7 +222,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";

@@ -81,7 +81,7 @@ new GuiControlProfile( ToolsGuiGroupBorderProfile ) {
 };
 
 
-new GuiControlProfile (ToolsGuiToolTipProfile) {
+new GuiControlProfile (ToolsToolTipProfile) {
     // fill color
     fillColor = "239 237 222";
 
@@ -144,7 +144,7 @@ new GuiControlProfile(ToolsGuiEditorTabPage) {
 
 
 
-new GuiControlProfile( ToolsGuiRadioProfile ) {
+new GuiControlProfile( ToolsToolsRadioProfile ) {
     fontSize = 14;
     fillColor = "232 232 232";
     fontColor = "20 20 20";

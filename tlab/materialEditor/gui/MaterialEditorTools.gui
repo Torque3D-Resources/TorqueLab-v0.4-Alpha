@@ -23,7 +23,7 @@
    profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    superClass = "FrameSetPluginTools";
@@ -74,7 +74,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -96,7 +96,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -116,7 +116,7 @@
             profile = "GuiInspectorSwatchButtonProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -141,7 +141,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -170,7 +170,7 @@
          visible = "1";
          active = "1";
          command = "MaterialEditorGui.updatePreviewObject();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the Preview Mesh";
          hovertime = "1000";
          isContainer = "0";
@@ -193,7 +193,7 @@
          profile = "ToolsRolloutProfile_S1";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "previewOptions";
@@ -218,7 +218,7 @@
             profile = "ToolsDefaultProfile";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -240,7 +240,7 @@
                active = "1";
                variable = "MaterialEditorGui.livePreview";
                command = "MaterialEditorGui.updateLivePreview($ThisControl.getValue());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -255,7 +255,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -276,7 +276,7 @@
                   visible = "1";
                   active = "1";
                   command = "getColorF($thisControl.color, \"MaterialEditorGui.updatePreviewBackground\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -299,7 +299,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -315,7 +315,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -336,7 +336,7 @@
                   visible = "1";
                   active = "1";
                   command = "getColorF($ThisControl.color, \"MaterialEditorGui.updateLightColor\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Change Normal Light Color";
                   hovertime = "1000";
                   isContainer = "0";
@@ -360,7 +360,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -376,7 +376,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -397,7 +397,7 @@
                   visible = "1";
                   active = "1";
                   command = "getColorF($ThisControl.color, \"MaterialEditorGui.updateAmbientColor\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Change Ambient Light Color";
                   hovertime = "1000";
                   isContainer = "0";
@@ -421,7 +421,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -456,7 +456,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -478,7 +478,7 @@
          profile = "ToolsDefaultProfile";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -502,7 +502,7 @@
             profile = "ToolsTextBase_H1";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -526,7 +526,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -547,7 +547,7 @@
                profile = "ToolsFillDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -566,7 +566,7 @@
                   profile = "ToolsCheckBoxProfile_S1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -591,7 +591,7 @@
          profile = "ToolsDefaultProfile";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -612,7 +612,7 @@
             visible = "1";
             active = "1";
             command = "ShapeEdDetails.onAddMeshFromFile(\"\");";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Add geometry from a different model file into the current shape";
             hovertime = "1000";
             isContainer = "0";
@@ -637,7 +637,7 @@
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -659,7 +659,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -682,7 +682,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "art/shapes/actors/Soldier/soldier_rigged.DAE";
                hovertime = "1000";
                isContainer = "1";
@@ -705,7 +705,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -729,7 +729,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -759,7 +759,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "MaterialEditorGui.setMaterialDirty();MaterialEditorGui.updateActiveMaterialName($ThisControl.getText());";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "selMaterialName";
@@ -783,7 +783,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -807,7 +807,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -831,7 +831,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "selMaterialMapTo";
@@ -855,7 +855,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -879,7 +879,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -908,7 +908,7 @@
                   profile = "ToolsTextEditDark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "selMaterialFile";
@@ -936,7 +936,7 @@
                   visible = "1";
                   active = "1";
                   command = "MaterialEditorGui.selectMatFile();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Save material (Alt S)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -961,7 +961,7 @@
             profile = "ToolsBoxDarkA";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -985,7 +985,7 @@
                profile = "ToolsTextBase_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "art/models/Boost/objects/barriers/barricade/roadblock/sdRoadBlock_Stop.dae";
                hovertime = "1000";
                isContainer = "1";
@@ -1009,7 +1009,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1039,7 +1039,7 @@
                   visible = "1";
                   active = "1";
                   command = "SubMaterialSelector.onSelect();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Target Material";
                   hovertime = "1000";
                   isContainer = "1";
@@ -1064,7 +1064,7 @@
                   visible = "1";
                   active = "1";
                   command = "materialSelector.showDialog(\"MaterialEditorGui.showMaterialChangeSaveDialog\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Swap material on the object with existing";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1088,7 +1088,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1112,7 +1112,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1142,7 +1142,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "MaterialEditorGui.setMaterialDirty();MaterialEditorGui.updateActiveMaterialName($ThisControl.getText());";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "selMaterialName";
@@ -1166,7 +1166,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1190,7 +1190,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1220,7 +1220,7 @@
                   visible = "1";
                   active = "1";
                   variable = "MaterialEditorGui.currentMaterialFile";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "selMaterialFile";
@@ -1248,7 +1248,7 @@
                   visible = "1";
                   active = "1";
                   command = "MaterialEditorGui.selectMatFile();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Save material (Alt S)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1274,7 +1274,7 @@
          profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1302,7 +1302,7 @@
             visible = "1";
             active = "1";
             command = "MaterialEditorGui.changeLayer( $ThisControl.getText() );";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Changes the material layer being edited";
             hovertime = "1000";
             isContainer = "0";
@@ -1334,7 +1334,7 @@
             profile = "ToolsScrollProfile_Dark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1358,7 +1358,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1380,7 +1380,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -1406,7 +1406,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1427,7 +1427,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Diffuse";
@@ -1445,7 +1445,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "diffuseMapDisplayBitmap";
@@ -1494,7 +1494,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1517,7 +1517,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "diffuseMapNameText";
@@ -1539,7 +1539,7 @@
                            visible = "1";
                            active = "1";
                            command = "getColorF(materialEd_PreviewMaterial.diffuseColor[MaterialEditorGui.currentLayer], \"MaterialEditorGui.updateColorMultiply\");";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "colorTintSwatch";
@@ -1563,7 +1563,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1590,7 +1590,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"diffuse\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete material from file";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1618,7 +1618,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"diffuse\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete material from file";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1641,7 +1641,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Normal";
@@ -1659,7 +1659,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "normalMapDisplayBitmap";
@@ -1683,7 +1683,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1731,7 +1731,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "normalMapNameText";
@@ -1752,7 +1752,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"normal\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1776,7 +1776,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"normal\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1798,7 +1798,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "specular";
@@ -1816,7 +1816,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "specMapDisplayBitmap";
@@ -1840,7 +1840,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1888,7 +1888,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "specMapNameText";
@@ -1909,7 +1909,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateSpecMap(1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1933,7 +1933,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateSpecMap(0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1955,7 +1955,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Detail";
@@ -1974,7 +1974,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "detailMapDisplayBitmap";
@@ -2023,7 +2023,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2052,7 +2052,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "MaterialEditorGui.updateDetailScale($ThisControl.getText());";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "detailScaleTextEdit";
@@ -2076,7 +2076,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2099,7 +2099,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "detailMapNameText";
@@ -2120,7 +2120,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"detail\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2144,7 +2144,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"detail\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2166,7 +2166,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "detailNormal";
@@ -2185,7 +2185,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "detailNormalMapDisplayBitmap";
@@ -2234,7 +2234,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2263,7 +2263,7 @@
                            visible = "1";
                            active = "1";
                            altCommand = "MaterialEditorGui.updateDetailNormalStrength($ThisControl.getText());";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "detailNormalStrengthTextEdit";
@@ -2287,7 +2287,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2310,7 +2310,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "detailNormalMapNameText";
@@ -2331,7 +2331,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"detailNormal\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2355,7 +2355,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"detailNormal\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2377,7 +2377,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Overlay";
@@ -2396,7 +2396,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "overlayMapDisplayBitmap";
@@ -2445,7 +2445,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2468,7 +2468,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "overlayMapNameText";
@@ -2489,7 +2489,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"overlay\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2513,7 +2513,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"overlay\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2535,7 +2535,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Light";
@@ -2554,7 +2554,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "lightMapDisplayBitmap";
@@ -2578,7 +2578,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2626,7 +2626,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "lightMapNameText";
@@ -2647,7 +2647,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"light\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2671,7 +2671,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"light\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2693,7 +2693,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "tone";
@@ -2712,7 +2712,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "toneMapDisplayBitmap";
@@ -2736,7 +2736,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2784,7 +2784,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "toneMapNameText";
@@ -2809,7 +2809,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"tone\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2829,7 +2829,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"tone\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2851,7 +2851,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "environment";
@@ -2870,7 +2870,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "envMapDisplayBitmap";
@@ -2894,7 +2894,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2942,7 +2942,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "envMapNameText";
@@ -2963,7 +2963,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"env\", 1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -2987,7 +2987,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateTextureMap(\"env\", 0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -3012,7 +3012,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "TranparencyRollout";
@@ -3039,7 +3039,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3060,7 +3060,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3082,7 +3082,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3104,7 +3104,7 @@
                               profile = "ToolsBoxDarkB";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -3128,7 +3128,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -3157,7 +3157,7 @@
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"translucentBlendOp\",$ThisControl.getValue());";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  tooltip = "Determines the type of blending to be applied on the transparent object.";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -3182,7 +3182,7 @@
                               profile = "ToolsBoxDarkB";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -3235,7 +3235,7 @@
                                  visible = "1";
                                  active = "1";
                                  command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue());";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "alphaRefTextEdit";
@@ -3282,7 +3282,7 @@
                            profile = "ToolsBoxDarkB";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3306,7 +3306,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -3421,7 +3421,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -3447,7 +3447,7 @@
                      profile = "ToolsFillDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3477,7 +3477,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3499,7 +3499,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3520,10 +3520,10 @@
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
-                              profile = "GuiDefaultProfile";
+                              profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -3545,7 +3545,7 @@
                                  profile = "ToolsBoxDarkB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -3588,7 +3588,7 @@
                                     visible = "1";
                                     active = "1";
                                     command = "getColorF(materialEd_PreviewMaterial.specular[MaterialEditorGui.currentLayer], \"MaterialEditorGui.updateSpecular\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     internalName = "specularColorSwatch";
@@ -3611,7 +3611,7 @@
                                     profile = "ToolsFillDarkA";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -3635,7 +3635,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        canSave = "1";
@@ -3665,7 +3665,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"specularStrength[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "specularStrengthTextEdit";
@@ -3712,7 +3712,7 @@
                                     profile = "ToolsFillDarkA";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -3736,7 +3736,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        canSave = "1";
@@ -3766,7 +3766,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"specularPower[\" @ MaterialEditorGui.currentLayer @ \"]\", mCeil($ThisControl.getValue()));";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "specularPowerTextEdit";
@@ -3814,7 +3814,7 @@
                                  profile = "ToolsBoxDarkB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -3857,7 +3857,7 @@
                                     visible = "1";
                                     active = "1";
                                     command = "getColorF(materialEd_PreviewMaterial.subSurfaceColor[MaterialEditorGui.currentLayer], \"MaterialEditorGui.updateSubSurfaceColor\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     tooltip = "Set the subsurface scattering color";
                                     hovertime = "1000";
                                     isContainer = "0";
@@ -3881,7 +3881,7 @@
                                     profile = "ToolsBoxDarkA";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -3911,7 +3911,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"minnaertConstant[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getText());";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        internalName = "minnaertTextEdit";
@@ -3936,7 +3936,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
                                        canSave = "1";
@@ -3959,7 +3959,7 @@
                                     profile = "ToolsBoxDarkA";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -3983,7 +3983,7 @@
                                        profile = "ToolsTextBase_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
                                        canSave = "1";
@@ -4013,7 +4013,7 @@
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"subSurfaceRolloff[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getText());";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        tooltip = "Set the subsurface rolloff factor";
                                        hovertime = "1000";
                                        isContainer = "0";
@@ -4041,7 +4041,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4062,10 +4062,10 @@
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
-                              profile = "GuiDefaultProfile";
+                              profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -4087,7 +4087,7 @@
                                  profile = "ToolsBoxDarkB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -4113,7 +4113,7 @@
                                     profile = "ToolsDefaultProfile";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     canSave = "1";
@@ -4247,7 +4247,7 @@
                                  profile = "ToolsBoxDarkB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -4277,7 +4277,7 @@
                                     visible = "1";
                                     active = "1";
                                     command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateActiveMaterial(\"parallaxScale[\" @ MaterialEditorGui.currentLayer @ \"]\",$ThisControl.getValue());";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     internalName = "parallaxTextEdit";
@@ -4302,7 +4302,7 @@
                                     profile = "ToolsTextBase_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
                                     canSave = "1";
@@ -4353,7 +4353,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -4380,7 +4380,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "0";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      hidden = "1";
@@ -4402,7 +4402,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4422,7 +4422,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "RotationAnimation";
@@ -4438,7 +4438,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -4462,7 +4462,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -4514,7 +4514,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "RotationTextEditU";
@@ -4531,7 +4531,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -4555,7 +4555,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -4607,7 +4607,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateRotationOffset();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "RotationTextEditV";
@@ -4632,7 +4632,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4648,7 +4648,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4665,7 +4665,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -4682,7 +4682,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "RotationCrosshair";
@@ -4699,7 +4699,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -4723,7 +4723,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -4775,7 +4775,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateRotationSpeed();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "RotationSpeedTextEdit";
@@ -4799,7 +4799,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4819,7 +4819,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "ScrollAnimation";
@@ -4835,7 +4835,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -4859,7 +4859,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -4911,7 +4911,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollOffset();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "ScrollTextEditU";
@@ -4928,7 +4928,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -4952,7 +4952,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5004,7 +5004,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollOffset();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "ScrollTextEditV";
@@ -5029,7 +5029,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5045,7 +5045,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5062,7 +5062,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -5079,7 +5079,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -5096,7 +5096,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "ScrollCrosshair";
@@ -5113,7 +5113,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -5137,7 +5137,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5189,7 +5189,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollSpeed();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "ScrollSpeedTextEdit";
@@ -5213,7 +5213,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5233,7 +5233,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "WaveAnimation";
@@ -5254,7 +5254,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "ScaleAnimation";
@@ -5278,7 +5278,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -5299,7 +5299,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "WaveButtonContainer";
@@ -5324,7 +5324,7 @@
                               visible = "1";
                               active = "1";
                               command = "MaterialEditorGui.updateWaveType();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Sine Wave";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5349,7 +5349,7 @@
                               visible = "1";
                               active = "1";
                               command = "MaterialEditorGui.updateWaveType();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Triangle Wave";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5374,7 +5374,7 @@
                               visible = "1";
                               active = "1";
                               command = "MaterialEditorGui.updateWaveType();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Square Wave";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5391,7 +5391,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -5415,7 +5415,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5444,7 +5444,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateWaveFreq();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "WaveTextEditFreq";
@@ -5484,7 +5484,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -5508,7 +5508,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5537,7 +5537,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateWaveAmp();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "WaveTextEditAmp";
@@ -5584,7 +5584,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5604,7 +5604,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "SequenceAnimation";
@@ -5620,7 +5620,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -5644,7 +5644,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5673,7 +5673,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateSequenceFPS();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "SequenceTextEditFPS";
@@ -5713,7 +5713,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            class = "AggregateControl";
@@ -5737,7 +5737,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -5766,7 +5766,7 @@
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateSequenceSSS();";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "SequenceTextEditSSS";
@@ -5816,7 +5816,7 @@
                   profile = "ToolsRolloutProfile";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   class = "BehaviorQuickEditRollout";
@@ -5843,7 +5843,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "0";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      hidden = "1";
@@ -5865,7 +5865,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5889,7 +5889,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5918,7 +5918,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateReflectionType($ThisControl.getText());";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the type of blending to be applied on the transparent object.";
                            hovertime = "1000";
                            isContainer = "0";
@@ -5940,7 +5940,7 @@
                            visible = "0";
                            active = "1";
                            command = "MaterialEditorGui.showCubemapEditor();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "matEd_cubemapEditBtn";
@@ -5964,7 +5964,7 @@
                         profile = "ToolsFillDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -6031,7 +6031,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -6059,7 +6059,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateBehaviorSound(\"Footstep\", $ThisControl.getText());";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the footstep sound to use when the Player walks on this Material.";
                            hovertime = "1000";
                            isContainer = "0";
@@ -6084,7 +6084,7 @@
                            profile = "ToolsTextBase";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -6112,7 +6112,7 @@
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateBehaviorSound(\"Impact\", $ThisControl.getText());";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the impact sound to use when an object collides with this Material.";
                            hovertime = "1000";
                            isContainer = "0";
@@ -6129,7 +6129,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -6152,7 +6152,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -6175,7 +6175,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -6198,7 +6198,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -6219,7 +6219,7 @@
                               visible = "1";
                               active = "1";
                               command = "getColorF(materialEd_PreviewMaterial.effectColor[0], \"MaterialEditorGui.updateEffectColor0\");";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "effectColor0Swatch";
@@ -6241,7 +6241,7 @@
                               visible = "1";
                               active = "1";
                               command = "getColorF(materialEd_PreviewMaterial.effectColor[1], \"MaterialEditorGui.updateEffectColor1\");";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "effectColor1Swatch";
@@ -6270,7 +6270,7 @@
             profile = "ToolsRolloutProfile_S1";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "propertiesOptions";
@@ -6295,7 +6295,7 @@
                profile = "ToolsDefaultProfile";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                hidden = "1";
@@ -6315,7 +6315,7 @@
                   profile = "ToolsCheckBoxProfile_S1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -6336,7 +6336,7 @@
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Rendering";
                   command = "MaterialEditorPlugin.toggleGroup($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "rendering";
@@ -6358,7 +6358,7 @@
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Animation";
                   command = "MaterialEditorPlugin.toggleGroup($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "animation";
@@ -6380,7 +6380,7 @@
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Advanced";
                   command = "MaterialEditorPlugin.toggleGroup($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "advanced";
@@ -6403,7 +6403,7 @@
                   profile = "ToolsRolloutProfile_S1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "textureMapsOptions";
@@ -6428,7 +6428,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "textureMapsOptionsStack";
@@ -6450,7 +6450,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Normal";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Normal";
@@ -6472,7 +6472,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_specular";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "specular";
@@ -6494,7 +6494,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Detail";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Detail";
@@ -6516,7 +6516,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_detailNormal";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "detailNormal";
@@ -6538,7 +6538,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Overlay";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Overlay";
@@ -6560,7 +6560,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Light";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Light";
@@ -6582,7 +6582,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_tone";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "tone";
@@ -6604,7 +6604,7 @@
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_environment";
                         command = "MaterialEditorPlugin.toggleMap($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "environment";
@@ -6636,7 +6636,7 @@
             visible = "1";
             active = "0";
             command = "MaterialEditorGui.save();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Save material (Alt S)";
             hovertime = "1000";
             isContainer = "0";
@@ -6665,7 +6665,7 @@
          profile = "ToolsFillDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -6692,7 +6692,7 @@
             visible = "1";
             active = "1";
             command = "MaterialEditorGui.save();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Save material (Alt S)";
             hovertime = "1000";
             isContainer = "0";
@@ -6720,7 +6720,7 @@
             visible = "1";
             active = "1";
             command = "MaterialEditorGui.cloneMaterial();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Create new material";
             hovertime = "1000";
             isContainer = "0";
@@ -6748,7 +6748,7 @@
             visible = "1";
             active = "1";
             command = "materialSelector.showDialog(\"MaterialEditorGui.switchMaterial\");";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Open existing material";
             hovertime = "1000";
             isContainer = "0";
@@ -6776,7 +6776,7 @@
             visible = "1";
             active = "1";
             command = "MaterialEditorGui.createNewMaterial();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Create new material";
             hovertime = "1000";
             isContainer = "0";
@@ -6804,7 +6804,7 @@
             visible = "0";
             active = "1";
             command = "MaterialEditorGui.refreshMaterial();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Revert material to saved";
             hovertime = "1000";
             isContainer = "0";
@@ -6833,7 +6833,7 @@
             visible = "0";
             active = "1";
             command = "MaterialEditorGui.clearMaterial();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Clear all material properties";
             hovertime = "1000";
             isContainer = "0";
@@ -6862,7 +6862,7 @@
             visible = "1";
             active = "1";
             command = "MaterialEditorGui.deleteMaterial();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Delete material from file";
             hovertime = "1000";
             isContainer = "0";

@@ -8,7 +8,7 @@
    profile = "ToolsFillDarkA";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -37,7 +37,7 @@
       profile = "ToolsBoxDarkA";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -58,10 +58,10 @@
          minExtent = "16 16";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -76,7 +76,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -97,7 +97,7 @@
             profile = "ToolsBoxDarkB";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -121,7 +121,7 @@
                visible = "1";
                active = "1";
                command = "CloneEditor.switchToWorldEditor();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "World Editor";
                hovertime = "1000";
                isContainer = "0";
@@ -145,7 +145,7 @@
                profile = "ToolsButtonProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Gui Editor";
                hovertime = "1000";
                isContainer = "0";
@@ -170,7 +170,7 @@
                visible = "1";
                active = "1";
                command = "CloneEdit(); Editor.close($HudCtrl);";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Play Game";
                hovertime = "1000";
                isContainer = "0";
@@ -188,7 +188,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -204,7 +204,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -231,7 +231,7 @@
                profile = "ToolsDropdownProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -258,7 +258,7 @@
                profile = "ToolsDropdownProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -275,7 +275,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -290,7 +290,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -313,7 +313,7 @@
                   profile = "ToolsCheckBoxProfile_S1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Snap gui controls to a grid. Modify grid size under edit.";
                   hovertime = "1000";
                   isContainer = "0";
@@ -338,7 +338,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.toggleEdgeSnap();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Toggles Edge Smart Snapping";
                   hovertime = "1000";
                   isContainer = "0";
@@ -363,7 +363,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.toggleCenterSnap();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Toggles Center Smart Snapping";
                   hovertime = "1000";
                   isContainer = "0";
@@ -382,7 +382,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -397,7 +397,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -421,7 +421,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(0);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Align Left";
                   hovertime = "1000";
                   isContainer = "0";
@@ -446,7 +446,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(1);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Center Vertically ";
                   hovertime = "1000";
                   isContainer = "0";
@@ -471,7 +471,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(2);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Align Right";
                   hovertime = "1000";
                   isContainer = "0";
@@ -488,7 +488,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -512,7 +512,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(3);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Align Top";
                   hovertime = "1000";
                   isContainer = "0";
@@ -537,7 +537,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(7);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Center Horizontally";
                   hovertime = "1000";
                   isContainer = "0";
@@ -562,7 +562,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(4);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Align Bottom";
                   hovertime = "1000";
                   isContainer = "0";
@@ -581,7 +581,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -598,7 +598,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -613,7 +613,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -637,7 +637,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.PushToBack();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Back";
                   hovertime = "1000";
                   isContainer = "0";
@@ -662,7 +662,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.BringToFront();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Front";
                   hovertime = "1000";
                   isContainer = "0";
@@ -688,7 +688,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -712,7 +712,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.AlignCtrlToParent(\"left\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Front";
                   hovertime = "1000";
                   isContainer = "0";
@@ -737,7 +737,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.AlignCtrlToParent(\"right\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Front";
                   hovertime = "1000";
                   isContainer = "0";
@@ -762,7 +762,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.AlignCtrlToParent(\"top\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Front";
                   hovertime = "1000";
                   isContainer = "0";
@@ -787,7 +787,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.AlignCtrlToParent(\"bottom\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Send to Front";
                   hovertime = "1000";
                   isContainer = "0";
@@ -803,7 +803,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -827,11 +827,11 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "GuiTextEditProfile";
+                     profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
                      variable = "$CloneEditorAlignMargin";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -854,7 +854,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -871,7 +871,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -895,7 +895,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(6);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Distribute Horizontally";
                   hovertime = "1000";
                   isContainer = "0";
@@ -920,7 +920,7 @@
                   visible = "1";
                   active = "1";
                   command = "CloneEditor.Justify(5);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Distribute Vertically";
                   hovertime = "1000";
                   isContainer = "0";
@@ -952,7 +952,7 @@
             profile = "ToolsScrollProfile_Dark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -967,7 +967,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -984,7 +984,7 @@
                   profile = "ToolsGuiBackFillProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -999,7 +999,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1017,7 +1017,7 @@
          profile = "ToolsFillDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1046,7 +1046,7 @@
             profile = "ToolsTabBookMain";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1071,7 +1071,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "guiPage";
@@ -1101,7 +1101,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1123,7 +1123,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1151,7 +1151,7 @@
                         profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiTreeViewFilterText";
@@ -1176,7 +1176,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         class = "GuiTreeViewFilterClearButton";
@@ -1206,7 +1206,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1242,7 +1242,7 @@
                            profile = "ToolsTreeViewProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1259,7 +1259,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1288,7 +1288,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1314,7 +1314,7 @@
                            profile = "ToolsGuiTransparentProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            superClass = "EditorInspectorBase";
@@ -1335,7 +1335,7 @@
                         profile = "ToolsTextBase_ML";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1363,7 +1363,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "toolboxPage";
@@ -1395,7 +1395,7 @@
                   profile = "ToolsScrollProfile_Dark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1419,7 +1419,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1446,7 +1446,7 @@
                profile = "ToolsBoxDarkC_Top";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "profilesPage";
@@ -1478,7 +1478,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1500,7 +1500,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1528,7 +1528,7 @@
                         profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "GuiTreeViewFilterText";
@@ -1553,7 +1553,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         class = "GuiTreeViewFilterClearButton";
@@ -1583,7 +1583,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1619,7 +1619,7 @@
                            profile = "ToolsTreeViewProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1636,7 +1636,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1663,7 +1663,7 @@
                         profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1687,7 +1687,7 @@
                         visible = "1";
                         active = "1";
                         command = "CloneEditor.saveProfile( CloneEditorProfilesTree.getSelectedProfile(), CloneEditorProfileFileName.getText() );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Save the currently selected profile.";
                         hovertime = "1000";
                         isContainer = "0";
@@ -1712,7 +1712,7 @@
                         visible = "1";
                         active = "1";
                         command = "CloneEditor.showSaveProfileDialog( CloneEditorProfileFileName.getText() );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Save the currently selected profile to a different file.";
                         hovertime = "1000";
                         isContainer = "0";
@@ -1742,7 +1742,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1768,7 +1768,7 @@
                            profile = "ToolsGuiTransparentProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            superClass = "EditorInspectorBase";
@@ -1789,7 +1789,7 @@
                         profile = "ToolsTextBase_ML";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1816,7 +1816,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "button1";
@@ -1840,7 +1840,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "button2";
@@ -1864,7 +1864,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "button3";
@@ -1888,7 +1888,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "button4";
@@ -1906,7 +1906,7 @@
       profile = "ToolsGuiMenuBarProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -1928,7 +1928,7 @@
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -1947,7 +1947,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -1969,7 +1969,7 @@
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";

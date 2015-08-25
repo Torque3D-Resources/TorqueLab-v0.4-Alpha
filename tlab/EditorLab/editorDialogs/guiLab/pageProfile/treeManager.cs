@@ -14,11 +14,12 @@ function GLab_ProfilesTree::init( %this ) {
       // Create a visible name.
       %name = %obj.getName();
       if( %name $= "" )
-         continue;      
-     
-      if ($GLab_IsToolProfile[%obj.getName()] && !$GLab_ShowEditorsProfile)
-         continue;      
-
+         continue;
+              
+      //if ($GLab_IsToolProfile[%obj.getName()] && !$GLab::ShowEditorsProfile)
+        // continue;      
+		if (strFindWords(%obj.category,"Tools Editor") && !$GLab::ShowEditorsProfile)
+         	continue;   
       // Find which group to put the control in.
       if( %obj.category $= "" ){
          warnLog("Couln't find a category for this profile:",%obj.getName(),"! Category set to GameCore");
@@ -46,12 +47,14 @@ function GLab_ProfilesTree::init( %this ) {
 //==============================================================================
 //==============================================================================
 function GLab_ProfilesTree::checkVisible( %this,%ctrl ) { 
-   %ctrl.setActive(false);  
-   $GLab_ShowEditorsProfile = !$GLab_ShowEditorsProfile;
+    devLog("GLab_ProfilesTree::checkVisible",$GLab::ShowEditorsProfile);
+  // $GLab::ShowEditorsProfile = !$GLab::ShowEditorsProfile;
+   %ctrl.setActive(false); 
    GLab_ProfilesTree.init();
-   //%this.buildVisibleTree();  
+   %this.buildVisibleTree();  
    %ctrl.schedule(20,"setActive",true);
-   %ctrl.setSTateOn(!$GLab_ShowEditorsProfile);  
+  // %ctrl.setSTateOn($GLab::ShowEditorsProfile);  
+   devLog("GLab_ProfilesTree::end",$GLab::ShowEditorsProfile);
 }
 //------------------------------------------------------------------------------
 function GLab_ProfilesTree::onSelect( %this,%itemId ) {

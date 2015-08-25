@@ -17,7 +17,7 @@ new GuiStackControl(ShapeEditorToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "ShapeEditorToolbar";
@@ -26,12 +26,12 @@ new GuiStackControl(ShapeEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "15968";
-      disabledGroup = "15969";
-      EditorContainer = "4005";
+      defaultStack = "16029";
+      disabledGroup = "16030";
+      EditorContainer = "4074";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ShapeEditor";
-      stackLists = "15970 15979 15988 15997";
+      stackLists = "16031 16040 16049 16058";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -48,7 +48,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -74,7 +74,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -96,7 +96,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -114,7 +114,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -130,7 +130,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -160,7 +160,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderGrid = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show grid";
          hovertime = "1000";
          isContainer = "1";
@@ -190,7 +190,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.fitToShape();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Fit Camera to Shape (F)";
          hovertime = "1000";
          isContainer = "1";
@@ -220,7 +220,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.orbitNode = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Orbit the selected node";
          hovertime = "1000";
          isContainer = "1";
@@ -292,7 +292,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -314,7 +314,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -332,7 +332,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -348,7 +348,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -378,7 +378,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderNodes = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Nodes (N)";
          hovertime = "1000";
          isContainer = "1";
@@ -408,7 +408,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderGhost = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle shape transparency in the preview window (T)";
          hovertime = "1000";
          isContainer = "1";
@@ -438,7 +438,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "shapeEditorWireframeMode();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle shape wireframe in the preview window (R)";
          hovertime = "1000";
          isContainer = "1";
@@ -510,7 +510,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -532,7 +532,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -550,7 +550,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -566,7 +566,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -596,7 +596,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderbounds = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle selected object bounding box in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -626,7 +626,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEdShapeView.renderObjBox = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle selected object bounding box in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -656,7 +656,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "shapeEdShapeView.renderColMeshes = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle rendering of collision meshes in the preview window";
          hovertime = "1000";
          isContainer = "1";
@@ -728,7 +728,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -750,7 +750,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -768,7 +768,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -784,7 +784,7 @@ new GuiStackControl(ShapeEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -814,7 +814,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEditorPlugin.toggleAdvancedOptions();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle Advanced Properties Window";
          hovertime = "1000";
          isContainer = "1";
@@ -844,7 +844,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ShapeEditorPlugin.toggleAnimBar();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle Animation controls bar";
          hovertime = "1000";
          isContainer = "1";
@@ -875,7 +875,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          active = "1";
          variable = "Lab.forceLoadDAE";
          command = "Lab.forceLoadDAE = $ThisControl.getValue();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Toggle Animation controls bar";
          hovertime = "1000";
          isContainer = "1";

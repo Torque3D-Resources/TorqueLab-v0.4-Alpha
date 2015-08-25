@@ -15,7 +15,7 @@
    profile = "ToolsGuiModelessDialogProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -35,7 +35,7 @@
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "MouseEvent";
@@ -59,7 +59,7 @@
       profile = "ToolsGuiModelessDialogProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -80,7 +80,7 @@
          visible = "1";
          active = "1";
          altCommand = "SceneEditorPlugin.onGridSizeSliderChanged($ThisControl);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "SliderMouseDlg";
@@ -107,7 +107,7 @@
          profile = "ToolsFillDarkB";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "CameraModeDlg";
@@ -134,7 +134,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -162,7 +162,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"Standard Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Free Camera";
                hovertime = "1000";
                isContainer = "0";
@@ -192,7 +192,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"Orbit Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggle Orbit Cam";
                hovertime = "1000";
                isContainer = "0";
@@ -222,7 +222,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"1st Person Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Player Camera";
                hovertime = "1000";
                isContainer = "0";
@@ -252,7 +252,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"3rd Person Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "3rd Person Camera";
                hovertime = "1000";
                isContainer = "0";
@@ -282,7 +282,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"Smooth Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggle Newtonian Cam";
                hovertime = "1000";
                isContainer = "0";
@@ -312,7 +312,7 @@
                visible = "1";
                active = "1";
                command = "EToolDlgCameraTypesToggle(); Lab.setCameraViewMode(\"Smooth Rot Camera\");";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Toggle Smooth Camera with Smooth Rotation";
                hovertime = "1000";
                isContainer = "0";
@@ -337,7 +337,7 @@
          profile = "ToolsFillDarkA";
          visible = "0";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "CommonSliderDlg";
@@ -359,7 +359,7 @@
             profile = "ToolsSliderProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "slider";
@@ -378,7 +378,7 @@
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "0";
       internalName = "DecoyCtrl";

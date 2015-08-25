@@ -300,7 +300,7 @@ function EManageBookmarks::addBookmark( %this, %mark, %index ) {
 			canSave = "1";
 			Visible = "1";
 			Command = "";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			ToolTip = "Go to bookmark";
 			hovertime = "1000";
 			internalName = "goToBookmark";
@@ -334,7 +334,7 @@ function EManageBookmarks::addBookmark( %this, %mark, %index ) {
 			canSave = "1";
 			Visible = "1";
 			Command = "";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			ToolTip = "Delete camera bookmark";
 			hovertime = "1000";
 			internalName = "deleteBookmark";

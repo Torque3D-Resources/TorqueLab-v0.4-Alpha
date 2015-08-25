@@ -8,7 +8,7 @@
    profile = "ToolsGuiOverlayProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -42,7 +42,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       langTableMod = "Default";
@@ -66,7 +66,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -88,7 +88,7 @@
             profile = "ToolsBoxTitleDark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -111,7 +111,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -140,7 +140,7 @@
                profile = "ToolsTextEditProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -162,7 +162,7 @@
                visible = "1";
                active = "1";
                command = "TerrainImportGui.browseForHeightfield();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -186,7 +186,7 @@
             profile = "ToolsBoxTitleDark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -209,7 +209,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -238,7 +238,7 @@
                profile = "ToolsTextEditProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -264,7 +264,7 @@
          profile = "ToolsBoxTitleDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -288,7 +288,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -303,7 +303,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -326,7 +326,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   langTableMod = "Default";
@@ -353,7 +353,7 @@
                   profile = "ToolsDropdownProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   langTableMod = "Default";
@@ -382,7 +382,7 @@
                   profile = "ToolsTextEditProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   langTableMod = "Default";
@@ -405,7 +405,7 @@
                visible = "1";
                active = "1";
                command = "Lab.LoadTerrainImportSettings();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -426,7 +426,7 @@
                visible = "1";
                active = "1";
                command = "Lab.SaveTerrainImportSettings();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -452,7 +452,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -472,7 +472,7 @@
                visible = "1";
                active = "1";
                command = "Canvas.popDialog( TerrainImportGui );";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -493,7 +493,7 @@
                visible = "1";
                active = "1";
                command = "TerrainImportGui.importTerrain();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -518,7 +518,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -540,7 +540,7 @@
             profile = "ToolsBoxTitleDark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -563,7 +563,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -587,7 +587,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -611,7 +611,7 @@
                profile = "ToolsTextBase";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -634,7 +634,7 @@
                profile = "ToolsBoxTitleBar";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -656,7 +656,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -680,7 +680,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -700,7 +700,7 @@
                         visible = "1";
                         active = "1";
                         command = "TerrainImportGui.browseForOpacityMap();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -721,7 +721,7 @@
                         visible = "1";
                         active = "1";
                         command = "TerrainImportGui.showMapMaterialDlg();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -742,7 +742,7 @@
                         visible = "1";
                         active = "1";
                         command = "TerrainImportGui.removeOpacitymap();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -763,7 +763,7 @@
                         visible = "1";
                         active = "1";
                         command = "TerrainImportGui.removeAllMaps();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -796,7 +796,7 @@
                   profile = "ToolsScrollProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   langTableMod = "Default";
@@ -822,7 +822,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -846,7 +846,7 @@
                         profile = "ToolsFillDarkB";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "theTerrain_layerMap_0_std_grass_lush";
@@ -869,7 +869,7 @@
                            profile = "ToolsFillDarkA";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "filePill";
@@ -893,7 +893,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               langTableMod = "Default";
@@ -911,7 +911,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "mouse";
@@ -936,7 +936,7 @@
                            profile = "ToolsFillDarkB";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "r";
@@ -959,7 +959,7 @@
                               profile = "ToolsBoxTitleDark";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -974,7 +974,7 @@
                                  profile = "ToolsFillAccentB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "selChannel";
@@ -998,7 +998,7 @@
                                  profile = "ToolsTextBase_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  langTableMod = "Default";
@@ -1023,7 +1023,7 @@
                               profile = "ToolsBoxTitleDark";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -1038,7 +1038,7 @@
                                  profile = "ToolsFillAccentB";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "selMaterial";
@@ -1062,7 +1062,7 @@
                                  profile = "ToolsTextBase_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  langTableMod = "Default";
@@ -1081,7 +1081,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "mouse";
@@ -1105,7 +1105,7 @@
                               profile = "ToolsBoxTitleDark";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -1125,7 +1125,7 @@
                                  visible = "1";
                                  active = "1";
                                  command = "TerrainImportGui.showMapMaterialDlg(8734);";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  langTableMod = "Default";
@@ -1154,7 +1154,7 @@
                   profile = "ToolsFillDarkB";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   hidden = "1";
@@ -1177,7 +1177,7 @@
                      profile = "ToolsBoxTitleDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1192,7 +1192,7 @@
                         profile = "ToolsFillAccentB";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "selChannel";
@@ -1217,7 +1217,7 @@
                         profile = "ToolsTextBase_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -1242,7 +1242,7 @@
                      profile = "ToolsBoxTitleDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1257,7 +1257,7 @@
                         profile = "ToolsFillAccentB";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "selMaterial";
@@ -1282,7 +1282,7 @@
                         profile = "ToolsTextBase_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -1301,7 +1301,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "mouse";
@@ -1325,7 +1325,7 @@
                      profile = "ToolsBoxTitleDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1344,7 +1344,7 @@
                         profile = "ToolsButtonProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -1372,7 +1372,7 @@
                   profile = "ToolsFillDarkB";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "channelStack";
@@ -1396,7 +1396,7 @@
                      profile = "ToolsFillDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "filePill";
@@ -1420,7 +1420,7 @@
                         profile = "ToolsTextBase_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         langTableMod = "Default";
@@ -1438,7 +1438,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "mouse";
@@ -1465,7 +1465,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   langTableMod = "Default";
@@ -1490,7 +1490,7 @@
             profile = "ToolsBoxTitleBar";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -1513,7 +1513,7 @@
                profile = "ToolsTextBase_H1";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                langTableMod = "Default";
@@ -1538,7 +1538,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1553,7 +1553,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1581,7 +1581,7 @@
                      profile = "ToolsTextEditProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1606,7 +1606,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1623,7 +1623,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1651,7 +1651,7 @@
                      profile = "ToolsTextEditProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1676,7 +1676,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1693,7 +1693,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1712,7 +1712,7 @@
                      profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1730,7 +1730,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1749,7 +1749,7 @@
                      profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1767,7 +1767,7 @@
                   profile = "ToolsFillDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1790,7 +1790,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";
@@ -1820,7 +1820,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$Terrain::SplatMapSize";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      langTableMod = "Default";

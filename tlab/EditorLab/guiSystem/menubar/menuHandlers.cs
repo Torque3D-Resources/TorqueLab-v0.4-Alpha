@@ -43,8 +43,8 @@ function EditorDoExitMission(%saveFirst) {
 		EditorClearDirty();
 	}
 
-	if (isObject( MainMenuGui ))
-		Editor.close("MainMenuGui");
+	if (isObject( $TLab_defaultGui ))
+		Editor.close("$TLab_defaultGui");
 
 	disconnect();
 }

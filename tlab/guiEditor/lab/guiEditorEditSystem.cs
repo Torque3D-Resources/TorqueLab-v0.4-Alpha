@@ -111,7 +111,7 @@ function addGuiEditorCtrl(%reset) {
 			profile = "ToolsTextEditProfile";
 			visible = "1";
 			active = "1";
-			tooltipProfile = "ToolsGuiToolTipProfile";
+			tooltipProfile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			isContainer = "0";
 			canSave = "1";

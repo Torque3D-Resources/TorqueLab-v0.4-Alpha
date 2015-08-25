@@ -8,7 +8,7 @@
    profile = "ToolsDefaultProfile_NoModal";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
@@ -40,7 +40,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -62,7 +62,7 @@
          profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -86,7 +86,7 @@
             profile = "ToolsTextBase_C";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "fieldTitle";
@@ -108,7 +108,7 @@
             visible = "1";
             active = "1";
             command = "Lab.toggleIndividualFields();";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "showIndividuals";
@@ -140,7 +140,7 @@
          profile = "ToolsScrollProfile_Dark";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -161,7 +161,7 @@
             profile = "ToolsBoxDarkA";
             visible = "0";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "checkboxSample";
@@ -182,7 +182,7 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                internalName = "checkbox";
@@ -205,10 +205,10 @@
             minExtent = "16 16";
             horizSizing = "width";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             langTableMod = "Default";
@@ -232,7 +232,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -256,7 +256,7 @@
                   profile = "ToolsTextBase_C";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "fieldTitle";
@@ -278,7 +278,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.selectAllGeneralFields(\"1\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Copy values from selected GuiControl (Ctrl + NumPad0)";
                   hovertime = "200";
                   isContainer = "0";
@@ -299,7 +299,7 @@
                   visible = "1";
                   active = "1";
                   command = "Lab.selectAllGeneralFields(\"0\");";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Copy values from selected GuiControl (Ctrl + NumPad0)";
                   hovertime = "200";
                   isContainer = "0";
@@ -322,10 +322,10 @@
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                langTableMod = "Default";
@@ -348,7 +348,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -369,7 +369,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_profile";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "profile";
@@ -392,7 +392,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -413,7 +413,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_margin";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "margin";
@@ -436,7 +436,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -457,7 +457,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_padding";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "padding";
@@ -480,7 +480,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -501,7 +501,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_extent";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "extent";
@@ -524,7 +524,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -545,7 +545,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_horizSizing";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "horizSizing";
@@ -568,7 +568,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -589,7 +589,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_vertSizing";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "vertSizing";
@@ -612,7 +612,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -633,7 +633,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_docking";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "docking";
@@ -668,7 +668,7 @@
          profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -688,7 +688,7 @@
             visible = "1";
             active = "1";
             command = "Lab.setDuplicatorSource();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Copy values from selected GuiControl (Ctrl + NumPad0)";
             hovertime = "200";
             isContainer = "0";
@@ -709,7 +709,7 @@
             visible = "1";
             active = "1";
             command = "Lab.copyDuplicatorToSelection();";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Paste values into all selected GuiControls (Ctrl + NumPadEnter)";
             hovertime = "200";
             isContainer = "0";
@@ -741,7 +741,7 @@
          profile = "ToolsScrollProfile_Dark";
          visible = "0";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
@@ -763,10 +763,10 @@
             minExtent = "16 16";
             horizSizing = "width";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             langTableMod = "Default";
@@ -790,7 +790,7 @@
                profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -814,7 +814,7 @@
                   profile = "ToolsTextBase_C";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "fieldTitle";
@@ -829,10 +829,10 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   superClass = "GEFD_IndividualMouse";
@@ -855,10 +855,10 @@
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "GuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                langTableMod = "Default";
@@ -881,7 +881,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -902,7 +902,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_internalName";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "internalName";
@@ -925,7 +925,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -946,7 +946,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_tooltip";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "tooltip";
@@ -969,7 +969,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -990,7 +990,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_altCommand";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "altCommand";
@@ -1013,7 +1013,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -1034,7 +1034,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_position";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "position";
@@ -1057,7 +1057,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "checkboxSample";
@@ -1078,7 +1078,7 @@
                      visible = "1";
                      active = "1";
                      variable = "$GuiEditDuplicator_command";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "command";

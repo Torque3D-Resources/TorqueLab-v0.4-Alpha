@@ -27,7 +27,8 @@ singleton GuiControlProfile( GuiInspectorProfile  : ToolsDefaultProfile ) {
 //are loaded, the GuiPopupProfile won't be overidden...
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile Item
-delObj(GuiPopUpMenuProfile_Item);
+//delObj(GuiPopUpMenuProfile_Item);
+if (!isObject(GuiPopUpMenuProfile_Item))
 singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
 {
 		modal = "1";
@@ -54,7 +55,8 @@ singleton GuiControlProfile(GuiPopUpMenuProfile_Item : ToolsDefaultProfile)
 };
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
-delObj(GuiPopUpMenuProfile_List);
+//delObj(GuiPopUpMenuProfile_List);
+if (!isObject(GuiPopUpMenuProfile_Item))
 singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
 {
 		modal = "1";
@@ -74,14 +76,15 @@ singleton GuiControlProfile(GuiPopUpMenuProfile_List : ToolsDefaultProfile)
 		fontColors[3] = "254 3 62 255";
 		fontColorNA = "3 206 254 255";
 		fontColorSEL = "254 3 62 255";
-		profileForChildren = "GuiPopUpMenuProfile_Item";
+		profileForChildren = "ToolsDropdownBase_Item";
 };
 //------------------------------------------------------------------------------
 //GuiPopUpMenuProfile List
 if (isObject(GuiPopUpMenuProfile) && GuiPopUpMenuProfile.category !$= "Tools"){
-	warnLog("GuiPopupMenuProfile was declared outside of TorqueLab. It shouldn't be used in project and it will be overwritten with TorqueLab profile");
+	warnLog("ToolsDropdownBase was declared outside of TorqueLab. It shouldn't be used in project and it will be overwritten with TorqueLab profile");
 }
-delObj(GuiPopUpMenuProfile);
+//delObj(GuiPopUpMenuProfile);
+if (!isObject(GuiPopUpMenuProfile))
 singleton GuiControlProfile (GuiPopUpMenuProfile : ToolsDefaultProfile)
 {   
    hasBitmapArray     = "1";
@@ -160,7 +163,7 @@ singleton GuiControlProfile( GuiInspectorCheckBoxProfile : ToolsDefaultProfile )
     fontColorNA = "200 200 200";
     fixedExtent = 1;
     justify = "left";
-    bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_S1.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_S1.png";
     hasBitmapArray = true;
     category = "Tools";
     fontType = "Gotham Book";
@@ -410,7 +413,7 @@ singleton GuiControlProfile( GuiInspectorStackProfile ) {
 //==============================================================================
 // Used in SourceCode - Inspector Checkbox single profile
 singleton GuiControlProfile( InspectorTypeCheckboxProfile : GuiInspectorFieldProfile ) {
-    bitmap = "tlab/gui/assets/button-assets/GuiCheckboxProfile_S1.png";
+    bitmap = "tlab/gui/assets/button-assets/GuiCheckBoxProfile_S1.png";
     hasBitmapArray = true;
     opaque=false;
     border=false;

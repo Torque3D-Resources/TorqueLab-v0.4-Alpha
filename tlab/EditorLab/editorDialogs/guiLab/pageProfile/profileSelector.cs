@@ -112,3 +112,11 @@ function GLab::setSelectedProfile( %this,%profile ) {
 	GLab_SaveSelectProfileButton.setActive(%active);
 }
 //------------------------------------------------------------------------------
+
+//==============================================================================
+function GLab::toggleActiveFieldRollout( %this ) {
+	GLab_ActiveFieldRollout.setVisible(!GLab_ActiveFieldRollout.visible);
+	$GLab::ShowActiveFieldRollout = GLab_ActiveFieldRollout.visible;
+
+}
+//------------------------------------------------------------------------------

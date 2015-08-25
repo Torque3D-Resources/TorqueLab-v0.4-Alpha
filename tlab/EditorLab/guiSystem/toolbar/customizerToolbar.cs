@@ -54,7 +54,7 @@ function Lab::createNewToolbarIconGroup(%this) {
 			profile = "ToolsFillDarkB";
 			visible = "1";
 			active = "1";
-			tooltipProfile = "ToolsGuiToolTipProfile";
+			tooltipProfile = "ToolsToolTipProfile";
 			internalName = "GroupDivider";
 			new GuiBitmapCtrl() {
 				bitmap = "tlab/gui/icons/toolbar-assets/GroupDivider.png";

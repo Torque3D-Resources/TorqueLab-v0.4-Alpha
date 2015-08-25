@@ -54,6 +54,7 @@ function EditorGui::onWake( %this ) {
 	
 	
 	Lab.setInitialCamera();
+	
 	//EHWorldEditor.setStateOn( 1 );
 	startFileChangeNotifications();
 	// Notify the editor plugins that the editor has started.

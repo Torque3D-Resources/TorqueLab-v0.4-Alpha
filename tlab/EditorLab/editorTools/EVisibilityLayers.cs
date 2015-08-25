@@ -70,7 +70,7 @@ function EVisibilityLayers::updateOptions( %this ) {
 			canSave = "1";
 			Visible = "1";
 			Variable = %var;
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			text = %text;
 			groupNum = "-1";
@@ -160,7 +160,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			canSave = "1";
 			Visible = "1";
 			Variable = %visVar;
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			tooltip = "Show/hide all " @ %class @ " objects.";
 			text = %text;
@@ -183,7 +183,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			canSave = "1";
 			Visible = "1";
 			Variable = %selVar;
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			tooltip = "Enable/disable selection of all " @ %class @ " objects.";
 			text = %text;

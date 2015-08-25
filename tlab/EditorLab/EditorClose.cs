@@ -69,7 +69,8 @@ function EditorGui::onSleep( %this ) {
 		$Server::CurrentScene.open();
 
 	//Set the game camera (Will load the same camera object as before entering editor)
-	Lab.setGameCamera();
+	Lab.restoreClientCameraState();
+	//Lab.setGameCamera();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

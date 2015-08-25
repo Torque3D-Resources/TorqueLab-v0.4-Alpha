@@ -8,7 +8,7 @@
    profile = "ToolsGuiModelessDialogProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    langTableMod = "Default";
@@ -56,7 +56,7 @@
       profile = "ToolsWindowProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       langTableMod = "Default";
@@ -82,7 +82,7 @@
          profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -103,10 +103,10 @@
             minExtent = "152 16";
             horizSizing = "width";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -127,7 +127,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                class = "AggregateBox";
@@ -159,7 +159,7 @@
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushPressure($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "brushPressure";
@@ -184,7 +184,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -204,7 +204,7 @@
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushPressure($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "slider";
@@ -227,7 +227,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                class = "AggregateBox";
@@ -249,7 +249,7 @@
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushHardness($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "slider";
@@ -280,7 +280,7 @@
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushHardness($ThisControl);";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "BrushHardness";
@@ -303,7 +303,7 @@
                profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "BrushSizeOptions";
@@ -329,7 +329,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -353,7 +353,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -374,7 +374,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -405,7 +405,7 @@
                         visible = "1";
                         active = "1";
                         command = "FEP_BrushManager.setBrushSize($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "BrushSize";
@@ -430,7 +430,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -450,7 +450,7 @@
                         visible = "1";
                         active = "1";
                         command = "FEP_BrushManager.setBrushSize($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "slider";
@@ -473,7 +473,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -498,7 +498,7 @@
                         profile = "ToolsTextBase_S1_C";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -519,7 +519,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -543,7 +543,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -572,7 +572,7 @@
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_BrushSize_Range_Min";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "BrushSize_range_min";
@@ -596,7 +596,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -620,7 +620,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -649,7 +649,7 @@
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_BrushSize_Range_Max";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "BrushSize_Range_Max";
@@ -676,7 +676,7 @@
                profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "GlobalScaleOptions";
@@ -702,7 +702,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -726,7 +726,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -747,7 +747,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "ForestEditorToolsSettings";
@@ -769,7 +769,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "FEP_BrushManager.setGlobalScale($ThisControl);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "globalScaleSlider";
@@ -801,7 +801,7 @@
                         active = "1";
                         variable = "$Forest::GlobalScale";
                         altCommand = "FEP_BrushManager.setGlobalScale();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "GlobalScale";
@@ -826,7 +826,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -848,7 +848,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      class = "AggregateBox";
@@ -873,7 +873,7 @@
                         profile = "ToolsTextBase_S1_C";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -894,7 +894,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -918,7 +918,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -947,7 +947,7 @@
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_GlobalScale_Range_Min";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "GlobalScale_range_min";
@@ -971,7 +971,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         class = "AggregateBox";
@@ -995,7 +995,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -1024,7 +1024,7 @@
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_GlobalScale_Range_Max";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "GlobalScale_Range_Max";
@@ -1064,7 +1064,7 @@
       profile = "ToolsWindowProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       langTableMod = "Default";
@@ -1090,7 +1090,7 @@
          profile = "ToolsTextBase_H1_C";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
@@ -1120,7 +1120,7 @@
          profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "TabBook";
@@ -1146,7 +1146,7 @@
             profile = "ToolsBoxDarkC";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -1169,7 +1169,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1191,7 +1191,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1214,7 +1214,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -1236,7 +1236,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "0";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      hidden = "1";
@@ -1259,7 +1259,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1283,7 +1283,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "BrushButtonGroup";
@@ -1311,7 +1311,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.deleteSelectedBrush();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete selected";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1339,7 +1339,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrushGroup();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Group";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1367,7 +1367,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrush();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Group";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1395,7 +1395,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrushElement();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Element";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1427,7 +1427,7 @@
                         profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1463,7 +1463,7 @@
                            profile = "ToolsTreeViewProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1492,7 +1492,7 @@
                         profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "brush_filters";
@@ -1518,7 +1518,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1541,7 +1541,7 @@
                      profile = "ToolsTextBase_S1_C";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -1564,7 +1564,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -1586,7 +1586,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "SimGroup";
@@ -1611,7 +1611,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "GroupStack";
@@ -1634,7 +1634,7 @@
                            profile = "ToolsRolloutProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "Rollout";
@@ -1659,7 +1659,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               langTableMod = "Default";
@@ -1682,7 +1682,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -1708,7 +1708,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -1740,7 +1740,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "groupScaleScalar";
@@ -1762,7 +1762,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "groupScaleScalar__slider";
@@ -1785,7 +1785,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -1811,7 +1811,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -1843,7 +1843,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "groupSinkScalar";
@@ -1865,7 +1865,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "groupSinkScalar__slider";
@@ -1888,7 +1888,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -1914,7 +1914,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -1946,7 +1946,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "groupElevationScalar";
@@ -1968,7 +1968,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "groupElevationScalar__slider";
@@ -1991,7 +1991,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -2017,7 +2017,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -2049,7 +2049,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "groupSlopeScalar";
@@ -2071,7 +2071,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "groupSlopeScalar__slider";
@@ -2094,7 +2094,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -2120,7 +2120,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -2152,7 +2152,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "brushScaleScalar";
@@ -2174,7 +2174,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "brushScaleScalar__slider";
@@ -2197,7 +2197,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -2223,7 +2223,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -2255,7 +2255,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "brushSinkScalar";
@@ -2277,7 +2277,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "brushSinkScalar__slider";
@@ -2300,7 +2300,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -2326,7 +2326,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -2358,7 +2358,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "brushElevationScalar";
@@ -2380,7 +2380,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "brushElevationScalar__slider";
@@ -2403,7 +2403,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "SliderEdit";
@@ -2429,7 +2429,7 @@
                                     profile = "ToolsTextBaseA_S1";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "fieldTitle";
@@ -2461,7 +2461,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "1";
                                     internalName = "brushSlopeScalar";
@@ -2483,7 +2483,7 @@
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                     altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "0";
                                     isContainer = "0";
                                     internalName = "brushSlopeScalar__slider";
@@ -2511,7 +2511,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "0";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      hidden = "1";
@@ -2534,7 +2534,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "ForestBrushElement";
@@ -2558,7 +2558,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2581,7 +2581,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2604,7 +2604,7 @@
                               visible = "1";
                               active = "1";
                               variable = "FEP_Manager.selectedBrushName";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2627,7 +2627,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2650,7 +2650,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2673,7 +2673,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2701,7 +2701,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "probability";
@@ -2726,7 +2726,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2749,7 +2749,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2772,7 +2772,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2800,7 +2800,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "elevationMin";
@@ -2830,7 +2830,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "elevationMax";
@@ -2855,7 +2855,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2878,7 +2878,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2901,7 +2901,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2924,7 +2924,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2952,7 +2952,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "scaleMin";
@@ -2976,7 +2976,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3004,7 +3004,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "scaleMax";
@@ -3028,7 +3028,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3056,7 +3056,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "sinkRadius";
@@ -3080,7 +3080,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3103,7 +3103,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3126,7 +3126,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3154,7 +3154,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "slopeMin";
@@ -3178,7 +3178,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3206,7 +3206,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "slopeMax";
@@ -3230,7 +3230,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3253,7 +3253,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3276,7 +3276,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3304,7 +3304,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "sinkMin";
@@ -3328,7 +3328,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3356,7 +3356,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "sinkMax";
@@ -3380,7 +3380,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3408,7 +3408,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "sinkRadius";
@@ -3432,7 +3432,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3460,7 +3460,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "rotationRange";
@@ -3485,7 +3485,7 @@
                               profile = "ToolsTextBase_H1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3508,7 +3508,7 @@
                            profile = "ToolsBoxDarkC";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -3531,7 +3531,7 @@
                               profile = "ToolsTextBase_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -3557,7 +3557,7 @@
                               profile = "ToolsDropdownProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -3581,7 +3581,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "ForestBrush";
@@ -3607,7 +3607,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "BrushStack";
@@ -3630,7 +3630,7 @@
                               profile = "ToolsRolloutProfile";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "Rollout";
@@ -3655,7 +3655,7 @@
                                  profile = "ToolsDefaultProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  langTableMod = "Default";
@@ -3678,7 +3678,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "SliderEdit";
@@ -3704,7 +3704,7 @@
                                        profile = "ToolsTextBaseA_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "fieldTitle";
@@ -3736,7 +3736,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "brushScaleScalar";
@@ -3758,7 +3758,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
                                        internalName = "brushScaleScalar__slider";
@@ -3781,7 +3781,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "SliderEdit";
@@ -3807,7 +3807,7 @@
                                        profile = "ToolsTextBaseA_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "fieldTitle";
@@ -3839,7 +3839,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "brushSinkScalar";
@@ -3861,7 +3861,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
                                        internalName = "brushSinkScalar__slider";
@@ -3884,7 +3884,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "SliderEdit";
@@ -3910,7 +3910,7 @@
                                        profile = "ToolsTextBaseA_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "fieldTitle";
@@ -3942,7 +3942,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "brushElevationScalar";
@@ -3964,7 +3964,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
                                        internalName = "brushElevationScalar__slider";
@@ -3987,7 +3987,7 @@
                                     profile = "ToolsBoxDarkC";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "ToolsGuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "SliderEdit";
@@ -4013,7 +4013,7 @@
                                        profile = "ToolsTextBaseA_S1";
                                        visible = "1";
                                        active = "1";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "fieldTitle";
@@ -4045,7 +4045,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "1";
                                        internalName = "brushSlopeScalar";
@@ -4067,7 +4067,7 @@
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
                                        altCommand = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"1\",\"\");";
-                                       tooltipProfile = "ToolsGuiToolTipProfile";
+                                       tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "0";
                                        isContainer = "0";
                                        internalName = "brushSlopeScalar__slider";
@@ -4096,7 +4096,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4116,7 +4116,7 @@
                         visible = "1";
                         active = "0";
                         command = "FEP_Manager.saveData();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "saveChangesButton";
@@ -4146,7 +4146,7 @@
             profile = "ToolsBoxDarkC";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -4169,7 +4169,7 @@
                profile = "ToolsBoxDarkB";
                visible = "0";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                hidden = "1";
@@ -4192,7 +4192,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -4214,7 +4214,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4237,7 +4237,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4259,7 +4259,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "0";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      hidden = "1";
@@ -4282,7 +4282,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4306,7 +4306,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "BrushButtonGroup";
@@ -4334,7 +4334,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.deleteSelectedBrush();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete selected";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4362,7 +4362,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrushGroup();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Group";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4390,7 +4390,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrush();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Group";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4418,7 +4418,7 @@
                            visible = "1";
                            active = "1";
                            command = "FEP_Manager.newBrushElement();";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Add New Brush Element";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4447,10 +4447,10 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "GuiScrollProfile";
+                        profile = "ToolsScrollProfile_Dark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4486,7 +4486,7 @@
                            profile = "ToolsTreeViewProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -4515,7 +4515,7 @@
                         profile = "ToolsTextEditDark";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "brush_filters";
@@ -4541,7 +4541,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4564,7 +4564,7 @@
                      profile = "ToolsTextBase_S1_C";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4587,7 +4587,7 @@
                      profile = "ToolsTextBase_H1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4609,7 +4609,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4631,7 +4631,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Item";
@@ -4655,7 +4655,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "0";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "group";
@@ -4680,7 +4680,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4700,7 +4700,7 @@
                         visible = "1";
                         active = "0";
                         command = "FEP_Manager.saveData();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "saveChangesButton";
@@ -4730,7 +4730,7 @@
             profile = "ToolsBoxDarkC";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -4752,7 +4752,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -4775,7 +4775,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -4797,7 +4797,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4820,7 +4820,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4848,7 +4848,7 @@
                      profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "sourceFolder";
@@ -4870,7 +4870,7 @@
                      visible = "1";
                      active = "1";
                      command = "FEP_Manager.doOpenDialog(\"\",ForestEditorPlugin.dataGenFolder);";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4893,7 +4893,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4916,7 +4916,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4944,7 +4944,7 @@
                      profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "groupName";
@@ -4969,7 +4969,7 @@
                      profile = "ToolsTextBase_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -4997,7 +4997,7 @@
                      profile = "ToolsTextEditDark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "prefix";
@@ -5022,7 +5022,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "Settings";
@@ -5047,7 +5047,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -5069,7 +5069,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -5092,7 +5092,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -5114,7 +5114,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5142,7 +5142,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "scaleExponent";
@@ -5167,7 +5167,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5190,7 +5190,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5218,7 +5218,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "scaleVar";
@@ -5243,7 +5243,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5266,7 +5266,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5294,7 +5294,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "scaleMax";
@@ -5319,7 +5319,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5342,7 +5342,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5370,7 +5370,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "scaleMin";
@@ -5395,7 +5395,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5419,7 +5419,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -5442,7 +5442,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -5464,7 +5464,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5492,7 +5492,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "sinkRadius";
@@ -5517,7 +5517,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5540,7 +5540,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5568,7 +5568,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "sinkVar";
@@ -5593,7 +5593,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5616,7 +5616,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5644,7 +5644,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "sinkMax";
@@ -5669,7 +5669,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5692,7 +5692,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5720,7 +5720,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "sinkMin";
@@ -5745,7 +5745,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5769,7 +5769,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -5792,7 +5792,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -5814,7 +5814,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5842,7 +5842,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "slopeVar";
@@ -5867,7 +5867,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5890,7 +5890,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5918,7 +5918,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "slopeMax";
@@ -5943,7 +5943,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -5966,7 +5966,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -5994,7 +5994,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "slopeMin";
@@ -6019,7 +6019,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -6043,7 +6043,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -6066,7 +6066,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -6088,7 +6088,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -6116,7 +6116,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "elevationVar";
@@ -6141,7 +6141,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -6164,7 +6164,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -6192,7 +6192,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "elevationMax";
@@ -6217,7 +6217,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -6240,7 +6240,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -6268,7 +6268,7 @@
                            profile = "ToolsTextEditDark_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "elevationMin";
@@ -6293,7 +6293,7 @@
                            profile = "ToolsTextBase_S1_R";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            canSave = "1";
@@ -6319,7 +6319,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -6339,7 +6339,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$FEP_GeneratorDeleteExistBrush";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "createBrushGroupForFriends";
@@ -6360,7 +6360,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$FEP_GeneratorLevelItemsMode";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "createBrushGroupForFriends";
@@ -6384,7 +6384,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -6408,7 +6408,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -6428,7 +6428,7 @@
                      visible = "1";
                      active = "1";
                      command = "FEP_Manager.removeInvalidItems();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -6448,7 +6448,7 @@
                      visible = "1";
                      active = "1";
                      command = "FEP_Manager.removeInvalidBrushes();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -6468,7 +6468,7 @@
                      visible = "1";
                      active = "1";
                      command = "FEP_Manager.deleteAllBrushes();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -6490,7 +6490,7 @@
                visible = "1";
                active = "1";
                command = "FEP_Manager.generateForestData();";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";

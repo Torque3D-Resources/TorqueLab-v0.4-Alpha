@@ -54,7 +54,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             historySize = "0";
             password = "0";
             tabComplete = "0";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Adjust height increment.";
          };
          new GuiTextEditCtrl() {
@@ -72,7 +72,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             historySize = "0";
             password = "0";
             tabComplete = "0";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Scale height increment.";
          };
          new GuiTextEditCtrl() {
@@ -90,7 +90,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             historySize = "0";
             password = "0";
             tabComplete = "0";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Smoothing factor -- lower values are less agressive.";
          };
          new GuiTextCtrl() {
@@ -103,7 +103,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "Adjust Height";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Adjust height increment.";
             maxLength = "255";
          };
@@ -117,7 +117,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "Set Height";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Elevation for set height operation.";
             maxLength = "255";
          };
@@ -131,7 +131,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "Scale Height";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Scale height increment.";
             maxLength = "255";
          };
@@ -145,7 +145,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "Smooth Factor";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Smoothing factor -- lower values are less agressive.";
             maxLength = "255";
          };
@@ -196,7 +196,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "Soft Selection";   
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "This spline scale modifies the hardness of the brush.  Left is center, right is outer edge.";
             maxLength = "255";
          };
@@ -234,7 +234,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             visible = "1";
             helpTag = "0";
             text = "<Radius>";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Brush radius for Selection Mode.";
             maxLength = "255";
          };
@@ -253,7 +253,7 @@ new GuiControl(TerrainEditorValuesSettingsGui, EditorGuiGroup) {
             historySize = "0";
             password = "0";
             tabComplete = "0";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             tooltip = "Brush radius for Selection Mode.";
          };
       };

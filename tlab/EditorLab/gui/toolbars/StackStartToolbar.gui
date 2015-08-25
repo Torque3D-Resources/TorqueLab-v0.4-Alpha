@@ -17,7 +17,7 @@ new GuiStackControl(StackStartToolbar) {
    profile = "ToolsFillDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "FirstToolbarGroup";
@@ -26,12 +26,12 @@ new GuiStackControl(StackStartToolbar) {
    canSaveDynamicFields = "1";
       alwaysFirst = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6293";
-      disabledGroup = "6294";
-      EditorContainer = "4005";
+      defaultStack = "6362";
+      disabledGroup = "6363";
+      EditorContainer = "4074";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6295";
+      stackLists = "6364";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -48,7 +48,7 @@ new GuiStackControl(StackStartToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -74,7 +74,7 @@ new GuiStackControl(StackStartToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "NewToolbarGroup";
@@ -99,7 +99,7 @@ new GuiStackControl(StackStartToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -117,7 +117,7 @@ new GuiStackControl(StackStartToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -130,10 +130,10 @@ new GuiStackControl(StackStartToolbar) {
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -163,7 +163,7 @@ new GuiStackControl(StackStartToolbar) {
          visible = "1";
          active = "1";
          command = "toggleDlg(LabParamsDlg);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "ToolbarIcon";
@@ -171,7 +171,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "6293";
+            toolbar = "6362";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -194,7 +194,7 @@ new GuiStackControl(StackStartToolbar) {
          visible = "1";
          active = "1";
          command = "Lab.togglePluginParamUI();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "ToolbarIcon";
@@ -202,7 +202,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "6293";
+            toolbar = "6362";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -225,7 +225,7 @@ new GuiStackControl(StackStartToolbar) {
          visible = "1";
          active = "1";
          command = "ETools.toggleTool(\"SceneManager\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          superClass = "ToolbarIcon";
@@ -233,7 +233,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "2";
             originalParent = "7046";
-            toolbar = "6293";
+            toolbar = "6362";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -256,7 +256,7 @@ new GuiStackControl(StackStartToolbar) {
          visible = "1";
          active = "1";
          command = "ETools.toggleTool(\"VisibilityLayers\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "VisibilityLayersToggle";

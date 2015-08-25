@@ -23,7 +23,7 @@
    profile = "ToolsDefaultProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    superClass = "FrameSetPluginTools";
@@ -70,7 +70,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -92,7 +92,7 @@
          profile = "ToolsBoxDarkC";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -115,7 +115,7 @@
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -145,7 +145,7 @@
             profile = "ToolsScrollProfile_Dark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -181,7 +181,7 @@
                profile = "ToolsTreeViewProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -215,7 +215,7 @@
       profile = "ToolsWindowProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       canSave = "1";
@@ -245,7 +245,7 @@
          profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
-         tooltipProfile = "GuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -270,7 +270,7 @@
             profile = "ToolsBoxDarkC";
             visible = "0";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -293,7 +293,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -313,7 +313,7 @@
                   visible = "1";
                   active = "1";
                   variable = "$MREP_UpdateLinkedNodes";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -336,7 +336,7 @@
                profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -359,7 +359,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -372,10 +372,10 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "MREP_NodePropertiesCtrl";
@@ -400,7 +400,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -421,10 +421,10 @@
                   minExtent = "16 16";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -446,7 +446,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -469,7 +469,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -496,7 +496,7 @@
                         profile = "ToolsTextEditProfile";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "position";
@@ -521,7 +521,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -544,7 +544,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -571,7 +571,7 @@
                         profile = "ToolsTextEditProfile";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "Normal";
@@ -596,7 +596,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -619,7 +619,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -646,7 +646,7 @@
                         profile = "ToolsTextEditProfile";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "depth";
@@ -671,7 +671,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -698,7 +698,7 @@
                         profile = "ToolsTextEditProfile";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "width";
@@ -725,7 +725,7 @@
                profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -748,7 +748,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -761,10 +761,10 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "MREP_RoadMaterialSetup";
@@ -789,7 +789,7 @@
                profile = "ToolsBoxDarkA";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -819,7 +819,7 @@
                   profile = "ToolsBoxDarkB";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -841,7 +841,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -865,7 +865,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -888,7 +888,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -912,7 +912,7 @@
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "top";
@@ -943,7 +943,7 @@
                         profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "topMaterial";
@@ -968,7 +968,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -992,7 +992,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1015,7 +1015,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1039,7 +1039,7 @@
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "bottom";
@@ -1070,7 +1070,7 @@
                         profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "bottomMaterial";
@@ -1095,7 +1095,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1119,7 +1119,7 @@
                         profile = "ToolsTextBase_S1_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1142,7 +1142,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1166,7 +1166,7 @@
                         visible = "1";
                         active = "1";
                         command = "materialSelector.showDialog($ThisControl@\".setMaterial\", \"name\");";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Side";
@@ -1197,7 +1197,7 @@
                         profile = "ToolsTextEditDark_S1";
                         visible = "1";
                         active = "0";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "sideMaterial";
@@ -1224,7 +1224,7 @@
                profile = "ToolsBoxDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1247,7 +1247,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1260,10 +1260,10 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "MREP_NodePropertiesCtrl";
@@ -1285,10 +1285,10 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1307,10 +1307,10 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1334,7 +1334,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1362,7 +1362,7 @@
                      profile = "ToolsDropdownProfile_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1382,7 +1382,7 @@
                      visible = "1";
                      active = "1";
                      variable = "MRoadManager.autoCollapsePill";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "0";
                      internalName = "Linked";
@@ -1404,10 +1404,10 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1428,10 +1428,10 @@
                      minExtent = "16 16";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "GuiDefaultProfile";
+                     profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1451,7 +1451,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.linkAll(false);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         superClass = "ToolbarIcon";
@@ -1472,7 +1472,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.linkAll(true);";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         superClass = "ToolbarIcon";
@@ -1493,7 +1493,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.linkInvert();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         superClass = "ToolbarIcon";
@@ -1516,10 +1516,10 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1538,7 +1538,7 @@
                   profile = "GuiInspectorFieldInfoMLTextProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
@@ -1569,7 +1569,7 @@
                profile = "ToolsScrollProfile_Dark";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1593,7 +1593,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   internalName = "SamplesStack";
@@ -1615,7 +1615,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1634,7 +1634,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -1660,7 +1660,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -1688,7 +1688,7 @@
                            visible = "1";
                            active = "1";
                            command = "EPainter.showMaterialDeleteDlg( std_grass_dry );";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -1709,7 +1709,7 @@
                         profile = "ToolsButtonDark_L";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -1735,7 +1735,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1757,7 +1757,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1776,7 +1776,7 @@
                            profile = "ToolsCheckBoxProfile_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "Linked";
@@ -1802,7 +1802,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "iconStack";
@@ -1830,7 +1830,7 @@
                               visible = "1";
                               active = "1";
                               command = "EPainter.showMaterialDeleteDlg( std_grass_dry );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "deleteButton";
@@ -1851,7 +1851,7 @@
                            profile = "ToolsButtonDark_L";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "buttonNode";
@@ -1877,7 +1877,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "NodeDataStack";
@@ -1907,7 +1907,7 @@
                            profile = "ToolsBoxDarkB";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -1929,7 +1929,7 @@
                               profile = "ToolsBoxDarkA";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               class = "AggregateBox";
@@ -1946,10 +1946,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "GuiSliderProfile";
+                                 profile = "ToolsSliderProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "width_slider";
@@ -1974,7 +1974,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -2001,7 +2001,7 @@
                                  profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "width";
@@ -2026,7 +2026,7 @@
                               profile = "ToolsBoxDarkA";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               class = "AggregateBox";
@@ -2043,10 +2043,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "GuiSliderProfile";
+                                 profile = "ToolsSliderProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "depth_slider";
@@ -2071,7 +2071,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -2098,7 +2098,7 @@
                                  profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "depth";
@@ -2128,7 +2128,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2150,7 +2150,7 @@
                         profile = "ToolsBoxDarkA";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2169,7 +2169,7 @@
                            profile = "ToolsButtonDark_L";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "buttonNode";
@@ -2189,7 +2189,7 @@
                            profile = "ToolsCheckBoxProfile_S1";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "Linked";
@@ -2215,7 +2215,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            internalName = "iconStack";
@@ -2243,7 +2243,7 @@
                               visible = "1";
                               active = "1";
                               command = "EPainter.showMaterialDeleteDlg( std_grass_dry );";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               internalName = "deleteButton";
@@ -2270,7 +2270,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "NodeDataStack";
@@ -2300,7 +2300,7 @@
                            profile = "ToolsBoxDarkB";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "GuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2322,7 +2322,7 @@
                               profile = "ToolsBoxDarkA";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               class = "AggregateBox";
@@ -2339,10 +2339,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "GuiSliderProfile";
+                                 profile = "ToolsSliderProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "width_slider";
@@ -2367,7 +2367,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -2394,7 +2394,7 @@
                                  profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "width";
@@ -2419,7 +2419,7 @@
                               profile = "ToolsBoxDarkA";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               class = "AggregateBox";
@@ -2436,10 +2436,10 @@
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
-                                 profile = "GuiSliderProfile";
+                                 profile = "ToolsSliderProfile";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "GuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  internalName = "depth_slider";
@@ -2464,7 +2464,7 @@
                                  profile = "ToolsTextBase";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
                                  canSave = "1";
@@ -2491,7 +2491,7 @@
                                  profile = "ToolsTextEditDark_S1";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  internalName = "depth";
@@ -2517,7 +2517,7 @@
                            profile = "ToolsBoxDarkA";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2541,7 +2541,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2571,7 +2571,7 @@
                               profile = "ToolsBoxDarkB";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "GuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               canSave = "1";
@@ -2593,7 +2593,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2626,7 +2626,7 @@
                                     profile = "ToolsTextEditDark_Num";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "PosZ";
@@ -2651,7 +2651,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2684,7 +2684,7 @@
                                     profile = "ToolsTextEditDark_Num";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "PosZ";
@@ -2709,7 +2709,7 @@
                                  profile = "ToolsBoxDarkC";
                                  visible = "1";
                                  active = "1";
-                                 tooltipProfile = "ToolsGuiToolTipProfile";
+                                 tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "1";
                                  canSave = "1";
@@ -2742,7 +2742,7 @@
                                     profile = "ToolsTextEditDark_Num";
                                     visible = "1";
                                     active = "1";
-                                    tooltipProfile = "GuiToolTipProfile";
+                                    tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "1";
                                     internalName = "PosZ";
@@ -2769,7 +2769,7 @@
                            profile = "ToolsBoxDarkA";
                            visible = "1";
                            active = "1";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
                            canSave = "1";
@@ -2793,7 +2793,7 @@
                               profile = "ToolsTextBase";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
                               canSave = "1";
@@ -2821,7 +2821,7 @@
                               profile = "ToolsTextEditDark_S1";
                               visible = "1";
                               active = "1";
-                              tooltipProfile = "ToolsGuiToolTipProfile";
+                              tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
                               internalName = "Normal";
@@ -2851,7 +2851,7 @@
                   profile = "ToolsFillLightA";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "GuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   hidden = "1";
@@ -2873,7 +2873,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_0";
@@ -2894,7 +2894,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -2920,7 +2920,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -2948,7 +2948,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(0);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -2970,7 +2970,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(0);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -2993,7 +2993,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_1";
@@ -3014,7 +3014,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3040,7 +3040,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3068,7 +3068,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(1);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3090,7 +3090,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(1);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3113,7 +3113,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_2";
@@ -3134,7 +3134,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3160,7 +3160,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3188,7 +3188,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(2);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3210,7 +3210,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(2);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3233,7 +3233,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_3";
@@ -3254,7 +3254,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3280,7 +3280,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3308,7 +3308,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(3);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3330,7 +3330,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(3);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3353,7 +3353,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_4";
@@ -3374,7 +3374,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3400,7 +3400,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3428,7 +3428,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(4);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3450,7 +3450,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(4);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3473,7 +3473,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_5";
@@ -3494,7 +3494,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3520,7 +3520,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3548,7 +3548,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(5);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3570,7 +3570,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(5);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3593,7 +3593,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_6";
@@ -3614,7 +3614,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3640,7 +3640,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3668,7 +3668,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(6);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3690,7 +3690,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(6);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3713,7 +3713,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_7";
@@ -3734,7 +3734,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3760,7 +3760,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3788,7 +3788,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(7);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3810,7 +3810,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(7);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3833,7 +3833,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_8";
@@ -3854,7 +3854,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -3880,7 +3880,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -3908,7 +3908,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(8);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -3930,7 +3930,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(8);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -3953,7 +3953,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_9";
@@ -3974,7 +3974,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4000,7 +4000,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4028,7 +4028,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(9);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4050,7 +4050,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(9);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4073,7 +4073,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_10";
@@ -4094,7 +4094,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4120,7 +4120,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4148,7 +4148,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(10);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4170,7 +4170,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(10);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4193,7 +4193,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_11";
@@ -4214,7 +4214,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4240,7 +4240,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4268,7 +4268,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(11);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4290,7 +4290,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(11);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4313,7 +4313,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_12";
@@ -4334,7 +4334,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4360,7 +4360,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4388,7 +4388,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(12);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4410,7 +4410,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(12);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4433,7 +4433,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_13";
@@ -4454,7 +4454,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4480,7 +4480,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4508,7 +4508,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(13);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4530,7 +4530,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(13);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4553,7 +4553,7 @@
                      profile = "ToolsBoxDarkC";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "GuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "NodePill_14";
@@ -4574,7 +4574,7 @@
                         profile = "ToolsCheckBoxProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "Linked";
@@ -4600,7 +4600,7 @@
                         profile = "ToolsDefaultProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "iconStack";
@@ -4628,7 +4628,7 @@
                            visible = "1";
                            active = "1";
                            command = "MRoadManager.deleteNodeId(14);";
-                           tooltipProfile = "ToolsGuiToolTipProfile";
+                           tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
                            internalName = "deleteButton";
@@ -4650,7 +4650,7 @@
                         visible = "1";
                         active = "1";
                         command = "MRoadManager.selectNode(14);";
-                        tooltipProfile = "GuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         internalName = "buttonNode";
@@ -4680,7 +4680,7 @@
             profile = "ToolsBoxDarkC";
             visible = "1";
             active = "1";
-            tooltipProfile = "GuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -4710,7 +4710,7 @@
                profile = "ToolsScrollProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -4737,7 +4737,7 @@
                   profile = "ToolsGuiTransparentProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4757,10 +4757,10 @@
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -4779,7 +4779,7 @@
                   profile = "GuiInspectorFieldInfoMLTextProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";

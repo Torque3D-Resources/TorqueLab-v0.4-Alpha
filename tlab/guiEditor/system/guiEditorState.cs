@@ -196,7 +196,7 @@ function GuiEditCanvas::quit( %this ) {
 	
 	if (!isObject(GuiEditor.initialContent)){
 		warnLog("Closing the GuiEditor and there's no valid content to load:",GuiEditor.initialContent,"Using default MainMenuGui");
-		GuiEditor.initialContent = MainMenuGui;
+		GuiEditor.initialContent = $TLab_defaultGui;
 	}
 	Canvas.setContent(GuiEditor.initialContent);
 

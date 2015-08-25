@@ -15,7 +15,7 @@
    profile = "ToolsGuiModelessDialogProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    superClass = "PluginDlg";
@@ -41,10 +41,10 @@
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "top";
-      profile = "GuiDefaultProfile";
+      profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "AnimBar";
@@ -74,10 +74,10 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
+         profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          canSave = "1";
@@ -96,10 +96,10 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -123,7 +123,7 @@
                visible = "0";
                active = "1";
                command = "ShapeEdSequences.onEditSeqInOut(\"out\", ShapeEdSeqSlider.getValue());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Set the Out Point to the Current Frame";
                hovertime = "1000";
                isContainer = "0";
@@ -146,7 +146,7 @@
                visible = "1";
                active = "1";
                variable = "$ShapeEdCurrentFrame";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
                canSave = "1";
@@ -175,7 +175,7 @@
                visible = "1";
                active = "1";
                altCommand = "ShapeEdSequences.onEditSeqInOut(\"in\", $ThisControl.getText());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Set the In Point to the Current Frame";
                hovertime = "1000";
                isContainer = "0";
@@ -206,7 +206,7 @@
                visible = "1";
                active = "1";
                altCommand = "ShapeEdSequences.onEditSeqInOut(\"out\", $ThisControl.getText());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Set the Out Point to the Current Frame";
                hovertime = "1000";
                isContainer = "0";
@@ -232,7 +232,7 @@
                visible = "0";
                active = "1";
                command = "ShapeEdSequences.onEditSeqInOut(\"in\", ShapeEdSeqSlider.getValue());";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Set the In Point to the Current Frame";
                hovertime = "1000";
                isContainer = "0";
@@ -258,7 +258,7 @@
             profile = "ToolsBoxDarkA";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -282,7 +282,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -302,7 +302,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdSequences.onEditSeqInOut(\"in\", ShapeEdSeqSlider.getValue());";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Set the in position to the current frame (I)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -330,7 +330,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setKeyframe( ShapeEdAnimWindow-->seqIn.getText() );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Skip to in frame (SHIFT -)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -358,7 +358,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setKeyframe( mCeil(ShapeEdSeqSlider.getValue() - 1) );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Previous frame (-)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -387,7 +387,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setNoProxySequence(); ShapeEdAnimWindow.setThreadDirection( -1 );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Play sequence in reverse";
                   hovertime = "1000";
                   isContainer = "0";
@@ -416,7 +416,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setNoProxySequence(); ShapeEdAnimWindow.setThreadDirection( 1 );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Play sequence";
                   hovertime = "1000";
                   isContainer = "0";
@@ -445,7 +445,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setKeyframe( mFloor(ShapeEdSeqSlider.getValue() + 1) );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Next frame (+)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -474,7 +474,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setThreadDirection( 0 );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Toggle pause (SPACE)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -503,7 +503,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.setKeyframe( ShapeEdAnimWindow-->seqOut.getText() );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Skip to out frame (SHIFT +)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -524,7 +524,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdSequences.onEditSeqInOut(\"out\", ShapeEdSeqSlider.getValue());";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Set the out position to the current frame (O)";
                   hovertime = "1000";
                   isContainer = "0";
@@ -552,7 +552,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdAnimWindow.togglePingPong();";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Toggle \'pingpong\' mode on the current thread";
                   hovertime = "1000";
                   isContainer = "0";
@@ -583,7 +583,7 @@
                   visible = "1";
                   active = "1";
                   altCommand = "ShapeEdShapeView.setTimeScale( $ThisControl.getText() );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Edit this value to change the playback speed for all threads";
                   hovertime = "1000";
                   isContainer = "1";
@@ -604,7 +604,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "trigger5";
@@ -622,7 +622,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "trigger1";
@@ -640,7 +640,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "trigger2";
@@ -658,7 +658,7 @@
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "trigger4";
@@ -692,7 +692,7 @@
       profile = "ToolsWindowProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "advanced";
@@ -724,7 +724,7 @@
          profile = "ToolsTabBookMain";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "TabBook";
@@ -750,7 +750,7 @@
             profile = "ToolsBoxTitleDark";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             canSave = "1";
@@ -772,7 +772,7 @@
                profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -795,7 +795,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -816,7 +816,7 @@
                   active = "1";
                   variable = "ShapeEdShapeView.fixedDetail";
                   command = "ShapeEdDetails.onToggleDetails($ThisControl.getValue());";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Allow the slider to select the current detail level";
                   hovertime = "1000";
                   isContainer = "0";
@@ -837,10 +837,10 @@
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
-               profile = "GuiDefaultProfile";
+               profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "levelsInactive";
@@ -865,7 +865,7 @@
                   visible = "1";
                   active = "1";
                   variable = "ShapeEdShapeView.currentDL";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Index of the current detail level";
                   hovertime = "1000";
                   isContainer = "0";
@@ -886,7 +886,7 @@
                   visible = "1";
                   active = "1";
                   variable = "ShapeEdShapeView.currentDL";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Drag the slider to change the current detail level";
                   hovertime = "1000";
                   isContainer = "0";
@@ -911,7 +911,7 @@
                profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -934,7 +934,7 @@
                   profile = "ToolsTextBase";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -960,7 +960,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -982,7 +982,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1005,7 +1005,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1029,7 +1029,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.detailPolys";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Number of polygons in the current detail level";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1053,7 +1053,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1076,7 +1076,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1106,7 +1106,7 @@
                         active = "1";
                         variable = "ShapeEdShapeView.detailSize";
                         altCommand = "ShapeEdAdvancedWindow.onEditDetailSize();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Edit this value to change the size of the current detail";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1131,7 +1131,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1154,7 +1154,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1178,7 +1178,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.pixelSize";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Current size (in pixels) of the shape";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1202,7 +1202,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1225,7 +1225,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1249,7 +1249,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.orbitDist";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Current distance from the shape to the camera";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1273,7 +1273,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1296,7 +1296,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1320,7 +1320,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.numMaterials";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Number of materials used by all meshes at this detail level";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1344,7 +1344,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1367,7 +1367,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1391,7 +1391,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.numBones";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Number of bones at this detail level (skins only)";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1415,7 +1415,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1438,7 +1438,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1462,7 +1462,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.numDrawCalls";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Total number of mesh primitives (triangle lists) at this detail level";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1486,7 +1486,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1509,7 +1509,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1533,7 +1533,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.numWeights";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Number of vertex weights at this detail level (skins only)";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1557,7 +1557,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1580,7 +1580,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1604,7 +1604,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.colMeshes";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1627,7 +1627,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1650,7 +1650,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1674,7 +1674,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.colPolys";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -1699,7 +1699,7 @@
                profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -1722,7 +1722,7 @@
                   profile = "ToolsTextBase_H1";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1742,7 +1742,7 @@
                   visible = "1";
                   active = "1";
                   command = "ShapeEdDetails.onToggleImposter( $ThisControl.getValue() );";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Controls whether this shape uses an imposter detail level";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1767,7 +1767,7 @@
                profile = "ToolsFillDarkB";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                internalName = "imposterActive";
@@ -1794,7 +1794,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -1816,7 +1816,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1839,7 +1839,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1868,7 +1868,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Specifies the detail level used to generate the imposters";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1893,7 +1893,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1922,7 +1922,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Specifies the dimension (width/height) of the imposters in pixels";
                         hovertime = "1000";
                         isContainer = "1";
@@ -1947,7 +1947,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -1970,7 +1970,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -1999,7 +1999,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Number of steps in the horizontal axis";
                         hovertime = "1000";
                         isContainer = "1";
@@ -2024,7 +2024,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -2047,7 +2047,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2067,7 +2067,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Specifies whether to include the poles (top and bottom) of the shape";
                         hovertime = "1000";
                         isContainer = "0";
@@ -2092,7 +2092,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2121,7 +2121,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "bbPolarSteps";
@@ -2145,7 +2145,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -2168,7 +2168,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2197,7 +2197,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdDetails.onEditImposter();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "bbPolarAngle";
@@ -2221,7 +2221,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
                         canSave = "1";
@@ -2246,10 +2246,10 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -2272,7 +2272,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -2294,7 +2294,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -2314,7 +2314,7 @@
                      visible = "1";
                      active = "1";
                      variable = "ShapeEdShapeView.renderMounts";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Controls whether mounted shapes will be rendered in the 3D view";
                      hovertime = "1000";
                      isContainer = "0";
@@ -2339,7 +2339,7 @@
                   profile = "ToolsBoxTitleDark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -2362,7 +2362,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2386,7 +2386,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdMountWindow.unmountShape();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Delete the selected mount item";
                      hovertime = "1000";
                      isContainer = "0";
@@ -2411,7 +2411,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdMountWindow.mountShape(-1);";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Mounts a new shape to the current model";
                      hovertime = "1000";
                      isContainer = "0";
@@ -2434,7 +2434,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2457,7 +2457,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2484,7 +2484,7 @@
                         profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the model to mount";
                         hovertime = "1000";
                         isContainer = "1";
@@ -2508,7 +2508,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2536,7 +2536,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.updateSelectedMount();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the type of mounting to use";
                         hovertime = "1000";
                         isContainer = "1";
@@ -2561,7 +2561,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2584,7 +2584,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2612,7 +2612,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.updateSelectedMount();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the node on which to mount the model";
                         hovertime = "1000";
                         isContainer = "1";
@@ -2637,7 +2637,7 @@
                      profile = "ToolsBoxDarkB";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2661,7 +2661,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.toggleMountThreadPlayback();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Play forwards";
                         hovertime = "1000";
                         isContainer = "0";
@@ -2682,7 +2682,7 @@
                         profile = "ToolsSliderProfile";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Drag the slider to scrub through the sequence keyframes";
                         hovertime = "1000";
                         isContainer = "0";
@@ -2711,7 +2711,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdMountWindow.setMountThreadSequence();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the sequence to play on the mounted model";
                         hovertime = "1000";
                         isContainer = "1";
@@ -2745,7 +2745,7 @@
                   profile = "ToolsScrollProfile_Dark";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -2766,7 +2766,7 @@
                      profile = "inspectorStyleRolloutListProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2785,7 +2785,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdMountWindow.update_onMountSelectionChanged();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      internalName = "mountList";
@@ -2810,10 +2810,10 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -2836,7 +2836,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -2857,7 +2857,7 @@
                   profile = "ToolsBoxTitleBar";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -2880,7 +2880,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2906,10 +2906,10 @@
                      minExtent = "8 8";
                      horizSizing = "right";
                      vertSizing = "height";
-                     profile = "GuiScrollProfile";
+                     profile = "ToolsScrollProfile_Dark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2927,7 +2927,7 @@
                         profile = "ToolsTextBase_ML";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -2951,7 +2951,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2977,10 +2977,10 @@
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "height";
-                     profile = "GuiScrollProfile";
+                     profile = "ToolsScrollProfile_Dark";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -2999,7 +2999,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdSequenceList.setSelectedById( $ThisControl.getSelectedId() );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "seqList";
@@ -3025,7 +3025,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdThreadWindow.onRemoveThread();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Delete the selected thread";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3050,7 +3050,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdThreadWindow.onAddThread();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Add a new thread";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3074,7 +3074,7 @@
                   profile = "ToolsBoxDarkA";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -3093,7 +3093,7 @@
                      profile = "ToolsSliderProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Drag the slider to scrub through the sequence keyframes";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3118,7 +3118,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdAnimWindow-->playBkwdBtn.performClick();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Play backwards";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3144,7 +3144,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdAnimWindow-->pauseBtn.performClick();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Toggle Pause (SPACE)";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3170,7 +3170,7 @@
                      visible = "1";
                      active = "1";
                      command = "ShapeEdAnimWindow-->playFwdBtn.performClick();";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Play forwards";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3191,7 +3191,7 @@
                      profile = "ToolsCheckBoxProfile_S1";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Controls whether the thread will smoothly transition when a new sequence is selected";
                      hovertime = "1000";
                      isContainer = "0";
@@ -3221,7 +3221,7 @@
                      profile = "ToolsTextEditProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Number of seconds over which to transition to the new sequence";
                      hovertime = "1000";
                      isContainer = "1";
@@ -3246,7 +3246,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3269,7 +3269,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3296,7 +3296,7 @@
                      profile = "ToolsDropdownProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Select the start position of the new sequence";
                      hovertime = "1000";
                      isContainer = "1";
@@ -3321,7 +3321,7 @@
                      profile = "ToolsTextBase";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3348,7 +3348,7 @@
                      profile = "ToolsDropdownProfile";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Select the initial play state of the new sequence";
                      hovertime = "1000";
                      isContainer = "1";
@@ -3374,10 +3374,10 @@
             minExtent = "0 -500";
             horizSizing = "width";
             vertSizing = "height";
-            profile = "GuiDefaultProfile";
+            profile = "ToolsDefaultProfile";
             visible = "0";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             hidden = "1";
@@ -3400,7 +3400,7 @@
                profile = "ToolsDefaultProfile";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsGuiToolTipProfile";
+               tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
                canSave = "1";
@@ -3424,7 +3424,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -3445,7 +3445,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3468,7 +3468,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3496,7 +3496,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.editCollision();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the method used to auto-generate the collision geometry";
                         hovertime = "1000";
                         isContainer = "1";
@@ -3520,7 +3520,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3543,7 +3543,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3571,7 +3571,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.editCollision();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Select the object to fit collision geometry to";
                         hovertime = "1000";
                         isContainer = "1";
@@ -3595,7 +3595,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3618,7 +3618,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullDepthText";
@@ -3642,7 +3642,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3662,7 +3662,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullDepthText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Maximum hull split depth";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3686,7 +3686,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3709,7 +3709,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3729,7 +3729,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullMergeText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Hull volume merge threshold";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3754,7 +3754,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullMergeText";
@@ -3777,7 +3777,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3800,7 +3800,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3820,7 +3820,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullConcaveText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Hull concavity threshold";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3845,7 +3845,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullConcaveText";
@@ -3868,7 +3868,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3891,7 +3891,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -3911,7 +3911,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullMaxVertsText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Maximum number of verts in a convex hull";
                         hovertime = "1000";
                         isContainer = "0";
@@ -3936,7 +3936,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullMaxVertsText";
@@ -3959,7 +3959,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -3982,7 +3982,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4002,7 +4002,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullMaxBoxErrorText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Maximum box volume error %";
                         hovertime = "1000";
                         isContainer = "0";
@@ -4027,7 +4027,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullMaxBoxErrorText";
@@ -4050,7 +4050,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4073,7 +4073,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4093,7 +4093,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullMaxSphereErrorText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Maximum sphere volume error %";
                         hovertime = "1000";
                         isContainer = "0";
@@ -4118,7 +4118,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullMaxSphereErrorText";
@@ -4141,7 +4141,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4164,7 +4164,7 @@
                         profile = "ToolsTextBase_R";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         canSave = "1";
@@ -4184,7 +4184,7 @@
                         visible = "1";
                         active = "1";
                         altCommand = "ShapeEdColWindow-->hullMaxCapsuleErrorText.setText( mFloor($ThisControl.getValue()) );";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Maximum capsule volume error %";
                         hovertime = "1000";
                         isContainer = "0";
@@ -4209,7 +4209,7 @@
                         profile = "ToolsTextBase";
                         visible = "1";
                         active = "1";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "hullMaxCapsuleErrorText";
@@ -4232,7 +4232,7 @@
                      profile = "ToolsBoxDarkA";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4252,7 +4252,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.editCollision();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Update the convex hull(s)";
                         hovertime = "1000";
                         isContainer = "0";
@@ -4273,7 +4273,7 @@
                         visible = "1";
                         active = "1";
                         command = "ShapeEdColWindow.update_onCollisionChanged();";
-                        tooltipProfile = "ToolsGuiToolTipProfile";
+                        tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Revert changes to settings";
                         hovertime = "1000";
                         isContainer = "0";
@@ -4293,7 +4293,7 @@
                   profile = "ToolsDefaultProfile";
                   visible = "0";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
                   internalName = "hullInactive";
@@ -4313,10 +4313,10 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "GuiDefaultProfile";
+                  profile = "ToolsDefaultProfile";
                   visible = "1";
                   active = "1";
-                  tooltipProfile = "ToolsGuiToolTipProfile";
+                  tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
@@ -4339,7 +4339,7 @@
                      profile = "ToolsTextBase_L1_C";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";
@@ -4362,7 +4362,7 @@
                      profile = "ToolsTextBase_L1_C";
                      visible = "1";
                      active = "1";
-                     tooltipProfile = "ToolsGuiToolTipProfile";
+                     tooltipProfile = "ToolsToolTipProfile";
                      hovertime = "1000";
                      isContainer = "1";
                      canSave = "1";

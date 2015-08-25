@@ -11,4 +11,6 @@ $GLab::FontVariationsBoostSSK = "Regular Italic Bold";
 $GLab::FontVariationsDomine = "Bold";
 $GLab::FontVariationsHallo = "Sans";
 $GLab::FontVariationsRhetoric = "Bold Book";
+$GLab::ShowActiveFieldRollout = "1";
+$GLab::ShowEditorsProfile = "1";
 $GLab::TabId = 0;

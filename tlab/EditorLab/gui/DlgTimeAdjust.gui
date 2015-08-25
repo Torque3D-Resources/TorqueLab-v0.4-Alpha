@@ -9,7 +9,7 @@
    MinExtent = "8 2";
    canSave = "1";
    Visible = "1";
-   tooltipprofile = "ToolsGuiToolTipProfile";
+   tooltipprofile = "ToolsToolTipProfile";
    hovertime = "1000";
    canSaveDynamicFields = "1";
 
@@ -38,7 +38,7 @@
       MinExtent = "8 2";
       canSave = "1";
       Visible = "1";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       hovertime = "1000";
       canSaveDynamicFields = "0";
       closeCommand = "Canvas.popDialog(TimeAdjustGui);";
@@ -56,7 +56,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
          altCommand = "$ThisControl.onAction();";
@@ -79,7 +79,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -101,7 +101,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -123,7 +123,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -145,7 +145,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -167,7 +167,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
