@@ -4,9 +4,55 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
+//==============================================================================
+function Lab::toggleControlObject(%this) {
+	if (!isObject(%this.gameControlObject)) {
+		warnLog("There's no Game control object stored:",%this.gameControlObject);
+		return;
+	}
+
+	//If Client is controlling game object, set control camera, else do contrary...
+	if (%this.gameControlObject == LocalClientConnection.getControlObject())
+		LocalClientConnection.setCOntrolObject(LocalClientConnection.camera);
+	else
+		LocalClientConnection.setCOntrolObject(%this.gameControlObject);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::setCameraPlayerMode(%this) {
+	devLog("Lab::setCameraPlayerMode");
+	if (!isObject( LocalClientConnection.player)) {
+		warnLog("You don't have a player assigned, set spawnPlayer true to spawn one automatically");
+		return;
+	}
+
+	%player = LocalClientConnection.player;
+	%player.setVelocity("0 0 0");
+	if (LocalClientConnection.getControlObject() != LocalClientConnection.player)
+		LocalClientConnection.setControlObject(%player);
+	%this.syncCameraGui();
+}
+//------------------------------------------------------------------------------
 
 
+//==============================================================================
+function Lab::fitCameraToSelection( %this,%orbit ) {
+	if (%orbit) {
+		Lab.setCameraViewMode("Orbit Camera",false);
+	}
 
+	//GuiShapeEdPreview have it's own function
+	if (isObject(Lab.fitCameraGui)) {
+		Lab.fitCameraGui.fitToShape();
+		return;
+	}
+
+	%radius = EWorldEditor.getSelectionRadius()+1;
+	LocalClientConnection.camera.autoFitRadius(%radius);
+	LocalClientConnection.setControlObject(LocalClientConnection.camera);
+	%this.syncCameraGui();
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 
 function Lab::EditorOrbitCameraChange(%this,%client, %size, %center) {

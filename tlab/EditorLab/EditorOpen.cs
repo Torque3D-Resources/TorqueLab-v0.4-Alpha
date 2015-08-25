@@ -9,13 +9,14 @@ function Editor::open(%this) {
 	// prevent the mission editor from opening while the GuiEditor is open.
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
-
+		
+	$EClient = LocalClientConnection;
 
 	Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 
 	if( !LabEditor.isInitialized )
-		Lab.initializeEditorGui();
+		Lab.doEditorFirstLoad();
 
 	%this.editorEnabled();
 
@@ -105,8 +106,11 @@ function EditorGui::onSetContent(%this, %oldContent) {
 
 
 //==============================================================================
-function Lab::initializeEditorGui( %this ) {
-	logc("Lab::initializeEditorGui( %this )",%this);
+function Lab::doEditorFirstLoad( %this ) {
+	devLog("Lab::doEditorFirstLoad( %this )",%this);
+	
+	%this.initAllConfigArray();
+	
 	%this.prepareAllPluginsGui();
 	ETools.initTools();
 	

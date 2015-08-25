@@ -82,6 +82,11 @@ function EditorGui::onUnsetContent(%this, %newContent) {
 //==============================================================================
 // Shutdown the EditorGui-> Called from the onExit function
 function EditorGui::shutdown( %this ) {
+	
+	if (isObject(Lab.editCamera)){
+		devLog("Deleting Edit Camera");
+		Lab.editCamera.delete();
+	}
 	// Store settings.
 	LabCfg.writeBaseConfig();
 	// Deactivate current editor.

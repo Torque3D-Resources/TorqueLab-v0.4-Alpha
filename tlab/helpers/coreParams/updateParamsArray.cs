@@ -179,7 +179,7 @@ function setParamFieldValue( %array, %field,%value) {
 			}
 			//Replace ** occurance with value (Old way)
 			else if (strFind(%syncData,"**")) {
-				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
+				%command = strreplace(%syncData,"**","\""@%value@"\"");
 				eval(%command);
 			}
 		}

@@ -43,6 +43,8 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 	
 	%array.group = %group;
 	%array.useNewSystem = true;
+	
+	
 	//If no cfgObject supplied, simply use the new array as object
 	if (!isObject(%cfgObject))
 		%cfgObject = %array;

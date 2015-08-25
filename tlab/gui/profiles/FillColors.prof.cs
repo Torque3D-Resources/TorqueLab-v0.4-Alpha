@@ -10,7 +10,7 @@
 //==============================================================================
 
 //==============================================================================
-singleton GuiControlProfile(ToolsFillAccentB : ToolsDefaultProfile) {
+singleton GuiControlProfile(ToolsFillAccentA : ToolsDefaultProfile) {
     fillColor = "17 45 58 255";
     opaque = "1";
     bevelColorHL = "Fuchsia";
@@ -27,7 +27,7 @@ singleton GuiControlProfile(ToolsFillAccentB : ToolsDefaultProfile) {
    fontColors[9] = "Fuchsia";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsFillAccentC : ToolsFillAccentA) {
+singleton GuiControlProfile(ToolsFillAccentB : ToolsFillAccentA) {
     opaque = "1";
     fillColor = "101 136 166 255";
     fontColors[0] = "88 1 192 255";
@@ -60,7 +60,7 @@ singleton GuiControlProfile(ToolsFillAccentC : ToolsFillAccentA) {
 
 //==============================================================================
 
-singleton GuiControlProfile(ToolsFillDarkB : ToolsDefaultProfile) {
+singleton GuiControlProfile(ToolsFillDarkA : ToolsDefaultProfile) {
     opaque = "1";
     fillColor = "34 35 35 255";
     fontColors[0] = "88 1 192 255";

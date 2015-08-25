@@ -22,6 +22,8 @@ function Lab::initLabEditor( %this ) {
 		editorGui = EWorldEditor; //Default to EWorldEditor
 		isHidden = true;
 	};
+	
+
 	//Prepare the Settings
 	%this.initEditorGui();
 	%this.initMenubar();
@@ -30,10 +32,7 @@ function Lab::initLabEditor( %this ) {
 	 exec("tlab/EditorLab/editorDialogs/guiLab/initGuiLab.cs");
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function Lab::initDefaultSettings( %this ) {
-	Lab.defaultPlugin = CommonGeneral_Param.getCfg("DefaultPlugin");
-}
+
 //==============================================================================
 function Lab::initEditorGui( %this ) {
 	newScriptObject("LabEditor");

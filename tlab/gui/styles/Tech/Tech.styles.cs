@@ -1740,8 +1740,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsScrollProfile_Dark_TechStyle) {
-      internalName = "ToolsScrollProfile_Dark";
+   new ScriptObject(ToolsScrollProfile_TechStyle) {
+      internalName = "ToolsScrollProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -1778,8 +1778,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsScrollProfile_Dark_T50_TechStyle) {
-      internalName = "ToolsScrollProfile_Dark_T50";
+   new ScriptObject(ToolsScrollProfile_T50_TechStyle) {
+      internalName = "ToolsScrollProfile_T50";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -2197,8 +2197,8 @@ $LabStyleCurrentGroup = new SimGroup(Tech_ProfStyleGroup) {
          tab = "0";
          textOffset = "8 1";
    };
-   new ScriptObject(ToolsScrollProfile_Black_T50_TechStyle) {
-      internalName = "ToolsScrollProfile_Black_T50";
+   new ScriptObject(ToolsScrollProfile_T50_TechStyle) {
+      internalName = "ToolsScrollProfile_T50";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";

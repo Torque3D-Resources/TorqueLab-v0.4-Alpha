@@ -15,23 +15,24 @@ function Lab::initCommonParams( %this ) {
 //COMMON EDITOR SETTINGS
 	//Binds and inputs
 	%gid = 0;
-	%ar = %this.newParamsArray("Input","Common","",true);
+	%ar = %this.newParamsArray("Input","Common","",false);
 	%ar.group[%gid++] = "Mouse settings";
 	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "" TAB %gid);
 	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "" TAB %gid);
 	//General
 	%gid = 0;
-	%ar = %this.newParamsArray("General","Common","",true);
+	%ar = %this.newParamsArray("General","Common","",false);
 	%ar.group[%gid++] = "General Lab Editor settings";
 	%ar.setVal("undoLimit",       "40" TAB "undoLimit" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	
 	%ar.setVal("TorsionPath",       "C:\Program Files (x86)\Torsion" TAB "Path to Torsion" TAB "TextEdit_2l" TAB "" TAB "$Cfg_TorsionPath" TAB %gid);
 	%ar.setVal("useNativeMenu",       "0" TAB "Use the native menu" TAB "Checkbox" TAB "" TAB "Lab.setNativeMenuSystem(**);" TAB %gid);
 	%ar.setVal("newLevelFile",       "tlab/levels/BlankRoom.mis" TAB "newLevelFile" TAB "FileSelect" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("levelsDirectory",       "levels" TAB "levelsDirectory" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	//Camera
 	%gid = 0;
-	%ar = %this.newParamsArray("Camera","Common");
+	%ar = %this.newParamsArray("Camera","Common","");
 	%ar.prefGroup = "$Camera::";
 	%ar.autoSyncPref = true;
 	%ar.group[%gid++] = "Camera views settings";

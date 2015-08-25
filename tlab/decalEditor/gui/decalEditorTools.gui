@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiFrameSetCtrl(DecalEditorTools) {
    columns = "0";
-   rows = "0 336";
+   rows = "0 333";
    borderWidth = "4";
    borderColor = "0 0 0 0";
    borderEnable = "alwaysOn";
@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "4160";
+      EditorContainer = "4161";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "BlankWhite";
       livePreview = "1";
@@ -63,7 +63,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "360 332";
+      extent = "360 329";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -85,7 +85,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "8 28";
-         extent = "344 296";
+         extent = "344 293";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -115,7 +115,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "5 5";
-            extent = "334 290";
+            extent = "334 287";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -140,7 +140,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 19";
-               extent = "334 271";
+               extent = "334 268";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -171,7 +171,7 @@
                   anchorLeft = "0";
                   anchorRight = "0";
                   position = "4 4";
-                  extent = "326 263";
+                  extent = "326 260";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -206,8 +206,8 @@
                      compareToObjectID = "1";
                      canRenameObjects = "1";
                      renameInternal = "0";
-                     position = "3 3";
-                     extent = "320 84";
+                     position = "0 0";
+                     extent = "326 21";
                      minExtent = "8 8";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -233,8 +233,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "0 19";
-               extent = "334 271";
+               position = "1 19";
+               extent = "334 268";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -265,11 +265,11 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "8 8";
-                  extent = "318 255";
+                  extent = "318 252";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
-                  profile = "ToolsScrollProfile_Dark";
+                  profile = "ToolsScrollProfile";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsDefaultProfile";
@@ -280,15 +280,15 @@
 
                   new GuiListBoxCtrl(DecalDataList) {
                      allowMultipleSelections = "0";
-                     fitParentWidth = "0";
+                     fitParentWidth = "1";
                      colorBullet = "1";
                      mirrorSet = "DecalDataSet";
                      position = "0 0";
-                     extent = "318 85";
+                     extent = "318 100";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextBase";
+                     profile = "ToolsListBox";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -509,8 +509,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 336";
-      extent = "360 484";
+      position = "0 333";
+      extent = "360 487";
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -540,7 +540,7 @@
          anchorLeft = "0";
          anchorRight = "0";
          position = "11 27";
-         extent = "341 444";
+         extent = "341 447";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -1136,7 +1136,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/decals/RTS_assets/groundTarget.png";
+                        bitmap = "art/decals/rBlast";
                         wrap = "0";
                         position = "0 0";
                         extent = "335 181";

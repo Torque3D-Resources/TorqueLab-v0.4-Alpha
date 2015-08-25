@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "16426";
-      disabledGroup = "16427";
-      EditorContainer = "4074";
+      defaultStack = "16422";
+      disabledGroup = "16423";
+      EditorContainer = "4071";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "16428 16437 16463";
+      stackLists = "16424 16433 16459";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -722,7 +722,6 @@ new GuiStackControl(EWTerrainEditToolbar) {
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
-         superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
 

@@ -22,7 +22,6 @@ function Lab::initConfigSystem( %this,%defaults ) {
 	Lab.readAllConfigArray(true);
 	//FIXME Rebuild params everytime for development but should be optimized later
 	LabParamsDlg.rebuildAll();
-	Lab.initDefaultSettings();
 	
 }
 //------------------------------------------------------------------------------
@@ -90,7 +89,33 @@ function Lab::writeParamConfig(%this,%array) {
 	LabCfg.endGroup();
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+// OLD System kept for reference showing how to read SettingObject file
+//==============================================================================
+function Lab::initAllConfigArray(%this) {
+	foreach(%array in LabParamsGroup)
+		%this.initConfigArray(%array,%setEmptyToDefault);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Lab::initConfigArray(%this,%array,%setEmptyToDefault) {
+	%pattern = strreplace(%array.groupLink,"_","/");
+	LabCfg.beginGroup( %pattern, true );
+	%i = 0;	
+	for( ; %i < %array.count() ; %i++) {
+		%field = %array.getKey(%i);
+		%value = LabCfg.value( %field );	
+		devLog("Setting:",%array.getName(),"Field",%field,"Value",%value);
+		if (%value $= "")
+			continue;
+		setParamFieldValue(%array,%field,%value);
+		
+	}
 
+	LabCfg.endGroup();
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // OLD System kept for reference showing how to read SettingObject file
 //==============================================================================

@@ -26,17 +26,7 @@ function MenuCameraStatus::onSelect( %this, %id, %text ) {
 	Lab.setCameraViewMode(%text);
 }
 
-//==============================================================================
-function Lab::initEditorCamera() {
-	EWorldEditorStatusBarCamera.clear();
-	%i=0;
 
-	while($LabCameraDisplayName[%i] !$= "") {
-		EWorldEditorStatusBarCamera.add($LabCameraDisplayName[%i],%i);
-		%i++;
-	}
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::SyncEditorGui() {
 	if (isObject(EditorGui))
