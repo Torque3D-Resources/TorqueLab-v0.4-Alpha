@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11576";
-      disabledGroup = "11577";
-      EditorContainer = "4071";
+      defaultStack = "11619";
+      disabledGroup = "11620";
+      EditorContainer = "4088";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "11578 11586";
+      stackLists = "11621 11629";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -351,7 +351,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "11576";
+            toolbar = "11619";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -434,7 +434,7 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             variable = "$Forest::GlobalScale";
@@ -470,7 +470,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "11576";
+            toolbar = "11619";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -553,7 +553,7 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushHardness($ThisControl);";
@@ -588,7 +588,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "11576";
+            toolbar = "11619";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -650,7 +650,7 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushPressure($ThisControl);";
@@ -706,7 +706,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "11576";
+            toolbar = "11619";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -789,7 +789,7 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushSize($ThisControl);";

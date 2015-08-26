@@ -3,25 +3,20 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+$DATABLOCK_EDITOR_DEFAULT_FILENAME = "art/datablocks/managedDatablocks.cs";
 //---------------------------------------------------------------------------------------------
 
 function initializeDatablockEditor() {
 	echo( " - Initializing Datablock Editor" );
-	exec("tlab/datablockEditor/datablockEditor.cs");
-	exec("./datablockEditorUndo.cs");
-	exec("./gui/DatablockEditorTools.gui");
-	//exec("./gui/DatablockEditorInspectorWindow.gui");
-	exec("./gui/DatablockEditorCreatePrompt.gui");
-	exec( "tlab/datablockEditor/DatablockEditorPlugin.cs" );
-	exec( "tlab/datablockEditor/DatablockEditorParams.cs" );
+
+	$DbEd = newScriptObject("DbEd");
+	execDBEd(true);
 	// Add ourselves to EditorGui, where all the other tools reside
 	Lab.createPlugin("DatablockEditor");
-	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);
-	
+	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);	
 	DatablockEditorPlugin.superClass = "WEditorPlugin";
 	DatablockEditorPlugin.customPalette = "SceneEditorPalette";
-	DatablockEditorTreeTabBook.selectPage( 0 );
+	
 	new SimSet( UnlistedDatablocks );
 	// create our persistence manager
 	DatablockEditorPlugin.PM = new PersistenceManager();
@@ -30,6 +25,18 @@ function initializeDatablockEditor() {
 	%map.bindCmd( keyboard, "delete", "DatablockEditorPlugin.onDeleteKey();", "" );
 	DatablockEditorPlugin.map = %map;
 	// DatablockEditorPlugin.initSettings();
+}
+
+
+function execDBEd(%loadGui) {
+	if (%loadGui){
+		exec("tlab/datablockEditor/gui/DatablockEditorTools.gui");
+		exec("tlab/datablockEditor/gui/DatablockEditorCreatePrompt.gui");
+	}
+	exec( "tlab/datablockEditor/DatablockEditorPlugin.cs" );
+	exec( "tlab/datablockEditor/DatablockEditorParams.cs" );
+	execPattern("tlab/datablockEditor/scripts/*.cs" );
+	execPattern("tlab/datablockEditor/editor/*.cs" );
 }
 
 //---------------------------------------------------------------------------------------------

@@ -45,7 +45,7 @@
          text = "Search for:";
       };
       new GuiTextEditCtrl(DebuggerFindStringText) {
-         profile = "ToolsTextEditProfile";
+         profile = "ToolsTextEdit";
          horizSizing = "right";
          vertSizing = "bottom";
          position = "20 44";

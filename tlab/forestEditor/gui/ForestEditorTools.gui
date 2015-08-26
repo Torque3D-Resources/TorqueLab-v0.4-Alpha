@@ -252,7 +252,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_S1";
+                  profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
                   altCommand = "ForestEditorGui.setBrushFilter($ThisControl.getValue());";
@@ -425,7 +425,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_S1";
+                  profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
                   altCommand = "ForestEditorGui.setItemFilter($ThisControl.getValue());";
@@ -663,7 +663,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -811,7 +811,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            command = "FEP_BrushManager.setBrushHardness($ThisControl);";
@@ -934,7 +934,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            variable = "$Forest::GlobalScale";
@@ -990,7 +990,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            command = "FEP_BrushManager.setBrushPressure($ThisControl);";
@@ -1134,7 +1134,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            command = "$ThisControl.syncObj(ForestToolBrush,\"size\");";
@@ -1166,7 +1166,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -1334,7 +1334,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1365,7 +1365,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1443,7 +1443,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1474,7 +1474,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1552,7 +1552,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1583,7 +1583,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1661,7 +1661,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1692,7 +1692,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark_S1";
+                        profile = "ToolsTextEdit_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";

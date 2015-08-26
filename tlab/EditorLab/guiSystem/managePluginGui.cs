@@ -6,15 +6,6 @@
 $LabPlugin::ToolbarPos = "306 0";
 
 //==============================================================================
-//Reinitialize all plugin data
-function Lab::prepareAllPluginsGui(%this) {
-	//Prepare the plugins toolbars
-	//%this.initAllToolbarGroups();
-	%this.initAllPluginsDialogs();
-}
-//------------------------------------------------------------------------------
-
-//==============================================================================
 // Activate the interface for a plugin
 //==============================================================================
 

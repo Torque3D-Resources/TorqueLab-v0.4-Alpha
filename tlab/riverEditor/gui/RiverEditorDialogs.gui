@@ -149,7 +149,7 @@
                   minExtent = "8 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   command = "RiverEditorGui.onNodeWidthChange($ThisControl);";
@@ -249,7 +249,7 @@
                   minExtent = "8 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   command = "RiverEditorGui.onNodeDepthChange($ThisControl);";
@@ -349,7 +349,7 @@
                   minExtent = "8 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   command = "RiverEditorGui.onNodePosZChange($ThisControl);";
@@ -471,7 +471,7 @@
                   minExtent = "8 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   altCommand = "RiverEditorGui.editNodeDetails();";
@@ -549,7 +549,7 @@
                   minExtent = "8 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   altCommand = "RiverEditorGui.editNodeDetails();";

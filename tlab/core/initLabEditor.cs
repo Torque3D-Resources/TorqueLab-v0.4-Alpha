@@ -12,6 +12,8 @@ function Lab::initLabEditor( %this ) {
 	$LabObj = newScriptObject("LabObj");
 	new SimGroup(ToolLabGuiGroup);
 	$LabPluginGroup = newSimSet("LabPluginGroup");
+	$LabModuleGroup = newSimSet("LabModuleGroup");
+	
 	newSimSet( ToolGuiSet );
 	newSimSet( EditorPluginSet );
 	//Create a group to keep track of all objects set
@@ -72,7 +74,7 @@ function Lab::pluginInitCompleted( %this ) {
 	//ETools.initTools();
 	//Prepare the Settings
 	Lab.initConfigSystem();
-	
+	Lab.initAllConfigArray();
 	
 }
 //------------------------------------------------------------------------------

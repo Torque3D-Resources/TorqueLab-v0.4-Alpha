@@ -7,7 +7,7 @@ $TLab::DefaultPlugins = "SceneEditor";
 
 //==============================================================================
 // Create the Plugin object with initial data
-function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable) {
+function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable,%isModule) {
 	//Set plugin object name and verify if already existing
 	%plugName = %pluginName@"Plugin";
 
@@ -28,15 +28,21 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable) {
 	%pluginObj = new ScriptObject( %plugName ) {
 		superClass = "EditorPlugin"; //Default to EditorPlugin class
 		editorGui = EWorldEditor; //Default to EWorldEditor
-		editorMode = "World";
-		plugin = %pluginName;
+		editorMode = "World";		
 		displayName = %displayName;
 		toolTip = %displayName;
-		alwaysOn = %alwaysEnable;
-		pluginOrder = %pluginOrder;
-		shortPlugin = %shortObjName;
+		alwaysOn = %alwaysEnable;		
 		useTools = false;
 	};
+	
+	if (%isModule){
+		%pluginObj.module = %pluginName;
+		return %pluginObj;
+	}
+	%pluginObj.plugin = %pluginName;
+	%pluginObj.pluginOrder = %pluginOrder;
+	%pluginObj.shortPlugin = %shortObjName;
+	
 	LabPluginGroup.add(%pluginObj);
 
 	if (strFind($TLab::DefaultPlugins,%pluginName))
@@ -53,14 +59,34 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-//Reinitialize all plugin data
+// Module are mini plugin which don't need tools or icons
+function Lab::createModule(%this,%pluginName,%displayName,%alwaysEnable) {
+	%moduleObj = %this.createPlugin(%pluginName,%displayName,%alwaysEnable,true);
+	LabModuleGroup.add(%moduleObj);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Plugins Initialization Scripts
+//==============================================================================
+
+//==============================================================================
+// Called the first time the World Editor is launched
+function Lab::initialPluginsSetup(%this) {
+	//Prepare the plugins toolbars
+	//%this.initAllToolbarGroups();
+	%this.initAllPluginsDialogs();
+}
+//------------------------------------------------------------------------------
+
+
+//==============================================================================
+// Called just before the Plugins settings will be generated (Lab.initConfigSystem)
 function Lab::initAllPluginConfig(%this) {
 	foreach(%plugin  in LabPluginGroup)
 		%this.initPluginConfig(%plugin);
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-//Initialize plugin data
+// Initialize the PluginObj configs
 function Lab::initPluginConfig(%this,%pluginObj) {
 	%pluginName = %pluginObj.plugin;
 
@@ -81,50 +107,66 @@ function Lab::initPluginConfig(%this,%pluginObj) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-//Allow the plugin to be selected in editor
-function Lab::enablePlugin(%this,%pluginObj,%enabled) {
-	if (!isObject(%pluginObj)) {
-		warnLog("Trying to enable invalid plugin:",%pluginObj);
-		return;
-	}
-	
-	if (%pluginObj.alwaysOn) 
-		%enabled = "1";
-
-	%name = %pluginObj.plugin;	
-
-	%toolArray = ToolsToolbarArray.findObjectByInternalName(%pluginObj.getName());
-	%toolDisabledArray = EditorGui-->DisabledPluginsBox.findObjectByInternalName(%pluginObj.getName());
-	
-	%pluginObj.isEnabled = %enabled;
-
-	if (%enabled) {
-		if (!isObject(%toolArray))
-			%this.AddToEditorsMenu(%pluginObj);			
-	} 
-	else {
-		hide(%toolArrayObj);
-		%this.removeFromEditorsMenu(%pluginObj);		
-	}
-}
-//------------------------------------------------------------------------------
+// Make the Active Plugins Enabled - Called from Editor::open
+//==============================================================================
 //==============================================================================
 //Call when Editor is open, check that all plugin are enabled correctly
 function Lab::updateActivePlugins(%this) {
 	foreach(%pluginObj in LabPluginGroup) {
-		%enabled = %pluginObj.getCfg("isEnabled");	
-		%this.enablePlugin(%pluginObj,%enabled);
+		%enabled = %pluginObj.getCfg("isEnabled");
+		%pluginObj.setPluginEnable(%enabled);		
 	}
 }
 //------------------------------------------------------------------------------
-/*//==============================================================================
-function Lab::saveAllPluginData(%this) {
-	//Update the PluginBar data (PluginOrder for now)
-	Lab.updatePluginIconOrder();
+function Lab::enablePlugin(%this,%pluginObj,%enabled) {
+	if (!isObject(%pluginObj)) {
+		warnLog("Trying to enable invalid plugin:",%pluginObj);
+		return;
+	}	
+	if (%pluginObj.isEnabled)
+		warnLog(%pluginObj.plugin,"The plugin is already enabled...");
+		
+	%pluginObj.setPluginEnable(true);
+}
+//------------------------------------------------------------------------------
 
-	foreach(%pluginObj in LabPluginGroup) {
-		%pluginObj.setCfg("pluginOrder",%pluginObj.pluginOrder);
-	}
+//------------------------------------------------------------------------------
+function Lab::disablePlugin(%this,%pluginObj) {
+	if (!isObject(%pluginObj)) {
+		warnLog("Trying to enable invalid plugin:",%pluginObj);
+		return;
+	}	
+
+	if (!%pluginObj.isEnabled)
+		warnLog(%pluginObj.plugin,"The plugin is already disabled...");
+		
+	%pluginObj.setPluginEnable(false);
 }
 //------------------------------------------------------------------------------
-*/
+//==============================================================================
+function EditorPlugin::setPluginEnable(%this,%enabled) {
+	
+	if (%this.alwaysOn) 
+		%enabled = "1";
+
+	%name = %this.plugin;	
+
+	%toolArray = ToolsToolbarArray.findObjectByInternalName(%this.plugin);
+	%toolDisabledArray = EditorGui-->DisabledPluginsBox.findObjectByInternalName(%this.plugin);
+	
+	%this.isEnabled = %enabled;
+
+	if (%enabled) {
+		if (!isObject(%toolArray))
+			%this.AddToEditorsMenu(%this);
+		show(%toolArray);
+		info(%this.plugin,"plugin is enabled");
+	} 
+	else {
+		hide(%toolArray);
+		//%this.removeFromEditorsMenu(%this);	
+		info(%this.plugin,"plugin is disabled");
+	}
+	//EWToolsToolbar.resize();
+}
+//------------------------------------------------------------------------------

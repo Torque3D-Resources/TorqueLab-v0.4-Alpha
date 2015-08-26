@@ -104,8 +104,7 @@ function Lab::initConfigArray(%this,%array,%setEmptyToDefault) {
 	%i = 0;	
 	for( ; %i < %array.count() ; %i++) {
 		%field = %array.getKey(%i);
-		%value = LabCfg.value( %field );	
-		devLog("Setting:",%array.getName(),"Field",%field,"Value",%value);
+		%value = LabCfg.value( %field );			
 		if (%value $= "")
 			continue;
 		setParamFieldValue(%array,%field,%value);

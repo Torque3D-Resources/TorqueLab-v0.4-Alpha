@@ -46,7 +46,7 @@
 		};
 		new GuiTextEditCtrl(OBObjectName) {
 		   class = ObjectBuilderGuiTextEditCtrl;
-			profile = "ToolsTextEditProfile";
+			profile = "ToolsTextEdit";
 			horizSizing = "width";
 			vertSizing = "bottom";
 			position = "78 26";
@@ -265,7 +265,7 @@ function ObjectBuilderGui::createMaterialNameType(%this, %index)
       class = ObjectBuilderGuiTextEditCtrl;
       internalName = "MatText";
       HorizSizing = "width";
-      profile = "ToolsTextEditProfile";
+      profile = "ToolsTextEdit";
       extent = getWord(%this.textEditExtent,0) - getWord(%this.matButtonExtent,0) - 2 @ " " @ getWord(%this.textEditExtent,1);
       text = %this.field[%index, value];
       position = "0 0";
@@ -442,7 +442,7 @@ function ObjectBuilderGui::createStringType(%this, %index)
    %this.controls[%this.numControls] = new GuiTextEditCtrl() {
       class = ObjectBuilderGuiTextEditCtrl;
       HorizSizing = "width";
-      profile = "ToolsTextEditProfile";
+      profile = "ToolsTextEdit";
       extent = %this.textEditExtent;
       text = %this.field[%index, value];
       position = %this.curXPos + %this.columnOffset @ " " @ %this.curYPos;

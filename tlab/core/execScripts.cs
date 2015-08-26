@@ -99,7 +99,8 @@ function tlabExecGui(%loadGui ) {
 		exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.gui" );
 		exec("tlab/EditorLab/gui/MaterialSelector/MaterialSelectorDlg.gui");
 		
-		exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui");
+		
+		//exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui"); //Loaded at start
 		exec("tlab/EditorLab/gui/core/simViewDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/colorPicker.ed.gui");
 		exec("tlab/EditorLab/gui/core/scriptEditorDlg.ed.gui");
@@ -121,6 +122,7 @@ function tlabExecGui(%loadGui ) {
 	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
 	execPattern("tlab/EditorLab/gui/LabDevGui/*.cs");
 	
+	//Don't do a execPattern on the gui/core, some are load individually
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
 

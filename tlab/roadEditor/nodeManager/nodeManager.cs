@@ -53,10 +53,9 @@ function RoadManager::updateRoadData(%this) {
 //------------------------------------------------------------------------------
 $NoNodeUpd = true;
 function RoadManager::selectNode(%this,%nodeId,%noUpdate) {
-	if (!isObject(RoadEditorGui.road)) {
-		warnLog("Can't select a node if no road is selected...");
+	if (!isObject(RoadEditorGui.road)) 
 		return;
-	}
+	
 
 	%this.noNodeUpdate = %noUpdate;
 	RoadEditorGui.setSelectedNode(%nodeId);

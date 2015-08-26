@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new GuiStackControl(StackEndToolbar) {
+%guiContent = new GuiStackControl(StackEndToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -10,7 +10,7 @@ new GuiStackControl(StackEndToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "1008 0";
-   extent = "212 32";
+   extent = "248 32";
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -26,12 +26,12 @@ new GuiStackControl(StackEndToolbar) {
    canSaveDynamicFields = "1";
       alwaysLast = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6341";
-      disabledGroup = "6342";
-      EditorContainer = "4071";
+      defaultStack = "6354";
+      disabledGroup = "6355";
+      EditorContainer = "4088";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6345";
+      stackLists = "6358";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -132,7 +132,7 @@ new GuiStackControl(StackEndToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "212 32";
+      extent = "248 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -294,7 +294,7 @@ new GuiStackControl(StackEndToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "3";
             originalParent = "7032";
-            toolbar = "6341";
+            toolbar = "6354";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";
@@ -431,6 +431,37 @@ new GuiStackControl(StackEndToolbar) {
             canSave = "1";
             canSaveDynamicFields = "0";
          };
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "3 3";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/PhysToggleTools.png";
+         iconLocation = "Center";
+         sizeIconToButton = "1";
+         makeIconSquare = "1";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "216 0";
+         extent = "32 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         variable = "!EPhysicsTools.visible";
+         command = "ETools.toggleTool(\"PhysicsTools\");";
+         tooltipProfile = "ToolsToolTipProfile";
+         tooltip = "Changes the softness curve";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "PostFXManager";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
       };
    };
    new GuiContainer() {

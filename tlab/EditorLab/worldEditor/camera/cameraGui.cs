@@ -29,6 +29,9 @@ function Lab::syncCameraGui( %this,%forced ) {
 	Lab.checkMenuItem("viewTypeMenu",0,7,%displayType);
 	//Non-Perspective Cameras: (Top, Bottom, Left, Right, Front, Back,Isometric)
 	//Perspective Cameras: Standard Camera - 1st Person Camera -3rd Person Camera - Orbit Camera -Smooth Camera - Smooth Rot Camera
+	
+	EWorldEditorStatusBarCamera.setText($LabCameraDisplayName[%displayType]);
+	return;
 	if( %displayType != $EditTSCtrl::DisplayTypePerspective ) {		
 		%this.syncNonPerspectiveCameraGui(%forced);		
 	}
@@ -74,7 +77,8 @@ function Lab::syncNonPerspectiveCameraGui( %this,%forced ) {
 
 		LocalClientConnection.camera.controlMode = "Fly";
 		LocalClientConnection.camera.setRotation( %camRot );
-		EditorGuiStatusBar.setCamera( %name );
+		EWorldEditorStatusBarCamera.setText(%name);
+		//EditorGuiStatusBar.setCamera( %name,false );
 		return;
 }
 //------------------------------------------------------------------------------
@@ -143,6 +147,7 @@ function Lab::syncPerspectiveCameraGui( %this,%forced ) {
 		%camModeName = "1st Person Camera";
 
 	}
-	EditorGuiStatusBar.setCamera(%camModeName);
+	EWorldEditorStatusBarCamera.setText(%camModeName);
+	//EditorGuiStatusBar.setCamera(%camModeName,false);
 }
 //------------------------------------------------------------------------------

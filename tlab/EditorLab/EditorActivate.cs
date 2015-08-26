@@ -6,10 +6,9 @@
 
 //==============================================================================
 function Lab::setEditor( %this, %newEditor, %dontActivate ) {
-	//First make sure the new editor is valid
 	
-	
-	if (%newEditor $= "") {
+	//First make sure the new editor is valid	
+	if (%newEditor $= "" || !isObject(%newEditor)) {
 		%newEditor = Lab.defaultPlugin;
 
 		if( !isObject( %newEditor )) {

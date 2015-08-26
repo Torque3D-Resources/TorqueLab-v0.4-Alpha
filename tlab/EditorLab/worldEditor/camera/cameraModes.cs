@@ -115,8 +115,10 @@ function Lab::SetEditorCameraView(%this,%type) {
 		ServerConnection.setFirstPerson(0);
 		$isFirstPersonVar = 0;
 	}
-
-	Lab.syncCameraGui();
+	if( %type != $EditTSCtrl::DisplayTypePerspective ) {	
+		Lab.setFlyCameraData();	
+	}
+	//Lab.syncCameraGui();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -130,11 +132,11 @@ function Lab::setCameraViewType( %this, %type ) {
 	if ($LabCameraDisplayType[%type] !$="")
 		%type = $LabCameraDisplayType[%type];
 
-	%typeName = $LabCameraDisplayName[%type];
-	Lab.checkMenuItem("viewTypeMenu",0, 7, %type );
+	//%typeName = $LabCameraDisplayName[%type];
+	//Lab.checkMenuItem("viewTypeMenu",0, 7, %type );
 
-	EditorGuiStatusBar.setCamera(%typeName,false);
 
+//EWorldEditorStatusBarCamera.setText(%typeName);
 
 	// Store the current camera rotation so we can restore it correctly when
 	// switching back to perspective view
@@ -148,5 +150,46 @@ function Lab::setCameraViewType( %this, %type ) {
 
 	%this.cameraDisplayType = %type;
 	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Sync the camera information on the editor guis
+function Lab::setFlyCameraData( %this,%forced ) {
+	logb("Lab::setFlyCameraData( %this,%forced )", %this,%forced );
+	switch( %displayType ) {
+		case $EditTSCtrl::DisplayTypeTop:
+			%name = "Top View";
+			%camRot = "0 0 0";
+
+		case $EditTSCtrl::DisplayTypeBottom:
+			%name = "Bottom View";
+			%camRot = "3.14159 0 0";
+
+		case $EditTSCtrl::DisplayTypeLeft:
+			%name = "Left View";
+			%camRot = "-1.571 0 1.571";
+
+		case $EditTSCtrl::DisplayTypeRight:
+			%name = "Right View";
+			%camRot = "-1.571 0 -1.571";
+
+		case $EditTSCtrl::DisplayTypeFront:
+			%name = "Front View";
+			%camRot = "-1.571 0 3.14159";
+
+		case $EditTSCtrl::DisplayTypeBack:
+			%name = "Back View";
+			%camRot = "-1.571 0 0";
+
+		case $EditTSCtrl::DisplayTypeIsometric:
+			%name = "Isometric View";
+			%camRot = "0 0 0";
+		}
+
+		LocalClientConnection.camera.controlMode = "Fly";
+		LocalClientConnection.camera.setRotation( %camRot );
+		//EWorldEditorStatusBarCamera.setText(%name);
+		//EditorGuiStatusBar.setCamera( %name,false );
+		return;
 }
 //------------------------------------------------------------------------------

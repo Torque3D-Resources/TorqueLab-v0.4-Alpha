@@ -73,8 +73,10 @@ function GuiEd::launchEditor( %this,%loadLast ) {
 		MLAAFx.isEnabled = false;
 		$MLAAFxGuiEditorTemp = true;
 	}
-
+	
 	GuiEdMap.push();
+	//Make sure the TorqueLab loading progress is stopped
+	EditorLoadingGui.endInit();
 }
 //------------------------------------------------------------------------------
 

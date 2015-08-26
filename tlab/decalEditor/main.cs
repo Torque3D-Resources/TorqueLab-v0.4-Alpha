@@ -39,7 +39,7 @@ function execDecalEd(%loadGui) {
 	exec( "tlab/decalEditor/decalEditorGui.cs" );
 	exec( "tlab/decalEditor/decalEditorActions.cs" );
 	exec( "tlab/decalEditor/DecalEditorPlugin.cs" );
-	exec( "tlab/decalEditor/DecalEditorParams.cs" );
+
 	execPattern("tlab/decalEditor/instance/*.cs" );
 	execPattern( "tlab/decalEditor/library/*.cs" );
 }

@@ -221,7 +221,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      altCommand = "SceneEditorTree.setFilterText($ThisControl.getValue());";
@@ -1690,7 +1690,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark";
+                        profile = "ToolsTextEdit";
                         visible = "1";
                         active = "1";
                         altCommand = "SceneCreatorWindow.setMeshFolderDepth($ThisControl);";
@@ -10502,7 +10502,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   altCommand = "SceneEditorTools.validateMeshRootFolder($ThisControl);";

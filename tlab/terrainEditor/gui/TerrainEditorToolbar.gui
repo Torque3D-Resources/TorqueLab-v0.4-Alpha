@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "16422";
-      disabledGroup = "16423";
-      EditorContainer = "4071";
+      defaultStack = "16480";
+      disabledGroup = "16481";
+      EditorContainer = "4088";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "16424 16433 16459";
+      stackLists = "16482 16491 16517";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -441,7 +441,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";
@@ -556,7 +556,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
@@ -671,7 +671,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
@@ -786,7 +786,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             variable = "ETerrainEditor.setHeightVal";
@@ -802,7 +802,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "20 60";
             ticks = "0";
             snap = "0";
-            value = "20";
+            value = "60";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";

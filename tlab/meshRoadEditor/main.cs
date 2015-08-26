@@ -3,10 +3,17 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+singleton GuiControlProfile( MeshRoadEditorProfile ) {
+	canKeyFocus = true;
+	opaque = true;
+	fillColor = "192 192 192 192";
+	category = "Editor";
+	};
 function initializeMeshRoadEditor() {
 	echo(" % - Initializing Mesh Road Editor");
 	execMREP(true);
+	
+	
 	
 	Lab.createPlugin("MeshRoadEditor","Mesh Road Editor");
 	Lab.addPluginEditor("MeshRoadEditor",MeshRoadEditorGui);

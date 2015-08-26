@@ -26,12 +26,12 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "18521";
-      disabledGroup = "18522";
-      EditorContainer = "4071";
+      defaultStack = "18579";
+      disabledGroup = "18580";
+      EditorContainer = "4088";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
-      stackLists = "18523 18532 18566";
+      stackLists = "18581 18590 18624";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -172,7 +172,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             originalIndex = "1";
             originalParent = "13944";
             pluginName = "TerrainPainter";
-            toolbar = "18521";
+            toolbar = "18579";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -233,7 +233,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "TerrainPainter";
-            toolbar = "18521";
+            toolbar = "18579";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -446,7 +446,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.setSlopeMin($ThisControl);";
@@ -563,7 +563,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.setSlopeMax($ThisControl);";
@@ -680,7 +680,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
@@ -795,7 +795,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
@@ -912,7 +912,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";

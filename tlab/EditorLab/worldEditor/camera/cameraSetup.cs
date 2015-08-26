@@ -20,6 +20,7 @@ $LabCameraTypesIcon = "tlab/gui/icons/toolbar_assets/ToggleCamera";
 //==============================================================================
 // Set the initial editor camera and store the game camera settings
 function Lab::setInitialCamera(%this) {
+	logb("Lab::setInitialCamera( %this )");
 	%client = LocalClientConnection;
 	
 	%this.gameControlObject = %client.getControlObject();
@@ -30,19 +31,21 @@ function Lab::setInitialCamera(%this) {
 	//Create a specific Camera Object for editor so we are not changing client camera
 	if (!isObject(%this.editCamera)) {		
 		%this.editCamera = spawnObject("Camera", "Observer","LabEditCam");
-		//%client.camera.scopeToClient(%client);
+		%this.editCamera.scopeToClient(%client);
+		//LocalClientConnection.camera.scopeToClient(LocalClientConnection);
 	}
+	MissionCleanup.add(%this.editCamera);
 	//%this.editCamera.scopeToClient(%client);
 	%client.camera = %this.editCamera;
 	
 	%client.setCameraObject(%client.camera);
 	Lab.clientWasControlling = %client.getControlObject();
 	
-	Lab.launchInFreeview = Camera_Param.getCfg("LaunchInFreeView");
+	
 	//Check if we use FreeView mode or Player Controlled camera
 	%freeViewMode = Lab.launchInFreeview || !isObject(%client.player) || LocalClientConnection.getControlObject().isMemberOfClass("Camera");
-	
 
+	
 	if (!%freeViewMode) {
 		%this.setCameraPlayerMode();
 		return;

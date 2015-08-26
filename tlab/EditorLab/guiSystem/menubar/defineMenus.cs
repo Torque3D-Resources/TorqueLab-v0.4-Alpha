@@ -62,10 +62,7 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "Lab PostFX Manager" TAB "" TAB "toggleVisible(EPostFxManager);";
 	$LabMenuItem[%id,%itemId++] = "Copy Tool" TAB "" TAB "toggleDlg(ToolObjectCopyDlg);";
 	$LabMenuItem[%id,%itemId++] = "Toggle transform box" TAB "" TAB "ETransformBox.toggleBox();";
-	%itemId = -1;
-	$LabMenu[%id++] = "View";
-	$LabMenuItem[%id,%itemId++] = "Visibility Layers" TAB "Alt V" TAB "EVisibilityLayers.toggleVisibility();";
-	$LabMenuItem[%id,%itemId++] = "Show Grid in Ortho Views" TAB %cmdCtrl @ "-Shift-Alt G" TAB "EWorldEditor.renderOrthoGrid = !EWorldEditor.renderOrthoGrid;";
+	
 	%itemId = -1;
 	$LabMenu[%id++] = "Object";
 	$LabMenuItem[%id,%itemId++] = "Lock Selection" TAB %cmdCtrl @ " L" TAB "EWorldEditor.lockSelection(true); EWorldEditor.syncGui();";
@@ -172,7 +169,15 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "Toggle Ambient Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"AmbientManager\");";
 	$LabMenuItem[%id,%itemId++] = "Toggle Vehicle Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
 	$LabMenuItem[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);";
-
+	
+	%itemId = -1;
+	$LabMenu[%id++] = "View";
+	$LabMenuItem[%id,%itemId++] = "Visibility Layers" TAB "Alt V" TAB "EVisibilityLayers.toggleVisibility();";
+	$LabMenuItem[%id,%itemId++] = "Show Grid in Ortho Views" TAB %cmdCtrl @ "-Shift-Alt G" TAB "EWorldEditor.renderOrthoGrid = !EWorldEditor.renderOrthoGrid;";
+	$LabMenuItem[%id,%itemId++] = "-";
+	$LabMenuItem[%id,%itemId++] = "Set default plugins order" TAB "" TAB "Lab.sortPluginsBar(true);";
+	$LabMenuItem[%id,%itemId++] = "Store plugins order as default" TAB "" TAB "Lab.updatePluginIconOrder(true);";
+	
 	%itemId = -1; 
 	$LabMenu[%id++] = "Help";
 	$LabMenuItem[%id,%itemId++] = "Online Documentation..." TAB "Alt F1" TAB "gotoWebPage(EWorldEditor.documentationURL);";

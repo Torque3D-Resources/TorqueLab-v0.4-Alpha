@@ -460,7 +460,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "left";
 				VertSizing = "bottom";
 				position = "336 4";
@@ -557,7 +557,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "width";
 				VertSizing = "bottom";
 				position = "65 50";
@@ -585,7 +585,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "width";
 				VertSizing = "bottom";
 				position = "65 73";
@@ -613,7 +613,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "left";
 				VertSizing = "bottom";
 				position = "372 27";
@@ -641,7 +641,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "left";
 				VertSizing = "bottom";
 				position = "297 27";
@@ -669,7 +669,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				AnchorLeft = "1";
 				AnchorRight = "0";
 				isContainer = "0";
-				Profile = "ToolsTextEditProfile";
+				Profile = "ToolsTextEdit";
 				HorizSizing = "left";
 				VertSizing = "bottom";
 				position = "229 27";

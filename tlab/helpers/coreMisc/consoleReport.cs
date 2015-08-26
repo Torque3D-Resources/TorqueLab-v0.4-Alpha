@@ -268,7 +268,39 @@ function mouseMoveLog(%text,%a1, %a2, %a3, %a4,%a5, %a6, %a7, %a8,%a9, %a10, %a1
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+// Quick basic function to check if a script part has been called and report a 
+// colorfull console log when it does. (Storing only work if an descriptor supplied)
+//------------------------------------------------------------------------------
+function flog(%descriptor,%a1, %a2, %a3, %a4,%a5, %a6, %a7, %a8,%a9) {
+	if ($pref::Console::FuncLogDisabled)
+		return;
 
+	%echo = "\c1>>>>>\c2-----------\c3Function\c5 Call \c6 Logging";
+	if (%descriptor !$= ""){
+		%echo = %echo SPC "\c7Descriptor:\c8" SPC %descriptor;
+		$HLabFunctionCallCount[%descriptor]++;
+		$HLabFunctionCallDescriptors = strAddField($HLabFunctionCallDescriptors,%descriptor,true);
+	}
+
+	%i = 1;
+	while(%a[%i] !$="") {
+		%id = %i;
+		if (%id > 9) %id = %id - 9;
+		%echo = %echo SPC $LogCol[%id] SPC %a[%i];
+		%i++;
+	}
+	echo(%echo);
+
+}
+//------------------------------------------------------------------------------
+function flogDump() {
+	for(%i=0;%i<getFieldCount($HLabFunctionCallDescriptors);%i++){
+		%desc = getField($HLabFunctionCallDescriptors,%i);
+		info("Descriptor:",%desc,"Called:",$HLabFunctionCallCount[%desc], "times");
+	}
+}
+//------------------------------------------------------------------------------
 
 
 

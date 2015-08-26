@@ -755,7 +755,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   altCommand = "MaterialEditorGui.setMaterialDirty();MaterialEditorGui.updateActiveMaterialName($ThisControl.getText());";
@@ -905,7 +905,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -1138,7 +1138,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_S1";
+                  profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
                   altCommand = "MaterialEditorGui.setMaterialDirty();MaterialEditorGui.updateActiveMaterialName($ThisControl.getText());";
@@ -1216,7 +1216,7 @@
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark_S1";
+                  profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
                   variable = "MaterialEditorGui.currentMaterialFile";
@@ -2048,7 +2048,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "MaterialEditorGui.updateDetailScale($ThisControl.getText());";
@@ -2259,7 +2259,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "MaterialEditorGui.updateDetailNormalStrength($ThisControl.getText());";
@@ -3231,7 +3231,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "left";
                                  vertSizing = "bottom";
-                                 profile = "ToolsTextEditDark";
+                                 profile = "ToolsTextEdit";
                                  visible = "1";
                                  active = "1";
                                  command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue());";
@@ -3661,7 +3661,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark_S1";
+                                       profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
                                        command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"specularStrength[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -3762,7 +3762,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark_S1";
+                                       profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
                                        command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"specularPower[\" @ MaterialEditorGui.currentLayer @ \"]\", mCeil($ThisControl.getValue()));";
@@ -3907,7 +3907,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark_S1";
+                                       profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"minnaertConstant[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getText());";
@@ -4009,7 +4009,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark_S1";
+                                       profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"subSurfaceRolloff[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getText());";
@@ -4273,7 +4273,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark_S1";
+                                    profile = "ToolsTextEdit_S1";
                                     visible = "1";
                                     active = "1";
                                     command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateActiveMaterial(\"parallaxScale[\" @ MaterialEditorGui.currentLayer @ \"]\",$ThisControl.getValue());";
@@ -4510,7 +4510,7 @@
                               minExtent = "8 2";
                               horizSizing = "left";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);";
@@ -4603,7 +4603,7 @@
                               minExtent = "8 2";
                               horizSizing = "left";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateRotationOffset();";
@@ -4771,7 +4771,7 @@
                               minExtent = "8 2";
                               horizSizing = "left";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateRotationSpeed();";
@@ -4907,7 +4907,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollOffset();";
@@ -5000,7 +5000,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollOffset();";
@@ -5185,7 +5185,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialEditorGui.updateScrollSpeed();";
@@ -5440,7 +5440,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateWaveFreq();";
@@ -5533,7 +5533,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateWaveAmp();";
@@ -5669,7 +5669,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateSequenceFPS();";
@@ -5762,7 +5762,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditProfile";
+                              profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
                               command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateSequenceSSS();";

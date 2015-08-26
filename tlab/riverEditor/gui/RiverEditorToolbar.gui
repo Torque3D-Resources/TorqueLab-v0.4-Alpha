@@ -25,12 +25,12 @@ new GuiStackControl(RiverEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "15642";
-      disabledGroup = "15643";
-      EditorContainer = "4071";
+      defaultStack = "15699";
+      disabledGroup = "15700";
+      EditorContainer = "4088";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RiverEditor";
-      stackLists = "15644 15661";
+      stackLists = "15701 15718";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -221,7 +221,7 @@ new GuiStackControl(RiverEditorToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "RiverEditorPlugin.setCtrlParam(\"DefaultDepth\",$ThisControl);";
@@ -336,7 +336,7 @@ new GuiStackControl(RiverEditorToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "RiverEditorPlugin.setCtrlParam(\"DefaultWidth\",$ThisControl);";

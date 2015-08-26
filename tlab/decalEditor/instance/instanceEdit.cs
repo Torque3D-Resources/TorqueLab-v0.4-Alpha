@@ -19,6 +19,24 @@ function DecalEditorGui::editNodeDetails( %this ) {
 		DecalEditorGui.doEditNodeDetails( %decalId, %nodeDetails, false );
 }
 
+//------------------------------------------------------------------------------
+// Edit node
+function DecalEditorGui::doEditNodeDetails(%this, %instanceId, %transformData, %gizmo) {
+	%action = %this.createAction(ActionEditNodeDetails, "Edit Decal Transform");
+	%action.instanceId = %instanceId;
+	if (%action.newTransformData !$= %transformData)
+		DecalEd_SaveAllInstanceButton.active = true;
+		
+	%action.newTransformData = %transformData;
+
+	if( %gizmo )
+		%action.oldTransformData = %this.gizmoDetails;
+	else
+		%action.oldTransformData = %this.getDecalTransform(%instanceId);
+
+	%this.doAction(%action);
+}
+
 
 function DecalEditorGui::syncNodeDetails( %this ) {
 	%decalId = DecalEditorGui.selDecalInstanceId;

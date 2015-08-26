@@ -87,6 +87,11 @@ function EditorGui::shutdown( %this ) {
 		devLog("Deleting Edit Camera");
 		Lab.editCamera.delete();
 	}
+	if (isObject(Lab.initialCamera)){
+		devLog("Deleting initialCamera Camera");
+		Lab.initialCamera.delete();
+	}
+	
 	// Store settings.
 	LabCfg.writeBaseConfig();
 	// Deactivate current editor.

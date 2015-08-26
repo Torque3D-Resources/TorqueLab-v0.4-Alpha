@@ -4,19 +4,6 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-function physicsToggleSimulation() {
-	%isEnabled = physicsSimulationEnabled();
-
-	if ( %isEnabled ) {
-		physicsStateText.setText( "Simulation is paused." );
-		physicsStopSimulation( "client" );
-		physicsStopSimulation( "server" );
-	} else {
-		physicsStateText.setText( "Simulation is unpaused." );
-		physicsStartSimulation( "client" );
-		physicsStartSimulation( "server" );
-	}
-}
 
 function initializePhysicsTools() {
 	echo( " % - Initializing Physics Tools" );
@@ -25,65 +12,21 @@ function initializePhysicsTools() {
 		echo( "No physics plugin exists." );
 		return;
 	}
+	execPhysTools(true);
+	$PT = newScriptObject("PT");
+	Lab.createModule("PhysicsTools","Physics Tools");	
+	Lab.addPluginToolbar("PhysicsTools",PhysicsToolsToolbar);
 
-	globalactionmap.bindCmd( keyboard, "alt t", "physicsToggleSimulation();", "" );
-	globalactionmap.bindCmd( keyboard, "alt r", "physicsRestoreState();", "" );
-	new ScriptObject( PhysicsEditorPlugin ) {
-		superClass = "EditorPlugin";
-		editorGui = EWorldEditor;
-	};
+	globalactionmap.bindCmd( keyboard, "alt t", "PT.physicsToggleSimulation();", "" );
+	globalactionmap.bindCmd( keyboard, "alt r", "PT.physicsRestoreState();", "" );
+	
 }
-
-function destroyPhysicsTools() {
-}
-
-function PhysicsEditorPlugin::onWorldEditorStartup( %this ) {
-	if ($Cfg_UseCoreMenubar) {
-		new PopupMenu( PhysicsToolsMenu ) {
-			superClass = "MenuBuilder";
-			//class = "PhysXToolsMenu";
-			barTitle = "Physics";
-			item[0] = "Start Simulation" TAB "Ctrl-Alt P" TAB "physicsStartSimulation( \"client\" );physicsStartSimulation( \"server\" );";
-			//item[1] = "Stop Simulation" TAB "" TAB "physicsSetTimeScale( 0 );";
-			item[1] = "-";
-			item[2] = "Speed 25%" TAB "" TAB "physicsSetTimeScale( 0.25 );";
-			item[3] = "Speed 50%" TAB "" TAB "physicsSetTimeScale( 0.5 );";
-			item[4] = "Speed 100%" TAB "" TAB "physicsSetTimeScale( 1.0 );";
-			item[5] = "-";
-			item[6] = "Reload NXBs" TAB "" TAB "";
-		};
-		// Add our menu.
-		Lab.menuBar.insert( PhysicsToolsMenu, Lab.menuBar.dynamicItemInsertPos );
+function execPhysTools(%loadGui) {
+	if (%loadGui){
+		exec("tlab/physicsTools/gui/PhysicsToolsToolbar.gui");
 	}
-
-	// Add ourselves to the window menu.
-	//EditorGui.addToWindowMenu( "Road and Path Editor", "", "RoadEditor" );
+	exec("tlab/physicsTools/PhysicsToolsPlugin.cs");
+	exec("tlab/physicsTools/physicsTools.cs");
 }
-
-function PhysicsToolsMenu::onMenuSelect(%this) {
-	%isEnabled = physicsSimulationEnabled();
-	%itemText = !%isEnabled ? "Start Simulation" : "Pause Simulation";
-	%itemCommand = !%isEnabled ? "physicsStartSimulation( \"client\" );physicsStartSimulation( \"server\" );" : "physicsStopSimulation( \"client\" );physicsStopSimulation( \"server\" );";
-	%this.setItemName( 0, %itemText );
-	%this.setItemCommand( 0, %itemCommand );
-}
-
-function PhysicsEditorPlugin::onEditorWake( %this ) {
-	// Disable physics when entering
-	// the editor.  Will be re-enabled
-	// when the editor is closed.
-	physicsStopSimulation( "client" );
-	physicsStopSimulation( "server" );
-	physicsRestoreState();
-}
-
-function PhysicsEditorPlugin::onEditorSleep( %this ) {
-	physicsStoreState();
-	%currentTimeScale = physicsGetTimeScale();
-
-	if ( %currentTimeScale == 0.0 )
-		physicsSetTimeScale( 1.0 );
-
-	physicsStartSimulation( "client" );
-	physicsStartSimulation( "server" );
+function destroyPhysicsTools() {
 }

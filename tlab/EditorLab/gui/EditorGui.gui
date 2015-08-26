@@ -20,7 +20,7 @@
    langTableMod = "Default";
    canSave = "1";
    canSaveDynamicFields = "1";
-      previousGui = "1938";
+      previousGui = "25659";
       saveAs = "0";
       tooltipWidth = "500";
 
@@ -111,7 +111,7 @@
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
          position = "0 2";
-         extent = "176 32";
+         extent = "102 32";
          minExtent = "16 16";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -127,12 +127,12 @@
       };
    };
    new GuiFrameSetCtrl(EditorFrameMain) {
-      columns = "0 1080";
+      columns = "0 1160";
       rows = "0";
-      borderWidth = "0";
+      borderWidth = "4";
       borderColor = "106 106 106 255";
-      borderEnable = "alwaysOff";
-      borderMovable = "alwaysOff";
+      borderEnable = "alwaysOn";
+      borderMovable = "alwaysOn";
       autoBalance = "1";
       fudgeFactor = "0";
       docking = "Client";
@@ -164,7 +164,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "0 0";
-         extent = "1080 820";
+         extent = "1156 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -185,8 +185,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 0";
-            extent = "1080 820";
+            position = "0 -2";
+            extent = "1156 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -207,14 +207,14 @@
                dropAtScreenCenterScalar = "1";
                dropAtScreenCenterMax = "100";
                dropType = "toTerrain";
-               popupBackgroundColor = "100 100 100 255";
+               popupBackgroundColor = "101 101 101 255";
                popupTextColor = "255 255 0 255";
-               objectTextColor = "255 255 255 255";
-               selectionBoxColor = "255 255 0 255";
+               objectTextColor = "0 255 0 0";
+               selectionBoxColor = "22 57 190 115";
                objSelectColor = "255 0 0 255";
                objMouseOverSelectColor = "0 0 255 255";
                objMouseOverColor = "0 255 0 255";
-               dragRectColor = "3 219 48 255";
+               dragRectColor = "247 92 15 255";
                faceSelectColor = "255 255 0 255";
                boundingBoxCollision = "0";
                objectMeshCollision = "1";
@@ -236,8 +236,8 @@
                toggleIgnoreList = "0";
                gridSize = "4";
                gridColor = "9 254 83 101";
-               gridOriginColor = "255 160 0 251";
-               gridMinorTickColor = "222 254 219 173";
+               gridOriginColor = "255 160 0 252";
+               gridMinorTickColor = "222 254 220 176";
                renderOrthoGrid = "1";
                renderOrthoGridPixelBias = "10";
                renderMissionArea = "0";
@@ -265,7 +265,7 @@
                anchorLeft = "0";
                anchorRight = "0";
                position = "0 0";
-               extent = "1080 820";
+               extent = "1156 820";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -293,7 +293,7 @@
                processUsesBrush = "0";
                maxBrushSize = "40 40";
                adjustHeightVal = "10";
-               setHeightVal = "60";
+               setHeightVal = "100";
                scaleVal = "1";
                smoothFactor = "0.1";
                noiseFactor = "1";
@@ -334,7 +334,7 @@
                anchorLeft = "0";
                anchorRight = "0";
                position = "0 0";
-               extent = "1080 820";
+               extent = "1156 820";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -347,8 +347,8 @@
                hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  currentAction = "paintMaterial";
-                  currentActionDesc = "Paint material on terrain";
+                  currentAction = "brushAdjustHeight";
+                  currentActionDesc = "Adjust terrain height up or down.";
                   currentMode = "paint";
                   lastAverageHeight = "0";
                   savedAction = "brushAdjustHeight";
@@ -363,7 +363,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 804";
-                  extent = "1080 16";
+                  extent = "1156 16";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "top";
@@ -400,7 +400,7 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiTextCtrl(TEMouseBrushInfo) {
-                     text = " (Mouse) #: 0  avg: 0 paintMaterial";
+                     text = " (Mouse) #: 0  avg: 0 brushAdjustHeight";
                      maxLength = "255";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -433,7 +433,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1080 820";
+            extent = "1156 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -454,12 +454,12 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 0";
-            extent = "495 40";
+            position = "0 -2";
+            extent = "490 42";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsFillDarkB";
+            profile = "ToolsBoxDarkB";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
@@ -477,7 +477,7 @@
                groupNum = "1";
                buttonType = "RadioButton";
                useMouseEvents = "0";
-               position = "140863 0";
+               position = "185517 0";
                extent = "36 40";
                minExtent = "7 2";
                horizSizing = "left";
@@ -495,7 +495,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiDynamicCtrlArrayControl(ToolsToolbarArray) {
-               colCount = "3952";
+               colCount = "13";
                colSize = "36";
                rowCount = "1";
                rowSize = "40";
@@ -503,12 +503,12 @@
                colSpacing = "1";
                frozen = "0";
                autoCellSize = "0";
-               fillRowFirst = "1";
-               dynamicSize = "0";
+               fillRowFirst = "0";
+               dynamicSize = "1";
                padding = "0 0 0 0";
-               position = "4 0";
-               extent = "146238 40";
-               minExtent = "1024 32";
+               position = "0 2";
+               extent = "480 40";
+               minExtent = "24 32";
                horizSizing = "width";
                vertSizing = "bottom";
                profile = "ToolsDefaultProfile";
@@ -531,7 +531,7 @@
                groupNum = "-1";
                buttonType = "PushButton";
                useMouseEvents = "0";
-               position = "488 0";
+               position = "480 0";
                extent = "10 40";
                minExtent = "7 2";
                horizSizing = "left";
@@ -539,7 +539,7 @@
                profile = "ToolsButtonProfile";
                visible = "1";
                active = "1";
-               command = "EWToolsToolbar.ToggleSize();";
+               command = "Lab.togglePluginBarSize();";
                tooltipProfile = "ToolsToolTipProfile";
                tooltip = "Collapse Toolbar";
                hovertime = "750";
@@ -551,7 +551,7 @@
             new GuiDecoyCtrl(EWToolsToolbarDecoy) {
                isDecoy = "1";
                position = "1 1";
-               extent = "554 31";
+               extent = "22 31";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -573,7 +573,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "573 44";
+            position = "573 37";
             extent = "228 220";
             minExtent = "8 2";
             horizSizing = "right";
@@ -750,8 +750,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 40";
-            extent = "36 193";
+            position = "0 33";
+            extent = "36 131";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -770,7 +770,7 @@
             new GuiDynamicCtrlArrayControl(EWToolsPaletteArray) {
                colCount = "1";
                colSize = "32";
-               rowCount = "6";
+               rowCount = "4";
                rowSize = "28";
                rowSpacing = "3";
                colSpacing = "0";
@@ -780,7 +780,7 @@
                dynamicSize = "1";
                padding = "0 0 0 0";
                position = "2 5";
-               extent = "34 183";
+               extent = "34 121";
                minExtent = "34 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -802,8 +802,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "38 0";
-            extent = "1042 820";
+            position = "80 0";
+            extent = "1076 820";
             minExtent = "8 2";
             horizSizing = "left";
             vertSizing = "bottom";
@@ -823,7 +823,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "858 18";
+               position = "892 18";
                extent = "184 96";
                minExtent = "8 2";
                horizSizing = "left";
@@ -1091,7 +1091,7 @@
                dynamicPos = "0";
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
-               position = "612 0";
+               position = "646 0";
                extent = "430 18";
                minExtent = "16 16";
                horizSizing = "right";
@@ -1240,7 +1240,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1315,7 +1315,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1390,7 +1390,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1537,7 +1537,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1612,7 +1612,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1687,7 +1687,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1833,7 +1833,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1908,7 +1908,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1983,7 +1983,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -2058,7 +2058,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -2185,7 +2185,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1080 820";
+            extent = "1156 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2207,7 +2207,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "1080 820";
+            extent = "1156 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2229,8 +2229,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "1080 0";
-         extent = "360 820";
+         position = "1160 0";
+         extent = "280 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -2268,6 +2268,7 @@
       canSaveDynamicFields = "1";
 
       new GuiTextCtrl(EWorldEditorStatusBarSelection) {
+         text = "0 objects selected";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -2290,7 +2291,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(EWorldEditorStatusBarInfo) {
-         text = "Road editor.";
+         text = "Selection arrow.";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";

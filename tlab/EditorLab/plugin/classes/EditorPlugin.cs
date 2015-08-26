@@ -24,6 +24,9 @@ function EditorPlugin::setEditorMode( %this,%mode ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
+// Initial editor initialization and shutdown callbacks
+//==============================================================================
+//==============================================================================
 function EditorPlugin::onWorldEditorStartup( %this ) {	
 	//Get the state of the plugin
 	%this.isEnabled = %this.getCfg("isEnabled");
@@ -32,8 +35,8 @@ function EditorPlugin::onWorldEditorStartup( %this ) {
 	// Add ourselves to the ToolsToolbarè
 	%tooltip = %this.toolTip;
 
-	if (!%this.isHidden)
-		Lab.addPluginToBar( %this );
+//	if (!%this.isHidden)
+	//	Lab.addPluginToBar( %this );
 }
 //------------------------------------------------------------------------------
 //==============================================================================

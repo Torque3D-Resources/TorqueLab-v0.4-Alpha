@@ -116,7 +116,7 @@
          maxLength = "255";
       };
       new GuiTextEditCtrl(Channel_R_Val) { // Red Channal
-         Profile = "ToolsTextEditDark_Num";
+         Profile = "ToolsTextEdit_Num";
          HorizSizing = "right";
          VertSizing = "bottom";
          position = "307 215";
@@ -141,7 +141,7 @@
          maxLength = "255";
       };
       new GuiTextEditCtrl(Channel_G_Val) { // Green Channal
-         Profile = "ToolsTextEditDark_Num";
+         Profile = "ToolsTextEdit_Num";
          HorizSizing = "right";
          VertSizing = "bottom";
          position = "307 238";
@@ -166,7 +166,7 @@
          maxLength = "255";
       };
       new GuiTextEditCtrl(Channel_B_Val) { // Blue Channal
-         Profile = "ToolsTextEditDark_Num";
+         Profile = "ToolsTextEdit_Num";
          HorizSizing = "right";
          VertSizing = "bottom";
          position = "307 261";
@@ -217,7 +217,7 @@
          };
          new GuiTextEditCtrl(Channel_A_Val) { // Alpha Channal
             internalName = "textEdit";
-            Profile = "ToolsTextEditDark_Num";
+            Profile = "ToolsTextEdit_Num";
             HorizSizing = "right";
             VertSizing = "bottom";
             position = "305 0";

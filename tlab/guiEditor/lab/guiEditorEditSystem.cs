@@ -108,7 +108,7 @@ function addGuiEditorCtrl(%reset) {
 			minExtent = "8 2";
 			horizSizing = "width";
 			vertSizing = "height";
-			profile = "ToolsTextEditProfile";
+			profile = "ToolsTextEdit";
 			visible = "1";
 			active = "1";
 			tooltipProfile = "ToolsToolTipProfile";

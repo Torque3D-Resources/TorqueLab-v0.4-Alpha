@@ -106,6 +106,12 @@ function SceneEditorPlugin::onSaveMission( %this, %file ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// Called when the mission file has been saved
+function SceneEditorPlugin::onExitMission( %this ) {
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // Called when TorqueLab is closed
 function SceneEditorPlugin::onEditorSleep( %this ) {
 }

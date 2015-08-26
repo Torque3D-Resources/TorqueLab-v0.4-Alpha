@@ -155,7 +155,7 @@
                   minExtent = "8 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushPressure($ThisControl);";
@@ -276,7 +276,7 @@
                   minExtent = "8 16";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsTextEditDark";
+                  profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
                   command = "FEP_BrushManager.setBrushHardness($ThisControl);";
@@ -401,7 +401,7 @@
                         minExtent = "8 16";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark";
+                        profile = "ToolsTextEdit";
                         visible = "1";
                         active = "1";
                         command = "FEP_BrushManager.setBrushSize($ThisControl);";
@@ -568,7 +568,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_BrushSize_Range_Min";
@@ -645,7 +645,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_BrushSize_Range_Max";
@@ -796,7 +796,7 @@
                         minExtent = "8 16";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark";
+                        profile = "ToolsTextEdit";
                         visible = "1";
                         active = "1";
                         variable = "$Forest::GlobalScale";
@@ -943,7 +943,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_GlobalScale_Range_Min";
@@ -1020,7 +1020,7 @@
                            minExtent = "8 16";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            variable = "$FEP_BrushManager_GlobalScale_Range_Max";
@@ -1489,7 +1489,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark";
+                        profile = "ToolsTextEdit";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -1735,7 +1735,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -1838,7 +1838,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -1941,7 +1941,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2044,7 +2044,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2147,7 +2147,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2250,7 +2250,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2353,7 +2353,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2456,7 +2456,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "left";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextEditDark";
+                                    profile = "ToolsTextEdit";
                                     visible = "1";
                                     active = "1";
                                     command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -2698,7 +2698,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -2797,7 +2797,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -2827,7 +2827,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -2949,7 +2949,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3001,7 +3001,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3053,7 +3053,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3151,7 +3151,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3203,7 +3203,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3301,7 +3301,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3353,7 +3353,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3405,7 +3405,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3457,7 +3457,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextEditDark_S1";
+                              profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3731,7 +3731,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark";
+                                       profile = "ToolsTextEdit";
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -3834,7 +3834,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark";
+                                       profile = "ToolsTextEdit";
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -3937,7 +3937,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark";
+                                       profile = "ToolsTextEdit";
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -4040,7 +4040,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "left";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextEditDark";
+                                       profile = "ToolsTextEdit";
                                        visible = "1";
                                        active = "1";
                                        command = "syncParamArrayCtrl($ThisControl,\"FEP_Manager.updateSimGroupParam\",\"arFEP_BrushParam\",\"\",\"\");";
@@ -4512,7 +4512,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextEditDark";
+                        profile = "ToolsTextEdit";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -4845,7 +4845,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -4941,7 +4941,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -4994,7 +4994,7 @@
                      minExtent = "8 2";
                      horizSizing = "left";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -5139,7 +5139,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5215,7 +5215,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5291,7 +5291,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5367,7 +5367,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5489,7 +5489,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5565,7 +5565,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5641,7 +5641,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5717,7 +5717,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5839,7 +5839,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5915,7 +5915,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -5991,7 +5991,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -6113,7 +6113,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -6189,7 +6189,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -6265,7 +6265,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark_S1";
+                           profile = "ToolsTextEdit_S1";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";

@@ -213,7 +213,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);";
@@ -464,7 +464,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( false, $ThisControl.getValue() );";
@@ -556,7 +556,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateLifeFields( true, $ThisControl.getValue() );";
@@ -741,7 +741,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( false, $ThisControl.getValue() );";
@@ -833,7 +833,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateAmountFields( true, $ThisControl.getValue() );";
@@ -975,7 +975,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( false, $ThisControl.getValue() );";
@@ -1067,7 +1067,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateSpeedFields( true, $ThisControl.getValue() );";
@@ -1289,7 +1289,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "PE_EmitterEditor.updateEmitter( \"alignDirection\", $ThisControl.getText());";
@@ -1431,7 +1431,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMin\", $ThisControl.getText());";
@@ -1523,7 +1523,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"thetaMax\", $ThisControl.getText());";
@@ -1648,7 +1648,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"phiVariance\", $ThisControl.getText());";
@@ -1740,7 +1740,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffset\", $ThisControl.getText());";
@@ -1831,7 +1831,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ejectionOffsetVariance\", $ThisControl.getText());";
@@ -2439,7 +2439,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"softnessDistance\", $ThisControl.getText());";
@@ -2531,7 +2531,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditDark";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_EmitterEditor.updateEmitter( \"ambientFactor\", $ThisControl.getText));";
@@ -2963,7 +2963,7 @@
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
-                     profile = "ToolsTextEditDark";
+                     profile = "ToolsTextEdit";
                      visible = "1";
                      active = "1";
                      altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);";
@@ -3284,7 +3284,7 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -3429,7 +3429,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( false, $ThisControl.getText() );";
@@ -3521,7 +3521,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateLifeFields( true, $ThisControl.getText() );";
@@ -3663,7 +3663,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"inheritedVelFactor\", $ThisControl.getText());";
@@ -3755,7 +3755,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"constantAcceleration\", $ThisControl.getText());";
@@ -3898,7 +3898,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"gravityCoefficient\", $ThisControl.getText());";
@@ -3990,7 +3990,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"dragCoefficient\", $ThisControl.getText());";
@@ -4150,7 +4150,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( true, $ThisControl.getText() );";
@@ -4260,7 +4260,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateSpinFields( false, $ThisControl.getText() );";
@@ -4385,7 +4385,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"spinSpeed\", $ThisControl.getText());";
@@ -4691,7 +4691,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[0]\", $ThisControl.getText());";
@@ -4783,7 +4783,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[1]\", $ThisControl.getText());";
@@ -4875,7 +4875,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[2]\", $ThisControl.getText());";
@@ -4967,7 +4967,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"sizes[3]\", $ThisControl.getText());";
@@ -5092,7 +5092,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[0]\", $ThisControl.getText());";
@@ -5184,7 +5184,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[1]\", $ThisControl.getText());";
@@ -5276,7 +5276,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[2]\", $ThisControl.getText());";
@@ -5368,7 +5368,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsTextEditProfile";
+                           profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
                            altCommand = "$ThisControl.setText(mClamp( $ThisControl.getValue(), 0.0, 1.0)); $ThisControl.getParent().updateFromChild($ThisControl); PE_ParticleEditor.updateParticle( \"times[3]\", $ThisControl.getText());";

@@ -20,6 +20,14 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+singleton GuiControlProfile( EditorGuiGenericProfile ) {
+	canKeyFocus = true;
+	opaque = true;
+	fillColor = "192 192 192 192";
+	category = "Editor";
+};
+
+
 singleton GuiControlProfile (EditorDefaultProfile) {
     opaque = true;
     category = "Editor";

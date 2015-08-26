@@ -5273,8 +5273,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTextEditProfile_DarkBasicStyle) {
-      internalName = "ToolsTextEditProfile";
+   new ScriptObject(ToolsTextEdit_DarkBasicStyle) {
+      internalName = "ToolsTextEdit";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -5311,8 +5311,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "1";
          textOffset = "4 2";
    };
-   new ScriptObject(ToolsTextEditProfile_Num_DarkBasicStyle) {
-      internalName = "ToolsTextEditProfile_Num";
+   new ScriptObject(ToolsTextEdit_Num_DarkBasicStyle) {
+      internalName = "ToolsTextEdit_Num";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -5349,8 +5349,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "1";
          textOffset = "4 2";
    };
-   new ScriptObject(ToolsTextEditDark_DarkBasicStyle) {
-      internalName = "ToolsTextEditDark";
+   new ScriptObject(ToolsTextEdit_DarkBasicStyle) {
+      internalName = "ToolsTextEdit";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -5387,8 +5387,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "1";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTextEditDark_S1_DarkBasicStyle) {
-      internalName = "ToolsTextEditDark_S1";
+   new ScriptObject(ToolsTextEdit_S1_DarkBasicStyle) {
+      internalName = "ToolsTextEdit_S1";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -5425,8 +5425,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "1";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsTextEditDark_Num_DarkBasicStyle) {
-      internalName = "ToolsTextEditDark_Num";
+   new ScriptObject(ToolsTextEdit_Num_DarkBasicStyle) {
+      internalName = "ToolsTextEdit_Num";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "1";
@@ -6439,8 +6439,8 @@ $LabStyleCurrentGroup = new SimGroup(DarkBasic_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(GuiDisabledTextEditProfile_DarkBasicStyle) {
-      internalName = "GuiDisabledTextEditProfile";
+   new ScriptObject(ToolsTextEdit_Disabled_DarkBasicStyle) {
+      internalName = "ToolsTextEdit_Disabled";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
