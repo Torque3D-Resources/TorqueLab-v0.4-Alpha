@@ -8,7 +8,7 @@ $TLab::DefaultPlugins = "SceneEditor";
 //==============================================================================
 // Make sure all GUIs are fine once the editor is launched
 function Lab::EditorLaunchGuiSetup(%this) {
-	Lab.attachAllEditorGuis();
+	//Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
 	
 	show(EWToolsToolbar);
@@ -67,7 +67,7 @@ function Lab::InitialGuiSetup(%this,%pluginName,%displayName,%alwaysEnable) {
 	EditorGui.pushToBack(EToolDlgCameraTypes);
 	EditorGui.pushToBack(VisibilityDropdown);
 	
-	LabEditor.isInitialized = true;
+	
 	Lab.initCoreGuis();
 	Lab.resizeEditorGui();
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");

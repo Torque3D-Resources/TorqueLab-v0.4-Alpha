@@ -137,6 +137,8 @@ function Lab::onInitialEditorLaunch( %this ) {
 	}
 
 	Lab.AddSelectionCallback("ETransformBox.updateSource","Transform");	
+	
+	LabEditor.isInitialized = true;
 }
 //------------------------------------------------------------------------------
 

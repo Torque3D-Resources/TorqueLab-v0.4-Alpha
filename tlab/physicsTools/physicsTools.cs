@@ -29,25 +29,27 @@ function PT::physicsToggleSimulation(%this) {
 function PT::setInitialPhysicsState(%this,%startDelay) {
 	%isEnabled = physicsSimulationEnabled();
 	if ( %isEnabled ) {
-		physicsStateText.setText( "Simulation is paused." );
+	//	physicsStateText.setText( "Simulation is paused." );
 		PT.physicsStopSimulation( "client" );
 		PT.physicsStopSimulation( "server" );
 	} 
-		PT.physicsRestoreState();
+	PT.physicsRestoreState();
 	if (%startDelay $= "")
 		return;
-	%this.schedule(%startDelay,"do","start");
+	%this.schedule(%startDelay,"doAction","start");
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Custom PhysicsTools Functions
 //==============================================================================
-function PT::do(%this,%action) {
+function PT::doAction(%this,%action) {
+	
 	%isEnabled = physicsSimulationEnabled();
-	%action = %this.internalName;
+	
 	switch$(%action){
 		case "start":
+			PT.physicsSetTimeScale(1);
 			if (%isEnabled)
 				return;
 			PT.physicsStartSimulation( "client" );
@@ -70,8 +72,22 @@ function PT::do(%this,%action) {
 //------------------------------------------------------------------------------
 
 function PhysicsToolsIcon::onClick(%this) {
+	devLog("PhysicsToolsIcon::onClick(%this)",%this.internalName);
 	%action = %this.internalName;
-	PT.do(%action);	
+	PT.doAction(%action);	
+}
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+function PhysicsToolsSlider::doCommand(%this) {
+	devLog("PhysicsToolsSlider::doCommand(%this)",%this.internalName);
+	%action = %this.internalName;
+	switch$(%action){
+		case "timeScale":
+		logd("Value",%this.getValue());
+			%scale = mFloatLength(%this.getValue(),1);
+			PT.physicsSetTimeScale(%scale);
+	}		
 }
 //------------------------------------------------------------------------------
 
@@ -143,6 +159,7 @@ function PT::physicsSimulationEnabled(%this,%worldName) {
 //==============================================================================
 // Used for slowing down time on the physics simulation, and for pausing/restarting the simulation.
 function PT::physicsSetTimeScale(%this,%scale) {
+	logd("PT::physicsSetTimeScale(%this,%scale)",%scale);
 	physicsSetTimeScale(%scale);
 }
 //------------------------------------------------------------------------------

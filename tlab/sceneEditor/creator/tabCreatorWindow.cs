@@ -16,7 +16,7 @@ function SceneCreatorWindow::init( %this ) {
 	%this.setListView( true );
 	
 	%this.registerObjects();
-	
+	SceneCreatorWindow.contentCtrl = CreatorIconArray;
 }
 
 //==============================================================================

@@ -32,8 +32,8 @@ singleton GuiControlProfile( ToolsTreeViewProfile : ToolsDefaultProfile ) {
     border = false;
     category = "Tools";
     fontColors[2] = "200 200 200 255";
-   fontType = "Lato bold";
-   fontSize = "17";
+   fontType = "Lato";
+   fontSize = "14";
    fontColors[0] = "254 238 192 255";
 };
 //------------------------------------------------------------------------------
