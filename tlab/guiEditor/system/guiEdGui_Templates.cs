@@ -7,6 +7,10 @@
 $GuiEd_TemplateListFilterEmpty = "\c2Filter...";
 //==============================================================================
 function GuiEd::initGuiTemplates(%this) {
+	hide(GuiEd_TplPreview);
+	foreach(%gui in GuiEd_TplPreviewContainer)
+		GuiEdTemplateGroup.add(%gui);
+			
 	GuiEditorTemplateList.clear();
 	hide(GuiEdGui_TemplatePillSrc);
 	if (!isObject(GuiEdTemplateGroup)){
@@ -66,7 +70,16 @@ function GuiEd::filterTemplateList(%this) {
 	GuiEditorTemplateList.refresh();
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+function GuiEd::addTemplateToGUI(%this) {	
+	if (!isObject(GuiEd.activeTemplateGui)){
+		GuiEd.setActiveTemplate();
+		return;
+	}
+	TplManager.addTemplateToGui(GuiEd.activeTemplateGui);
+	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function GuiEd::applyTemplateOnSelection(%this) {	
 	if (!isObject(GuiEd.activeTemplateGui)){
@@ -128,6 +141,9 @@ function GuiEd::setActiveTemplate(%this,%tplGui) {
 		
 	GuiEd.activeTemplateGui = %tplGui;
 	GuiEd.activeTemplate = %tplGui.internalName;
+	
+	if (GuiEd_TplPreview.visible)
+		GuiEd.updateTplPreview();
 	
 	%title.text = "\c1"@GuiEd.activeTemplate;
 	%catCtrl.text = "Category\c1" SPC %tplGui.tplCategory;
@@ -230,3 +246,49 @@ function GuiEd::toggleTemplateInfo(%this) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
+//GuiEd.previewTemplate();
+function GuiEd::previewTemplate(%this) {	
+	if (!isObject(GuiEd.activeTemplateGui)){
+		GuiEd.setActiveTemplate();
+		return;
+	}
+	if (GuiEd_TplPreview.isVisible()){
+		hide(GuiEd_TplPreview);
+		foreach(%gui in GuiEd_TplPreviewContainer)
+			GuiEdTemplateGroup.add(%gui);
+		
+		GuiEd.previewIsActive = true;
+		return;
+	}
+	show(GuiEd_TplPreview);
+	GuiEd_TplPreviewContainer.add(GuiEd.activeTemplateGui);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//GuiEd.previewTemplate();
+function GuiEd::updateTplPreview(%this) {	
+	if (!isObject(GuiEd.activeTemplateGui)){
+		GuiEd.setActiveTemplate();
+		return;
+	}
+	if (!GuiEd_TplPreview.isVisible())
+		return;
+	foreach(%gui in GuiEd_TplPreviewContainer)
+		GuiEdTemplateGroup.add(%gui);
+	show(GuiEd.activeTemplateGui);
+	GuiEd_TplPreviewContainer.add(GuiEd.activeTemplateGui);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//GuiEd.previewTemplate();
+function GuiEd::closeTplPreview(%this) {		
+	foreach(%gui in GuiEd_TplPreviewContainer)
+		GuiEdTemplateGroup.add(%gui);
+		
+	hide(GuiEd_TplPreview);
+	
+	
+}
+//------------------------------------------------------------------------------

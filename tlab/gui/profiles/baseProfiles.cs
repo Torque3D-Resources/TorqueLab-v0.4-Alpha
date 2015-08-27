@@ -277,7 +277,7 @@ singleton GuiControlProfile( ToolsGuiMenuProfile : ToolsGuiMenuBarProfile) {
    fontColors[7] = "255 0 255 255";
    bevelColorHL = "104 104 104 255";
    bevelColorLL = "157 157 157 255";
-   bitmap = "tlab/gui/assets/button-assets/GuiMenuCheck.png";
+   bitmap = "tlab/gui/assets/button-assets/GuiMenuBitmaps.png";
    hasBitmapArray = "1";
    fontColors[4] = "Fuchsia";
    fontColorLink = "Fuchsia";

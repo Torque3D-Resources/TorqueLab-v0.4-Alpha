@@ -39,7 +39,7 @@ function GuiEditCanvas::onRemove( %this ) {
 		GuiEditorGui.delete();
 
 	// cleanup
-	%this.onDestroyMenu();
+	//%this.onDestroyMenu();
 }
 
 

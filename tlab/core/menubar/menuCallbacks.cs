@@ -15,12 +15,11 @@
 /// %menuItemId 	Index id of the selected menu item
 /// %menuItemText 	Text of the selected menu item
 function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
-	devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);
+	//devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);
 	%type = %this.internalName;
 	
 	%callBack =  $LabMenuCallback[%type,%menuId,%menuItemId,%menuItemText];
-	eval(%callBack);
-	devLog(%type,"Callback",%callBack);
+	eval(%callBack);	
 	%isSubmenu = $LabMenuIsSubMenu[%type,%menuId,%menuItemId,%menuItemText];
 	if (%isSubmenu)
 		devLog("This a submenu of",%this.SubMenuText);
@@ -29,21 +28,20 @@ function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItem
 	%toggler = $LabMenuToggler[%type,%menuId,%menuItemId,%menuItemText];	
 	if (%toggler !$= ""){
 		eval("%checked = "@%toggler);
-		devLog("%menuId,%menuText,%menuItemId,%menuItemText:",%menuId,%menuText,%menuItemId,%menuItemText);
+		
 		//Lab.setMenuItemBitmap(%menuId,%menuItemId,3);
 		if (%isSubmenu){
-			%newMenuItemId = $LabSubMenuItemId[%type,%menuId,%menuItemId,%menuItemText];
-			devLog("Toggler MenuId:",%menuId,"ItemId",%menuItemId,"%menuItemText",%menuItemText,"%newMenuItemId",%newMenuItemId);	
-			Lab.ActiveMenu.setSubMenuItemChecked(%menuId,%newMenuItemId,%menuItemText,%checked);
+			%newMenuItemId = $LabSubMenuItemId[%type,%menuId,%menuItemId,%menuItemText];			
+			Lab.setSubMenuItemChecked(%this,%menuId,%newMenuItemId,%menuItemText,%checked);
 			return;
 		}
 		
-		Lab.setMenuItemChecked(%menuId,%menuItemId,%checked);
+		Lab.setMenuItemChecked(%this,%menuId,%menuItemId,%checked);
 		
 		if (!%checked)
-			Lab.ActiveMenu.setMenuItemBitmap(%menuId,%menuItemId,1);
+			Lab.setMenuItemBitmap(%this,%menuId,%menuItemId,1);
 		else
-			Lab.ActiveMenu.setMenuItemBitmap(%menuId,%menuItemId,2);
+			Lab.setMenuItemBitmap(%this,%menuId,%menuItemId,2);
 	}
 			
 	

@@ -35,8 +35,11 @@ function Lab::ExecMenuBarSystem(%this) {
 //==============================================================================
 //GuiEditCanvas.createLabMenu();
 function Lab::BuildMenus(%this,%execFirst) {	
-		if (%execFirst)
-		%this.ExecMenuBarSystem();
+	if (%execFirst)
+	%this.ExecMenuBarSystem();
+	
+	$LabMenuBindMap["World"] = EditorMap;
+	$LabMenuBindMap["Gui"] = GuiEdMap;
 	Lab.initMenu("World");
 	Lab.initMenu("Gui");
 }
@@ -110,6 +113,12 @@ function Lab::addMenuItemData(%this,%menuObj,%menuId,%menuItemId,%data) {
 	%type = %menuObj.internalName;
 	
 	%itemText = getField(%data,0);
+	%itemCode = %itemText;
+	if (strFind(%itemText,">>")){
+		%fields = strreplace(%itemText,">>","/t");
+		%itemText = getField(%fields,0);
+		%itemCode = getField(%fields,1);
+	}
 	%accelerator = getField(%data,1);
 	%callback = getField(%data,2);
 	%toggler = getField(%data,3);
@@ -119,9 +128,10 @@ function Lab::addMenuItemData(%this,%menuObj,%menuId,%menuItemId,%data) {
 	
 	$LabMenuCallback[%type,%menuId,%menuItemId,%itemText] = %callback;
 	$LabMenuIsSubMenu[%type,%menuId,%menuItemId,%itemText] = false;
+	$LabMenuCodeIds[%type,%itemCode] = %itemText TAB %menuId TAB %menuItemId;
 	
 	if (%accelerator !$="") {		
-		%this.addMenuBind(%accelerator,%callBack);
+		%this.addMenuBind(%type,%accelerator,%callBack);
 	}
 
 	Lab.addMenuItem(%menuObj,%menuId,%itemText,%menuItemId,%accelerator,%checkGroup);	
@@ -140,6 +150,12 @@ function Lab::addSubMenuItemData(%this,%menuObj,%menuId,%menuItemId,%submenuItem
 	%type = %menuObj.internalName;
 	
 	%subItemText = getField(%data,0);
+	%itemCode = %subItemText;
+	if (strFind(%subItemText,">>")){
+		%fields = strreplace(%subItemText,">>","/t");
+		%subItemText = getField(%fields,0);
+		%itemCode = getField(%fields,1);
+	}
 	%accelerator = getField(%data,1);
 	%callback = getField(%data,2);
 	%toggler = getField(%data,3);
@@ -151,9 +167,9 @@ function Lab::addSubMenuItemData(%this,%menuObj,%menuId,%menuItemId,%submenuItem
 	$LabMenuIsSubMenu[%type,%menuId,%submenuItemId,%subItemText] = true;
 	
 	$LabSubMenuItemId[%type,%menuId,%submenuItemId,%subItemText] = %menuItemId;
-	
+	$LabMenuCodeIds[%type,%itemCode] = %subItemText TAB %menuId TAB %menuItemId TAB %submenuItemId;
 	if (%accelerator !$="") {		
-		%this.addMenuBind(%accelerator,%callBack);
+		%this.addMenuBind(%type,%accelerator,%callBack);
 	}	
 	
 	Lab.addSubmenuItem(%menuObj,%menuId,%menuItemId,%subItemText,%submenuItemId,%accelerator,%checkGroup);
@@ -168,7 +184,8 @@ function Lab::addSubMenuItemData(%this,%menuObj,%menuId,%menuItemId,%submenuItem
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::addMenuBind(%this,%bind,%command) {
-	EditorMap.bindCmd(keyboard, %bind, %command, "");
+function Lab::addMenuBind(%this,%type,%bind,%command) {
+	%map = $LabMenuBindMap[%type];
+	%map.bindCmd(keyboard, %bind, %command, "");	
 }
 //------------------------------------------------------------------------------

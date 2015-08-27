@@ -9,9 +9,7 @@ function Lab::updatePluginsBar(%this,%reset) {
 	if (%reset)
 		%this.resetPluginsBar();
 
-	foreach(%pluginObj in LabPluginGroup) {
-		devLog(%pluginObj.pluginName,"Hidden?",%pluginObj.isHidden);
-		//if (%pluginObj.isHidden) continue;
+	foreach(%pluginObj in LabPluginGroup) {	
 		Lab.addPluginToBar( %pluginObj );
 	}
 }

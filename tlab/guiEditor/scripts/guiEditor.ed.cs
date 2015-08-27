@@ -261,7 +261,8 @@ function GuiEditor::setPreviewResolution( %this, %width, %height ) {
 
 function GuiEditor::toggleEdgeSnap( %this ) {
 	%this.snapToEdges = !%this.snapToEdges;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, %this.snapToEdges );
+	Lab.checkMenuCodeItem("Gui","snapToEdges",%this.snapToEdges);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, %this.snapToEdges );
 	GuiEditorEdgeSnapping_btn.setStateOn( %this.snapToEdges );
 }
 
@@ -269,7 +270,8 @@ function GuiEditor::toggleEdgeSnap( %this ) {
 
 function GuiEditor::toggleCenterSnap( %this ) {
 	%this.snapToCenters = !%this.snapToCenters;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, %this.snapToCenters );
+	Lab.checkMenuCodeItem("Gui","snapToCenters",%this.snapToCenters);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, %this.snapToCenters );
 	GuiEditorCenterSnapping_btn.setStateOn( %this.snapToCenters );
 }
 
@@ -277,35 +279,40 @@ function GuiEditor::toggleCenterSnap( %this ) {
 
 function GuiEditor::toggleFullBoxSelection( %this ) {
 	%this.fullBoxSelection = !%this.fullBoxSelection;
-	GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, %this.fullBoxSelection );
+	Lab.checkMenuCodeItem("Gui","fullBoxSelection",%this.fullBoxSelection);
+	//GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, %this.fullBoxSelection );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleDrawGuides( %this ) {
 	%this.drawGuides= !%this.drawGuides;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, %this.drawGuides );
+	Lab.checkMenuCodeItem("Gui","drawGuides",%this.drawGuides);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, %this.drawGuides );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleGuideSnap( %this ) {
 	%this.snapToGuides = !%this.snapToGuides;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, %this.snapToGuides );
+	Lab.checkMenuCodeItem("Gui","snapToGuides",%this.snapToGuides);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, %this.snapToGuides );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleControlSnap( %this ) {
 	%this.snapToControls = !%this.snapToControls;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, %this.snapToControls );
+	Lab.checkMenuCodeItem("Gui","snapToGuides",%this.snapToControls);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, %this.snapToControls );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleCanvasSnap( %this ) {
 	%this.snapToCanvas = !%this.snapToCanvas;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, %this.snapToCanvas );
+	Lab.checkMenuCodeItem("Gui","snapToCanvas",%this.snapToCanvas);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, %this.snapToCanvas );
 }
 
 //---------------------------------------------------------------------------------------------
@@ -317,8 +324,8 @@ function GuiEditor::toggleGridSnap( %this ) {
 		%this.setSnapToGrid( 0 );
 	else
 		%this.setSnapToGrid( %this.snap2GridSize );
-
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, %this.snap2Grid );
+	Lab.checkMenuCodeItem("Gui","snap2Grid",%this.snap2Grid);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, %this.snap2Grid );
 	GuiEditorSnapCheckBox.setStateOn( %this.snap2Grid );
 }
 

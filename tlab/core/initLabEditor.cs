@@ -28,7 +28,7 @@ function Lab::initLabEditor( %this ) {
 
 	//Prepare the Settings
 	%this.initEditorGui();
-	Lab.BuildMenus();
+	
 	//%this.initMenubar();
 	%this.initParamsSystem();
 	
@@ -74,6 +74,7 @@ function Lab::pluginInitCompleted( %this ) {
 	//%this.prepareAllPluginsGui();
 	//ETools.initTools();
 	//Prepare the Settings
+	Lab.BuildMenus();
 	Lab.initConfigSystem();
 	Lab.initAllConfigArray();
 	

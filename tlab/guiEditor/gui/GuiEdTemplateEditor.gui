@@ -21,7 +21,7 @@
    canSaveDynamicFields = "1";
 
    new GuiWindowCtrl(GuiEdTemplateContainer) {
-      text = "\c1NewTestA\c1\c0 template UI editing and setup";
+      text = "\c1WindowTab2Pages\c1\c0 template UI editing and setup";
       resizeWidth = "0";
       resizeHeight = "0";
       canMove = "1";
@@ -50,6 +50,7 @@
       hovertime = "1000";
       isContainer = "1";
       internalName = "templateEditorWindow";
+      locked = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
 
@@ -1826,7 +1827,7 @@
                                                 groupNum = "-1";
                                                 buttonType = "PushButton";
                                                 useMouseEvents = "0";
-                                                position = "214 0";
+                                                position = "60 0";
                                                 extent = "73 22";
                                                 minExtent = "8 2";
                                                 horizSizing = "left";
@@ -2532,7 +2533,7 @@
                                                 groupNum = "-1";
                                                 buttonType = "PushButton";
                                                 useMouseEvents = "0";
-                                                position = "214 0";
+                                                position = "60 0";
                                                 extent = "73 22";
                                                 minExtent = "8 2";
                                                 horizSizing = "left";
@@ -3341,7 +3342,7 @@
                                                    groupNum = "-1";
                                                    buttonType = "PushButton";
                                                    useMouseEvents = "0";
-                                                   position = "214 0";
+                                                   position = "60 0";
                                                    extent = "73 22";
                                                    minExtent = "8 2";
                                                    horizSizing = "left";
@@ -3377,11 +3378,12 @@
                                        horizSizing = "right";
                                        vertSizing = "bottom";
                                        profile = "ToolsBoxDarkC_Top";
-                                       visible = "1";
+                                       visible = "0";
                                        active = "1";
                                        tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "1";
+                                       hidden = "1";
                                        canSave = "1";
                                        canSaveDynamicFields = "0";
 
@@ -3999,7 +4001,7 @@
                                                    groupNum = "-1";
                                                    buttonType = "PushButton";
                                                    useMouseEvents = "0";
-                                                   position = "214 0";
+                                                   position = "60 0";
                                                    extent = "73 22";
                                                    minExtent = "8 2";
                                                    horizSizing = "left";
@@ -4641,11 +4643,12 @@
                                           horizSizing = "right";
                                           vertSizing = "bottom";
                                           profile = "ToolsDefaultProfile";
-                                          visible = "1";
+                                          visible = "0";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
                                           hovertime = "1000";
                                           isContainer = "1";
+                                          hidden = "1";
                                           canSave = "1";
                                           canSaveDynamicFields = "0";
 
@@ -5933,7 +5936,7 @@
                                                 groupNum = "-1";
                                                 buttonType = "PushButton";
                                                 useMouseEvents = "0";
-                                                position = "214 0";
+                                                position = "60 0";
                                                 extent = "73 22";
                                                 minExtent = "8 2";
                                                 horizSizing = "left";
@@ -6658,11 +6661,12 @@
                                           horizSizing = "right";
                                           vertSizing = "bottom";
                                           profile = "ToolsDefaultProfile";
-                                          visible = "1";
+                                          visible = "0";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
                                           hovertime = "1000";
                                           isContainer = "1";
+                                          hidden = "1";
                                           canSave = "1";
                                           canSaveDynamicFields = "0";
 
@@ -7166,11 +7170,12 @@
                   horizSizing = "width";
                   vertSizing = "height";
                   profile = "ToolsBoxDarkC_Top";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 

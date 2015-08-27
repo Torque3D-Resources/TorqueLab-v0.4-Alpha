@@ -114,8 +114,9 @@ function Lab::initPluginConfig(%this,%pluginObj) {
 function Lab::updateActivePlugins(%this) {
 	foreach(%pluginObj in LabPluginGroup) {
 		%enabled = %pluginObj.getCfg("isEnabled");
-		%pluginObj.setPluginEnable(%enabled);		
+		%pluginObj.setPluginEnable(%enabled,%noMenuUpdate);		
 	}
+	Lab.updatePluginsMenu();
 }
 //------------------------------------------------------------------------------
 function Lab::enablePlugin(%this,%pluginObj,%enabled) {
@@ -144,7 +145,7 @@ function Lab::disablePlugin(%this,%pluginObj) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function EditorPlugin::setPluginEnable(%this,%enabled) {
+function EditorPlugin::setPluginEnable(%this,%enabled,%noMenuUpdate) {
 	
 	if (%this.alwaysOn) 
 		%enabled = "1";
@@ -154,19 +155,16 @@ function EditorPlugin::setPluginEnable(%this,%enabled) {
 	%toolArray = ToolsToolbarArray.findObjectByInternalName(%this.plugin);
 	%toolDisabledArray = EditorGui-->DisabledPluginsBox.findObjectByInternalName(%this.plugin);
 	
+	if (%this.isEnabled == %enabled)
+		return;
+		
 	%this.isEnabled = %enabled;
+	if (isObject(%toolArray))
+		%toolArray.visible = %this.isEnabled;
+		
+	//Simply rebuild the editorMenus since the GuiMenuBar is primitive...
+	if (!%noMenuUpdate)
+		Lab.updatePluginsMenu();	
 
-	if (%enabled) {
-		if (!isObject(%toolArray))
-			%this.AddToEditorsMenu(%this);
-		show(%toolArray);
-		info(%this.plugin,"plugin is enabled");
-	} 
-	else {
-		hide(%toolArray);
-		//%this.removeFromEditorsMenu(%this);	
-		info(%this.plugin,"plugin is disabled");
-	}
-	//EWToolsToolbar.resize();
 }
 //------------------------------------------------------------------------------

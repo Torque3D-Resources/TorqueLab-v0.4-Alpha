@@ -62,12 +62,15 @@ function TplManager::toggleBrowser(%this,%state) {
 	GuiEdTemplateBrowser.position = "8 100";
 
 	if (!GuiEdTemplateEditor.isAwake()) {
-		TplManager.previousGui = GuiEditor.lastContent;
+		GuiEditor.preTplContent = GuiEditor.lastContent;
 		GuiEditContent(GuiEdTemplateEditor);
 		//pushDlg(GuiEdTemplateManager);
 	} else {
+		
 		if (isObject(TplManager.previousGui))
-			GuiEditContent(TplManager.previousGui);
+			TplManager.previousGui = GuiEditor.initialContent;
+			
+		GuiEditContent(GuiEditor.preTplContent);
 	}
 
 	//toggleDlg(GuiEdTemplateManager);

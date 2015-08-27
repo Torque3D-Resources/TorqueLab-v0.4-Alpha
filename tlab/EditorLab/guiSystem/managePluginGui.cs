@@ -103,12 +103,21 @@ function Lab::addPluginPalette(%this,%plugin,%gui) {
 //==============================================================================
 // Editor Main menu functions
 //==============================================================================
-
+//==============================================================================
+function Lab::updatePluginsMenu(%this) {
+	if (!$Cfg_UseCoreMenubar)
+		Lab.clearSubmenuItems($LabMenuEditorSubMenu.x,$LabMenuEditorSubMenu.y);
+		
+	foreach(%pluginObj in LabPluginGroup) 
+		%this.addToEditorsMenu(%pluginObj);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::addToEditorsMenu( %this, %pluginObj ) {
 	%displayName = %pluginObj.displayName;
 	%accel = "";
-
+	if (!%pluginObj.isEnabled)
+		return;
 	if ($Cfg_UseCoreMenubar) {
 		%windowMenu = Lab.findMenu( "Editors" );
 		%count = %windowMenu.getItemCount();
@@ -132,8 +141,9 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 		%menuId = getWord($LabMenuEditorSubMenu,0);
 		%itemId = getWord($LabMenuEditorSubMenu,1);
 		%subId = $LabMenuEditorNextId++;
+		$WorldEdMenuPlugin[%pluginObj.getName()] = %menuId SPC %itemId SPC %subId;
 		$LabMenuSubMenuItem[%menuId,%itemId,%subId] = %displayName TAB "" TAB "Lab.setEditor(\""@%pluginObj.getName()@"\");" TAB ""@%pluginObj.getName()@".isActivated;" TAB "4";
-		Lab.addSubMenuItemData(%menuId,%itemId,%subId,$LabMenuSubMenuItem[%menuId,%itemId,%subId]);
+		Lab.addSubMenuItemData(WorldEdMenu,%menuId,%itemId,%subId,$LabMenuSubMenuItem[%menuId,%itemId,%subId]);
 		//Lab.addSubmenuItem(%menuId,%itemId,%displayName,%subId,"",-1);
 	}
 
@@ -142,6 +152,8 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::removeFromEditorsMenu( %this,  %pluginObj ) {
+	
+	
 	if (!isObject(%windowMenu))
 		return;
 

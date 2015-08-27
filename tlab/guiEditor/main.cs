@@ -20,10 +20,12 @@ function initializeGuiEditor() {
 	// GUIs.
 	execGuiEdit(true);
 	
-	//GuiEd.initGuiEditor();
-	
 }
 //------------------------------------------------------------------------------
+function execGuiLab() {
+	execPattern( "tlab/guiEditor/lab/*.cs" );	
+	execPattern( "tlab/guiEditor/system/*.cs" );
+}
 //==============================================================================
 function execGuiEdit(%execGui,%execMainGui) {
 	
@@ -66,8 +68,7 @@ function execGuiEdit(%execGui,%execMainGui) {
 	exec( "./scripts/EditorChooseGUI.ed.cs" );
 	exec( "./gui/LabWidgetBuilderDlg.cs" );
 	exec( "tlab/guiEditor/scripts/functionControls.cs" );
-	execPattern( "tlab/guiEditor/lab/*.cs" );
-	execPattern( "tlab/guiEditor/menu/*.cs" );
+	execPattern( "tlab/guiEditor/lab/*.cs" );	
 	execPattern( "tlab/guiEditor/system/*.cs" );
 	GuiEd.InitGuiEditor();
 

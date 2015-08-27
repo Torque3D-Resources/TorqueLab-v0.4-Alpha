@@ -84,7 +84,7 @@ function Lab::convertClonedGuiEditor(%this) {
 	exec("tlab/guiEditor/gui/guiEditor.ed.gui");
 	
 	addGuiEditorCtrl();
-	
+	Lab.initMenu(GuiEdMenu);
 	if (%loadEditor)
 		GuiEd.schedule(500,"launchEditor",true);	
 }

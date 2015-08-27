@@ -120,16 +120,16 @@ function GuiEdMenu::initData(%this) {
 	$LabMenuItemGui_[%id,%itemId++] = "Big Nudge Down" TAB "Shift Down" TAB "GuiEditor.move( 0, GuiEditor.snap2gridsize );";
 	%itemId = -1;
 	$LabMenuGui_[%id++] = "Snap";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap Edges" TAB "Alt-Shift E" TAB "GuiEditor.toggleEdgeSnap();" TAB "GuiEditor.snapToEdges;";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap Centers" TAB "Alt-Shift C" TAB "GuiEditor.toggleCenterSnap();" TAB "GuiEditor.snapToCenters;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap Edges>>snapToEdges" TAB "Alt-Shift E" TAB "GuiEditor.toggleEdgeSnap();" TAB "GuiEditor.snapToEdges;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap Centers>>snapToCenters" TAB "Alt-Shift C" TAB "GuiEditor.toggleCenterSnap();" TAB "GuiEditor.snapToCenters;";
 	$LabMenuItemGui_[%id,%itemId++] = "-";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap to Guides" TAB "Alt-Shift G" TAB "GuiEditor.toggleGuideSnap();" TAB "GuiEditor.snapToGuides;";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap to Controls" TAB "Alt-Shift T" TAB "GuiEditor.toggleControlSnap();" TAB "GuiEditor.snapToControls;";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap to Canvas" TAB "" TAB "GuiEditor.toggleCanvasSnap();" TAB "GuiEditor.snapToCanvas;";
-	$LabMenuItemGui_[%id,%itemId++] = "Snap to Grid" TAB "" TAB "GuiEditor.toggleGridSnap();" TAB "GuiEditor.snap2Grid;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap to Guides>>snapToGuides" TAB "Alt-Shift G" TAB "GuiEditor.toggleGuideSnap();" TAB "GuiEditor.snapToGuides;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap to Controls>>snapToControls" TAB "Alt-Shift T" TAB "GuiEditor.toggleControlSnap();" TAB "GuiEditor.snapToControls;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap to Canvas>>snapToCanvas" TAB "" TAB "GuiEditor.toggleCanvasSnap();" TAB "GuiEditor.snapToCanvas;";
+	$LabMenuItemGui_[%id,%itemId++] = "Snap to Grid>>snap2Grid" TAB "" TAB "GuiEditor.toggleGridSnap();" TAB "GuiEditor.snap2Grid;";
 	$LabMenuItemGui_[%id,%itemId++] = "-";
-	$LabMenuItemGui_[%id,%itemId++] = "Show Guides" TAB "" TAB "GuiEditor.toggleDrawGuides();" TAB "GuiEditor.drawGuides;";
-	$LabMenuItemGui_[%id,%itemId++] = "Full box selection" TAB "" TAB "GuiEditor.toggleFullBoxSelection();" TAB "GuiEditor.fullBoxSelection;";
+	$LabMenuItemGui_[%id,%itemId++] = "Show Guides>>drawGuides" TAB "" TAB "GuiEditor.toggleDrawGuides();" TAB "GuiEditor.drawGuides;";
+	$LabMenuItemGui_[%id,%itemId++] = "Full box selection>>fullBoxSelection" TAB "" TAB "GuiEditor.toggleFullBoxSelection();" TAB "GuiEditor.fullBoxSelection;";
 	
 	$LabMenuItemGui_[%id,%itemId++] = "Clear Guides" TAB "" TAB "GuiEditor.clearGuides();";
 	%itemId = -1;

@@ -13,12 +13,12 @@ $GuiEd_InitCompleted = false;
 //==============================================================================
 // Toggle the GuiEditor( Close if open and open if closed)
 function GuiEd::InitGuiEditor( %this,%force ) {
-	if ($GuiEd_InitCompleted && !%force){
-		// Init the Common stuff
-		GuiEd.initCommonInspector();
-		return;
+	if (!$GuiEd_InitCompleted || %force){
+		//Nothing here for now...		
 	}		
-		
+	// Init the Common stuff
+	GuiEd.initCommonInspector();	
+	
 	Lab.initTemplateManager();
 	
 	
@@ -32,5 +32,7 @@ function GuiEd::InitGuiEditor( %this,%force ) {
 	
 	// Init the Library Page stuff
 	GuiEd.initLibraryContent();	
+	
+	$GuiEd_InitCompleted = true;
 }
 //------------------------------------------------------------------------------

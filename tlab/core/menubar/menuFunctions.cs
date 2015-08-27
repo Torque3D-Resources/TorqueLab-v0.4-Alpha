@@ -25,7 +25,7 @@ function Lab::addMenu(%this,%menuObj,%menuText,%menuId) {
 /// %checkGroup 	Check group to include this menu item in.
 function Lab::addMenuItem(%this,%menuObj,%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup) {
 	%type = %menuObj.internalName;
-	devLog("Lab::addMenuItem(%this,%menuObj,%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup)",%menuObj,%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup);
+	//devLog("Lab::addMenuItem(%this,%menuObj,%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup)",%menuObj,%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup);
 	$LabMenuItemList[%type,%menuId] = strAddField($LabMenuItemList[%type,%menuId],%menuItemId SPC %menuItemText,true);	
 	
 	%menuObj.addMenuItem(%menuId,%menuItemText,%menuItemId,%accelerator,%checkGroup);	
@@ -59,7 +59,14 @@ function Lab::ClearMenusItems(%this,%menuObj,%menu) {
 	%menuObj.ClearMenusItems(%menu);
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+/// Removes all the menu items from the specified submenu.
+function Lab::clearSubmenuItems(%this,%menuObj,%menuId,%menuItemId) {
+	%menuObj.clearSubmenuItems(%menuId,%menuItemId);
+}
+//------------------------------------------------------------------------------
 
+ 	 
 //==============================================================================
 function Lab::removeMenu(%this,%menuObj,%menu) {
 	%menuObj.removeMenu(%menu);

@@ -110,17 +110,18 @@ function buildParamsArray( %array,%syncAfter ) {
 		}
 	
 
-		if (!%baseCtrlClear[%baseCtrl]) {
-			%baseCtrl.clear();
-			%baseCtrlClear[%baseCtrl] = true;
-		}
+		
 
 		if (!isObject(%baseCtrl)) {
 			warnLog("Invalid Params Array Container:",%baseCtrl,"Can't generate the params!");
 			%gid++;
 			continue;
 		}
-
+		
+		if (!%baseCtrlClear[%baseCtrl]) {
+			%baseCtrl.clear();
+			%baseCtrlClear[%baseCtrl] = true;
+		}
 		//======================================================================
 		// Set the stack control in which the group pills will be added
 		//----------------------------------------------------------------------

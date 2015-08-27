@@ -5,13 +5,27 @@
 //==============================================================================
 
 //==============================================================================
+function Lab::destroyMenu(%this,%type) {	
+	if ($Cfg_UseCoreMenubar){	
+		return;
+	}
+	eval("%menuObj = "@%type@"EdMenu;");
+	Lab.ClearMenus(%menuObj);		
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function Lab::checkMenuCodeItem(%this,%type,%code,%checked) {	
+	%data = $LabMenuCodeIds[%type,%code];
+	devLog("Type",%type,"Code",%code,"checkMenuCodeItem Data",%data,"Checked",%checked);
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
 // Functions to manage various Menu States
 //==============================================================================
 //------------------------------------------------------------------------------
-function Lab::updatePluginsMenu(%this) {
-	foreach(%pluginObj in LabPluginGroup) 
-		%this.addToEditorsMenu(%pluginObj);
-}
+
 //==============================================================================
 function Lab::setNativeMenuSystem(%this,%useNative) {
 	if ($Cfg_UseCoreMenubar == %useNative)

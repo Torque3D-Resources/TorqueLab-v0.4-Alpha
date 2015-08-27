@@ -172,3 +172,8 @@ singleton GuiControlProfile(ToolsFillLightC : ToolsFillLightA) {
 //------------------------------------------------------------------------------
 
 
+
+singleton GuiControlProfile(ToolsFillDarkA_T50 : ToolsFillDarkA)
+{
+   fillColor = "34 36 36 128";
+};
