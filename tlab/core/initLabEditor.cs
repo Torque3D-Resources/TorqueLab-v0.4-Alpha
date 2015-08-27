@@ -28,7 +28,8 @@ function Lab::initLabEditor( %this ) {
 
 	//Prepare the Settings
 	%this.initEditorGui();
-	%this.initMenubar();
+	Lab.BuildMenus();
+	//%this.initMenubar();
 	%this.initParamsSystem();
 	
 	 exec("tlab/EditorLab/editorDialogs/guiLab/initGuiLab.cs");

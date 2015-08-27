@@ -5,29 +5,8 @@
 //==============================================================================
 
 //==============================================================================
-function Lab::initMenubar(%this) {
-	if (!$Cfg_UseCoreMenubar) {
-		
-		exec("tlab/EditorLab/guiSystem/menubar/defineMenus.cs");
-		exec("tlab/EditorLab/guiSystem/menubar/labstyle/menubarScript.cs");
-		exec("tlab/EditorLab/guiSystem/menubar/labstyle/buildWorldMenu.cs");
-		Lab.initLabMenuData(true);
-
-		if (isObject(Lab.menuBar))
-			Lab.menuBar.removeFromCanvas();
-		//if (LabEditor.isInitialized)
-			//Lab.updatePluginsMenu();
-		return;
-	}
-	
-	Lab.clearMenus();
-
-	if(!isObject(%this.menuBar))
-		%this.buildMenus();
-
-	%this.attachMenus();
-	
-}
+// Functions to manage various Menu States
+//==============================================================================
 //------------------------------------------------------------------------------
 function Lab::updatePluginsMenu(%this) {
 	foreach(%pluginObj in LabPluginGroup) 

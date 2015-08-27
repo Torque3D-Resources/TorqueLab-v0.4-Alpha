@@ -36,7 +36,7 @@ function GuiEditCanvas::createLabMenu(%this) {
 		%menuId++;
 	}
 	GuiEd_MenuBar.setCheckmarkBitmapIndex(2);
-	GuiEd_MenuBar.setMenuMargins("","0","18");
+	GuiEdMenu.setMenuMargins("7","0","18");
 }
 //------------------------------------------------------------------------------
 

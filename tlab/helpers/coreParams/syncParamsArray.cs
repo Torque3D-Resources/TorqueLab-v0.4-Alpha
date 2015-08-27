@@ -43,8 +43,7 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 		if (%paramArray.autoSyncPref $= "1"||%paramArray.autoSyncPref) {
 			%prefGroup = %paramArray.prefGroup;
-			eval("%value = "@%prefGroup@%fieldClean@";");
-			devLog("autoSyncPref",%field,"Pref",%prefGroup);
+			eval("%value = "@%prefGroup@%fieldClean@";");		
 			if (%value !$= "") {
 				setParamCtrlValue(%ctrl,%value,%field,%paramArray);
 				continue;

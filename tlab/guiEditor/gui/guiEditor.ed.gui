@@ -42,7 +42,7 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiMenuBar(GuiEd_MenuBar) {
+      new GuiMenuBar(GuiEdMenu) {
          padding = "0";
          position = "0 2";
          extent = "1440 20";
@@ -56,6 +56,7 @@
          hovertime = "1000";
          isContainer = "0";
          superClass = "LabMenu";
+         internalName = "Gui";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

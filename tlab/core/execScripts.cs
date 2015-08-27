@@ -23,6 +23,7 @@ function tlabExecCore( %loadGui ) {
 	execPattern("tlab/core/scripts/*.cs");
 	execPattern("tlab/core/common/*.cs");
 	execPattern("tlab/core/params/*.cs");
+	execPattern("tlab/core/menubar/*.cs");
 	
 execPattern("tlab/core/guiHelpers/*.cs");
 	
