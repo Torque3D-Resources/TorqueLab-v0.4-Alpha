@@ -78,7 +78,6 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 	//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 	if (%array.autoSyncPref $= "1"||%array.autoSyncPref) {
 		%prefGroup = %array.prefGroup;
-		paramLog("AutoPref Eval",%prefGroup@%field@" = %value;");
 		eval(%prefGroup@%field@" = \""@%value@"\";");
 	}
 
@@ -86,7 +85,6 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 
 	// Call the specific update function is set
 	if (%updateFunc !$= "" && %array.customUpdateOnly) {
-		paramLog("Calling custom update only func:",%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);",%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);
 		eval(%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);");
 		return;
 	}
@@ -156,17 +154,14 @@ function setParamFieldValue( %array, %field,%value) {
 		else if (getSubStr(%syncData,0,1) $= "$") {
 			%lastChar = getSubStr(%syncData,strlen(%syncData)-1,1);
 			if (%lastChar $= ":" || %lastChar $= "_"){
-				paramLog(%syncData,"LabParams::updateParamSyncData HalfPref eval",%syncData@%field@" = %value;" );
 				//Incomplete global, need to add the field
 				eval(%syncData@%field@" = %value;");
 				return;
 			}
-			paramLog(%syncData,"LabParams::updateParamSyncData FullGlobal eval",%syncData@%field@" = %value;" );
 			eval(%syncData @" = %value;");
 			return;
 		}
 		else if (strFind(%syncData,"::")) {
-		paramLog(%syncData,"LabParams::updateParamSyncData prefGroup eval",%paramArray.prefGroup@%syncData@" = %value;" );
 			eval(%paramArray.prefGroup@%syncData@" = %value;");
 			return;
 		} 

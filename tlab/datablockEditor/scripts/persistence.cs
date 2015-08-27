@@ -52,10 +52,14 @@ function DatablockEditorPlugin::syncDirtyState( %this ) {
 //==============================================================================
 //-
 function DatablockEditorPlugin::flagInspectorAsDirty( %this, %dirty ) {
-	if( %dirty )
+	if( %dirty ){
 		DatablockEditorInspectorWindow.text = "Datablock *";
-	else
+		show(DbEd_ReloadDataButton);
+	}
+	else{
 		DatablockEditorInspectorWindow.text = "Datablock";
+		hide(DbEd_ReloadDataButton);
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================

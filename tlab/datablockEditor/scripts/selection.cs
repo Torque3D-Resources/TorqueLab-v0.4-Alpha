@@ -7,18 +7,29 @@
 function DbEd::setSelectedDatablock( %this,%datablock ) {
 	if (!isObject(%datablock)) {
 		DbEd_DatablockNameEdit.setText("");
+		hide(DbEd_ActiveDbIcons);
+		DbEd_EditorStack.clear();
+		hide(DbEd_EditorScroll);
+		show(DbEd_NoConfigPill);
+		
+		DbEd_NoConfigPill-->titleText.setText("There's no selected datablock");
+		DbEd_NoConfigPill-->infoText.setText("Select a datablock from the Datablocks tree above to see the custom editor which do the same as inspector" SPC
+							"but with a selection of settings and GuiControls adapted to the important datablock settings.");
 		return;
 	}
-
+	show(DbEd_ActiveDbIcons);
 	DbEd.activeDatablock = %datablock;
 
 	if (DbEd.isMethod("build"@%datablock.getClassName()@"Params")) {
-		show(DbEd_EditorStack);
+		show(DbEd_EditorScroll);
+	
 		eval("DbEd.build"@%datablock.getClassName()@"Params();");
 		hide(DbEd_NoConfigPill);
 	} else {
+		hide(DbEd_EditorScroll);
 		DbEd_EditorStack.clear();
 		show(DbEd_NoConfigPill);
+		DbEd_NoConfigPill-->titleText.setText("No predefined settings for:" SPC %datablock.getClassName());
 		%text = "There's no predefined settings for datablock of this class:\c1" SPC
 				  %datablock.getClassName() @". You can create one by using one of the current as reference." SPC
 				  "You can find those predefined datablocks in tlab> DatablockEditor> Editor> ClassParams> folder.";

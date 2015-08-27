@@ -134,7 +134,7 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "-";
 	$LabMenuItem[%id,%itemId++] = "Speed";
 	%subId=-1;
-	$LabMenuSubMenuItem[%id,%itemId,%subId++] = "Slowest" TAB %cmdCtrl @ "-Shift 1" TAB "5";
+	$LabMenuSubMenuItem[%id,%itemId,%subId++] = "Slowest" TAB %cmdCtrl @ "-Shift 1" TAB "5" TAB "$ToggleMe = !$ToggleMe;";
 	$LabMenuSubMenuItem[%id,%itemId,%subId++] = "Slow" TAB %cmdCtrl @ "-Shift 2" TAB "35";
 	$LabMenuSubMenuItem[%id,%itemId,%subId++] = "Slower" TAB %cmdCtrl @ "-Shift 3" TAB "70";
 	$LabMenuSubMenuItem[%id,%itemId,%subId++] = "Normal" TAB %cmdCtrl @ "-Shift 4" TAB "100";
@@ -168,8 +168,13 @@ function Lab::initLabMenuData(%this,%buildAfter) {
 	$LabMenuItem[%id,%itemId++] = "Toggle GroundCover Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"GroundCover\");";
 	$LabMenuItem[%id,%itemId++] = "Toggle Ambient Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"AmbientManager\");";
 	$LabMenuItem[%id,%itemId++] = "Toggle Vehicle Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
-	$LabMenuItem[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);";
+	$LabMenuItem[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);" TAB "EPostFxManager.visible;";
 	
+	if ( physicsPluginPresent() && isObject(PhysicsToolsToolbar) ){
+		$LabMenuItem[%id,%itemId++] = "-";
+		$LabMenuItem[%id,%itemId++] = "Toggle PhysicsTools Toolbar" TAB "" TAB "ToggleVisible(PhysicsToolsToolbar);";
+		$LabMenuItem[%id,%itemId++] = "Toggle PhysicsTools Overlay" TAB "" TAB "ETools.toggleTool(\"PhysicsTools\");";
+	}
 	%itemId = -1;
 	$LabMenu[%id++] = "View";
 	$LabMenuItem[%id,%itemId++] = "Visibility Layers" TAB "Alt V" TAB "EVisibilityLayers.toggleVisibility();";

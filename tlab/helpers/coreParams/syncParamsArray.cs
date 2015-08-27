@@ -78,14 +78,13 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 
 			//If we got a value, get out of here
 			if (%value !$= "") {				 
-				paramLog(%field,"Param update from Sync Data:",%data,"Value:",%value);
+
 				break;
 				
 			}
 		}
 
 		if (%value $= "" && !%keepEmptyValue){
-			paramLog("Param update from Sync Data:",%data,"Value:",%value);
 			continue;
 		}
 

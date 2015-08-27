@@ -132,8 +132,9 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 		%menuId = getWord($LabMenuEditorSubMenu,0);
 		%itemId = getWord($LabMenuEditorSubMenu,1);
 		%subId = $LabMenuEditorNextId++;
-		$LabMenuSubMenuItem[%menuId,%itemId,%subId] = %displayName TAB "" TAB "Lab.setEditor(\""@%pluginObj.getName()@"\");";
-		Lab.addSubmenuItem(%menuId,%itemId,%displayName,%subId,"",-1);
+		$LabMenuSubMenuItem[%menuId,%itemId,%subId] = %displayName TAB "" TAB "Lab.setEditor(\""@%pluginObj.getName()@"\");" TAB ""@%pluginObj.getName()@".isActivated;" TAB "4";
+		Lab.addSubMenuItemData(%menuId,%itemId,%subId,$LabMenuSubMenuItem[%menuId,%itemId,%subId]);
+		//Lab.addSubmenuItem(%menuId,%itemId,%displayName,%subId,"",-1);
 	}
 
 	return %accel;

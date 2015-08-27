@@ -26,11 +26,11 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "14872";
-      disabledGroup = "14873";
-      EditorContainer = "4096";
+      defaultStack = "14909";
+      disabledGroup = "14910";
+      EditorContainer = "4092";
       plugin = "MeshRoadEditor";
-      stackLists = "14874 14883";
+      stackLists = "14911 14920";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -633,7 +633,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "road_asphalt_stripes";
+            text = "DefaultRoadMaterialTop";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

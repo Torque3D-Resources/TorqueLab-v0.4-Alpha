@@ -10,19 +10,22 @@ function Lab::buildMenu(%this) {
 	Lab.setActiveMenu(LabMenu);
 	Lab.clearMenus();
 	%menuId = 0;
-
+	devLog("Building world menu");
 	while($LabMenu[%menuId] !$= "") {
 		Lab.addMenu( $LabMenu[%menuId],%menuId);
 		%menuItemId = 0;
 
 		while($LabMenuItem[%menuId,%menuItemId] !$= "") {
-			%item = $LabMenuItem[%menuId,%menuItemId];
-			Lab.addMenuItem( %menuId, getField(%item,0),%menuItemId,getField(%item,1),-1);
+			%itemData = $LabMenuItem[%menuId,%menuItemId];
+			
+			Lab.addMenuItemData( %menuId,%menuItemId,%itemData);
+			//Lab.addMenuItem( %menuId, getField(%item,0),%menuItemId,getField(%item,1),%checkId);
 			%subMenuItemId = 0;
 
 			while($LabMenuSubMenuItem[%menuId,%menuItemId,%subMenuItemId] !$= "") {
-				%subitem = $LabMenuSubMenuItem[%menuId,%menuItemId,%subMenuItemId] ;
-				Lab.addSubmenuItem(%menuId,%menuItemId,getField(%subitem,0),%subMenuItemId,getField(%subitem,1),-1);
+				%subItemData = $LabMenuSubMenuItem[%menuId,%menuItemId,%subMenuItemId];								
+				Lab.addSubMenuItemData( %menuId,%menuItemId,%subMenuItemId,%subItemData);
+				//Lab.addSubmenuItem(%menuId,%menuItemId,getField(%subitem,0),%subMenuItemId,getField(%subitem,1),%subCheckId);
 				%subMenuItemId++;
 			}
 
@@ -31,5 +34,7 @@ function Lab::buildMenu(%this) {
 
 		%menuId++;
 	}
+	LabMenu.setCheckmarkBitmapIndex(2);
+	LabMenu.setMenuMargins("0","0","0");
 }
 //------------------------------------------------------------------------------

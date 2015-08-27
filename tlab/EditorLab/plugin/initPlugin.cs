@@ -62,7 +62,7 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable,%isModul
 // Module are mini plugin which don't need tools or icons
 function Lab::createModule(%this,%pluginName,%displayName,%alwaysEnable) {
 	%moduleObj = %this.createPlugin(%pluginName,%displayName,%alwaysEnable,true);
-	LabModuleGroup.add(%moduleObj);
+	LabPluginModGroup.add(%moduleObj);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

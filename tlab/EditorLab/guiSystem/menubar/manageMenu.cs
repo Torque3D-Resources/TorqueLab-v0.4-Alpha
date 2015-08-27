@@ -7,6 +7,7 @@
 //==============================================================================
 function Lab::initMenubar(%this) {
 	if (!$Cfg_UseCoreMenubar) {
+		
 		exec("tlab/EditorLab/guiSystem/menubar/defineMenus.cs");
 		exec("tlab/EditorLab/guiSystem/menubar/labstyle/menubarScript.cs");
 		exec("tlab/EditorLab/guiSystem/menubar/labstyle/buildWorldMenu.cs");
@@ -14,18 +15,24 @@ function Lab::initMenubar(%this) {
 
 		if (isObject(Lab.menuBar))
 			Lab.menuBar.removeFromCanvas();
-
+		//if (LabEditor.isInitialized)
+			//Lab.updatePluginsMenu();
 		return;
 	}
-
+	
 	Lab.clearMenus();
 
 	if(!isObject(%this.menuBar))
 		%this.buildMenus();
 
 	%this.attachMenus();
+	
 }
 //------------------------------------------------------------------------------
+function Lab::updatePluginsMenu(%this) {
+	foreach(%pluginObj in LabPluginGroup) 
+		%this.addToEditorsMenu(%pluginObj);
+}
 //==============================================================================
 function Lab::setNativeMenuSystem(%this,%useNative) {
 	if ($Cfg_UseCoreMenubar == %useNative)

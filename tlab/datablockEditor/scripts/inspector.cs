@@ -38,6 +38,7 @@ function DatablockEditorInspector::onClear( %this ) {
 
 
 
+
 //==============================================================================
 function DbEd::setFilters( %this,%id ) {
 	switch$(%id){

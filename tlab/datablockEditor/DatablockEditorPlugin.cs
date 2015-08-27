@@ -36,10 +36,8 @@ function DatablockEditorPlugin::onWorldEditorStartup( %this ) {
 function DatablockEditorPlugin::onActivated( %this ) {	
 	DatablockEditorInspectorWindow.makeFirstResponder( true );
 	
-	if (isObject(DbEd.activeDatablock))
-		show(DbEd_ActiveDbIcons);
-	else
-		hide(DbEd_ActiveDbIcons);
+	DbEd.setSelectedDatablock(DbEd.activeDatablock);
+	
 	if (DbEd.allClasses $= "")
 		DatablockEditorPlugin.buildClassList();
 	if (DbEd.activeClasses $= "")

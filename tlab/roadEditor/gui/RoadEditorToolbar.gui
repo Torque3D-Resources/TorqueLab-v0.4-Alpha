@@ -15,23 +15,22 @@ new GuiStackControl(RoadEditorToolbar) {
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "RoadEditorToolbar";
    superClass = "ToolbarPluginStack";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "15857";
-      disabledGroup = "15858";
-      EditorContainer = "4096";
+      defaultStack = "15894";
+      disabledGroup = "15895";
+      EditorContainer = "4092";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "15859 15868 15884";
+      stackLists = "15896 15905 15921";
 
    new GuiContainer() {
       margin = "0 0 0 0";

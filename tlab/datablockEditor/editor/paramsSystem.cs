@@ -10,9 +10,14 @@
 //==============================================================================
 //==============================================================================
 //%field,%value,%ctrl,%array,%arg1,%arg2
-function DbEd::updateParam( %this,%field,%value,%ctrl,%array,%arg1,%arg2 ) {
+function DbEd::updateParam( %this,%field,%value,%ctrl,%array,%arg1,%arg2 ) {	
 	logd("DbEd::updateParam( %this,%field,%value,%ctrl,%array,%arg1,%arg2 )",%field,%value,%ctrl,%array,%arg1,%arg2);	
+	if (!isObject(%this.activeDatablock)){
+		%this.setSelectedDatablock();
+		return;
+	}
 	DatablockEditorInspector.setObjectField( %field,%value );
+	
 }
 //------------------------------------------------------------------------------
 

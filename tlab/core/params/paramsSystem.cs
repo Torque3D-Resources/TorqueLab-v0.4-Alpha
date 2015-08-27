@@ -28,6 +28,8 @@ function LabParams::syncArray( %this,%paramArray,%syncTarget ) {
 // Sync the current profile values into the params objects
 function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget ) {
 	%cfgObj = %paramArray.cfgObject;
+	if (%paramArray.noSyncField[%field] )
+		return;
 
 	if (!%paramArray.prefModeOnly){
 		if (isObject(%cfgObj)) {

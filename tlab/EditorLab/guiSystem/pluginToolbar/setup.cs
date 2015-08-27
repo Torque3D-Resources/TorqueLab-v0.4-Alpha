@@ -23,6 +23,12 @@ function Lab::resetPluginsBar(%this) {
 	Lab.clearDisabledPluginsBin();
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+function Lab::updatePluginsMenu(%this,%reset) {
+	foreach(%pluginObj in LabPluginGroup) 
+		%this.addToEditorsMenu(%pluginObj);
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 // Add a plugin icon to the plugin bar

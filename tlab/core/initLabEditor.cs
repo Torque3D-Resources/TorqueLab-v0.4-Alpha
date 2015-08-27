@@ -12,7 +12,7 @@ function Lab::initLabEditor( %this ) {
 	$LabObj = newScriptObject("LabObj");
 	new SimGroup(ToolLabGuiGroup);
 	$LabPluginGroup = newSimSet("LabPluginGroup");
-	$LabModuleGroup = newSimSet("LabModuleGroup");
+	$LabModuleGroup = newSimSet("LabPluginModGroup");
 	
 	newSimSet( ToolGuiSet );
 	newSimSet( EditorPluginSet );

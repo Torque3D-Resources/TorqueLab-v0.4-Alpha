@@ -16,9 +16,9 @@ function RiverEditorPlugin::initParamsArray( %this,%cfgArray ) {
 	%cfgArray.setVal("DefaultDepth",   "5" TAB "DefaultDepth" TAB "TextEdit" TAB "" TAB "RiverEditorGui" TAB %gId);
 	%cfgArray.setVal("DefaultNormal","0 0 1" TAB "DefaultNormal" TAB "TextEdit" TAB "" TAB "RiverEditorGui" TAB %gId);
 	%cfgArray.group[%gId++] = "Color settings";
-	%cfgArray.setVal("HoverSplineColor",       "255 0 0 255" TAB "HoverSplineColor" TAB "ColorInt" TAB "" TAB "RiverEditorGui" TAB %gId);
-	%cfgArray.setVal("SelectedSplineColor",       "0 255 0 255" TAB "SelectedSplineColor" TAB "ColorInt" TAB "" TAB "RiverEditorGui" TAB %gId);
-	%cfgArray.setVal("HoverNodeColor",       "255 255 255 255" TAB "HoverNodeColor" TAB "ColorInt" TAB "" TAB "RiverEditorGui" TAB %gId);
+	%cfgArray.setVal("HoverSplineColor",       "255 0 0 255" TAB "HoverSplineColor" TAB "ColorEdit" TAB "mode>>init" TAB "RiverEditorGui" TAB %gId);
+	%cfgArray.setVal("SelectedSplineColor",       "0 255 0 255" TAB "SelectedSplineColor" TAB "ColorEdit" TAB "mode>>init" TAB "RiverEditorGui" TAB %gId);
+	%cfgArray.setVal("HoverNodeColor",       "255 255 255 255" TAB "HoverNodeColor" TAB "ColorEdit" TAB "mode>>init" TAB "RiverEditorGui" TAB %gId);
 }
 //------------------------------------------------------------------------------
 

@@ -5,6 +5,14 @@
 //==============================================================================
 $NativeMenu = false;
 $NativeMenuMode = "Auto";
+
+$CheckA = true;
+$CheckB = true;
+
+function doGuiMenu(){
+	execPattern( "tlab/guiEditor/menu/*.cs" );
+	GuiEditCanvas.onCreateMenu();
+}
 /// Create the Gui Editor menu bar.
 //GuiEditCanvas.onCreateMenu
 function GuiEditCanvas::onCreateMenu(%this) {
@@ -50,7 +58,8 @@ function GuiEditCanvas::initGuiEdMenuData(%this,%buildAfter) {
 		%redoShortcut = "Ctrl Y";
 	}
 
-	%id = -1;
+	%id = -1;	
+	
 	%itemId = -1;
 	$GuiEdMenu[%id++] = "File";
 	$GuiEdMenuItem[%id,%itemId++] = "New Gui..." TAB %cmdCtrl SPC "N" TAB "GuiEditCanvas.create();";
@@ -93,9 +102,17 @@ function GuiEditCanvas::initGuiEdMenuData(%this,%buildAfter) {
 	$GuiEdMenuItem[%id,%itemId++] = "-";
 	$GuiEdMenuItem[%id,%itemId++] = "Grid Size" TAB %cmdCtrl SPC "," TAB "GuiEditor.showPrefsDialog();";
 	%itemId = -1;
-	$GuiEdMenu[%id++] = "Layout";
+	$GuiEdMenu[%id++] = "Layout";	
 	$GuiEdMenuItem[%id,%itemId++] = "Align Left" TAB %cmdCtrl SPC "Left" TAB "GuiEditor.Justify(0);";
-	$GuiEdMenuItem[%id,%itemId++] = "Center Horizontally" TAB "" TAB "GuiEditor.Justify(1);";
+	%subId=-1;
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowestA" TAB %cmdCtrl @ "-Shift 1" TAB "5" TAB "$ToggleMe = !$ToggleMe;";
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowA" TAB %cmdCtrl @ "-Shift 2" TAB "35" TAB "$ToggleMe = !$ToggleMe;";
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowerA" TAB %cmdCtrl @ "-Shift 3" TAB "70" TAB "$ToggleMe = !$ToggleMe;";
+	$GuiEdMenuItem[%id,%itemId++] = "Center Horizontally" TAB "" TAB "GuiEditor.Justify(1);" TAB "$ToggleMe = !$ToggleMe;";
+	%subId=-1;
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowestA" TAB %cmdCtrl @ "-Shift 1" TAB "5" TAB "$ToggleMe = !$ToggleMe;";
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowA" TAB %cmdCtrl @ "-Shift 2" TAB "35" TAB "$ToggleMe = !$ToggleMe;";
+	$GuiEdSubMenuItem[%id,%itemId,%subId++] = "SlowerA" TAB %cmdCtrl @ "-Shift 3" TAB "70" TAB "$ToggleMe = !$ToggleMe;";
 	$GuiEdMenuItem[%id,%itemId++] = "Align Right" TAB %cmdCtrl SPC "Right" TAB "GuiEditor.Justify(2);";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
 	$GuiEdMenuItem[%id,%itemId++] = "Align Top" TAB %cmdCtrl SPC "Up" TAB "GuiEditor.Justify(3);";
@@ -127,7 +144,7 @@ function GuiEditCanvas::initGuiEdMenuData(%this,%buildAfter) {
 	$GuiEdMenuItem[%id,%itemId++] = "Set extent from reference-" TAB "Shift 3" TAB "Lab.setControlReferenceField(\" extent \");";
 	$GuiEdMenuItem[%id,%itemId++] = "Set empty name tp selection-" TAB "Shift n" TAB "Lab.setControlReferenceField(\" name \");";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
-	$GuiEdMenuItem[%id,%itemId++] = "Toggle auto load last GUI" TAB "" TAB "Lab.toggleAutoLoadLastGui();";
+	$GuiEdMenuItem[%id,%itemId++] = "Toggle auto load last GUI" TAB "" TAB "Lab.toggleAutoLoadLastGui();" TAB "$pref::Editor::AutoLoadLastGui;";
 	%itemId = -1;
 	$GuiEdMenu[%id++] = "Move";
 	$GuiEdMenuItem[%id,%itemId++] = "Nudge Left" TAB "Left" TAB "GuiEditor.move( -1, 0);";
@@ -141,15 +158,17 @@ function GuiEditCanvas::initGuiEdMenuData(%this,%buildAfter) {
 	$GuiEdMenuItem[%id,%itemId++] = "Big Nudge Down" TAB "Shift Down" TAB "GuiEditor.move( 0, GuiEditor.snap2gridsize );";
 	%itemId = -1;
 	$GuiEdMenu[%id++] = "Snap";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap Edges" TAB "Alt-Shift E" TAB "GuiEditor.toggleEdgeSnap();";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap Centers" TAB "Alt-Shift C" TAB "GuiEditor.toggleCenterSnap();";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap Edges" TAB "Alt-Shift E" TAB "GuiEditor.toggleEdgeSnap();" TAB "GuiEditor.snapToEdges;";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap Centers" TAB "Alt-Shift C" TAB "GuiEditor.toggleCenterSnap();" TAB "GuiEditor.snapToCenters;";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap to Guides" TAB "Alt-Shift G" TAB "GuiEditor.toggleGuideSnap();";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap to Controls" TAB "Alt-Shift T" TAB "GuiEditor.toggleControlSnap();";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap to Canvas" TAB "" TAB "GuiEditor.toggleCanvasSnap();";
-	$GuiEdMenuItem[%id,%itemId++] = "Snap to Grid" TAB "" TAB "GuiEditor.toggleGridSnap();";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap to Guides" TAB "Alt-Shift G" TAB "GuiEditor.toggleGuideSnap();" TAB "GuiEditor.snapToGuides;";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap to Controls" TAB "Alt-Shift T" TAB "GuiEditor.toggleControlSnap();" TAB "GuiEditor.snapToControls;";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap to Canvas" TAB "" TAB "GuiEditor.toggleCanvasSnap();" TAB "GuiEditor.snapToCanvas;";
+	$GuiEdMenuItem[%id,%itemId++] = "Snap to Grid" TAB "" TAB "GuiEditor.toggleGridSnap();" TAB "GuiEditor.snap2Grid;";
 	$GuiEdMenuItem[%id,%itemId++] = "-";
-	$GuiEdMenuItem[%id,%itemId++] = "Show Guides" TAB "" TAB "GuiEditor.toggleDrawGuides();";
+	$GuiEdMenuItem[%id,%itemId++] = "Show Guides" TAB "" TAB "GuiEditor.toggleDrawGuides();" TAB "GuiEditor.drawGuides;";
+	$GuiEdMenuItem[%id,%itemId++] = "Full box selection" TAB "" TAB "GuiEditor.toggleFullBoxSelection();" TAB "GuiEditor.fullBoxSelection;";
+	
 	$GuiEdMenuItem[%id,%itemId++] = "Clear Guides" TAB "" TAB "GuiEditor.clearGuides();";
 	%itemId = -1;
 	$GuiEdMenu[%id++] = "Lab Menu";

@@ -76,6 +76,7 @@ function GuiEd::applyTemplateOnSelection(%this) {
 	%selectionSet = GuiEditor.getSelection();	
 	foreach(%ctrl in %selectionSet){
 		devLog(%id++,"Applying template on GuiControl:",%ctrl.getId(),%ctrl.getName());
+		TplManager.applyTemplateOnControl(GuiEd.activeTemplateGui,%ctrl);
 	}	
 }
 //------------------------------------------------------------------------------
