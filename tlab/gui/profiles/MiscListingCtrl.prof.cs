@@ -49,7 +49,7 @@ singleton GuiControlProfile(ToolsTreeViewProfile_S1 : ToolsTreeViewProfile)
 singleton GuiControlProfile(ToolsListBox : ToolsDefaultProfile)
 {
 	fontType = "Lato bold";
-	fontSize = "18";
+	fontSize = "16";
 	
 	fontColor = "254 238 192 255";
     fontColorHL = "0 0 0";
@@ -62,4 +62,6 @@ singleton GuiControlProfile(ToolsListBox : ToolsDefaultProfile)
    fillColorHL = "241 12 50 255";
    fillColorNA = "0 255 48 255";
    mouseOverSelected = "1";
+   fontColors[0] = "254 238 192 255";
+   fontColors[2] = "200 200 200 255";
 };

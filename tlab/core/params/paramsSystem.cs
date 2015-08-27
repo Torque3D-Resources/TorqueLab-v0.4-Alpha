@@ -27,15 +27,12 @@ function LabParams::syncArray( %this,%paramArray,%syncTarget ) {
 //==============================================================================
 // Sync the current profile values into the params objects
 function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget ) {
-	paramLog("LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )",%this,%paramArray,%field,%data,%syncTarget );
 	%cfgObj = %paramArray.cfgObject;
 
 	if (!%paramArray.prefModeOnly){
 		if (isObject(%cfgObj)) {
 			%value = %cfgObj.getCfg(%field);
-			paramLog(%cfgObj.getName()@" value from LabCfg is:",%value);
 		} else {
-			paramLog("Couldn't find a related LabCfb value! Sync operation aborted!");
 			return false;
 		}
 
@@ -46,7 +43,6 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 	}
 	else{
 		%value = getParamValue(%paramArray,%field,true);
-		paramLog("prefModeOnly",%field,%value);
 	}
 		
 	if (%syncTarget)
@@ -65,7 +61,6 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 //==============================================================================
 // Sync the current profile values into the params objects
 function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
-	paramLog("LabParams::updateParamSyncData( %this,%field,%value,%paramArray )",%this,%field,%value,%paramArray );
 	%pill = %paramArray.pill[%field];
 	
 	if (isObject(%pill)) {
@@ -79,7 +74,7 @@ function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
 
 //==============================================================================
 function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
-	paramLog("LabParams::updateParamSyncData( %this,%field,%value,%paramArray )",%this,%field,%value,%paramArray );
+
 	
 }
 
@@ -93,7 +88,6 @@ function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
 
 //==============================================================================
 function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 ) {
-	paramLog("LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 )",%this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 );
 	
 	if (%paramArray.prefModeOnly)
 		return;
@@ -101,9 +95,7 @@ function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,
 	
 	if (isObject(%cfgObj)) {
 		%cfgObj.setCfg(%field,%value);
-		paramLog(%cfgObj.getName()@" value stored as:",%value);
 	} else {
-		paramLog("Couldn't find a related LabCfg Object to update! No change to the LabCfg object!");
 		return false;
 	}
 
@@ -113,15 +105,12 @@ function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,
 }
 //------------------------------------------------------------------------------
 function LabParams::updateParamFromCtrl( %this,%ctrl,%field,%value,%paramArray ) {
-	paramLog("LabParams::updateParamFromCtrl( %this,%ctrl,%field,%value,%paramArray )",%this,%ctrl,%field,%value,%paramArray );
 	
 	if (!%paramArray.prefModeOnly){		
 		%cfgObj = %paramArray.cfgObject;
 		if (isObject(%cfgObj)) {
 			%cfgObj.setCfg(%field,%value);
-			paramLog(%cfgObj.getName()@" value stored as:",%value);
 		} else {
-			paramLog("Couldn't find a related LabCfg Object to update! No change to the LabCfg object!");
 			return false;
 		}
 	}

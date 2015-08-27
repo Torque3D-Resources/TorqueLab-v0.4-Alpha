@@ -6,7 +6,10 @@
 
 //==============================================================================
 // Add the datablocks to the treeView
-function DatablockEditorPlugin::populateTrees(%this) {
+function DatablockEditorPlugin::populateTrees(%this,%classList) {
+	
+	if (DbEd.populatingTree)
+		return;
 	// Populate datablock tree.
 	if( %this.excludeClientOnlyDatablocks )
 		%set = DataBlockGroup;
@@ -14,7 +17,8 @@ function DatablockEditorPlugin::populateTrees(%this) {
 		%set = DataBlockSet;
 
 	DatablockEditorTree.clear();
-
+	DbEd.populatingTree = true;
+	
 	foreach( %datablock in %set ) {
 		%unlistedFound = false;
 		%id = %datablock.getId();
@@ -27,12 +31,18 @@ function DatablockEditorPlugin::populateTrees(%this) {
 
 		if( %unlistedFound )
 			continue;
-
+		if (DbEd.activeClasses !$= "" && getRecordCount(DbEd.activeClasses) < 2){		
+			if (!strFind(DbEd.activeClasses,%datablock.getClassName()))
+				continue;
+		}
+		
 		%this.addExistingItem( %datablock, true );
 	}
 
 	DatablockEditorTree.sort( 0, true, false, false );
 	// Populate datablock type tree.
+	//%classList = DbEd.activeClasses;
+	//if (%classList $= "")
 	%classList = enumerateConsoleClasses( "SimDatablock" );
 	DatablockEditorTypeTree.clear();
 
@@ -43,6 +53,7 @@ function DatablockEditorPlugin::populateTrees(%this) {
 	}
 
 	DatablockEditorTypeTree.sort( 0, false, false, false );
+	DbEd.populatingTree = false;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -58,8 +69,10 @@ function DatablockEditorPlugin::addExistingItem( %this, %datablock, %dontSort ) 
 
 	// If the datablock is already there, don't
 	// do anything.
-
-	if( %tree.findItemByValue( %datablock.getId() ) )
+	%id = %tree.findItemByValue( %datablock.getId());
+	
+	
+	if( %id)
 		return;
 
 	// It doesn't exist so add it.
@@ -69,7 +82,9 @@ function DatablockEditorPlugin::addExistingItem( %this, %datablock, %dontSort ) 
 		%name = %name @ " *";
 
 	%id = DatablockEditorTree.insertItem( %parentID, %name, %datablock.getId() );
-
+	DbEd.dbClassList = strAddWord(DbEd.dbClassList,%class,true);
+	DbEd.dbClassItemIds[%class] = strAddWord(DbEd.dbClassItemIds[%class],%id,true);
+	DbEd.dbClassItemNames[%class] = strAddWord(DbEd.dbClassItems[%class],%name,true);
 	if( !%dontSort )
 		DatablockEditorTree.sort( %parentID, false, false, false );
 
@@ -97,6 +112,59 @@ function DatablockEditorPlugin::isExcludedDatablockType( %this, %className ) {
 }
 //------------------------------------------------------------------------------
 
+
+
+//==============================================================================
+// DatablockEditorPlugin.buildClassList
+function DatablockEditorPlugin::buildClassList(%this) {
+	%classList = enumerateConsoleClasses( "SimDatablock" );
+	foreach$( %datablockClass in %classList ) {
+		DbEd_ActiveClassList.insertItem(%datablockClass,DbEd_ActiveClassList.getCount());
+		DbEd.allClasses = strAddWord(DbEd.allClasses,%datablockClass,true);		
+	}
+}
+//==============================================================================
+//DbEd.selectAllClasses();
+function DbEd::selectAllClasses( %this ) {
+	DbEd_ActiveClassList.clearSelection();
+	
+	for(%i=0;%i<DbEd_ActiveClassList.getItemCount();%i++){
+		DbEd_ActiveClassList.setSelected(%i,true);
+		
+		//DbEd_ActiveClassList.setSelected(3,true);
+	}
+	DbEd.allClassesSelected = true;
+	DbEd.activeClasses = DbEd.allClasses;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//DbEd.refreshTree();
+function DbEd::refreshTree( %this ) {
+	
+	if (!DbEd.allClassesSelected){	
+		DbEd.activeClasses = "";
+		%selected = DbEd_ActiveClassList.getSelectedItems();
+		foreach$( %id in %selected ) {
+			%text = DbEd_ActiveClassList.getItemText(%id);
+			DbEd.activeClasses = strAddWord(DbEd.activeClasses,%text,true);
+		}
+	}
+	DatablockEditorPlugin.populateTrees(DbEd.activeClasses);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//DbEd.refreshTree();
+function DbEd_ActiveClassList::onSelect( %this,%index,%text ) {
+	DbEd.allClassesSelected = false;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//DbEd.refreshTree();
+function DbEd_ActiveClassList::onUnselect( %this,%index,%text ) {
+	DbEd.allClassesSelected = false;
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // TreeView Events
 //==============================================================================

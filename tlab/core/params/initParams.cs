@@ -66,13 +66,11 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 //==============================================================================
 //Initialize plugin data
 function Lab::onParamBuild(%this,%array,%field,%paramData) {
-	paramLog("Lab::onParamBuild(%this,%array,%field,%paramData)",%this,%array,%field,%paramData);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Initialize plugin data
 function Lab::onParamPluginBuild(%this,%array,%field,%paramData) {
-	paramLog("Lab::onParamPluginBuild(%this,%array,%field,%paramData)",%this,%array,%field,%paramData);
 	%plugin = %array.pluginObj;
 	%cfgValue = %plugin.getCfg(%field);
 

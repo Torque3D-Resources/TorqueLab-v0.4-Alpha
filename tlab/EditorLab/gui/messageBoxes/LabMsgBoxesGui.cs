@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$LabMsgMargin["Top"] = 29;
+$LabMsgMargin["Top"] = 36;
 $LabMsgMargin["Bottom"] = 37;
 
 $LabMsgButtons["Ok"] = "Ok";
@@ -19,7 +19,7 @@ function LabMsgBoxesGui::onWake( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%callback2,%callback3 ) {
+function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%callback2,%callback3 ) {	
 	%buttonData = $LabMsgButtons[%type];
 	%buttonCoord = $LabMsgButtonsCoord[%type];
 	%buttonCount = getFieldCount(%buttonData);
@@ -33,27 +33,28 @@ function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%cal
 	%dlg-->messageArea.forceReflow();
 	%msgExtent = %dlg-->messageArea.getExtent();
 	//%scrollExtent.y += 4;
-	//%dlg-->scroll.setExtent( %scrollExtent);
-	%dlg.extent.y = $LabMsgMargin["Top"] + %msgExtent.y + $LabMsgMargin["Bottom"];
-
-	for(; %i < 3; %i++) {
+	%dlg-->scroll.setExtent(%dlg-->scroll.extent.x, %msgExtent.y+18);
+	%dlgextenty = $LabMsgMargin["Top"] + %msgExtent.y + $LabMsgMargin["Bottom"];
+	%dlg.resize(%dlg.position.x,%dlg.position.y,%dlg.extent.x,%dlgextenty);
+	for(%i=0; %i < 3; %i++) {
 		%text = getField(%buttonData,%i);
 		%coord = getField(%buttonCoord,%i);
 		%callBackCmd =  %callback[%i+1];		
 
 		LabMsgBoxesGui.callbacks["button"@%i+1] = %callBackCmd;
-		%button = %dlg.findObjectByInternalName("button"@%i+1);
+		%button = %dlg.findObjectByInternalName("button"@%i+1,true);
 		%button.text = %text;
-
-		if (%coord $= "") {
+		
+		if (%coord $= "") {		
 			hide(%button);
 		} else {
 			show(%button);
-			%button.position = getWord(%coord,0) SPC getWord(%coord,1);
+			%button.position.x = getWord(%coord,0);
 			%button.extent = getWord(%coord,2) SPC getWord(%coord,3);
-			%button.position.y = %dlg.extent.y - 12 - %button.extent.y;
+			//%button.position.y = %dlg.extent.y - 12 - %button.extent.y;
 		}
 	}
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

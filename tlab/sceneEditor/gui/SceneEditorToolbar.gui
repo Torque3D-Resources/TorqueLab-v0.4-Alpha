@@ -15,23 +15,22 @@ new GuiStackControl(SceneEditorToolbar) {
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "SceneEditorToolbar";
    superClass = "ToolbarPluginStack";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "9343";
-      disabledGroup = "9344";
-      EditorContainer = "4095";
+      defaultStack = "9340";
+      disabledGroup = "9341";
+      EditorContainer = "4096";
       editorParent = "EditorGuiToolbarStack";
       plugin = "SceneEditor";
-      stackLists = "9345 9365 9382 9394 9405";
+      stackLists = "9342 9362 9379 9391 9402";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -163,7 +162,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "8833";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
 
          new GuiTextCtrl() {
             text = "Grid";
@@ -403,7 +402,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "8833";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
 
          new GuiTextCtrl() {
             text = "camspeed";
@@ -751,7 +750,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -785,7 +784,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSaveDynamicFields = "1";
             isDisabled = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -818,7 +817,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -850,7 +849,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -874,7 +873,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
 
          new GuiTextCtrl() {
             text = "Drop location";
@@ -1112,7 +1111,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8877";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1147,7 +1146,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8878";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1181,7 +1180,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8876";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1215,7 +1214,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8875";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1248,7 +1247,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "7";
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1440,7 +1439,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "41446";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1474,7 +1473,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "41446";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl(MyNewSave) {
          buttonMargin = "1 1";
@@ -1508,7 +1507,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "9030";
             pluginName = "SceneEditor";
             srcCtrl = "8868";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1543,7 +1542,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "41446";
             pluginName = "SceneEditor";
             srcCtrl = "8895";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1577,7 +1576,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "41446";
             pluginName = "SceneEditor";
             srcCtrl = "8869";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -1770,7 +1769,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "2";
             originalParent = "8865";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1804,7 +1803,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "2";
             originalParent = "8865";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1835,7 +1834,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "9343";
+            toolbar = "9340";
       };
       new GuiContainer() {
          margin = "0 0 0 0";

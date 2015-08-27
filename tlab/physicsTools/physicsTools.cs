@@ -70,9 +70,7 @@ function PT::doAction(%this,%action) {
 	}
 }
 //------------------------------------------------------------------------------
-
-function PhysicsToolsIcon::onClick(%this) {
-	devLog("PhysicsToolsIcon::onClick(%this)",%this.internalName);
+function PhysicsToolsIcon::onClick(%this) {	
 	%action = %this.internalName;
 	PT.doAction(%action);	
 }
@@ -80,11 +78,9 @@ function PhysicsToolsIcon::onClick(%this) {
 
 //------------------------------------------------------------------------------
 function PhysicsToolsSlider::doCommand(%this) {
-	devLog("PhysicsToolsSlider::doCommand(%this)",%this.internalName);
 	%action = %this.internalName;
 	switch$(%action){
-		case "timeScale":
-		logd("Value",%this.getValue());
+		case "timeScale":	
 			%scale = mFloatLength(%this.getValue(),1);
 			PT.physicsSetTimeScale(%scale);
 	}		

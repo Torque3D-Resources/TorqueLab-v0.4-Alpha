@@ -4,6 +4,29 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
+function DbEd::setSelectedDatablock( %this,%datablock ) {
+	if (!isObject(%datablock)) {
+		DbEd_DatablockNameEdit.setText("");
+		return;
+	}
+
+	DbEd.activeDatablock = %datablock;
+
+	if (DbEd.isMethod("build"@%datablock.getClassName()@"Params")) {
+		show(DbEd_EditorStack);
+		eval("DbEd.build"@%datablock.getClassName()@"Params();");
+		hide(DbEd_NoConfigPill);
+	} else {
+		DbEd_EditorStack.clear();
+		show(DbEd_NoConfigPill);
+		%text = "There's no predefined settings for datablock of this class:\c1" SPC
+				  %datablock.getClassName() @". You can create one by using one of the current as reference." SPC
+				  "You can find those predefined datablocks in tlab> DatablockEditor> Editor> ClassParams> folder.";
+		DbEd_NoConfigPill-->infoText.setText(%text);
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 //Called from EditorInspectorBase to open selected datablock
 function DatablockEditorPlugin::openDatablock( %this, %datablock ) {
 	// EditorGui.setEditor( DatablockEditorPlugin );
@@ -42,14 +65,7 @@ function DatablockEditorPlugin::getSelectedDatablock( %this, %index ) {
 	return %tree.getItemValue( %id );
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function DatablockEditorPlugin::resetSelectedDatablock( %this ) {
-	DatablockEditorTree.clearSelection();
-	DatablockEditorInspector.inspect(0);
-	DatablockEditorInspectorWindow-->DatablockFile.setText("");
-	EditorGuiStatusBar.setSelection( "" );
-}
-//------------------------------------------------------------------------------
+
 //==============================================================================
 function DatablockEditorPlugin::selectDatablockCheck( %this, %datablock ) {
 	if( %this.selectedDatablockIsDirty() )
@@ -90,28 +106,15 @@ function DatablockEditorPlugin::selectDatablock( %this, %datablock, %add, %dontS
 	} else {
 		%fileNameField.setText( "" );
 	}
-	
-	DbEd.activeDatablock = %datablock;
-	
-	if (DbEd.isMethod("build"@%datablock.getClassName()@"Params")){
-		show(DbEd_EditorStack);
-		eval("DbEd.build"@%datablock.getClassName()@"Params();");		
-		hide(DbEd_NoConfigPill);
-	}
-	else
-	{
-		DbEd_EditorStack.clear();		
-		show(DbEd_NoConfigPill);
-		%text = "There's no predefined settings for datablock of this class:\c1" SPC
-		%datablock.getClassName() @". You can create one by using one of the current as reference." SPC
-		"You can find those predefined datablocks in tlab> DatablockEditor> Editor> ClassParams> folder.";
-		DbEd_NoConfigPill-->infoText.setText(%text); 		
-	}
-	
+
+	DbEd.setSelectedDatablock(%datablock);	
 
 	EditorGuiStatusBar.setSelection( %this.getNumSelectedDatablocks() @ " Datablocks Selected" );
+	show(DbEd_ActiveDbIcons);
 }
 //------------------------------------------------------------------------------
+
+
 //==============================================================================
 function DatablockEditorPlugin::unselectDatablock( %this, %datablock, %dontSyncTree ) {
 	DatablockEditorInspector.removeInspect( %datablock );

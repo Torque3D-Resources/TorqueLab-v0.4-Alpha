@@ -13,12 +13,9 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      callbacksbutton1 = "disconnect();";
-      callbacksbutton2 = "Editor.close();";
-      callbacksbutton3 = "Editor.close();";
 
    new GuiWindowCtrl() {
-      text = "Leaving the game?";
+      text = "Datablocks Deleted";
       resizeWidth = "1";
       resizeHeight = "1";
       canMove = "1";
@@ -34,8 +31,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "570 387";
-      extent = "300 129";
+      position = "570 367";
+      extent = "300 166";
       minExtent = "48 95";
       horizSizing = "center";
       vertSizing = "center";
@@ -59,14 +56,14 @@
          childMargin = "6 2";
          mouseWheelScrollSpeed = "-1";
          docking = "Client";
-         margin = "0 0 0 0";
+         margin = "4 4 4 4";
          padding = "0 0 0 0";
          anchorTop = "1";
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 24";
-         extent = "284 69";
+         position = "12 28";
+         extent = "276 98";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -87,7 +84,7 @@
             text = "This is a sample single line text";
             useURLMouseCursor = "0";
             position = "6 2";
-            extent = "265 60";
+            extent = "265 30";
             minExtent = "8 8";
             horizSizing = "center";
             vertSizing = "bottom";
@@ -110,7 +107,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 97";
+         position = "8 134";
          extent = "284 24";
          minExtent = "8 2";
          horizSizing = "right";
@@ -125,15 +122,15 @@
          canSaveDynamicFields = "0";
 
          new GuiButtonCtrl() {
-            text = "Yes";
+            text = "Ok";
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "66 0";
+            position = "111 0";
             extent = "80 24";
             minExtent = "8 8";
             horizSizing = "right";
-            vertSizing = "top";
+            vertSizing = "center";
             profile = "ToolsButtonProfile";
             visible = "1";
             active = "1";
@@ -147,7 +144,6 @@
             canSaveDynamicFields = "0";
          };
          new GuiButtonCtrl() {
-            text = "No";
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
@@ -155,9 +151,9 @@
             extent = "80 24";
             minExtent = "8 8";
             horizSizing = "right";
-            vertSizing = "top";
+            vertSizing = "center";
             profile = "ToolsButtonProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             command = "LabMsgCallback($ThisControl);";
             accelerator = "return";
@@ -165,6 +161,7 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "button2";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -176,7 +173,7 @@
             extent = "80 24";
             minExtent = "8 8";
             horizSizing = "right";
-            vertSizing = "top";
+            vertSizing = "center";
             profile = "ToolsButtonProfile";
             visible = "0";
             active = "1";
