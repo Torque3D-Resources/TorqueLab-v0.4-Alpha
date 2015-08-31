@@ -129,7 +129,10 @@ function TerrainMaterialDlg::dialogCancel( %this ) {
 function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName ) {
 	if( $Pref::TerrainEditor::LastPath $= "" )
 		$Pref::TerrainEditor::LastPath = "art/terrains/";
-
+	%defaultFile = %defaultFileName;
+	if (!isFile(%defaultFile))
+		%defaultFile = $Pref::TerrainEditor::LastPath;
+	
 	if (TerrainPainterTools.defaultTexturesFolder !$= "")
 		%defaultPath = TerrainPainterTools.defaultTexturesFolder;
 	else
@@ -138,7 +141,7 @@ function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName )
 	%dlg = new OpenFileDialog() {
 		Filters        = $TerrainEditor::TextureFileSpec;
 		DefaultPath    = $Pref::TerrainEditor::LastPath;
-		DefaultFile    = %defaultFileName;
+		DefaultFile    = %defaultFile;
 		ChangePath     = false;
 		MustExist      = true;
 	};

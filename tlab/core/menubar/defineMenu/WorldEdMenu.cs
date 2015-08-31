@@ -162,6 +162,8 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle Ambient Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"AmbientManager\");";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle Vehicle Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);" TAB "EPostFxManager.visible;";
+	$LabMenuItemWorld_[%id,%itemId++] = "-";
+	$LabMenuItemWorld_[%id,%itemId++] = "Open terrain material manager" TAB "" TAB "TerrainMaterialDlg.show();" TAB "TerrainMaterialDlg.visible;";
 	
 	if ( physicsPluginPresent() && isObject(PhysicsToolsToolbar) ){
 		$LabMenuItemWorld_[%id,%itemId++] = "-";

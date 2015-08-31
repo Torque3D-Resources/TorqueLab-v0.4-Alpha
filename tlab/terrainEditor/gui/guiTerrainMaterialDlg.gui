@@ -13,13 +13,14 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      activeMat = "4148";
+      activeMat = "30768";
       canSaveDirty = "1";
+      dirtyMat30768 = "1";
+      dirtyMat3721 = "1";
       dirtyMat4133 = "1";
       dirtyMat4135 = "1";
-      folderFilter = "GreenValley";
-      mappedMat = "Mat_gvCol_Rock01_Base";
-      matIndex = "3";
+      folderFilter = "All";
+      matIndex = "0";
       onApplyCallback = "EPainter_TerrainMaterialUpdateCallback";
       surfaceFilter = "All";
       tooltipWidth = "500";
@@ -63,8 +64,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "9 31";
-         extent = "332 757";
+         position = "12 28";
+         extent = "326 759";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -132,7 +133,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "332 75";
+            extent = "326 75";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -156,7 +157,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "4 4";
-               extent = "324 68";
+               extent = "318 68";
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -178,7 +179,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "324 29";
+                  extent = "318 29";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -217,7 +218,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "129 0";
+                     position = "126 0";
                      extent = "65 19";
                      minExtent = "8 2";
                      horizSizing = "center";
@@ -263,7 +264,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 31";
-                  extent = "324 37";
+                  extent = "318 37";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -436,7 +437,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "205 0";
-                     extent = "119 37";
+                     extent = "113 37";
                      minExtent = "8 2";
                      horizSizing = "relative";
                      vertSizing = "bottom";
@@ -487,7 +488,7 @@
                         anchorLeft = "0";
                         anchorRight = "0";
                         position = "0 18";
-                        extent = "119 19";
+                        extent = "113 19";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -515,7 +516,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 79";
-            extent = "332 678";
+            extent = "326 680";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -545,7 +546,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "324 670";
+               extent = "318 672";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -580,8 +581,8 @@
                   compareToObjectID = "1";
                   canRenameObjects = "1";
                   renameInternal = "0";
-                  position = "3 3";
-                  extent = "222 567";
+                  position = "0 -1050";
+                  extent = "220 1722";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -651,8 +652,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "342 31";
-         extent = "297 754";
+         position = "339 28";
+         extent = "297 756";
          minExtent = "8 2";
          horizSizing = "left";
          vertSizing = "height";
@@ -669,13 +670,13 @@
          new GuiContainer() {
             docking = "Top";
             margin = "4 0 4 4";
-            padding = "0 0 0 0";
+            padding = "24 0 0 0";
             anchorTop = "1";
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
             position = "4 4";
-            extent = "289 46";
+            extent = "289 82";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -846,59 +847,163 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-            new GuiTextCtrl() {
-               text = "Name:";
-               maxLength = "1024";
-               margin = "0 0 0 0";
+            new GuiContainer() {
+               docking = "Top";
+               margin = "4 0 4 4";
                padding = "0 0 0 0";
                anchorTop = "1";
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "8 28";
-               extent = "40 9";
+               position = "4 28";
+               extent = "281 20";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsTextFX_R";
+               profile = "ToolsBoxDarkC";
                visible = "1";
                active = "1";
-               tooltipProfile = "ToolsDefaultProfile";
-               hovertime = "1000";
-               isContainer = "0";
-               canSave = "1";
-               canSaveDynamicFields = "0";
-            };
-            new GuiTextEditCtrl() {
-               historySize = "0";
-               tabComplete = "0";
-               sinkAllKeyEvents = "0";
-               password = "0";
-               passwordMask = "*";
-               text = "gvRockSharp01";
-               maxLength = "1024";
-               margin = "0 0 0 0";
-               padding = "0 0 0 0";
-               anchorTop = "1";
-               anchorBottom = "0";
-               anchorLeft = "1";
-               anchorRight = "0";
-               position = "54 24";
-               extent = "226 19";
-               minExtent = "8 2";
-               horizSizing = "right";
-               vertSizing = "bottom";
-               profile = "ToolsTextEdit";
-               visible = "1";
-               active = "1";
-               altCommand = "TerrainMaterialDlg.nameAltCommand( $ThisControl.getText() );";
                tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
-               isContainer = "0";
-               internalName = "matNameCtrl";
-               superClass = "TerrainMatDlgActiveNameEdit";
+               isContainer = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
+
+               new GuiTextCtrl() {
+                  text = "Name:";
+                  maxLength = "1024";
+                  docking = "Left";
+                  margin = "0 0 0 0";
+                  padding = "0 0 0 0";
+                  anchorTop = "1";
+                  anchorBottom = "0";
+                  anchorLeft = "1";
+                  anchorRight = "0";
+                  position = "0 0";
+                  extent = "40 20";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsTextFX_R";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "ToolsDefaultProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new GuiTextEditCtrl() {
+                  historySize = "0";
+                  tabComplete = "0";
+                  sinkAllKeyEvents = "0";
+                  password = "0";
+                  passwordMask = "*";
+                  text = "newMaterial";
+                  maxLength = "1024";
+                  docking = "Client";
+                  margin = "2 2 2 2";
+                  padding = "0 0 0 0";
+                  anchorTop = "1";
+                  anchorBottom = "0";
+                  anchorLeft = "1";
+                  anchorRight = "0";
+                  position = "42 2";
+                  extent = "237 16";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsTextEdit";
+                  visible = "1";
+                  active = "1";
+                  altCommand = "TerrainMaterialDlg.nameAltCommand( $ThisControl.getText() );";
+                  tooltipProfile = "ToolsToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  internalName = "matNameCtrl";
+                  superClass = "TerrainMatDlgActiveNameEdit";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+            };
+            new GuiContainer() {
+               docking = "Top";
+               margin = "4 0 4 4";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "4 52";
+               extent = "281 20";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsBoxDarkC";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "ToolsToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+
+               new GuiTextCtrl() {
+                  text = "File:";
+                  maxLength = "1024";
+                  docking = "Left";
+                  margin = "0 0 0 0";
+                  padding = "0 0 0 0";
+                  anchorTop = "1";
+                  anchorBottom = "0";
+                  anchorLeft = "1";
+                  anchorRight = "0";
+                  position = "0 0";
+                  extent = "40 20";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsTextFX_R";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "ToolsDefaultProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
+               new GuiTextEditCtrl() {
+                  historySize = "0";
+                  tabComplete = "0";
+                  sinkAllKeyEvents = "0";
+                  password = "0";
+                  passwordMask = "*";
+                  text = "newMaterial";
+                  maxLength = "1024";
+                  docking = "Client";
+                  margin = "2 2 2 2";
+                  padding = "0 0 0 0";
+                  anchorTop = "1";
+                  anchorBottom = "0";
+                  anchorLeft = "1";
+                  anchorRight = "0";
+                  position = "42 2";
+                  extent = "237 16";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsTextEdit_S1";
+                  visible = "1";
+                  active = "1";
+                  altCommand = "TerrainMaterialDlg.fileAltCommand( $ThisControl.getText() );";
+                  tooltipProfile = "ToolsToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  internalName = "matFileCtrl";
+                  superClass = "TerrainMatDlgActiveFileEdit";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
             };
          };
          new GuiScrollCtrl() {
@@ -917,8 +1022,8 @@
             anchorBottom = "0";
             anchorLeft = "0";
             anchorRight = "0";
-            position = "0 50";
-            extent = "297 677";
+            position = "0 86";
+            extent = "297 643";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -941,8 +1046,8 @@
                dynamicPos = "0";
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
-               position = "3 3";
-               extent = "276 366";
+               position = "0 0";
+               extent = "276 374";
                minExtent = "16 16";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -964,7 +1069,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 0";
-                  extent = "276 21";
+                  extent = "276 25";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -987,7 +1092,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "0 21";
+                     position = "0 25";
                      extent = "276 140";
                      minExtent = "16 16";
                      horizSizing = "right";
@@ -1116,7 +1221,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "gvRockSharp01_1";
+                           text = "newMaterial_1";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -1310,7 +1415,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 25";
+                  position = "0 29";
                   extent = "276 70";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -1472,7 +1577,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "gvCol_Rock01_Base";
+                        text = "apGrassLux_dif";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1547,7 +1652,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "512";
+                        text = "500";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1619,7 +1724,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/GreenValley/Color/gvCol_Rock01_Base";
+                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_dif";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 64";
@@ -1645,7 +1750,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 99";
+                  position = "0 103";
                   extent = "276 82";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -1686,7 +1791,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/GreenValley/Rock/gvRockSharp01_A_d";
+                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_d1";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 76";
@@ -1852,7 +1957,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "gvRockSharp01_A_d";
+                        text = "apGrassLux_d1";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1927,7 +2032,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "12";
+                        text = "5";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1980,7 +2085,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "300";
+                        text = "50";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2033,7 +2138,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "0.5";
+                        text = "1";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2089,7 +2194,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 185";
+                  position = "0 189";
                   extent = "276 70";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -2130,7 +2235,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/GreenValley/Rock/gvRockSharp01_A_n";
+                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_n";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 64";
@@ -2296,7 +2401,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "gvRockSharp01_A_n";
+                        text = "apGrassLux_n";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2371,7 +2476,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "0.05";
+                        text = "0";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2404,7 +2509,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 259";
+                  position = "0 263";
                   extent = "276 82";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -2445,7 +2550,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/GreenValley/Macro/gvMacRock_01A_Hard";
+                        bitmap = "art/terrains/Appalachian/Macros/macGrassLux_m1";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 76";
@@ -2611,7 +2716,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "gvMacRock_01A_Hard";
+                        text = "macGrassLux_m1";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2686,7 +2791,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "22";
+                        text = "200";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2739,7 +2844,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "2000";
+                        text = "500";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2792,7 +2897,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "0.5";
+                        text = "0.7";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2849,8 +2954,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 345";
-                  extent = "276 21";
+                  position = "0 349";
+                  extent = "276 25";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2873,8 +2978,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "0 21";
-                     extent = "276 748";
+                     position = "0 25";
+                     extent = "276 20";
                      minExtent = "16 16";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -2901,13 +3006,12 @@
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "0";
+                        visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "unmappedCont";
-                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -2963,22 +3067,22 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "276 748";
+                        extent = "276 760";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "1";
+                        visible = "0";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "inspectorCont";
+                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
                         new GuiTextCtrl() {
-                           text = "Mat_gvCol_Rock01_Base";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -3083,6 +3187,7 @@
                         };
                         new GuiInspector(TerrainMatDlg_MappedInspector) {
                            dividerMargin = "5";
+                           dividerPos = "0.65";
                            showCustomFields = "1";
                            stackingType = "Vertical";
                            horizStacking = "Left to Right";
@@ -3094,7 +3199,7 @@
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
                            position = "0 21";
-                           extent = "276 748";
+                           extent = "276 760";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -3106,7 +3211,6 @@
                            isContainer = "1";
                            canSave = "1";
                            canSaveDynamicFields = "0";
-
                         };
                      };
                   };
@@ -3121,7 +3225,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "4 727";
+            position = "4 729";
             extent = "289 23";
             minExtent = "8 2";
             horizSizing = "right";

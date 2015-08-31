@@ -10,6 +10,12 @@ function TerrainMatDlgActiveNameEdit::onValidate( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+function TerrainMatDlgActiveFileEdit::onValidate( %this ) {
+	devLog("TerrainMatDlgActiveFileEdit::onValidate",%this.getText());
+	TerrainMaterialDlg.setFileName(%this.getText());
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function TerrainMaterialDlg::nameAltCommand( %this, %newName ) {
 	devLog("TerrainMaterialDlg::nameAltCommand",%newName);
 }
@@ -38,6 +44,19 @@ function TerrainMaterialDlg::setMaterialName( %this, %newName ) {
 			%mat.setInternalName( %newName );
 			%this-->matLibTree.buildVisibleTree( false );
 		}
+	}
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function TerrainMaterialDlg::setFileName( %this, %newFile ) {
+	%mat = %this.activeMat;
+
+	if( %mat.getFileName() !$= %newFile ) {
+		
+			%mat.setFileName( %newFile );
+			%this-->matLibTree.buildVisibleTree( false );
+		
 	}
 }
 //------------------------------------------------------------------------------
@@ -157,7 +176,7 @@ function TerrainMaterialDlg::setActiveMaterial( %this, %mat ) {
 		%this.canSaveDirty = true;
 		%this.activeMat = %mat;
 		%this-->matNameCtrl.setText( %mat.internalName );
-
+		%this-->matFileCtrl.setText( %mat.getFileName() );
 		if (%mat.diffuseMap $= "") {
 			%this-->baseTexCtrl.setBitmap( "tlab/materialEditor/assets/unknownImage" );
 		} else {
@@ -237,7 +256,7 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 	}*/
 	// Read out properties from the dialog.
 	%newName = %this-->matNameCtrl.getText();
-
+	%newFile = %this-->matFileCtrl.getText();
 	if (%this-->baseTexCtrl.bitmap $= "tlab/materialEditor/assets/unknownImage") {
 		%newDiffuse = "";
 	} else {
@@ -276,6 +295,8 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 	// return.
 
 	if (  %mat.internalName $= %newName &&
+			%mat.getFileName() $= %newFile &&
+			
 										%mat.diffuseMap $= %newDiffuse &&
 												%mat.normalMap $= %newNormal &&
 														%mat.detailMap $= %newDetail &&
@@ -293,7 +314,8 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 	}
 
 	// Make sure the material name is unique.
-
+	if (%mat.getFileName() !$= %newFile && isFile(%newFile))
+		%mat.setFileName(%newFile);
 	if( %mat.internalName !$= %newName ) {
 		%existingMat = TerrainMaterialSet.findObjectByInternalName( %newName );
 
