@@ -10,6 +10,7 @@ function initializeMaterialEditor() {
 	echo(" % - Initializing Material Editor");
 	execMEP(true);
 	//exec("./gui/profiles.ed.cs");
+	$MatEd = newScriptObject("MatEd");
 	Lab.createPlugin("MaterialEditor","Material Editor");
 	MaterialEditorPlugin.superClass = "WEditorPlugin";
 	Lab.addPluginGui("MaterialEditor",MaterialEditorGui); //Tools renamed to Gui to store stuff
@@ -27,6 +28,7 @@ function execMEP(%loadGui) {
 		exec("tlab/materialEditor/gui/matEdNonModalGroup.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorToolbar.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorTools.gui");
+		exec("tlab/materialEditor/gui/MatPbr.gui");
 	}
 
 	// Load Client Scripts.

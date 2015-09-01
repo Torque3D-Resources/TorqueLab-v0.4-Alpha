@@ -37,7 +37,7 @@ $Lab::materialEditorList = "";
 
 // These must be loaded first, in this order, before anything else is loaded
 $Lab::loadFirst = "sceneEditor";
-$Lab::loadLast = "";
+$Lab::loadLast = "materialLab";
 // These folders must be skipped for initial load
 $LabIgnoreEnableFolderList = "debugger forestEditor levels";
 

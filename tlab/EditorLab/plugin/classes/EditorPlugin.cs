@@ -195,3 +195,13 @@ function EditorPlugin::removeCommonGuiAccess( %this,%gui ) {
 	info(%this.pluginName,"access revoked to GUI:",%gui.getName());
 }
 //------------------------------------------------------------------------------
+
+
+
+//==============================================================================
+//MaterialEditorPlugin.toggleSettings();
+function EditorPlugin::toggleSettings( %this) {
+	
+	LabParamsDlg.toggleSettings(%this.displayName);
+}
+//------------------------------------------------------------------------------

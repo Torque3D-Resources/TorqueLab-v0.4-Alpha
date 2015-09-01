@@ -6,6 +6,37 @@
 $MEP_ShowGroupCtrl["Animation"] = "materialAnimationPropertiesRollout";
 $MEP_ShowGroupCtrl["Rendering"] = "MEP_GroupRendering";
 $MEP_ShowGroupCtrl["Advanced"] = "materialAdvancedPropertiesRollout";
+$MEP_ShowGroupCtrl["Lighting"] = "MEP_GroupLighting";
+
+//==============================================================================
+// Automated editor plugin setting interface
+function MaterialEditorGui::initGui(%this,%params ) {
+	advancedTextureMapsRollout.Expanded = false;
+	materialAnimationPropertiesRollout.Expanded = false;
+	materialAdvancedPropertiesRollout.Expanded = false;
+	%this-->previewOptions.expanded = false;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// MaterialEditorGui.activatePBR();
+function MaterialEditorGui::togglePBR(%this ) {
+	%this.activatePBR(!MatEd.PBRenabled);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// MaterialEditorGui.activatePBR();
+function MaterialEditorGui::activatePBR(%this,%activate ) {
+	if (%activate $= "")
+		%activate = true;
+	
+	MatEd.PBRenabled = %activate;
+	pbr_lightInfuenceProperties.visible = %activate;
+	pbr_materialDamageProperties.visible = %activate;
+	pbr_lightingProperties.visible = %activate;
+	pbr_accumulationProperties.visible = %activate;
+	MEP_SpecularContainer.visible = !%activate;	
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorPlugin::initPropertySetting(%this) {
 	devLog("MaterialEditorPlugin::initPropertySetting(%this)",%this,%ctrl,"Name",%ctrl.internalName);
@@ -93,5 +124,24 @@ function MaterialEditorMapThumbnail::onRightClick( %this ) {
 	%popup.enableItem( 1, %isValid );
 	%popup.filePath = %fullPath;
 	%popup.showPopup( Canvas );
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Set Material GUI Mode (Mesh or Standard)
+//==============================================================================
+// Set GUI depending of if we have a standard Material or a Mesh Material
+function MaterialEditorGui::setMode( %this ) {
+	MatEdMaterialMode.setVisible(0);
+	MatEdTargetMode.setVisible(0);
+
+	if( isObject(MaterialEditorGui.currentObject) ) {
+		MaterialEditorGui.currentMode = "Mesh";
+		MatEdTargetMode.setVisible(1);
+	} else {
+		MaterialEditorGui.currentMode = "Material";
+		MatEdMaterialMode.setVisible(1);
+		EWorldEditor.clearSelection();
+	}
 }
 //------------------------------------------------------------------------------

@@ -4,6 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //------------------------------------------------------------------------------
+$MEP_NoTextureImage = "tlab/materialEditor/assets/unavailable";
 //==============================================================================
 //Select a texture for a material map type 
 function MaterialEditorGui::openMapFile( %this, %defaultFileName ) {
@@ -68,7 +69,7 @@ function MaterialEditorGui::updateTextureMap( %this, %type, %action ) {
 		}
 	} else {
 		%textCtrl.setText("None");
-		%bitmapCtrl.setBitmap("tlab/materialEditor/assets/unknownImage");
+		%bitmapCtrl.setBitmap($MEP_NoTextureImage);
 		MaterialEditorGui.updateActiveMaterial(%type @ "Map[" @ %layer @ "]","");
 	}
 }
@@ -121,13 +122,124 @@ function MaterialEditorGui::updateSpecMap(%this,%action) {
 		}
 	} else {
 		MaterialEditorPropertiesWindow-->specMapNameText.setText("None");
-		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap("tlab/materialEditor/assets/unknownImage");
+		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
 		MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","");
 	}
 
 	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
+//PBR Script
+//==============================================================================
+function MaterialEditorGui::updateCompMap(%this,%action) {
+	%layer = MaterialEditorGui.currentLayer;
+
+	if( %action ) {
+		%texture = MaterialEditorGui.openMapFile();
+
+		if( %texture !$= "" ) {
+			MaterialEditorGui.updateActiveMaterial("pixelSpecular[" @ MaterialEditorGui.currentLayer @ "]", 0);
+			MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap(%texture);
+			%bitmap = MaterialEditorPropertiesWindow-->compMapDisplayBitmap.bitmap;
+			%bitmap = strreplace(%bitmap,"tlab/materialEditor/scripts/","");
+			MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->compMapNameText.setText(%bitmap);
+			MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+		}
+	} else {
+		MaterialEditorPropertiesWindow-->compMapNameText.setText("None");
+		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+		MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","");
+	}
+
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+//------------------------------------------------------------------------------
+function MaterialEditorGui::updateRoughMap(%this,%action)
+{
+   %layer = MaterialEditorGui.currentLayer;
+   
+   if( %action )
+   {
+      %texture = MaterialEditorGui.openFile("texture");
+      if( %texture !$= "" )
+      {         
+         MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%texture);
+      
+         %bitmap = MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.bitmap;
+         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+         MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%bitmap);
+         MaterialEditorPropertiesWindow-->roughMapNameText.setText(%bitmap);
+         MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+      }
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->roughMapNameText.setText("None");
+      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+      MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","");
+   }
+   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+
+function MaterialEditorGui::updateaoMap(%this,%action)
+{
+   %layer = MaterialEditorGui.currentLayer;
+   
+   if( %action )
+   {
+      %texture = MaterialEditorGui.openFile("texture");
+      if( %texture !$= "" )
+      {         
+         MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%texture);
+      
+         %bitmap = MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.bitmap;
+         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+         MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%bitmap);
+         MaterialEditorPropertiesWindow-->aoMapNameText.setText(%bitmap);
+         MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+      }
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->aoMapNameText.setText("None");
+      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+      MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","");
+   }
+   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+
+function MaterialEditorGui::updatemetalMap(%this,%action)
+{
+   %layer = MaterialEditorGui.currentLayer;
+   
+   if( %action )
+   {
+      %texture = MaterialEditorGui.openFile("texture");
+      if( %texture !$= "" )
+      {         
+         MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%texture);
+      
+         %bitmap = MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.bitmap;
+         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+         MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%bitmap);
+         MaterialEditorPropertiesWindow-->metalMapNameText.setText(%bitmap);
+         MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+      }
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->metalMapNameText.setText("None");
+      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+      MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","");
+   }
+   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+
+//PBR Script End
 //==============================================================================
 function MaterialEditorGui::updateRotationOffset(%this, %isSlider, %onMouseUp) {
 	%layer = MaterialEditorGui.currentLayer;
@@ -386,5 +498,48 @@ function MaterialEditorGui::updatePreviewBackground(%this,%color) {
 function MaterialEditorGui::updateAmbientColor(%this,%color) {
 	matEd_previewObjectView.setAmbientLightColor(%color);
 	matEd_ambientLightColorPicker.color = %color;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// PBR Script - Set/Get PBR CHannels
+//==============================================================================
+//==============================================================================
+// Set PBR Channel in selectors
+function MaterialEditorGui::setRoughChan(%this, %value)
+{
+   MaterialEditorGui.updateActiveMaterial("SmoothnessChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+//------------------------------------------------------------------------------
+function MaterialEditorGui::setAOChan(%this, %value)
+{
+   MaterialEditorGui.updateActiveMaterial("aoChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+//------------------------------------------------------------------------------
+function MaterialEditorGui::setMetalChan(%this, %value)
+{
+   MaterialEditorGui.updateActiveMaterial("metalChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Get PBR Channels
+function MaterialEditorGui::getRoughChan(%this, %channel)
+{
+    %guiElement = roughChanBtn @ %channel;
+    %guiElement.setStateOn(true);
+}
+//------------------------------------------------------------------------------
+function MaterialEditorGui::getAOChan(%this, %channel)
+{
+    %guiElement = AOChanBtn @ %channel;
+    %guiElement.setStateOn(true);
+}
+//------------------------------------------------------------------------------
+function MaterialEditorGui::getMetalChan(%this, %channel)
+{
+    %guiElement = metalChanBtn @ %channel;
+    %guiElement.setStateOn(true);
 }
 //------------------------------------------------------------------------------

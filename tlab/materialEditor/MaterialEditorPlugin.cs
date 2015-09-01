@@ -18,6 +18,7 @@ function MaterialEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("NormalSuffix",       "_n" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("AutoAddSpecular",       "1" TAB "Auto add normal if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("SpecularSuffix",       "_s" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("PBRenabled",       "1" TAB "Enable PBR Materials" TAB "checkbox"  TAB "" TAB "MatEd" TAB %groupId);
 }
 
 //==============================================================================

@@ -9,7 +9,7 @@ new GuiStackControl(StackEndToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "846 0";
+   position = "190 0";
    extent = "248 32";
    minExtent = "4 16";
    horizSizing = "right";
@@ -26,12 +26,12 @@ new GuiStackControl(StackEndToolbar) {
    canSaveDynamicFields = "1";
       alwaysLast = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "6937";
-      disabledGroup = "6938";
-      EditorContainer = "4671";
+      defaultStack = "22088";
+      disabledGroup = "22089";
+      EditorContainer = "19822";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "6941";
+      stackLists = "22092";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -294,7 +294,7 @@ new GuiStackControl(StackEndToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "3";
             originalParent = "7032";
-            toolbar = "6937";
+            toolbar = "22088";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";

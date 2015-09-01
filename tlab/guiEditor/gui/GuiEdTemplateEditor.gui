@@ -21,7 +21,7 @@
    canSaveDynamicFields = "1";
 
    new GuiWindowCtrl(GuiEdTemplateContainer) {
-      text = "\c1TitleBoxEditContainers\c1\c0 template UI editing and setup";
+      text = "\c1MaterialMapPill\c1\c0 template UI editing and setup";
       resizeWidth = "0";
       resizeHeight = "0";
       canMove = "1";
@@ -222,7 +222,6 @@
 
                      new GuiInspector(SceneInspector42) {
                         dividerMargin = "5";
-                        dividerPos = "0.6";
                         showCustomFields = "1";
                         stackingType = "Vertical";
                         horizStacking = "Left to Right";

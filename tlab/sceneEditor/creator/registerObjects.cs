@@ -61,8 +61,10 @@ function SceneCreatorWindow::registerObjects( %this ) {
 	%this.registerMissionObject( "SpawnSphere",  "Observer Spawn Sphere", "ObserverDropPoint" );
 	%this.registerMissionObject( "SFXSpace",      "Sound Space" );
 	%this.registerMissionObject( "OcclusionVolume", "Occlusion Volume" );
-	%this.registerMissionObject("NavMesh", "Navigation mesh");
-	%this.registerMissionObject("NavPath", "Path");
+      %this.registerMissionObject( "LightProbeVolume", "Light Probe Volume" );
+      %this.registerMissionObject("NavMesh", "Navigation mesh");
+      %this.registerMissionObject("NavPath", "Path");
+
 	
 	if (%this.isMethod("registerCustomsObjectsGroup"))
 		%this.registerCustomsObjectsGroup("Level");

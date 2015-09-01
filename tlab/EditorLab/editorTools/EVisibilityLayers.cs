@@ -107,6 +107,17 @@ function EVisibilityLayers::initOptions( %this ) {
 	%this.addOption( "Frustum Lock", "$Scene::lockCull", "" );
 	%this.addOption( "Disable Zone Culling", "$Scene::disableZoneCulling", "" );
 	%this.addOption( "Disable Terrain Occlusion", "$Scene::disableTerrainOcclusion", "" );
+	
+	//PBR Script
+	%this.addOption( "Debug Render: Physics World", "$PhysicsWorld::render", "togglePhysicsDebugViz" );
+  
+   %this.addOption( "AL: Environment Light", "$AL_LightMapShaderVar", "toggleLightMapViz" );
+  
+   %this.addOption( "AL: Color Buffer", "$AL_ColorBufferShaderVar", "toggleColorBufferViz" );
+   %this.addOption( "AL: Spec Map(Rough)", "$AL_RoughMapShaderVar", "toggleRoughMapViz");
+   %this.addOption( "AL: Spec Map(Metal)", "$AL_MetalMapShaderVar", "toggleMetalMapViz");
+   %this.addOption( "AL: Backbuffer", "$AL_BackbufferVisualizeVar", "toggleBackbufferViz" );
+	//PBR Script End
 	$VisibilityOptionsLoaded = true;
 }
 function EVisibilityLayers::addOption( %this, %text, %varName, %toggleFunction ) {

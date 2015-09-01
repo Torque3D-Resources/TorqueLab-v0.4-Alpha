@@ -94,7 +94,8 @@ function MaterialEditorGui::open(%this) {
 	MaterialEditorPropertiesWindow-->MaterialLayerCtrl.add("Layer 3",3);
 	MaterialEditorPropertiesWindow-->MaterialLayerCtrl.setSelected( 0, false );
 	//Sift through the RootGroup and find all loaded material items.
-	MaterialEditorGui.updateAllFields();
+	matEd_cubemapEd_availableCubemapList.clear();
+	//MaterialEditorGui.updateAllFields();
 	MaterialEditorGui.updatePreviewObject();
 	// If no selected object; go to material mode. And edit the last selected material
 	MaterialEditorGui.setMode();

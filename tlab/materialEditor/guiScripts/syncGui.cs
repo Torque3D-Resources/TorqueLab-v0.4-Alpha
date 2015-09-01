@@ -3,64 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-//==============================================================================
-// Automated editor plugin setting interface
-function MaterialEditorGui::initGui(%this,%params ) {
-	advancedTextureMapsRollout.Expanded = false;
-	materialAnimationPropertiesRollout.Expanded = false;
-	materialAdvancedPropertiesRollout.Expanded = false;
-	%this-->previewOptions.expanded = false;
-}
-//------------------------------------------------------------------------------
 
-//==============================================================================
-function MaterialEditorGui::updatePreviewObject(%this) {
-	%newModel = matEd_quickPreview_Popup.getValue();
-
-	switch$(%newModel) {
-	case "sphere":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/spherePreview.dts");
-		matEd_previewObjectView.setOrbitDistance(4);
-
-	case "cube":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/cubePreview.dts");
-		matEd_previewObjectView.setOrbitDistance(5);
-
-	case "pyramid":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/pyramidPreview.dts");
-		matEd_previewObjectView.setOrbitDistance(5);
-
-	case "cylinder":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/cylinderPreview.dts");
-		matEd_previewObjectView.setOrbitDistance(4.2);
-
-	case "torus":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/torusPreview.dts");
-		matEd_previewObjectView.setOrbitDistance(4.2);
-
-	case "knot":
-		matEd_quickPreview_Popup.selected = %newModel;
-		matEd_previewObjectView.setModel("tlab/materialEditor/assets/torusknotPreview.dts");
-	}
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function MaterialEditorGui::updateLivePreview(%this,%preview) {
-	// When checkbox is selected, preview the material in real time, if not; then don't
-	if( %preview )
-		MaterialEditorGui.copyMaterials( materialEd_previewMaterial, MaterialEditorGui.currentMaterial );
-	else
-		MaterialEditorGui.copyMaterials( notDirtyMaterial, MaterialEditorGui.currentMaterial );
-
-	MaterialEditorGui.currentMaterial.flush();
-	MaterialEditorGui.currentMaterial.reload();
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 
 function MaterialEditorGui::guiSync( %this, %material ) {
@@ -94,6 +37,9 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 	MaterialEditorPropertiesWindow-->transZWriteCheckBox.setValue((%material).translucentZWrite);
 	MaterialEditorPropertiesWindow-->alphaTestCheckBox.setValue((%material).alphaTest);
 	MaterialEditorPropertiesWindow-->castShadows.setValue((%material).castShadows);
+	
+	MaterialEditorPropertiesWindow-->castDynamicShadows.setValue((%material).castDynamicShadows);//PBR Scripts
+
 	MaterialEditorPropertiesWindow-->translucentCheckbox.setValue((%material).translucent);
 
 	switch$((%material).translucentBlendOp) {
@@ -143,7 +89,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).diffuseMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->diffuseMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->diffuseMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->diffuseMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->diffuseMapNameText.setText( (%material).diffuseMap[%layer] );
 		MaterialEditorPropertiesWindow-->diffuseMapDisplayBitmap.setBitmap( (%material).diffuseMap[%layer] );
@@ -151,7 +97,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).normalMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->normalMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->normalMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->normalMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->normalMapNameText.setText( (%material).normalMap[%layer] );
 		MaterialEditorPropertiesWindow-->normalMapDisplayBitmap.setBitmap( (%material).normalMap[%layer] );
@@ -159,7 +105,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).overlayMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->overlayMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->overlayMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->overlayMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->overlayMapNameText.setText( (%material).overlayMap[%layer] );
 		MaterialEditorPropertiesWindow-->overlayMapDisplayBitmap.setBitmap( (%material).overlayMap[%layer] );
@@ -167,7 +113,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).detailMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->detailMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->detailMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->detailMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->detailMapNameText.setText( (%material).detailMap[%layer] );
 		MaterialEditorPropertiesWindow-->detailMapDisplayBitmap.setBitmap( (%material).detailMap[%layer] );
@@ -175,7 +121,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).detailNormalMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->detailNormalMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->detailNormalMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->detailNormalMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->detailNormalMapNameText.setText( (%material).detailNormalMap[%layer] );
 		MaterialEditorPropertiesWindow-->detailNormalMapDisplayBitmap.setBitmap( (%material).detailNormalMap[%layer] );
@@ -183,7 +129,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).lightMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->lightMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->lightMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->lightMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->lightMapNameText.setText( (%material).lightMap[%layer] );
 		MaterialEditorPropertiesWindow-->lightMapDisplayBitmap.setBitmap( (%material).lightMap[%layer] );
@@ -191,31 +137,123 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 
 	if((%material).toneMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->toneMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->toneMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->toneMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->toneMapNameText.setText( (%material).toneMap[%layer] );
 		MaterialEditorPropertiesWindow-->toneMapDisplayBitmap.setBitmap( (%material).toneMap[%layer] );
 	}
+	//PBR Scripts
+	MaterialEditorPropertiesWindow-->FlipRBCheckbox.setValue((%material).FlipRB[%layer]);
+   MaterialEditorPropertiesWindow-->invertSmoothnessCheckbox.setValue((%material).invertSmoothness[%layer]);
 
 	if((%material).specularMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->specMapNameText.setText( "None" );
-		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap( "tlab/materialEditor/assets/unknownImage" );
+		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+		MaterialEditorPropertiesWindow-->compMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
 	} else {
 		MaterialEditorPropertiesWindow-->specMapNameText.setText( (%material).specularMap[%layer] );
 		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap( (%material).specularMap[%layer] );
+		MaterialEditorPropertiesWindow-->compMapNameText.setText( (%material).specularMap[%layer] );
+		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap( (%material).specularMap[%layer] );
 	}
+	
+	//PBR Script
+	if((%material).roughMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->roughMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->roughMapNameText.setText( (%material).roughMap[%layer] );
+      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( (%material).roughMap[%layer] );
+   }
+   
+   if((%material).aoMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->aoMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->aoMapNameText.setText( (%material).aoMap[%layer] );
+      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( (%material).aoMap[%layer] );
+   }
+   
+   if((%material).metalMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->metalMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->metalMapNameText.setText( (%material).metalMap[%layer] );
+      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( (%material).metalMap[%layer] );
+   }
+   
+   // material damage
+      
+   if((%material).albedoDamageMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage);
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( (%material).albedoDamageMap[%layer] );
+      MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( (%material).albedoDamageMap[%layer] );
+   }
+   
+   if((%material).normalDamageMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
+      MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( (%material).normalDamageMap[%layer] );
+   }
+   
+   if((%material).compositeDamageMap[%layer] $= "") 
+   {
+      MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( "None" );
+      MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+   }
+   else
+   {
+      MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
+      MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( (%material).compositeDamageMap[%layer] );
+   }
+   
+   MaterialEditorPropertiesWindow-->minDamageTextEdit.setText((%material).minDamage[%layer]);
+   MaterialEditorPropertiesWindow-->minDamageSlider.setValue((%material).minDamage[%layer]);
+	//PBR Script End   
 
 	MaterialEditorPropertiesWindow-->detailScaleTextEdit.setText( getWord((%material).detailScale[%layer], 0) );
 	MaterialEditorPropertiesWindow-->detailNormalStrengthTextEdit.setText( getWord((%material).detailNormalMapStrength[%layer], 0) );
 	MaterialEditorPropertiesWindow-->colorTintSwatch.color = (%material).diffuseColor[%layer];
 	MaterialEditorPropertiesWindow-->specularColorSwatch.color = (%material).specular[%layer];
+	if (!MatEd.PBRenabled){
 	MaterialEditorPropertiesWindow-->specularPowerTextEdit.setText((%material).specularPower[%layer]);
 	MaterialEditorPropertiesWindow-->specularPowerSlider.setValue((%material).specularPower[%layer]);
 	MaterialEditorPropertiesWindow-->specularStrengthTextEdit.setText((%material).specularStrength[%layer]);
 	MaterialEditorPropertiesWindow-->specularStrengthSlider.setValue((%material).specularStrength[%layer]);
 	MaterialEditorPropertiesWindow-->pixelSpecularCheckbox.setValue((%material).pixelSpecular[%layer]);
+	}
+	else {
+	
+	//PBR Script
+	MaterialEditorPropertiesWindow-->SmoothnessTextEdit.setText((%material).Smoothness[%layer]);
+   MaterialEditorPropertiesWindow-->SmoothnessSlider.setValue((%material).Smoothness[%layer]);
+   MaterialEditorPropertiesWindow-->MetalnessTextEdit.setText((%material).Metalness[%layer]);
+   MaterialEditorPropertiesWindow-->MetalnessSlider.setValue((%material).Metalness[%layer]);
+	//PBR Script End
+	}
 	MaterialEditorPropertiesWindow-->glowCheckbox.setValue((%material).glow[%layer]);
 	MaterialEditorPropertiesWindow-->emissiveCheckbox.setValue((%material).emissive[%layer]);
+	MaterialEditorPropertiesWindow-->parallaxTextEdit.setText((%material).parallaxScale[%layer]);
 	MaterialEditorPropertiesWindow-->parallaxTextEdit.setText((%material).parallaxScale[%layer]);
 	MaterialEditorPropertiesWindow-->parallaxSlider.setValue((%material).parallaxScale[%layer]);
 	MaterialEditorPropertiesWindow-->useAnisoCheckbox.setValue((%material).useAnisotropic[%layer]);
@@ -283,10 +321,22 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 	MaterialEditorPropertiesWindow-->SequenceTextEditSSS.setText( %numFrames );
 	MaterialEditorPropertiesWindow-->SequenceSliderFPS.setValue( (%material).sequenceFramePerSec[%layer] );
 	MaterialEditorPropertiesWindow-->SequenceSliderSSS.setValue( %numFrames );
+	
+	
+	// Accumulation PBR Script
+   MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);  
+     
+   MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);
+   
+   %this.getRoughChan((%material).SmoothnessChan[%layer]);
+   %this.getAOChan((%material).AOChan[%layer]);
+   %this.getMetalChan((%material).metalChan[%layer]);
+   //PBR Script End
 	%this.preventUndo = false;
 }
 
 //------------------------------------------------------------------------------
+
 //==============================================================================
 // Color Picker Helpers - They are all using colorPicker.ed.gui in order to function
 // These functions are mainly passed callbacks from getColorI/getColorF callbacks
