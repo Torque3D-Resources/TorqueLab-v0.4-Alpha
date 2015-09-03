@@ -23,13 +23,16 @@ function SEP_ScenePage::updateContent( %this ) {
 
 //==============================================================================
 // Define Automated MissionGroup SimGroups
-$SceneEd_CheckGroups = "Core Environment SceneObjects Vehicle TSStatic Spawn";
+$SceneEd_CheckGroups = "Core Environment SceneObjects Vehicle TSStatic Spawn NavMesh NavPath CoverPoint";
 $SceneEd_AllGroups = $SceneEd_CheckGroups SPC "MiscObject";
 
-$SceneEd_RootGroups = "Core Environment SceneObjects Shape Spawn MiscObject";
+$SceneEd_RootGroups = "Core Environment SceneObjects Shape Spawn MiscObject NavAI";
 
 $SceneEd_MultiGroups = "Shape";
 $SceneEd_SubGroups["Shape"] = "Vehicle TSStatic";
+
+$SceneEd_MultiGroups = "NavAI";
+$SceneEd_SubGroups["NavAI"] = "NavMesh NavPath CoverPoint";
 
 //==============================================================================
 // Define Automated MissionGroup SimGroups Objects Type
@@ -38,7 +41,9 @@ $SceneEd_GroupObjList["Environment"] = "Water Terrain River GroundCover Forest P
 $SceneEd_GroupObjList["SceneObjects"] = "Road";
 $SceneEd_GroupObjList["TSStatic"] = "TSStatic Prefab";
 $SceneEd_GroupObjList["Spawn"] = "Spawn";
-$SceneEd_GroupObjList["Vehicle"] = "Vehicle";
+$SceneEd_GroupObjList["NavMesh"] = "NavMesh";
+$SceneEd_GroupObjList["NavPath"] = "NavPath";
+$SceneEd_GroupObjList["CoverPoint"] = "CoverPoint";
 //------------------------------------------------------------------------------
 //==============================================================================
 // Reorganize the Mission objects (only root items by default (%maxDepth = 1)
@@ -72,11 +77,11 @@ function SEP_ScenePage::findMissionObjectsGroups( %this,%group,%depth ) {
 			continue;
 		}
 		%class = %obj.getClassName();
-	
+	devLog("Checking obj:",%class);
 		%groupFound = false;
 		foreach$(%groupData in $SceneEd_CheckGroups){
 			%list = $SceneEd_GroupObjList[%groupData];
-
+				
 			if (strFindWords(%class,%list)){ 
 				%this.organizedGroupList[%groupData] = strAddWord(%this.organizedGroupList[%groupData],%obj);				
 				%groupFound = true;
@@ -115,6 +120,7 @@ function SEP_ScenePage::addMissionObjectsToGroups( %this,%group ) {
 function SEP_ScenePage::addObjToGroup( %this,%obj,%group ) {
 	//Go through all Scene objects and move them to define groups
 	eval("%groupName = SceneEditorCfg."@%group@"Group;");	
+	warnLog("Groupname=",%groupName);
 	if (%groupName $= "")
 		return;
 

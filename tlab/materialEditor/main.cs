@@ -16,6 +16,7 @@ function initializeMaterialEditor() {
 	Lab.addPluginGui("MaterialEditor",MaterialEditorGui); //Tools renamed to Gui to store stuff
 	Lab.addPluginDlg("MaterialEditor",matEd_cubemapEditor);
 	Lab.addPluginDlg("MaterialEditor",matEd_addCubemapWindow);
+	Lab.addPluginDlg("MaterialEditor",MaterialEditorDialogs);
 	Lab.addPluginToolbar("MaterialEditor",MaterialEditorToolbar);
 }
 //------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ function execMEP(%loadGui) {
 		exec("tlab/materialEditor/gui/matEdNonModalGroup.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorToolbar.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorTools.gui");
+		exec("tlab/materialEditor/gui/MaterialEditorDialogs.gui");
 		exec("tlab/materialEditor/gui/MatPbr.gui");
 	}
 

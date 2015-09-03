@@ -13,15 +13,15 @@ new GuiControlProfile (ToolsDefaultProfile) {
     mouseOverSelected = false;
 
     // fill color
-    opaque = "1";
+    opaque = "0";
     fillColor = "243 241 241 0";
     fillColorHL ="229 229 236 0";
-    fillColorSEL = "99 101 138 156";
+    fillColorSEL = "99 101 138 0";
     fillColorNA = "255 255 255 0";
 
     // border color
     border = 0;
-    borderColor   = "100 100 100";
+    borderColor   = "101 101 101 0";
     borderColorHL = "50 50 50 50";
     borderColorNA = "75 75 75";
 
@@ -30,7 +30,7 @@ new GuiControlProfile (ToolsDefaultProfile) {
     fontSize = 16;
     fontCharset = ANSI;
 
-    fontColor = "0 0 0";
+    fontColor = "0 0 0 0";
     fontColorHL = "0 0 0";
     fontColorNA = "0 0 0";
     fontColorSEL= "255 255 255";
@@ -46,11 +46,12 @@ new GuiControlProfile (ToolsDefaultProfile) {
     autoSizeHeight = false;
     returnTab = false;
     numbersOnly = false;
-    cursorColor = "0 0 0 255";
+    cursorColor = "0 0 0 0";
 
     category = "Tools";
    borderThickness = "0";
    fontColors[9] = "255 0 255 255";
+   fontColors[0] = "0 0 0 0";
     // sounds
     //soundButtonDown = "";
     //soundButtonOver = "";

@@ -66,9 +66,9 @@ function RiverEditorGui::createRiver( %this ) {
 		waveMagnitude[1] = "0.2";
 		waveMagnitude[2] = "0.2";
 		baseColor = "45 108 171 255";
-		rippleTex = "art/water/ripple.dds";
-		foamTex = "art/water/foam";
-		depthGradientTex = "art/water/depthcolor_ramp";
+		rippleTex = "art/textures/water/ripple.dds";
+		foamTex = "art/textures/water/foam";
+		depthGradientTex = "art/textures/water/depthcolor_ramp";
 	};
 	return %river;
 }

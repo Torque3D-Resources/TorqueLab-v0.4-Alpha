@@ -8,6 +8,8 @@
 //==============================================================================
 function SceneEditorTools::onPreEditorSave( %this ) {	
 	%this.removeToolClones();
+	if (getWordCount(SceneEditorTools.rows) <= 1)
+		SceneEditorPlugin.toggleBuildMode();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

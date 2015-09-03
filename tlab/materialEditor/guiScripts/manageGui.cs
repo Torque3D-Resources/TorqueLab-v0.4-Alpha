@@ -8,6 +8,8 @@ $MEP_ShowGroupCtrl["Rendering"] = "MEP_GroupRendering";
 $MEP_ShowGroupCtrl["Advanced"] = "materialAdvancedPropertiesRollout";
 $MEP_ShowGroupCtrl["Lighting"] = "MEP_GroupLighting";
 
+
+
 //==============================================================================
 // Automated editor plugin setting interface
 function MaterialEditorGui::initGui(%this,%params ) {
@@ -15,6 +17,10 @@ function MaterialEditorGui::initGui(%this,%params ) {
 	materialAnimationPropertiesRollout.Expanded = false;
 	materialAdvancedPropertiesRollout.Expanded = false;
 	%this-->previewOptions.expanded = false;
+	
+	MatEd.pbrMapMode(MatEd.MapModePBR);
+	%radio = MatEd_PBRmodeRadios.findObjectByInternalName(MatEd.MapModePBR);
+	%radio.setStateOn(true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

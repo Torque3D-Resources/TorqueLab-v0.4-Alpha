@@ -26,6 +26,9 @@ function EditorPlugin::onActivated( %this ) {
 	//Hide all the Guis for all plugins
 	foreach(%gui in LabPluginGuiSet)
 		%gui.setVisible(false);
+	
+		
+	EWToolsPaletteContainer.visible = !%this.noPalette;
 
 	//Show only the Gui related to actiavted plugin
 	%pluginGuiSet = %this.plugin@"_GuiSet";

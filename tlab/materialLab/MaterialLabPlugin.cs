@@ -36,7 +36,8 @@ function MaterialLabPlugin::initParamsArray( %this,%array ) {
 // Called when TorqueLab is launched for first time
 function MaterialLabPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
-	%this.customPalette = "SceneEditorPalette";
+	
+	%this.noPalette = true;
 	%map = new ActionMap();
 	%map.bindCmd( keyboard, "1", "EWorldEditorNoneModeBtn.performClick();", "" );  // Select
 	%map.bindCmd( keyboard, "2", "EWorldEditorMoveModeBtn.performClick();", "" );  // Move
@@ -85,6 +86,8 @@ function MaterialLabPlugin::onWorldEditorStartup( %this ) {
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function MaterialLabPlugin::onActivated( %this ) {
+	
+	Lab.hidePluginPalettes();
 	MaterialLabTools.init();
 	MaterialLabGui.init();
 	MatLab.initGui();	

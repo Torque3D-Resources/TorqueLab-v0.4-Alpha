@@ -20,3 +20,22 @@ function SceneAddSimGroupButton::onCtrlClick( %this ) {
 	devLog("SceneAddSimGroupButton::onCtrlClick??");
 	EWorldEditor.addSimGroup( true );
 }
+
+
+function SceneEditorPlugin::toggleBuildMode( %this ) {
+	%rowCount = getWordCount(SceneEditorTools.rows);
+
+	if (%rowCount > 1){		
+		SceneEditorTools.lastRows = SceneEditorTools.rows;
+		
+		SceneEditorTools.rows = "0";
+		SceneEditorTools.updateSizes();
+	}
+	else {
+		if (getWordCount(SceneEditorTools.lastRows) <= 1)
+			SceneEditorTools.lastRows = "0 200";
+		
+		SceneEditorTools.rows = SceneEditorTools.lastRows;
+		SceneEditorTools.updateSizes();
+	}
+}

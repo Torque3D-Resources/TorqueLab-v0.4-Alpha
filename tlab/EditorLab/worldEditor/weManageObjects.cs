@@ -23,9 +23,12 @@ function WorldEditor::forceObjectToGrid( %this, %obj ) {
 	%gridSize = %this.gridSize;
 		%pos = getWords(%transform,0,2);
 		%start = %pos;
-		%pos.x = mRound(%pos.x/%gridSize)*%gridSize;
-		%pos.y = mRound(%pos.y/%gridSize)*%gridSize;
-		%pos.z = mRound(%pos.z/%gridSize)*%gridSize;
+		%multi = %gridSize;
+		if (%multi > 1)
+			%multi = 1;
+		%pos.x = mRound(%pos.x/%multi)*%multi;
+		%pos.y = mRound(%pos.y/%multi)*%multi;
+		%pos.z = mRound(%pos.z/%multi)*%multi;
 		%transform = setWord(%transform, 0, %pos.x);
 		%transform = setWord(%transform, 1, %pos.y);
 		%transform = setWord(%transform, 2, %pos.z);

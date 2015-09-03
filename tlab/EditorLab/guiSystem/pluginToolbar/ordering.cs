@@ -50,9 +50,11 @@ function Lab::updatePluginIconOrder(%this,%isDefault) {
 	for ( %i = 0; %i < %count; %i++ ) {
 		%icon = ToolsToolbarArray.getObject(%i);
 		%icon.pluginObj.pluginOrder = %i+1;
-		if (%isDefault)
-			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);			
-		else
+		%curDefault = %icon.pluginObj.getCfg("pluginOrderDefault");
+		if (%isDefault || %curDefault $= "")
+			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);	
+					
+		if (!%isDefault)
 			%icon.pluginObj.setCfg("pluginOrder",%icon.pluginObj.pluginOrder);			
 	}
 }

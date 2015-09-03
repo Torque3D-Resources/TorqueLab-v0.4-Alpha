@@ -22,7 +22,9 @@ function Lab::loadPluginsPalettes() {
 		%paletteGroup++;
 	}
 }
-
+function Lab::hidePluginPalettes(%this) {	
+		hide(EWToolsPaletteContainer);
+}
 //==============================================================================
 // Toggle the palette bar tools to activate those used by plugin
 function Lab::togglePluginPalette(%this, %paletteName) {

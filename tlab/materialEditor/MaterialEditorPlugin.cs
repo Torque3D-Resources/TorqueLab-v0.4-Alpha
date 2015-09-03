@@ -19,6 +19,7 @@ function MaterialEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("AutoAddSpecular",       "1" TAB "Auto add normal if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("SpecularSuffix",       "_s" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("PBRenabled",       "1" TAB "Enable PBR Materials" TAB "checkbox"  TAB "" TAB "MatEd" TAB %groupId);
+	%array.setVal("MapModePBR",       "1" TAB "PBR maps mode" TAB "slider"  TAB "range>>0 2;;ticksAt>>1" TAB "MatEd" TAB %groupId);
 }
 
 //==============================================================================
@@ -78,15 +79,15 @@ function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 	//MaterialEditor persistence manager
 	new PersistenceManager(matEd_PersistMan);
 	MaterialEditorGui.establishMaterials();
-	MaterialEditorGui.rows = "0 230";
-	MaterialEditorGui.updateSizes();
+	//MaterialEditorGui.rows = "0 230";
+	//MaterialEditorGui.updateSizes();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function MaterialEditorPlugin::onActivated( %this ) {
-	MaterialEditorGui.rows = "0 230";
-	MaterialEditorGui.updateSizes();
+	//MaterialEditorGui.rows = "0 230";
+	//MaterialEditorGui.updateSizes();
 
 	if($gfx::wireframe) {
 		$wasInWireFrameMode = true;
@@ -107,6 +108,7 @@ function MaterialEditorPlugin::onActivated( %this ) {
 	hide(MEP_CallbackArea);
 	hide(matEd_addCubemapWindow);
 	matEd_addCubemapWindow.setVisible(0);
+	show(MaterialEditorPreviewWindow);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -147,6 +149,8 @@ function MaterialEditorPlugin::onDeactivated( %this ) {
 	SceneEditorToolbar.setVisible( false );
 	
 	Parent::onDeactivated(%this);
+
+	//hide(MaterialEditorPreviewWindow);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

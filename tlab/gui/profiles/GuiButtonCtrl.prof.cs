@@ -230,19 +230,24 @@ singleton GuiControlProfile(ToolsRadioProfile_S1 : ToolsRadioProfile)
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsSwatchButtonProfile : ToolsDefaultProfile)
 {
-	fillColor = "254 253 253 255";
+	fillColor = "254 254 254 255";
 	fillColorHL = "221 221 221 255";
 	fillColorNA = "200 200 200 255";
 	fontSize = "24";
 	textOffset = "16 10";
 	bitmap = "art/gui/Lab/assets/button-assets/GuiButton";
-	hasBitmapArray = "1";
+	hasBitmapArray = "0";
 	fontColors[0] = "253 253 253 255";
 	fontColor = "253 253 253 255";
-   border = "-1";
+   border = "0";
    fontColors[2] = "Black";
    fontColorNA = "Black";
     category = "Tools";
+   modal = "0";
+   opaque = "1";
+   fillColorSEL = "99 101 138 156";
+   borderColor = "100 100 100 255";
+   cursorColor = "0 0 0 79";
 };
 //------------------------------------------------------------------------------
 singleton GuiControlProfile(ToolsSwatchButtonProfile : GuiSwatchButtonProfile)

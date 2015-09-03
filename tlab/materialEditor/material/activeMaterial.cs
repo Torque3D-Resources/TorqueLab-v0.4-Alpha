@@ -32,6 +32,7 @@ function MaterialEditorGui::prepareActiveMaterial(%this, %material, %override) {
 //==============================================================================
 // Updates the preview material to use the same properties as the selected material,
 // and makes that material active in the editor.
+//MaterialEditorGui.setActiveMaterial(test_cuboidTestF);
 function MaterialEditorGui::setActiveMaterial( %this, %material ) {
 	// Warn if selecting a CustomMaterial (they can't be properly previewed or edited)
 	if ( isObject( %material ) && %material.isMemberOfClass( "CustomMaterial" ) ) {

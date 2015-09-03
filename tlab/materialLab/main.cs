@@ -33,6 +33,7 @@ function execMLP(%loadGui) {
 		exec("tlab/materialLab/gui/MaterialLabToolbar.gui");
 		exec("tlab/materialLab/gui/MaterialLabTools.gui");
 		exec("tlab/materialLab/gui/MaterialLabGui.gui");
+		
 	}
 
 	// Load Client Scripts.

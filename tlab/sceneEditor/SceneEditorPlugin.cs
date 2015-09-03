@@ -24,9 +24,14 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("Vehicle",       "Vehicle" TAB "Vehicle Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("MiscObjectGroup",       "mgMiscObject" TAB "Misc. Objects Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("ShapeGroup",       "mgShapeGroup" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
-	
-	
-	
+	%array.setVal("NavAIGroup",       "NavAI" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("NavMeshGroup",       "NavMesh" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("NavPathGroup",       "NavPath" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("CoverPointGroup",       "CoverPoint" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	SceneEditorCfg.NavAIGroup = "mgNavAI";
+	SceneEditorCfg.NavMeshGroup = "mgNavMesh";
+	SceneEditorCfg.NavPathGroup = "mgNavPath";
+	SceneEditorCfg.CoverPointGroup = "mgCoverPoint";
 }
 //------------------------------------------------------------------------------
 
