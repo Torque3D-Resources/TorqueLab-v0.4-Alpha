@@ -46,7 +46,7 @@ function MaterialLabPlugin::onWorldEditorStartup( %this ) {
 	%map.bindCmd( keyboard, "z", "EditorGuiStatusBar.setCamera(\"Standard Camera\");", "" );// Free Camera
 	%map.bindCmd( keyboard, "n", "ToggleNodeBar->renderHandleBtn.performClick();", "" );// Render Node
 	%map.bindCmd( keyboard, "shift n", "ToggleNodeBar->renderTextBtn.performClick();", "" );// Render Node Text
-	%map.bindCmd( keyboard, "alt s", "MaterialLabGui.save();", "" );// Save Material
+	%map.bindCmd( keyboard, "alt s", "MatLab.save();", "" );// Save Material
 	//%map.bindCmd( keyboard, "delete", "ToggleNodeBar->renderTextBtn.performClick();", "" );// delete Material
 	%map.bindCmd( keyboard, "g", "ESnapOptions-->GridSnapButton.performClick();" ); // Grid Snappping
 	%map.bindCmd( keyboard, "t", "SnapToBar->objectSnapDownBtn.performClick();", "" );// Terrain Snapping
@@ -57,56 +57,38 @@ function MaterialLabPlugin::onWorldEditorStartup( %this ) {
 	%map.bindCmd( keyboard, "k", "EToolbarObjectTransformDropdown->objectTransformBtn.performClick(); EToolbarObjectTransformDropdown.toggle();", "" );// Object Transform
 	%map.bindCmd( keyboard, "l", "EToolbarObjectTransformDropdown->worldTransformBtn.performClick(); EToolbarObjectTransformDropdown.toggle();", "" );// World Transform
 	MaterialLabPlugin.map = %map;
-	MaterialLabGui.fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
-	MaterialLabGui.textureFormats = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";
-	MaterialLabGui.modelFormats = "DTS Files (*.dts)|*.dts";
-	MaterialLabGui.lastTexturePath = "";
-	MaterialLabGui.lastTextureFile = "";
-	MaterialLabGui.lastModelPath = "";
-	MaterialLabGui.lastModelFile = "";
-	MaterialLabGui.currentMaterial = "";
-	MaterialLabGui.lastMaterial = "";
-	MaterialLabGui.currentCubemap = "";
-	MaterialLabGui.currentObject = "";
-	MaterialLabGui.livePreview = "1";
-	MaterialLabGui.currentLayer = "0";
-	MaterialLabGui.currentMode = "Material";
-	MaterialLabGui.currentMeshMode = "EditorShape";
-	new ArrayObject(UnlistedCubemaps);
-	UnlistedCubemaps.add( "unlistedCubemaps", matLabCubeMapPreviewMat );
-	UnlistedCubemaps.add( "unlistedCubemaps", WarnMatCubeMap );
+	MatLab.fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
+	MatLab.textureFormats = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";
+	MatLab.modelFormats = "DTS Files (*.dts)|*.dts";
+	MatLab.lastTexturePath = "";
+	MatLab.lastTextureFile = "";
+	MatLab.lastModelPath = "";
+	MatLab.lastModelFile = "";
+	MatLab.currentMaterial = "";
+	MatLab.lastMaterial = "";
+	MatLab.currentCubemap = "";
+	MatLab.currentObject = "";
+	MatLab.livePreview = "1";
+	MatLab.currentLayer = "0";
+	MatLab.currentMode = "Material";
+	MatLab.currentMeshMode = "EditorShape";
+	new ArrayObject(LabUnlistedCubemaps);
+	UnlistedCubemaps.add( "LabUnlistedCubemaps", matLabCubeMapPreviewMat );
+	UnlistedCubemaps.add( "LabUnlistedCubemaps", WarnMatCubeMap );
 	//MaterialLab persistence manager
-	new PersistenceManager(matLab_PersistMan);
-	MaterialLabGui.establishMaterials();
-	MaterialLabGui.rows = "0 230";
-	MaterialLabGui.updateSizes();
+	new PersistenceManager(matLab_PM);
+	MatLab.establishMaterials();
+	MatLab.rows = "0 230";
+	MatLab.updateSizes();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function MaterialLabPlugin::onActivated( %this ) {
-	MaterialLabGui.rows = "0 230";
-	MaterialLabGui.updateSizes();
-
-	if($gfx::wireframe) {
-		$wasInWireFrameMode = true;
-		$gfx::wireframe = false;
-	} else {
-		$wasInWireFrameMode = false;
-	}
-
-	MaterialLabGui.initGui();
-	WEditorPlugin.onActivated();
-	MaterialLabGui-->propertiesOptions.expanded = 0;
-	SceneEditorToolbar.setVisible( true );
-	MaterialLabGui.currentObject = $Lab::materialLabList;
-	// Execute the back end scripts that actually do the work.
-	MaterialLabGui.open();
-	
+	MaterialLabTools.init();
+	MaterialLabGui.init();
+	MatLab.initGui();	
 	Parent::onActivated(%this);
-	hide(MLP_CallbackArea);
-	hide(matLab_addCubemapWindow);
-	matLab_addCubemapWindow.setVisible(0);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -117,22 +99,22 @@ function MaterialLabPlugin::onDeactivated( %this ) {
 
 	WEditorPlugin.onDeactivated();
 		// if we quit, restore with notDirty
-	if(MaterialLabGui.materialDirty) {
+	if(MatLab.materialDirty) {
 		//keep on doing this
-		MaterialLabGui.copyMaterials( notDirtyMaterial, materialLab_previewMaterial );
-		MaterialLabGui.copyMaterials( notDirtyMaterial, MaterialLabGui.currentMaterial );
-		MaterialLabGui.guiSync( materialLab_previewMaterial );
+		MatLab.copyMaterials( notDirtyMaterialLab, materialLab_previewMaterial );
+		MatLab.copyMaterials( notDirtyMaterialLab, MatLab.currentMaterial );
+		MatLab.guiSync( materialLab_previewMaterial );
 		materialLab_previewMaterial.flush();
 		materialLab_previewMaterial.reload();
-		MaterialLabGui.currentMaterial.flush();
-		MaterialLabGui.currentMaterial.reload();
+		MatLab.currentMaterial.flush();
+		MatLab.currentMaterial.reload();
 	}
 
-	if( isObject(MaterialLabGui.currentMaterial) ) {
-		MaterialLabGui.lastMaterial = MaterialLabGui.currentMaterial.getName();
+	if( isObject(MatLab.currentMaterial) ) {
+		MatLab.lastMaterial = MatLab.currentMaterial.getName();
 	}
 
-	MaterialLabGui.setMaterialNotDirty();
+	MatLab.setMaterialNotDirty();
 	// First delete the model so that it releases
 	// material instances that use the preview materials.
 	matLab_previewObjectView.deleteModel();

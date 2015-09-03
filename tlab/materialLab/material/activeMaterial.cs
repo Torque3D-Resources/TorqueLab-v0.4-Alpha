@@ -10,29 +10,29 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 // Finds the selected line in the material list, then makes it active in the editor.
-function MaterialLabGui::prepareActiveMaterial(%this, %material, %override) {
+function MaterialLabTools::prepareActiveMaterial(%this, %material, %override) {
 	// If were not valid, grab the first valid material out of the materialSet
 	if( !isObject(%material) )
 		%material = MaterialSet.getObject(0);
 
 	// Check made in order to avoid loading the same material. Overriding
 	// made in special cases
-	if(%material $= MaterialLabGui.lastMaterial && !%override) {
+	if(%material $= MaterialLabTools.lastMaterial && !%override) {
 		return;
 	} else {
-		if(MaterialLabGui.materialDirty ) {
-			MaterialLabGui.showSaveDialog( %material );
+		if(MaterialLabTools.materialDirty ) {
+			MaterialLabTools.showSaveDialog( %material );
 			return;
 		}
 
-		MaterialLabGui.setActiveMaterial(%material);
+		MaterialLabTools.setActiveMaterial(%material);
 	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Updates the preview material to use the same properties as the selected material,
 // and makes that material active in the editor.
-function MaterialLabGui::setActiveMaterial( %this, %material ) {
+function MaterialLabTools::setActiveMaterial( %this, %material ) {
 	// Warn if selecting a CustomMaterial (they can't be properly previewed or edited)
 	if ( isObject( %material ) && %material.isMemberOfClass( "CustomMaterial" ) ) {
 		LabMsgOK( "Warning", "The selected Material (" @ %material.getName() @
@@ -41,44 +41,44 @@ function MaterialLabGui::setActiveMaterial( %this, %material ) {
 	}
 
 	if (strFind(%material.getFilename(),"tlab") || %material.getFilename() $= "") {
-		devlog("Changind material filename from:",%material.getFilename(),"To",$Pref::MaterialLabGui::DefaultMaterialFile);
-		%material.setFilename($Pref::MaterialLabGui::DefaultMaterialFile);
+		devlog("Changind material filename from:",%material.getFilename(),"To",$Pref::MaterialLabTools::DefaultMaterialFile);
+		%material.setFilename($Pref::MaterialLabTools::DefaultMaterialFile);
 	}
 	
-	MaterialLabGui.currentMaterial = %material;
-	MaterialLabGui.lastMaterial = %material;
+	MaterialLabTools.currentMaterial = %material;
+	MaterialLabTools.lastMaterial = %material;
 	%this.setActiveMaterialFile(%material);
 	// we create or recreate a material to hold in a pristine state
-	singleton Material(notDirtyMaterial) {
+	singleton Material(notDirtyMaterialLab) {
 		mapTo = "matLab_previewMat";
 		diffuseMap[0] = "tlab/materialLab/assets/matLab_mappedMat";
 	};
 	// Converts the texture files into absolute paths.
-	MaterialLabGui.convertTextureFields();
+	MaterialLabTools.convertTextureFields();
 	// If we're allowing for name changes, make sure to save the name seperately
-	%this.originalName = MaterialLabGui.currentMaterial.name;
+	%this.originalName = MaterialLabTools.currentMaterial.name;
 	// Copy materials over to other references
-	MaterialLabGui.copyMaterials( MaterialLabGui.currentMaterial, materialLab_previewMaterial );
-	MaterialLabGui.copyMaterials( MaterialLabGui.currentMaterial, notDirtyMaterial );
-	MaterialLabGui.guiSync( materialLab_previewMaterial );
+	MaterialLabTools.copyMaterials( MaterialLabTools.currentMaterial, materialLab_previewMaterial );
+	MaterialLabTools.copyMaterials( MaterialLabTools.currentMaterial, notDirtyMaterialLab );
+	MaterialLabTools.guiSync( materialLab_previewMaterial );
 	// Necessary functionality in order to render correctly
 	materialLab_previewMaterial.flush();
 	materialLab_previewMaterial.reload();
-	MaterialLabGui.currentMaterial.flush();
-	MaterialLabGui.currentMaterial.reload();
-	MaterialLabGui.setMaterialNotDirty();
+	MaterialLabTools.currentMaterial.flush();
+	MaterialLabTools.currentMaterial.reload();
+	MaterialLabTools.setMaterialNotDirty();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::setActiveMaterialFile( %this, %material ) {
+function MaterialLabTools::setActiveMaterialFile( %this, %material ) {
 	MatLabTargetMode-->selMaterialFile.setText(%material.getFilename());
 	MatLabMaterialMode-->selMaterialFile.setText(%material.getFilename());
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp) {	
-	logc(" MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
-	MaterialLabGui.setMaterialDirty();
+function MaterialLabTools::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp) {	
+	logc(" MaterialLabTools::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
+	MaterialLabTools.setMaterialDirty();
 
 	if(%value $= "")
 		%value = "\"\"";
@@ -95,25 +95,25 @@ function MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %is
 		%last.newValue = %value;
 	} else {
 		%action = %this.createUndo(ActionUpdateActiveMaterial, "Update Active Material");
-		%action.material = MaterialLabGui.currentMaterial;
-		%action.object = MaterialLabGui.currentObject;
+		%action.material = MaterialLabTools.currentMaterial;
+		%action.object = MaterialLabTools.currentObject;
 		%action.field = %propertyField;
 		%action.isSlider = %isSlider;
 		%action.onMouseUp = %onMouseUp;
 		%action.newValue = %value;
-		eval( "%action.oldValue = " @ MaterialLabGui.currentMaterial @ "." @ %propertyField @ ";");
+		eval( "%action.oldValue = " @ MaterialLabTools.currentMaterial @ "." @ %propertyField @ ";");
 		%action.oldValue = "\"" @ %action.oldValue @ "\"";
-		MaterialLabGui.submitUndo( %action );
+		MaterialLabTools.submitUndo( %action );
 	}
 
 	eval("materialLab_previewMaterial." @ %propertyField @ " = " @ %value @ ";");
 	materialLab_previewMaterial.flush();
 	materialLab_previewMaterial.reload();
 
-	if (MaterialLabGui.livePreview == true) {
-		eval("MaterialLabGui.currentMaterial." @ %propertyField @ " = " @ %value @ ";");
-		MaterialLabGui.currentMaterial.flush();
-		MaterialLabGui.currentMaterial.reload();
+	if (MaterialLabTools.livePreview == true) {
+		eval("MaterialLabTools.currentMaterial." @ %propertyField @ " = " @ %value @ ";");
+		MaterialLabTools.currentMaterial.flush();
+		MaterialLabTools.currentMaterial.reload();
 	}
 
 	if(strFind(%propertyField,"diffuseMap") && %autoUpdateNormal) {
@@ -123,7 +123,7 @@ function MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %is
 
 		if (%autoUpdateNormal) {
 			%normalMap = strreplace(%propertyField,"diffuse","normal");
-			%normalFile = MaterialLabGui.currentMaterial.getFieldValue(%normalMap);
+			%normalFile = MaterialLabTools.currentMaterial.getFieldValue(%normalMap);
 			%isFileNormal = isImageFile(%normalFile);
 			devLog("Updating texture map:",%cleanValue,"Current Normal:",%normalFile,"IsFile",%isFileNormal);
 
@@ -143,7 +143,7 @@ function MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %is
 
 		if (%autoUpdateSpecular) {
 			%specMap = strreplace(%propertyField,"diffuse","specular");
-			%specFile = MaterialLabGui.currentMaterial.getFieldValue(%specMap);
+			%specFile = MaterialLabTools.currentMaterial.getFieldValue(%specMap);
 			%isFileSpec = isImageFile(%specFile);
 			devLog("Updating texture map:",%cleanValue,"Current Specular:",%specFile,"IsFile",%isFileSpec);
 
@@ -164,18 +164,18 @@ function MaterialLabGui::updateActiveMaterial(%this, %propertyField, %value, %is
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::updateActiveMaterialName(%this, %name) {
+function MaterialLabTools::updateActiveMaterialName(%this, %name) {
 	%action = %this.createUndo(ActionUpdateActiveMaterialName, "Update Active Material Name");
-	%action.material =  MaterialLabGui.currentMaterial;
-	%action.object = MaterialLabGui.currentObject;
-	%action.oldName = MaterialLabGui.currentMaterial.getName();
+	%action.material =  MaterialLabTools.currentMaterial;
+	%action.object = MaterialLabTools.currentObject;
+	%action.oldName = MaterialLabTools.currentMaterial.getName();
 	%action.newName = %name;
-	MaterialLabGui.submitUndo( %action );
-	MaterialLabGui.currentMaterial.setName(%name);
+	MaterialLabTools.submitUndo( %action );
+	MaterialLabTools.currentMaterial.setName(%name);
 	// Some objects (ConvexShape, DecalRoad etc) reference Materials by name => need
 	// to find and update all these references so they don't break when we rename the
 	// Material.
-	MaterialLabGui.updateMaterialReferences( MissionGroup, %action.oldName, %action.newName );
+	MaterialLabTools.updateMaterialReferences( MissionGroup, %action.oldName, %action.newName );
 }
 
 

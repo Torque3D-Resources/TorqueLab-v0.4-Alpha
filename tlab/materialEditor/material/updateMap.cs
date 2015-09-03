@@ -144,11 +144,16 @@ function MaterialEditorGui::updateCompMap(%this,%action) {
 			%bitmap = strreplace(%bitmap,"tlab/materialEditor/scripts/","");
 			MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap(%bitmap);
 			MaterialEditorPropertiesWindow-->compMapNameText.setText(%bitmap);
+				MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->specMapNameText.setText(%bitmap);
 			MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
 		}
 	} else {
 		MaterialEditorPropertiesWindow-->compMapNameText.setText("None");
 		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+		MaterialEditorPropertiesWindow-->specMapNameText.setText("None");
+		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+
 		MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","");
 	}
 
@@ -507,19 +512,19 @@ function MaterialEditorGui::updateAmbientColor(%this,%color) {
 // Set PBR Channel in selectors
 function MaterialEditorGui::setRoughChan(%this, %value)
 {
-   MaterialEditorGui.updateActiveMaterial("SmoothnessChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.updateActiveMaterial("SmoothnessChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
    MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
 function MaterialEditorGui::setAOChan(%this, %value)
 {
-   MaterialEditorGui.updateActiveMaterial("aoChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.updateActiveMaterial("aoChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
    MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
 function MaterialEditorGui::setMetalChan(%this, %value)
 {
-   MaterialEditorGui.updateActiveMaterial("metalChan[" @ MaterialLabGui.currentLayer @ "]", %value);   
+   MaterialEditorGui.updateActiveMaterial("metalChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
    MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiFrameSetCtrl(MaterialLabGui) {
+%guiContent = new GuiFrameSetCtrl(MaterialLabTools) {
    columns = "0";
    rows = "0 229";
    borderWidth = "4";
@@ -169,7 +169,7 @@
          profile = "ToolsDropdownProfile_S1";
          visible = "1";
          active = "1";
-         command = "MaterialLabGui.updatePreviewObject();";
+         command = "MaterialLabTools.updatePreviewObject();";
          tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the Preview Mesh";
          hovertime = "1000";
@@ -238,8 +238,8 @@
                profile = "ToolsCheckBoxProfile_S1";
                visible = "1";
                active = "1";
-               variable = "MaterialLabGui.livePreview";
-               command = "MaterialLabGui.updateLivePreview($ThisControl.getValue());";
+               variable = "MaterialLabTools.livePreview";
+               command = "MaterialLabTools.updateLivePreview($ThisControl.getValue());";
                tooltipProfile = "ToolsToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
@@ -261,7 +261,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
 
-               new GuiSwatchButtonCtrl(MaterialPreviewBackgroundPicker) {
+               new GuiSwatchButtonCtrl(MaterialLabPreviewBackgroundPicker) {
                   color = "0.976471 0.980392 0.976471 0";
                   gridBitmap = "tlab/gui/assets/gfx/grid.png";
                   groupNum = "-1";
@@ -275,7 +275,7 @@
                   profile = "GuiInspectorSwatchButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "getColorF($thisControl.color, \"MaterialLabGui.updatePreviewBackground\");";
+                  command = "getColorF($thisControl.color, \"MaterialLabTools.updatePreviewBackground\");";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
@@ -335,7 +335,7 @@
                   profile = "GuiInspectorSwatchButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "getColorF($ThisControl.color, \"MaterialLabGui.updateLightColor\");";
+                  command = "getColorF($ThisControl.color, \"MaterialLabTools.updateLightColor\");";
                   tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Change Normal Light Color";
                   hovertime = "1000";
@@ -396,7 +396,7 @@
                   profile = "GuiInspectorSwatchButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "getColorF($ThisControl.color, \"MaterialLabGui.updateAmbientColor\");";
+                  command = "getColorF($ThisControl.color, \"MaterialLabTools.updateAmbientColor\");";
                   tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Change Ambient Light Color";
                   hovertime = "1000";
@@ -758,7 +758,7 @@
                   profile = "ToolsTextEdit";
                   visible = "1";
                   active = "1";
-                  altCommand = "MaterialLabGui.setMaterialDirty();MaterialLabGui.updateActiveMaterialName($ThisControl.getText());";
+                  altCommand = "MaterialLabTools.setMaterialDirty();MaterialLabTools.updateActiveMaterialName($ThisControl.getText());";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
@@ -935,7 +935,7 @@
                   profile = "ToolsButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "MaterialLabGui.selectMatFile();";
+                  command = "MaterialLabTools.selectMatFile();";
                   tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Save material (Alt S)";
                   hovertime = "1000";
@@ -1015,7 +1015,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
 
-               new GuiPopUpMenuCtrlEx(SubMaterialSelector) {
+               new GuiPopUpMenuCtrlEx(SubMaterialLabSelector) {
                   maxPopupHeight = "200";
                   sbUsesNAColor = "0";
                   reverseTextList = "0";
@@ -1063,7 +1063,7 @@
                   profile = "ToolsButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "materialSelector.showDialog(\"MaterialLabGui.showMaterialChangeSaveDialog\");";
+                  command = "materialSelector.showDialog(\"MaterialLabTools.showMaterialChangeSaveDialog\");";
                   tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Swap material on the object with existing";
                   hovertime = "1000";
@@ -1141,7 +1141,7 @@
                   profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
-                  altCommand = "MaterialLabGui.setMaterialDirty();MaterialLabGui.updateActiveMaterialName($ThisControl.getText());";
+                  altCommand = "MaterialLabTools.setMaterialDirty();MaterialLabTools.updateActiveMaterialName($ThisControl.getText());";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
@@ -1219,7 +1219,7 @@
                   profile = "ToolsTextEdit_S1";
                   visible = "1";
                   active = "1";
-                  variable = "MaterialLabGui.currentMaterialFile";
+                  variable = "MaterialLabTools.currentMaterialFile";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
@@ -1247,7 +1247,7 @@
                   profile = "ToolsButtonProfile";
                   visible = "1";
                   active = "1";
-                  command = "MaterialLabGui.selectMatFile();";
+                  command = "MaterialLabTools.selectMatFile();";
                   tooltipProfile = "ToolsToolTipProfile";
                   tooltip = "Save material (Alt S)";
                   hovertime = "1000";
@@ -1301,7 +1301,7 @@
             profile = "ToolsDropdownProfile_S1";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.changeLayer( $ThisControl.getText() );";
+            command = "MaterialLabTools.changeLayer( $ThisControl.getText() );";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Changes the material layer being edited";
             hovertime = "1000";
@@ -1469,7 +1469,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"diffuse\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"diffuse\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the Active Diffuse Map for this layer";
                            hovertime = "1000";
@@ -1538,7 +1538,7 @@
                            profile = "GuiInspectorSwatchButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "getColorF(materialLab_PreviewMaterial.diffuseColor[MaterialLabGui.currentLayer], \"MaterialLabGui.updateColorMultiply\");";
+                           command = "getColorF(materialLab_PreviewMaterial.diffuseColor[MaterialLabTools.currentLayer], \"MaterialLabTools.updateColorMultiply\");";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1589,7 +1589,7 @@
                            profile = "ToolsButtonDark";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"diffuse\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"diffuse\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete material from file";
                            hovertime = "1000";
@@ -1617,7 +1617,7 @@
                            profile = "ToolsButtonDark";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"diffuse\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"diffuse\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Delete material from file";
                            hovertime = "1000";
@@ -1706,7 +1706,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"normal\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"normal\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Normal Map for this layer.";
                            hovertime = "1000";
@@ -1751,7 +1751,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"normal\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"normal\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1775,7 +1775,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"normal\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"normal\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1863,7 +1863,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateSpecMap(1);";
+                           command = "MaterialLabTools.updateSpecMap(1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Tone Map for this layer.";
                            hovertime = "1000";
@@ -1908,7 +1908,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateSpecMap(1);";
+                           command = "MaterialLabTools.updateSpecMap(1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1932,7 +1932,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateSpecMap(0);";
+                           command = "MaterialLabTools.updateSpecMap(0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -1998,7 +1998,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detail\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"detail\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Detail Map for this layer.";
                            hovertime = "1000";
@@ -2051,7 +2051,7 @@
                            profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
-                           altCommand = "MaterialLabGui.updateDetailScale($ThisControl.getText());";
+                           altCommand = "MaterialLabTools.updateDetailScale($ThisControl.getText());";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
@@ -2119,7 +2119,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detail\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"detail\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2143,7 +2143,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detail\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"detail\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2209,7 +2209,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detailNormal\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"detailNormal\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active DetailNormal Map for this layer.";
                            hovertime = "1000";
@@ -2262,7 +2262,7 @@
                            profile = "ToolsTextEdit";
                            visible = "1";
                            active = "1";
-                           altCommand = "MaterialLabGui.updateDetailNormalStrength($ThisControl.getText());";
+                           altCommand = "MaterialLabTools.updateDetailNormalStrength($ThisControl.getText());";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
@@ -2330,7 +2330,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detailNormal\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"detailNormal\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2354,7 +2354,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"detailNormal\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"detailNormal\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2420,7 +2420,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"overlay\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"overlay\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Overlay Map for this layer.";
                            hovertime = "1000";
@@ -2488,7 +2488,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"overlay\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"overlay\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2512,7 +2512,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"overlay\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"overlay\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2601,7 +2601,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"light\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"light\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active light Map for this layer.";
                            hovertime = "1000";
@@ -2646,7 +2646,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"light\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"light\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2670,7 +2670,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"light\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"light\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2759,7 +2759,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"tone\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"tone\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Tone Map for this layer.";
                            hovertime = "1000";
@@ -2808,7 +2808,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"tone\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"tone\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2828,7 +2828,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"tone\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"tone\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2917,7 +2917,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"env\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"env\", 1);";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Change the active Environment Map for this layer.";
                            hovertime = "1000";
@@ -2962,7 +2962,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"env\", 1);";
+                           command = "MaterialLabTools.updateTextureMap(\"env\", 1);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -2986,7 +2986,7 @@
                            profile = "ToolsDefaultProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateTextureMap(\"env\", 0);";
+                           command = "MaterialLabTools.updateTextureMap(\"env\", 0);";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -3156,7 +3156,7 @@
                                  profile = "ToolsDropdownProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"translucentBlendOp\",$ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"translucentBlendOp\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsToolTipProfile";
                                  tooltip = "Determines the type of blending to be applied on the transparent object.";
                                  hovertime = "1000";
@@ -3201,8 +3201,8 @@
                                  profile = "ToolsSliderProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue(), true, true );";
-                                 altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue(), true, false );";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue(), true, true );";
+                                 altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue(), true, false );";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Sets the minimum transparency value that a pixel must have to be calculated. Anything below this value will simply not be rendered at all.";
                                  hovertime = "1000";
@@ -3234,7 +3234,7 @@
                                  profile = "ToolsTextEdit";
                                  visible = "1";
                                  active = "1";
-                                 command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue());";
+                                 command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"alphaRef\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -3255,7 +3255,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"alphaTest\",$ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"alphaTest\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "When enabled, caused pixels under a specific alpha threshold to get discarded rather than be computed. Only valid for transparent objects.";
                                  hovertime = "1000";
@@ -3325,7 +3325,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"translucentZWrite\",$ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"translucentZWrite\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Can be used to help force a proper Z-Ordering when Z-Ordering issues occur. Only valid for materials with Transparency.";
                                  hovertime = "1000";
@@ -3347,7 +3347,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"translucent\",$ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"translucent\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Sets material to use transparent blending modes.";
                                  hovertime = "1000";
@@ -3369,7 +3369,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"doubleSided\",$ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"doubleSided\",$ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Determines if this material will be rendered from both sides of the polygon, or just the \'front facing\' side. ";
                                  hovertime = "1000";
@@ -3391,7 +3391,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateActiveMaterial(\"castShadows\", $ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateActiveMaterial(\"castShadows\", $ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Alows object to cast shadows.";
                                  hovertime = "1000";
@@ -3540,7 +3540,7 @@
                                  profile = "ToolsCheckBoxProfile_S1";
                                  visible = "1";
                                  active = "1";
-                                 command = "MaterialLabGui.updateSpecularCheckbox($ThisControl.getValue());";
+                                 command = "MaterialLabTools.updateSpecularCheckbox($ThisControl.getValue());";
                                  tooltipProfile = "ToolsDefaultProfile";
                                  tooltip = "Enables the use of Pixel Specular for this layer.";
                                  hovertime = "1000";
@@ -3563,7 +3563,7 @@
                                  profile = "GuiInspectorSwatchButtonProfile";
                                  visible = "1";
                                  active = "1";
-                                 command = "getColorF(materialLab_PreviewMaterial.specular[MaterialLabGui.currentLayer], \"MaterialLabGui.updateSpecular\");";
+                                 command = "getColorF(materialLab_PreviewMaterial.specular[MaterialLabTools.currentLayer], \"MaterialLabTools.updateSpecular\");";
                                  tooltipProfile = "ToolsToolTipProfile";
                                  hovertime = "1000";
                                  isContainer = "0";
@@ -3640,7 +3640,7 @@
                                     profile = "ToolsTextEdit_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"specularStrength[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                    command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"specularStrength[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                     tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
@@ -3661,8 +3661,8 @@
                                     profile = "ToolsSliderProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "MaterialLabGui.updateActiveMaterial(\"specularStrength[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue(), true, true);";
-                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"specularStrength[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue(), true, false);";
+                                    command = "MaterialLabTools.updateActiveMaterial(\"specularStrength[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue(), true, true);";
+                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"specularStrength[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue(), true, false);";
                                     tooltipProfile = "ToolsDefaultProfile";
                                     tooltip = "Sets the strength of the Pixel Specular value.";
                                     hovertime = "1000";
@@ -3741,7 +3741,7 @@
                                     profile = "ToolsTextEdit_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"specularPower[\" @ MaterialLabGui.currentLayer @ \"]\", mCeil($ThisControl.getValue()));";
+                                    command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"specularPower[\" @ MaterialLabTools.currentLayer @ \"]\", mCeil($ThisControl.getValue()));";
                                     tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
@@ -3762,8 +3762,8 @@
                                     profile = "ToolsSliderProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "MaterialLabGui.updateActiveMaterial(\"specularPower[\" @ MaterialLabGui.currentLayer @ \"]\", mCeil($ThisControl.getValue()), true, true);";
-                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateActiveMaterial(\"specularPower[\" @ MaterialLabGui.currentLayer @ \"]\", mCeil($ThisControl.getValue()), true, false);";
+                                    command = "MaterialLabTools.updateActiveMaterial(\"specularPower[\" @ MaterialLabTools.currentLayer @ \"]\", mCeil($ThisControl.getValue()), true, true);";
+                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateActiveMaterial(\"specularPower[\" @ MaterialLabTools.currentLayer @ \"]\", mCeil($ThisControl.getValue()), true, false);";
                                     tooltipProfile = "ToolsDefaultProfile";
                                     tooltip = "Sets the hardness of the Pixel Specular value.";
                                     hovertime = "1000";
@@ -3833,7 +3833,7 @@
                                     profile = "ToolsCheckBoxProfile_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "MaterialLabGui.updateActiveMaterial(\"subSurface[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                    command = "MaterialLabTools.updateActiveMaterial(\"subSurface[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                     tooltipProfile = "ToolsDefaultProfile";
                                     tooltip = "Enables the use of subsurface scattering for this layer.";
                                     hovertime = "1000";
@@ -3856,7 +3856,7 @@
                                     profile = "GuiInspectorSwatchButtonProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "getColorF(materialLab_PreviewMaterial.subSurfaceColor[MaterialLabGui.currentLayer], \"MaterialLabGui.updateSubSurfaceColor\");";
+                                    command = "getColorF(materialLab_PreviewMaterial.subSurfaceColor[MaterialLabTools.currentLayer], \"MaterialLabTools.updateSubSurfaceColor\");";
                                     tooltipProfile = "ToolsToolTipProfile";
                                     tooltip = "Set the subsurface scattering color";
                                     hovertime = "1000";
@@ -3910,7 +3910,7 @@
                                        profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"minnaertConstant[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getText());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"minnaertConstant[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getText());";
                                        tooltipProfile = "ToolsToolTipProfile";
                                        hovertime = "1000";
                                        isContainer = "0";
@@ -4012,7 +4012,7 @@
                                        profile = "ToolsTextEdit_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"subSurfaceRolloff[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getText());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"subSurfaceRolloff[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getText());";
                                        tooltipProfile = "ToolsToolTipProfile";
                                        tooltip = "Set the subsurface rolloff factor";
                                        hovertime = "1000";
@@ -4132,7 +4132,7 @@
                                        profile = "ToolsCheckBoxProfile_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"vertLit[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"vertLit[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                        tooltipProfile = "ToolsDefaultProfile";
                                        tooltip = "Enables the use of vertex lighting for this layer.";
                                        hovertime = "1000";
@@ -4154,7 +4154,7 @@
                                        profile = "ToolsCheckBoxProfile_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"vertColor[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"vertColor[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                        tooltipProfile = "ToolsDefaultProfile";
                                        tooltip = "Multiply vertex colors with diffuse colors for this layer.";
                                        hovertime = "1000";
@@ -4176,7 +4176,7 @@
                                        profile = "ToolsCheckBoxProfile_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"glow[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"glow[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                        tooltipProfile = "ToolsDefaultProfile";
                                        tooltip = "Determines if this layer will Glow or not.";
                                        hovertime = "1000";
@@ -4198,7 +4198,7 @@
                                        profile = "ToolsCheckBoxProfile_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"emissive[\" @ MaterialLabGui.currentLayer @ \"]\",$ThisControl.getValue());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"emissive[\" @ MaterialLabTools.currentLayer @ \"]\",$ThisControl.getValue());";
                                        tooltipProfile = "ToolsDefaultProfile";
                                        tooltip = "Emissive causes an object to not be affected by lights. Good for light sources.";
                                        hovertime = "1000";
@@ -4220,7 +4220,7 @@
                                        profile = "ToolsCheckBoxProfile_S1";
                                        visible = "1";
                                        active = "1";
-                                       command = "MaterialLabGui.updateActiveMaterial(\"useAnisotropic[\" @ MaterialLabGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                                       command = "MaterialLabTools.updateActiveMaterial(\"useAnisotropic[\" @ MaterialLabTools.currentLayer @ \"]\", $ThisControl.getValue());";
                                        tooltipProfile = "ToolsDefaultProfile";
                                        tooltip = "Enables the use of anisotropic filtering for this layer.";
                                        hovertime = "1000";
@@ -4276,7 +4276,7 @@
                                     profile = "ToolsTextEdit_S1";
                                     visible = "1";
                                     active = "1";
-                                    command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabGui.currentLayer @ \"]\",$ThisControl.getValue());";
+                                    command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabTools.currentLayer @ \"]\",$ThisControl.getValue());";
                                     tooltipProfile = "ToolsToolTipProfile";
                                     hovertime = "1000";
                                     isContainer = "0";
@@ -4321,8 +4321,8 @@
                                     profile = "ToolsSliderProfile";
                                     visible = "1";
                                     active = "1";
-                                    command = "MaterialLabGui.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabGui.currentLayer @ \"]\",$ThisControl.getValue(), true, true);";
-                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabGui.currentLayer @ \"]\",$ThisControl.getValue(), true, false);";
+                                    command = "MaterialLabTools.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabTools.currentLayer @ \"]\",$ThisControl.getValue(), true, true);";
+                                    altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateActiveMaterial(\"parallaxScale[\" @ MaterialLabTools.currentLayer @ \"]\",$ThisControl.getValue(), true, false);";
                                     tooltipProfile = "ToolsDefaultProfile";
                                     tooltip = "Parallax Scale";
                                     hovertime = "1000";
@@ -4337,7 +4337,7 @@
                      };
                   };
                };
-               new GuiRolloutCtrl(materialAnimationPropertiesRollout) {
+               new GuiRolloutCtrl(materialLabAnimationPropertiesRollout) {
                   caption = "Animation Properties";
                   margin = "-1 0 0 0";
                   defaultHeight = "40";
@@ -4420,7 +4420,7 @@
                            profile = "ToolsCheckBoxProfile_Cancel";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateAnimationFlags();";
+                           command = "MaterialLabTools.updateAnimationFlags();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4480,8 +4480,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateRotationOffset(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateRotationOffset(true, false);";
+                              command = "MaterialLabTools.updateRotationOffset(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateRotationOffset(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Change U Scroll Direction";
                               hovertime = "1000";
@@ -4573,8 +4573,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateRotationOffset(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateRotationOffset(true, false);";
+                              command = "MaterialLabTools.updateRotationOffset(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateRotationOffset(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Change V Scroll Direction";
                               hovertime = "1000";
@@ -4605,7 +4605,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateRotationOffset();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateRotationOffset();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
@@ -4741,8 +4741,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateRotationSpeed(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateRotationSpeed(true, false);";
+                              command = "MaterialLabTools.updateRotationSpeed(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateRotationSpeed(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Scrolling Speed";
                               hovertime = "1000";
@@ -4773,7 +4773,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateRotationSpeed();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateRotationSpeed();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -4817,7 +4817,7 @@
                            profile = "ToolsCheckBoxProfile_Cancel";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateAnimationFlags();";
+                           command = "MaterialLabTools.updateAnimationFlags();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -4877,8 +4877,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateScrollOffset(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollOffset(true, false);";
+                              command = "MaterialLabTools.updateScrollOffset(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollOffset(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Change U Scroll Direction";
                               hovertime = "1000";
@@ -4909,7 +4909,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollOffset();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollOffset();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
@@ -4970,8 +4970,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateScrollOffset(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollOffset(true, false);";
+                              command = "MaterialLabTools.updateScrollOffset(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollOffset(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Change V Scroll Direction";
                               hovertime = "1000";
@@ -5002,7 +5002,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollOffset();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollOffset();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
@@ -5155,8 +5155,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateScrollSpeed(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollSpeed(true, false);";
+                              command = "MaterialLabTools.updateScrollSpeed(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollSpeed(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Scrolling Speed";
                               hovertime = "1000";
@@ -5187,7 +5187,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabGui.updateScrollSpeed();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl);MaterialLabTools.updateScrollSpeed();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5231,7 +5231,7 @@
                            profile = "ToolsCheckBoxProfile_Cancel";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateAnimationFlags();";
+                           command = "MaterialLabTools.updateAnimationFlags();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -5252,7 +5252,7 @@
                            profile = "ToolsCheckBoxProfile_S1";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateAnimationFlags();";
+                           command = "MaterialLabTools.updateAnimationFlags();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -5322,7 +5322,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateWaveType();";
+                              command = "MaterialLabTools.updateWaveType();";
                               tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Sine Wave";
                               hovertime = "1000";
@@ -5347,7 +5347,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateWaveType();";
+                              command = "MaterialLabTools.updateWaveType();";
                               tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Triangle Wave";
                               hovertime = "1000";
@@ -5372,7 +5372,7 @@
                               profile = "ToolsDefaultProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateWaveType();";
+                              command = "MaterialLabTools.updateWaveType();";
                               tooltipProfile = "ToolsToolTipProfile";
                               tooltip = "Square Wave";
                               hovertime = "1000";
@@ -5442,7 +5442,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateWaveFreq();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateWaveFreq();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5463,8 +5463,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateWaveFreq(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateWaveFreq(true, false);";
+                              command = "MaterialLabTools.updateWaveFreq(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateWaveFreq(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Changes Wave Frequency";
                               hovertime = "1000";
@@ -5535,7 +5535,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateWaveAmp();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateWaveAmp();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
@@ -5556,8 +5556,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateWaveAmp(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateWaveAmp(true, false);";
+                              command = "MaterialLabTools.updateWaveAmp(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateWaveAmp(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "Changes Wave Amplitude";
                               hovertime = "1000";
@@ -5602,7 +5602,7 @@
                            profile = "ToolsCheckBoxProfile_Cancel";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateAnimationFlags();";
+                           command = "MaterialLabTools.updateAnimationFlags();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -5671,7 +5671,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateSequenceFPS();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateSequenceFPS();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -5692,8 +5692,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateSequenceFPS(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateSequenceFPS(true, false);";
+                              command = "MaterialLabTools.updateSequenceFPS(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateSequenceFPS(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "How many frames to display per second.";
                               hovertime = "1000";
@@ -5764,7 +5764,7 @@
                               profile = "ToolsTextEdit";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateSequenceSSS();";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateSequenceSSS();";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "1";
@@ -5785,8 +5785,8 @@
                               profile = "ToolsSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialLabGui.updateSequenceSSS(true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabGui.updateSequenceSSS(true, false);";
+                              command = "MaterialLabTools.updateSequenceSSS(true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialLabTools.updateSequenceSSS(true, false);";
                               tooltipProfile = "ToolsDefaultProfile";
                               tooltip = "How many frames in the sequence.";
                               hovertime = "1000";
@@ -5799,7 +5799,7 @@
                      };
                   };
                };
-               new GuiRolloutCtrl(materialAdvancedPropertiesRollout) {
+               new GuiRolloutCtrl(materialLabAdvancedPropertiesRollout) {
                   caption = "Advanced (all layers)";
                   margin = "4 4 4 0";
                   defaultHeight = "40";
@@ -5915,7 +5915,7 @@
                            profile = "ToolsDropdownProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateReflectionType($ThisControl.getText());";
+                           command = "MaterialLabTools.updateReflectionType($ThisControl.getText());";
                            tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the type of blending to be applied on the transparent object.";
                            hovertime = "1000";
@@ -5937,7 +5937,7 @@
                            profile = "ToolsButtonProfile";
                            visible = "0";
                            active = "1";
-                           command = "MaterialLabGui.showCubemapEditor();";
+                           command = "MaterialLabTools.showCubemapEditor();";
                            tooltipProfile = "ToolsToolTipProfile";
                            hovertime = "1000";
                            isContainer = "0";
@@ -5981,7 +5981,7 @@
                            profile = "ToolsCheckBoxProfile_S1";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateActiveMaterial(\"showFootprints\", $ThisControl.getValue());";
+                           command = "MaterialLabTools.updateActiveMaterial(\"showFootprints\", $ThisControl.getValue());";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Enables Player footprints on surfaces that use this Material.";
                            hovertime = "1000";
@@ -6003,7 +6003,7 @@
                            profile = "ToolsCheckBoxProfile_S1";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateActiveMaterial(\"showDust\", $ThisControl.getValue());";
+                           command = "MaterialLabTools.updateActiveMaterial(\"showDust\", $ThisControl.getValue());";
                            tooltipProfile = "ToolsDefaultProfile";
                            tooltip = "Enables dust particles on surfaces that use this Material.";
                            hovertime = "1000";
@@ -6056,7 +6056,7 @@
                            profile = "ToolsDropdownProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateBehaviorSound(\"Footstep\", $ThisControl.getText());";
+                           command = "MaterialLabTools.updateBehaviorSound(\"Footstep\", $ThisControl.getText());";
                            tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the footstep sound to use when the Player walks on this Material.";
                            hovertime = "1000";
@@ -6109,7 +6109,7 @@
                            profile = "ToolsDropdownProfile";
                            visible = "1";
                            active = "1";
-                           command = "MaterialLabGui.updateBehaviorSound(\"Impact\", $ThisControl.getText());";
+                           command = "MaterialLabTools.updateBehaviorSound(\"Impact\", $ThisControl.getText());";
                            tooltipProfile = "ToolsToolTipProfile";
                            tooltip = "Determines the impact sound to use when an object collides with this Material.";
                            hovertime = "1000";
@@ -6216,7 +6216,7 @@
                               profile = "GuiInspectorSwatchButtonProfile";
                               visible = "1";
                               active = "1";
-                              command = "getColorF(materialLab_PreviewMaterial.effectColor[0], \"MaterialLabGui.updateEffectColor0\");";
+                              command = "getColorF(materialLab_PreviewMaterial.effectColor[0], \"MaterialLabTools.updateEffectColor0\");";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6238,7 +6238,7 @@
                               profile = "GuiInspectorSwatchButtonProfile";
                               visible = "1";
                               active = "1";
-                              command = "getColorF(materialLab_PreviewMaterial.effectColor[1], \"MaterialLabGui.updateEffectColor1\");";
+                              command = "getColorF(materialLab_PreviewMaterial.effectColor[1], \"MaterialLabTools.updateEffectColor1\");";
                               tooltipProfile = "ToolsToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6636,7 +6636,7 @@
             profile = "ToolsButtonProfile";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.save();";
+            command = "MaterialLabTools.save();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Save material (Alt S)";
             hovertime = "1000";
@@ -6692,7 +6692,7 @@
             profile = "ToolsButtonProfile";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.save();";
+            command = "MaterialLabTools.save();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Save material (Alt S)";
             hovertime = "1000";
@@ -6720,7 +6720,7 @@
             profile = "ToolsButtonDark";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.cloneMaterial();";
+            command = "MaterialLabTools.cloneMaterial();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Create new material";
             hovertime = "1000";
@@ -6748,7 +6748,7 @@
             profile = "ToolsButtonDark";
             visible = "1";
             active = "1";
-            command = "materialSelector.showDialog(\"MaterialLabGui.switchMaterial\");";
+            command = "materialSelector.showDialog(\"MaterialLabTools.switchMaterial\");";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Open existing material";
             hovertime = "1000";
@@ -6776,7 +6776,7 @@
             profile = "ToolsButtonDark";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.createNewMaterial();";
+            command = "MaterialLabTools.createNewMaterial();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Create new material";
             hovertime = "1000";
@@ -6804,7 +6804,7 @@
             profile = "ToolsButtonDark";
             visible = "0";
             active = "1";
-            command = "MaterialLabGui.refreshMaterial();";
+            command = "MaterialLabTools.refreshMaterial();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Revert material to saved";
             hovertime = "1000";
@@ -6833,7 +6833,7 @@
             profile = "ToolsButtonDark";
             visible = "0";
             active = "1";
-            command = "MaterialLabGui.clearMaterial();";
+            command = "MaterialLabTools.clearMaterial();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Clear all material properties";
             hovertime = "1000";
@@ -6862,7 +6862,7 @@
             profile = "ToolsButtonDark";
             visible = "1";
             active = "1";
-            command = "MaterialLabGui.deleteMaterial();";
+            command = "MaterialLabTools.deleteMaterial();";
             tooltipProfile = "ToolsToolTipProfile";
             tooltip = "Delete material from file";
             hovertime = "1000";

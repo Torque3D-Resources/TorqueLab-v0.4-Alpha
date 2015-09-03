@@ -6,6 +6,37 @@
 //==============================================================================
 
 //==============================================================================
+// Hack to force LevelInfo update after Cubemap change...
+//==============================================================================
+//==============================================================================
+function SceneInspector::envHack( %this ) {
+	envHack(true);
+}
+function SceneInspector::envDel( %this ) {
+	envDel();
+}
+//------------------------------------------------------------------------------
+function envHack(%autodelete ) {
+	%tmpObj = new EnvVolume("tmpEnvVolume") {
+      AreaEnvMap = "MipCubemap";
+      cubeReflectorDesc = "DefaultCubeDesc";
+      position = "8.21068 19.3464 241.855";
+      rotation = "1 0 0 0";
+      scale = "10 10 10";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+   };
+   if (%autodelete)
+		SceneInspector.schedule(500,"envDel");
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function envDel( ) {
+	delObj(tmpEnvVolume);
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
 function SceneInspector::onInspectorFieldModified( %this, %object, %fieldName, %arrayIndex, %oldValue, %newValue ) {
 	
 	// The instant group will try to add our
@@ -30,7 +61,7 @@ function SceneInspector::onInspectorFieldModified( %this, %object, %fieldName, %
 	// by the inspector code after this method has returned.
 
 	if( %object.isMemberOfClass( "SimDataBlock" ) )
-		%object.schedule( 1, "reloadOnLocalClient" );
+		%object.schedule( 1, "reloadOnLocalClient" ); 
 
 	// Restore the instant group.
 	popInstantGroup();
@@ -40,6 +71,12 @@ function SceneInspector::onInspectorFieldModified( %this, %object, %fieldName, %
 	// Update the selection
 	if(EWorldEditor.getSelectionSize() > 0 && (%fieldName $= "position" || %fieldName $= "rotation" || %fieldName $= "scale")) {
 		EWorldEditor.invalidateSelectionCentroid();
+	}
+	if (%object.getClassName() $= "LevelInfo"){
+		devLog("onInspectorFieldModified LevelInfo",%field);
+		if (%field $= "LevelEnvMap")
+			SceneInspector.schedule(500,"envHack",true);
+		
 	}
 }
 //------------------------------------------------------------------------------
@@ -101,8 +138,18 @@ function SceneInspector::onInspectorPostFieldModification( %this ) {
 
 	%this.currentFieldEditAction = "";
 	EWorldEditor.isDirty = true;
+	
+	%obj = %this.getInspectObject( 0 );
+	if (%obj.getClassName() $= "LevelInfo"){
+		devLog("onInspectorPostFieldModification LevelInfo");
+		%tmpObj = new EnvVolume("TmpEnvVolume");
+		delObj(%tmpObj);
+		
+	}
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+
 //==============================================================================
 function SceneInspector::onInspectorDiscardFieldModification( %this ) {
 	%this.currentFieldEditAction.undo();
@@ -127,6 +174,10 @@ function SceneInspector::inspect( %this, %obj ) {
 		%name = %obj.getName();
 	else
 		SceneFieldInfoControl.setText( "" );
+		
+	if (%obj.getClassName() $= "LevelInfo"){
+		devLog("Inspecting LevelInfo");
+	}
 
 	//InspectorNameEdit.setValue( %name );
 	Parent::inspect( %this, %obj );

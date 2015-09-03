@@ -9,7 +9,7 @@
 //==============================================================================
 
 //==============================================================================
-function MaterialLabGui::createNewMaterial( %this ) {
+function MaterialLabTools::createNewMaterial( %this ) {
 	%action = %this.createUndo(ActionCreateNewMaterial, "Create New Material");
 	%action.object = "";
 	%material = getUniqueName( "newMaterial" );
@@ -19,19 +19,19 @@ function MaterialLabGui::createNewMaterial( %this ) {
 		parentGroup = RootGroup;
 	};
 	
-	%material.setFileName(MaterialLabGui-->selMaterialFile.getText());
+	%material.setFileName(MaterialLabTools-->selMaterialFile.getText());
 	%action.newMaterial = %material.getId();
-	%action.oldMaterial = MaterialLabGui.currentMaterial;
-	MaterialLabGui.submitUndo( %action );
-	MaterialLabGui.currentObject = "";
-	MaterialLabGui.setMode();
-	MaterialLabGui.prepareActiveMaterial( %material.getId(), true );
+	%action.oldMaterial = MaterialLabTools.currentMaterial;
+	MaterialLabTools.submitUndo( %action );
+	MaterialLabTools.currentObject = "";
+	MaterialLabTools.setMode();
+	MaterialLabTools.prepareActiveMaterial( %material.getId(), true );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Clone selected Material
-function MaterialLabGui::cloneMaterial( %this ) {
-	%srcMat = MaterialLabGui.currentMaterial;
+function MaterialLabTools::cloneMaterial( %this ) {
+	%srcMat = MaterialLabTools.currentMaterial;
 
 	if (!isObject(%srcMat))
 		return;
@@ -40,18 +40,18 @@ function MaterialLabGui::cloneMaterial( %this ) {
 	%newName = getUniqueName(%srcMat.getName());
 	%newMat.setName(%newName);
 	%newMat.setFilename(%srcMat.getFilename());
-	MaterialLabGui.currentObject = "";
-	MaterialLabGui.setMode();
-	MaterialLabGui.prepareActiveMaterial( %newMat.getId(), true );
+	MaterialLabTools.currentObject = "";
+	MaterialLabTools.setMode();
+	MaterialLabTools.prepareActiveMaterial( %newMat.getId(), true );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::deleteMaterial( %this ) {
+function MaterialLabTools::deleteMaterial( %this ) {
 	%action = %this.createUndo(ActionDeleteMaterial, "Delete Material");
-	%action.object = MaterialLabGui.currentObject;
-	%action.currentMode = MaterialLabGui.currentMode;
+	%action.object = MaterialLabTools.currentObject;
+	%action.currentMode = MaterialLabTools.currentMode;
 	/*
-	if( MaterialLabGui.currentMode $= "Mesh" )
+	if( MaterialLabTools.currentMode $= "Mesh" )
 	{
 	   %materialTarget = SubMaterialSelector.text;
 	   %action.materialTarget = %materialTarget;
@@ -66,8 +66,8 @@ function MaterialLabGui::deleteMaterial( %this ) {
 	   };
 
 	   %action.toMaterial = %toMaterial.getId();
-	   %action.fromMaterial = MaterialLabGui.currentMaterial;
-	   %action.fromMaterialOldFname = MaterialLabGui.currentMaterial.getFilename();
+	   %action.fromMaterial = MaterialLabTools.currentMaterial;
+	   %action.fromMaterialOldFname = MaterialLabTools.currentMaterial.getFilename();
 	}
 	else
 	{
@@ -85,7 +85,7 @@ function MaterialLabGui::deleteMaterial( %this ) {
 	   }
 
 	   %action.toMaterial = %toMaterial.getId();
-	   %action.fromMaterial = MaterialLabGui.currentMaterial;
+	   %action.fromMaterial = MaterialLabTools.currentMaterial;
 	}
 	*/
 	// Grab first material we see; if theres not one, create one
@@ -97,22 +97,22 @@ function MaterialLabGui::deleteMaterial( %this ) {
 	};
 	// Setup vars
 	%action.newMaterial = %newMaterial.getId();
-	%action.oldMaterial = MaterialLabGui.currentMaterial;
-	%action.oldMaterialFname = MaterialLabGui.currentMaterial.getFilename();
+	%action.oldMaterial = MaterialLabTools.currentMaterial;
+	%action.oldMaterialFname = MaterialLabTools.currentMaterial.getFilename();
 	// Submit undo
-	MaterialLabGui.submitUndo( %action );
+	MaterialLabTools.submitUndo( %action );
 
 	// Delete the material from file
-	if( !MaterialLabGui.isMatLabitorMaterial( MaterialLabGui.currentMaterial ) ) {
-		matLab_PersistMan.removeObjectFromFile(MaterialLabGui.currentMaterial);
-		matLab_PersistMan.removeDirty(MaterialLabGui.currentMaterial);
+	if( !MaterialLabTools.isMatLabitorMaterial( MaterialLabTools.currentMaterial ) ) {
+		MatLab_PM.removeObjectFromFile(MaterialLabTools.currentMaterial);
+		MatLab_PM.removeDirty(MaterialLabTools.currentMaterial);
 	}
 
 	// Delete the material as seen through the material selector.
-	UnlistedMaterials.add( "unlistedMaterials", MaterialLabGui.currentMaterial.getName() );
+	UnlistedMaterials.add( "unlistedMaterials", MaterialLabTools.currentMaterial.getName() );
 	// Loadup another material
-	MaterialLabGui.currentObject = "";
-	MaterialLabGui.setMode();
-	MaterialLabGui.prepareActiveMaterial( %newMaterial.getId(), true );
+	MaterialLabTools.currentObject = "";
+	MaterialLabTools.setMode();
+	MaterialLabTools.prepareActiveMaterial( %newMaterial.getId(), true );
 }
 //------------------------------------------------------------------------------

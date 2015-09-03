@@ -26,7 +26,7 @@
       canMaximize = "0";
       minSize = "50 50";
       EdgeSnap = "1";
-      closeCommand = "MaterialLabGui.hideCubemapEditor(true);";
+      closeCommand = "MaterialLabTools.hideCubemapEditor(true);";
       text = "Cubemap Editor";
 
    new GuiTextCtrl(){
@@ -56,21 +56,21 @@
          AnchorRight = "0";
          text = "myCubemap 1";
          maxLength = "1024";
-         AltCommand = "MaterialLabGui.editCubemapName($ThisControl.getText());";
+         AltCommand = "MaterialLabTools.editCubemapName($ThisControl.getText());";
    };
    new GuiButtonCtrl(){
          Profile = "ToolsButtonProfile";
          position = "339 216";
          Extent = "74 24";
          text = "Select";
-         command = "MaterialLabGui.selectCubemap();"; // needs hookup use selected cubemap
+         command = "MaterialLabTools.selectCubemap();"; // needs hookup use selected cubemap
    };
    new GuiButtonCtrl(){
          Profile = "ToolsButtonProfile";
          position = "417 216";
          Extent = "52 24";
          text = "Cancel";
-         command = "MaterialLabGui.hideCubemapEditor(true);"; // needs hookup Cancel
+         command = "MaterialLabTools.hideCubemapEditor(true);"; // needs hookup Cancel
    };
    new GuiScrollCtrl(matLab_cubemapEd_availableCubemapScroller) {
          canSaveDynamicFields = "0";
@@ -150,7 +150,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"0\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"0\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -193,7 +193,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"1\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"1\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -236,7 +236,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"3\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"3\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -279,7 +279,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"2\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"2\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -322,7 +322,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"4\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"4\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -365,7 +365,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.editCubemapImage(\"5\", $ThisControl.bitmap );";
+         Command = "MaterialLabTools.editCubemapImage(\"5\", $ThisControl.bitmap );";
          tooltipprofile = "ToolsDefaultProfile";
          ToolTip = "When using Static Cubemaps, select your CubeMap by clicking here.";
          hovertime = "1000";
@@ -408,7 +408,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.showDeleteCubemapDialog();"; // -------------- Needs Hookup Delete Cubemap
+         Command = "MaterialLabTools.showDeleteCubemapDialog();"; // -------------- Needs Hookup Delete Cubemap
          hovertime = "1000";
          tooltip = "Delete Cubemap";
          bitmap = "tlab/gui/icons/default/delete";
@@ -429,7 +429,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.showSaveCubemapDialog();"; // -------------- Needs Hookup Save Cubemap
+         Command = "MaterialLabTools.showSaveCubemapDialog();"; // -------------- Needs Hookup Save Cubemap
          hovertime = "1000";
          tooltip = "Save Cubemap";
          bitmap = "tlab/gui/icons/default/save-icon";

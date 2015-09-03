@@ -4,15 +4,15 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-function MaterialLabGui::openFile( %this, %fileType,%defaultFileName ) {
-	devLog("MaterialLabGui::openFile", %fileType,%defaultFileName );
+function MatLab::openFile( %this, %fileType,%defaultFileName ) {
+	devLog("MatLab::openFile", %fileType,%defaultFileName );
 	switch$(%fileType) {
 	case "Texture":
-		%filters = MaterialLabGui.textureFormats;
+		%filters = MatLab.textureFormats;
 		
 		if (%defaultFileName $= "" || !isFile(%defaultFileName)) {
-			if(MaterialLabGui.lastTextureFile !$= "")
-				%defaultFileName = MaterialLabGui.lastTextureFile;
+			if(MatLab.lastTextureFile !$= "")
+				%defaultFileName = MatLab.lastTextureFile;
 			else if (isFile($MLP_BaseObjectPath)){
 				%defaultFileName = $MLP_BaseObjectPath;
 			}
@@ -20,15 +20,15 @@ function MaterialLabGui::openFile( %this, %fileType,%defaultFileName ) {
 				%defaultFileName = "art/*.*";
 		}
 
-		%defaultPath = MaterialLabGui.lastTexturePath;
+		%defaultPath = MatLab.lastTexturePath;
 
 	case "Model":
-		%filters = MaterialLabGui.modelFormats;
+		%filters = MatLab.modelFormats;
 
 		if (%defaultFileName $= "")
 			%defaultFileName = "*.dts";
 
-		%defaultPath = MaterialLabGui.lastModelPath;
+		%defaultPath = MatLab.lastModelPath;
 
 	case "File":
 		%filters = "TorqueScript Files (*.cs)|*.cs";
@@ -36,7 +36,7 @@ function MaterialLabGui::openFile( %this, %fileType,%defaultFileName ) {
 		if (%defaultFileName $= "")
 			%defaultFileName = "*.dts";
 
-		%defaultPath = MaterialLabGui.lastModelPath;
+		%defaultPath = MatLab.lastModelPath;
 	}
 
 	%dlg = new OpenFileDialog() {
@@ -51,16 +51,16 @@ function MaterialLabGui::openFile( %this, %fileType,%defaultFileName ) {
 	if(%ret) {
 		switch$(%fileType) {
 		case "Texture":
-			MaterialLabGui.lastTexturePath = filePath( %dlg.FileName );
-			MaterialLabGui.lastTextureFile = %filename = %dlg.FileName;
+			MatLab.lastTexturePath = filePath( %dlg.FileName );
+			MatLab.lastTextureFile = %filename = %dlg.FileName;
 
 		case "Model":
-			MaterialLabGui.lastModelPath = filePath( %dlg.FileName );
-			MaterialLabGui.lastModelFile = %filename = %dlg.FileName;
+			MatLab.lastModelPath = filePath( %dlg.FileName );
+			MatLab.lastModelFile = %filename = %dlg.FileName;
 
 		case "File":
-			MaterialLabGui.lastScriptPath = filePath( %dlg.FileName );
-			MaterialLabGui.lastScriptFile = %filename = %dlg.FileName;
+			MatLab.lastScriptPath = filePath( %dlg.FileName );
+			MatLab.lastScriptFile = %filename = %dlg.FileName;
 		}
 	}
 
@@ -73,7 +73,7 @@ function MaterialLabGui::openFile( %this, %fileType,%defaultFileName ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::copyMaterials( %this, %copyFrom, %copyTo) {
+function MatLab::copyMaterials( %this, %copyFrom, %copyTo) {
 	// Make sure we copy and restore the map to.
 	%mapTo = %copyTo.mapTo;
 	%copyTo.assignFieldsFrom( %copyFrom );
@@ -82,7 +82,7 @@ function MaterialLabGui::copyMaterials( %this, %copyFrom, %copyTo) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // still needs to be optimized further
-function MaterialLabGui::searchForTexture(%this,%material, %texture) {
+function MatLab::searchForTexture(%this,%material, %texture) {
 	if( %texture !$= "" ) {
 		// set the find signal as false to start out with
 		%isFile = false;
@@ -170,83 +170,83 @@ function MaterialLabGui::searchForTexture(%this,%material, %texture) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function MaterialLabGui::convertTextureFields(%this) {
+function MatLab::convertTextureFields(%this) {
 	// Find the absolute paths for the texture filenames so that
 	// we can properly wire up the preview materials and controls.
 	for(%diffuseI = 0; %diffuseI < 4; %diffuseI++) {
-		%diffuseMap = MaterialLabGui.currentMaterial.diffuseMap[%diffuseI];
-		%diffuseMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %diffuseMap);
-		MaterialLabGui.currentMaterial.diffuseMap[%diffuseI] = %diffuseMap;
+		%diffuseMap = MatLab.currentMaterial.diffuseMap[%diffuseI];
+		%diffuseMap = MatLab.searchForTexture(MatLab.currentMaterial, %diffuseMap);
+		MatLab.currentMaterial.diffuseMap[%diffuseI] = %diffuseMap;
 	}
 
 	for(%normalI = 0; %normalI < 4; %normalI++) {
-		%normalMap = MaterialLabGui.currentMaterial.normalMap[%normalI];
-		%normalMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %normalMap);
-		MaterialLabGui.currentMaterial.normalMap[%normalI] = %normalMap;
+		%normalMap = MatLab.currentMaterial.normalMap[%normalI];
+		%normalMap = MatLab.searchForTexture(MatLab.currentMaterial, %normalMap);
+		MatLab.currentMaterial.normalMap[%normalI] = %normalMap;
 	}
 
 	for(%overlayI = 0; %overlayI < 4; %overlayI++) {
-		%overlayMap = MaterialLabGui.currentMaterial.overlayMap[%overlayI];
-		%overlayMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %overlayMap);
-		MaterialLabGui.currentMaterial.overlayMap[%overlayI] = %overlayMap;
+		%overlayMap = MatLab.currentMaterial.overlayMap[%overlayI];
+		%overlayMap = MatLab.searchForTexture(MatLab.currentMaterial, %overlayMap);
+		MatLab.currentMaterial.overlayMap[%overlayI] = %overlayMap;
 	}
 
 	for(%detailI = 0; %detailI < 4; %detailI++) {
-		%detailMap = MaterialLabGui.currentMaterial.detailMap[%detailI];
-		%detailMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %detailMap);
-		MaterialLabGui.currentMaterial.detailMap[%detailI] = %detailMap;
+		%detailMap = MatLab.currentMaterial.detailMap[%detailI];
+		%detailMap = MatLab.searchForTexture(MatLab.currentMaterial, %detailMap);
+		MatLab.currentMaterial.detailMap[%detailI] = %detailMap;
 	}
 
 	for(%detailNormalI = 0; %detailNormalI < 4; %detailNormalI++) {
-		%detailNormalMap = MaterialLabGui.currentMaterial.detailNormalMap[%detailNormalI];
-		%detailNormalMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %detailNormalMap);
-		MaterialLabGui.currentMaterial.detailNormalMap[%detailNormalI] = %detailNormalMap;
+		%detailNormalMap = MatLab.currentMaterial.detailNormalMap[%detailNormalI];
+		%detailNormalMap = MatLab.searchForTexture(MatLab.currentMaterial, %detailNormalMap);
+		MatLab.currentMaterial.detailNormalMap[%detailNormalI] = %detailNormalMap;
 	}
 
 	for(%lightI = 0; %lightI < 4; %lightI++) {
-		%lightMap = MaterialLabGui.currentMaterial.lightMap[%lightI];
-		%lightMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %lightMap);
-		MaterialLabGui.currentMaterial.lightMap[%lightI] = %lightMap;
+		%lightMap = MatLab.currentMaterial.lightMap[%lightI];
+		%lightMap = MatLab.searchForTexture(MatLab.currentMaterial, %lightMap);
+		MatLab.currentMaterial.lightMap[%lightI] = %lightMap;
 	}
 
 	for(%toneI = 0; %toneI < 4; %toneI++) {
-		%toneMap = MaterialLabGui.currentMaterial.toneMap[%toneI];
-		%toneMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %toneMap);
-		MaterialLabGui.currentMaterial.toneMap[%toneI] = %toneMap;
+		%toneMap = MatLab.currentMaterial.toneMap[%toneI];
+		%toneMap = MatLab.searchForTexture(MatLab.currentMaterial, %toneMap);
+		MatLab.currentMaterial.toneMap[%toneI] = %toneMap;
 	}
 
 	for(%specI = 0; %specI < 4; %specI++) {
-		%specMap = MaterialLabGui.currentMaterial.specularMap[%specI];
-		%specMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %specMap);
-		MaterialLabGui.currentMaterial.specularMap[%specI] = %specMap;
+		%specMap = MatLab.currentMaterial.specularMap[%specI];
+		%specMap = MatLab.searchForTexture(MatLab.currentMaterial, %specMap);
+		MatLab.currentMaterial.specularMap[%specI] = %specMap;
 	}
 	//PBR Script   
    for(%roughI = 0; %roughI < 4; %roughI++)
    {
-      %roughMap = MaterialLabGui.currentMaterial.roughMap[%roughI];      
-      %roughMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %roughMap);
-      MaterialLabGui.currentMaterial.roughMap[%specI] = %roughMap;
+      %roughMap = MatLab.currentMaterial.roughMap[%roughI];      
+      %roughMap = MatLab.searchForTexture(MatLab.currentMaterial, %roughMap);
+      MatLab.currentMaterial.roughMap[%specI] = %roughMap;
    }
    
    for(%aoI = 0; %aoI < 4; %aoI++)
    {
-      %aoMap = MaterialLabGui.currentMaterial.aoMap[%aoI];      
-      %aoMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %aoMap);
-      MaterialLabGui.currentMaterial.aoMap[%specI] = %aoMap;
+      %aoMap = MatLab.currentMaterial.aoMap[%aoI];      
+      %aoMap = MatLab.searchForTexture(MatLab.currentMaterial, %aoMap);
+      MatLab.currentMaterial.aoMap[%specI] = %aoMap;
    }
    
    for(%metalI = 0; %metalI < 4; %metalI++)
    {
-      %metalMap = MaterialLabGui.currentMaterial.metalMap[%metalI];      
-      %metalMap = MaterialLabGui.searchForTexture(MaterialLabGui.currentMaterial, %metalMap);
-      MaterialLabGui.currentMaterial.metalMap[%metalI] = %metalMap;
+      %metalMap = MatLab.currentMaterial.metalMap[%metalI];      
+      %metalMap = MatLab.searchForTexture(MatLab.currentMaterial, %metalMap);
+      MatLab.currentMaterial.metalMap[%metalI] = %metalMap;
    }
    //PBR ScriptEnd
 
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::isMatLabitorMaterial(%this, %material) {
+function MatLab::isMatLabitorMaterial(%this, %material) {
 	return ( %material.getFilename() $= "" ||
 													%material.getFilename() $= "tlab/gui/materialSelector.ed.gui" ||
 															%material.getFilename() $= "tlab/materialLab/scripts/materialLab.ed.cs" );

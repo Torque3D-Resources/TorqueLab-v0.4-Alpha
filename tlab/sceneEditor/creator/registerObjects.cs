@@ -13,6 +13,7 @@ function SceneCreatorWindow::endGroup( %this, %group ) {
 	%this.currentGroup = "";
 }
 //------------------------------------------------------------------------------
+//SceneCreatorWindow.registerObjects();
 function SceneCreatorWindow::registerObjects( %this ) {
 
 	%this.beginGroup( "Environment" );
@@ -64,6 +65,8 @@ function SceneCreatorWindow::registerObjects( %this ) {
       %this.registerMissionObject( "LightProbeVolume", "Light Probe Volume" );
       %this.registerMissionObject("NavMesh", "Navigation mesh");
       %this.registerMissionObject("NavPath", "Path");
+    %this.registerMissionObject("EnvVolume", "Env Volume");   
+      
 
 	
 	if (%this.isMethod("registerCustomsObjectsGroup"))

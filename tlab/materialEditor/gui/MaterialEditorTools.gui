@@ -30,24 +30,24 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       currentLayer = "1";
-      currentMaterial = "18803";
-      currentMaterialFile = "art/models/CyberLab/Arena/CyberKit/materials.cs";
+      currentMaterial = "18826";
+      currentMaterialFile = "art/models/CyberLab/ArenaKit/arenaA/materials.cs";
       currentMeshMode = "Model";
       currentMode = "Mesh";
-      currentObject = "36187";
+      currentObject = "37454";
       defaultParent = "GuiGroup";
-      EditorContainer = "19909";
+      EditorContainer = "19932";
       editorParent = "4027";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
-      lastMaterial = "ckCubeFloor_Cyber_FloorPanelBlue";
+      lastMaterial = "OutsideCorner_Cyber_Panel_PaintedFloor_Blue";
       lastScriptFile = "F:/T3DProjects/ContentLabT3D/My Projects/ContentLab/game/art/textures/FarmPack/RoadsAndPaths/gcDirtRoad/materials.cs";
       lastScriptPath = "F:/T3DProjects/ContentLabT3D/My Projects/ContentLab/game/art/textures/FarmPack/RoadsAndPaths/gcDirtRoad";
-      lastTextureFile = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/CyberLab/Arena/CyberKit/textures/Metal_FloorPanelModularPainted_1k_TGA/Metal_FloorPanelModularPainted_1k_h.tga";
-      lastTexturePath = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/CyberLab/Arena/CyberKit/textures/Metal_FloorPanelModularPainted_1k_TGA";
+      lastTextureFile = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/CyberLab/images/Panel_PaintedFloor/Panel_PaintedFloor_comp.png";
+      lastTexturePath = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/CyberLab/images/Panel_PaintedFloor";
       livePreview = "1";
       materialDirty = "0";
       modelFormats = "DTS Files (*.dts)|*.dts";
-      originalName = "ckCubeFloor_Cyber_FloorPanelBlue";
+      originalName = "OutsideCorner_Cyber_Panel_PaintedFloor_Blue";
       plugin = "MaterialEditor";
       preventUndo = "0";
       textureFormats = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";
@@ -896,7 +896,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "art/models/CyberLab/Arena/CyberKit/materials.cs";
+                  text = "art/models/CyberLab/ArenaKit/arenaA/materials.cs";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "1 1 0 0";
@@ -973,7 +973,7 @@
             canSaveDynamicFields = "0";
 
             new GuiTextCtrl() {
-               text = "OutsideCorner.DAE";
+               text = "InsideFloor8.DAE";
                maxLength = "1024";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -990,7 +990,7 @@
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
-               tooltip = "art/models/CyberLab/Arena/CyberKit/KitA/OutsideCorner.DAE";
+               tooltip = "art/models/CyberLab/ArenaKit/arenaA/InsideFloor8.DAE";
                hovertime = "1000";
                isContainer = "1";
                internalName = "selMaterialMapTo";
@@ -1025,7 +1025,7 @@
                   reverseTextList = "0";
                   bitmapBounds = "16 16";
                   hotTrackCallback = "0";
-                  text = "Cyber_FloorPanelBlue";
+                  text = "Cyber_Panel_PaintedFloor_Blue";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "2 2 0 22";
@@ -1128,7 +1128,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "ckCubeFloor_Cyber_FloorPanelBlue";
+                  text = "OutsideCorner_Cyber_Panel_PaintedFloor_Blue";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "3 3 0 0";
@@ -1206,7 +1206,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "art/models/CyberLab/Arena/CyberKit/materials.cs";
+                  text = "art/models/CyberLab/ArenaKit/arenaA/materials.cs";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "3 3 0 22";
@@ -1354,8 +1354,8 @@
                dynamicPos = "0";
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
-               position = "4 -236";
-               extent = "238 1171";
+               position = "4 -116";
+               extent = "238 1189";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -1529,7 +1529,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiSwatchButtonCtrl() {
-                           color = "0.0196078 0.301961 0.509804 0";
+                           color = "1 1 1 1";
                            gridBitmap = "tools/gui/images/transp_grid";
                            groupNum = "-1";
                            buttonType = "PushButton";
@@ -3010,7 +3010,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 136";
-                  extent = "238 255";
+                  extent = "238 273";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -3036,7 +3036,7 @@
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
                      position = "4 29";
-                     extent = "230 226";
+                     extent = "230 244";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -3117,13 +3117,121 @@
                         };
                      };
                      new GuiContainer() {
+                        docking = "Top";
+                        margin = "0 0 0 0";
+                        padding = "0 0 4 0";
+                        anchorTop = "1";
+                        anchorBottom = "0";
+                        anchorLeft = "1";
+                        anchorRight = "0";
+                        position = "0 18";
+                        extent = "230 18";
+                        minExtent = "8 2";
+                        horizSizing = "width";
+                        vertSizing = "bottom";
+                        profile = "ToolsBoxDarkA";
+                        visible = "1";
+                        active = "1";
+                        tooltipProfile = "GuiToolTipProfile";
+                        hovertime = "1000";
+                        isContainer = "1";
+                        canSave = "1";
+                        canSaveDynamicFields = "0";
+
+                        new GuiStackControl() {
+                           stackingType = "Horizontal";
+                           horizStacking = "Left to Right";
+                           vertStacking = "Top to Bottom";
+                           padding = "0";
+                           dynamicSize = "1";
+                           dynamicNonStackExtent = "0";
+                           dynamicPos = "0";
+                           changeChildSizeToFit = "1";
+                           changeChildPosition = "1";
+                           position = "0 0";
+                           extent = "230 18";
+                           minExtent = "16 16";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "GuiDefaultProfile";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "GuiToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "1";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+
+                           new GuiRadioCtrl() {
+                              text = "All";
+                              groupNum = "1";
+                              buttonType = "RadioButton";
+                              useMouseEvents = "0";
+                              position = "0 0";
+                              extent = "45 18";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsRadioProfile_S1";
+                              visible = "1";
+                              active = "1";
+                              command = "MatEd.pbrMapMode(0);";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                           new GuiRadioCtrl() {
+                              text = "Comp. only";
+                              groupNum = "1";
+                              buttonType = "RadioButton";
+                              useMouseEvents = "0";
+                              position = "45 -1";
+                              extent = "93 18";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsRadioProfile_S1";
+                              visible = "1";
+                              active = "1";
+                              command = "MatEd.pbrMapMode(1);";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                           new GuiRadioCtrl() {
+                              text = "No Comp";
+                              groupNum = "1";
+                              buttonType = "RadioButton";
+                              useMouseEvents = "0";
+                              position = "138 0";
+                              extent = "92 18";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsRadioProfile_S1";
+                              visible = "1";
+                              active = "1";
+                              command = "MatEd.pbrMapMode(2);";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                        };
+                     };
+                     new GuiContainer() {
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
                         anchorTop = "1";
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 18";
+                        position = "0 36";
                         extent = "230 52";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3134,6 +3242,7 @@
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
+                        internalName = "compMap";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -3160,7 +3269,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapCtrl() {
-                              bitmap = "art/models/CyberLab/Arena/CyberKit/textures/Metal_FloorPanelModularPainted_1k_TGA/Metal_FloorPanelModularPainted_1k_s.tga";
+                              bitmap = "tlab/materialEditor/assets/unavailable";
                               wrap = "0";
                               position = "0 0";
                               extent = "52 52";
@@ -3273,7 +3382,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "art/models/CyberLab/Arena/CyberKit/textures/Metal_FloorPanelModularPainted_1k_TGA/Metal_FloorPanelModularPainted_1k_s.tga";
+                              text = "None";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -3410,7 +3519,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 70";
+                        position = "0 88";
                         extent = "230 52";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3421,6 +3530,7 @@
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
+                        internalName = "smoothMap";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -3653,12 +3763,12 @@
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
                               };
-                               new GuiRadioCtrl(roughChanBtn1) {
+                              new GuiRadioCtrl(roughChanBtn1) {
                                  text = "G";
                                  groupNum = "1";
                                  buttonType = "RadioButton";
                                  useMouseEvents = "0";
-                                 position = "84 0";
+                                 position = "28 0";
                                  extent = "24 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
@@ -3698,7 +3808,7 @@
                                  groupNum = "1";
                                  buttonType = "RadioButton";
                                  useMouseEvents = "0";
-                                 position = "28 0";
+                                 position = "84 0";
                                  extent = "24 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
@@ -3713,8 +3823,6 @@
                                  canSave = "1";
                                  canSaveDynamicFields = "0";
                               };
-                              
-                             
                            };
                            new GuiStackControl() {
                               stackingType = "Horizontal";
@@ -3806,7 +3914,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 122";
+                        position = "0 140";
                         extent = "230 52";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3817,6 +3925,7 @@
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
+                        internalName = "aoMap";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -4200,7 +4309,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 174";
+                        position = "0 192";
                         extent = "230 52";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4211,6 +4320,7 @@
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
+                        internalName = "metalMap";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -4597,7 +4707,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 391";
+                  position = "0 409";
                   extent = "238 223";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -5654,7 +5764,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 614";
+                  position = "0 632";
                   extent = "238 143";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -5803,7 +5913,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           class = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -5842,7 +5952,7 @@
                               range = "0.03125 32";
                               ticks = "0";
                               snap = "0";
-                              value = "25.7971";
+                              value = "26.4055";
                               position = "0 5";
                               extent = "117 14";
                               minExtent = "8 2";
@@ -5927,7 +6037,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           superClass = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6051,7 +6161,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           superClass = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6175,7 +6285,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           superClass = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6299,7 +6409,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           superClass = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6369,7 +6479,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 757";
+                  position = "0 775";
                   extent = "238 65";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -6473,7 +6583,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           superClass = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6490,8 +6600,8 @@
                               profile = "GuiSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialEditorGui.updateActiveMaterial(\"Smoothness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue(), true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"Smoothness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue(), true, false);";
+                              command = "MaterialEditorGui.updateMaterialPBR(\"Smoothness\", $ThisControl.getValue(), true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"Smoothness\", $ThisControl.getValue(), true, false);";
                               tooltipProfile = "GuiToolTipProfile";
                               tooltip = "Sets Smoothness.";
                               hovertime = "1000";
@@ -6523,7 +6633,7 @@
                               profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"Smoothness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateMaterialPBR(\"Smoothness\", $ThisControl.getValue());";
                               tooltipProfile = "GuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6597,7 +6707,7 @@
                            tooltipProfile = "GuiToolTipProfile";
                            hovertime = "1000";
                            isContainer = "1";
-                           superClass = "AggregateControl";
+                           class = "AggregateContainer";
                            canSave = "1";
                            canSaveDynamicFields = "0";
 
@@ -6614,8 +6724,8 @@
                               profile = "GuiSliderProfile";
                               visible = "1";
                               active = "1";
-                              command = "MaterialEditorGui.updateActiveMaterial(\"Metalness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue(), true, true);";
-                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"Metalness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue(), true, false);";
+                              command = "MaterialEditorGui.updateMaterialPBR(\"Metalness\", $ThisControl.getValue(), true, true);";
+                              altCommand = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateMaterialPBR(\"metalness\", $ThisControl.getValue(), true, false);";
                               tooltipProfile = "GuiToolTipProfile";
                               tooltip = "Sets Metalness.";
                               hovertime = "1000";
@@ -6647,7 +6757,7 @@
                               profile = "ToolsTextEdit_S1";
                               visible = "1";
                               active = "1";
-                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateActiveMaterial(\"Metalness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
+                              command = "$ThisControl.getParent().updateFromChild($ThisControl); MaterialEditorGui.updateMaterialPBR(\"Metalness\", $ThisControl.getValue());";
                               tooltipProfile = "GuiToolTipProfile";
                               hovertime = "1000";
                               isContainer = "0";
@@ -6667,7 +6777,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 822";
+                  position = "0 840";
                   extent = "238 112";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -6855,7 +6965,7 @@
                                  range = "0 255";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "45";
+                                 value = "1";
                                  position = "0 23";
                                  extent = "150 14";
                                  minExtent = "8 2";
@@ -6880,7 +6990,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
-                                 text = "45";
+                                 text = "1";
                                  maxLength = "1024";
                                  docking = "None";
                                  margin = "2 14 150 4";
@@ -7076,7 +7186,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 934";
+                  position = "0 952";
                   extent = "238 187";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -8008,7 +8118,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 1121";
+                  position = "0 1139";
                   extent = "238 25";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -9470,7 +9580,7 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 1146";
+                  position = "0 1164";
                   extent = "238 25";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -9592,7 +9702,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "0";
-                           position = "353 4";
+                           position = "359 4";
                            extent = "39 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -9712,7 +9822,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "119 42";
-                           extent = "585 23";
+                           extent = "591 23";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -9765,7 +9875,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "116 70";
-                           extent = "588 23";
+                           extent = "594 23";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -9782,7 +9892,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiControl() {
-                           position = "304 6";
+                           position = "310 6";
                            extent = "93 32";
                            minExtent = "8 2";
                            horizSizing = "left";

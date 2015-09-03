@@ -19,7 +19,7 @@ function WorldEditor::onEndDrag( %this, %obj ) {
 	SceneInspector.inspect( %obj );
 	SceneInspector.apply();
 
-	if (%this.forceToGrid)
+	if ($WEditor::forceToGrid)
 		%this.forceToGrid(%obj);
 		
 	if (!$DragCopyStarted)

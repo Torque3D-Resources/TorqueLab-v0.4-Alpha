@@ -5,7 +5,7 @@
 //==============================================================================
 
 //==============================================================================
-function MaterialLabGui::establishMaterials(%this,%forced) {
+function MatLab::establishMaterials(%this,%forced) {
 	//Cubemap used to preview other cubemaps in the editor.
 	singleton CubemapData( matLabCubeMapPreviewMat ) {
 		cubeFace[0] = "tlab/materialLab/assets/cube_xNeg";
@@ -34,9 +34,9 @@ function MaterialLabGui::establishMaterials(%this,%forced) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function MaterialLabGui::open(%this) {
-	logc("MaterialLabGui::open(%this)",%this);
-	MaterialLabGui.establishMaterials();
+function MatLab::open(%this) {
+	logc("MatLab::open(%this)",%this);
+	MatLab.establishMaterials();
 	// We hide these specific windows here due too there non-modal nature.
 	// These guis are also pushed onto Canvas, which means they shouldn't be parented
 	// by editorgui
@@ -94,17 +94,17 @@ function MaterialLabGui::open(%this) {
 	MaterialLabPropertiesWindow-->MaterialLayerCtrl.add("Layer 3",3);
 	MaterialLabPropertiesWindow-->MaterialLayerCtrl.setSelected( 0, false );
 	//Sift through the RootGroup and find all loaded material items.
-	MaterialLabGui.updateAllFields();
-	MaterialLabGui.updatePreviewObject();
+	MatLab.updateAllFields();
+	MatLab.updatePreviewObject();
 	// If no selected object; go to material mode. And edit the last selected material
-	MaterialLabGui.setMode();
-	MaterialLabGui.preventUndo = true;
+	MatLab.setMode();
+	MatLab.preventUndo = true;
 
-	if( MaterialLabGui.currentMode $= "Mesh" )
-		MaterialLabGui.prepareActiveObject( true );
+	if( MatLab.currentMode $= "Mesh" )
+		MatLab.prepareActiveObject( true );
 	else
-		MaterialLabGui.prepareActiveMaterial( "", true );
+		MatLab.prepareActiveMaterial( "", true );
 
-	MaterialLabGui.preventUndo = false;
+	MatLab.preventUndo = false;
 }
 //------------------------------------------------------------------------------

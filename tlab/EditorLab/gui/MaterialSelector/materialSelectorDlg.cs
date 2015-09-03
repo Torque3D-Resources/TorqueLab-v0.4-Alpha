@@ -30,6 +30,8 @@ $MaterialSelector_ThumbSize[6] = "160";
 if (!isObject(MaterialSelectorPerMan))
 	new PersistenceManager(MaterialSelectorPerMan);
 
+if (!isObject(MatEdDlg))
+	newScriptObject("MatEdDlg");
 //------------------------------------------------------------------------------
 if (!isObject(UnlistedMaterials)) {
 	new ArrayObject(UnlistedMaterials);
@@ -49,6 +51,7 @@ function MaterialSelector::showDialog( %this, %selectCallback, %returnType) {
 	MatSelector_PageTextSample.visible = false;
 	MatSelector_PageButtonSample.visible = false;
 	MatSelector_MaterialPreviewSample.visible = false;
+	MatEdDlg_Creator.visible = false;
 	//FIXME Commented because with update it was staying visible inside hidden container and that was causing an issue
 	//if( MaterialSelector.isVisible() )
 	//return;

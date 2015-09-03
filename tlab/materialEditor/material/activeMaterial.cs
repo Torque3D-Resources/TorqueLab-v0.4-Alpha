@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+$MatEdDblUpdate = false;
 
 //==============================================================================
 // Helper functions to help load and update the preview and active material
@@ -75,6 +75,33 @@ function MaterialEditorGui::setActiveMaterialFile( %this, %material ) {
 	MatEdMaterialMode-->selMaterialFile.setText(%material.getFilename());
 }
 //------------------------------------------------------------------------------
+// Accumulation
+function MaterialEditorGui::updateAccuCheckbox(%this, %value)
+{
+   MaterialEditorGui.updateActiveMaterial("accuEnabled[" @ MaterialEditorGui.currentLayer @ "]", %value);  
+   %mat = MaterialEditorGui.currentMaterial;
+   devLog("Mat:",%mat.getName(),"accuEnabled:",%mat.accuEnabled[MaterialEditorGui.currentLayer]); 
+   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+}
+
+//==============================================================================
+function MaterialEditorGui::updateMaterialPBR(%this, %propertyField,%value, %isSlider, %onMouseUp) {	
+	devLog(" MaterialEditorGui::updateMaterialPBR(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);
+	%mat = MaterialEditorGui.currentMaterial;
+	%layer = MaterialEditorGui.currentLayer;
+	%isDirty = LabObj.set(%mat,%propertyField,%value,%layer);
+	if (%isDirty)
+		MaterialEditorGui.setMaterialDirty();
+	devLog("Mat:",%mat.getName(),"Field:",%propertyField,"Layer",%layer,"Set to:",%value,"Dirty:",%isDirty);
+	%field = %propertyField@"[" @%layer @ "]";
+	
+	eval("materialEd_previewMaterial." @ %field @ " = " @ %value @ ";");
+	materialEd_previewMaterial.flush();
+	materialEd_previewMaterial.reload();
+	if ($MatEdDblUpdate)
+		%this.updateActiveMaterial(%field,%value, %isSlider, %onMouseUp);
+	
+}
 //==============================================================================
 function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp) {	
 	logc(" MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, %isSlider, %onMouseUp)", %this, %propertyField, %value, %isSlider, %onMouseUp);

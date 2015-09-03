@@ -26,13 +26,13 @@ new GuiStackControl(MaterialLabToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "34986";
-      disabledGroup = "34987";
-      EditorContainer = "19822";
+      defaultStack = "35487";
+      disabledGroup = "35488";
+      EditorContainer = "19845";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialLab";
       preventReordering = "0";
-      stackLists = "34988";
+      stackLists = "35489";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -161,7 +161,7 @@ new GuiStackControl(MaterialLabToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         command = "materialSelector.showDialog(\"MaterialLabGui.switchMaterial\");";
+         command = "materialSelector.showDialog(\"MaterialLabTools.switchMaterial\");";
          tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Open existing material";
          hovertime = "1000";

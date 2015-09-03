@@ -5,28 +5,28 @@
 //==============================================================================
 
 //==============================================================================
-function MaterialLabGui::prepareActiveObject( %this, %override ) {
+function MatLab::prepareActiveObject( %this, %override ) {
 	%obj = $Lab::materialLabList;
 	
 	$MLP_BaseObjectPath = "";
 	$MLP_BaseObject = "";
-	if (isObject(MaterialLabGui.currentObject)){
-		$MLP_BaseObject = MaterialLabGui.currentObject;
-		$MLP_BaseObjectPath  = MaterialLabGui.currentObject.shapeName;
+	if (isObject(MatLab.currentObject)){
+		$MLP_BaseObject = MatLab.currentObject;
+		$MLP_BaseObjectPath  = MatLab.currentObject.shapeName;
 	}
 	
-	if( MaterialLabGui.currentObject == %obj && !%override)
+	if( MatLab.currentObject == %obj && !%override)
 		return;
 
 	// TSStatics and ShapeBase objects should have getModelFile methods
 	if( %obj.isMethod( "getModelFile" ) ) {
-		MaterialLabGui.currentObject = %obj;
+		MatLab.currentObject = %obj;
 		SubMaterialSelector.clear();
-		MaterialLabGui.currentMeshMode = "Model";
-		MaterialLabGui.setMode();
+		MatLab.currentMeshMode = "Model";
+		MatLab.setMode();
 
-		for(%j = 0; %j < MaterialLabGui.currentObject.getTargetCount(); %j++) {
-			%target = MaterialLabGui.currentObject.getTargetName(%j);
+		for(%j = 0; %j < MatLab.currentObject.getTargetCount(); %j++) {
+			%target = MatLab.currentObject.getTargetName(%j);
 			%count = SubMaterialSelector.getCount();
 			SubMaterialSelector.add(%target);
 		}
@@ -40,7 +40,7 @@ function MaterialLabGui::prepareActiveObject( %this, %override ) {
 				continue;
 
 			if( !%canSupportMaterial ) {
-				MaterialLabGui.currentObject = %obj;
+				MatLab.currentObject = %obj;
 				SubMaterialSelector.clear();
 				SubMaterialSelector.add(%fieldName, 0);
 			} else {
@@ -54,11 +54,11 @@ function MaterialLabGui::prepareActiveObject( %this, %override ) {
 		if( !%canSupportMaterial ) // Non-relevant classes get returned
 			return;
 
-		MaterialLabGui.currentMeshMode = "EditorShape";
-		MaterialLabGui.setMode();
+		MatLab.currentMeshMode = "EditorShape";
+		MatLab.setMode();
 	}
 
-	%id = SubMaterialSelector.findText( MaterialLabGui.currentMaterial.mapTo );
+	%id = SubMaterialSelector.findText( MatLab.currentMaterial.mapTo );
 
 	if( %id != -1 )
 		SubMaterialSelector.setSelected( %id );

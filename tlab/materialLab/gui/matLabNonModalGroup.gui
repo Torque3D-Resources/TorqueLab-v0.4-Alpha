@@ -188,7 +188,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.okayChangeCategoryDialog();";
+         Command = "MaterialLabTools.okayChangeCategoryDialog();";
          hovertime = "1000";
          text = "Update Category";
          groupNum = "-1";
@@ -207,7 +207,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.cancelChangeCategoryDialog();";
+         Command = "MaterialLabTools.cancelChangeCategoryDialog();";
          hovertime = "1000";
          text = "Cancel";
          groupNum = "-1";
@@ -226,7 +226,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         Command = "MaterialLabGui.addCategory();";
+         Command = "MaterialLabTools.addCategory();";
          hovertime = "1000";
          text = "New";
          groupNum = "-1";
@@ -301,7 +301,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            Command = "MaterialLabGui.okChangeCategoryErrorDialog();";
+            Command = "MaterialLabTools.okChangeCategoryErrorDialog();";
             hovertime = "1000";
             text = "Ok";
             groupNum = "-1";

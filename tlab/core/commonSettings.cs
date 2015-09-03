@@ -37,7 +37,7 @@ function Lab::initCommonParams( %this ) {
 	%ar.autoSyncPref = true;
 	%ar.group[%gid++] = "Camera views settings";
 	%ar.setVal("mouvementSpeed",      "1" TAB "Camera movement speed" TAB "sliderEdit" TAB "range>>0 500;;tickat>>1" TAB "$Camera::movementSpeed"TAB %gid);
-	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::cameraSpeed"TAB %gid);
 	%ar.setVal("CamViewEnabled",       "1" TAB "CamViewEnabled" TAB "CheckBox" TAB "" TAB "ECamViewGui.setState(**);" TAB %gid);
 	%ar.setVal("cameraDisplayMode",       "Standard Camera" TAB "Initial Camera Mode" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("cameraDisplayType",       $EditTsCtrl::DisplayTypePerspective TAB "cameraDisplayType" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
@@ -109,7 +109,10 @@ $FrameMainSizes = "Thin Normal Large";
 	%gid = 0;
 	%ar = %this.newParamsArray("GridUnit","WorldEditor");
 	%ar.group[%gid++] = "Editor grids and units settings";
+	%ar.prefGroup = "$WEditor::";
+	%ar.autoSyncPref = true;
 	%ar.setVal("gridSize",      "1" TAB "Grid size" TAB "SliderEdit" TAB "range>>0 20;;ticks>>79;;snap>>1;;precision>>0" TAB "EWorldEditor.setGridSize(**);" TAB %gid);
+	%ar.setVal("forceToGrid",      "1" TAB "Force object to fit grid" TAB "Checkbox" TAB "" TAB "$WEditor::forceToGrid" TAB %gid);
 	//Objects manipulation
 	%gid = 0;
 	%ar = %this.newParamsArray("Objects","WorldEditor");

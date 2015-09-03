@@ -34,7 +34,7 @@ function initializeSceneEditor() {
 function execSceneEd(%loadGui) {
 	if (%loadGui) {
 		exec("tlab/sceneEditor/gui/SceneEditorTools.gui");
-		exec("./gui/SceneEditorToolbar.gui" );
+		exec("tlab/sceneEditor/gui/SceneEditorToolbar.gui" );
 		exec("tlab/sceneEditor/gui/SceneEditorPalette.gui" );
 		exec("tlab/sceneEditor/gui/SceneEditorDialogs.gui");
 	}

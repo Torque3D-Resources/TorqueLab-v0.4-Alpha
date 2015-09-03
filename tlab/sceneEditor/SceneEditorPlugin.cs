@@ -25,6 +25,8 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("MiscObjectGroup",       "mgMiscObject" TAB "Misc. Objects Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("ShapeGroup",       "mgShapeGroup" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	
+	
+	
 }
 //------------------------------------------------------------------------------
 

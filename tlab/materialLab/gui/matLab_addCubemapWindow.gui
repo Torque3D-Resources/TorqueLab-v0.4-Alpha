@@ -95,7 +95,7 @@
          buttonType = "PushButton";
          useMouseEvents = "0";
          text = "Create";
-         Command = "MaterialLabGui.addCubemap( matLab_addCubemapWindow-->cubemapName.getText() );matLab_addCubemapWindow.setVisible(0);";
+         Command = "MaterialLabTools.addCubemap( matLab_addCubemapWindow-->cubemapName.getText() );matLab_addCubemapWindow.setVisible(0);";
    };
    new GuiButtonCtrl() {
          canSaveDynamicFields = "0";

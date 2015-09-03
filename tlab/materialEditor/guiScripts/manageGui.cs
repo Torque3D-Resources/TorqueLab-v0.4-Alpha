@@ -38,6 +38,28 @@ function MaterialEditorGui::activatePBR(%this,%activate ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// Mode : 0 = all maps >> 1 = Comp only >> 2 = No COmp
+function MatEd::pbrMapMode(%this,%mode ) {
+	switch$(%mode){
+		case "0":
+			pbr_lightInfuenceProperties-->compMap.visible = 1;
+			pbr_lightInfuenceProperties-->smoothMap.visible = 1;
+			pbr_lightInfuenceProperties-->aoMap.visible = 1;
+			pbr_lightInfuenceProperties-->metalMap.visible = 1;
+		case "1":
+			pbr_lightInfuenceProperties-->compMap.visible = 1;
+			pbr_lightInfuenceProperties-->smoothMap.visible = 0;
+			pbr_lightInfuenceProperties-->aoMap.visible = 0;
+			pbr_lightInfuenceProperties-->metalMap.visible = 0;
+		case "2":
+			pbr_lightInfuenceProperties-->compMap.visible = 0;
+			pbr_lightInfuenceProperties-->smoothMap.visible = 1;
+			pbr_lightInfuenceProperties-->aoMap.visible = 1;
+			pbr_lightInfuenceProperties-->metalMap.visible = 1;
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function MaterialEditorPlugin::initPropertySetting(%this) {
 	devLog("MaterialEditorPlugin::initPropertySetting(%this)",%this,%ctrl,"Name",%ctrl.internalName);
 	%textureMapStack = MaterialEditorGui-->textureMapsOptionsStack;

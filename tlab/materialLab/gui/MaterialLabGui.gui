@@ -1,21 +1,26 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiControl(MaterialSelectorOverlay,EditorGuiGroup) {
+%guiContent = new GuiContainer(MaterialLabGui) {
+   margin = "0 0 0 0";
+   padding = "0 0 0 0";
+   anchorTop = "1";
+   anchorBottom = "0";
+   anchorLeft = "1";
+   anchorRight = "0";
    position = "0 0";
    extent = "1440 900";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "ToolsDefaultProfile";
+   profile = "ToolsFillDarkA_T50";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsToolTipProfile";
+   tooltipProfile = "GuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      enabled = "1";
 
-   new GuiWindowCtrl(materialSelector) {
+   new GuiWindowCtrl(materialSelector1) {
       text = "Material Selector";
       resizeWidth = "1";
       resizeHeight = "1";
@@ -33,8 +38,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "317 74";
-      extent = "841 678";
+      position = "0 0";
+      extent = "1440 900";
       minExtent = "383 274";
       horizSizing = "center";
       vertSizing = "center";
@@ -56,7 +61,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "8 24";
-         extent = "160 646";
+         extent = "160 868";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -110,7 +115,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 24";
-            extent = "160 622";
+            extent = "160 844";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -150,7 +155,7 @@
                canSave = "1";
                canSaveDynamicFields = "1";
 
-               new GuiContainer(MatSelector_FilterSamples) {
+               new GuiContainer(MatSelector_FilterSamples1) {
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
                   anchorTop = "1";
@@ -297,7 +302,7 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  new GuiCheckBoxCtrl(MaterialFilterAllArrayCheckbox) {
+                  new GuiCheckBoxCtrl(MaterialFilterAllArrayCheckbox1) {
                      text = "All ( 223 ) ";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -339,7 +344,7 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  new GuiCheckBoxCtrl(MaterialFilterMappedArrayCheckbox) {
+                  new GuiCheckBoxCtrl(MaterialFilterMappedArrayCheckbox1) {
                      text = "Mapped ( 190 ) ";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -381,7 +386,7 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  new GuiCheckBoxCtrl(MaterialFilterUnmappedArrayCheckbox) {
+                  new GuiCheckBoxCtrl(MaterialFilterUnmappedArrayCheckbox1) {
                      text = "Unmapped ( 33 ) ";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -863,7 +868,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "168 24";
-         extent = "505 646";
+         extent = "1104 868";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -886,7 +891,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "505 23";
+            extent = "1104 23";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
@@ -1137,7 +1142,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 23";
-            extent = "505 623";
+            extent = "1104 845";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -1167,7 +1172,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "497 591";
+               extent = "1096 813";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -1191,7 +1196,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "0";
                   position = "0 0";
-                  extent = "487 2062";
+                  extent = "1086 1032";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1206,7 +1211,7 @@
 
                   new GuiControl() {
                      position = "0 0";
-                     extent = "487 4";
+                     extent = "1086 4";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1219,10 +1224,10 @@
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
-                  new GuiDynamicCtrlArrayControl(MatSelector_MaterialsContainer) {
-                     colCount = "5";
+                  new GuiDynamicCtrlArrayControl(MatSelector_MaterialsContainer1) {
+                     colCount = "11";
                      colSize = "92";
-                     rowCount = "20";
+                     rowCount = "10";
                      rowSize = "101";
                      rowSpacing = "2";
                      colSpacing = "2";
@@ -1232,7 +1237,7 @@
                      dynamicSize = "1";
                      padding = "0 0 0 0";
                      position = "3 4";
-                     extent = "487 2058";
+                     extent = "1086 1028";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -2058,7 +2063,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 103";
+                        position = "470 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -2219,7 +2224,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 103";
+                        position = "564 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -2380,7 +2385,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 103";
+                        position = "658 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -2541,7 +2546,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 103";
+                        position = "752 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -2702,7 +2707,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 103";
+                        position = "846 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -2863,7 +2868,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 206";
+                        position = "940 0";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3024,7 +3029,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 206";
+                        position = "0 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3185,7 +3190,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 206";
+                        position = "94 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3346,7 +3351,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 206";
+                        position = "188 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3507,7 +3512,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 206";
+                        position = "282 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3668,7 +3673,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 309";
+                        position = "376 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3829,7 +3834,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 309";
+                        position = "470 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -3990,7 +3995,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 309";
+                        position = "564 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4151,7 +4156,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 309";
+                        position = "658 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4312,7 +4317,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 309";
+                        position = "752 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4473,7 +4478,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 412";
+                        position = "846 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4634,7 +4639,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 412";
+                        position = "940 103";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4795,7 +4800,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 412";
+                        position = "0 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -4956,7 +4961,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 412";
+                        position = "94 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5117,7 +5122,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 412";
+                        position = "188 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5278,7 +5283,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 515";
+                        position = "282 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5439,7 +5444,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 515";
+                        position = "376 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5600,7 +5605,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 515";
+                        position = "470 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5761,7 +5766,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 515";
+                        position = "564 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -5922,7 +5927,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 515";
+                        position = "658 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6083,7 +6088,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 618";
+                        position = "752 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6244,7 +6249,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 618";
+                        position = "846 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6405,7 +6410,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 618";
+                        position = "940 206";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6566,7 +6571,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 618";
+                        position = "0 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6727,7 +6732,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 618";
+                        position = "94 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -6888,7 +6893,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 721";
+                        position = "188 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7049,7 +7054,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 721";
+                        position = "282 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7210,7 +7215,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 721";
+                        position = "376 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7371,7 +7376,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 721";
+                        position = "470 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7532,7 +7537,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 721";
+                        position = "564 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7693,7 +7698,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 824";
+                        position = "658 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -7854,7 +7859,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 824";
+                        position = "752 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8015,7 +8020,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 824";
+                        position = "846 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8176,7 +8181,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 824";
+                        position = "940 309";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8337,7 +8342,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 824";
+                        position = "0 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8498,7 +8503,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 927";
+                        position = "94 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8659,7 +8664,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 927";
+                        position = "188 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8820,7 +8825,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 927";
+                        position = "282 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -8981,7 +8986,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 927";
+                        position = "376 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9142,7 +9147,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 927";
+                        position = "470 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9303,7 +9308,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1030";
+                        position = "564 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9464,7 +9469,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1030";
+                        position = "658 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9625,7 +9630,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1030";
+                        position = "752 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9786,7 +9791,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1030";
+                        position = "846 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -9947,7 +9952,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1030";
+                        position = "940 412";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10108,7 +10113,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1133";
+                        position = "0 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10269,7 +10274,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1133";
+                        position = "94 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10430,7 +10435,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1133";
+                        position = "188 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10591,7 +10596,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1133";
+                        position = "282 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10752,7 +10757,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1133";
+                        position = "376 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -10913,7 +10918,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1236";
+                        position = "470 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11074,7 +11079,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1236";
+                        position = "564 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11235,7 +11240,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1236";
+                        position = "658 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11396,7 +11401,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1236";
+                        position = "752 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11557,7 +11562,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1236";
+                        position = "846 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11718,7 +11723,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1339";
+                        position = "940 515";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -11879,7 +11884,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1339";
+                        position = "0 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12040,7 +12045,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1339";
+                        position = "94 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12201,7 +12206,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1339";
+                        position = "188 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12362,7 +12367,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1339";
+                        position = "282 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12523,7 +12528,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1442";
+                        position = "376 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12684,7 +12689,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1442";
+                        position = "470 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -12845,7 +12850,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1442";
+                        position = "564 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13006,7 +13011,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1442";
+                        position = "658 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13167,7 +13172,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1442";
+                        position = "752 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13328,7 +13333,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1545";
+                        position = "846 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13489,7 +13494,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1545";
+                        position = "940 618";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13650,7 +13655,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1545";
+                        position = "0 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13811,7 +13816,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1545";
+                        position = "94 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -13972,7 +13977,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1545";
+                        position = "188 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14133,7 +14138,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1648";
+                        position = "282 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14294,7 +14299,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1648";
+                        position = "376 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14455,7 +14460,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1648";
+                        position = "470 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14616,7 +14621,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1648";
+                        position = "564 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14777,7 +14782,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1648";
+                        position = "658 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -14938,7 +14943,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1751";
+                        position = "752 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15099,7 +15104,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1751";
+                        position = "846 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15260,7 +15265,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1751";
+                        position = "940 721";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15421,7 +15426,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1751";
+                        position = "0 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15582,7 +15587,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1751";
+                        position = "94 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15743,7 +15748,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1854";
+                        position = "188 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -15904,7 +15909,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1854";
+                        position = "282 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16065,7 +16070,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1854";
+                        position = "376 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16226,7 +16231,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1854";
+                        position = "470 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16387,7 +16392,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1854";
+                        position = "564 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16548,7 +16553,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 1957";
+                        position = "658 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16709,7 +16714,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "94 1957";
+                        position = "752 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -16870,7 +16875,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "188 1957";
+                        position = "846 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -17031,7 +17036,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "282 1957";
+                        position = "940 824";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -17192,7 +17197,7 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "376 1957";
+                        position = "0 927";
                         extent = "92 101";
                         minExtent = "8 2";
                         horizSizing = "width";
@@ -17349,7 +17354,7 @@
                   };
                };
             };
-            new GuiContainer(MatSelector_MaterialPreviewSample) {
+            new GuiContainer(MatSelector_MaterialPreviewSample1) {
                margin = "0 0 0 0";
                padding = "0 0 0 0";
                anchorTop = "1";
@@ -17357,7 +17362,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 24";
-               extent = "66 218";
+               extent = "665 440";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -17380,7 +17385,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 4";
-                  extent = "58 194";
+                  extent = "657 416";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -17403,7 +17408,7 @@
                      buttonType = "PushButton";
                      useMouseEvents = "0";
                      position = "0 0";
-                     extent = "58 194";
+                     extent = "657 416";
                      minExtent = "8 2";
                      horizSizing = "relative";
                      vertSizing = "relative";
@@ -17427,7 +17432,7 @@
                         buttonType = "ToggleButton";
                         useMouseEvents = "0";
                         position = "0 0";
-                        extent = "58 194";
+                        extent = "657 416";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "height";
@@ -17450,8 +17455,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 202";
-                  extent = "66 16";
+                  position = "0 424";
+                  extent = "665 16";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -17474,7 +17479,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "66 16";
+                     extent = "665 16";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "top";
@@ -17494,7 +17499,7 @@
                   buttonType = "ToggleButton";
                   useMouseEvents = "0";
                   position = "0 0";
-                  extent = "170 423";
+                  extent = "1713 854";
                   minExtent = "8 2";
                   horizSizing = "relative";
                   vertSizing = "relative";
@@ -17513,7 +17518,7 @@
             };
             new GuiControl() {
                position = "0 24";
-               extent = "179 301";
+               extent = "778 523";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -17535,8 +17540,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "4 599";
-               extent = "497 20";
+               position = "4 821";
+               extent = "1096 20";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -17613,7 +17618,7 @@
                   dynamicPos = "1";
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
-                  position = "366 1";
+                  position = "965 1";
                   extent = "124 20";
                   minExtent = "16 16";
                   horizSizing = "left";
@@ -17628,7 +17633,7 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  new GuiButtonCtrl(MatSelector_PageButtonSample) {
+                  new GuiButtonCtrl(MatSelector_PageButtonSample1) {
                      text = "2";
                      groupNum = "-1";
                      buttonType = "PushButton";
@@ -17649,7 +17654,7 @@
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
-                  new GuiTextCtrl(MatSelector_PageTextSample) {
+                  new GuiTextCtrl(MatSelector_PageTextSample1) {
                      text = "1";
                      maxLength = "1024";
                      margin = "0 0 0 0";
@@ -17838,8 +17843,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "673 24";
-         extent = "160 646";
+         position = "1272 24";
+         extent = "160 868";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -17921,7 +17926,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
 
-               new GuiTextEditCtrl(MatEdDlg_CloneMatName1) {
+               new GuiTextEditCtrl(MatEdDlg_CloneMatName11) {
                   historySize = "0";
                   tabComplete = "0";
                   sinkAllKeyEvents = "0";
@@ -18048,7 +18053,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 185";
-            extent = "160 434";
+            extent = "160 656";
             minExtent = "8 2";
             horizSizing = "left";
             vertSizing = "height";
@@ -18101,7 +18106,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 24";
-               extent = "160 410";
+               extent = "160 632";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -18151,7 +18156,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 619";
+            position = "0 841";
             extent = "160 27";
             minExtent = "8 2";
             horizSizing = "left";
@@ -18209,130 +18214,7 @@
          };
       };
    };
-   new GuiWindowCtrl(MaterialSelector_addFilterWindow) {
-      text = "Create New Tag";
-      resizeWidth = "1";
-      resizeHeight = "1";
-      canMove = "1";
-      canClose = "0";
-      canMinimize = "0";
-      canMaximize = "0";
-      canCollapse = "0";
-      edgeSnap = "1";
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "584 400";
-      extent = "272 99";
-      minExtent = "48 92";
-      horizSizing = "center";
-      vertSizing = "center";
-      profile = "ToolsWindowProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "ToolsToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
-
-      new GuiTextEditCtrl() {
-         historySize = "0";
-         tabComplete = "0";
-         sinkAllKeyEvents = "0";
-         password = "0";
-         passwordMask = "*";
-         maxLength = "1024";
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
-         position = "64 35";
-         extent = "196 19";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsTextEdit";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         internalName = "tagName";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiTextCtrl() {
-         text = "Tag Name";
-         maxLength = "1024";
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
-         position = "12 35";
-         extent = "52 16";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsTextBase";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiButtonCtrl() {
-         text = "Create";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "64 68";
-         extent = "126 22";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "MaterialSelector.createFilter( MaterialSelector_addFilterWindow-->tagName.getText() );MaterialSelector_addFilterWindow.setVisible(0);";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiButtonCtrl() {
-         text = "Cancel";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "196 68";
-         extent = "64 22";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "MaterialSelector_addFilterWindow.setVisible(0);";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-   };
-   new GuiWindowCtrl(MatEdDlg_Creator) {
+   new GuiWindowCtrl(MatEdDlg_Creator1) {
       text = "Create/Clone Material";
       resizeWidth = "1";
       resizeHeight = "1";
@@ -18355,11 +18237,12 @@
       horizSizing = "center";
       vertSizing = "center";
       profile = "ToolsWindowProfile";
-      visible = "1";
+      visible = "0";
       active = "1";
       tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
 
@@ -18409,7 +18292,7 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
-         new GuiPopUpMenuCtrl(MatEdDlg_CloneMatList) {
+         new GuiPopUpMenuCtrl(MatEdDlg_CloneMatList1) {
             maxPopupHeight = "200";
             sbUsesNAColor = "0";
             reverseTextList = "0";
@@ -18484,7 +18367,7 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
-         new GuiTextEditCtrl(MatEdDlg_CloneMatName) {
+         new GuiTextEditCtrl(MatEdDlg_CloneMatName2) {
             historySize = "0";
             tabComplete = "0";
             sinkAllKeyEvents = "0";
@@ -18563,7 +18446,7 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
-         new GuiTextEditCtrl(MatEdDlg_CloneMatFile) {
+         new GuiTextEditCtrl(MatEdDlg_CloneMatFile1) {
             historySize = "0";
             tabComplete = "0";
             sinkAllKeyEvents = "0";
@@ -18667,7 +18550,7 @@
                groupNum = "-1";
                buttonType = "PushButton";
                useMouseEvents = "0";
-               position = "73 0";
+               position = "72 0";
                extent = "126 25";
                minExtent = "8 2";
                horizSizing = "right";
