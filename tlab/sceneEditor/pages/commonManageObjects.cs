@@ -7,13 +7,16 @@
 $SEP_AutoGroupActiveSystem = true;
 //==============================================================================
 function SceneCreatorWindow::setActiveSimGroup( %this, %group ) {
+	devLog("setActiveSimGroup",%group);
 	if (!isObject(%group))
 		return;
 
 	if (!%group.isMemberOfClass("SimGroup"))
 		return;
 
-	%this.activeSimGroup = %group;	
+	%this.activeSimGroup = %group;
+	devLog("setActiveSimGroup END",%group,%this.activeSimGroup);
+	SceneEd.ActiveGroup = %group;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -26,11 +26,11 @@ new GuiStackControl(PhysicsToolsToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31865";
-      disabledGroup = "31866";
-      EditorContainer = "19841";
+      defaultStack = "31914";
+      disabledGroup = "31915";
+      EditorContainer = "19862";
       editorParent = "EditorGuiToolbarStack";
-      stackLists = "31867";
+      stackLists = "31916";
 
    new GuiContainer() {
       margin = "0 0 0 0";

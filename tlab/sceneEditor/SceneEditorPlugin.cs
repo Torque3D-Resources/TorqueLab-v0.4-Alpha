@@ -28,6 +28,13 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("NavMeshGroup",       "NavMesh" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("NavPathGroup",       "NavPath" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("CoverPointGroup",       "CoverPoint" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	
+	%array.group[%groupId++] = "Scene tree list options";
+	%array.setVal("renameInternal",       "0" TAB "Rename internal name" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
+	%array.setVal("showObjectNames",       "0" TAB "Show object name" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
+	%array.setVal("showInternalNames",       "0" TAB "Show object internalName" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
+	%array.setVal("showObjectIds",       "0" TAB "Show object IDs" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
+	%array.setVal("showClassNames",       "0" TAB "Show object Class" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
 	SceneEditorCfg.NavAIGroup = "mgNavAI";
 	SceneEditorCfg.NavMeshGroup = "mgNavMesh";
 	SceneEditorCfg.NavPathGroup = "mgNavPath";
@@ -73,7 +80,7 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	
 	SceneEditorTools.getToolClones();
 	
-		
+	SEP_ScenePage.init();	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

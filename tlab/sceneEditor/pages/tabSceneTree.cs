@@ -6,7 +6,20 @@
 
 /// @name EditorPlugin Methods
 /// @{
-
+function SceneEditorTree::handleRenameObject( %this, %name, %obj ) {
+	if (!isObject(%obj))
+		return;
+	
+	%field = ( %this.renameInternal ) ? "internalName" : "name";
+	%isDirty = LabObj.set(%obj,%field,%name);
+	info("Group:",%obj,"Is Dirty",%isDirty);
+	
+}
+function SceneEditorTree::rebuild( %this ) {
+	%this.clear();
+	%this.open(MissionGroup);
+	%this.buildVisibleTree();	
+}
 
 //-----------------------------------------------------------------------------
 
@@ -180,21 +193,31 @@ function SceneEditorTree::onRightMouseUp( %this, %itemId, %mouse, %obj ) {
 			%popup = new PopupMenu( ETSimGroupContextPopup ) {
 			superClass = "MenuBuilder";
 			isPopup = "1";
-			item[ 0 ] = "Rename" TAB "" TAB "SceneEditorTree.showItemRenameCtrl( SceneEditorTree.findItemByObjectId( %this.object ) );";
-			item[ 1 ] = "Delete" TAB "" TAB "EWorldEditor.deleteMissionObject( %this.object );";
-			item[ 2 ] = "Inspect" TAB "" TAB "inspectObject( %this.object );";
-			item[ 3 ] = "-";
-			item[ 4 ] = "Toggle Lock Children" TAB "" TAB "EWorldEditor.toggleLockChildren( %this.object );";
-			item[ 5 ] = "Toggle Hide Children" TAB "" TAB "EWorldEditor.toggleHideChildren( %this.object );";
-			item[ 6 ] = "-";
-			item[ 7 ] = "Group" TAB "" TAB "EWorldEditor.addSimGroup( true );";
-			item[ 8 ] = "-";
-			item[ 9 ] = "Add New Objects Here" TAB "" TAB "SceneCreatorWindow.setNewObjectGroup( %this.object );";
-			item[ 10 ] = "Add Children to Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %this.object, false );";
-			item[ 11 ] = "Remove Children from Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %this.object, true );";
+			
+			item[ %id = 0 ] = "Rename" TAB "" TAB "SceneEditorTree.showItemRenameCtrl( SceneEditorTree.findItemByObjectId( %this.object ) );";
+			item[%id++] = "Delete" TAB "" TAB "EWorldEditor.deleteMissionObject( %this.object );";
+			item[ %id++ ] = "Inspect" TAB "" TAB "inspectObject( %this.object );";
+			item[ %id++ ] = "-";
+			item[ %id++ ] = "Toggle Lock Children" TAB "" TAB "EWorldEditor.toggleLockChildren( %this.object );";
+			item[ %id++ ] = "Toggle Hide Children" TAB "" TAB "EWorldEditor.toggleHideChildren( %this.object );";
+			item[ %id++ ] = "-";
+			item[ %id++ ] = "Group" TAB "" TAB "EWorldEditor.addSimGroup( true );";
+			item[ %id++ ] = "-";
+			item[ %id++ ] = "Add New Objects Here" TAB "" TAB "SceneCreatorWindow.setNewObjectGroup( %this.object );";
+			item[ %id++ ] = "Add Children to Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %this.object, false );";			
+			item[ %id++ ] = "Remove Children from Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %this.object, true );";		
+			
+			item[ %id++ ] = "-";
+			item[ %id++ ] = "Lock auto-arrange" TAB "" TAB "SceneEd.toggleAutoArrangeGroupLock( %this.object);";
+			autoLockId = %id;
 			object = -1;
+			
 		};
-
+	
+		if (%obj.autoArrangeLocked)
+			%popup.setItem(%popup.autoLockId,"Unlock auto-arrange","","SceneEd.toggleAutoArrangeGroupLock( %this.object);");
+		else
+			%popup.setItem(%popup.autoLockId,"Lock auto-arrange","","SceneEd.toggleAutoArrangeGroupLock( %this.object);");
 		%popup.object = %obj;
 
 		%hasChildren = %obj.getCount() > 0;

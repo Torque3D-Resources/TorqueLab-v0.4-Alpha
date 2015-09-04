@@ -47,7 +47,7 @@ function NavEditorPlugin::onWorldEditorStartup( %this ) {
    %map.bindCmd(keyboard, "5", "ENavEditorTestModeBtn.performClick();", "");
    %map.bindCmd(keyboard, "c", "NavEditorConsoleBtn.performClick();", "");
    NavEditorPlugin.map = %map;
-
+NavEditorConsoleDlg.init();
 	 // Add items to World Editor Creator
    SceneCreatorWindow.beginGroup("Navigation");
 

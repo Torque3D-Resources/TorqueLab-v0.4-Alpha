@@ -102,7 +102,7 @@ function ECloneTool::resetCurrentOffset( %this,%axis ) {
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneEdit::onValidate( %this ) {
-	devLog("ECloneEdit::onValidate");
+
 	%value = %this.getText();
 	%field = %this.internalName;
 
@@ -122,7 +122,7 @@ function ECloneEdit::onValidate( %this ) {
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneTool::validateCopieCount( %this,%value ) {
-	devLog("ECloneEdit::validateCopieCount");
+	
 
 	if (!strIsNumeric(%value)) {
 		warnLog("Clone copie count must be a numeric value!");

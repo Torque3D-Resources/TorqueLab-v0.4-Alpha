@@ -3,6 +3,16 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+function NavEditorConsoleDlg::onWake(%this)
+{
+	%this.forceInsideCtrl(NavEditorGui);
+}
+function NavEditorConsoleDlg::init(%this)
+{
+	%this.AlignCtrlToParent("top");
+	%this.AlignCtrlToParent("right");
+	
+}
 //==============================================================================
 // Plugin Object Params - Used set default settings and build plugins options GUI
 //==============================================================================

@@ -22,6 +22,7 @@ function initializeSceneEditor() {
 
 	Lab.addPluginDlg("SceneEditor",SceneEditorDialogs);
 	SceneEditorPlugin.superClass = "WEditorPlugin";
+	$SceneEd = newScriptObject("SceneEd");
 	$SEPtools = newScriptObject("SEPtools");
 	$SceneObjectGroupSet = newSimSet(SceneObjectGroupSet);
 	$SceneCreator = newScriptObject("SceneCreator");

@@ -22,8 +22,10 @@ function LabObj::update(%this,%obj,%field,%value,%fieldId) {
 	logd("LabObj::update(%this,%obj,%field,%value,%fieldId)",%obj.getName(),%field,%value,%fieldId);
 	%initialValue = %obj.getFieldValue(%field);
 	LabInspect.inspect(%obj);
-
-	if (%fieldId !$= "")
+	
+	if (%field $= "name")
+		LabInspect.setObjectField(%field,%value);
+	else if (%fieldId !$= "")
 		%obj.setFieldValue(%field,%value,%fieldId);
 	else
 		%obj.setFieldValue(%field,%value);

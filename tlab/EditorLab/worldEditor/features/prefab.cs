@@ -22,7 +22,12 @@ function Lab::CreatePrefab(%this) {
 	if (%saveFile $= "")
 		return;
 
-	EWorldEditor.makeSelectionPrefab( %saveFile );
+	EWorldEditor.makeSelectionPrefab( %saveFile );	
+	
+	//Add new prefab to active group if exist (Must get previous id)
+	if (isObject(SceneEd.ActiveGroup))
+		SceneEd.ActiveGroup.add($ThisPrefab.getId()-1);
+	
 	SceneEditorTree.buildVisibleTree( true );
 }
 //------------------------------------------------------------------------------
@@ -42,7 +47,7 @@ function Lab::GetAutoPrefabFile() {
 		if (%firstObj.getName() !$="")
 			%name = %firstObj.getName();
 		else if (%firstObj.internalName !$="")
-			%name = %firstObj.internalName;
+			%name = %firstObj.internalName;		
 		else
 			%name = %firstObj;
 	}

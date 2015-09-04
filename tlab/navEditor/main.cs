@@ -40,6 +40,7 @@ function execNavEd(%loadGui) {
 
 	exec("./NavEditorPlugin.cs");
 	execPattern("tlab/navEditor/scripts/*.cs");
+	execPattern("tlab/navEditor/editor/*.cs");
 }
 //==============================================================================
 function destroyMaterialLab() {

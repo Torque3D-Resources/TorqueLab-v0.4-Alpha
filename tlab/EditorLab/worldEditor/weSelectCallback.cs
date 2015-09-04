@@ -6,6 +6,8 @@
 //==============================================================================
 function WorldEditor::onDragCopy( %this, %obj ) {
 	logd("onDragCopy",%this.getSelectionSize());
+	if (!isObject(%obj))
+		return;
 	%obj.startDrag = %obj.getPosition();
 	%this.lastCentroidPos = %this.getSelectionCentroid();
 	$DragCopyStarted = true;

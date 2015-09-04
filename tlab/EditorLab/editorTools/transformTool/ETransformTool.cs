@@ -63,7 +63,7 @@ function ETransformTool::updateTextEditField( %this,%ctrl ) {
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformEdit::onValidate( %this ) {
-	devLog("ECloneEdit::onValidate");
+
 	ETransformTool.updateTextEditField(%this);
 	
 }
@@ -72,7 +72,7 @@ function ETransformEdit::onValidate( %this ) {
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformCheck::onClick( %this ) {
-	devLog("ETransformCheck::onClick");
+	
 	%value = %this.isStateOn();
 	%field = %this.internalName;
 	devLog(%field," checkbox cliked and set to:",%value);

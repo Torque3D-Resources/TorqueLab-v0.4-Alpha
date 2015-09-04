@@ -15,23 +15,24 @@ new GuiStackControl(NavEditorToolbar) {
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31517";
-      disabledGroup = "31518";
-      EditorContainer = "19841";
+      defaultStack = "31566";
+      disabledGroup = "31567";
+      EditorContainer = "19862";
       editorParent = "EditorGuiToolbarStack";
       plugin = "NavEditor";
       preventReordering = "0";
-      stackLists = "31519";
+      stackLists = "31568";
 
    new GuiContainer() {
       margin = "0 0 0 0";
