@@ -18,6 +18,7 @@ function NavEditorGui::updateTestFlags(%this)
    {
       %properties = NavEditorOptionsWindow-->TestProperties;
       %player = %this.getPlayer();
+      $NavBot = %player;
 
       %player.allowWwalk = %properties->LinkWalkFlag.isStateOn();
       %player.allowJump = %properties->LinkJumpFlag.isStateOn();

@@ -38,6 +38,16 @@ function Lab::exportCfgPrefs(%this) {
 // Set params settings group to their default value
 //==============================================================================
 //==============================================================================
+function Lab::syncAllParams(%this) {
+	foreach(%array in LabParamsGroup)
+		%this.setParamArrayDefaults(%array);
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+// Set params settings group to their default value
+//==============================================================================
+//==============================================================================
 function Lab::setAllParamArrayDefaults(%this) {
 	foreach(%array in LabParamsGroup)
 		%this.setParamArrayDefaults(%array);

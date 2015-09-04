@@ -35,10 +35,7 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("showInternalNames",       "0" TAB "Show object internalName" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
 	%array.setVal("showObjectIds",       "0" TAB "Show object IDs" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
 	%array.setVal("showClassNames",       "0" TAB "Show object Class" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
-	SceneEditorCfg.NavAIGroup = "mgNavAI";
-	SceneEditorCfg.NavMeshGroup = "mgNavMesh";
-	SceneEditorCfg.NavPathGroup = "mgNavPath";
-	SceneEditorCfg.CoverPointGroup = "mgCoverPoint";
+	
 }
 //------------------------------------------------------------------------------
 
@@ -128,6 +125,12 @@ function SceneEditorPlugin::onExitMission( %this ) {
 //==============================================================================
 // Called when TorqueLab is closed
 function SceneEditorPlugin::onEditorSleep( %this ) {
+	devLog("SceneOnSleep");		
+	%this.setCfg("renameInternal",SceneEditorTree.renameInternal);
+	%this.setCfg("showObjectNames",SceneEditorTree.showObjectNames);
+	%this.setCfg("showInternalNames",SceneEditorTree.showInternalNames);
+	%this.setCfg("showObjectIds",  SceneEditorTree.showObjectIds);
+	%this.setCfg("showClassNames",SceneEditorTree.showClassNames);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
