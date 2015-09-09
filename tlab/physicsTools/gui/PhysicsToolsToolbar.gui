@@ -9,7 +9,7 @@ new GuiStackControl(PhysicsToolsToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "1040 0";
    extent = "198 32";
    minExtent = "16 16";
    horizSizing = "width";
@@ -26,11 +26,11 @@ new GuiStackControl(PhysicsToolsToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31917";
-      disabledGroup = "31918";
-      EditorContainer = "19865";
+      defaultStack = "32087";
+      disabledGroup = "32088";
+      EditorContainer = "20053";
       editorParent = "EditorGuiToolbarStack";
-      stackLists = "31919";
+      stackLists = "32089";
 
    new GuiContainer() {
       margin = "0 0 0 0";

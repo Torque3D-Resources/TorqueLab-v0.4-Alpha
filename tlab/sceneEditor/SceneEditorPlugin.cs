@@ -77,6 +77,7 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	
 	SceneEditorTools.getToolClones();
 	
+	hide(SEP_ScenePageSettings);
 	SEP_ScenePage.init();	
 }
 //------------------------------------------------------------------------------

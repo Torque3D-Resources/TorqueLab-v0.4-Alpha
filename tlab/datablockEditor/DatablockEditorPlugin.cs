@@ -60,6 +60,8 @@ function DatablockEditorPlugin::onActivated( %this ) {
 
 	DbEd.initGui();
 	Parent::onActivated( %this );
+	
+	DbEd_SelectionTabBook.selectPage(0);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

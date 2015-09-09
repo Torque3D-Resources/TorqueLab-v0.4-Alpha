@@ -80,7 +80,7 @@ function MaterialLabPlugin::onWorldEditorStartup( %this ) {
 	new PersistenceManager(matLab_PM);
 	MatLab.establishMaterials();
 	MatLab.rows = "0 230";
-	MatLab.updateSizes();
+	//MatLab.updateSizes();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

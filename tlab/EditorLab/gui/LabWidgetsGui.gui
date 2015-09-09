@@ -68,7 +68,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "0";
          frontTabPadding = "0";
          docking = "Client";
          margin = "22 0 0 0";
@@ -77,8 +77,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "0 22";
-         extent = "1400 822";
+         position = "8 30";
+         extent = "1424 862";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -102,18 +102,17 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 16";
-            extent = "1400 801";
+            position = "0 20";
+            extent = "1424 842";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkA";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -124,7 +123,7 @@
                tabHeight = "20";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "3";
+               selectedPage = "0";
                frontTabPadding = "0";
                docking = "Client";
                margin = "0 0 0 0";
@@ -134,7 +133,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 8";
-               extent = "1392 789";
+               extent = "1416 830";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -158,18 +157,17 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1416 810";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -182,7 +180,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "1392 768";
+                     extent = "1416 810";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -196,7 +194,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiFrameSetCtrl() {
-                        columns = "0 465 930";
+                        columns = "0 473 946";
                         rows = "0";
                         borderWidth = "4";
                         borderColor = "228 29 0 0";
@@ -212,7 +210,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "1392 768";
+                        extent = "1416 810";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -234,7 +232,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "461 768";
+                           extent = "469 810";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -1300,8 +1298,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "465 0";
-                           extent = "461 768";
+                           position = "473 0";
+                           extent = "469 810";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2459,6 +2457,152 @@
                               };
                            };
                         };
+                        new GuiContainer() {
+                           margin = "0 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "946 0";
+                           extent = "470 810";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsBoxDarkA";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "1";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+
+                           new GuiStackControl() {
+                              stackingType = "Vertical";
+                              horizStacking = "Left to Right";
+                              vertStacking = "Top to Bottom";
+                              padding = "4";
+                              dynamicSize = "1";
+                              dynamicNonStackExtent = "0";
+                              dynamicPos = "0";
+                              changeChildSizeToFit = "1";
+                              changeChildPosition = "1";
+                              position = "0 0";
+                              extent = "331 77";
+                              minExtent = "16 16";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsDefaultProfile";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "ToolsToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "1";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+
+                              new GuiContainer() {
+                                 margin = "0 0 0 0";
+                                 padding = "0 0 0 0";
+                                 anchorTop = "1";
+                                 anchorBottom = "0";
+                                 anchorLeft = "1";
+                                 anchorRight = "0";
+                                 position = "0 0";
+                                 extent = "331 77";
+                                 minExtent = "8 2";
+                                 horizSizing = "right";
+                                 vertSizing = "bottom";
+                                 profile = "ToolsBoxDarkC";
+                                 visible = "1";
+                                 active = "1";
+                                 tooltipProfile = "ToolsToolTipProfile";
+                                 hovertime = "1000";
+                                 isContainer = "1";
+                                 internalName = "ListBox";
+                                 class = "AggregateBox";
+                                 canSave = "1";
+                                 canSaveDynamicFields = "0";
+
+                                 new GuiScrollCtrl() {
+                                    willFirstRespond = "1";
+                                    hScrollBar = "dynamic";
+                                    vScrollBar = "dynamic";
+                                    lockHorizScroll = "0";
+                                    lockVertScroll = "0";
+                                    constantThumbHeight = "0";
+                                    childMargin = "0 0";
+                                    mouseWheelScrollSpeed = "-1";
+                                    docking = "Client";
+                                    margin = "0 0 134 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "134 0";
+                                    extent = "197 77";
+                                    minExtent = "8 2";
+                                    horizSizing = "right";
+                                    vertSizing = "bottom";
+                                    profile = "GuiScrollProfile";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "GuiToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "1";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+
+                                    new GuiListBoxCtrl() {
+                                       allowMultipleSelections = "1";
+                                       fitParentWidth = "1";
+                                       colorBullet = "1";
+                                       position = "3 3";
+                                       extent = "191 2";
+                                       minExtent = "8 2";
+                                       horizSizing = "right";
+                                       vertSizing = "bottom";
+                                       profile = "GuiDefaultProfile";
+                                       visible = "1";
+                                       active = "1";
+                                       tooltipProfile = "GuiToolTipProfile";
+                                       hovertime = "1000";
+                                       isContainer = "0";
+                                       internalName = "list";
+                                       canSave = "1";
+                                       canSaveDynamicFields = "0";
+                                    };
+                                 };
+                                 new GuiTextCtrl() {
+                                    text = "Fieldname";
+                                    maxLength = "1024";
+                                    docking = "None";
+                                    margin = "0 14 4 0";
+                                    padding = "0 0 0 0";
+                                    anchorTop = "1";
+                                    anchorBottom = "0";
+                                    anchorLeft = "1";
+                                    anchorRight = "0";
+                                    position = "4 0";
+                                    extent = "134 18";
+                                    minExtent = "8 2";
+                                    horizSizing = "width";
+                                    vertSizing = "bottom";
+                                    profile = "ToolsTextBaseA_S1";
+                                    visible = "1";
+                                    active = "1";
+                                    tooltipProfile = "ToolsToolTipProfile";
+                                    hovertime = "1000";
+                                    isContainer = "1";
+                                    internalName = "field";
+                                    canSave = "1";
+                                    canSaveDynamicFields = "0";
+                                 };
+                              };
+                           };
+                        };
                      };
                   };
                   new GuiRolloutCtrl() {
@@ -2495,8 +2639,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1392 769";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -4806,8 +4950,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1392 769";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -4839,7 +4983,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "1392 768";
+                     extent = "1392 769";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -7447,16 +7591,17 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 20";
-                  extent = "1392 769";
+                  extent = "1416 810";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "ToolsBoxDarkC";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -7478,7 +7623,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "677 769";
+                     extent = "701 810";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -8157,7 +8302,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiColorPickerCtrl() {
-                              baseColor = "1 0 1 1";
+                              baseColor = "Fuchsia";
                               pickColor = "0 0 0 1";
                               selectorGap = "1";
                               displayMode = "Pallete";
@@ -9330,8 +9475,8 @@
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
-                     position = "677 0";
-                     extent = "715 769";
+                     position = "701 0";
+                     extent = "715 810";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -12821,8 +12966,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 16";
-            extent = "1400 801";
+            position = "0 20";
+            extent = "1424 842";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -12876,7 +13021,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 8";
-               extent = "1392 789";
+               extent = "1416 830";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -12900,8 +13045,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1392 769";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -14407,8 +14552,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1392 769";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -16291,8 +16436,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 16";
-                  extent = "1392 768";
+                  position = "0 20";
+                  extent = "1392 769";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -17989,7 +18134,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 20";
-                  extent = "1392 769";
+                  extent = "1416 810";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -18678,7 +18823,7 @@
                            };
                            new GuiColorPickerCtrl() {
                               baseColor = "1 0 1 1";
-                              pickColor = "0 0 0 1";
+                              pickColor = "Black";
                               selectorGap = "1";
                               displayMode = "Pallete";
                               actionOnMove = "1";
@@ -19825,16 +19970,17 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 20";
-            extent = "1400 802";
+            extent = "1424 842";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsBoxDarkC";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 

@@ -100,7 +100,8 @@ function NavEditorPlugin::onActivated( %this ) {
    NavEditorGui.onEditorActivated(); 
 	Parent::onActivated(%this);
 	
-	
+	show(NavEditorConsoleDlg-->StatusLeft);
+	show(NavEditorConsoleDlg-->OutputScroll);
 }
 //------------------------------------------------------------------------------
 

@@ -21,6 +21,23 @@
 //-----------------------------------------------------------------------------
 
 $Nav::EditorOpen = false;
+function NavEd_ActionBook::onTabSelected(%this,%text,%index)
+{
+   switch$(%text){
+   	case "Edit":
+   		NavEditorGui.prepSelectionMode();
+   	case "Link":
+   		NavEditorGui.setMode("LinkMode");
+   	case "Cover":
+   		NavEditorGui.setMode("CoverMode");
+   	case "Tile":
+   		NavEditorGui.setMode("TileMode");
+   	case "Test":
+   		NavEditorGui.setMode("TestMode");
+   	
+   }
+}
+
 
 function NavEditorGui::onEditorActivated(%this)
 {
@@ -56,18 +73,23 @@ function NavEditorGui::onModeSet(%this, %mode)
    switch$(%mode)
    {
    case "SelectMode":
+   	NavEd_ActionBook.selectPage(0);
       NavInspector.setVisible(true);
       %actions->SelectActions.setVisible(true);
    case "LinkMode":
+   NavEd_ActionBook.selectPage(1);
       %actions->LinkActions.setVisible(true);
       NavEd_PropertiesBox->LinkProperties.setVisible(true);
    case "CoverMode":
       // 
+      NavEd_ActionBook.selectPage(2);
       %actions->CoverActions.setVisible(true);
    case "TileMode":
+   NavEd_ActionBook.selectPage(3);
       %actions->TileActions.setVisible(true);
       NavEd_PropertiesBox->TileProperties.setVisible(true);
    case "TestMode":
+   NavEd_ActionBook.selectPage(4);
       %actions->TestActions.setVisible(true);
       NavEd_PropertiesBox->TestProperties.setVisible(true);
    }

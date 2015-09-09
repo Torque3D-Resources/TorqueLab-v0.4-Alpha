@@ -315,7 +315,7 @@ new GuiWindowCtrl() {
 								internalName = "diffuseMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -465,7 +465,7 @@ new GuiWindowCtrl() {
 								internalName = "normalMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -667,7 +667,7 @@ new GuiWindowCtrl() {
 								internalName = "specMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -784,7 +784,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "right";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -832,7 +832,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "width";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -1036,7 +1036,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "right";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -1084,7 +1084,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "width";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -1288,7 +1288,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "right";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -1336,7 +1336,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "width";
 								vertSizing = "bottom";
-								profile = "GuiTextProfile";
+								profile = "GuiTextBase";
 								visible = "1";
 								active = "1";
 								tooltipProfile = "GuiToolTipProfile";
@@ -1578,7 +1578,7 @@ new GuiWindowCtrl() {
 								internalName = "albedoDamageMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -1697,7 +1697,7 @@ new GuiWindowCtrl() {
 								internalName = "normalDamageMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -1816,7 +1816,7 @@ new GuiWindowCtrl() {
 								internalName = "compositeDamageMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -2041,7 +2041,7 @@ new GuiWindowCtrl() {
 								internalName = "detailMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -2181,7 +2181,7 @@ new GuiWindowCtrl() {
 								internalName = "detailNormalMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -2306,7 +2306,7 @@ new GuiWindowCtrl() {
 								internalName = "overlayMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -2431,7 +2431,7 @@ new GuiWindowCtrl() {
 								internalName = "lightMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
@@ -2556,7 +2556,7 @@ new GuiWindowCtrl() {
 								internalName = "toneMapNameText";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiTextProfile";
+								Profile = "ToolsGuiTextBase";
 								HorizSizing = "width";
 								VertSizing = "bottom";
 								position = "56 16";
