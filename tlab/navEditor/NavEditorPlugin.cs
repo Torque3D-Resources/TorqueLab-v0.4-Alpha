@@ -62,8 +62,8 @@ function NavEditorPlugin::onActivated( %this ) {
 	 // Set a global variable so everyone knows we're editing!
    $Nav::EditorOpen = true;
 
-   // Start off in Select mode.
-   ToolsPaletteArray->NavEditorSelectMode.performClick();
+   // Start off in Select mode.   
+   NavEditorGui.prepSelectionMode();
    
    NavEditorGui.makeFirstResponder(true);
  

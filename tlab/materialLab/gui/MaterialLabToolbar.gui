@@ -26,13 +26,13 @@ new GuiStackControl(MaterialLabToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "35124";
-      disabledGroup = "35125";
-      EditorContainer = "20053";
+      defaultStack = "35252";
+      disabledGroup = "35253";
+      EditorContainer = "20069";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialLab";
       preventReordering = "0";
-      stackLists = "35126";
+      stackLists = "35254";
 
    new GuiContainer() {
       margin = "0 0 0 0";

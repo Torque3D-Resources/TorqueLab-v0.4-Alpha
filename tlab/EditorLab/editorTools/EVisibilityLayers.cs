@@ -131,6 +131,7 @@ function EVisibilityLayers::addOption( %this, %text, %varName, %toggleFunction )
 	%this.array.sortd();
 	//%this.updateOptions();
 }
+//EVisibilityLayers.addClassOptions
 function EVisibilityLayers::addClassOptions( %this ) {
 	%visList = %this-->theClassVisList;
 	%selList = %this-->theClassSelList;
@@ -156,6 +157,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 		%class = %this.classArray.getKey( %i );
 		%visVar = "$" @ %class @ "::isRenderable";
 		%selVar = "$" @ %class @ "::isSelectable";
+		
 		%textLength = strlen( %class );
 		%text = "  " @ %class;
 		// Add visibility toggle.
@@ -171,6 +173,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			canSave = "1";
 			Visible = "1";
 			Variable = %visVar;
+			command = "EVisibilityLayers.toggleRenderable(\""@%class@"\");";
 			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			tooltip = "Show/hide all " @ %class @ " objects.";
@@ -180,6 +183,8 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			useMouseEvents = "0";
 			useInactiveState = "0";
 		};
+		
+		//Variable = %visVar;
 		%visList.addGuiControl( %visCheckBox );
 		// Add selectability toggle.
 		%selCheckBox = new GuiCheckBoxCtrl() {
@@ -193,6 +198,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			MinExtent = "8 2";
 			canSave = "1";
 			Visible = "1";
+			command = "EVisibilityLayers.toggleSelectable(\""@%class@"\");";
 			Variable = %selVar;
 			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
@@ -203,9 +209,31 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			useMouseEvents = "0";
 			useInactiveState = "0";
 		};
+		//Variable = %selVar;
 		%selList.addGuiControl( %selCheckBox );
+		//eval("%visON = $" @ %class @ "::isRenderable;");
+		//eval("%selON = $" @ %class @ "::isSelectable;");
+		//%visCheckBox.setStateOn(%visON);
+		//%selCheckBox.setStateOn(%selON);
 	}
 
 	$VisibilityClassLoaded = true;
 }
 //==============================================================================
+
+function EVisibilityLayers::toggleRenderable( %this,%class ) {
+	
+	//eval("$" @ %class @ "::isRenderable = !$"@ %class @ "::isRenderable;");
+	%visVar = "$" @ %class @ "::isRenderable";
+	//%selVar = "$" @ %class @ "::isSelectable";
+	if (!%visVar)
+		eval("$" @ %class @ "::isSelectable = \"0\";");
+	else
+		eval("$" @ %class @ "::isSelectable = \"1\";");
+}
+function EVisibilityLayers::toggleSelectable( %this,%class ) {
+	//eval("$" @ %class @ "::isRenderable = !$"@ %class @ "::isRenderable;");
+	%selVar = "$" @ %class @ "::isSelectable";
+	if (%selVar)
+		eval("$" @ %class @ "::isRenderable = \"1\";");
+}		

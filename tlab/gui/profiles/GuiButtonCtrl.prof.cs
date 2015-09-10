@@ -43,6 +43,8 @@ singleton GuiControlProfile(ToolsButtonProfile_S1 : ToolsButtonProfile)
 {
    fontSize = "14";
    fontColors[9] = "Magenta";
+   justify = "Top";
+   textOffset = "0 -2";
 };
 
 //==============================================================================

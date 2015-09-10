@@ -4,6 +4,17 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
+
+function ShapeEd::addNewNode( %this, %name ) {
+	if (%name $= "")
+		%name = ShapeEd_AddNodeName.getText();
+		
+	if (%name $= "")	
+		%name = "NewNode";
+	ShapeEdNodes.onAddNode(%name);
+	
+}
+	
 //==============================================================================
 // ShapeEditor -> Node Editing 
 //==============================================================================
@@ -264,7 +275,7 @@ function ShapeEdShapeView::onNodeSelected( %this, %index ) {
 			ShapeEdNodeTreeView.selectItem( %id );
 	}
 }
-
+//ShapeEdNodes.onAddNode("Base");
 function ShapeEdNodes::onAddNode( %this, %name ) {
 	// Add a new node, using the currently selected node as the initial parent
 	if ( %name $= "" )

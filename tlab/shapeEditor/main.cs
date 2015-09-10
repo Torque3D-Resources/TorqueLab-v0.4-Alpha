@@ -18,6 +18,7 @@ function initializeShapeEditor() {
 	Lab.addPluginToolbar("ShapeEditor",ShapeEditorToolbar);
 	Lab.addPluginPalette("ShapeEditor",   ShapeEditorPalette);
 	Lab.addPluginDlg("ShapeEditor",   ShapeEditorDialogs);
+	newScriptObject("ShapeEd");
 	
 	ShapeEditorPlugin.editorGui = ShapeEdShapeView;
 	// Add windows to editor gui

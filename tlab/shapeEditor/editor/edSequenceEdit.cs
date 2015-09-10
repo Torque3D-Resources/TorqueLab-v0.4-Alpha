@@ -387,7 +387,7 @@ function ShapeEdSequences::onAddSequence( %this, %name ) {
 
 	if ( %from $= "" ) {
 		// No sequence selected => open dialog to browse for one
-		getLoadFilename( "DSQ Files|*.dsq|COLLADA Files|*.dae|Google Earth Files|*.kmz", %this @ ".onAddSequenceFromBrowse", ShapeEdFromMenu.lastPath );
+		getLoadFilename( "COLLADA Files|*.dae|DSQ Files|*.dsq|Google Earth Files|*.kmz", %this @ ".onAddSequenceFromBrowse", ShapeEdFromMenu.lastPath );
 		return;
 	} else {
 		// Add the new sequence
@@ -480,7 +480,7 @@ function ShapeEdSeqFromMenu::onSelect( %this, %id, %text ) {
 		%seqFrom = rtrim( getFields( ShapeEditor.getSequenceSource( %seqName ), 0, 1 ) );
 		%this.setText( %seqFrom );
 		// Allow the user to browse for an external source of animation data
-		getLoadFilename( "DSQ Files|*.dsq|COLLADA Files|*.dae|Google Earth Files|*.kmz", %this @ ".onBrowseSelect", %this.lastPath );
+		getLoadFilename( "COLLADA Files|*.dae|DSQ Files|*.dsq|Google Earth Files|*.kmz", %this @ ".onBrowseSelect", %this.lastPath );
 	} else {
 		ShapeEdSequences.onEditSequenceSource( %text );
 	}

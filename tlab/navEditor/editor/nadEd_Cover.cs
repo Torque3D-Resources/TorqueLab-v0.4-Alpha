@@ -21,7 +21,7 @@ function NavEditorGui::deleteCoverPoints(%this)
 {
    if(isObject(%this.getMesh()))
    {
-      %this.getMesh().deleteCoverPoints();
+      NavEditorGui.getMesh().deleteCoverPoints();
       %this.isDirty = true;
    }
 }

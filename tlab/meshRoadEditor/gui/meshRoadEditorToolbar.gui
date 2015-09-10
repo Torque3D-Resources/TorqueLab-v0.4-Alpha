@@ -26,11 +26,11 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31667";
-      disabledGroup = "31668";
-      EditorContainer = "20053";
+      defaultStack = "31682";
+      disabledGroup = "31683";
+      EditorContainer = "20069";
       plugin = "MeshRoadEditor";
-      stackLists = "31669 31678";
+      stackLists = "31684 31693";
 
    new GuiContainer() {
       margin = "0 0 0 0";

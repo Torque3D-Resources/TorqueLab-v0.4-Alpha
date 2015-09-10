@@ -33,7 +33,7 @@ function execGuiEdit(%execGui,%execMainGui) {
 		%execMainGui = true;		
 		exec( "./gui/guiEditorNewGuiDialog.ed.gui" );
 		exec( "./gui/guiEditorPrefsDlg.ed.gui" );
-		exec( "./gui/guiEditorSelectDlg.ed.gui" );
+		//exec( "./gui/guiEditorSelectDlg.ed.gui" );
 		exec( "./gui/EditorChooseGUI.ed.gui" );
 		exec( "./gui/LabWidgetBuilderDlg.gui" );
 		exec( "tlab/guiEditor/gui/GuiEditFieldDuplicator.gui" );

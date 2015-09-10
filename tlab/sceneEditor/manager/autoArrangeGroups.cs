@@ -67,7 +67,7 @@ function SEP_ScenePage::findMissionObjectsGroups( %this,%group,%depth ) {
 			if (%obj.autoArrangeLocked)
 				continue;
 			if (%depth < SEP_ScenePage.organizeGroupDepth)
-				%this.organizeGroup(%obj,%depth+1);				
+				%this.findMissionObjectsGroups(%obj,%depth+1);				
 			continue;
 		}
 		%class = %obj.getClassName();
