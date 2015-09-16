@@ -47,9 +47,16 @@ singleton GuiControlProfile(ToolsTextEdit_S1 : ToolsTextEdit)
 //ToolsTextEdit Blue border variation
 singleton GuiControlProfile( ToolsTextEdit_Num : ToolsTextEdit ) {  
     numbersOnly = true;
-   fillColorNA = "TransparentWhite";
+   fillColorNA = "224 3 197 255";
    fontColors[9] = "Fuchsia";
-   cursorColor = "Black";
+   cursorColor = "21 78 224 255";
+   opaque = "1";
+   fillColorHL = "71 255 0 204";
+   fillColorSEL = "32 12 101 255";
+   borderColor = "0 255 83 241";
+   borderColorHL = "255 78 0 255";
+   fontColors[1] = "197 143 3 255";
+   fontColorHL = "197 143 3 255";
 };
 //------------------------------------------------------------------------------
 

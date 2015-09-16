@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiStackControl(NavEditorToolbar) {
+new GuiStackControl(NavEditorToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -15,23 +15,24 @@
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31755";
-      disabledGroup = "31756";
-      EditorContainer = "20069";
+      defaultStack = "31859";
+      disabledGroup = "31860";
+      EditorContainer = "20106";
       editorParent = "EditorGuiToolbarStack";
       plugin = "NavEditor";
       preventReordering = "0";
-      stackLists = "31757";
+      stackLists = "31861";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -384,7 +385,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "314 0";
+         position = "352 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -429,7 +430,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "316 0";
+      position = "354 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";

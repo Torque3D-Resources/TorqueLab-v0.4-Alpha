@@ -29,12 +29,12 @@ function SceneCreatorWindow::getActiveSimGroup( %this) {
 	return %this.activeSimGroup;
 }
 //------------------------------------------------------------------------------
-
-
+//==============================================================================
 function SceneCreatorWindow::getNewObjectGroup( %this ) {
 	return %this.objectGroup;
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::setNewObjectGroup( %this, %group ) {
 	if( %this.objectGroup ) {
 		%oldItemId = SceneEditorTree.findItemByObjectId( %this.objectGroup );
@@ -50,6 +50,8 @@ function SceneCreatorWindow::setNewObjectGroup( %this, %group ) {
 	%itemId = SceneEditorTree.findItemByObjectId( %group );
 	SceneEditorTree.markItem( %itemId );
 }
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::onObjectCreated( %this, %objId ) {
 	// Can we submit an undo action?
 	if ( isObject( %objId ) )
@@ -62,7 +64,8 @@ function SceneCreatorWindow::onObjectCreated( %this, %objId ) {
 	// state for it... the creation deals with it.
 	EWorldEditor.dropSelection( true );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::onFinishCreateObject( %this, %objId ) {
 	%this.objectGroup.add( %objId );
 
@@ -74,6 +77,8 @@ function SceneCreatorWindow::onFinishCreateObject( %this, %objId ) {
 
 	%this.onObjectCreated( %objId );
 }
+//------------------------------------------------------------------------------
+//==============================================================================
 //SceneCreatorWindow.createSimGroup();
 function SceneCreatorWindow::createSimGroup( %this ) {
 	if ( !$missionRunning )
@@ -92,8 +97,8 @@ function SceneCreatorWindow::createSimGroup( %this ) {
 		parentGroup = %addToGroup;
 	};
 }
-
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::createStatic( %this, %file ) {
 	if ( !$missionRunning )
 		return;
@@ -112,7 +117,8 @@ function SceneCreatorWindow::createStatic( %this, %file ) {
 	};
 	%this.onObjectCreated( %objId );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::createPrefab( %this, %file ) {
 	if ( !$missionRunning )
 		return;
@@ -132,7 +138,8 @@ function SceneCreatorWindow::createPrefab( %this, %file ) {
 	};
 	%this.onObjectCreated( %objId );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::createObject( %this, %cmd ) {
 	if ( !$missionRunning )
 		return;
@@ -154,4 +161,4 @@ function SceneCreatorWindow::createObject( %this, %cmd ) {
 
 	return %objId;
 }
-
+//------------------------------------------------------------------------------

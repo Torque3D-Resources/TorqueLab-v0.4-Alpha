@@ -5,7 +5,8 @@
 // Allow to manage different GUI Styles without conflict
 //==============================================================================
 
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::findIconCtrl( %this, %name ) {
 	for ( %i = 0; %i < %this.contentCtrl.getCount(); %i++ ) {
 		%ctrl = %this.contentCtrl.getObject( %i );
@@ -16,7 +17,8 @@ function SceneCreatorWindow::findIconCtrl( %this, %name ) {
 
 	return -1;
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::createIcon( %this ) {
 	%ctrl = new GuiIconButtonCtrl() {
 		profile = "ToolsButtonArray";
@@ -39,7 +41,8 @@ function SceneCreatorWindow::createIcon( %this ) {
 
 	return %ctrl;
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::addFolderIcon( %this, %text ) {
 	%ctrl = %this.createIcon();
 	%ctrl.altCommand = "SceneCreatorWindow.navigateDown(\"" @ %text @ "\");";
@@ -51,7 +54,8 @@ function SceneCreatorWindow::addFolderIcon( %this, %text ) {
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::addMissionObjectIcon( %this, %class, %name, %buildfunc ) {
 	%ctrl = %this.createIcon();
 	// If we don't find a specific function for building an
@@ -84,7 +88,8 @@ function SceneCreatorWindow::addMissionObjectIcon( %this, %class, %name, %buildf
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::addShapeIcon( %this, %datablock ) {
 	%ctrl = %this.createIcon();
 	%name = %datablock.getName();
@@ -101,7 +106,8 @@ function SceneCreatorWindow::addShapeIcon( %this, %datablock ) {
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::addStaticIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
@@ -121,7 +127,8 @@ function SceneCreatorWindow::addStaticIcon( %this, %fullPath ) {
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function SceneCreatorWindow::addPrefabIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
@@ -140,3 +147,4 @@ function SceneCreatorWindow::addPrefabIcon( %this, %fullPath ) {
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
 }
+//------------------------------------------------------------------------------

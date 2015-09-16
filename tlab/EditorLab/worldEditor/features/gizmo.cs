@@ -5,6 +5,17 @@
 //==============================================================================
 
 //==============================================================================
+function Lab::toggleGizmoCtrl(%this,%ctrl) {
+	%field = %ctrl.internalName;
+	
+	%value = GlobalGizmoProfile.getFieldValue(%field);
+	%newvalue = %ctrl.getValue();
+	devLog("NewValu =",%ctrl.getValue());
+	GlobalGizmoProfile.setFieldValue(%field,%newvalue);
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
 // Handle the escape bind
 /* addField( "alignment",           TYPEID< GizmoAlignment >(),   Offset(alignment, GizmoProfile ) );
    addField( "mode",                TYPEID< GizmoMode >(),   Offset(mode, GizmoProfile ) );
@@ -57,19 +68,7 @@ function Lab::setGizmoAlignment( %this, %alignment ) {
 	EWorldEditor.syncGui();
 }
 //------------------------------------------------------------------------------
-//==============================================================================
-function Lab::setGizmoGridSnap( %this, %gridSnapOn ) {
-	GlobalGizmoProfile.snapToGrid = %gridSnapOn;
-}
-//------------------------------------------------------------------------------
 
-//==============================================================================
-function Lab::setGizmoGridSize( %this, %gridSize ) {
-	%size = getWord(%gridSize,0);	
-	%gridSizeXYZ = %size SPC %size SPC %size;
-	GlobalGizmoProfile.gridSize = %gridSizeXYZ;
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::setGizmoGridColor( %this, %color ) {
 	GlobalGizmoProfile.gridColor = %color;

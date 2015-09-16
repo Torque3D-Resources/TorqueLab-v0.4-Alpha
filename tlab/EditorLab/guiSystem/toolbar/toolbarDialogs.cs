@@ -119,11 +119,11 @@ function toggleSnappingOptions( %var ) {
 		SceneEditorToolbar-->objectSnapBtn.setStateOn(1);
 		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
 	} else if( %var $= "grid" ) {
-		EWorldEditor.setGridSnap( !EWorldEditor.getGridSnap() );
+		Lab.setGridSnap( !EWorldEditor.getGridSnap() );
 	} else {
 		// No snapping.
 		EWorldEditor.stickToGround = false;
-		EWorldEditor.setGridSnap( false );
+		Lab.setGridSnap( false );
 		EWorldEditor.setSoftSnap( false );
 		SnapToBar->objectSnapDownBtn.setStateOn(0);
 		SnapToBar->objectSnapBtn.setStateOn(0);

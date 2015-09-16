@@ -4,6 +4,12 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
+function SceneEditorTools::onObjectAdded( %this,%obj ) {
+	devLog("SceneEditorTools::onObjectAdded:",%obj);
+}
+function SceneEditorTools::onObjectRemoved( %this,%obj ) {
+	devLog("SceneEditorTools::onObjectRemoved:",%obj);
+}
 //==============================================================================
 // Scene Editor Params - Used set default settings and build plugins options GUI
 //==============================================================================

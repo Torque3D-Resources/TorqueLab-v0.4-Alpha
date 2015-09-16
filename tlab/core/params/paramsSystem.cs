@@ -31,22 +31,19 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 	if (%paramArray.noSyncField[%field] )
 		return;
 
-	if (!%paramArray.prefModeOnly){
-		if (isObject(%cfgObj)) {
-			%value = %cfgObj.getCfg(%field);
-		} else {
-			return false;
-		}
-
-		if (%value $= "")
-			paramLog(%paramArray.getName(),"Cfg Value for field:",%field,"Is Blank!");
-		
-		
+	
+	if (!%paramArray.prefModeOnly && isObject(%cfgObj)){		
+		%value = %cfgObj.getCfg(%field);		
 	}
-	else{
+	
+	if ( %value $= ""){		
 		%value = getParamValue(%paramArray,%field,true);
-	}
+	}	
 		
+	if ( %value $= ""){	
+		paramLog(%paramArray.getName(),"Cfg Value for field:",%field,"Is Blank!");
+		return;
+	}
 	if (%syncTarget)
 		%this.updateParamSyncData(%field,%value,%paramArray);
 

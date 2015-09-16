@@ -19,6 +19,14 @@ function ESnapOptions::ToggleVisibility(%this) {
 
 function ESnapOptions::onShow( %this ) {
 	if(!$ESnapOptions_Initialized) {
+		ESnapOptions_GridSystemMenu.clear();
+		ESnapOptions_GridSystemMenu.add("Metric",0);
+		ESnapOptions_GridSystemMenu.add("Power of 2",1);
+		%selected = 0;
+		if ($WEditor::gridSystem $= "Power of 2")
+			%selected = 1;	
+		
+		ESnapOptions_GridSystemMenu.setSelected(%selected,false);	
 		//%this.position = %this-->snappingSettingsBtn.position;
 		$ESnapOptions_Initialized = true;
 	}
@@ -34,6 +42,27 @@ function ESnapOptions::hideDialog( %this ) {
 	SnapToBar-->snappingSettingsBtn.setStateOn(false);
 }
 
+
+//==============================================================================
+// Grid Book Page Functions
+//==============================================================================
+
+
+//==============================================================================
+function ESnapOptions_GridSystemMenu::onSelect(%this,%id,%text) {
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function ESnapOptions_GridStepEdit::onValidate(%this) {
+	%step = %this.getText();
+	if (!strIsNumeric(%step))
+		return;
+		
+	$WEditor::GridStep = %step;	
+	
+}
+//------------------------------------------------------------------------------
 
 function ESnapOptions::setTerrainSnapAlignment( %this, %val ) {
 	EWorldEditor.setTerrainSnapAlignment(%val);
@@ -51,10 +80,7 @@ function ESnapOptions::setSoftSnapSize( %this ) {
 		EWorldEditor.syncGui();
 }
 
-function ESnapOptions::setGridSnapSize( %this ) {
-	%val = ESnapOptions-->GridSize.getText();
-	EWorldEditor.setGridSize( %val );
-}
+
 
 function ESnapOptions::toggleRenderSnapBounds( %this ) {
 	EWorldEditor.softSnapRender( ESnapOptionsTabSoft-->RenderSnapBounds.getValue() );
