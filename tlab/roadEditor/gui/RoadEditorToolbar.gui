@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "32955";
-      disabledGroup = "32956";
-      EditorContainer = "20106";
+      defaultStack = "32961";
+      disabledGroup = "32962";
+      EditorContainer = "20112";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "32957 32966 32982";
+      stackLists = "32963 32972 32988";
 
    new GuiContainer() {
       margin = "0 0 0 0";

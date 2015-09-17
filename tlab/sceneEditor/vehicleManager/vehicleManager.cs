@@ -5,6 +5,37 @@
 //==============================================================================
 $sepVM_MainBook_PageId = 0;
 $sepVM_ApplyChangeToDatablock = false;
+$sepVMDebug = false;
+$sepVM_DataInitDone = false;
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function SEP_VehicleManager::initManager( %this ) {
+	devLog("SEP_VehicleManager::initManager");
+	if ($sepVMDebug)
+		return;
+	if (!$sepVM_DataInitDone){
+		sepVM.initWheeledPage();
+		sepVM.buildWheeledParams();
+		sepVM.initPresetsData();
+	}
+//	if (!isObject(sepVM.selectedDatablock)){
+		if (isObject(LocalClientConnection.vehicle)){
+			%vehicle = LocalClientConnection.vehicle;	
+			devLog("Auto selecting Client vehicle",%vehicle);	
+		} else if (EWorldEditor.getSelectionSize() > 0){
+			if (EWorldEditor.getSelectedObject(0).isMemberOfClass("Vehicle")){
+				%vehicle = EWorldEditor.getSelectedObject(0);	
+				devLog("Auto selecting selected scene vehicle",	%vehicle);
+			}
+		}
+		if (isObject(%vehicle))
+			sepVM.selectWheeledData(%vehicle.getDatablock(),"Vehicle");
+		
+///	}
+	
+	$sepVM_DataInitDone = false;
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // OnWake and OnSleep Callbacks
 //==============================================================================
@@ -12,21 +43,9 @@ $sepVM_ApplyChangeToDatablock = false;
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_VehicleManager::onWake( %this ) {
 	devLog("SEP_VehicleManager::onWake");
-	sepVM.initWheeledPage();
-	sepVM.buildWheeledParams();
-	sepVM.initPresetsData();
-	if (isObject(LocalClientConnection.vehicle)){
-		%vehicle = LocalClientConnection.vehicle;	
-		devLog("Auto selecting Client vehicle",%vehicle);	
-	} else if (EWorldEditor.getSelectionSize() > 0){
-		if (EWorldEditor.getSelectedObject(0).isMemberOfClass("Vehicle")){
-			%vehicle = EWorldEditor.getSelectedObject(0);	
-			devLog("Auto selecting selected scene vehicle",	%vehicle);
-		}
-	}
-		
-	if (isObject(%vehicle))
-		sepVM.selectWheeledData(%vehicle.getDatablock(),"Vehicle");
+	if ($sepVMDebug)
+		return;
+	%this.initManager();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -43,12 +62,15 @@ function SEP_VehicleManager::onSleep( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_VehicleManager::onShow( %this ) {	
 	devLog("SEP_VehicleManager::onShow");
+	%this.initManager();
 	
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_VehicleManager::onHide( %this ) {	
+	
 }
 //------------------------------------------------------------------------------
 

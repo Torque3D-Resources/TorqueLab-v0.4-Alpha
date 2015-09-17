@@ -7,8 +7,10 @@ $sepVM_WheeledBook_PageId = 0;
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function sepVM::initWheeledPage( %this ) {
-	%this.updateWheeledDatablocks();
-	%this.updateWheeledSystems();
+	if (!$sepVM_DataInitDone){
+		%this.updateWheeledDatablocks();
+		%this.updateWheeledSystems();
+	}
 	sepVM_WheeledBook.selectPage($sepVM_WheeledBook_PageId);
 }
 //------------------------------------------------------------------------------
@@ -77,7 +79,7 @@ function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {
 %field = %type@%typeId;
 	sepVM.cloneWheeledDatablock("Wheeled",%field,%data);
 	
-	
+	sepVM.selectedDatablock = %data;
 	if (%type $= "Vehicle"){
 		
 		//syncParamArray(sepVM.wheeledParamVehicle);
@@ -88,13 +90,22 @@ function sepVM::selectWheeledData( %this,%data,%type,%typeId ) {
 		devLog("Looking for tire:",%data.tireData, "Sprng:",%data.springData);
 		foreach$(%dataType in "tire spring"){
 			eval("%checkData = %data."@%dataType@"Data;");
+			
+			eval("%checkData = %data."@%dataType@"Data;");
 			devLog("Test data:",%dataType,"CheckObj",%checkData);
 			if (!isObject(%checkData)){
 				foreach$(%pos in "Front Rear"){
-					eval("%checkData1 = "@%checkData@%pos@";");
+					
+					eval("%checkData1 = %data."@%dataType@"Data"@%pos@";");
+					//eval("%checkData1 = "@%checkData@%pos@";");
 					devLog("Test data:",%dataType,"Pos",%pos,"CheckObj",%checkData1);
 					if (!isObject(%checkData1)){
-						%fail = strAddWord(%fail,%dataType@"_"@%pos);
+						eval("%checkData1 = %data."@%dataType@"Data"@%posId[%pos]@";");
+						devLog("Test data:",%dataType,"PosID",%posId[%pos],"CheckObj",%checkData1);
+						
+					}
+					if (!isObject(%checkData1)){
+							%fail = strAddWord(%fail,%dataType@"_"@%pos);
 					}
 					else {
 						%id = %posId[%pos];

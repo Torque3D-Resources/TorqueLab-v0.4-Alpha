@@ -26,9 +26,9 @@ new GuiStackControl(ParticleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "32267";
-      disabledGroup = "32268";
-      EditorContainer = "20106";
+      defaultStack = "32273";
+      disabledGroup = "32274";
+      EditorContainer = "20112";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ParticleEditor";
       preventReordering = "0";
