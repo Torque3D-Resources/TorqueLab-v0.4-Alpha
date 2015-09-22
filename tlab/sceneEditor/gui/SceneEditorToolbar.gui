@@ -15,22 +15,23 @@ new GuiStackControl(SceneEditorToolbar) {
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "SceneEditorToolbar";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "25410";
-      disabledGroup = "25411";
-      EditorContainer = "20112";
+      defaultStack = "25613";
+      disabledGroup = "25614";
+      EditorContainer = "20167";
       editorParent = "EditorGuiToolbarStack";
       plugin = "SceneEditor";
-      stackLists = "25412 25435 25452 25464 25476";
+      stackLists = "25615 25638 25655 25667 25679";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -162,7 +163,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "25135";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
 
          new GuiTextCtrl() {
             text = "Grid";
@@ -319,35 +320,6 @@ new GuiStackControl(SceneEditorToolbar) {
             canSaveDynamicFields = "0";
          };
       };
-      new GuiIconButtonCtrl(ESnapToolbarButton) {
-         buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/DlgSnap.png";
-         iconLocation = "Left";
-         sizeIconToButton = "0";
-         makeIconSquare = "0";
-         textLocation = "Left";
-         textMargin = "4";
-         autoSize = "0";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "1";
-         position = "66 0";
-         extent = "30 30";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonDark";
-         visible = "1";
-         active = "1";
-         command = "ETools.toggleTool(\"SnapOptions\");";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         internalName = "snappingSettingsBtn";
-         superClass = "ToolbarIcon";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
          iconBitmap = "tlab/gui/icons/toolbar_assets/SnapGrid.png";
@@ -360,7 +332,7 @@ new GuiStackControl(SceneEditorToolbar) {
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "1";
-         position = "98 0";
+         position = "66 0";
          extent = "30 30";
          minExtent = "8 2";
          horizSizing = "right";
@@ -373,6 +345,35 @@ new GuiStackControl(SceneEditorToolbar) {
          hovertime = "1000";
          isContainer = "0";
          internalName = "objectGridSnapBtn";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiIconButtonCtrl(ESnapToolbarButton) {
+         buttonMargin = "1 1";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/DlgSnap.png";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         makeIconSquare = "0";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "98 0";
+         extent = "30 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "ETools.toggleTool(\"SnapOptions\");";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         internalName = "snappingSettingsBtn";
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
@@ -488,7 +489,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "8833";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
 
          new GuiTextCtrl() {
             text = "camspeed";
@@ -537,7 +538,7 @@ new GuiStackControl(SceneEditorToolbar) {
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "471";
+            text = "569";
             maxLength = "6";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -835,7 +836,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -869,7 +870,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSaveDynamicFields = "1";
             isDisabled = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -902,7 +903,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -934,7 +935,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -958,7 +959,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
 
          new GuiTextCtrl() {
             text = "Drop location";
@@ -1196,7 +1197,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8877";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1231,7 +1232,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8878";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1265,7 +1266,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8876";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1299,7 +1300,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
             srcCtrl = "8875";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1332,7 +1333,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "7";
             originalParent = "SnapToBar";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1524,7 +1525,39 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "41446";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "1 1";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ForceToGrid.png";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         makeIconSquare = "0";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "40 0";
+         extent = "30 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "EWorldEditor.forceToGrid();";
+         tooltipProfile = "ToolsToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            originalIndex = "2";
+            originalParent = "25610";
+            pluginName = "SceneEditor";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1538,7 +1571,7 @@ new GuiStackControl(SceneEditorToolbar) {
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "1";
-         position = "40 0";
+         position = "72 0";
          extent = "30 30";
          minExtent = "8 2";
          horizSizing = "right";
@@ -1558,7 +1591,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "1";
             originalParent = "41446";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl(MyNewSave) {
          buttonMargin = "1 1";
@@ -1572,7 +1605,7 @@ new GuiStackControl(SceneEditorToolbar) {
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "1";
-         position = "72 0";
+         position = "104 0";
          extent = "30 30";
          minExtent = "8 2";
          horizSizing = "right";
@@ -1592,7 +1625,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "9030";
             pluginName = "SceneEditor";
             srcCtrl = "8868";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1606,7 +1639,7 @@ new GuiStackControl(SceneEditorToolbar) {
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "1";
-         position = "104 0";
+         position = "136 0";
          extent = "30 30";
          minExtent = "8 2";
          horizSizing = "right";
@@ -1627,39 +1660,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "41446";
             pluginName = "SceneEditor";
             srcCtrl = "8895";
-            toolbar = "25410";
-      };
-      new GuiIconButtonCtrl() {
-         buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar-assets/ForceToGrid.png";
-         iconLocation = "Left";
-         sizeIconToButton = "0";
-         makeIconSquare = "0";
-         textLocation = "Left";
-         textMargin = "4";
-         autoSize = "0";
-         groupNum = "-1";
-         buttonType = "ToggleButton";
-         useMouseEvents = "1";
-         position = "136 0";
-         extent = "30 30";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonDark";
-         visible = "1";
-         active = "1";
-         command = "EWorldEditor.forceToGrid();";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         superClass = "ToolbarIcon";
-         canSave = "1";
-         canSaveDynamicFields = "1";
-            originalIndex = "5";
-            originalParent = "25184";
-            pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1693,7 +1694,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalParent = "41446";
             pluginName = "SceneEditor";
             srcCtrl = "8869";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -1886,7 +1887,7 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "2";
             originalParent = "8865";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -1920,11 +1921,11 @@ new GuiStackControl(SceneEditorToolbar) {
             originalIndex = "2";
             originalParent = "8865";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/TransformWorld";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/TransformObject";
          iconLocation = "Left";
          sizeIconToButton = "1";
          makeIconSquare = "1";
@@ -1951,7 +1952,7 @@ new GuiStackControl(SceneEditorToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "SceneEditor";
-            toolbar = "25410";
+            toolbar = "25613";
       };
       new GuiContainer() {
          margin = "0 0 0 0";

@@ -929,45 +929,6 @@ function ObjectBuilderGui::buildTimeOfDay(%this)
    %this.process();
 }
 
-function ObjectBuilderGui::buildPlayerDropPoint(%this)
-{
-   %this.objectClassName = "SpawnSphere";
-   %this.addField("dataBlock",    "TypeDataBlock", "dataBlock",   "MissionMarkerData SpawnSphereMarker");
-   %this.addField("radius",       "TypeFloat",     "Radius",        1);
-   %this.addField("sphereWeight", "TypeFloat",     "Sphere Weight", 1);
-
-   %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Player");
-   %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "PlayerData DefaultPlayerData");
-
-   if( SceneCreatorWindow.objectGroup.getID() == MissionGroup.getID() )
-   {
-      if( !isObject("Spawnpoints") )
-         MissionGroup.add( new SimGroup("Spawnpoints") );
-      %this.objectGroup = "Spawnpoints";
-   }
-
-   %this.process();
-}
-
-function ObjectBuilderGui::buildObserverDropPoint(%this)
-{
-   %this.objectClassName = "SpawnSphere";
-   %this.addField("dataBlock",    "TypeDataBlock", "dataBlock",   "MissionMarkerData SpawnSphereMarker");
-   %this.addField("radius",       "TypeFloat",     "Radius",        1);
-   %this.addField("sphereWeight", "TypeFloat",     "Sphere Weight", 1);
-
-   %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Camera");
-   %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "CameraData Observer");
-
-   if( SceneCreatorWindow.objectGroup.getID() == MissionGroup.getID() )
-   {
-      if( !isObject("ObserverDropPoints") )
-         MissionGroup.add( new SimGroup("ObserverDropPoints") );
-      %this.objectGroup = "ObserverDropPoints";
-   }
-
-   %this.process();
-}
 
 //------------------------------------------------------------------------------
 // System
@@ -1015,6 +976,12 @@ function MissionMarkerData::create(%block)
       case "SpawnSphereMarker":
          %obj = new SpawnSphere() {
             datablock = %block;
+            parentGroup = SceneCreatorWindow.objectGroup;
+         };
+         return(%obj);
+		 default:
+         %obj = new WayPoint() {
+            dataBlock = %block;
             parentGroup = SceneCreatorWindow.objectGroup;
          };
          return(%obj);

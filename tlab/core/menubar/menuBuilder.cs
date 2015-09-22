@@ -51,8 +51,12 @@ function Lab::initMenu(%this,%menuType,%execScripts) {
 	
 	//===========================================================================
 	// Custom Menu System using GuiMenuBar Control
-	if (!$Cfg_UseCoreMenubar) {		
-		eval("%menuObj = "@%menuType@"EdMenu;");
+	if (!$Cfg_UseCoreMenubar) {
+		if (isObject(	%menuType)){
+			%menuObj = %menuType;
+		} else {
+			eval("%menuObj = "@%menuType@"EdMenu;");
+		}
 		
 		%menuObj.initData();
 		Lab.BuildMenuBar(%menuObj);

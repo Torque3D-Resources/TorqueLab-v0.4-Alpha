@@ -41,7 +41,7 @@ function MaterialEditorGui::setActiveMaterial( %this, %material ) {
 		return;
 	}
 
-	if (strFind(%material.getFilename(),"tlab") || %material.getFilename() $= "") {
+	if (strFind(%material.getFilename(),"tlab/materialEditor") || %material.getFilename() $= "") {
 		devlog("Changind material filename from:",%material.getFilename(),"To",$Pref::MaterialEditorGui::DefaultMaterialFile);
 		%material.setFilename($Pref::MaterialEditorGui::DefaultMaterialFile);
 	}

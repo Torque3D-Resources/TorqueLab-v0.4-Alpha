@@ -26,12 +26,12 @@ new GuiStackControl(StackStartToolbar) {
    canSaveDynamicFields = "1";
       alwaysFirst = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "22609";
-      disabledGroup = "22610";
-      EditorContainer = "20112";
+      defaultStack = "22664";
+      disabledGroup = "22665";
+      EditorContainer = "20167";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "22611";
+      stackLists = "22666";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -171,11 +171,11 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "6965";
-            toolbar = "22609";
+            toolbar = "22664";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar-assets/PluginOptions.png";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/LabSettings.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -202,7 +202,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "1";
             originalParent = "7037";
-            toolbar = "22609";
+            toolbar = "22664";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -233,7 +233,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "2";
             originalParent = "7046";
-            toolbar = "22609";
+            toolbar = "22664";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";

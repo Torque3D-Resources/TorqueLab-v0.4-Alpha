@@ -54,6 +54,10 @@ NavEditorConsoleDlg.init();
       SceneCreatorWindow.registerMissionObject("CoverPoint", "Cover point");
 
    SceneCreatorWindow.endGroup();
+   $Nav::Editor::renderBVTree = 0;
+  $Nav::Editor::renderPortals = 0;
+  $Nav::Editor::renderMesh = 0;
+  $CoverPoint::isRenderable = 0;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -68,7 +72,10 @@ function NavEditorPlugin::onActivated( %this ) {
    NavEditorGui.makeFirstResponder(true);
  
 
-  
+  $Nav::Editor::renderBVTree = NavEditorPlugin.renderBVTree;
+  $Nav::Editor::renderPortals = NavEditorPlugin.renderPortals;
+  $Nav::Editor::renderMesh = NavEditorPlugin.renderMesh;
+  $CoverPoint::isRenderable = NavEditorPlugin.renderCover;
 
    // Inspect the ServerNavMeshSet, which contains all the NavMesh objects
    // in the mission.
@@ -122,7 +129,15 @@ function NavEditorGui::onEditorDeactivated(%this)
 function NavEditorPlugin::onDeactivated( %this ) {
 	$Nav::EditorOpen = false;   
 
-   
+  NavEditorPlugin.renderBVTree =  $Nav::Editor::renderBVTree;
+  NavEditorPlugin.renderPortals =  $Nav::Editor::renderPortals;
+  NavEditorPlugin.renderMesh =  $Nav::Editor::renderMesh;
+  NavEditorPlugin.renderCover =  $CoverPoint::isRenderable;
+  
+  $Nav::Editor::renderBVTree = 0;
+  $Nav::Editor::renderPortals = 0;
+  $Nav::Editor::renderMesh = 0;
+  $CoverPoint::isRenderable = 0;
    %this.map.pop();
 
    // Restore the previous Gizmo alignment settings.

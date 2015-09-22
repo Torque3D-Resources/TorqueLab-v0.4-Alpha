@@ -60,7 +60,8 @@ function ETransformTool::setSelRotation( %this,%axis ) {
 	%relative = %this-->RotRelative.isStateOn();
 	%localCenter = %this-->RotLocalCenter.isStateOn();
 	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
-	EWorldEditor.transformSelection(true,"",false,false,%rotation,%relative,%localCenter,   "","",false,false);
+	EWorldEditor.transformSelection(false,"",false,true,%rotation,%relative,%localCenter,   "","",false,false);
+	//EWorldEditor.transformSelection(false,"",false,true,"0 0 "@mDegToRad(90),true,false,   "","",false,false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -116,7 +117,7 @@ function ETransformTool::setSelEulerRotation( %this,%axis ) {
 	%relative = %this-->RotRelative.isStateOn();
 	%localCenter = %this-->RotLocalCenter.isStateOn();
 	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
-	EWorldEditor.transformSelection(true,"",false,false,%rotation,%relative,%localCenter,   "","",false,false);
+	EWorldEditor.transformSelection(false,"",false,true,%rotation,%relative,%localCenter,   "","",false,false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

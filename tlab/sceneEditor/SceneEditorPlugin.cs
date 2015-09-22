@@ -158,7 +158,7 @@ function SceneEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
 //==============================================================================
 // Callbacks Handlers - Called on specific editor actions
 //==============================================================================
-
+$QuickDeleteMode = true;
 //==============================================================================
 //
 function SceneEditorPlugin::handleDelete( %this ) {
@@ -170,6 +170,11 @@ function SceneEditorPlugin::handleDelete( %this ) {
 	// SimGroups also need to be destroyed.
 	//
 	// See EditorTree::onObjectDeleteCompleted().
+	if ($QuickDeleteMode){
+		delSelect();
+		return;
+	}
+	
 	%selSize = EWorldEditor.getSelectionSize();
 
 	if( %selSize > 0 )

@@ -143,7 +143,7 @@ function Lab::setMenuItemSubmenuState(%this,%menuObj,%menuTarget,%menuItem,%isSu
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::setMenuItemText(%this,%menuTarget,%menuObj,%menuItem,%newMenuItemText) {
+function Lab::setMenuItemText(%this,%menuObj,%menuTarget,%menuItem,%newMenuItemText) {
 	//--------------------------------------------	
 	// Sets the text of the specified menu item to the new string.
 	// %menuTarget 	Menu to affect

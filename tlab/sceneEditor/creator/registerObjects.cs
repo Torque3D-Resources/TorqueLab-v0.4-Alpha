@@ -47,6 +47,10 @@ function SceneCreatorWindow::registerObjects( %this ) {
 		%this.registerCustomsObjectsGroup("Environment");
 
 	%this.endGroup();
+	%this.beginGroup( "AI" );
+	%this.registerMissionObject( "BotSpawnSphere",  "Bot spawn sphere", "BotSpawn" );
+	%this.registerMissionObject( "BotGoalPoint",      "Bot goal point ","BotGoal" );
+	%this.endGroup();
 	%this.beginGroup( "Level" );
 	%this.registerMissionObject( "MissionArea",  "Mission Area" );
 	%this.registerMissionObject( "Path" );
