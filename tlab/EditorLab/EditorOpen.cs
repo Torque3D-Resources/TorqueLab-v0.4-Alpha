@@ -128,7 +128,7 @@ function Lab::onInitialEditorLaunch( %this ) {
 	// dropdowns out so that they display correctly in editor gui
 	// make sure to show the default world editor guis
 	EditorGui.bringToFront( EWorldEditor );
-	EWorldEditor.setVisible( false );
+	//EWorldEditor.setVisible( false );
 
 	// Call the startup callback on the editor plugins.	
 	for ( %i = 0; %i < EditorPluginSet.getCount(); %i++ ) {

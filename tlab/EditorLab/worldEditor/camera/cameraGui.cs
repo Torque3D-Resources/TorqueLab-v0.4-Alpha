@@ -31,6 +31,9 @@ function Lab::syncCameraGui( %this,%forced ) {
 	//Perspective Cameras: Standard Camera - 1st Person Camera -3rd Person Camera - Orbit Camera -Smooth Camera - Smooth Rot Camera
 	
 	EWorldEditorStatusBarCamera.setText($LabCameraDisplayName[%displayType]);
+	
+	//Camera Speed
+	EditorGuiToolbar-->CameraSpeedEdit.setText($Camera::movementSpeed);
 	return;
 	if( %displayType != $EditTSCtrl::DisplayTypePerspective ) {		
 		%this.syncNonPerspectiveCameraGui(%forced);		

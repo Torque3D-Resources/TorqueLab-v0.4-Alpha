@@ -25,20 +25,27 @@ EditorMap.bind(keyboard,"delete",EditorGlobalDelete);
 
 //==============================================================================
 function getEditorMouseAdjustAmount(%val) {
+	%adjust = $Camera::MouseMoveMultiplier;
+	if (%adjust $= "")
+		%adjust = 1;
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_Common_Input_MouseSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * %adjust;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function getEditorMouseScrollAdjustAmount(%val) {
+	%adjust = $Camera::MouseScrollMultiplier;
+	if (%adjust $= "")
+		%adjust = 1;
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_Common_Input_MouseScrollSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * 22;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function mouseWheelScroll( %val ) {
 	%rollAdj = getEditorMouseScrollAdjustAmount(%val);
 	%rollAdj = mClamp(%rollAdj, -mPi()+0.01, mPi()-0.01);
+	devLog("RollAdj=",%rollAdj);
 	$mvRoll += %rollAdj; //Maxed at pi in code
 }
 //------------------------------------------------------------------------------

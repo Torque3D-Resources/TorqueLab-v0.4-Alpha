@@ -29,7 +29,10 @@ function initTorqueLab(%launchEditor) {
 		file = "tlab/core/configs/config.xml";
 	};
 	info( "Initializing TorqueLab" );
-
+	new Settings(BackupCfg) {
+		file = "tlab/core/configs/backup.xml";
+	};
+	
 	// Default file path when saving from the editor (such as prefabs)
 	if ($Pref::WorldEditor::LastPath $= "") {
 		$Pref::WorldEditor::LastPath = getMainDotCsDir();

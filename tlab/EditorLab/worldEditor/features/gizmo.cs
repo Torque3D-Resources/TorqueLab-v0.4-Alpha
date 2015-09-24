@@ -5,7 +5,7 @@
 //==============================================================================
 
 //==============================================================================
-function Lab::toggleGizmoCtrl(%this,%ctrl) {
+function Lab::setGizmoFieldFromCtrl(%this,%ctrl) {
 	%field = %ctrl.internalName;
 	
 	%value = GlobalGizmoProfile.getFieldValue(%field);

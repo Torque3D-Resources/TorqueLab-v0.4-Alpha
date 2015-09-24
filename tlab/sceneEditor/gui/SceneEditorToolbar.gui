@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiStackControl(SceneEditorToolbar) {
+new GuiStackControl(SceneEditorToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -540,7 +540,7 @@
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "314";
+            text = "168";
             maxLength = "6";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

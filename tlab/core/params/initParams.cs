@@ -40,10 +40,16 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 	%array.displayName = %name;
 	%array.container = %container;
 	%array.paramCallback = "Lab.onParamBuild";
-	
+	%array.fields = "Default Title Type Options syncObjs";
+	%array.syncObjsField = 4;
 	%array.group = %group;
 	%array.useNewSystem = true;
 	
+	%pData.Default = getField(%data,%fieldId++);
+		%pData.Title = getField(%data,%fieldId++);
+		%pData.Type = getField(%data,%fieldId++);
+		%pData.Options = getField(%data,%fieldId++);
+		%pData.syncObjs = getField(%data,%fieldId++);
 	
 	//If no cfgObject supplied, simply use the new array as object
 	if (!isObject(%cfgObject))

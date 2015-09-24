@@ -12,6 +12,7 @@ function Lab::initConfigSystem( %this,%defaults ) {
 	exec("tlab/core/commonSettings.cs");
 	LabParamsGroup.clear();
 	
+	
 
 	%this.initCommonParams();
 	%this.initAllPluginConfig();
@@ -70,7 +71,11 @@ function Lab::setParamArrayDefaults(%this,%array) {
 	LabCfg.endGroup();
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+function quick(%field,%value,%default) {
+	ConvexEditorPlugin.setCfg(%field,%value,%default);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Set params settings group to their default value
 //==============================================================================
@@ -91,8 +96,16 @@ function Lab::writeParamConfig(%this,%array) {
 		%data = %array.getValue(%i);
 		%default = getWord(%data,0);	
 		
-		%value = getParamValue(%array,%field);		
+		%value = getParamValue(%array,%field,true);	
+		if (	%value $= ""){
+			%value = %default;
+			if (	%value $= "")
+				continue;
+			paramLog(%array.getName(),"Field",%field,"Param empty value set to default:",%value,"SuncData",%array.syncData[%field]);
+		}
 		%array.setCfg( %field,%value,false );
+		
+		
 	
 	}
 
@@ -114,9 +127,12 @@ function Lab::initConfigArray(%this,%array,%setEmptyToDefault) {
 	%i = 0;	
 	for( ; %i < %array.count() ; %i++) {
 		%field = %array.getKey(%i);
-		%value = LabCfg.value( %field );			
-		if (%value $= "")
+		%value = LabCfg.value( %field );
+				
+		if (%value $= ""){
+			devLog("Converting empty value to empty...",%field);
 			continue;
+		}
 		setParamFieldValue(%array,%field,%value);
 		
 	}
@@ -129,7 +145,7 @@ function Lab::initConfigArray(%this,%array,%setEmptyToDefault) {
 // OLD System kept for reference showing how to read SettingObject file
 //==============================================================================
 function Lab::readAllConfigArray(%this,%setEmptyToDefault) {
-	foreach(%array in LabParamsGroup)
+	foreach(%array in LabParamsGroup)		
 		%this.readConfigArray(%array,%setEmptyToDefault);
 }
 //------------------------------------------------------------------------------
@@ -148,6 +164,7 @@ function Lab::readConfigArray(%this,%array,%setEmptyToDefault) {
 				$CfgParams_[%array.groupLink,%field] = %value;
 			continue;
 		}
+		setParamFieldValue(%array,%field,%value);
 		$Cfg_[%array.groupLink,%field] = %value;
 	}
 

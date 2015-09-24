@@ -48,9 +48,22 @@ function Lab::setGizmoGridSize( %this, %gridSize,%zSnap,%noGuiSync ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 //Lab.setGridSize($ThisControl.getValue());
-function Lab::setGridSnap( %this, %gridSnapOn ) {	
-		
-	EWorldEditor.gridSnap = %gridSnapOn;
+function Lab::toggleGridSnap( %this ) {			
+	%gridSnap = !EWorldEditor.gridSnap;
+	devLog("toggle grid snap from:",EWorldEditor.gridSnap,"To",%gridSnap);
+	Lab.setGridSnap(!EWorldEditor.gridSnap);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Lab.setGridSize($ThisControl.getValue());
+function Lab::setGridSnap( %this, %gridSnapOn ) {
+	
+	//If nothing submitted, WorldEditor gridSnap is already set, just need to sync
+	if (%gridSnapOn !$= "")
+		EWorldEditor.gridSnap = %gridSnapOn;
+	else
+		%gridSnapOn = EWorldEditor.gridSnap;		
+	
 	Lab.setGizmoGridSnap(%gridSnapOn);
 	
 	Lab.syncGuiGridSnap();
@@ -77,6 +90,8 @@ function Lab::syncGuiGridSnap( %this ) {
 	ESnapOptions-->GridSnapButton.setStateOn( EWorldEditor.gridSnap );
 	SceneEditorToolbar-->objectGridSnapBtn.setStateOn( EWorldEditor.gridSnap );
 	ESnapOptions-->NoSnapButton.setStateOn( !EWorldEditor.stickToGround && !EWorldEditor.getSoftSnap() && !EWorldEditor.gridSnap );
+	
+	devLog("Ended with snap:",EWorldEditor.gridSnap);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -95,6 +110,52 @@ function EWorldEditor::getGridSize( %this ) {
 	return %this.gridSize;
 }
 //------------------------------------------------------------------------------
+
+
+//==============================================================================
+function toggleSnappingOptions( %var ) {
+	if( SnapToBar->objectSnapDownBtn.getValue() && SnapToBar->objectSnapBtn.getValue() ) {
+		if( %var $= "terrain" ) {
+			EWorldEditor.stickToGround = 1;
+			EWorldEditor.setSoftSnap(false);
+			ESnapOptionsTabBook.selectPage(0);
+			SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
+		} else {
+			// soft snapping
+			EWorldEditor.stickToGround = 0;
+			EWorldEditor.setSoftSnap(true);
+			ESnapOptionsTabBook.selectPage(1);
+			SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
+		}
+	} else if( %var $= "terrain" && EWorldEditor.stickToGround == 0 ) {
+		// Terrain Snapping
+		EWorldEditor.stickToGround = 1;
+		EWorldEditor.setSoftSnap(false);
+		ESnapOptionsTabBook.selectPage(0);
+		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(1);
+		SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
+	} else if( %var $= "soft" && EWorldEditor.getSoftSnap() == false ) {
+		// Object Snapping
+		EWorldEditor.stickToGround = 0;
+		EWorldEditor.setSoftSnap(true);
+		ESnapOptionsTabBook.selectPage(1);
+		SceneEditorToolbar-->objectSnapBtn.setStateOn(1);
+		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
+	} else if( %var $= "grid" ) {
+		Lab.setGridSnap( !EWorldEditor.getGridSnap() );
+	} else {
+		// No snapping.
+		EWorldEditor.stickToGround = false;
+		Lab.setGridSnap( false );
+		EWorldEditor.setSoftSnap( false );
+		SnapToBar->objectSnapDownBtn.setStateOn(0);
+		SnapToBar->objectSnapBtn.setStateOn(0);
+	}
+
+	EWorldEditor.syncGui();
+}
+//------------------------------------------------------------------------------
+
 
 //------------------------------------------------------------------------------
 /*

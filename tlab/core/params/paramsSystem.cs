@@ -54,7 +54,7 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 		if (isObject(%pillHolder))
 			%pillHolder.setTypeValue(%value,true);
 		else
-			warnLog("No gui control found assigned to the field:",%field,"ParamObj:",%paramArray);
+			paramLog("No gui control found assigned to the field:",%field,"ParamObj:",%paramArray);
 	} else {
 		paramLog(%paramArray.getName(),"Invalid control holder for field:",%field,"Couldn't sync the param!");
 	}

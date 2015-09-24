@@ -21,6 +21,7 @@ function Lab::toggleControlObject(%this) {
 //==============================================================================
 function Lab::setCameraPlayerMode(%this) {
 	devLog("Lab::setCameraPlayerMode");
+	
 	if (!isObject( LocalClientConnection.player)) {
 		warnLog("You don't have a player assigned, set spawnPlayer true to spawn one automatically");
 		return;

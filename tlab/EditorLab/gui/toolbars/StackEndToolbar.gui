@@ -9,7 +9,7 @@ new GuiStackControl(StackEndToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "1072 0";
    extent = "248 32";
    minExtent = "4 16";
    horizSizing = "right";
@@ -359,7 +359,7 @@ new GuiStackControl(StackEndToolbar) {
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";
-         iconBitmap = "tlab/gui/icons/toolbar-assets/VehicleManager.png";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/PhysToggleTools.png";
          iconLocation = "Center";
          sizeIconToButton = "1";
          makeIconSquare = "1";
@@ -377,8 +377,8 @@ new GuiStackControl(StackEndToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         variable = "!SEP_VehicleManager.visible";
-         command = "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
+         variable = "!EPhysicsTools.visible";
+         command = "ETools.toggleTool(\"PhysicsTools\");";
          tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
@@ -390,7 +390,7 @@ new GuiStackControl(StackEndToolbar) {
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "3 3";
-         iconBitmap = "tlab/gui/icons/toolbar-assets/PhysToggleTools.png";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/VehicleManager.png";
          iconLocation = "Center";
          sizeIconToButton = "1";
          makeIconSquare = "1";
@@ -408,8 +408,8 @@ new GuiStackControl(StackEndToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         variable = "!EPhysicsTools.visible";
-         command = "ETools.toggleTool(\"PhysicsTools\");";
+         variable = "!SEP_VehicleManager.visible";
+         command = "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
          tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";

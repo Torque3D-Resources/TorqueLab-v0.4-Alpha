@@ -190,6 +190,8 @@ function Lab::addSubMenuItemData(%this,%menuObj,%menuId,%menuItemId,%submenuItem
 //==============================================================================
 function Lab::addMenuBind(%this,%type,%bind,%command) {
 	%map = $LabMenuBindMap[%type];
+	if (!isObject(%map))
+		return;
 	%map.bindCmd(keyboard, %bind, %command, "");	
 }
 //------------------------------------------------------------------------------

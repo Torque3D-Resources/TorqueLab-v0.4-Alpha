@@ -37,7 +37,9 @@ function EditorPlugin::setCfg( %this,%field,%value,%isDefault ) {
 	LabCfg.beginGroup( %pattern, true );
 	LabCfg.setCfg(%field,%value,%isDefault);
 	LabCfg.endGroup( );
-
+BackupCfg.beginGroup( %pattern, true );
+	BackupCfg.setCfg(%field,%value,%isDefault);
+	BackupCfg.endGroup( );
 	if (%isDefault) return;
 
 	%group = strreplace(%pattern,"/","_");
@@ -62,6 +64,9 @@ function ParamArray::setCfg( %this,%field,%value,%isDefault ) {
 	LabCfg.beginGroup( %pattern, true );
 	LabCfg.setCfg(%field,%value,%isDefault);
 	LabCfg.endGroup( );
+	BackupCfg.beginGroup( %pattern, true );
+	BackupCfg.setCfg(%field,%value,%isDefault);
+	BackupCfg.endGroup( );
 
 	if (%isDefault) return;
 
@@ -79,7 +84,15 @@ function LabCfg::setCfg( %this,%field,%value,%isDefault ) {
 		LabCfg.setValue(  %field,%value);
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function BackupCfg::setCfg( %this,%field,%value,%isDefault ) {
+	if ( %isDefault )
+		BackupCfg.setDefaultValue(  %field,%value);
+	else
+		BackupCfg.setValue(  %field,%value);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
 function Lab::addDefaultSetting( %this,%field, %default ) {

@@ -151,7 +151,7 @@ function LabParamsTree::expandAllGroups( %this,%buildTree ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onSelect( %this,%itemId ) {	
-	devLog("LabParamsTree::onSelect( %this,%itemId )",%itemId);
+	
 	%text = %this.getItemText(%itemId);
 	%value = %this.getItemValue(%itemId);	
 	%itemObj = $LabParamsItemObj[%itemId];
