@@ -17,10 +17,10 @@ singleton GuiControlProfile(ToolsPanelProfile : ToolsDefaultProfile)
    border = "2";
    borderThickness = "5";
    fontType = "Gotham Bold";
-   fontSize = "20";
+   fontSize = "17";
    fontColors[0] = "254 254 254 255";
    fontColor = "254 254 254 255";
-   textOffset = "2 6";
+   textOffset = "2 8";
 };
 //------------------------------------------------------------------------------
 

@@ -217,7 +217,8 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 
 	%this.update_onNodeSelectionChanged( -1 );    // no node selected
 	// --- SEQUENCES TAB ---
-
+	
+	ShapeEd_SeqPillStack.clear(); //Clear the new sequence lisitng stack
 	ShapeEdSequenceList.clear();	
 	ShapeEdSequenceList.addRow( -1, "Name" TAB "Cyclic" TAB "Blend" TAB "Frames" TAB "Priority" );
 	ShapeEdSequenceList.setRowActive( -1, false );	
@@ -228,8 +229,10 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		%name = ShapeEditor.shape.getSequenceName( %i );
 
 		// Ignore __backup__ sequences (only used by editor)
-		if ( !startswith( %name, "__backup__" ) )
+		if ( !startswith( %name, "__backup__" ) ){
 			ShapeEdSequenceList.addItem( %name );
+			ShapeEd.addSequencePill(%name);
+		}
 	}
 
 	ShapeEdThreadWindow.onAddThread();        // add thread 0

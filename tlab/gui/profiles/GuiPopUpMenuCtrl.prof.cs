@@ -93,7 +93,7 @@ singleton GuiControlProfile(ToolsDropdownProfile_S1 : ToolsDropdownProfile)
    bitmap = "tlab/gui/assets/element-assets/GuiDropdownProfile_S1.png";
    fontSize = "15";
    justify = "Center";
-   autoSizeHeight = "1";
+   autoSizeHeight = "0";
 };
 //------------------------------------------------------------------------------
 //==============================================================================

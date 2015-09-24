@@ -29,7 +29,7 @@ $SceneEd_SubGroups["NavAI"] = "NavMesh NavPath CoverPoint";
 //==============================================================================
 // Define Automated MissionGroup SimGroups Objects Type
 $SceneEd_GroupObjList["Core"] = "MissionArea LevelInfo";
-$SceneEd_GroupObjList["Environment"] = "Water Terrain River GroundCover Forest Precipitation Sky Time Cloud";
+$SceneEd_GroupObjList["Environment"] = "Water Terrain River GroundCover Forest Precipitation Sky Time Cloud EnvVolume Sun";
 $SceneEd_GroupObjList["SceneObjects"] = "Road";
 $SceneEd_GroupObjList["TSStatic"] = "TSStatic Prefab";
 $SceneEd_GroupObjList["Spawn"] = "Spawn";

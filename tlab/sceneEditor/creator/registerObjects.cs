@@ -29,6 +29,7 @@ function SceneCreatorWindow::registerObjects( %this ) {
 	%this.registerMissionObject( "SFXEmitter",          "Sound Emitter" );
 	%this.registerMissionObject( "Precipitation" );
 	%this.registerMissionObject( "ParticleEmitterNode", "Particle Emitter" );
+	 %this.registerMissionObject( "RibbonNode", "Ribbon" );
 	// Legacy features. Users should use Ground Cover and the Forest Editor.
 	//%this.registerMissionObject( "fxShapeReplicator",   "Shape Replicator" );
 	//%this.registerMissionObject( "fxFoliageReplicator", "Foliage Replicator" );
@@ -70,7 +71,7 @@ function SceneCreatorWindow::registerObjects( %this ) {
       %this.registerMissionObject("NavMesh", "Navigation mesh");
       %this.registerMissionObject("NavPath", "Path");
     %this.registerMissionObject("EnvVolume", "Env Volume");   
-      
+       %this.registerMissionObject( "AccumulationVolume", "Accumulation Volume" );
 
 	
 	if (%this.isMethod("registerCustomsObjectsGroup"))

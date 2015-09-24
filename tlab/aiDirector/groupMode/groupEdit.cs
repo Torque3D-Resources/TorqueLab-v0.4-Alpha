@@ -3,7 +3,10 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+$ADE_BotGroupField["SpawnDatablock"] = 0;
+$ADE_BotGroupField["SpawnBehavior"] = 1;
+$ADE_BotGroupField["SpawnCount"] = 2;
+$ADE_BotGroupField["SpawnDelay"] = 3;
 //==============================================================================
 //%field,%value,%ctrl,%array,%arg1,%arg2
 function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
@@ -14,8 +17,16 @@ function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
 		warnLog("Invalid BotGroup");
 		return;
 	}	
-
-	%isDirty = LabObj.set(%obj,%field,%value,%groupId);
+	if($ADE_BotGroupField[%field] !$= ""){ 
+		%fieldId = $ADE_BotGroupField[%field];
+		%initialData = %obj.botData[%groupId]; 
+		%newData = setField(%initialData,%fieldId,%value);
+		
+		devLog("BotData changed from:",%initialData,"To",%newData);
+		%isDirty = LabObj.set(%obj,"botData",%newData,%groupId);
+	}
+	else	
+		%isDirty = LabObj.set(%obj,%field,%value,%groupId);
 	
 	if (!%isDirty)
 		return;
@@ -29,6 +40,7 @@ function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
 		
 }
 //------------------------------------------------------------------------------
+
 //==============================================================================
 //%field,%value,%ctrl,%array,%arg1,%arg2
 function ADE_GroupSettingEdit::onValidate( %this ) {
@@ -37,8 +49,8 @@ function ADE_GroupSettingEdit::onValidate( %this ) {
 	%field = getWord(%this.internalName,0);
 	%groupId = %this.groupId;
 	%value = %this.getText();
-	ADE.updateBotGroupField(%field,%value,%groupId);
 	
+		ADE.updateBotGroupField(%field,%value,%groupId);
 }
 //------------------------------------------------------------------------------
 
@@ -57,7 +69,8 @@ function ADE_GroupSettingSlider::onSliderChanged( %this ) {
 	%field = getWord(%this.internalName,0);
 	%groupId = %this.groupId;
 	
-	ADE.updateBotGroupField(%field,%this.getValue(),%groupId);
+	
+		ADE.updateBotGroupField(%field,%this.getValue(),%groupId);
 	
 	%this.updateFriends();	
 }
@@ -69,7 +82,8 @@ function ADE_GroupSettingMenu::onSelect( %this,%id,%text ) {
 	%field = getWord(%this.internalName,0);
 	%groupId = %this.groupId;
 	%value = %this.getText();
-	ADE.updateBotGroupField(%field,%value,%groupId);
+	
+		ADE.updateBotGroupField(%field,%value,%groupId);
 }
 //------------------------------------------------------------------------------
 

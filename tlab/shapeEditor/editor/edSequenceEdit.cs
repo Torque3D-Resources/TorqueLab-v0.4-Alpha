@@ -103,6 +103,7 @@ function ShapeEdPropWindow::update_onSequenceAdded( %this, %seqName, %oldIndex )
 	// --- MISC ---
 	ShapeEdSelectWindow.updateHints();
 
+	ShapeEd.addSequencePill(%seqName);
 	// --- SEQUENCES TAB ---
 	if ( %oldIndex == -1 ) {
 		// This is a brand new sequence => add it to the list and make it the
@@ -311,7 +312,16 @@ function ShapeEdSequences::onEditSequenceSource( %this, %from ) {
 			ShapeEditor.doEditSeqSource( %seqName, %from, %start, %end );
 	}
 }
+function ShapeEdSequences::onEditName( %this ) {
+	%seqName = ShapeEdSequenceList.getSelectedName();
 
+	if ( %seqName !$= "" ) {
+		%newName = %this-->seqName.getText();
+
+		if ( %newName !$= "" )
+			ShapeEditor.doRenameSequence( %seqName, %newName );
+	}
+}
 function ShapeEdSequences::onToggleCyclic( %this ) {
 	%seqName = ShapeEdSequenceList.getSelectedName();
 

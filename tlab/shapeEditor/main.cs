@@ -68,6 +68,7 @@ function execShapeEd(%loadGui) {
 	execPattern("tlab/shapeEditor/guiScript/*.cs");
 	execPattern("tlab/shapeEditor/editor/*.cs");
 	execPattern("tlab/shapeEditor/shape/*.cs");
+	execPattern("tlab/shapeEditor/sequence/*.cs");
 }
 //------------------------------------------------------------------------------
 

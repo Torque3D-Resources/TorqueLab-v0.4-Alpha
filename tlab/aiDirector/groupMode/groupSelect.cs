@@ -23,22 +23,7 @@ function ADE_BotGroupTree::onSelect(%this,%objID) {
 //------------------------------------------------------------------------------
 
 
-//==============================================================================
-function ADE::addBotGroupData(%this,%obj) {
-	
-	
-	ADE_BotGroupGeneralStack-->internalName.setText(%obj.internalName);
-	ADE_BotGroupGeneralStack-->superClass.setText(%obj.superClass);
-	hide(ADE_GroupSettingIDSample);
-	ADE_BotGroupIDStack.clear();
-	%i = 1;
-	while(%obj.spawnDatablock[%i] !$= ""){
-		%this.addBotGroupIdPill(%obj,%i);		
-		%i++;
-	}
-	
-}
-//------------------------------------------------------------------------------
+
 //==============================================================================
 function ADE::updateBotGroupIds(%this) {
 	
@@ -47,23 +32,36 @@ function ADE::updateBotGroupIds(%this) {
 	ADE_BotGroupGeneralStack-->superClass.setText(%obj.superClass);
 	ADE_BotGroupGeneralStack-->subGroupCount.setText(%obj.subGroupCount);
 	hide(ADE_GroupSettingIDSample);
-	ADE_BotGroupIDStack.clear();
+	ADE_BotGroupIDStack.clear();	
 	
-	%count = %obj.subGroupCount;
-	if (%count $= "" || %count < 1)
-		%count = 1;
 	
+	%count = %obj.dataCount;	
 	for(%i=1;%i<=%count;%i++){	
-		%this.addBotGroupIdPill(%obj,%i);
+		%this.addBotSubGroupPill(%obj,%i);
 	}
-	
+	%this.addSubGroup();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ADE::addBotGroupIdPill(%this,%obj,%id) {
+function ADE::addBotSubGroupPill(%this,%obj,%id) {
+	if (%obj $= "")
+		%obj = ADE.selectedBotGroup;
 	
-	
-		%datablock = %obj.spawnDatablock[%id];
+		%groupName = "botGroup_"@%id;
+		
+		%fields = %obj.botData[%id];
+		%datablock = getField(%fields,0);
+		%behavior = getField(%fields,1);
+		%count = getField(%fields,2);
+		%delay = getField(%fields,3);
+		if (%datablock $= "")
+			%datablock = "Select a datablock";
+		if (%behavior $= "")
+			%behavior = "Select a behavior";
+		if (%count $= "")
+			%count = "1";
+		if (%delay $= "")
+			%delay = "200";
 		
 		%pill = cloneObject(ADE_GroupSettingIDSample,"","Group_"@%id,ADE_BotGroupIDStack);
 		%pill.caption = "Group #"@%id;
@@ -81,8 +79,7 @@ function ADE::addBotGroupIdPill(%this,%obj,%id) {
 			if (%data.getName() $= 	%datablock)
 				%selected = %data.getId();
 		}
-		if (%datablock  $= "")
-			%datablock  = "Select Bot Datablock";
+		
 		%datablockMenu.groupId = %id;
 		%datablockMenu.setText(%datablock);
 		
@@ -96,18 +93,17 @@ function ADE::addBotGroupIdPill(%this,%obj,%id) {
 		}	
 		
 		
-		%behaviorMenu.setText(%obj.spawnBehavior[%i]);
+		%behaviorMenu.setText(%behavior);
 		%behaviorMenu.groupId = %id;
 		//-------------------------------------------------------
 		//Text Edits
 		
 		%pill-->spawnDelay.groupId = %id;
-		%pill-->spawnDelay.setText(%obj.spawnDelay[%id]);
+		%pill-->spawnDelay.setText(%delay);
 		%pill-->spawnDelay.updateFriends();
 		%pill-->spawnCount.groupId = %id;
-		%pill-->spawnCount.setText(%obj.spawnCount[%id]);
+		%pill-->spawnCount.setText(%count);
 		%pill-->spawnCount.updateFriends();		
-		
 		%pill.expanded = false;
 	
 }

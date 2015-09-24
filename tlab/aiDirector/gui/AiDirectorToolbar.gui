@@ -15,22 +15,23 @@ new GuiStackControl(AiDirectorToolbar) {
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "AiDirectorToolbar";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "27968";
-      disabledGroup = "27969";
-      EditorContainer = "20167";
+      defaultStack = "27796";
+      disabledGroup = "27797";
+      EditorContainer = "20233";
       editorParent = "EditorGuiToolbarStack";
       plugin = "AiDirector";
-      stackLists = "27970";
+      stackLists = "27798";
 
    new GuiContainer() {
       margin = "0 0 0 0";
