@@ -149,13 +149,15 @@ function ShapeEditorPlugin::onExitMission( %this ) {
 	ShapeEdUndoManager.clearAll();
 	ShapeEditor.setDirty( false );
 	ShapeEdSequenceList.clear();
-	ShapeEdNodeTreeView.removeItem( 0 );
-	ShapeEdPropWindow.update_onNodeSelectionChanged( -1 );
-	ShapeEdDetailTree.removeItem( 0 );
+	//ShapeEdNodeTreeView.removeItem( 0 );
+	ShapeEd.onNodeSelectionChanged( -1 );
+	ShapeEd_DetailTree.removeItem( 0 );
 	ShapeEdMaterialList.clear();
 	ShapeEdMountWindow-->mountList.clear();
 	ShapeEdThreadWindow-->seqList.clear();
 	ShapeEdThreadList.clear();
+	
+	ShapeEd.clearNodeTree();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

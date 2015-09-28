@@ -16,7 +16,7 @@ function ShapeEd::addSequencePill(%this,%seqName) {
 		%seqStart = getField( %sourceData, 2 );
 		%seqEnd = getField( %sourceData, 3 );
 		%seqFromTotal = getField( %sourceData, 4 );
-	devLog("From is:",%seqFrom);
+	
 	
 	hide(ShapeEd_SeqPillSource);
 	%pill = cloneObject(ShapeEd_SeqPillSource,"",%seqName,ShapeEd_SeqPillStack);
@@ -88,7 +88,7 @@ function ShapeEdAnim_SeqPillEdit::onValidate(%this) {
 		case "seqName":
 		%newName = %this.getText();
 		if (%newName !$= %seqName){			
-			ShapeEd.onEditName(%seqName,%newName);
+			ShapeEd.onEditSequenceName(%seqName,%newName);
 			%pill.seqName = %newName;
 		}
 	}
@@ -116,12 +116,17 @@ function ShapeEdAnim_SeqPillCheck::onClick(%this) {
 function ShapeEd_SeqPillRollout::onExpanded(%this) {
 	ShapeEd.selectedSequence = %this.seqName;
 	
+	if (!isObject(ShapeEditor.shape)){
+		ShapeEd.onSequenceObjectInvalid();
+	}
+	
 	%seqName = %this.seqName;
 	%sourceMenu = %this-->sourceSeq;
 	%blendMenu = %this-->blendSeq;
 	%sourceMenu.clear();
 	%blendMenu.clear();
 	%sourceMenu.add( "Browse..." );
+	
 	%count = ShapeEditor.shape.getSequenceCount();
 	for ( %i = 0; %i < %count; %i++ ) {
 		%name = ShapeEditor.shape.getSequenceName( %i );	

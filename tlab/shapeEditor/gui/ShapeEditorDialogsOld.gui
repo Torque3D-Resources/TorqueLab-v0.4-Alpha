@@ -1035,7 +1035,7 @@
                         visible = "1";
                         active = "1";
                         variable = "ShapeEdShapeView.detailSize";
-                        altCommand = "ShapeEdAdvancedWindow.onEditDetailSize();";
+                        altCommand = "ShapeEd.onEditDetailSize();";
                         tooltipProfile = "ToolsToolTipProfile";
                         tooltip = "Edit this value to change the size of the current detail";
                         hovertime = "1000";

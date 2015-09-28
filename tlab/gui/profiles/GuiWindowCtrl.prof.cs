@@ -103,5 +103,9 @@ singleton GuiControlProfile(ToolsWindowBox_Alt : ToolsWindowBox)
    bitmap = "tlab/gui/assets/container-assets/GuiWindowBox_Alt.png";
    fontColors[4] = "Fuchsia";
    fontColorLink = "Fuchsia";
+   opaque = "1";
+   fillColor = "254 254 254 255";
+   fontColors[1] = "0 0 0 255";
+   fontColorHL = "0 0 0 255";
 };
 //------------------------------------------------------------------------------

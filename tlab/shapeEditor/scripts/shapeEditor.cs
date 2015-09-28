@@ -77,7 +77,7 @@ function ShapeEdSeqNodeTabBook::onTabSelected( %this, %name, %index ) {
 		ShapeEdPropWindow-->newBtn.Command = "";
 		ShapeEdPropWindow-->newBtn.setActive( false );
 		ShapeEdPropWindow-->deleteBtn.ToolTip = "Delete the selected mesh or detail level (cannot be undone)";
-		ShapeEdPropWindow-->deleteBtn.Command = "ShapeEdDetails.onDeleteMesh();";
+		ShapeEdPropWindow-->deleteBtn.Command = "ShapeEd.onDeleteMesh();";
 		ShapeEdPropWindow-->deleteBtn.setActive( true );
 
 	case "Mat":

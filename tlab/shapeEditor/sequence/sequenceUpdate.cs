@@ -39,7 +39,7 @@ function ShapeEd::onAddSequenceFromBrowse( %this, %path ) {
 // ShapeEditor Sequence Update -> Name
 //==============================================================================
 //==============================================================================
-function ShapeEd::onEditName( %this,%seqName,%newName ) {	
+function ShapeEd::onEditSequenceName( %this,%seqName,%newName ) {	
 	if ( %seqName !$= "" && %newName !$= "") 	
 			ShapeEditor.doRenameSequence( %seqName, %newName );
 	

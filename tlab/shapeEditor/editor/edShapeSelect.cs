@@ -204,18 +204,18 @@ function ShapeEditor::saveConstructor( %this, %constructor ) {
 // Update the GUI in response to the shape selection changing
 function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 	// --- NODES TAB ---
-	ShapeEdNodeTreeView.removeItem( 0 );
-	%rootId = ShapeEdNodeTreeView.insertItem( 0, "<root>", 0, "" );
+	ShapeEd_NodeTree.removeItem( 0 );
+	%rootId = ShapeEd_NodeTree.insertItem( 0, "<root>", 0, "" );
 	%count = ShapeEditor.shape.getNodeCount();
 
 	for ( %i = 0; %i < %count; %i++ ) {
 		%name = ShapeEditor.shape.getNodeName( %i );
 
 		if ( ShapeEditor.shape.getNodeParentName( %name ) $= "" )
-			ShapeEdNodeTreeView.addNodeTree( %name );
+			ShapeEd_NodeTree.addNodeTree( %name );
 	}
 
-	%this.update_onNodeSelectionChanged( -1 );    // no node selected
+	ShapeEd.onNodeSelectionChanged( -1 );    // no node selected
 	// --- SEQUENCES TAB ---
 	
 	ShapeEd_SeqPillStack.clear(); //Clear the new sequence lisitng stack
@@ -238,9 +238,9 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 	ShapeEdThreadWindow.onAddThread();        // add thread 0
 	// --- DETAILS TAB ---
 	// Add detail levels and meshes to tree
-	ShapeEdDetailTree.clearSelection();
-	ShapeEdDetailTree.removeItem( 0 );
-	%root = ShapeEdDetailTree.insertItem( 0, "<root>", "", "" );
+	ShapeEd_DetailTree.clearSelection();
+	ShapeEd_DetailTree.removeItem( 0 );
+	%root = ShapeEd_DetailTree.insertItem( 0, "<root>", "", "" );
 	%objCount = ShapeEditor.shape.getObjectCount();
 
 	for ( %i = 0; %i < %objCount; %i++ ) {
@@ -249,7 +249,7 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 
 		for ( %j = 0; %j < %meshCount; %j++ ) {
 			%meshName = ShapeEditor.shape.getMeshName( %objName, %j );
-			ShapeEdDetailTree.addMeshEntry( %meshName, 1 );
+			ShapeEd_DetailTree.addMeshEntry( %meshName, 1 );
 		}
 	}
 
@@ -262,5 +262,5 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		ShapeEdDetails-->objectNode.add( ShapeEditor.shape.getNodeName( %i ) );
 
 	// --- MATERIALS TAB ---
-	ShapeEdMaterials.updateMaterialList();
+	ShapeEd.updateMaterialList();
 }

@@ -22,7 +22,7 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      EditorContainer = "19923";
+      EditorContainer = "20320";
       editorParent = "EditorDialogs";
       isDlg = "1";
       plugin = "MaterialEditor";
@@ -83,7 +83,6 @@
 
          new GuiSwatchButtonCtrl(matEd_previewBackground) {
             color = "0.976471 0.980392 0.976471 0";
-            gridBitmap = "tlab/gui/assets/gfx/grid.png";
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
@@ -133,7 +132,7 @@
          sbUsesNAColor = "0";
          reverseTextList = "0";
          bitmapBounds = "16 16";
-         text = "Pyramid";
+         text = "Cube";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -178,7 +177,7 @@
          isContainer = "1";
          internalName = "previewOptions";
          canSave = "1";
-         canSaveDynamicFields = "0";
+         canSaveDynamicFields = "1";
 
          new GuiStackControl() {
             stackingType = "Vertical";
@@ -243,7 +242,6 @@
 
                new GuiSwatchButtonCtrl(MaterialPreviewBackgroundPicker) {
                   color = "0.976471 0.980392 0.976471 0";
-                  gridBitmap = "tlab/gui/assets/gfx/grid.png";
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
@@ -303,7 +301,6 @@
 
                new GuiSwatchButtonCtrl(matEd_lightColorPicker) {
                   color = "0.176471 0.890196 0.0156863 1";
-                  gridBitmap = "tools/gui/images/transp_grid";
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
@@ -364,7 +361,6 @@
 
                new GuiSwatchButtonCtrl(matEd_ambientLightColorPicker) {
                   color = "0.992157 0.992157 0.992157 1";
-                  gridBitmap = "tools/gui/images/transp_grid";
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";

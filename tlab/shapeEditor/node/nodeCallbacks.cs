@@ -1,29 +1,14 @@
 //==============================================================================
-// TorqueLab -> ShapeEditor -> Node Editing 
+// TorqueLab -> ShapeEditor -> Mounted Shapes
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
-/*
-function ShapeEd::addNewNode( %this, %name ) {
-	if (%name $= "")
-		%name = ShapeEd_AddNodeName.getText();
-		
-	if (%name $= "")	
-		%name = "NewNode";
-	ShapeEdNodes.onAddNode(%name);
-	
-}
-
 //==============================================================================
 // ShapeEditor -> Node Editing 
 //==============================================================================
 
 // Update the GUI in response to the node selection changing
-function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
-	ShapeEd.onNodeSelectionChanged( %id );
-	return;
-	
+function ShapeEd::onNodeSelectionChanged( %this, %id ) {
 	if ( %id > 0 ) {
 		// Enable delete button and edit boxes
 		if ( ShapeEdSeqNodeTabBook.activePage $= "Node" )
@@ -33,7 +18,7 @@ function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
 		ShapeEdNodes-->nodePosition.setActive( true );
 		ShapeEdNodes-->nodeRotation.setActive( true );
 		// Update the node inspection data
-		%name = ShapeEdNodeTreeView.getItemText( %id );
+		%name = ShapeEd_NodeTree.getItemText( %id );
 		ShapeEdNodes-->nodeName.setText( %name );
 		// Node parent list => ancestor and sibling nodes only (can't re-parent to a descendent)
 		ShapeEdNodeParentMenu.clear();
@@ -79,9 +64,7 @@ function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
 }
 
 // Update the GUI in response to a node being added
-function ShapeEdPropWindow::update_onNodeAdded( %this, %nodeName, %oldTreeIndex ) {
-	ShapeEd.onNodeAdded( %nodeName, %oldTreeIndex );
-	return;
+function ShapeEd::onNodeAdded( %this, %nodeName, %oldTreeIndex ) {
 	// --- MISC ---
 	ShapeEdShapeView.refreshShape();
 	ShapeEdShapeView.updateNodeTransforms();
@@ -94,22 +77,22 @@ function ShapeEdPropWindow::update_onNodeAdded( %this, %nodeName, %oldTreeIndex 
 	}
 
 	// --- NODES TAB ---
-	%id = ShapeEdNodeTreeView.addNodeTree( %nodeName );
+	%id = ShapeEd_NodeTree.addNodeTree( %nodeName );
 
 	if ( %oldTreeIndex <= 0 ) {
 		// This is a new node => make it the current selection
 		if ( %id > 0 ) {
-			ShapeEdNodeTreeView.clearSelection();
-			ShapeEdNodeTreeView.selectItem( %id );
+			ShapeEd_NodeTree.clearSelection();
+			ShapeEd_NodeTree.selectItem( %id );
 		}
 	} else {
 		// This node has been un-deleted. Inserting a new item puts it at the
 		// end of the siblings, but we want to restore the original order as
 		// if the item was never deleted, so move it up as required.
-		%childIndex = ShapeEdNodeTreeView.getChildIndexByName( %nodeName );
+		%childIndex = ShapeEd_NodeTree.getChildIndexByName( %nodeName );
 
 		while ( %childIndex > %oldTreeIndex ) {
-			ShapeEdNodeTreeView.moveItemUp( %id );
+			ShapeEd_NodeTree.moveItemUp( %id );
 			%childIndex--;
 		}
 	}
@@ -119,9 +102,7 @@ function ShapeEdPropWindow::update_onNodeAdded( %this, %nodeName, %oldTreeIndex 
 }
 
 // Update the GUI in response to a node(s) being removed
-function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount ) {
-	ShapeEd.onNodeRemoved( %nameList, %nameCount );
-	return;
+function ShapeEd::onNodeRemoved( %this, %nameList, %nameCount ) {
 	// --- MISC ---
 	ShapeEdShapeView.refreshShape();
 	ShapeEdShapeView.updateNodeTransforms();
@@ -144,12 +125,12 @@ function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount )
 
 	// --- NODES TAB ---
 	%lastName = getField( %nameList, %nameCount-1 );
-	%id = ShapeEdNodeTreeView.findItemByName( %lastName );   // only need to remove the parent item
+	%id = ShapeEd_NodeTree.findItemByName( %lastName );   // only need to remove the parent item
 
 	if ( %id > 0 ) {
-		ShapeEdNodeTreeView.removeItem( %id );
+		ShapeEd_NodeTree.removeItem( %id );
 
-		if ( ShapeEdNodeTreeView.getSelectedItem() <= 0 )
+		if ( ShapeEd_NodeTree.getSelectedItem() <= 0 )
 			ShapeEd.onNodeSelectionChanged( -1 );
 	}
 
@@ -161,9 +142,7 @@ function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount )
 }
 
 // Update the GUI in response to a node being renamed
-function ShapeEdPropWindow::update_onNodeRenamed( %this, %oldName, %newName ) {
-	ShapeEd.onNodeRenamed( %oldName, %newName );
-	return;
+function ShapeEd::onNodeRenamed( %this, %oldName, %newName ) {
 	// --- MISC ---
 	ShapeEdSelectWindow.updateHints();
 	// --- MOUNT WINDOW ---
@@ -188,10 +167,10 @@ function ShapeEdPropWindow::update_onNodeRenamed( %this, %oldName, %newName ) {
 	}
 
 	// --- NODES TAB ---
-	%id = ShapeEdNodeTreeView.findItemByName( %oldName );
-	ShapeEdNodeTreeView.editItem( %id, %newName, 0 );
+	%id = ShapeEd_NodeTree.findItemByName( %oldName );
+	ShapeEd_NodeTree.editItem( %id, %newName, 0 );
 
-	if ( ShapeEdNodeTreeView.getSelectedItem() == %id )
+	if ( ShapeEd_NodeTree.getSelectedItem() == %id )
 		ShapeEdNodes-->nodeName.setText( %newName );
 
 	// --- DETAILS TAB ---
@@ -208,35 +187,31 @@ function ShapeEdPropWindow::update_onNodeRenamed( %this, %oldName, %newName ) {
 }
 
 // Update the GUI in response to a node's parent being changed
-function ShapeEdPropWindow::update_onNodeParentChanged( %this, %nodeName ) {
-	ShapeEd.onNodeParentChanged( %nodeName );
-	return;
+function ShapeEd::update_onNodeParentChanged( %this, %nodeName ) {
 	// --- MISC ---
 	ShapeEdShapeView.updateNodeTransforms();
 	// --- NODES TAB ---
 	%isSelected = 0;
-	%id = ShapeEdNodeTreeView.findItemByName( %nodeName );
+	%id = ShapeEd_NodeTree.findItemByName( %nodeName );
 
 	if ( %id > 0 ) {
-		%isSelected = ( ShapeEdNodeTreeView.getSelectedItem() == %id );
-		ShapeEdNodeTreeView.removeItem( %id );
+		%isSelected = ( ShapeEd_NodeTree.getSelectedItem() == %id );
+		ShapeEd_NodeTree.removeItem( %id );
 	}
 
-	ShapeEdNodeTreeView.addNodeTree( %nodeName );
+	ShapeEd_NodeTree.addNodeTree( %nodeName );
 
 	if ( %isSelected )
-		ShapeEdNodeTreeView.selectItem( ShapeEdNodeTreeView.findItemByName( %nodeName ) );
+		ShapeEd_NodeTree.selectItem( ShapeEd_NodeTree.findItemByName( %nodeName ) );
 }
 
-function ShapeEdPropWindow::update_onNodeTransformChanged( %this, %nodeName ) {
-	ShapeEd.onNodeTransformChanged( %nodeName );
-	return;
+function ShapeEd::onNodeTransformChanged( %this, %nodeName ) {
 	// Default to the selected node if none is specified
 	if ( %nodeName $= "" ) {
-		%id = ShapeEdNodeTreeView.getSelectedItem();
+		%id = ShapeEd_NodeTree.getSelectedItem();
 
 		if ( %id > 0 )
-			%nodeName = ShapeEdNodeTreeView.getItemText( %id );
+			%nodeName = ShapeEd_NodeTree.getItemText( %id );
 		else
 			return;
 	}
@@ -251,9 +226,9 @@ function ShapeEdPropWindow::update_onNodeTransformChanged( %this, %nodeName ) {
 
 	// --- NODES TAB ---
 	// Update the node transform fields if necessary
-	%id = ShapeEdNodeTreeView.getSelectedItem();
+	%id = ShapeEd_NodeTree.getSelectedItem();
 
-	if ( ( %id > 0 ) && ( ShapeEdNodeTreeView.getItemText( %id ) $= %nodeName ) ) {
+	if ( ( %id > 0 ) && ( ShapeEd_NodeTree.getItemText( %id ) $= %nodeName ) ) {
 		%isWorld = ShapeEdNodes-->worldTransform.getValue();
 		%transform = ShapeEditor.shape.getNodeTransform( %nodeName, %isWorld );
 		ShapeEdNodes-->nodePosition.setText( getWords( %transform, 0, 2 ) );
@@ -261,148 +236,19 @@ function ShapeEdPropWindow::update_onNodeTransformChanged( %this, %nodeName ) {
 	}
 }
 
-function ShapeEdNodeTreeView::onClearSelection( %this ) {
-	ShapeEdPropWindow.update_onNodeSelectionChanged( -1 );
-}
+function ShapeEd::onObjectNodeChanged( %this, %objName ) {
+	// --- MISC ---
+	ShapeEdShapeView.refreshShape();
 
-function ShapeEdNodeTreeView::onSelect( %this, %id ) {
-	// Update the node name and transform controls
-	ShapeEdPropWindow.update_onNodeSelectionChanged( %id );
+	// --- DETAILS TAB ---
+	// Update the node popup menu if this object is selected
+	if ( ShapeEdDetails-->meshName.getText() $= %objName ) {
+		%nodeName = ShapeEditor.shape.getObjectNode( %objName );
 
-	// Update orbit position if orbiting the selected node
-	if ( ShapeEdShapeView.orbitNode ) {
-		%name = %this.getItemText( %id );
-		%transform = ShapeEditor.shape.getNodeTransform( %name, 1 );
-		ShapeEdShapeView.setOrbitPos( getWords( %transform, 0, 2 ) );
+		if ( %nodeName $= "" )
+			%nodeName = "<root>";
+
+		%id = ShapeEdDetails-->objectNode.findText( %nodeName );
+		ShapeEdDetails-->objectNode.setSelected( %id, false );
 	}
 }
-
-function ShapeEdShapeView::onNodeSelected( %this, %index ) {
-	ShapeEdNodeTreeView.clearSelection();
-
-	if ( %index > 0 ) {
-		%name = ShapeEditor.shape.getNodeName( %index );
-		%id = ShapeEdNodeTreeView.findItemByName( %name );
-
-		if ( %id > 0 )
-			ShapeEdNodeTreeView.selectItem( %id );
-	}
-}
-//ShapeEdNodes.onAddNode("Base");
-function ShapeEdNodes::onAddNode( %this, %name ) {
-	// Add a new node, using the currently selected node as the initial parent
-	if ( %name $= "" )
-		%name = ShapeEditor.getUniqueName( "node", "myNode" );
-
-	%id = ShapeEdNodeTreeView.getSelectedItem();
-
-	if ( %id <= 0 )
-		%parent = "";
-	else
-		%parent = ShapeEdNodeTreeView.getItemText( %id );
-
-	ShapeEditor.doAddNode( %name, %parent, "0 0 0 0 0 1 0" );
-}
-
-function ShapeEdNodes::onDeleteNode( %this ) {
-	// Remove the node and all its children from the shape
-	%id = ShapeEdNodeTreeView.getSelectedItem();
-
-	if ( %id > 0 ) {
-		%name = ShapeEdNodeTreeView.getItemText( %id );
-		ShapeEditor.doRemoveShapeData( "Node", %name );
-	}
-}
-
-// Determine the index of a node in the tree relative to its parent
-function ShapeEdNodeTreeView::getChildIndexByName( %this, %name ) {
-	%id = %this.findItemByName( %name );
-	%parentId = %this.getParent( %id );
-	%childId = %this.getChild( %parentId );
-
-	if ( %childId <= 0 )
-		return 0;   // bad!
-
-	%index = 0;
-
-	while ( %childId != %id ) {
-		%childId = %this.getNextSibling( %childId );
-		%index++;
-	}
-
-	return %index;
-}
-
-// Add a node and its children to the node tree view
-function ShapeEdNodeTreeView::addNodeTree( %this, %nodeName ) {
-	// Abort if already added => something dodgy has happened and we'd end up
-	// recursing indefinitely
-	if ( %this.findItemByName( %nodeName ) ) {
-		error( "Recursion error in ShapeEdNodeTreeView::addNodeTree" );
-		return 0;
-	}
-
-	// Find parent and add me to it
-	%parentName = ShapeEditor.shape.getNodeParentName( %nodeName );
-
-	if ( %parentName $= "" )
-		%parentName = "<root>";
-
-	%parentId = %this.findItemByName( %parentName );
-	%id = %this.insertItem( %parentId, %nodeName, 0, "" );
-	// Add children
-	%count = ShapeEditor.shape.getNodeChildCount( %nodeName );
-
-	for ( %i = 0; %i < %count; %i++ )
-		%this.addNodeTree( ShapeEditor.shape.getNodeChildName( %nodeName, %i ) );
-
-	return %id;
-}
-
-function ShapeEdNodes::onEditName( %this ) {
-	%id = ShapeEdNodeTreeView.getSelectedItem();
-
-	if ( %id > 0 ) {
-		%oldName = ShapeEdNodeTreeView.getItemText( %id );
-		%newName = %this-->nodeName.getText();
-
-		if ( %newName !$= "" )
-			ShapeEditor.doRenameNode( %oldName, %newName );
-	}
-}
-
-function ShapeEdNodeParentMenu::onSelect( %this, %id, %text ) {
-	%id = ShapeEdNodeTreeView.getSelectedItem();
-
-	if ( %id > 0 ) {
-		%name = ShapeEdNodeTreeView.getItemText( %id );
-		ShapeEditor.doSetNodeParent( %name, %text );
-	}
-}
-
-function ShapeEdNodes::onEditTransform( %this ) {
-	%id = ShapeEdNodeTreeView.getSelectedItem();
-
-	if ( %id > 0 ) {
-		%name = ShapeEdNodeTreeView.getItemText( %id );
-		// Get the node transform from the gui
-		%pos = %this-->nodePosition.getText();
-		%rot = %this-->nodeRotation.getText();
-		%txfm = %pos SPC %rot;
-		%isWorld = ShapeEdNodes-->worldTransform.getValue();
-
-		// Do a quick sanity check to avoid setting wildly invalid transforms
-		for ( %i = 0; %i < 7; %i++ ) {  // "x y z aa.x aa.y aa.z aa.angle"
-			if ( getWord( %txfm, %i ) $= "" )
-				return;
-		}
-
-		ShapeEditor.doEditNodeTransform( %name, %txfm, %isWorld, -1 );
-	}
-}
-
-function ShapeEdShapeView::onEditNodeTransform( %this, %node, %txfm, %gizmoID ) {
-	devLog("ShapeEdShapeView::onEditNodeTransform");
-	ShapeEditor.doEditNodeTransform( %node, %txfm, 1, %gizmoID );
-}
-*/

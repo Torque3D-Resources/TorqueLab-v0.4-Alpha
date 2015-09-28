@@ -118,7 +118,7 @@ function ShapeEditor::doAddNode( %this, %nodeName, %parentName, %transform ) {
 
 function ActionAddNode::doit( %this ) {
 	if ( ShapeEditor.shape.addNode( %this.nodeName, %this.parentName, %this.transform ) ) {
-		ShapeEdPropWindow.update_onNodeAdded( %this.nodeName, -1 );
+		ShapeEd.onNodeAdded( %this.nodeName, -1 );
 		return true;
 	}
 
@@ -129,7 +129,7 @@ function ActionAddNode::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.removeNode( %this.nodeName ) )
-		ShapeEdPropWindow.update_onNodeRemoved( %this.nodeName, 1 );
+		ShapeEd.onNodeRemoved( %this.nodeName, 1 );
 }
 
 //------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ function ActionAddNode::undo( %this ) {
 function ShapeEditor::doRemoveNode( %this, %nodeName ) {
 	%action = %this.createAction( ActionRemoveNode, "Remove node" );
 	%action.nodeName =%nodeName;
-	%action.nodeChildIndex = ShapeEdNodeTreeView.getChildIndexByName( %nodeName );
+	%action.nodeChildIndex = ShapeEd_NodeTree.getChildIndexByName( %nodeName );
 	// Need to delete all child nodes of this node as well, so recursively collect
 	// all of the names.
 	%action.nameList = %this.getNodeNames( %nodeName, "" );
@@ -154,7 +154,7 @@ function ActionRemoveNode::doit( %this ) {
 		ShapeEditor.shape.removeNode( %this.names[%i] );
 
 	// Update GUI
-	ShapeEdPropWindow.update_onNodeRemoved( %this.nameList, %this.nameCount );
+	ShapeEd.onNodeRemoved( %this.nameList, %this.nameCount );
 	return true;
 }
 
@@ -173,7 +173,7 @@ function ShapeEditor::doRenameNode( %this, %oldName, %newName ) {
 
 function ActionRenameNode::doit( %this ) {
 	if ( ShapeEditor.shape.renameNode( %this.oldName, %this.newName ) ) {
-		ShapeEdPropWindow.update_onNodeRenamed( %this.oldName, %this.newName );
+		ShapeEd.onNodeRenamed( %this.oldName, %this.newName );
 		return true;
 	}
 
@@ -184,7 +184,7 @@ function ActionRenameNode::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.renameNode( %this.newName, %this.oldName ) )
-		ShapeEdPropWindow.update_onNodeRenamed( %this.newName, %this.oldName );
+		ShapeEd.onNodeRenamed( %this.newName, %this.oldName );
 }
 
 //------------------------------------------------------------------------------
@@ -202,7 +202,7 @@ function ShapeEditor::doSetNodeParent( %this, %name, %parent ) {
 
 function ActionSetNodeParent::doit( %this ) {
 	if ( ShapeEditor.shape.setNodeParent( %this.nodeName, %this.parentName ) ) {
-		ShapeEdPropWindow.update_onNodeParentChanged( %this.nodeName );
+		ShapeEd.onNodeParentChanged( %this.nodeName );
 		return true;
 	}
 
@@ -213,7 +213,7 @@ function ActionSetNodeParent::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.setNodeParent( %this.nodeName, %this.oldParentName ) )
-		ShapeEdPropWindow.update_onNodeParentChanged( %this.nodeName );
+		ShapeEd.onNodeParentChanged( %this.nodeName );
 }
 
 //------------------------------------------------------------------------------
@@ -244,14 +244,14 @@ function ShapeEditor::doEditNodeTransform( %this, %nodeName, %newTransform, %isW
 
 function ActionEditNodeTransform::doit( %this ) {
 	ShapeEditor.shape.setNodeTransform( %this.nodeName, %this.newTransform, %this.isWorld );
-	ShapeEdPropWindow.update_onNodeTransformChanged();
+	ShapeEd.onNodeTransformChanged();
 	return true;
 }
 
 function ActionEditNodeTransform::undo( %this ) {
 	Parent::undo( %this );
 	ShapeEditor.shape.setNodeTransform( %this.nodeName, %this.oldTransform, %this.isWorld );
-	ShapeEdPropWindow.update_onNodeTransformChanged();
+	ShapeEd.onNodeTransformChanged();
 }
 
 //------------------------------------------------------------------------------
@@ -664,7 +664,7 @@ function ShapeEditor::doRenameDetail( %this, %oldName, %newName ) {
 
 function ActionRenameDetail::doit( %this ) {
 	if ( ShapeEditor.shape.renameDetailLevel( %this.oldName, %this.newName ) ) {
-		ShapeEdPropWindow.update_onDetailRenamed( %this.oldName, %this.newName );
+		ShapeEd.onDetailRenamed( %this.oldName, %this.newName );
 		return true;
 	}
 
@@ -675,7 +675,7 @@ function ActionRenameDetail::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.renameDetailLevel( %this.newName, %this.oldName ) )
-		ShapeEdPropWindow.update_onDetailRenamed( %this.newName, %this.oldName );
+		ShapeEd.onDetailRenamed( %this.newName, %this.oldName );
 }
 
 //------------------------------------------------------------------------------
@@ -691,7 +691,7 @@ function ActionEditDetailSize::doit( %this ) {
 	%dl = ShapeEditor.shape.setDetailLevelSize( %this.oldSize, %this.newSize );
 
 	if ( %dl != -1 ) {
-		ShapeEdPropWindow.update_onDetailSizeChanged( %this.oldSize, %this.newSize );
+		ShapeEd.onDetailSizeChanged( %this.oldSize, %this.newSize );
 		return true;
 	}
 
@@ -703,7 +703,7 @@ function ActionEditDetailSize::undo( %this ) {
 	%dl = ShapeEditor.shape.setDetailLevelSize( %this.newSize, %this.oldSize );
 
 	if ( %dl != -1 )
-		ShapeEdPropWindow.update_onDetailSizeChanged( %this.newSize, %this.oldSize );
+		ShapeEd.onDetailSizeChanged( %this.newSize, %this.oldSize );
 }
 
 //------------------------------------------------------------------------------
@@ -717,7 +717,7 @@ function ShapeEditor::doRenameObject( %this, %oldName, %newName ) {
 
 function ActionRenameObject::doit( %this ) {
 	if ( ShapeEditor.shape.renameObject( %this.oldName, %this.newName ) ) {
-		ShapeEdPropWindow.update_onObjectRenamed( %this.oldName, %this.newName );
+		ShapeEd.onObjectRenamed( %this.oldName, %this.newName );
 		return true;
 	}
 
@@ -728,7 +728,7 @@ function ActionRenameObject::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.renameObject( %this.newName, %this.oldName ) )
-		ShapeEdPropWindow.update_onObjectRenamed( %this.newName, %this.oldName );
+		ShapeEd.onObjectRenamed( %this.newName, %this.oldName );
 }
 
 //------------------------------------------------------------------------------
@@ -743,7 +743,7 @@ function ShapeEditor::doEditMeshSize( %this, %meshName, %size ) {
 
 function ActionEditMeshSize::doit( %this ) {
 	if ( ShapeEditor.shape.setMeshSize( %this.meshName SPC %this.oldSize, %this.newSize ) ) {
-		ShapeEdPropWindow.update_onMeshSizeChanged( %this.meshName, %this.oldSize, %this.newSize );
+		ShapeEd.onMeshSizeChanged( %this.meshName, %this.oldSize, %this.newSize );
 		return true;
 	}
 
@@ -754,7 +754,7 @@ function ActionEditMeshSize::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.setMeshSize( %this.meshName SPC %this.newSize, %this.oldSize ) )
-		ShapeEdPropWindow.update_onMeshSizeChanged( %this.meshName, %this.oldSize, %this.oldSize );
+		ShapeEd.onMeshSizeChanged( %this.meshName, %this.oldSize, %this.oldSize );
 }
 
 //------------------------------------------------------------------------------
@@ -790,9 +790,9 @@ function ActionEditMeshBillboard::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.setMeshType( %this.meshName, %this.oldType ) ) {
-		%id = ShapeEdDetailTree.getSelectedItem();
+		%id = ShapeEd_DetailTree.getSelectedItem();
 
-		if ( ( %id > 1 ) && ( ShapeEdDetailTree.getItemText( %id ) $= %this.meshName ) ) {
+		if ( ( %id > 1 ) && ( ShapeEd_DetailTree.getItemText( %id ) $= %this.meshName ) ) {
 			switch$ ( ShapeEditor.shape.getMeshType( %this.meshName ) ) {
 			case "normal":
 				ShapeEdDetails-->bbType.setSelected( 0, false );
@@ -819,7 +819,7 @@ function ShapeEditor::doSetObjectNode( %this, %objName, %node ) {
 
 function ActionSetObjectNode::doit( %this ) {
 	if ( ShapeEditor.shape.setObjectNode( %this.objName, %this.newNode ) ) {
-		ShapeEdPropWindow.update_onObjectNodeChanged( %this.objName );
+		ShapeEd.onObjectNodeChanged( %this.objName );
 		return true;
 	}
 
@@ -830,7 +830,7 @@ function ActionSetObjectNode::undo( %this ) {
 	Parent::undo( %this );
 
 	if ( ShapeEditor.shape.setObjectNode( %this.objName, %this.oldNode ) )
-		ShapeEdPropWindow.update_onObjectNodeChanged( %this.objName );
+		ShapeEd.onObjectNodeChanged( %this.objName );
 }
 
 //------------------------------------------------------------------------------
@@ -843,7 +843,7 @@ function ShapeEditor::doRemoveMesh( %this, %meshName ) {
 
 function ActionRemoveMesh::doit( %this ) {
 	if ( ShapeEditor.shape.removeMesh( %this.meshName ) ) {
-		ShapeEdPropWindow.update_onMeshRemoved( %this.meshName );
+		ShapeEd.onMeshRemoved( %this.meshName );
 		return true;
 	}
 
@@ -870,9 +870,9 @@ function ActionAddMeshFromFile::doit( %this ) {
 		%count = getFieldCount( %this.meshList );
 
 		for ( %i = 0; %i < %count; %i++ )
-			ShapeEdPropWindow.update_onMeshAdded( getField( %this.meshList, %i ) );
+			ShapeEd.onMeshAdded( getField( %this.meshList, %i ) );
 
-		ShapeEdMaterials.updateMaterialList();
+		ShapeEd.updateMaterialList();
 		return true;
 	}
 
@@ -886,10 +886,10 @@ function ActionAddMeshFromFile::undo( %this ) {
 	for ( %i = 0; %i < %count; %i ++ ) {
 		%name = getField( %this.meshList, %i );
 		ShapeEditor.shape.removeMesh( %name );
-		ShapeEdPropWindow.update_onMeshRemoved( %name );
+		ShapeEd.onMeshRemoved( %name );
 	}
 
-	ShapeEdMaterials.updateMaterialList();
+	ShapeEd.updateMaterialList();
 }
 
 
@@ -909,7 +909,7 @@ function ActionRemoveDetail::doit( %this ) {
 		%meshCount = getFieldCount( %meshList );
 
 		for ( %i = 0; %i < %meshCount; %i++ )
-			ShapeEdPropWindow.update_onMeshRemoved( getField( %meshList, %i ) );
+			SShapeEd.onMeshRemoved( getField( %meshList, %i ) );
 
 		return true;
 	}
@@ -976,7 +976,7 @@ function ActionEditImposter::doit( %this ) {
 		ShapeEdShapeView.currentDL = %dl;
 		ShapeEdAdvancedWindow-->detailSize.setText( %this.newSize );
 		ShapeEdDetails-->meshSize.setText( %this.newSize );
-		ShapeEdDetails.update_onDetailsChanged();
+		ShapeEd.onDetailsChanged();
 		return true;
 	}
 
@@ -991,7 +991,7 @@ function ActionEditImposter::undo( %this ) {
 		if ( ShapeEditor.shape.removeImposter() ) {
 			ShapeEdShapeView.refreshShape();
 			ShapeEdShapeView.currentDL = 0;
-			ShapeEdDetails.update_onDetailsChanged();
+			ShapeEd.onDetailsChanged();
 		}
 	} else {
 		// Unpack old imposter settings
@@ -1033,7 +1033,7 @@ function ActionRemoveImposter::doit( %this ) {
 	if ( ShapeEditor.shape.removeImposter() ) {
 		ShapeEdShapeView.refreshShape();
 		ShapeEdShapeView.currentDL = 0;
-		ShapeEdDetails.update_onDetailsChanged();
+		ShapeEd.onDetailsChanged();
 		return true;
 	}
 
@@ -1056,6 +1056,6 @@ function ActionRemoveImposter::undo( %this ) {
 		ShapeEdShapeView.currentDL = %dl;
 		ShapeEdAdvancedWindow-->detailSize.setText( %this.oldSize );
 		ShapeEdDetails-->meshSize.setText( %this.oldSize );
-		ShapeEdDetails.update_onDetailsChanged();
+		ShapeEd.onDetailsChanged();
 	}
 }

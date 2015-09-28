@@ -55,10 +55,10 @@ singleton GuiControlProfile(ToolsRolloutProfile_Alt : ToolsRolloutProfile)
 //------------------------------------------------------------------------------
 singleton GuiControlProfile( ToolsRolloutTitle : ToolsRolloutProfile ) {
     border = "1";
-    borderColor = "200 200 200";
+    borderColor = "53 53 53 255";
     hasBitmapArray = true;
     bitmap = "tlab/gui/assets/container-assets/GuiRolloutTitle.png";
-    textoffset = "17 0";
+    textoffset = "22 0";
     fontType = "Aileron Bold";
     fontSize = "16";
     fontColors[0] = "253 253 253 255";

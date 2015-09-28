@@ -85,7 +85,7 @@ function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %m
 		ShapeEditor.shape.removeDetailLevel( %colDetailSize );
 
 		for ( %i = 0; %i < %meshCount; %i++ )
-			ShapeEdPropWindow.update_onMeshRemoved( getField( %meshList, %i ) );
+			ShapeEd.onMeshRemoved( getField( %meshList, %i ) );
 	}
 
 	%nodeList = ShapeEditor.getNodeNames( %colNode, "" );
@@ -95,7 +95,7 @@ function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %m
 		for ( %i = 0; %i < %nodeCount; %i++ )
 			ShapeEditor.shape.removeNode( getField( %nodeList, %i ) );
 
-		ShapeEdPropWindow.update_onNodeRemoved( %nodeList, %nodeCount );
+		ShapeEd.onNodeRemoved( %nodeList, %nodeCount );
 	}
 
 	// Add the new node and geometry
@@ -109,11 +109,11 @@ function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %m
 
 	// Update UI
 	%meshList = ShapeEditor.getDetailMeshList( %colDetailSize );
-	ShapeEdPropWindow.update_onNodeAdded( %colNode, ShapeEditor.shape.getNodeCount() );    // will also add child nodes
+	ShapeEd.onNodeAdded( %colNode, ShapeEditor.shape.getNodeCount() );    // will also add child nodes
 	%count = getFieldCount( %meshList );
 
 	for ( %i = 0; %i < %count; %i++ )
-		ShapeEdPropWindow.update_onMeshAdded( getField( %meshList, %i ) );
+		ShapeEd.onMeshAdded( getField( %meshList, %i ) );
 
 	ShapeEdColWindow.lastColSettings = %type TAB %target TAB %depth TAB %merge TAB
 												  %concavity TAB %maxVerts TAB %boxMax TAB %sphereMax TAB %capsuleMax;

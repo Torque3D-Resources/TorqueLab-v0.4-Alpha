@@ -94,8 +94,8 @@ function SceneEditorPlugin::onActivated( %this ) {
 	SceneEditorToolbar-->groundCoverToolbar.visible = 0;
 	%this.initToolBar();
 	SceneEditorTreeFilter.extent.x = SceneEditorTreeTabBook.extent.x -  56;
-	SceneEditorTreeTabBook.selectPage(0);
-	SceneEditorModeTab.selectPage(0);
+	SceneEditorTreeTabBook.selectPage($SceneEd_TreePage);
+	SceneEditorModeTab.selectPage($SceneEd_ModePage);
 	
 	SEP_GroupPage.updateContent();
 

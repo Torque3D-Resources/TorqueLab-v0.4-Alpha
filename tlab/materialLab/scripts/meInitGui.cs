@@ -19,7 +19,8 @@ function MatLab::establishMaterials(%this,%forced) {
 	//Material used to preview other materials in the editor.
 	singleton Material(materialLab_previewMaterial) {
 		mapTo = "matLab_mappedMat";
-		diffuseMap[0] = "tlab/materialLab/assets/matLab_mappedMat";
+		diffuseMap[0] = "art/models/ToonLab/ToonCastle/textures/Concrete/ConcBaseA_alb.png";
+   pixelSpecular0 = "0";
 	};
 	singleton CustomMaterial( materialLab_justAlphaMaterial ) {
 		mapTo = "matLab_mappedMatB";

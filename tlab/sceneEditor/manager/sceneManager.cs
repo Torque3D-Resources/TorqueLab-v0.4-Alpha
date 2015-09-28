@@ -5,6 +5,14 @@
 // Allow to manage different GUI Styles without conflict
 //==============================================================================
 
+$SceneEd_ModePage = 0;
+$SceneEd_TreePage = 0;
+function SceneEditorModeTab::onTabSelected( %this,%text,%index ) {
+	$SceneEd_ModePage = %index;
+}
+function SceneEditorTreeTabBook::onTabSelected( %this,%text,%index ) {
+	$SceneEd_TreePage = %index;
+}
 
 
 function SceneAddSimGroupButton::onClick( %this ) {
