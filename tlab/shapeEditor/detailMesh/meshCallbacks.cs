@@ -59,10 +59,10 @@ function ShapeEd::onMeshAdded( %this, %meshName ) {
 	// Add object to target list if it does not already exist
 	if ( !ShapeEditor.isCollisionMesh( %meshName ) ) {
 		%objName = stripTrailingNumber( %meshName );
-		%id = ShapeEdColWindow-->colTarget.findText( %objName );
+		%id = ShapeEd_CreateColRollout-->colTarget.findText( %objName );
 
 		if ( %id == -1 )
-			ShapeEdColWindow-->colTarget.add( %objName );
+			ShapeEd_CreateColRollout-->colTarget.add( %objName );
 	}
 
 	// --- DETAILS TAB ---
@@ -96,10 +96,10 @@ function ShapeEd::onMeshRemoved( %this, %meshName ) {
 	%objName = stripTrailingNumber( %meshName );
 
 	if ( ShapeEditor.shape.getObjectIndex( %objName ) == -1 ) {
-		%id = ShapeEdColWindow-->colTarget.findText( %objName );
+		%id = ShapeEd_CreateColRollout-->colTarget.findText( %objName );
 
 		if ( %id != -1 )
-			ShapeEdColWindow-->colTarget.clearEntry( %id );
+			ShapeEd_CreateColRollout-->colTarget.clearEntry( %id );
 	}
 
 	// --- DETAILS TAB ---

@@ -231,7 +231,7 @@ function TerrainMaterialDlg::saveAllDirty( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainMaterialDlg::saveActiveDirty( %this ) {
-	%this.saveDirtyMaterial( %this.activeMat );
+	%this.saveDirtyMaterial( TerrainMaterialDlg.activeMat );
 	// Save all changes.
 	ETerrainMaterialPersistMan.saveDirty();
 }
@@ -310,6 +310,7 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 																		%mat.macroStrength == %macroStrength &&
 																		%mat.macroDistance == %macroDistance &&
 																		%mat.parallaxScale == %parallaxScale ) {
+		devLog("Nothing to save!");																
 		return;
 	}
 
@@ -325,7 +326,7 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 			// Reset the name edit control to the old name.
 			%this-->matNameCtrl.setText( %mat.internalName );
 		} else
-			%mat.setInternalName( %newName );
+			%mat.setInternalName( %newName );		
 	}
 
 	%mat.diffuseMap = %newDiffuse;
@@ -341,6 +342,7 @@ function TerrainMaterialDlg::saveDirtyMaterial( %this, %mat ) {
 	%mat.macroDistance = %macroDistance;
 	%mat.useSideProjection = %useSideProjection;
 	%mat.parallaxScale = %parallaxScale;
+	devLog("Active is dirty!");	
 	EPainter.setMaterialDirty(%mat);
 }
 //------------------------------------------------------------------------------

@@ -89,8 +89,8 @@ function ShapeEditor::selectShape( %this, %path, %saveOld ) {
 	// Initialise the editor windows
 	ShapeEdAdvancedWindow.update_onShapeSelectionChanged();
 	ShapeEdMountWindow.update_onShapeSelectionChanged();
-	ShapeEdThreadWindow.update_onShapeSelectionChanged();
-	ShapeEdColWindow.update_onShapeSelectionChanged();
+	ShapeEdThreadViewer.update_onShapeSelectionChanged();
+	ShapeEdCollisions.update_onShapeSelectionChanged();
 	ShapeEdPropWindow.update_onShapeSelectionChanged();
 	ShapeEdShapeView.refreshShape();
 	// Update object type hints
@@ -235,7 +235,7 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		}
 	}
 
-	ShapeEdThreadWindow.onAddThread();        // add thread 0
+	ShapeEdThreadViewer.onAddThread();        // add thread 0
 	// --- DETAILS TAB ---
 	// Add detail levels and meshes to tree
 	ShapeEd_DetailTree.clearSelection();

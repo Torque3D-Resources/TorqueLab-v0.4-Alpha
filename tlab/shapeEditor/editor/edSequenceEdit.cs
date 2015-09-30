@@ -20,8 +20,8 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 	// Sync the Thread window sequence selection
 	%row = ShapeEdSequenceList.getSelectedRow();
 
-	if ( ShapeEdThreadWindow-->seqList.getSelectedRow() != ( %row-1 ) ) {
-		ShapeEdThreadWindow-->seqList.setSelectedRow( %row-1 );
+	if ( ShapeEdThread_SeqList.getSelectedRow() != ( %row-1 ) ) {
+		ShapeEdThread_SeqList.setSelectedRow( %row-1 );
 		return;  // selecting a sequence in the Thread window will re-call this function
 	}
 
@@ -454,7 +454,7 @@ function ShapeEdSequenceList::editColumn( %this, %name, %col, %text ) {
 	%id = %this.getRowId( %row );
 
 	if ( %col == 0 )
-		ShapeEdThreadWindow-->seqList.setRowById( %id, %text );   // Sync name in Thread window
+		ShapeEdThread_SeqList.setRowById( %id, %text );   // Sync name in Thread window
 
 	%this.setRowById( %id, %rowText );
 }
@@ -470,7 +470,7 @@ function ShapeEdSequenceList::insertItem( %this, %name, %index ) {
 	%priority = ShapeEditor.shape.getSequencePriority( %name );
 	// Add the item to the Properties and Thread sequence lists
 	%this.seqId++; // use this to keep the row IDs synchronised
-	ShapeEdThreadWindow-->seqList.addRow( %this.seqId, %name, %index-1 );   // no header row
+	ShapeEdThread_SeqList.addRow( %this.seqId, %name, %index-1 );   // no header row
 	return %this.addRow( %this.seqId, %name TAB %cyclic TAB %blend TAB %frameCount TAB %priority, %index );
 }
 
@@ -479,7 +479,7 @@ function ShapeEdSequenceList::removeItem( %this, %name ) {
 
 	if ( %index >= 0 ) {
 		%this.removeRow( %index );
-		ShapeEdThreadWindow-->seqList.removeRow( %index-1 );   // no header row
+		ShapeEdThread_SeqList.removeRow( %index-1 );   // no header row
 	}
 }
 

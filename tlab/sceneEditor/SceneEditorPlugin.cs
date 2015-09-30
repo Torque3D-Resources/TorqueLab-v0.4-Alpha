@@ -106,6 +106,11 @@ function SceneEditorPlugin::onActivated( %this ) {
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
 function SceneEditorPlugin::onDeactivated( %this ) {
+	if (EVisibilityLayers.currentPresetFile $= "visBuilder"){
+		EVisibilityLayers.loadPresetFile("default");
+		%this.text = "Set TSStatic-Only Selectable";		
+	}
+	
 	Parent::onDeactivated( %this );
 
 }

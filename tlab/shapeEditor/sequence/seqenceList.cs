@@ -118,6 +118,7 @@ function ShapeEd_SeqPillRollout::onExpanded(%this) {
 	
 	if (!isObject(ShapeEditor.shape)){
 		ShapeEd.onSequenceObjectInvalid();
+		return;
 	}
 	
 	%seqName = %this.seqName;
@@ -145,6 +146,7 @@ function ShapeEd_SeqPillRollout::onExpanded(%this) {
 	
 	%sourceMenu.setText( %curSource );	
 	devLog("Selected sequence is:",ShapeEd.selectedSequence);
+	ShapeEdAnimWindow.setSequence(ShapeEd.selectedSequence);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

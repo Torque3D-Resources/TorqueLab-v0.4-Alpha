@@ -8,8 +8,8 @@
 // ShapeEditor -> Threads and Animation
 //==============================================================================
 
-/*
-function ShapeEdThreadWindow::onWake( %this ) {
+
+function ShapeEdThreadViewer::onWake( %this ) {
 	%this-->useTransitions.setValue( 1 );
 	%this-->transitionTime.setText( "0.5" );
 	%this-->transitionTo.clear();
@@ -22,88 +22,67 @@ function ShapeEdThreadWindow::onWake( %this ) {
 	%this-->transitionTarget.setSelected( 0 );
 }
 
-// Update the GUI in response to the shape selection changing
-function ShapeEdThreadWindow::update_onShapeSelectionChanged( %this ) {
-	ShapeEdThreadList.clear();
-	%this-->seqList.clear();
-	%this-->seqList.addRow( 0, "<rootpose>" );
-}
 
-function ShapeEdAnimWIndow::threadPosToKeyframe( %this, %pos ) {
-	if ( %this.usingProxySeq ) {
-		%start = getWord( ShapeEdSeqSlider.range, 0 );
-		%end = getWord( ShapeEdSeqSlider.range, 1 );
-	} else {
-		%start = ShapeEdAnimWindow.seqStartFrame;
-		%end = ShapeEdAnimWindow.seqEndFrame;
-	}
 
-	return %start + ( %end - %start ) * %pos;
-}
+function ShapeEdThreadViewer::syncPlaybackDetails( %this ) {
+	%seqName = ShapeEd.selectedSequence;
 
-function ShapeEdAnimWindow::keyframeToThreadPos( %this, %frame ) {
-	if ( %this.usingProxySeq ) {
-		%start = getWord( ShapeEdSeqSlider.range, 0 );
-		%end = getWord( ShapeEdSeqSlider.range, 1 );
-	} else {
-		%start = ShapeEdAnimWindow.seqStartFrame;
-		%end = ShapeEdAnimWindow.seqEndFrame;
-	}
+	if ( %seqName !$= "" ) {
+		// Show sequence in/out bars
+		ShapeEdAnimWindow-->seqInBar.setVisible( true );
+		ShapeEdAnimWindow-->seqOutBar.setVisible( true );
+		// Sync playback controls
+		%sourceData = ShapeEditor.getSequenceSource( %seqName );
+		%seqFrom = rtrim( getFields( %sourceData, 0, 1 ) );
+		%seqStart = getField( %sourceData, 2 );
+		%seqEnd = getField( %sourceData, 3 );
+		%seqFromTotal = getField( %sourceData, 4 );
 
-	return ( %frame - %start ) / ( %end - %start );
-}
-
-function ShapeEdAnimWindow::setKeyframe( %this, %frame ) {
-	ShapeEdSeqSlider.setValue( %frame );
-
-	if ( ShapeEdThreadWindow-->transitionTo.getText() $= "synched position" )
-		ShapeEdThreadSlider.setValue( %frame );
-
-	// Update the position of the active thread => if outside the in/out range,
-	// need to switch to the proxy sequence
-	if ( !%this.usingProxySeq ) {
-		if ( ( %frame < %this.seqStartFrame ) || ( %frame > %this.seqEndFrame) ) {
-			%this.usingProxySeq = true;
-			%proxyName = ShapeEditor.getProxyName( ShapeEdShapeView.getThreadSequence() );
-			ShapeEdShapeView.setThreadSequence( %proxyName, 0, 0, false );
+		// Display the original source for edited sequences
+		if ( startswith( %seqFrom, "__backup__" ) ) {
+			%backupData = ShapeEditor.getSequenceSource( getField( %seqFrom, 0 ) );
+			%seqFrom = rtrim( getFields( %backupData, 0, 1 ) );
 		}
-	}
 
-	ShapeEdShapeView.threadPos = %this.keyframeToThreadPos( %frame );
-}
-
-function ShapeEdAnimWindow::setNoProxySequence( %this ) {
-	// no need to use the proxy sequence during playback
-	if ( %this.usingProxySeq ) {
-		%this.usingProxySeq = false;
-		%seqName = ShapeEditor.getUnproxyName( ShapeEdShapeView.getThreadSequence() );
-		ShapeEdShapeView.setThreadSequence( %seqName, 0, 0, false );
-		ShapeEdShapeView.threadPos = %this.keyframeToThreadPos( ShapeEdSeqSlider.getValue() );
-	}
-}
-
-function ShapeEdAnimWindow::togglePause( %this ) {
-	if ( %this-->pauseBtn.getValue() == 0 ) {
-		%this.lastDirBkwd = %this-->playBkwdBtn.getValue();
-		%this-->pauseBtn.performClick();
+		ShapeEdSeqFromMenu.setText( %seqFrom );
+		ShapeEdSeqFromMenu.tooltip = ShapeEdSeqFromMenu.getText();   // use tooltip to show long names
+		ShapeEdSequences-->startFrame.setText( %seqStart );
+		ShapeEdSequences-->endFrame.setText( %seqEnd );
+		%val = ShapeEdSeqSlider.getValue() / getWord( ShapeEdSeqSlider.range, 1 );
+		ShapeEdSeqSlider.range = "0" SPC ( %seqFromTotal-1 );
+		ShapeEdSeqSlider.setValue( %val * getWord( ShapeEdSeqSlider.range, 1 ) );
+		ShapeEd_ThreadSlider.range = ShapeEdSeqSlider.range;
+		ShapeEd_ThreadSlider.setValue( ShapeEdSeqSlider.value );
+		ShapeEdAnimWindow.setSequence( %seqName );
+		ShapeEdAnimWindow.setPlaybackLimit( "in", %seqStart );
+		ShapeEdAnimWindow.setPlaybackLimit( "out", %seqEnd );
 	} else {
-		%this.setNoProxySequence();
-
-		if ( %this.lastDirBkwd )
-			%this-->playBkwdBtn.performClick();
-		else
-			%this-->playFwdBtn.performClick();
+		// Hide sequence in/out bars
+		ShapeEdAnimWindow-->seqInBar.setVisible( false );
+		ShapeEdAnimWindow-->seqOutBar.setVisible( false );
+		ShapeEdSeqFromMenu.setText( "" );
+		ShapeEdSeqFromMenu.tooltip = "";
+		ShapeEdSequences-->startFrame.setText( 0 );
+		ShapeEdSequences-->endFrame.setText( 0 );
+		ShapeEdSeqSlider.range = "0 1";
+		ShapeEdSeqSlider.setValue( 0 );
+		ShapeEd_ThreadSlider.range = ShapeEdSeqSlider.range;
+		ShapeEd_ThreadSlider.setValue( ShapeEdSeqSlider.value );
+		ShapeEdAnimWindow.setPlaybackLimit( "in", 0 );
+		ShapeEdAnimWindow.setPlaybackLimit( "out", 1 );
+		ShapeEdAnimWindow.setSequence( "" );
 	}
 }
 
-function ShapeEdAnimWindow::togglePingPong( %this ) {
-	ShapeEdShapeView.threadPingPong = %this-->pingpong.getValue();
-
-	if ( %this-->playFwdBtn.getValue() )
-		%this-->playFwdBtn.performClick();
-	else if ( %this-->playBkwdBtn.getValue() )
-		%this-->playBkwdBtn.performClick();
+// Update the GUI in response to the shape selection changing
+function ShapeEdThreadViewer::update_onShapeSelectionChanged( %this ) {
+	
+	ShapeEdThread_List.clear();
+	ShapeEdThread_SeqList.clear();
+	ShapeEdThread_SeqList.addRow( 0, "<rootpose>" );
 }
+
+
 
 function ShapeEdSeqSlider::onMouseDragged( %this ) {
 	// Pause the active thread when the slider is dragged
@@ -113,8 +92,8 @@ function ShapeEdSeqSlider::onMouseDragged( %this ) {
 	ShapeEdAnimWindow.setKeyframe( %this.getValue() );
 }
 
-function ShapeEdThreadSlider::onMouseDragged( %this ) {
-	if ( ShapeEdThreadWindow-->transitionTo.getText() $= "synched position" ) {
+function ShapeEd_ThreadSlider::onMouseDragged( %this ) {
+	if ( ShapeEdThreadViewer-->transitionTo.getText() $= "synched position" ) {
 		// Pause the active thread when the slider is dragged
 		if ( ShapeEdAnimWindow-->pauseBtn.getValue() == 0 )
 			ShapeEdAnimWindow-->pauseBtn.performClick();
@@ -123,54 +102,41 @@ function ShapeEdThreadSlider::onMouseDragged( %this ) {
 	}
 }
 
+//==============================================================================
+// GuiShapeEdPreview - Called when the position of the active thread has changed, such as during playback
 function ShapeEdShapeView::onThreadPosChanged( %this, %pos, %inTransition ) {
 	// Update sliders
 	%frame = ShapeEdAnimWindow.threadPosToKeyframe( %pos );
 	if (isObject(ShapeEdSeqSlider))
 		ShapeEdSeqSlider.setValue( %frame );
 
-	if ( ShapeEdThreadWindow-->transitionTo.getText() $= "synched position" ) {
-		ShapeEdThreadSlider.setValue( %frame );
+	if ( ShapeEdThreadViewer-->transitionTo.getText() $= "synched position" ) {
+		ShapeEd_ThreadSlider.setValue( %frame );
 
 		// Highlight the slider during transitions
 		if ( %inTransition )
-			ShapeEdThreadSlider.profile = GuiShapeEdTransitionSliderProfile;
+			ShapeEd_ThreadSlider.profile = GuiShapeEdTransitionSliderProfile;
 		else
-			ShapeEdThreadSlider.profile = ToolsSliderProfile;
+			ShapeEd_ThreadSlider.profile = ToolsSliderProfile;
 	}
 }
 
-// Set the direction of the current thread (-1: reverse, 0: paused, 1: forward)
-function ShapeEdAnimWindow::setThreadDirection( %this, %dir ) {
-	// Update thread direction
-	ShapeEdShapeView.threadDirection = %dir;
 
-	// Sync the controls in the thread window
-	switch ( %dir ) {
-	case -1:
-		ShapeEdThreadWindow-->playBkwdBtn.setStateOn( 1 );
-
-	case 0:
-		ShapeEdThreadWindow-->pauseBtn.setStateOn( 1 );
-
-	case 1:
-		ShapeEdThreadWindow-->playFwdBtn.setStateOn( 1 );
-	}
-}
 
 // Set the sequence to play
 function ShapeEdAnimWindow::setSequence( %this, %seqName ) {
+	devLog("ShapeEdAnimWindow::setSequence",%seqName);
 	%this.usingProxySeq = false;
 
-	if ( ShapeEdThreadWindow-->useTransitions.getValue() ) {
-		%transTime = ShapeEdThreadWindow-->transitionTime.getText();
+	if ( ShapeEdThreadViewer-->useTransitions.getValue() ) {
+		%transTime = ShapeEdThreadViewer-->transitionTime.getText();
 
-		if ( ShapeEdThreadWindow-->transitionTo.getText() $= "synched position" )
+		if ( ShapeEdThreadViewer-->transitionTo.getText() $= "synched position" )
 			%transPos = -1;
 		else
-			%transPos = %this.keyframeToThreadPos( ShapeEdThreadSlider.getValue() );
+			%transPos = %this.keyframeToThreadPos( ShapeEd_ThreadSlider.getValue() );
 
-		%transPlay = ( ShapeEdThreadWindow-->transitionTarget.getText() $= "plays during transition" );
+		%transPlay = ( ShapeEdThreadViewer-->transitionTarget.getText() $= "plays during transition" );
 	} else {
 		%transTime = 0;
 		%transPos = 0;
@@ -232,34 +198,35 @@ function ShapeEdAnimWindow::setPlaybackLimit( %this, %limit, %val ) {
 	}
 }
 
-function ShapeEdThreadWindow::onAddThread( %this ) {
+
+function ShapeEdThreadViewer::onAddThread( %this ) {
 	ShapeEdShapeView.addThread();
-	ShapeEdThreadList.addRow( %this.threadID++, ShapeEdThreadList.rowCount() );
-	ShapeEdThreadList.setSelectedRow( ShapeEdThreadList.rowCount()-1 );
+	ShapeEdThread_List.addRow( %this.threadID++, ShapeEdThread_List.rowCount() );
+	ShapeEdThread_List.setSelectedRow( ShapeEdThread_List.rowCount()-1 );
 }
 
-function ShapeEdThreadWindow::onRemoveThread( %this ) {
-	if ( ShapeEdThreadList.rowCount() > 1 ) {
+function ShapeEdThreadViewer::onRemoveThread( %this ) {
+	if ( ShapeEdThread_List.rowCount() > 1 ) {
 		// Remove the selected thread
-		%row = ShapeEdThreadList.getSelectedRow();
+		%row = ShapeEdThread_List.getSelectedRow();
 		ShapeEdShapeView.removeThread( %row );
-		ShapeEdThreadList.removeRow( %row );
+		ShapeEdThread_List.removeRow( %row );
 		// Update list (threads are always numbered 0-N)
-		%rowCount = ShapeEdThreadList.rowCount();
+		%rowCount = ShapeEdThread_List.rowCount();
 
 		for ( %i = %row; %i < %rowCount; %i++ )
-			ShapeEdThreadList.setRowById( ShapeEdThreadList.getRowId( %i ), %i );
+			ShapeEdThread_List.setRowById( ShapeEdThreadList.getRowId( %i ), %i );
 
 		// Select the next thread
 		if ( %row >= %rowCount )
 			%row = %rowCount - 1;
 
-		ShapeEdThreadList.setSelectedRow( %row );
+		ShapeEdThread_List.setSelectedRow( %row );
 	}
 }
 
-function ShapeEdThreadList::onSelect( %this, %row, %text ) {
-	ShapeEdShapeView.activeThread = ShapeEdThreadList.getSelectedRow();
+function ShapeEdThread_List::onSelect( %this, %row, %text ) {
+	ShapeEdShapeView.activeThread = ShapeEdThread_List.getSelectedRow();
 	// Select the active thread's sequence in the list
 	%seqName = ShapeEdShapeView.getThreadSequence();
 
@@ -285,4 +252,3 @@ function ShapeEdThreadList::onSelect( %this, %row, %text ) {
 
 	SetToggleButtonValue( ShapeEdAnimWindow-->pingpong, ShapeEdShapeView.threadPingPong );
 }
-*/

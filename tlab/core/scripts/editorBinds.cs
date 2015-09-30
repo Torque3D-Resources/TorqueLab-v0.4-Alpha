@@ -45,7 +45,6 @@ function getEditorMouseScrollAdjustAmount(%val) {
 function mouseWheelScroll( %val ) {
 	%rollAdj = getEditorMouseScrollAdjustAmount(%val);
 	%rollAdj = mClamp(%rollAdj, -mPi()+0.01, mPi()-0.01);
-	devLog("RollAdj=",%rollAdj);
 	$mvRoll += %rollAdj; //Maxed at pi in code
 }
 //------------------------------------------------------------------------------

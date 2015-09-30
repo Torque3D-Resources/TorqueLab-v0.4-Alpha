@@ -47,3 +47,16 @@ function SceneEditorPlugin::toggleBuildMode( %this ) {
 		SceneEditorTools.updateSizes();
 	}
 }
+
+function SceneEd_BuilderSelectableClassButton::onClick( %this ) {
+	devLog("SceneEd_BuilderSelectableClassButton::onClick??");
+	if (EVisibilityLayers.currentPresetFile $= "visBuilder"){
+		EVisibilityLayers.loadPresetFile("default");
+		%this.text = "Set TSStatic-Only Selectable";
+		return;
+	}
+	
+	EVisibilityLayers.loadPresetFile("visBuilder");
+	%this.text = "Set back default selectable class";	
+}
+

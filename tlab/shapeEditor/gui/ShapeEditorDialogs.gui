@@ -955,7 +955,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     command = "ShapeEdThreadWindow.onRemoveThread();";
+                     command = "ShapeEdThreadViewer.onRemoveThread();";
                      tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Delete the selected thread";
                      hovertime = "1000";
@@ -980,7 +980,7 @@
                      profile = "ToolsDefaultProfile";
                      visible = "1";
                      active = "1";
-                     command = "ShapeEdThreadWindow.onAddThread();";
+                     command = "ShapeEdThreadViewer.onAddThread();";
                      tooltipProfile = "ToolsToolTipProfile";
                      tooltip = "Add a new thread";
                      hovertime = "1000";

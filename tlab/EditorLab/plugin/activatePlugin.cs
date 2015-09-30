@@ -7,7 +7,7 @@
 //==============================================================================
 /// Callback when the tool is 'activated' by the WorldEditor
 /// Push Gui's, stuff like that
-function EditorPlugin::onActivated( %this ) {
+function EditorPlugin::onActivated( %this,%simple ) {
 	//if(isDemo())
 		//startToolTime(%this.getName());
 
@@ -23,26 +23,29 @@ function EditorPlugin::onActivated( %this ) {
 	else
 		ECamViewGui.setState($Lab_CamViewEnabled);
 
+	if (!%simple){
 	//Hide all the Guis for all plugins
-	foreach(%gui in LabPluginGuiSet)
+	foreach(%gui in LabPluginGuiSet){		
 		%gui.setVisible(false);
+	}
 	
-		
+	}
 	EWToolsPaletteContainer.visible = !%this.noPalette;
 
 	//Show only the Gui related to actiavted plugin
-	%pluginGuiSet = %this.plugin@"_GuiSet";
-	if (!isObject(%pluginGuiSet))
-		warnLog("Invalid Plugin GuiSet for update in EditorPlugin::onActivated, tried:",%pluginGuiSet);		
-	else
-		foreach(%gui in %pluginGuiSet) {
-			//Don't show dialogs
-			if (%gui.isDlg)
-				continue;
-
-			%gui.setVisible(true);
-		}
-	
+	if (!%simple){
+		%pluginGuiSet = %this.plugin@"_GuiSet";
+		if (!isObject(%pluginGuiSet))
+			warnLog("Invalid Plugin GuiSet for update in EditorPlugin::onActivated, tried:",%pluginGuiSet);		
+		else
+			foreach(%gui in %pluginGuiSet) {			
+				//Don't show dialogs
+				if (%gui.isDlg)
+					continue;
+				
+				%gui.setVisible(true);
+			}
+	}
 	%this.isActivated = true;
 
 	if(isObject(%this.map))
@@ -64,6 +67,7 @@ function EditorPlugin::onActivated( %this ) {
 		%this.dialogs.onActivatedDialogs();
 		
 	Lab.checkPluginTools();
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -6,33 +6,25 @@
 //==============================================================================
 // ShapeEditor -> Collision editing
 //==============================================================================
-function ShapeEdColWindow::onWake( %this ) {
-	%this-->colType.clear();
-	%this-->colType.add( "Box" );
-	%this-->colType.add( "Sphere" );
-	%this-->colType.add( "Capsule" );
-	%this-->colType.add( "10-DOP X" );
-	%this-->colType.add( "10-DOP Y" );
-	%this-->colType.add( "10-DOP Z" );
-	%this-->colType.add( "18-DOP" );
-	%this-->colType.add( "26-DOP" );
-	%this-->colType.add( "Convex Hulls" );
-}
 
-function ShapeEdColWindow::update_onShapeSelectionChanged( %this ) {
+function ShapeEdCollisions::update_onShapeSelectionChanged( %this ) {
 	%this.lastColSettings = "" TAB "Bounds";
 	// Initialise collision mesh target list
-	%this-->colTarget.clear();
-	%this-->colTarget.add( "Bounds" );
+	ShapeEd_CreateColRollout-->colTarget.clear();
+	ShapeEd_CreateColRollout-->colTarget.add( "Bounds" );
+
 	%objCount = ShapeEditor.shape.getObjectCount();
 
-	for ( %i = 0; %i < %objCount; %i++ )
-		%this-->colTarget.add( ShapeEditor.shape.getObjectName( %i ) );
+	for ( %i = 0; %i < %objCount; %i++ ){
+		ShapeEd_CreateColRollout-->colTarget.add( ShapeEditor.shape.getObjectName( %i ) );
+	
+	}
 
-	%this-->colTarget.setSelected( %this-->colTarget.findText( "Bounds" ), false );
+	ShapeEd_CreateColRollout-->colTarget.setSelected( %this-->colTarget.findText( "Bounds" ), false );
+
 }
 
-function ShapeEdColWindow::update_onCollisionChanged( %this ) {
+function ShapeEdCollisions::update_onCollisionChanged( %this ) {
 	// Sync collision settings
 	%colData = %this.lastColSettings;
 	%typeId = %this-->colType.findText( getField( %colData, 0 ) );
@@ -40,9 +32,10 @@ function ShapeEdColWindow::update_onCollisionChanged( %this ) {
 	%targetId = %this-->colTarget.findText( getField( %colData, 1 ) );
 	%this-->colTarget.setSelected( %targetId, false );
 
+
 	if ( %this-->colType.getText() $= "Convex Hulls" ) {
-		show(ShapeEdAdv_HullOnlyCollision);
-		hide(ShapeEdAdv_NoneHullCollision);		
+		show(ShapeEdColCreate_Hull);
+		hide(ShapeEdColCreate_NoHull);		
 		%this-->hullDepth.setValue( getField( %colData, 2 ) );
 		%this-->hullDepthText.setText( mFloor( %this-->hullDepth.getValue() ) );
 		%this-->hullMergeThreshold.setValue( getField( %colData, 3 ) );
@@ -58,37 +51,11 @@ function ShapeEdColWindow::update_onCollisionChanged( %this ) {
 		%this-->hullMaxCapsuleError.setValue( getField( %colData, 8 ) );
 		%this-->hullMaxCapsuleErrorText.setText( mFloor( %this-->hullMaxCapsuleError.getValue() ) );
 	} else {
-		hide(ShapeEdAdv_HullOnlyCollision);
-		show(ShapeEdAdv_NoneHullCollision);		
+		hide(ShapeEdColCreate_Hull);
+		show(ShapeEdColCreate_NoHull);		
 	}
 }
 
-function ShapeEdColWindow::editCollision( %this ) {
-	// If the shape already contains a collision detail size-1, warn the user
-	// that it will be removed
-	if ( ( ShapeEditor.shape.getDetailLevelIndex( -1 ) >= 0 ) &&
-			( getField(%this.lastColSettings, 0) $= "" ) ) {
-		LabMsgYesNo( "Warning", "Existing collision geometry at detail size " @
-						 "-1 will be removed, and this cannot be undone. Do you want to continue?",
-						 "ShapeEdColWindow.editCollisionOK();", "" );
-	} else {
-		%this.editCollisionOK();
-	}
-}
-
-function ShapeEdColWindow::editCollisionOK( %this ) {
-	%type = %this-->colType.getText();
-	%target = %this-->colTarget.getText();
-	%depth = %this-->hullDepth.getValue();
-	%merge = %this-->hullMergeThreshold.getValue();
-	%concavity = %this-->hullConcaveThreshold.getValue();
-	%maxVerts = %this-->hullMaxVerts.getValue();
-	%maxBox = %this-->hullMaxBoxError.getValue();
-	%maxSphere = %this-->hullMaxSphereError.getValue();
-	%maxCapsule = %this-->hullMaxCapsuleError.getValue();
-	ShapeEditor.doEditCollision( %type, %target, %depth, %merge, %concavity, %maxVerts,
-										  %maxBox, %maxSphere, %maxCapsule );
-}
 
 
 //==============================================================================

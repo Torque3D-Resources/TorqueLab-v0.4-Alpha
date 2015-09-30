@@ -29,6 +29,9 @@ function EVisibilityLayers::onShow( %this ) {
 
 	%this.array = ar_EVisibilityLayers;
 	%this.classArray = ar_EVisibilityLayersClass;
+	
+	%this.updatePresetMenu();
+
 
 	if(!$EVisibilityLayers_Initialized) {
 		//EVisibilityLayers.position = visibilityToggleBtn.position;

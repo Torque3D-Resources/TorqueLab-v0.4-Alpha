@@ -1,8 +1,40 @@
 //==============================================================================
-// TorqueLab ->
+// TorqueLab -> ShapeEditor -> Shape Selection
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+
+
+
+//==============================================================================
+function ShapeEdCollisions::editCollision( %this ) {
+	// If the shape already contains a collision detail size-1, warn the user
+	// that it will be removed
+	if ( ( ShapeEditor.shape.getDetailLevelIndex( -1 ) >= 0 ) &&
+			( getField(%this.lastColSettings, 0) $= "" ) ) {
+		LabMsgYesNo( "Warning", "Existing collision geometry at detail size " @
+						 "-1 will be removed, and this cannot be undone. Do you want to continue?",
+						 "ShapeEdCollisions.editCollisionOK();", "" );
+	} else {
+		%this.editCollisionOK();
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function ShapeEdCollisions::editCollisionOK( %this ) {
+	%type = %this-->colType.getText();
+	%target = %this-->colTarget.getText();
+	%depth = %this-->hullDepth.getValue();
+	%merge = %this-->hullMergeThreshold.getValue();
+	%concavity = %this-->hullConcaveThreshold.getValue();
+	%maxVerts = %this-->hullMaxVerts.getValue();
+	%maxBox = %this-->hullMaxBoxError.getValue();
+	%maxSphere = %this-->hullMaxSphereError.getValue();
+	%maxCapsule = %this-->hullMaxCapsuleError.getValue();
+	ShapeEditor.doEditCollision( %type, %target, %depth, %merge, %concavity, %maxVerts,
+										  %maxBox, %maxSphere, %maxCapsule );
+}
+//------------------------------------------------------------------------------
 
 //==============================================================================
 // ShapeEditor Action -> Update the collision mesh
@@ -12,7 +44,7 @@
 // Build the action object
 function ShapeEditor::doEditCollision( %this, %type, %target, %depth, %merge, %concavity,
 													%maxVerts, %boxMax, %sphereMax, %capsuleMax ) {
-	%colData = ShapeEdColWindow.lastColSettings;
+	%colData = ShapeEdCollisions.lastColSettings;
 	%action = %this.createAction( ActionEditCollision, "Edit shape collision" );
 	%action.oldType = getField( %colData, 0 );
 	%action.oldTarget = getField( %colData, 1 );
@@ -66,6 +98,8 @@ DefineTSShapeConstructorMethod( addCollisionDetail, bool, ( S32 size, const char
    "%this.addCollisionDetail( -1, \"convex hulls\", \"bounds\", 4, 30, 30, 32, 50, 50, 50 );\n"
    "@endtsexample\n" )
 //----------------------------------------------------------------------------*/
+//------------------------------------------------------------------------------
+//==============================================================================
 function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %merge, %concavity,
 		%maxVerts, %boxMax, %sphereMax, %capsuleMax ) {
 	%colDetailSize = -1;
@@ -115,9 +149,9 @@ function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %m
 	for ( %i = 0; %i < %count; %i++ )
 		ShapeEd.onMeshAdded( getField( %meshList, %i ) );
 
-	ShapeEdColWindow.lastColSettings = %type TAB %target TAB %depth TAB %merge TAB
+	ShapeEdCollisions.lastColSettings = %type TAB %target TAB %depth TAB %merge TAB
 												  %concavity TAB %maxVerts TAB %boxMax TAB %sphereMax TAB %capsuleMax;
-	ShapeEdColWindow.update_onCollisionChanged();
+	ShapeEdCollisions.update_onCollisionChanged();
 	return true;
 }
 //------------------------------------------------------------------------------
