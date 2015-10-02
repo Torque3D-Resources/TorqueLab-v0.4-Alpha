@@ -15,23 +15,24 @@ new GuiStackControl(MaterialEditorToolbar) {
    horizSizing = "right";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "1";
+   visible = "0";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
    superClass = "ToolbarPluginStack";
+   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31523";
-      disabledGroup = "31524";
-      EditorContainer = "20169";
+      defaultStack = "31687";
+      disabledGroup = "31688";
+      EditorContainer = "20333";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialEditor";
       preventReordering = "0";
-      stackLists = "31525";
+      stackLists = "31689";
 
    new GuiContainer() {
       margin = "0 0 0 0";

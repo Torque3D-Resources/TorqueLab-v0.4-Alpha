@@ -26,12 +26,12 @@ new GuiStackControl(RoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "33838";
-      disabledGroup = "33839";
-      EditorContainer = "20169";
+      defaultStack = "34002";
+      disabledGroup = "34003";
+      EditorContainer = "20333";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RoadEditor";
-      stackLists = "33840 33849 33865";
+      stackLists = "34004 34013 34029";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -514,7 +514,6 @@ new GuiStackControl(RoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "RoadTarmacB";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
