@@ -20,6 +20,7 @@ function SceneCreatorWindow::registerObjects( %this ) {
 	// Removed Prefab as there doesn't really seem to be a point in creating a blank one
 	//%this.registerMissionObject( "Prefab",              "Prefab" );
 	%this.registerMissionObject( "SkyBox",              "Sky Box" );
+	%this.registerMissionObject( "SkyLine", "Sky Line" );
 	%this.registerMissionObject( "CloudLayer",          "Cloud Layer" );
 	%this.registerMissionObject( "BasicClouds",         "Basic Clouds" );
 	%this.registerMissionObject( "ScatterSky",          "Scatter Sky" );

@@ -26,12 +26,12 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "36756";
-      disabledGroup = "36757";
-      EditorContainer = "20333";
+      defaultStack = "36697";
+      disabledGroup = "36698";
+      EditorContainer = "20274";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
-      stackLists = "36758 36767 36801";
+      stackLists = "36699 36708 36742";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -172,7 +172,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             originalIndex = "1";
             originalParent = "13944";
             pluginName = "TerrainPainter";
-            toolbar = "36756";
+            toolbar = "36697";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -233,7 +233,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "TerrainPainter";
-            toolbar = "36756";
+            toolbar = "36697";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
