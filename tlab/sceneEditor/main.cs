@@ -43,11 +43,13 @@ function execSceneEd(%loadGui) {
 	exec("tlab/sceneEditor/SceneEditorPlugin.cs");
 	exec("tlab/sceneEditor/SceneEditorToolbar.cs");
 	exec("tlab/sceneEditor/SceneEditorTools.cs");
-	execPattern("tlab/sceneEditor/manager/*.cs");
-	execPattern("tlab/sceneEditor/dialogs/*.cs");
-	execPattern("tlab/sceneEditor/pages/*.cs");
-	execPattern("tlab/sceneEditor/creator/*.cs");
-	execPattern("tlab/sceneEditor/ambientManager/*.cs");
-	execPattern("tlab/sceneEditor/vehicleManager/*.cs");
+	execPattern("tlab/sceneEditor/creatorScript/*.cs");
+	execPattern("tlab/sceneEditor/managers/*.cs");
+	//execPattern("tlab/sceneEditor/dialogs/*.cs");
+	execPattern("tlab/sceneEditor/PageScene/*.cs");
+	execPattern("tlab/sceneEditor/PageCreator/*.cs");
+	execPattern("tlab/sceneEditor/PageBuilder/*.cs");
+	//execPattern("tlab/sceneEditor/ambientManager/*.cs");
+	//execPattern("tlab/sceneEditor/vehicleManager/*.cs");
 }
 //------------------------------------------------------------------------------

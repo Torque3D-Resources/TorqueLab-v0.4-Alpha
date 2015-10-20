@@ -3,10 +3,11 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$ADE_BotGroupField["SpawnDatablock"] = 0;
-$ADE_BotGroupField["SpawnBehavior"] = 1;
-$ADE_BotGroupField["SpawnCount"] = 2;
-$ADE_BotGroupField["SpawnDelay"] = 3;
+$ADE_BotGroupField["SpawnObj"] = 0;
+$ADE_BotGroupField["SpawnDatablock"] = 1;
+$ADE_BotGroupField["SpawnBehavior"] = 2;
+$ADE_BotGroupField["SpawnCount"] = 3;
+$ADE_BotGroupField["SpawnDelay"] = 4;
 //==============================================================================
 //%field,%value,%ctrl,%array,%arg1,%arg2
 function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
@@ -14,7 +15,7 @@ function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
 	
 	%obj = ADE.selectedBotGroup;
 	if (!isObject(%obj)){
-		warnLog("Invalid BotGroup");
+		warnLog("Invalid BotGroup",%obj);
 		return;
 	}	
 	if($ADE_BotGroupField[%field] !$= ""){ 
@@ -31,8 +32,8 @@ function ADE::updateBotGroupField( %this,%field,%value,%groupId ) {
 	if (!%isDirty)
 		return;
 
-	ADE_SaveGroupButton.active = 1;
-	ADE_BotGroupsTitle.setText("Bot groups *");
+	ADE.setGroupDirty();
+	
 	
 	if (%field $= "subGroupCount"){
 		ADE.updateBotGroupIds();
@@ -81,6 +82,16 @@ function ADE_GroupSettingMenu::onSelect( %this,%id,%text ) {
 	logd("ADE_GroupSettingMenu::onSelect( %this,%id,%text)",%this,%id,%text);
 	%field = getWord(%this.internalName,0);
 	%groupId = %this.groupId;
+	%value = %this.getText();
+	
+		ADE.updateBotGroupField(%field,%value,%groupId);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//%field,%value,%ctrl,%array,%arg1,%arg2
+function ADE_BaseGroupSettingMenu::onSelect( %this,%id,%text ) {
+	logd("ADE_BaseGroupSettingMenu::onSelect( %this,%id,%text)",%this,%id,%text);
+	%field = getWord(%this.internalName,0);
 	%value = %this.getText();
 	
 		ADE.updateBotGroupField(%field,%value,%groupId);

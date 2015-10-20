@@ -7,15 +7,19 @@
 function EVisibilityLayers::updatePresetMenu( %this ) {
 		%searchFolder = "tlab/EditorLab/editorTools/visibilityLayers/presets/*.layers.ucs";
 	//Now go through each files again to add a brush with latest items
+	%creatorMenu = SEP_CreatorTools-->VisibilityPreset;
+	%creatorMenu.clear();
+	%creatorMenu.add("Select a preset",0);
 	EVisibilityLayers_PresetMenu.clear();
 	%selected = 0;
 	EVisibilityLayers_PresetMenu.add("Select a preset",0);
 	for(%presetFile = findFirstFile(%searchFolder); %presetFile !$= ""; %presetFile = findNextFile(%searchFolder)) {
 		%presetName = strreplace(fileBase(%presetFile),".layers","");
 		EVisibilityLayers_PresetMenu.add(%presetName,%pid++);
+		%creatorMenu.add(%presetName,%pid);
 	}
 	EVisibilityLayers_PresetMenu.setSelected(%selected);
-	
+	%creatorMenu.setSelected(%selected);
 }
 
 
@@ -58,10 +62,11 @@ function EVisibilityLayers::loadPresetFile( %this,%filename ) {
 		}	
 	}
 	EVisibilityLayers.currentPresetFile = %filename;
+	
 }
 
-function EVisibilityLayers_PresetMenu::onSelect( %this,%id,%text ) {	
-	devLog("EVisibilityLayers_PresetMenu onSelect",%id,%text);
+function EVisibilityLayers_Preset::onSelect( %this,%id,%text ) {	
+	devLog("EVisibilityLayers_Preset onSelect",%id,%text);
 	if (	%id $= "0")
 		return;
 	EVisibilityLayers.loadPresetFile(%text);

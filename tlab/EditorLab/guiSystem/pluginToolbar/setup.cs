@@ -151,7 +151,8 @@ function Lab::refreshPluginToolbar( %this ) {
 
 //==============================================================================
 function EWToolsToolbar::reset( %this ) {
-	devLog("EWToolsToolbar::resize is calling expandPluginBar instead");
+	devLog("EWToolsToolbar::reset is calling expandPluginBar instead");
+	
 	Lab.expandPluginBar();
 	return;
 	%count = ToolsToolbarArray.getCount();
@@ -169,7 +170,8 @@ function EWToolsToolbar::reset( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EWToolsToolbar::expand( %this, %close ) {
-	devLog("EWToolsToolbar::resize is calling expandPluginBar instead");
+	devLog("EWToolsToolbar::expand is calling expandPluginBar instead");
+	
 	Lab.expandPluginBar();
 	return;
 	%this.isClosed = !%close;
@@ -179,6 +181,7 @@ function EWToolsToolbar::expand( %this, %close ) {
 //==============================================================================
 function EWToolsToolbar::resize( %this ) {
 	devLog("EWToolsToolbar::resize is calling refreshPluginToolbar instead");
+	
 	Lab.refreshPluginToolbar();
 	return;
 	%this.isClosed = ! %this.isClosed ;

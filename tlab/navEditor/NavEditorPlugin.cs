@@ -49,11 +49,11 @@ function NavEditorPlugin::onWorldEditorStartup( %this ) {
    NavEditorPlugin.map = %map;
 NavEditorConsoleDlg.init();
 	 // Add items to World Editor Creator
-   SceneCreatorWindow.beginGroup("Navigation");
+   SEP_Creator.beginGroup("Navigation");
 
-      SceneCreatorWindow.registerMissionObject("CoverPoint", "Cover point");
+      SEP_Creator.registerMissionObject("CoverPoint", "Cover point");
 
-   SceneCreatorWindow.endGroup();
+   SEP_Creator.endGroup();
    $Nav::Editor::renderBVTree = 0;
   $Nav::Editor::renderPortals = 0;
   $Nav::Editor::renderMesh = 0;

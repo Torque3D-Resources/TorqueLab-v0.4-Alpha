@@ -177,7 +177,8 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "-";
 	$LabMenuItemWorld_[%id,%itemId++] = "Set default plugins order" TAB "" TAB "Lab.sortPluginsBar(true);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Store plugins order as default" TAB "" TAB "Lab.updatePluginIconOrder(true);";
-	
+	$LabMenuItemWorld_[%id,%itemId++] = "-";
+	$LabMenuItemWorld_[%id,%itemId++] = "Lock Toolbar Drag n Drop" TAB "" TAB "" TAB "$Cfg_LockToolbar = !$Cfg_LockToolbar;";
 	%itemId = -1; 
 	$LabMenuWorld_[%id++] = "Help";
 	$LabMenuItemWorld_[%id,%itemId++] = "Online Documentation..." TAB "Alt F1" TAB "gotoWebPage(EWorldEditor.documentationURL);";

@@ -11,7 +11,7 @@
 // New Create Prefab System using Lab
 function Lab::CreatePrefab(%this) {
 	// Should this be protected or not?
-	%autoMode = SceneEditorCfg.AutoCreatePrefab;
+	%autoMode = $SceneEd::AutoCreatePrefab;
 
 	if (%autoMode) {
 		%saveFile = %this.GetAutoPrefabFile();
@@ -35,11 +35,16 @@ function Lab::CreatePrefab(%this) {
 // New Create Prefab System using Lab
 function Lab::GetAutoPrefabFile() {
 	%missionFolder = filePath(MissionGroup.getFilename());
-	%prefabPath = %missionFolder @"/prefabs/";
+	
 	%firstObj = EWorldEditor.getSelectedObject(0);
-
-	if (%firstObj.isMemberOfClass(TSStatic)) {
+	
+	%mode = $SceneEd::AutoPrefabMode;
+	if (%mode $= "")
+		%mode = "Level";
 		
+	
+
+	if (%firstObj.isMemberOfClass(TSStatic)) {		
 		%name = fileBase(%firstObj.shapeName);
 	}
 
@@ -51,14 +56,28 @@ function Lab::GetAutoPrefabFile() {
 		else
 			%name = %firstObj;
 	}
-
-	%file = %prefabPath@%name@".prefab";
-
-	while (isFile(%file)) {
-		%uniqueName = %name@"_"@%inc++;
-		%file = %prefabPath@%uniqueName@".prefab";
+	
+	switch$(%mode){
+		case "Level":
+			%prefabPath = %missionFolder @"/prefabs/";
+			%fileTmp = %prefabPath@"/"@%name@".prefab";
+		case "Folder":
+			%prefabPath = $SceneEd::AutoPrefabFolder;
+			%fileTmp = %prefabPath@"/"@%name@".prefab";
+			
+		case "Object":
+			%prefabPath = filePath(%firstObj.shapeName);
+			%fileTmp = %prefabPath@"/"@%name@".prefab";
 	}
 	
+	%file = strreplace(%fileTmp,"//","/");
+
+	while (isFile(%file)) {		
+		%uniqueName = %name@"_"@%inc++;
+		%fileTmp = %prefabPath@"/"@%uniqueName@".prefab";
+		%file = strreplace(%fileTmp,"//","/");
+	}
+	devLog("Prefab stored to:",%file,"Using mode:",%mode);
 	return %file;
 }
 //------------------------------------------------------------------------------

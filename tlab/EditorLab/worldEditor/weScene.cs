@@ -188,7 +188,7 @@ function EWorldEditor::toggleHideChildren( %this, %simGroup ) {
 
 //==============================================================================
 function EWorldEditor::getNewObjectGroup( %this ) {
-	return SceneCreatorWindow.getNewObjectGroup();
+	return SEP_Creator.getNewObjectGroup();
 }
 //------------------------------------------------------------------------------
 

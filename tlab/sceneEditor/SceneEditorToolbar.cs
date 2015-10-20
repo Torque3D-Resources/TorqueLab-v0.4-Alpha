@@ -42,8 +42,10 @@ function Lab::toggleObjectTransform( %this ) {
 
 	if( GlobalGizmoProfile.getFieldValue(alignment) $= "Object" ) {
 		SceneEditorToolbar-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformObject.png");
+		SEP_CreatorTools-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformObject.png");
 	} else {
 		SceneEditorToolbar-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformWorld");
+		SEP_CreatorTools-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformWorld");
 	}
 }
 //------------------------------------------------------------------------------

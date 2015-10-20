@@ -116,7 +116,7 @@ function Lab::onInitialEditorLaunch( %this ) {
 	EWorldEditor.setDisplayType($EditTsCtrl::DisplayTypePerspective);
 	ETerrainEditor.init();
 	//Creator.init();
-	SceneCreatorWindow.init();
+	SEP_Creator.init();
 	ObjectBuilderGui.init();
 	Lab.setMenuDefaultState();
 	

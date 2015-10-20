@@ -19,7 +19,7 @@ function WEditorPlugin::onActivated( %this ) {
 	Lab.insertDynamicMenu(Lab.worldMenu);
 	EWorldEditor.makeFirstResponder(true);
 	SceneEditorTree.open(MissionGroup,true);
-	SceneCreatorWindow.setNewObjectGroup(MissionGroup);
+	SceneEd.setNewObjectGroup(MissionGroup);
 	EWorldEditor.syncGui();
 	EditorGuiStatusBar.setSelectionObjectsByCount(EWorldEditor.getSelectionSize());
 

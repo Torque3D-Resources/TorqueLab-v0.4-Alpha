@@ -4,6 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
+
 function SceneEditorTools::onObjectAdded( %this,%obj ) {
 	devLog("SceneEditorTools::onObjectAdded:",%obj);
 }
@@ -17,10 +18,14 @@ function SceneEditorTools::onObjectRemoved( %this,%obj ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	$SceneEdCfg = newScriptObject("SceneEditorCfg");
-	%array.group[%groupId++] = "General settings";
+	%array.group[%groupId++] = "Objects and Prefabs settings";
 
 	%array.setVal("DropLocation",       "10" TAB "Drop object location" TAB "Dropdown"  TAB "itemList>>$TLab_Object_DropTypes" TAB "SceneEditorCfg" TAB %groupId);
-	%array.setVal("AutoCreatePrefab",       "1" TAB "Create prefab automatically" TAB "Checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoCreatePrefab",       "1" TAB "Create prefab automatically" TAB "Checkbox"  TAB "" TAB "$SceneEd::AutoCreatePrefab" TAB %groupId);
+	$TLab_PrefabAutoMode = "Level Object Folder";
+	%array.setVal("AutoPrefabMode",       "1" TAB "Automatic prefab mode" TAB "DropDown"  TAB "itemList>>$TLab_PrefabAutoMode" TAB "$SceneEd::AutoPrefabMode" TAB %groupId);
+	%array.setVal("AutoPrefabFolder",       "art/models/prefabs/" TAB "Folder for auto prefab mode" TAB "TextEdit"  TAB "" TAB "$SceneEd::AutoPrefabFolder" TAB %groupId);
+	
 	%array.group[%groupId++] = "MissionGroup Organizer";
 	%array.setVal("CoreGroup",       "mgCore" TAB "Core Objects Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("SceneObjectsGroup",       "mgSceneObjects" TAB "Ambient Group" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
@@ -42,6 +47,11 @@ function SceneEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("showObjectIds",       "0" TAB "Show object IDs" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
 	%array.setVal("showClassNames",       "0" TAB "Show object Class" TAB "Checkbox"  TAB "" TAB "SceneEditorTree" TAB %groupId);
 	
+	%array.group[%groupId++] = "Objects Creator Options";
+	%array.setVal("IconWidth",       "120" TAB "icon width" TAB "SliderEdit"  TAB "range>>30 300;;tickAt>>1" TAB "SceneEditorCfg" TAB %groupId);
+	
+	%array.group[%groupId++] = "Special tools and managers";
+	%array.setVal("GroundCoverDefaultMaterial",       "grass1" TAB "Shape Group" TAB "TextEdit"  TAB "" TAB "$SEP_GroundCoverDefault_Material" TAB %groupId);
 }
 //------------------------------------------------------------------------------
 
@@ -74,17 +84,19 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 
 	if (SceneEditorPlugin.getCfg("DropType") !$= "")
 		EWorldEditor.dropType = %this.getCfg("DropType");
-
+	
+	SceneEd.initPageBuilder();
 	%this.initAssets();
 	SEP_GroundCover.buildLayerSettingGui();
-	SEP_CreatorPage.initArrayCfg();
+	//SEP_Creator.initArrayCfg();
 	
 	ETransformBox.deactivate();
 	
 	SceneEditorTools.getToolClones();
 	
 	hide(SEP_ScenePageSettings);
-	SEP_ScenePage.init();	
+	SEP_ScenePage.init();
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -96,7 +108,8 @@ function SceneEditorPlugin::onActivated( %this ) {
 	SceneEditorTreeFilter.extent.x = SceneEditorTreeTabBook.extent.x -  56;
 	SceneEditorTreeTabBook.selectPage($SceneEd_TreePage);
 	SceneEditorModeTab.selectPage($SceneEd_ModePage);
-	
+	SEP_Creator.init();
+	hide(SEP_CreatorSettings);
 	SEP_GroupPage.updateContent();
 
 	if (SceneEditorPlugin.getCfg("DropType") !$= "")

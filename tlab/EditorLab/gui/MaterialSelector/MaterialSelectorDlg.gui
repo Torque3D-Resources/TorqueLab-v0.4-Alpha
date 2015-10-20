@@ -6617,7 +6617,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapButtonCtrl() {
-                              bitmap = "art/shapes/textures/Wood1_A.dds";
+                              bitmap = "art/shapes/textures_src/Wood1_A.dds";
                               bitmapMode = "Stretched";
                               autoFitExtents = "0";
                               useModifiers = "0";
@@ -6778,7 +6778,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapButtonCtrl() {
-                              bitmap = "art/shapes/textures/Stone_A.dds";
+                              bitmap = "art/shapes/textures_src/Stone_A.dds";
                               bitmapMode = "Stretched";
                               autoFitExtents = "0";
                               useModifiers = "0";
@@ -6939,7 +6939,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapButtonCtrl() {
-                              bitmap = "art/shapes/textures/Metal_A.png";
+                              bitmap = "art/shapes/textures_src/Metal_A.png";
                               bitmapMode = "Stretched";
                               autoFitExtents = "0";
                               useModifiers = "0";
@@ -7100,7 +7100,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapButtonCtrl() {
-                              bitmap = "art/shapes/textures/T3D_Metal_6_basecolor.png";
+                              bitmap = "art/shapes/textures_src/T3D_Metal_6_basecolor.png";
                               bitmapMode = "Stretched";
                               autoFitExtents = "0";
                               useModifiers = "0";
@@ -22796,7 +22796,7 @@
                canSaveDynamicFields = "0";
 
                new GuiBitmapCtrl() {
-                  bitmap = "art/shapes/textures/Metal_A.png";
+                  bitmap = "art/shapes/textures_src/Metal_A.png";
                   wrap = "0";
                   position = "0 0";
                   extent = "152 112";

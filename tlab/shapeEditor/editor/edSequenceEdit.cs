@@ -25,7 +25,7 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 		return;  // selecting a sequence in the Thread window will re-call this function
 	}
 
-	ShapeEdSeqFromMenu.clear();
+	//ShapeEdSeqFromMenu.clear();
 	ShapeEdSequences-->blendSeq.clear();
 	// Clear the trigger list
 	ShapeEdTriggerList.removeAll();
@@ -50,14 +50,14 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 		ShapeEdSequences-->blendFlag.setValue( getField( %blendData, 0 ) );
 		ShapeEdSequences-->priority.setText( ShapeEditor.shape.getSequencePriority( %seqName ) );
 		// 'From' and 'Blend' sequence menus
-		ShapeEdSeqFromMenu.add( "Browse..." );
+		//ShapeEdSeqFromMenu.add( "Browse..." );
 		%count = ShapeEdSequenceList.rowCount();
 
 		for ( %i = 2; %i < %count; %i++ ) { // skip header row and <rootpose>
 			%name = ShapeEdSequenceList.getItemName( %i );
 
 			if ( %name !$= %seqName ) {
-				ShapeEdSeqFromMenu.add( %name );
+				//ShapeEdSeqFromMenu.add( %name );
 				ShapeEdSequences-->blendSeq.add( %name );
 			}
 		}
@@ -236,8 +236,8 @@ function ShapeEdPropWindow::syncPlaybackDetails( %this ) {
 			%seqFrom = rtrim( getFields( %backupData, 0, 1 ) );
 		}
 
-		ShapeEdSeqFromMenu.setText( %seqFrom );
-		ShapeEdSeqFromMenu.tooltip = ShapeEdSeqFromMenu.getText();   // use tooltip to show long names
+		//ShapeEdSeqFromMenu.setText( %seqFrom );
+		//ShapeEdSeqFromMenu.tooltip = ShapeEdSeqFromMenu.getText();   // use tooltip to show long names
 		ShapeEdSequences-->startFrame.setText( %seqStart );
 		ShapeEdSequences-->endFrame.setText( %seqEnd );
 		%val = ShapeEdSeqSlider.getValue() / getWord( ShapeEdSeqSlider.range, 1 );
@@ -252,8 +252,8 @@ function ShapeEdPropWindow::syncPlaybackDetails( %this ) {
 		// Hide sequence in/out bars
 		ShapeEdAnimWindow-->seqInBar.setVisible( false );
 		ShapeEdAnimWindow-->seqOutBar.setVisible( false );
-		ShapeEdSeqFromMenu.setText( "" );
-		ShapeEdSeqFromMenu.tooltip = "";
+		//ShapeEdSeqFromMenu.setText( "" );
+		//ShapeEdSeqFromMenu.tooltip = "";
 		ShapeEdSequences-->startFrame.setText( 0 );
 		ShapeEdSequences-->endFrame.setText( 0 );
 		ShapeEdSeqSlider.range = "0 1";
@@ -483,7 +483,7 @@ function ShapeEdSequenceList::removeItem( %this, %name ) {
 	}
 }
 
-function ShapeEdSeqFromMenu::onSelect( %this, %id, %text ) {
+function ShapeEdAnim_SeqPillMenu::onSelect( %this, %id, %text ) {
 	if ( %text $= "Browse..." ) {
 		// Reset menu text
 		%seqName = ShapeEdSequenceList.getSelectedName();
@@ -496,7 +496,7 @@ function ShapeEdSeqFromMenu::onSelect( %this, %id, %text ) {
 	}
 }
 
-function ShapeEdSeqFromMenu::onBrowseSelect( %this, %path ) {
+function ShapeEdAnim_SeqPillMenu::onBrowseSelect( %this, %path ) {
 	%path = makeRelativePath( %path, getMainDotCSDir() );
 	%this.lastPath = %path;
 	%this.setText( %path );

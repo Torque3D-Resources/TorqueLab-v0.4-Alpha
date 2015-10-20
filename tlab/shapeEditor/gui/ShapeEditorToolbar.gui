@@ -26,12 +26,12 @@ new GuiStackControl(ShapeEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "34055";
-      disabledGroup = "34056";
-      EditorContainer = "20274";
+      defaultStack = "33668";
+      disabledGroup = "33669";
+      EditorContainer = "20314";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ShapeEditor";
-      stackLists = "34057 34066 34075 34084";
+      stackLists = "33670 33679 33688 33697";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -577,7 +577,7 @@ new GuiStackControl(ShapeEditorToolbar) {
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/ObjectBounds.png";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/ShowCollisionMesh.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -588,6 +588,36 @@ new GuiStackControl(ShapeEditorToolbar) {
          buttonType = "ToggleButton";
          useMouseEvents = "1";
          position = "10 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "shapeEdShapeView.renderColMeshes = $ThisControl.getValue();";
+         tooltipProfile = "ToolsToolTipProfile";
+         tooltip = "Toggle rendering of collision meshes in the preview window";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "renderColMeshes";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiIconButtonCtrl() {
+         buttonMargin = "1 1";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/ObjectBounds.png";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         makeIconSquare = "0";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "1";
+         position = "44 0";
          extent = "30 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -617,7 +647,7 @@ new GuiStackControl(ShapeEditorToolbar) {
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "1";
-         position = "44 0";
+         position = "78 0";
          extent = "30 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -631,36 +661,6 @@ new GuiStackControl(ShapeEditorToolbar) {
          hovertime = "1000";
          isContainer = "1";
          internalName = "ShowObjBox";
-         superClass = "ToolbarIcon";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiIconButtonCtrl() {
-         buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar-assets/ShowCollisionMesh.png";
-         iconLocation = "Left";
-         sizeIconToButton = "0";
-         makeIconSquare = "0";
-         textLocation = "Left";
-         textMargin = "4";
-         autoSize = "0";
-         groupNum = "-1";
-         buttonType = "ToggleButton";
-         useMouseEvents = "1";
-         position = "78 0";
-         extent = "30 32";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonDark";
-         visible = "1";
-         active = "1";
-         command = "shapeEdShapeView.renderColMeshes = $ThisControl.getValue();";
-         tooltipProfile = "ToolsToolTipProfile";
-         tooltip = "Toggle rendering of collision meshes in the preview window";
-         hovertime = "1000";
-         isContainer = "1";
-         internalName = "renderColMeshes";
          superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";

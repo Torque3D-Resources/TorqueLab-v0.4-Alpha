@@ -59,6 +59,7 @@ function execADE(%loadGui) {
 	execPattern("tlab/aiDirector/scripts/*.cs");
 	execPattern("tlab/aiDirector/spawnMode/*.cs");
 	execPattern("tlab/aiDirector/groupMode/*.cs");
+	execPattern("tlab/aiDirector/triggerMode/*.cs");
 	execPattern("tlab/aiDirector/behaviors/*.cs");
 	
 }

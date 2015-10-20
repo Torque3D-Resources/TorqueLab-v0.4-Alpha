@@ -75,6 +75,8 @@ function WorldEditor::onSelect( %this, %obj,%scriptSide ) {
 	
 	Lab.DoSelectionCallback("Transform",%this.getSelectedObject(0));
 	
+	$WorldEditor_LastSelZ = %obj.position.z;
+	
 }
 //------------------------------------------------------------------------------
 

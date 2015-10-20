@@ -20,7 +20,7 @@ function ADE::createBotGroup(%this) {
 function ADE::addSubGroup(%this) {
 	%obj = ADE.selectedBotGroup;
 	%obj.dataCount++;
-	%obj.botData[%obj.dataCount] = "" TAB "" TAB "1" TAB "200";
+	%obj.botData[%obj.dataCount] = "" TAB "" TAB "" TAB "1" TAB "200";
 	
 	
 	%this.addBotSubGroupPill(%obj,%obj.dataCount);	

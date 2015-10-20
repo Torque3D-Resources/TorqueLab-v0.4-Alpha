@@ -95,7 +95,8 @@ function TerrainMaterialDlg::dialogApply( %this,%closeDlg ) {
 	// Save all changes.
 	ETerrainMaterialPersistMan.saveDirty();
 	// Delete the snapshot.
-	TerrainMaterialDlgSnapshot.delete();
+	if( isObject( TerrainMaterialDlgSnapshot ) )
+		TerrainMaterialDlgSnapshot.delete();
 
 	// Remove ourselves from the canvas.
 	if (%closeDlg)
