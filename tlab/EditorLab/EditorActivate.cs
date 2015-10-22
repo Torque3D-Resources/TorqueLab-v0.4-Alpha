@@ -31,7 +31,7 @@ function Lab::setEditor( %this, %newEditor, %dontActivate ) {
 	if ( isObject( %this.currentEditor ) ) {
 		//Desactivated current editor if activated and not same as new
 		if( %this.currentEditor.getId() != %newEditor.getId() && %this.currentEditor.isActivated)
-			%this.currentEditor.onDeactivated();
+			%this.currentEditor.onDeactivated(%newEditor);
 
 		//Store current OrthoFOV view to set same in new editor
 		if( isObject( %this.currentEditor.editorGui ) )

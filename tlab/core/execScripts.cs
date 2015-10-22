@@ -63,6 +63,7 @@ function tlabExecEditor(%loadGui ) {
 		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
 		execPattern("tlab/EditorLab/SideBar/*.gui");
+		execPattern("tlab/EditorLab/SceneObjects/*.gui");	
 	}
 
 	exec("tlab/EditorLab/EditorOpen.cs");

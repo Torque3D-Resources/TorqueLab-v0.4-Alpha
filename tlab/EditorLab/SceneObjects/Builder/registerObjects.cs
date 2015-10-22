@@ -4,18 +4,22 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-function SEP_Creator::beginGroup( %this, %group ) {
+function Scene::beginGroup( %this, %group ) {
 	%this.currentGroup = %group;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::endGroup( %this, %group ) {
+function Scene::endGroup( %this, %group ) {
 	%this.currentGroup = "";
 }
 //------------------------------------------------------------------------------
-//SEP_Creator.registerObjects();
-function SEP_Creator::registerObjects( %this ) {
-
+//Scene.registerObjects();
+function Scene::registerObjects( %this ) {
+	if (!isObject(%this.array)){
+		%this.array = new ArrayObject();
+		%this.array.caseSensitive = true;
+	}
+	
 	%this.beginGroup( "Environment" );
 	// Removed Prefab as there doesn't really seem to be a point in creating a blank one
 	//%this.registerMissionObject( "Prefab",              "Prefab" );
@@ -96,7 +100,7 @@ function SEP_Creator::registerObjects( %this ) {
 		%this.registerCustomsGroups();
 }
 
-function SEP_Creator::registerMissionObject( %this, %class, %name, %buildfunc, %group ) {
+function Scene::registerMissionObject( %this, %class, %name, %buildfunc, %group ) {
 	if( !isClass(%class) )
 		return;
 
@@ -107,7 +111,7 @@ function SEP_Creator::registerMissionObject( %this, %class, %name, %buildfunc, %
 		%group = %this.currentGroup;
 
 	if ( %class $= "" || %group $= "" ) {
-		warn( "SEP_Creator::registerMissionObject, invalid parameters!" );
+		warn( "Scene::registerMissionObject, invalid parameters!" );
 		return;
 	}
 

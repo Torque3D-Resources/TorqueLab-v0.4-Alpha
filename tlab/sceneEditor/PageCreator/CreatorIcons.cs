@@ -96,7 +96,7 @@ function SEP_Creator::addShapeIcon( %this, %datablock ) {
 	%class = %datablock.getClassName();
 	%cmd = %class @ "::create(" @ %name @ ");";
 	%shapePath = ( %datablock.shapeFile !$= "" ) ? %datablock.shapeFile : %datablock.shapeName;
-	%createCmd = "SEP_Creator.createObject( \\\"" @ %cmd @ "\\\" );";
+	%createCmd = "Scene.createObject( \\\"" @ %cmd @ "\\\" );";
 	%ctrl.altCommand = "ColladaImportDlg.showDialog( \"" @ %shapePath @ "\", \"" @ %createCmd @ "\" );";
 	%ctrl.iconBitmap = EditorIconRegistry::findIconByClassName( %class );
 	%ctrl.text = %name;
@@ -117,7 +117,7 @@ function SEP_Creator::addStaticIcon( %this, %fullPath ) {
 			 "Size: " @ fileSize( %fullPath ) / 1000.0 SPC "KB" NL
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
-	%createCmd = "SEP_Creator.createStatic( \\\"" @ %fullPath @ "\\\" );";
+	%createCmd = "Scene.createStatic( \\\"" @ %fullPath @ "\\\" );";
 	%ctrl.altCommand = "ColladaImportDlg.showDialog( \"" @ %fullPath @ "\", \"" @ %createCmd @ "\" );";
 	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
@@ -138,7 +138,7 @@ function SEP_Creator::addPrefabIcon( %this, %fullPath ) {
 			 "Size: " @ fileSize( %fullPath ) / 1000.0 SPC "KB" NL
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
-	%ctrl.altCommand = "SEP_Creator.createPrefab( \"" @ %fullPath @ "\" );";
+	%ctrl.altCommand = "Scene.createPrefab( \"" @ %fullPath @ "\" );";
 	%ctrl.iconBitmap = EditorIconRegistry::findIconByClassName( "Prefab" );
 	%ctrl.text = %file;
 	%ctrl.class = "CreatorPrefabIconBtn";

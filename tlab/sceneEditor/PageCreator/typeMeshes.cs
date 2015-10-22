@@ -106,7 +106,7 @@ function SEP_Creator::addMeshesIcon( %this, %fullPath ) {
 			 "Size: " @ fileSize( %fullPath ) / 1000.0 SPC "KB" NL
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
-	%createCmd = "SEP_Creator.createMesh( \\\"" @ %fullPath @ "\\\" );";
+	%createCmd = "Scene.createMesh( \\\"" @ %fullPath @ "\\\" );";
 	%ctrl.altCommand = "ColladaImportDlg.showDialog( \"" @ %fullPath @ "\", \"" @ %createCmd @ "\" );";
 	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
@@ -115,24 +115,5 @@ function SEP_Creator::addMeshesIcon( %this, %fullPath ) {
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
 	%this.contentCtrl.addGuiControl( %ctrl );
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function SEP_Creator::createMesh( %this, %file ) {
-	if ( !$missionRunning )
-		return;
-
-
-	
-	%addToGroup = SceneEd.getActiveSimGroup();
-	%objId = new TSStatic() {
-		shapeName = %file;
-		position = %this.getCreateObjectPosition();
-		parentGroup = %addToGroup;
-	};
-	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
-	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );
-	//%this.onObjectCreated( %objId );
-	
 }
 //------------------------------------------------------------------------------

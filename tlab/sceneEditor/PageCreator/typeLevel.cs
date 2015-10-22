@@ -7,7 +7,7 @@
 // Navigate through Creator Book Data
 function SEP_Creator::navigateLevel( %this, %address ) {
 	// Add groups to popup menu
-	%array = %this.array;
+	%array = Scene.array;
 	%array.sortk();
 	%count = %array.count();
 

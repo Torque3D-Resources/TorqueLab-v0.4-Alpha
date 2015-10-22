@@ -135,3 +135,12 @@ function EWorldEditorScaleModeBtn::onClick(%this) {
 	EditorGuiStatusBar.setInfo("Scale selection.");
 }
 //------------------------------------------------------------------------------
+
+
+//==============================================================================
+
+function GizmoModeButton::onClick(%this) {
+	GlobalGizmoProfile.mode = %this.mode;
+	EditorGuiStatusBar.setInfo( %this.toolTip);
+}
+//------------------------------------------------------------------------------

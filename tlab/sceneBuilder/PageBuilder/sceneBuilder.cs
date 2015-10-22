@@ -9,26 +9,26 @@
 //==============================================================================
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SceneEd::initPageBuilder( %this ) {	
-	if (!isObject(SEP_SceneMeshesSet))
-		%this.meshSet = newSimSet("SEP_SceneMeshesSet");
+function SBP::initPageBuilder( %this ) {	
+	if (!isObject(SBP_SceneMeshesSet))
+		%this.meshSet = newSimSet("SBP_SceneMeshesSet");
 	
-	SceneEd.getSceneMeshes();
-	SEP_AssetTree.clear();
-	SEP_AssetTree.open(SEP_SceneMeshesSet);
-	SEP_AssetTree.buildVisibleTree();	
+	SBP.getSceneMeshes();
+	SBP_AssetTree.clear();
+	SBP_AssetTree.open(SBP_SceneMeshesSet);
+	SBP_AssetTree.buildVisibleTree();	
 	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-// SceneEd.initPageBuilder
-function SceneEd::getSceneMeshes( %this ) {	
-	SEP_SceneMeshesSet.clear();
+// SBP.initPageBuilder
+function SBP::getSceneMeshes( %this ) {	
+	SBP_SceneMeshesSet.clear();
 	%staticList = getMissionObjectClassList("TSStatic");
 	%prefabList = getMissionObjectClassList("Prefab");
 	%list = %staticList SPC %prefabList;
 	foreach$(%obj in %list)
-		SEP_SceneMeshesSet.add(%obj);
+		SBP_SceneMeshesSet.add(%obj);
 }
 //---------------------------------------------------------------------

@@ -20,7 +20,7 @@
    langTableMod = "Default";
    canSave = "1";
    canSaveDynamicFields = "1";
-      previousGui = "39353";
+      previousGui = "39771";
       saveAs = "0";
       tooltipWidth = "500";
 
@@ -131,13 +131,13 @@
       };
    };
    new GuiFrameSetCtrl(EditorFrameContent) {
-      columns = "0 18";
+      columns = "0 265";
       rows = "0";
-      borderWidth = "4";
-      borderColor = "104 222 251 66";
+      borderWidth = "2";
+      borderColor = "117 117 117 255";
       borderEnable = "dynamic";
       borderMovable = "dynamic";
-      autoBalance = "0";
+      autoBalance = "1";
       fudgeFactor = "0";
       docking = "Client";
       margin = "0 0 0 0";
@@ -160,7 +160,7 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiContainer(EditorSideBar) {
+      new GuiContainer() {
          margin = "0 0 0 0";
          padding = "0 0 0 0";
          anchorTop = "1";
@@ -168,7 +168,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "0 0";
-         extent = "14 820";
+         extent = "263 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -178,10 +178,31 @@
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
-         internalName = "SideBarContainer";
          canSave = "1";
          canSaveDynamicFields = "0";
 
+         new GuiContainer(EditorSideBar) {
+            margin = "0 0 0 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "0 0";
+            extent = "263 820";
+            minExtent = "8 2";
+            horizSizing = "width";
+            vertSizing = "height";
+            profile = "ToolsBoxDarkA";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            internalName = "SideBarContainer";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
          new GuiBitmapButtonCtrl() {
             bitmap = "tlab/gui/icons/24-assets/arrow_triangle_right.png";
             bitmapMode = "Stretched";
@@ -191,7 +212,7 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "3 10";
+            position = "252 2";
             extent = "11 15";
             minExtent = "8 2";
             horizSizing = "left";
@@ -208,7 +229,7 @@
          };
       };
       new GuiFrameSetCtrl(EditorFrameMain) {
-         columns = "0 867";
+         columns = "0 882";
          rows = "0";
          borderWidth = "4";
          borderColor = "106 106 106 255";
@@ -223,8 +244,8 @@
          anchorBottom = "0";
          anchorLeft = "0";
          anchorRight = "1";
-         position = "18 0";
-         extent = "1422 820";
+         position = "265 0";
+         extent = "1175 820";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -245,7 +266,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "863 820";
+            extent = "878 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -267,7 +288,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 -2";
-               extent = "863 820";
+               extent = "878 820";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -282,7 +303,7 @@
                canSaveDynamicFields = "0";
 
                new WorldEditor(EWorldEditor) {
-                  gridSnap = "0";
+                  gridSnap = "1";
                   dropAtBounds = "1";
                   dropBelowCameraOffset = "15";
                   dropAtScreenCenterScalar = "1";
@@ -346,7 +367,7 @@
                   anchorLeft = "0";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "863 820";
+                  extent = "878 820";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -415,7 +436,7 @@
                   anchorLeft = "0";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "863 820";
+                  extent = "878 820";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -444,7 +465,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 804";
-                     extent = "863 16";
+                     extent = "878 16";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "top";
@@ -514,7 +535,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "863 820";
+               extent = "878 820";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -536,7 +557,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 -2";
-               extent = "601 42";
+               extent = "638 42";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -576,7 +597,7 @@
                   canSaveDynamicFields = "0";
                };
                new GuiDynamicCtrlArrayControl(ToolsToolbarArray) {
-                  colCount = "16";
+                  colCount = "17";
                   colSize = "36";
                   rowCount = "1";
                   rowSize = "40";
@@ -588,7 +609,7 @@
                   dynamicSize = "1";
                   padding = "0 0 0 0";
                   position = "0 2";
-                  extent = "591 40";
+                  extent = "628 40";
                   minExtent = "24 32";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -612,7 +633,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "591 0";
+                  position = "628 0";
                   extent = "10 40";
                   minExtent = "7 2";
                   horizSizing = "left";
@@ -654,7 +675,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "573 37";
+               position = "573 46";
                extent = "228 220";
                minExtent = "8 2";
                horizSizing = "right";
@@ -883,8 +904,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "429 0";
-               extent = "434 820";
+               position = "-30 0";
+               extent = "908 820";
                minExtent = "8 2";
                horizSizing = "left";
                vertSizing = "bottom";
@@ -904,7 +925,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "250 18";
+                  position = "724 18";
                   extent = "184 96";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -1172,7 +1193,7 @@
                   dynamicPos = "0";
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
-                  position = "4 0";
+                  position = "478 0";
                   extent = "430 18";
                   minExtent = "16 16";
                   horizSizing = "right";
@@ -2266,7 +2287,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "863 820";
+               extent = "878 820";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -2288,7 +2309,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "863 820";
+               extent = "878 820";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -2310,8 +2331,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "867 0";
-            extent = "555 820";
+            position = "882 0";
+            extent = "293 820";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2373,7 +2394,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(EWorldEditorStatusBarInfo) {
-         text = "Shape editor ( Shift Click ) to speed up camera.";
+         text = "Move selection.  SHIFT while dragging duplicates objects.  CTRL to toggle soft snap.  ALT to toggle grid snap.";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";

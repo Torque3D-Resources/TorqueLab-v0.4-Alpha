@@ -3,26 +3,58 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+//EVisibilityLayers.updatePresetMenu
 function EVisibilityLayers::updatePresetMenu( %this ) {
 		%searchFolder = "tlab/EditorLab/editorTools/visibilityLayers/presets/*.layers.ucs";
 	//Now go through each files again to add a brush with latest items
-	%creatorMenu = SEP_CreatorTools-->VisibilityPreset;
-	%creatorMenu.clear();
-	%creatorMenu.add("Select a preset",0);
-	EVisibilityLayers_PresetMenu.clear();
+	%menus = EVisibilityLayers_PresetMenu SPC SEP_CreatorTools-->VisibilityPreset SPC SBP_EVisibilityLayers_PresetMenu;
 	%selected = 0;
-	EVisibilityLayers_PresetMenu.add("Select a preset",0);
-	for(%presetFile = findFirstFile(%searchFolder); %presetFile !$= ""; %presetFile = findNextFile(%searchFolder)) {
-		%presetName = strreplace(fileBase(%presetFile),".layers","");
-		EVisibilityLayers_PresetMenu.add(%presetName,%pid++);
-		%creatorMenu.add(%presetName,%pid);
+	foreach$(%menu in %menus){
+		%pid = 0;
+		%menu.clear();
+		%menu.add("Select a preset",0);
+		for(%presetFile = findFirstFile(%searchFolder); %presetFile !$= ""; %presetFile = findNextFile(%searchFolder)) {
+			%presetName = strreplace(fileBase(%presetFile),".layers","");
+		
+			%menu.add(%presetName,%pid++);
+			if (EVisibilityLayers.currentPresetFile $= %presetName)
+				%selected = %pid;
+		}
+		%menu.setSelected(%selected);
+	}	
+}
+function EVisibilityLayers::toggleNewPresetCtrl( %this ) {
+	if (EVisibilityLayers_NewPreset.visible){
+		show(%this-->newPresetButton);
+		EVisibilityLayers_NewPreset.visible = 0;
+		return;
 	}
-	EVisibilityLayers_PresetMenu.setSelected(%selected);
-	%creatorMenu.setSelected(%selected);
+	hide(%this-->newPresetButton);
+		EVisibilityLayers_NewPreset.visible = 1;
 }
 
-
+//EVisibilityLayers.exportPresetSample
+function EVisibilityLayers::savePresetToFile( %this ) {
+	%name = EVisibilityLayers_NewPreset-->presetName.getText();
+	
+	if (strFind(%name,"[")){		
+		return;
+	}
+		
+	%layerExampleObj = newScriptObject();
+	%layerExampleObj.internalName = %name;
+	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
+		%class = %this.classArray.getKey( %i );
+		eval("%selectable = $" @ %class @ "::isSelectable;");
+		eval("%renderable = $" @ %class @ "::isRenderable;");
+		%layerExampleObj.selectable[%class] = %selectable;
+		%layerExampleObj.visible[%class] = %renderable;
+	}
+	%layerExampleObj.save("tlab/EditorLab/editorTools/visibilityLayers/presets/"@%name@".layers.ucs",0,"%presetLayers = ");
+	%this.toggleNewPresetCtrl();
+	EVisibilityLayers.loadPresetFile(%name);
+	%this.updatePresetMenu();
+}
 //EVisibilityLayers.exportPresetSample
 function EVisibilityLayers::exportPresetSample( %this ) {
 	%layerExampleObj = newScriptObject("EVisibilityLayerPresetExample");
@@ -38,14 +70,14 @@ function EVisibilityLayers::exportPresetSample( %this ) {
 
 
 //EVisibilityLayers.loadPresetFile("visBuilder");
-function EVisibilityLayers::loadPresetFile( %this,%filename ) {
+function EVisibilityLayers::loadPresetFile( %this,%filename,%noStore ) {
 	%file = "tlab/EditorLab/editorTools/visibilityLayers/presets/"@%filename@".layers.ucs";
 	
 	if (!isFile(%file))
 		return;
 		
 	exec(%file);
-	
+	devLog("Loading Vis file:",%file,"NoStore",%noStore);
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
 		
@@ -61,8 +93,14 @@ function EVisibilityLayers::loadPresetFile( %this,%filename ) {
 			info("Class:",%class,"isRenderable set to:",%renderable);
 		}	
 	}
-	EVisibilityLayers.currentPresetFile = %filename;
+	%presetName = %filename;
+	if (!%noStore){
+		EVisibilityLayers.currentPresetFile = %filename;		
+	}else {
+		%presetName = "*"@%presetName;
+	}
 	
+	EVisibilityLayers.activePreset = %presetName;
 }
 
 function EVisibilityLayers_Preset::onSelect( %this,%id,%text ) {	

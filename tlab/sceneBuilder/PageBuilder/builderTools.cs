@@ -6,7 +6,7 @@
 
 
 //==============================================================================
-//SEP_AssetPage.setMeshFolderDepth($ThisControl);
+//SBP_AssetPage.setMeshFolderDepth($ThisControl);
 function AssetsLab::setMeshFolderDepth( %this, %ctrl ) {
 	%val = mRound(%ctrl.getValue());
 	devLog("setMeshFolderDepth Val",%val,"Ctrl",%ctrl.getValue());
@@ -23,7 +23,7 @@ function AssetsLab::setMeshFolderDepth( %this, %ctrl ) {
 // Navigate through Asset Book Data
 //AssetsLab.navigateAssets("art/models/");
 function AssetsLab::navigateAssets( %this, %searchFolder ) {
-	SEP_AssetPage.isList = true;
+	SBP_AssetPage.isList = true;
 	AssetIconArray.clear();
 
 	if (%searchFolder $= "")
@@ -67,7 +67,7 @@ function AssetsLab::addStaticIcon( %this, %fullPath ) {
 			 "Size: " @ fileSize( %fullPath ) / 1000.0 SPC "KB" NL
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
-	%createCmd = "SEP_Creator.createStatic( \\\"" @ %fullPath @ "\\\" );";
+	%createCmd = "SBP_Creator.createStatic( \\\"" @ %fullPath @ "\\\" );";
 	%ctrl.altCommand = "ColladaImportDlg.showDialog( \"" @ %fullPath @ "\", \"" @ %createCmd @ "\" );";
 	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
@@ -117,7 +117,7 @@ function AssetsLab::navigate( %this, %address ) {
 
 	if ( %this.tab $= "Meshes" ) {
 		%fullPath = findFirstFileMultiExpr( "*.dts" TAB "*.dae" TAB "*.kmz" TAB "*.dif" );
-		SEP_AssetPage-->meshesOptions.visible = true;
+		SBP_AssetPage-->meshesOptions.visible = true;
 
 		while ( %fullPath !$= "" ) {
 			if (strstr(%fullPath, "cached.dts") != -1) {
@@ -268,7 +268,7 @@ function AssetsLab::navigate( %this, %address ) {
 
 	if ( %this.tab $= "Level" ) {
 		// Add groups to popup menu
-		%array = %this.array;
+		%array = Scene.array;
 		%array.sortk();
 		%count = %array.count();
 

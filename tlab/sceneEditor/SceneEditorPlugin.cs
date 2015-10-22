@@ -118,8 +118,9 @@ function SceneEditorPlugin::onActivated( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
-function SceneEditorPlugin::onDeactivated( %this ) {
-	if (EVisibilityLayers.currentPresetFile $= "visBuilder"){
+function SceneEditorPlugin::onDeactivated( %this,%newPlugin ) {
+	DevLog("SceneEditorPlugin::onDeactivated");
+	if (EVisibilityLayers.currentPresetFile $= "visBuilder" && 1 == 0){
 		EVisibilityLayers.loadPresetFile("default");
 		%this.text = "Set TSStatic-Only Selectable";		
 	}
@@ -138,7 +139,7 @@ function SceneEditorPlugin::onPluginCreated( %this ) {
 //==============================================================================
 // Called when the mission file has been saved
 function SceneEditorPlugin::onSaveMission( %this, %file ) {
-	SEP_GroundCover.setNotDirty();
+	SEP_GroundCover.setNotDirty();è
 }
 //------------------------------------------------------------------------------
 //==============================================================================

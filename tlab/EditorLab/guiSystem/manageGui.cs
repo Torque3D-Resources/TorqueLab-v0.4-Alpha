@@ -94,7 +94,7 @@ function Lab::detachAllEditorGuis(%this) {
 		%this.detachEditorGui(%id,true);
 	
 	foreach(%gui in LabSideBarGuiSet)
-		%this.detachEditorGui(%gui);
+		Lab.attachEditorGui(%gui);
 	
 
 	%this.resetPluginsBar();

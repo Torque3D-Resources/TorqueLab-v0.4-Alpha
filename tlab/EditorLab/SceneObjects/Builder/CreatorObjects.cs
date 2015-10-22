@@ -8,7 +8,7 @@
 $SceneEditor_AddObjectLastZ = true;
 $SceneEditor_AddObjectCurrentSel = true;
 //==============================================================================
-function SEP_Creator::getCreateObjectPosition() {
+function Scene::getCreateObjectPosition() {
 	%focusPoint = LocalClientConnection.getControlObject().getLookAtPoint();
 	$SceneEd_SkipEditorDrop = true;	
 	if ($SceneEditor_AddObjectCurrentSel){
@@ -31,7 +31,7 @@ function SEP_Creator::getCreateObjectPosition() {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::onObjectCreated( %this, %objId,%noDrop ) {
+function Scene::onObjectCreated( %this, %objId,%noDrop ) {
 	// Can we submit an undo action?
 	if ( isObject( %objId ) )
 		MECreateUndoAction::submit( %objId );
@@ -48,7 +48,7 @@ function SEP_Creator::onObjectCreated( %this, %objId,%noDrop ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::onFinishCreateObject( %this, %objId ) {
+function Scene::onFinishCreateObject( %this, %objId ) {
 	SceneEd.objectGroup.add( %objId );
 
 	if( %objId.isMemberOfClass( "SceneObject" ) ) {
@@ -61,8 +61,8 @@ function SEP_Creator::onFinishCreateObject( %this, %objId ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-//SEP_Creator.createSimGroup();
-function SEP_Creator::createSimGroup( %this ) {
+//Scene.createSimGroup();
+function Scene::createSimGroup( %this ) {
 	if ( !$missionRunning )
 		return;
 
@@ -78,7 +78,7 @@ function SEP_Creator::createSimGroup( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::createStatic( %this, %file ) {
+function Scene::createStatic( %this, %file ) {
 	if ( !$missionRunning )
 		return;
 	
@@ -94,7 +94,7 @@ function SEP_Creator::createStatic( %this, %file ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::createPrefab( %this, %file ) {
+function Scene::createPrefab( %this, %file ) {
 	if ( !$missionRunning )
 		return;
 
@@ -113,7 +113,7 @@ function SEP_Creator::createPrefab( %this, %file ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::createObject( %this, %cmd ) {
+function Scene::createObject( %this, %cmd ) {
 	if ( !$missionRunning )
 		return;
 
@@ -130,5 +130,20 @@ devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 		%this.onFinishCreateObject( %objId );
 
 	return %objId;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function Scene::createMesh( %this, %file ) {
+	if ( !$missionRunning )
+		return;
+	
+	%addToGroup = SceneEd.getActiveSimGroup();
+	%objId = new TSStatic() {
+		shapeName = %file;
+		position = %this.getCreateObjectPosition();
+		parentGroup = %addToGroup;
+		internalName = fileBase(%file);
+	};
+	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );	
 }
 //------------------------------------------------------------------------------

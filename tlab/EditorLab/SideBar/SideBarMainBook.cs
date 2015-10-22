@@ -12,11 +12,14 @@ $SideBarMainBook_Page[1] = "SceneBrowser";
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function SideBarMainBook::onTabSelected(%this,%text,%id) {
-	switch$(%id){
-		case "0":
+	devLog("SideBarMainBook::onTabSelected",%text,%id);
+	switch(%id){
+		case 0:
 			Lab.initFileBrowser();	
-		case "1":
-			Lab.initSceneBrowser();	
+		case 1:
+			SideBarSceneFrameSet.bringToFront(SideBarScene_Tree);
+			Lab.schedule(200,"initSceneBrowser");	
+			
 	}
 }
 //------------------------------------------------------------------------------

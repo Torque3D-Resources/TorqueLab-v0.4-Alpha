@@ -78,10 +78,10 @@ function Lab::addPluginToBar( %this, %pluginObj ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::createPluginIcon( %this, %pluginObj ) {
-	%icon = "tlab/themes/DarkBlue/buttons/plugin-assets/"@%pluginObj.plugin@"Icon";
+	%icon = $TLab_ThemePath@"buttons/plugin-assets/"@%pluginObj.plugin@"Icon";
 
 	if (!isFile(%icon@"_n.png"))
-		%icon = "tlab/themes/DarkBlue/buttons/plugin-assets/TerrainEditorIcon";
+		%icon = $TLab_ThemePath@"buttons/plugin-assets/TerrainEditorIcon";
 
 	%button = cloneObject(EditorGui-->PluginIconSrc);
 	%button.internalName = %pluginObj.plugin;

@@ -26,12 +26,12 @@ new GuiStackControl(AiDirectorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "27772";
-      disabledGroup = "27773";
-      EditorContainer = "20314";
+      defaultStack = "27854";
+      disabledGroup = "27855";
+      EditorContainer = "20317";
       editorParent = "EditorGuiToolbarStack";
       plugin = "AiDirector";
-      stackLists = "27774";
+      stackLists = "27856";
 
    new GuiContainer() {
       margin = "0 0 0 0";

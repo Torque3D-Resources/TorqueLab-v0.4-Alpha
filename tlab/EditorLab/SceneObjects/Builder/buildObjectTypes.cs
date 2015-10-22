@@ -14,7 +14,7 @@ function ObjectBuilderGui::buildBotSpawn(%this)
    %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Player");
    %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "PlayerData DefaultPlayerData");
 
-   if( SEP_Creator.objectGroup.getID() == MissionGroup.getID() )
+   if( Scene.objectGroup.getID() == MissionGroup.getID() )
    {
    	if( !isObject("BotStuff") )
          MissionGroup.add( new SimGroup("BotStuff") );
@@ -32,7 +32,7 @@ function ObjectBuilderGui::buildBotGoal(%this)
     %this.objectClassName = "BotGoalPoint";
    %this.addField("dataBlock",    "TypeDataBlock", "dataBlock",   "MissionMarkerData BotGoalMarker");
  
-	 if( SEP_Creator.objectGroup.getID() == MissionGroup.getID() )
+	 if( Scene.objectGroup.getID() == MissionGroup.getID() )
    {
    	if( !isObject("BotStuff") )
          MissionGroup.add( new SimGroup("BotStuff") );
@@ -56,7 +56,7 @@ function ObjectBuilderGui::buildPlayerDropPoint(%this)
    %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Player");
    %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "PlayerData DefaultPlayerData");
 
-   if( SEP_Creator.objectGroup.getID() == MissionGroup.getID() )
+   if( Scene.objectGroup.getID() == MissionGroup.getID() )
    {
       if( !isObject("Spawnpoints") )
          MissionGroup.add( new SimGroup("Spawnpoints") );
@@ -76,7 +76,7 @@ function ObjectBuilderGui::buildObserverDropPoint(%this)
    %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Camera");
    %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "CameraData Observer");
 
-   if( SEP_Creator.objectGroup.getID() == MissionGroup.getID() )
+   if( Scene.objectGroup.getID() == MissionGroup.getID() )
    {
       if( !isObject("ObserverDropPoints") )
          MissionGroup.add( new SimGroup("ObserverDropPoints") );
@@ -422,7 +422,7 @@ function PhysicsEntityData::create(%data)
 {
    %obj = new PhysicsEntity() {
       dataBlock = %data;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -431,7 +431,7 @@ function StaticShapeData::create(%data)
 {
    %obj = new StaticShape() {
       dataBlock = %data;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -443,19 +443,19 @@ function MissionMarkerData::create(%block)
       case "WayPointMarker":
          %obj = new WayPoint() {
             dataBlock = %block;
-            parentGroup = SEP_Creator.objectGroup;
+            parentGroup = Scene.objectGroup;
          };
          return(%obj);
       case "SpawnSphereMarker":
          %obj = new SpawnSphere() {
             datablock = %block;
-            parentGroup = SEP_Creator.objectGroup;
+            parentGroup = Scene.objectGroup;
          };
          return(%obj);
 		 default:
          %obj = new WayPoint() {
             dataBlock = %block;
-            parentGroup = SEP_Creator.objectGroup;
+            parentGroup = Scene.objectGroup;
          };
          return(%obj);
    }
@@ -468,7 +468,7 @@ function ItemData::create(%data)
    %obj = new Item()
    {
       dataBlock = %data;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
       static = true;
       rotate = true;
    };
@@ -481,7 +481,7 @@ function TurretShapeData::create(%block)
       dataBlock = %block;
       static = true;
       respawn = true;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -492,7 +492,7 @@ function AITurretShapeData::create(%block)
       dataBlock = %block;
       static = true;
       respawn = true;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -501,7 +501,7 @@ function WheeledVehicleData::create(%block)
 {
    %obj = new WheeledVehicle() {
       dataBlock = %block;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -511,7 +511,7 @@ function FlyingVehicleData::create(%block)
    %obj = new FlyingVehicle()
    {
       dataBlock = %block;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return(%obj);
 }
@@ -521,7 +521,7 @@ function HoverVehicleData::create(%block)
    %obj = new HoverVehicle()
    {
       dataBlock = %block;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return(%obj);
 }
@@ -530,7 +530,7 @@ function RigidShapeData::create(%data)
 {
    %obj = new RigidShape() {
       dataBlock = %data;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
    };
    return %obj;
 }
@@ -540,7 +540,7 @@ function PhysicsShapeData::create( %datablock )
    %obj = new PhysicsShape()
    {
 		dataBlock = %datablock;
-		parentGroup = SEP_Creator.objectGroup;
+		parentGroup = Scene.objectGroup;
 		
       invulnerable = false;
       damageRadius = 0;
@@ -556,7 +556,7 @@ function RigidPhysicsShapeData::create( %datablock )
    %obj = new RigidPhysicsShape()
    {
 		dataBlock = %datablock;
-		parentGroup = SEP_Creator.objectGroup;
+		parentGroup = Scene.objectGroup;
 		
       invulnerable = false;
       damageRadius = 0;
@@ -573,7 +573,7 @@ function ProximityMineData::create( %datablock )
    %obj = new ProximityMine()
    {
       dataBlock = %dataBlock;
-      parentGroup = SEP_Creator.objectGroup;
+      parentGroup = Scene.objectGroup;
       static = true;    // mines created by the editor are static, and armed immediately
    };
 

@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-function SEP_Creator::registerCustomsObjectsGroup( %this,%group ) {
+function Scene::registerCustomsObjectsGroup( %this,%group ) {
 	
 	switch$(%group){
 		case "Environment":				
@@ -15,7 +15,7 @@ function SEP_Creator::registerCustomsObjectsGroup( %this,%group ) {
 	
 }
 
-function SEP_Creator::registerCustomsGroups( %this ) {	
+function Scene::registerCustomsGroups( %this ) {	
 	
 }
 

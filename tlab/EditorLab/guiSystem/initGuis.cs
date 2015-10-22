@@ -53,7 +53,7 @@ function Lab::InitialGuiSetup(%this,%pluginName,%displayName,%alwaysEnable) {
 	Lab.addGui( EPostFxManager ,"EditorDlg");	
 	Lab.addGui( StackStartToolbar ,"Toolbar",true);
 	Lab.addGui( StackEndToolbar ,"Toolbar",true);
-	Lab.addGui( EditorSideBarCtrl ,"SideBar",true);
+	Lab.addGui( EditorSideBarCtrl ,"SideBar");
 	$LabSideBarContainer.pushToBack(EditorSideBarToggle);
 	//---------------------------------------------------------------------------
 	
