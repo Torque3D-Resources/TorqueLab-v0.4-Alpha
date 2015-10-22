@@ -863,7 +863,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.updateOverrideUpAxis($ThisControl.getValue());";
@@ -913,7 +913,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                command = "ColladaImportDlg.updateOverrideScale($ThisControl.getValue());";
@@ -964,7 +964,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -985,7 +985,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -1006,7 +1006,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -1027,7 +1027,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -1071,7 +1071,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -1290,7 +1290,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::overrideUpAxis";
@@ -1311,7 +1311,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::adjustCenter";
@@ -1332,7 +1332,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::adjustFloor";
@@ -1353,7 +1353,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::forceUpdateMaterials";
@@ -1374,7 +1374,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::ignoreNodeScale";
@@ -1395,7 +1395,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::overrideScale";
@@ -1416,7 +1416,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$pref::ColladaImport::loadLights";

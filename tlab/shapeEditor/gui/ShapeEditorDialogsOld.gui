@@ -741,7 +741,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "ShapeEdShapeView.fixedDetail";
@@ -1668,7 +1668,7 @@
                   minExtent = "8 2";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   command = "ShapeEdDetails.onToggleImposter( $ThisControl.getValue() );";
@@ -1993,7 +1993,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         command = "ShapeEdDetails.onEditImposter();";
@@ -2240,7 +2240,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsCheckBoxProfile_S1";
+                     profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
                      variable = "ShapeEdShapeView.renderMounts";
@@ -3118,7 +3118,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "top";
-                     profile = "ToolsCheckBoxProfile_S1";
+                     profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";

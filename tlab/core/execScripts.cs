@@ -62,7 +62,7 @@ function tlabExecEditor(%loadGui ) {
 	if (%loadGui) {
 		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
-		
+		execPattern("tlab/EditorLab/SideBar/*.gui");
 	}
 
 	exec("tlab/EditorLab/EditorOpen.cs");
@@ -72,6 +72,8 @@ function tlabExecEditor(%loadGui ) {
 execPattern("tlab/EditorLab/guiSystem/*.cs");
 	execPattern("tlab/EditorLab/worldEditor/*.cs");
 	execPattern("tlab/EditorLab/plugin/*.cs");
+	execPattern("tlab/EditorLab/SceneObjects/*.cs");	
+	execPattern("tlab/EditorLab/SideBar/*.cs");
 }
 tlabExecEditor(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecEditor");
@@ -111,6 +113,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/TLabGameGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
+		
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");

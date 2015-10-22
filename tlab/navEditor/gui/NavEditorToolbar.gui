@@ -26,13 +26,13 @@ new GuiStackControl(NavEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "32284";
-      disabledGroup = "32285";
+      defaultStack = "32303";
+      disabledGroup = "32304";
       EditorContainer = "20314";
       editorParent = "EditorGuiToolbarStack";
       plugin = "NavEditor";
       preventReordering = "0";
-      stackLists = "32286";
+      stackLists = "32305";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -302,7 +302,7 @@ new GuiStackControl(NavEditorToolbar) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                variable = "$Nav::Editor::renderMesh";
@@ -323,7 +323,7 @@ new GuiStackControl(NavEditorToolbar) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                variable = "$CoverPoint::isRenderable";
@@ -344,7 +344,7 @@ new GuiStackControl(NavEditorToolbar) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                variable = "$Nav::Editor::renderPortals";
@@ -365,7 +365,7 @@ new GuiStackControl(NavEditorToolbar) {
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                variable = "$Nav::Editor::renderBVTree";

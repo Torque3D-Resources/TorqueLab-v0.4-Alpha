@@ -398,7 +398,7 @@ function ObjectBuilderGui::createBoolType(%this, %index)
 
    // 
    %this.controls[%this.numControls] = new GuiCheckBoxCtrl() {
-      profile = "ToolsCheckBoxProfile_S1";
+      profile = "ToolsCheckBoxProfile";
       extent = %this.checkBoxExtent;
       position = %this.curXPos + %this.columnOffset @ " " @ %this.curYPos;
       modal = "1";

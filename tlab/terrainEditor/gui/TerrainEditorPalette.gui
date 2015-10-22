@@ -19,7 +19,7 @@
       enabled = "1";
 
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainGrab";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainGrab";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -46,7 +46,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl(TEPBrush_raiseHeight) {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainRaise";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainRaise";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -73,7 +73,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainLower";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainLower";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -100,7 +100,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/SmoothTerrain";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/SmoothTerrain";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -127,7 +127,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainSmoothSlope";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainSmoothSlope";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -154,7 +154,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainNoise";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainNoise";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -181,7 +181,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainFlatten";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainFlatten";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -208,7 +208,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainSetHeight";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainSetHeight";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -235,7 +235,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainHole";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainHole";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -262,7 +262,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainHoleFill";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainHoleFill";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";

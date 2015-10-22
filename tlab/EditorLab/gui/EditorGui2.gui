@@ -894,7 +894,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -938,7 +938,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -981,7 +981,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$LabCfg_TransformBox_ShowPosition";
@@ -1024,7 +1024,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$LabCfg_TransformBox_ShowRotation";
@@ -1067,7 +1067,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$LabCfg_TransformBox_ShowScale";
@@ -2313,7 +2313,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "tlab/gui/assets/gfx/Divider-v.png";
+         bitmap = "tlab/themes/DarkBlue/gfx/Divider-v.png";
          wrap = "0";
          position = "188 0";
          extent = "10 20";
@@ -2376,7 +2376,7 @@
             canSaveDynamicFields = "0";
 
             new GuiBitmapCtrl() {
-               bitmap = "tlab/gui/assets/gfx/Divider-v.png";
+               bitmap = "tlab/themes/DarkBlue/gfx/Divider-v.png";
                wrap = "0";
                position = "0 0";
                extent = "10 20";
@@ -2420,7 +2420,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiBitmapCtrl() {
-               bitmap = "tlab/gui/assets/gfx/Divider-v.png";
+               bitmap = "tlab/themes/DarkBlue/gfx/Divider-v.png";
                wrap = "0";
                position = "76 0";
                extent = "10 20";

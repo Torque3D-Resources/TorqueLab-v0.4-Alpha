@@ -238,7 +238,7 @@ new GuiStackControl(SceneEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "tlab/gui/assets/gfx/DropSliderButton";
+            bitmap = "tlab/themes/DarkBlue/gfx/DropSliderButton";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -478,7 +478,7 @@ new GuiStackControl(SceneEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "tlab/gui/assets/gfx/DropSliderButton";
+            bitmap = "tlab/themes/DarkBlue/gfx/DropSliderButton";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";

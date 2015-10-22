@@ -6,19 +6,21 @@
 // -->Delete Profiles when reloaded
 // -->Image array store in Global
 //==============================================================================
-
+$TLab_Theme = "DarkLab";
 
 //Lab.loadScriptsProfiles();
-exec("tlab/gui/profiles/profileDefaults.cs");
-exec("tlab/gui/profiles/baseProfiles.cs");
+%profilesPath = "tlab/themes/"@$TLab_Theme@"/";
+$TLab_ThemePath = %profilesPath;
+exec(%profilesPath@"profileDefaults.cs");
+exec(%profilesPath@"baseProfiles.cs");
 
 //exec("tlab/gui/profiles/defaultProfiles.cs");
-%filePathScript = "tlab/gui/profiles/*.prof.cs";
+%filePathScript = %profilesPath@"*.prof.cs";
 for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%filePathScript)) {   
     exec( %file );
 }
-exec("tlab/gui/profiles/editorProfiles.cs");
-exec("tlab/gui/profiles/inspectorProfiles.cs");
+exec(%profilesPath@"editorProfiles.cs");
+exec(%profilesPath@"inspectorProfiles.cs");
 
 //execpattern("tlab/gui/profiles/styles/*.cs");
 //Lab.initProfileStyleData();

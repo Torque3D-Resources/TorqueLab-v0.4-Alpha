@@ -349,7 +349,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$TPG_AppendLoadedLayers";
@@ -415,7 +415,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   command = "TPG_Explorer.toggleGroupInfo($ThisControl);";
@@ -460,7 +460,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$TPG_CreateMissingMaterials";
@@ -1941,7 +1941,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -3252,7 +3252,7 @@
          minExtent = "8 2";
          horizSizing = "left";
          vertSizing = "bottom";
-         profile = "ToolsRolloutProfile_S1";
+         profile = "ToolsRolloutProfile";
          visible = "0";
          active = "1";
          tooltipProfile = "ToolsToolTipProfile";
@@ -3617,7 +3617,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsCheckBoxProfile_S1";
+                              profile = "ToolsCheckBoxProfile";
                               visible = "1";
                               active = "1";
                               variable = "$Lab::TerrainPainter::ValidateHeight";
@@ -3662,7 +3662,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$TPG_StepGeneration";
@@ -5325,7 +5325,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsCheckBoxProfile_S1";
+                     profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
                      variable = "$Lab::TerrainPainter::ValidateHeight";
@@ -5369,7 +5369,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsCheckBoxProfile_S1";
+                     profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
                      variable = "$TPG_CreateMissingMaterials";
@@ -5413,7 +5413,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsCheckBoxProfile_S1";
+                     profile = "ToolsCheckBoxProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";

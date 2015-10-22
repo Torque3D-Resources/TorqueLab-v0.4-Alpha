@@ -32,7 +32,7 @@
       ToolTip = "View NavMesh (1).";
       DetailedDesc = "";
       hovertime = "1000";
-      bitmap = "tlab/gui/buttons/palette-assets/NavView";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NavView";
       buttonType = "RadioButton";
       useMouseEvents = "0";
    };
@@ -55,7 +55,7 @@
       ToolTip = "Create off-mesh links (2).";
       DetailedDesc = "Click to select/add. Shift-click to add multiple end points.";
       hovertime = "1000";
-      bitmap = "tlab/gui/buttons/palette-assets/NavLink";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NavLink";
       buttonType = "RadioButton";
       useMouseEvents = "0";
    };
@@ -78,7 +78,7 @@
       ToolTip = "Edit cover (3).";
       DetailedDesc = "";
       hovertime = "1000";
-      bitmap = "tlab/gui/buttons/palette-assets/NavCover";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NavCover";
       buttonType = "RadioButton";
       useMouseEvents = "0";
    };
@@ -101,7 +101,7 @@
       ToolTip = "View tiles (4).";
       DetailedDesc = "Click to select.";
       hovertime = "1000";
-      bitmap = "tlab/gui/buttons/palette-assets/NavTiles";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NavTiles";
       buttonType = "RadioButton";
       useMouseEvents = "0";
    };
@@ -124,7 +124,7 @@
       ToolTip = "Test pathfinding (5).";
       DetailedDesc = "Click to select/move character, CTRL-click to spawn, SHIFT-click to deselect.";
       hovertime = "1000";
-      bitmap = "tlab/gui/buttons/palette-assets/NavTest";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NavTest";
       buttonType = "RadioButton";
       useMouseEvents = "0";
    };

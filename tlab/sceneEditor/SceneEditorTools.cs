@@ -12,6 +12,8 @@ function SceneEditorTools::onPreEditorSave( %this ) {
 		SceneEditorPlugin.toggleBuildMode();
 		
 	AssetIconArray.clear();
+	
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -29,7 +31,13 @@ function SceneEditorTools::removeToolClones( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SceneEditorTools::getToolClones( %this ) {	
-	%this.removeToolClones();
+	SceneEditorTools.removeToolClones();
+	
+	ETransformTool.cloneToCtrl(SEP_ToolsStack);
+	ECloneTool.cloneToCtrl(SEP_CloneToolsStack);
+	return;
+	SEP_ToolsStack.add(ETransformTool-->toolsStack.deepClone());
+	SEP_CloneToolsStack.add(ECloneTool-->cloneTools.deepClone());
 	
 	SEP_ToolsStack.add(ETransformTool-->toolsStack.deepClone());
 	SEP_CloneToolsStack.add(ECloneTool-->cloneTools.deepClone());

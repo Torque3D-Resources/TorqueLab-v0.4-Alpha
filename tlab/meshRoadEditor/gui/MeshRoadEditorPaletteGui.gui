@@ -44,7 +44,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapButtonCtrl(EMeshRoadEditorSelectModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/Select";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/Select";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -70,7 +70,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorMoveModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeMove";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeMove";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -96,7 +96,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorRotateModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeRotate";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRotate";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -122,7 +122,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorScaleModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeScale";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeScale";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -148,7 +148,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorAddModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/AddRoad";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/AddRoad";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -174,7 +174,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorInsertModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeAdd";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeAdd";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -200,7 +200,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(EMeshRoadEditorRemoveModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeRemove";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRemove";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";

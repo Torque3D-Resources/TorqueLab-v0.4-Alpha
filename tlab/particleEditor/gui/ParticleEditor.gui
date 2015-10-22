@@ -616,7 +616,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateLifeFieldsInfiniteLoop();";
@@ -644,7 +644,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "240 2";
@@ -1095,7 +1095,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "240 2";
@@ -1160,7 +1160,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"orientParticles\", $ThisControl.getValue());";
@@ -1220,7 +1220,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"alignParticles\", $ThisControl.getValue());";
@@ -1551,7 +1551,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "240 2";
@@ -2559,7 +2559,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "240 2";
@@ -2624,7 +2624,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"softParticles\", $ThisControl.getValue());";
@@ -2684,7 +2684,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"reverseOrder\", $ThisControl.getValue());";
@@ -2744,7 +2744,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"useEmitterSizes\", $ThisControl.getValue());";
@@ -2804,7 +2804,7 @@
                            minExtent = "8 2";
                            horizSizing = "left";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_EmitterEditor.updateEmitter( \"useEmitterColors\", $ThisControl.getValue());";
@@ -3254,7 +3254,7 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "PE_ParticleEditor.updateParticle( \"useInvAlpha\", $ThisControl.getValue());";
@@ -3332,7 +3332,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "255 2";
@@ -3783,7 +3783,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "255 2";
@@ -3817,7 +3817,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-h";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-h";
                            wrap = "0";
                            position = "169 0";
                            extent = "2 18";
@@ -4069,7 +4069,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-h";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-h";
                            wrap = "0";
                            position = "169 0";
                            extent = "2 18";
@@ -4179,7 +4179,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-h";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-h";
                            wrap = "0";
                            position = "169 0";
                            extent = "2 18";
@@ -4288,7 +4288,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "255 2";
@@ -4594,7 +4594,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "255 2";
@@ -4995,7 +4995,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "tlab/gui/assets/gfx/separator-v";
+                           bitmap = "tlab/themes/DarkBlue/gfx/separator-v";
                            wrap = "0";
                            position = "0 3";
                            extent = "255 2";

@@ -64,7 +64,7 @@ function EVisibilityLayers::updateOptions( %this ) {
 		%checkBox = new GuiCheckBoxCtrl() {
 			canSaveDynamicFields = "0";
 			isContainer = "0";
-			Profile = "ToolsCheckBoxProfile_S1";
+			Profile = "ToolsCheckBoxProfile";
 			HorizSizing = "right";
 			VertSizing = "bottom";
 			Position = "0 0";
@@ -167,7 +167,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 		%visCheckBox = new GuiCheckBoxCtrl() {
 			canSaveDynamicFields = "0";
 			isContainer = "0";
-			Profile = "ToolsCheckBoxProfile_S1";
+			Profile = "ToolsCheckBoxProfile";
 			HorizSizing = "right";
 			VertSizing = "bottom";
 			Position = "0 0";
@@ -193,7 +193,7 @@ function EVisibilityLayers::addClassOptions( %this ) {
 		%selCheckBox = new GuiCheckBoxCtrl() {
 			canSaveDynamicFields = "0";
 			isContainer = "0";
-			Profile = "ToolsCheckBoxProfile_S1";
+			Profile = "ToolsCheckBoxProfile";
 			HorizSizing = "right";
 			VertSizing = "bottom";
 			Position = "0 0";

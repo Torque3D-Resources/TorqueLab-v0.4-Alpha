@@ -30,24 +30,24 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       currentLayer = "0";
-      currentMaterial = "19032";
-      currentMaterialFile = "art/models/FarmPack/Nature/Grass/Styled/materials.cs";
+      currentMaterial = "42917";
+      currentMaterialFile = "art/models/BotZ/ProtoBots/weapons/materials.cs";
       currentMeshMode = "Model";
       currentMode = "Mesh";
-      currentObject = "40485";
+      currentObject = "46505";
       defaultParent = "GuiGroup";
-      EditorContainer = "20370";
+      EditorContainer = "20398";
       editorParent = "4027";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
-      lastMaterial = "Styled_GrassBase2t_A1_baseFPGrassStyled1_1A1";
+      lastMaterial = "protoCannon_baseBotz_ProtoSkin";
       lastScriptFile = "F:/T3DProjects/ContentLabT3D/My Projects/ContentLab/game/art/textures/FarmPack/RoadsAndPaths/gcDirtRoad/materials.cs";
       lastScriptPath = "F:/T3DProjects/ContentLabT3D/My Projects/ContentLab/game/art/textures/FarmPack/RoadsAndPaths/gcDirtRoad";
-      lastTextureFile = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_C_d.png";
-      lastTexturePath = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/FarmPack/Nature/Grass/images/Styled";
+      lastTextureFile = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/BotZ/ProtoBots/images/botzTracker2.png";
+      lastTexturePath = "F:/T3DProjects/T3DLab/My Projects/GameLab/game/art/models/BotZ/ProtoBots/images";
       livePreview = "1";
       materialDirty = "0";
       modelFormats = "DTS Files (*.dts)|*.dts";
-      originalName = "Styled_GrassBase2t_A1_baseFPGrassStyled1_1A1";
+      originalName = "protoCannon_baseBotz_ProtoSkin";
       plugin = "MaterialEditor";
       preventUndo = "0";
       textureFormats = "Image Files (*.png, *.jpg, *.dds, *.bmp, *.gif, *.jng. *.tga)|*.png;*.jpg;*.dds;*.bmp;*.gif;*.jng;*.tga|All Files (*.*)|*.*|";
@@ -184,7 +184,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -250,8 +250,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 24";
-         extent = "344 98";
+         position = "3 23";
+         extent = "354 98";
          minExtent = "8 90";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -513,7 +513,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "art/models/FarmPack/Nature/Grass/Styled/materials.cs";
+                  text = "art/models/BotZ/ProtoBots/weapons/materials.cs";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "1 1 0 0";
@@ -576,7 +576,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "344 98";
+            extent = "354 98";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "bottom";
@@ -590,7 +590,7 @@
             canSaveDynamicFields = "0";
 
             new GuiTextCtrl() {
-               text = "Styled_GrassBasicA01.DAE";
+               text = "protoSentry.DAE";
                maxLength = "1024";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -607,7 +607,7 @@
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
-               tooltip = "art/models/FarmPack/Nature/Grass/Styled/Styled_GrassBasicA01.DAE";
+               tooltip = "art/models/BotZ/ProtoBots/protoSentry.DAE";
                hovertime = "1000";
                isContainer = "1";
                internalName = "selMaterialMapTo";
@@ -623,7 +623,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "3 19";
-               extent = "338 24";
+               extent = "348 24";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -642,7 +642,7 @@
                   reverseTextList = "0";
                   bitmapBounds = "16 16";
                   hotTrackCallback = "0";
-                  text = "baseFPGrassStyled1_1A1";
+                  text = "baseBotz_ProtoSkin";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "2 2 0 22";
@@ -652,7 +652,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "2 3";
-                  extent = "312 18";
+                  extent = "322 18";
                   minExtent = "8 2";
                   horizSizing = "relative";
                   vertSizing = "bottom";
@@ -676,7 +676,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "322 0";
+                  position = "332 0";
                   extent = "16 16";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -702,7 +702,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "3 45";
-               extent = "338 24";
+               extent = "348 24";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -745,7 +745,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "Styled_GrassBase2t_A1_baseFPGrassStyled1_1A1";
+                  text = "protoCannon_baseBotz_ProtoSkin";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "3 3 0 0";
@@ -755,7 +755,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "56 4";
-                  extent = "282 16";
+                  extent = "292 16";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -780,7 +780,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "3 70";
-               extent = "338 24";
+               extent = "348 24";
                minExtent = "8 20";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -823,7 +823,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "art/models/FarmPack/Nature/Grass/Styled/materials.cs";
+                  text = "art/models/BotZ/ProtoBots/weapons/materials.cs";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "3 3 0 22";
@@ -833,7 +833,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "30 4";
-                  extent = "286 16";
+                  extent = "296 16";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -860,7 +860,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "318 0";
+                  position = "328 0";
                   extent = "20 20";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -887,8 +887,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 122";
-         extent = "344 690";
+         position = "3 121";
+         extent = "354 694";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -910,7 +910,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "344 28";
+            extent = "354 28";
             minExtent = "8 18";
             horizSizing = "width";
             vertSizing = "bottom";
@@ -992,7 +992,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsCheckBoxProfile_S1";
+               profile = "ToolsCheckBoxProfile";
                visible = "1";
                active = "1";
                variable = "$MaterialEditor_AutoUpdateMap";
@@ -1020,7 +1020,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "4 32";
-            extent = "336 654";
+            extent = "346 658";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -1044,7 +1044,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "4 4";
-               extent = "318 1137";
+               extent = "328 997";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -1066,7 +1066,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 0";
-                  extent = "318 136";
+                  extent = "328 132";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1091,8 +1091,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 29";
-                     extent = "310 107";
+                     position = "4 25";
+                     extent = "320 107";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1113,7 +1113,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -1128,7 +1128,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_d.png";
+                           bitmap = "tlab/materialEditor/assets/unavailable";
                            wrap = "0";
                            position = "1 1";
                            extent = "48 48";
@@ -1194,7 +1194,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiTextCtrl() {
-                           text = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_d.png";
+                           text = "None";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -1218,7 +1218,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiSwatchButtonCtrl() {
-                           color = "1 1 1 0.905";
+                           color = "2.26645e-039 1.4013e-045 6.29471e-029 1";
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "0";
@@ -1326,7 +1326,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 55";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -1341,7 +1341,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiBitmapCtrl() {
-                           bitmap = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_n.png";
+                           bitmap = "tlab/materialEditor/assets/unavailable";
                            wrap = "0";
                            position = "1 1";
                            extent = "48 48";
@@ -1407,7 +1407,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiTextCtrl() {
-                           text = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_n.png";
+                           text = "None";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -2697,8 +2697,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 136";
-                  extent = "318 221";
+                  position = "0 132";
+                  extent = "328 113";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -2723,8 +2723,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 29";
-                     extent = "310 192";
+                     position = "4 25";
+                     extent = "320 88";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -2746,7 +2746,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "310 18";
+                        extent = "320 18";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -2765,11 +2765,11 @@
                            buttonType = "ToggleButton";
                            useMouseEvents = "0";
                            position = "67 0";
-                           extent = "108 18";
+                           extent = "118 18";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateActiveMaterial(\"invertSmoothness[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -2787,11 +2787,11 @@
                            buttonType = "ToggleButton";
                            useMouseEvents = "0";
                            position = "1 0";
-                           extent = "53 18";
+                           extent = "59 18";
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateActiveMaterial(\"FlipRB[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -2813,7 +2813,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 18";
-                        extent = "310 18";
+                        extent = "320 16";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -2836,8 +2836,8 @@
                            dynamicPos = "0";
                            changeChildSizeToFit = "1";
                            changeChildPosition = "1";
-                           position = "0 0";
-                           extent = "230 18";
+                           position = "0 1";
+                           extent = "228 16";
                            minExtent = "16 16";
                            horizSizing = "right";
                            vertSizing = "bottom";
@@ -2856,11 +2856,11 @@
                               buttonType = "RadioButton";
                               useMouseEvents = "0";
                               position = "0 0";
-                              extent = "45 18";
+                              extent = "43 14";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsRadioProfile_S1";
+                              profile = "ToolsRadioProfile";
                               visible = "1";
                               active = "1";
                               command = "MatEd.pbrMapMode(0);";
@@ -2876,12 +2876,12 @@
                               groupNum = "1";
                               buttonType = "RadioButton";
                               useMouseEvents = "0";
-                              position = "45 0";
-                              extent = "93 18";
+                              position = "43 0";
+                              extent = "93 14";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsRadioProfile_S1";
+                              profile = "ToolsRadioProfile";
                               visible = "1";
                               active = "1";
                               command = "MatEd.pbrMapMode(1);";
@@ -2897,12 +2897,12 @@
                               groupNum = "1";
                               buttonType = "RadioButton";
                               useMouseEvents = "0";
-                              position = "138 0";
-                              extent = "92 18";
+                              position = "136 0";
+                              extent = "92 14";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsRadioProfile_S1";
+                              profile = "ToolsRadioProfile";
                               visible = "1";
                               active = "1";
                               command = "MatEd.pbrMapMode(2);";
@@ -2923,18 +2923,17 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 36";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "0";
+                        visible = "1";
                         active = "1";
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "compMap";
-                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -3013,7 +3012,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 0";
-                           extent = "258 18";
+                           extent = "268 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3037,7 +3036,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 0";
-                              extent = "254 18";
+                              extent = "264 18";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -3060,7 +3059,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 16";
-                           extent = "258 16";
+                           extent = "268 16";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3084,7 +3083,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "9 0";
-                              extent = "249 16";
+                              extent = "259 16";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -3108,7 +3107,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "56 32";
-                           extent = "250 20";
+                           extent = "260 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -3131,7 +3130,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "206 0";
+                              position = "216 0";
                               extent = "44 20";
                               minExtent = "16 16";
                               horizSizing = "left";
@@ -3211,18 +3210,19 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 36";
+                        position = "0 88";
                         extent = "310 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "1";
+                        visible = "0";
                         active = "1";
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "smoothMap";
+                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -3249,7 +3249,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapCtrl() {
-                              bitmap = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_smo.png";
+                              bitmap = "tlab/materialEditor/assets/unavailable";
                               wrap = "0";
                               position = "0 0";
                               extent = "52 52";
@@ -3362,7 +3362,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_smo.png";
+                              text = "None";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -3445,7 +3445,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setRoughChan(0);";
@@ -3465,7 +3465,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setRoughChan(1);";
@@ -3485,7 +3485,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setRoughChan(2);";
@@ -3505,7 +3505,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setRoughChan(3);";
@@ -3612,12 +3612,13 @@
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "1";
+                        visible = "0";
                         active = "1";
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "aoMap";
+                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -3644,7 +3645,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapCtrl() {
-                              bitmap = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_ao.png";
+                              bitmap = "tlab/materialEditor/assets/unavailable";
                               wrap = "0";
                               position = "0 0";
                               extent = "52 52";
@@ -3757,7 +3758,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_ao.png";
+                              text = "None";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -3840,7 +3841,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setAOChan(0);";
@@ -3860,7 +3861,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setAOChan(1);";
@@ -3880,7 +3881,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setAOChan(2);";
@@ -3900,7 +3901,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setAOChan(3);";
@@ -4001,18 +4002,19 @@
                         anchorBottom = "0";
                         anchorLeft = "1";
                         anchorRight = "0";
-                        position = "0 140";
+                        position = "0 88";
                         extent = "310 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
                         profile = "ToolsBoxDarkB";
-                        visible = "1";
+                        visible = "0";
                         active = "1";
                         tooltipProfile = "GuiToolTipProfile";
                         hovertime = "1000";
                         isContainer = "1";
                         internalName = "metalMap";
+                        hidden = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
 
@@ -4039,7 +4041,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiBitmapCtrl() {
-                              bitmap = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_met.png";
+                              bitmap = "tlab/materialEditor/assets/unavailable";
                               wrap = "0";
                               position = "0 0";
                               extent = "52 52";
@@ -4152,7 +4154,7 @@
                            canSaveDynamicFields = "0";
 
                            new GuiTextCtrl() {
-                              text = "art/models/FarmPack/Nature/Grass/images/Styled/GrassStyled_B_met.png";
+                              text = "None";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "0 0 0 0";
@@ -4235,7 +4237,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setMetalChan(0);";
@@ -4255,7 +4257,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setMetalChan(1);";
@@ -4275,7 +4277,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setMetalChan(2);";
@@ -4295,7 +4297,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsRadioProfile_S1";
+                                 profile = "ToolsRadioProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.setMetalChan(3);";
@@ -4399,8 +4401,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 357";
-                  extent = "318 223";
+                  position = "0 245";
+                  extent = "328 219";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -4425,8 +4427,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 29";
-                     extent = "310 194";
+                     position = "4 25";
+                     extent = "320 194";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -4447,7 +4449,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "310 38";
+                        extent = "320 38";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4469,7 +4471,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "310 18";
+                           extent = "320 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4493,7 +4495,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 0";
-                              extent = "306 18";
+                              extent = "316 18";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -4516,7 +4518,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "4 18";
-                           extent = "302 20";
+                           extent = "312 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4544,7 +4546,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "264 2";
+                              position = "274 2";
                               extent = "38 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -4566,7 +4568,7 @@
                               snap = "0";
                               value = "0";
                               position = "6 5";
-                              extent = "505 14";
+                              extent = "515 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -4593,7 +4595,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 38";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4681,7 +4683,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 0";
-                           extent = "258 18";
+                           extent = "268 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4705,7 +4707,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 0";
-                              extent = "254 18";
+                              extent = "264 18";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -4728,7 +4730,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 16";
-                           extent = "258 16";
+                           extent = "268 16";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4752,7 +4754,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "9 0";
-                              extent = "249 16";
+                              extent = "259 16";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -4776,7 +4778,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "56 32";
-                           extent = "250 20";
+                           extent = "260 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4799,7 +4801,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "206 0";
+                              position = "216 0";
                               extent = "44 20";
                               minExtent = "16 16";
                               horizSizing = "left";
@@ -4880,7 +4882,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 90";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -4968,7 +4970,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 0";
-                           extent = "258 18";
+                           extent = "268 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -4992,7 +4994,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 0";
-                              extent = "254 18";
+                              extent = "264 18";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -5015,7 +5017,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 16";
-                           extent = "258 16";
+                           extent = "268 16";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5040,7 +5042,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "9 0";
-                              extent = "249 16";
+                              extent = "259 16";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -5064,7 +5066,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "56 32";
-                           extent = "250 20";
+                           extent = "260 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5087,7 +5089,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "206 0";
+                              position = "216 0";
                               extent = "44 20";
                               minExtent = "16 16";
                               horizSizing = "left";
@@ -5168,7 +5170,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 142";
-                        extent = "310 52";
+                        extent = "320 52";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5256,7 +5258,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 0";
-                           extent = "258 18";
+                           extent = "268 18";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5280,7 +5282,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "4 0";
-                              extent = "254 18";
+                              extent = "264 18";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -5303,7 +5305,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "52 16";
-                           extent = "258 16";
+                           extent = "268 16";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5327,7 +5329,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "9 0";
-                              extent = "249 16";
+                              extent = "259 16";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -5351,7 +5353,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "56 32";
-                           extent = "250 20";
+                           extent = "260 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5374,7 +5376,7 @@
                               dynamicPos = "0";
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
-                              position = "206 0";
+                              position = "216 0";
                               extent = "44 20";
                               minExtent = "16 16";
                               horizSizing = "left";
@@ -5457,8 +5459,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 580";
-                  extent = "318 143";
+                  position = "0 464";
+                  extent = "328 139";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -5483,8 +5485,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "-1 25";
-                     extent = "319 118";
+                     position = "-1 21";
+                     extent = "329 118";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -5506,7 +5508,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "319 18";
+                        extent = "329 18";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5529,7 +5531,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAccuCheckbox($ThisControl.getValue());";
@@ -5550,7 +5552,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 18";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5596,7 +5598,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5625,7 +5627,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -5647,7 +5649,7 @@
                               snap = "0";
                               value = "24.9133";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -5674,7 +5676,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 38";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5720,7 +5722,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5749,7 +5751,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -5771,7 +5773,7 @@
                               snap = "0";
                               value = "0.842365";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -5798,7 +5800,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 58";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5844,7 +5846,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5864,7 +5866,7 @@
                               snap = "0";
                               value = "0.273383";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -5896,7 +5898,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -5922,7 +5924,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 78";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -5968,7 +5970,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -5988,7 +5990,7 @@
                               snap = "0";
                               value = "1.30049";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -6020,7 +6022,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -6046,7 +6048,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 98";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -6092,7 +6094,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -6112,7 +6114,7 @@
                               snap = "0";
                               value = "1.48768";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -6144,7 +6146,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -6172,8 +6174,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 723";
-                  extent = "318 65";
+                  position = "0 603";
+                  extent = "328 61";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -6198,8 +6200,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "-1 25";
-                     extent = "319 40";
+                     position = "-1 21";
+                     extent = "329 40";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -6220,7 +6222,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -6266,7 +6268,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -6284,9 +6286,9 @@
                               range = "0 1";
                               ticks = "0";
                               snap = "0";
-                              value = "0.0746753";
+                              value = "0";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -6309,7 +6311,7 @@
                               sinkAllKeyEvents = "0";
                               password = "0";
                               passwordMask = "*";
-                              text = "0.0746753";
+                              text = "1";
                               maxLength = "1024";
                               docking = "Right";
                               margin = "2 2 0 0";
@@ -6318,7 +6320,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -6344,7 +6346,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 20";
-                        extent = "319 20";
+                        extent = "329 20";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -6390,7 +6392,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "77 0";
-                           extent = "242 20";
+                           extent = "252 20";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -6410,7 +6412,7 @@
                               snap = "0";
                               value = "0";
                               position = "0 5";
-                              extent = "198 14";
+                              extent = "328 14";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -6433,7 +6435,7 @@
                               sinkAllKeyEvents = "0";
                               password = "0";
                               passwordMask = "*";
-                              text = "0";
+                              text = "1";
                               maxLength = "1024";
                               docking = "Right";
                               margin = "2 2 0 0";
@@ -6442,7 +6444,7 @@
                               anchorBottom = "0";
                               anchorLeft = "1";
                               anchorRight = "0";
-                              position = "207 2";
+                              position = "217 2";
                               extent = "35 16";
                               minExtent = "8 2";
                               horizSizing = "right";
@@ -6470,8 +6472,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 788";
-                  extent = "318 112";
+                  position = "0 664";
+                  extent = "328 108";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -6497,8 +6499,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 29";
-                     extent = "310 83";
+                     position = "4 25";
+                     extent = "320 83";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -6519,7 +6521,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "310 83";
+                        extent = "320 83";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -6541,7 +6543,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "242 83";
+                           extent = "252 83";
                            minExtent = "8 2";
                            horizSizing = "relative";
                            vertSizing = "bottom";
@@ -6563,7 +6565,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "0 4";
-                              extent = "242 37";
+                              extent = "252 37";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -6587,7 +6589,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "8 2";
-                                 extent = "234 16";
+                                 extent = "244 16";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -6605,7 +6607,7 @@
                                  sbUsesNAColor = "0";
                                  reverseTextList = "0";
                                  bitmapBounds = "16 16";
-                                 text = "Sub";
+                                 text = "None";
                                  maxLength = "1024";
                                  docking = "Client";
                                  margin = "0 4 4 4";
@@ -6615,7 +6617,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "4 18";
-                                 extent = "234 15";
+                                 extent = "244 15";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -6641,7 +6643,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "0 45";
-                              extent = "242 34";
+                              extent = "252 34";
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
@@ -6658,9 +6660,9 @@
                                  range = "0 255";
                                  ticks = "0";
                                  snap = "0";
-                                 value = "34";
+                                 value = "0";
                                  position = "0 23";
-                                 extent = "242 14";
+                                 extent = "252 14";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -6683,7 +6685,7 @@
                                  sinkAllKeyEvents = "0";
                                  password = "0";
                                  passwordMask = "*";
-                                 text = "34";
+                                 text = "1";
                                  maxLength = "1024";
                                  docking = "None";
                                  margin = "2 14 150 4";
@@ -6692,7 +6694,7 @@
                                  anchorBottom = "0";
                                  anchorLeft = "1";
                                  anchorRight = "0";
-                                 position = "199 2";
+                                 position = "209 2";
                                  extent = "39 19";
                                  minExtent = "8 2";
                                  horizSizing = "left";
@@ -6718,7 +6720,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"alphaTest\",$ThisControl.getValue());";
@@ -6740,7 +6742,7 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "246 4";
+                           position = "256 4";
                            extent = "60 75";
                            minExtent = "8 2";
                            horizSizing = "right";
@@ -6788,7 +6790,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"translucentZWrite\",$ThisControl.getValue());";
@@ -6810,7 +6812,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"translucent\",$ThisControl.getValue());";
@@ -6832,7 +6834,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"doubleSided\",$ThisControl.getValue());";
@@ -6854,7 +6856,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"castDynamicShadows\", $ThisControl.getValue());";
@@ -6876,7 +6878,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateActiveMaterial(\"castShadows\", $ThisControl.getValue());";
@@ -6901,8 +6903,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 900";
-                  extent = "318 187";
+                  position = "0 772";
+                  extent = "328 183";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -6927,8 +6929,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "-1 25";
-                     extent = "319 162";
+                     position = "-1 21";
+                     extent = "329 162";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -6942,7 +6944,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiFrameSetCtrl() {
-                        columns = "0 161";
+                        columns = "0 166";
                         rows = "0";
                         borderWidth = "4";
                         borderColor = "0 0 24 0";
@@ -6958,7 +6960,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "319 162";
+                        extent = "329 162";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
@@ -6980,7 +6982,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "0 0";
-                           extent = "157 162";
+                           extent = "162 162";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -7002,7 +7004,7 @@
                               anchorLeft = "1";
                               anchorRight = "0";
                               position = "0 0";
-                              extent = "155 79";
+                              extent = "160 79";
                               minExtent = "8 2";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -7025,7 +7027,7 @@
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
-                                 profile = "ToolsCheckBoxProfile_S1";
+                                 profile = "ToolsCheckBoxProfile";
                                  visible = "1";
                                  active = "1";
                                  command = "MaterialEditorGui.updateSpecularCheckbox($ThisControl.getValue());";
@@ -7038,11 +7040,11 @@
                                  canSaveDynamicFields = "0";
                               };
                               new GuiSwatchButtonCtrl() {
-                                 color = "2.27134e-039 1.4013e-045 6.29471e-029 1";
+                                 color = "2.26645e-039 1.4013e-045 6.29471e-029 1";
                                  groupNum = "-1";
                                  buttonType = "PushButton";
                                  useMouseEvents = "0";
-                                 position = "120 2";
+                                 position = "125 2";
                                  extent = "33 16";
                                  minExtent = "8 2";
                                  horizSizing = "left";
@@ -7067,7 +7069,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "2 49";
-                                 extent = "151 28";
+                                 extent = "156 28";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7091,7 +7093,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "4 0";
-                                    extent = "147 9";
+                                    extent = "152 9";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7119,7 +7121,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "118 11";
+                                    position = "123 11";
                                     extent = "31 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -7141,7 +7143,7 @@
                                     snap = "0";
                                     value = "0";
                                     position = "0 14";
-                                    extent = "103 14";
+                                    extent = "109 14";
                                     minExtent = "8 2";
                                     horizSizing = "relative";
                                     vertSizing = "bottom";
@@ -7168,7 +7170,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "2 19";
-                                 extent = "151 28";
+                                 extent = "156 28";
                                  minExtent = "8 2";
                                  horizSizing = "right";
                                  vertSizing = "bottom";
@@ -7192,7 +7194,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "4 0";
-                                    extent = "147 9";
+                                    extent = "152 9";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7220,7 +7222,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "118 9";
+                                    position = "123 9";
                                     extent = "31 18";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -7242,7 +7244,7 @@
                                     snap = "0";
                                     value = "31";
                                     position = "0 14";
-                                    extent = "208 14";
+                                    extent = "213 14";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -7272,7 +7274,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "2 87";
-                              extent = "155 57";
+                              extent = "160 57";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -7294,7 +7296,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "155 57";
+                                 extent = "160 57";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -7317,7 +7319,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
-                                    profile = "ToolsCheckBoxProfile_S1";
+                                    profile = "ToolsCheckBoxProfile";
                                     visible = "1";
                                     active = "1";
                                     command = "MaterialEditorGui.updateActiveMaterial(\"subSurface[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -7330,11 +7332,11 @@
                                     canSaveDynamicFields = "0";
                                  };
                                  new GuiSwatchButtonCtrl() {
-                                    color = "1 0.2 0.2 1";
+                                    color = "2.26645e-039 1.4013e-045 6.29471e-029 1";
                                     groupNum = "-1";
                                     buttonType = "PushButton";
                                     useMouseEvents = "0";
-                                    position = "120 2";
+                                    position = "125 2";
                                     extent = "33 16";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -7360,7 +7362,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 37";
-                                    extent = "155 20";
+                                    extent = "160 20";
                                     minExtent = "8 2";
                                     horizSizing = "relative";
                                     vertSizing = "bottom";
@@ -7388,7 +7390,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "133 0";
+                                       position = "138 0";
                                        extent = "22 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -7438,7 +7440,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "0 17";
-                                    extent = "155 20";
+                                    extent = "160 20";
                                     minExtent = "8 2";
                                     horizSizing = "relative";
                                     vertSizing = "bottom";
@@ -7490,7 +7492,7 @@
                                        anchorBottom = "0";
                                        anchorLeft = "1";
                                        anchorRight = "0";
-                                       position = "143 0";
+                                       position = "148 0";
                                        extent = "12 20";
                                        minExtent = "8 2";
                                        horizSizing = "left";
@@ -7519,8 +7521,8 @@
                            anchorBottom = "0";
                            anchorLeft = "1";
                            anchorRight = "0";
-                           position = "161 0";
-                           extent = "158 162";
+                           position = "166 0";
+                           extent = "163 162";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -7544,7 +7546,7 @@
                               changeChildSizeToFit = "1";
                               changeChildPosition = "1";
                               position = "0 3";
-                              extent = "158 115";
+                              extent = "163 115";
                               minExtent = "16 16";
                               horizSizing = "width";
                               vertSizing = "bottom";
@@ -7566,7 +7568,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 0";
-                                 extent = "158 82";
+                                 extent = "163 82";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -7592,7 +7594,7 @@
                                     dynamicSize = "1";
                                     padding = "0 0 0 0";
                                     position = "0 0";
-                                    extent = "158 80";
+                                    extent = "163 80";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -7615,7 +7617,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"vertLit[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -7637,7 +7639,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"vertColor[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -7659,7 +7661,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "relative";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"glow[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -7681,7 +7683,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "relative";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"emissive[\" @ MaterialEditorGui.currentLayer @ \"]\",$ThisControl.getValue());";
@@ -7703,7 +7705,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        command = "MaterialEditorGui.updateActiveMaterial(\"useAnisotropic[\" @ MaterialEditorGui.currentLayer @ \"]\", $ThisControl.getValue());";
@@ -7726,7 +7728,7 @@
                                  anchorLeft = "1";
                                  anchorRight = "0";
                                  position = "0 82";
-                                 extent = "158 33";
+                                 extent = "163 33";
                                  minExtent = "8 2";
                                  horizSizing = "width";
                                  vertSizing = "bottom";
@@ -7746,7 +7748,7 @@
                                     password = "0";
                                     passwordMask = "*";
                                     text = "0";
-                                    maxLength = "3";
+                                    maxLength = "7";
                                     docking = "Right";
                                     margin = "2 14 0 4";
                                     padding = "0 0 0 0";
@@ -7754,7 +7756,7 @@
                                     anchorBottom = "0";
                                     anchorLeft = "1";
                                     anchorRight = "0";
-                                    position = "133 2";
+                                    position = "138 2";
                                     extent = "21 17";
                                     minExtent = "8 2";
                                     horizSizing = "left";
@@ -7781,7 +7783,7 @@
                                     anchorLeft = "1";
                                     anchorRight = "0";
                                     position = "6 2";
-                                    extent = "127 16";
+                                    extent = "132 16";
                                     minExtent = "8 2";
                                     horizSizing = "right";
                                     vertSizing = "bottom";
@@ -7800,7 +7802,7 @@
                                     snap = "0";
                                     value = "0";
                                     position = "4 20";
-                                    extent = "145 12";
+                                    extent = "150 12";
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
@@ -7831,8 +7833,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 1087";
-                  extent = "318 25";
+                  position = "0 955";
+                  extent = "328 21";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -7857,8 +7859,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "-1 25";
-                     extent = "319 339";
+                     position = "-1 21";
+                     extent = "329 339";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -7880,7 +7882,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "319 94";
+                        extent = "329 94";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -8277,7 +8279,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 94";
-                        extent = "319 94";
+                        extent = "329 94";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -8691,7 +8693,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 188";
-                        extent = "319 85";
+                        extent = "329 85";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -8735,7 +8737,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateAnimationFlags();";
@@ -9062,7 +9064,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 273";
-                        extent = "319 66";
+                        extent = "329 66";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -9293,8 +9295,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 1112";
-                  extent = "318 25";
+                  position = "0 976";
+                  extent = "328 21";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -9319,8 +9321,8 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "4 29";
-                     extent = "310 127";
+                     position = "4 25";
+                     extent = "320 127";
                      minExtent = "16 16";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -9342,7 +9344,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 0";
-                        extent = "310 25";
+                        extent = "320 25";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -9415,7 +9417,7 @@
                            groupNum = "-1";
                            buttonType = "PushButton";
                            useMouseEvents = "0";
-                           position = "451 4";
+                           position = "473 4";
                            extent = "39 19";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -9441,7 +9443,7 @@
                         anchorLeft = "1";
                         anchorRight = "0";
                         position = "0 27";
-                        extent = "310 100";
+                        extent = "320 100";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -9464,7 +9466,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateActiveMaterial(\"showFootprints\", $ThisControl.getValue());";
@@ -9486,7 +9488,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "MaterialEditorGui.updateActiveMaterial(\"showDust\", $ThisControl.getValue());";
@@ -9526,7 +9528,6 @@
                            sbUsesNAColor = "0";
                            reverseTextList = "0";
                            bitmapBounds = "16 16";
-                           text = "<None>";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -9535,7 +9536,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "119 42";
-                           extent = "683 23";
+                           extent = "705 23";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -9579,7 +9580,6 @@
                            sbUsesNAColor = "0";
                            reverseTextList = "0";
                            bitmapBounds = "16 16";
-                           text = "<None>";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -9588,7 +9588,7 @@
                            anchorLeft = "1";
                            anchorRight = "0";
                            position = "116 70";
-                           extent = "686 23";
+                           extent = "708 23";
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
@@ -9605,7 +9605,7 @@
                            canSaveDynamicFields = "0";
                         };
                         new GuiControl() {
-                           position = "402 6";
+                           position = "424 6";
                            extent = "93 32";
                            minExtent = "8 2";
                            horizSizing = "left";
@@ -9689,7 +9689,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiSwatchButtonCtrl() {
-                              color = "0 0 0 0";
+                              color = "2.26645e-039 1.4013e-045 6.29471e-029 1";
                               groupNum = "-1";
                               buttonType = "PushButton";
                               useMouseEvents = "0";
@@ -9710,7 +9710,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiSwatchButtonCtrl() {
-                              color = "0 0 0 0";
+                              color = "2.26645e-039 1.4013e-045 6.29471e-029 1";
                               groupNum = "-1";
                               buttonType = "PushButton";
                               useMouseEvents = "0";
@@ -9744,12 +9744,12 @@
             clickCollapse = "1";
             hideHeader = "0";
             autoCollapseSiblings = "0";
-            position = "203 6";
+            position = "213 6";
             extent = "139 21";
             minExtent = "8 2";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsRolloutProfile_S1";
+            profile = "ToolsRolloutProfile";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
@@ -9794,7 +9794,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Lighting";
@@ -9816,7 +9816,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Rendering";
@@ -9838,7 +9838,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Animation";
@@ -9860,7 +9860,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsCheckBoxProfile_S1";
+                  profile = "ToolsCheckBoxProfile";
                   visible = "1";
                   active = "1";
                   variable = "$Cfg_Plugins_MaterialEditor_PropShowGroup_Advanced";
@@ -9885,7 +9885,7 @@
                   minExtent = "8 2";
                   horizSizing = "left";
                   vertSizing = "bottom";
-                  profile = "ToolsRolloutProfile_S1";
+                  profile = "ToolsRolloutProfile";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -9930,7 +9930,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Normal";
@@ -9952,7 +9952,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_specular";
@@ -9974,7 +9974,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Detail";
@@ -9996,7 +9996,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_detailNormal";
@@ -10018,7 +10018,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Overlay";
@@ -10040,7 +10040,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_Light";
@@ -10062,7 +10062,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_tone";
@@ -10084,7 +10084,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         variable = "$Cfg_Plugins_MaterialEditor_PropShowMap_environment";

@@ -690,7 +690,7 @@ function EManageSFXParameters::addParameter( %this, %parameter ) {
 				buttonType = "ToggleButton";
 				useMouseEvents = "0";
 				isContainer = "0";
-				Profile = "ToolsCheckBoxProfile_S1";
+				Profile = "ToolsCheckBoxProfile";
 				HorizSizing = "left";
 				VertSizing = "bottom";
 				position = "302 73";

@@ -233,7 +233,7 @@
             };
          };
          new GuiBitmapCtrl() {
-            bitmap = "tlab/gui/assets/gfx/separator-h.png";
+            bitmap = "tlab/themes/DarkBlue/gfx/separator-h.png";
             wrap = "0";
             position = "102 0";
             extent = "2 30";
@@ -823,7 +823,7 @@
             };
          };
          new GuiBitmapCtrl() {
-            bitmap = "tlab/gui/assets/gfx/separator-h.png";
+            bitmap = "tlab/themes/DarkBlue/gfx/separator-h.png";
             wrap = "0";
             position = "742 0";
             extent = "2 30";
@@ -1080,7 +1080,7 @@
             };
          };
          new GuiBitmapCtrl() {
-            bitmap = "tlab/gui/assets/gfx/separator-h.png";
+            bitmap = "tlab/themes/DarkBlue/gfx/separator-h.png";
             wrap = "0";
             position = "929 0";
             extent = "2 30";
@@ -7938,7 +7938,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsCheckBoxProfile_S1";
+            profile = "ToolsCheckBoxProfile";
             visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
@@ -7958,7 +7958,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsCheckBoxProfile_S1";
+            profile = "ToolsCheckBoxProfile";
             visible = "0";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";

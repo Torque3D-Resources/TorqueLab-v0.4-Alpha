@@ -1284,8 +1284,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsCheckBoxProfile_S1_DefaultStyle) {
-      internalName = "ToolsCheckBoxProfile_S1";
+   new ScriptObject(ToolsCheckBoxProfile_DefaultStyle) {
+      internalName = "ToolsCheckBoxProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -1322,8 +1322,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "0 0";
    };
-   new ScriptObject(ToolsCheckBoxProfile_L1_DefaultStyle) {
-      internalName = "ToolsCheckBoxProfile_L1";
+   new ScriptObject(ToolsCheckBoxProfile_DefaultStyle) {
+      internalName = "ToolsCheckBoxProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -1474,8 +1474,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "16 10";
    };
-   new ScriptObject(ToolsRadioProfile_L1_DefaultStyle) {
-      internalName = "ToolsRadioProfile_L1";
+   new ScriptObject(ToolsRadioProfile_DefaultStyle) {
+      internalName = "ToolsRadioProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -1512,8 +1512,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "16 10";
    };
-   new ScriptObject(ToolsRadioProfile_S1_DefaultStyle) {
-      internalName = "ToolsRadioProfile_S1";
+   new ScriptObject(ToolsRadioProfile_DefaultStyle) {
+      internalName = "ToolsRadioProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";
@@ -2008,8 +2008,8 @@ $LabStyleCurrentGroup = new SimGroup(Default_ProfStyleGroup) {
          tab = "0";
          textOffset = "24 1";
    };
-   new ScriptObject(ToolsRolloutProfile_S1_DefaultStyle) {
-      internalName = "ToolsRolloutProfile_S1";
+   new ScriptObject(ToolsRolloutProfile_DefaultStyle) {
+      internalName = "ToolsRolloutProfile";
       canSave = "1";
       canSaveDynamicFields = "1";
          autoSizeHeight = "0";

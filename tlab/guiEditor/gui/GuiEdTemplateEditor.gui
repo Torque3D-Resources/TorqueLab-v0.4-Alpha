@@ -439,7 +439,7 @@
                            minExtent = "8 2";
                            horizSizing = "width";
                            vertSizing = "bottom";
-                           profile = "ToolsRolloutProfile_S1";
+                           profile = "ToolsRolloutProfile";
                            visible = "1";
                            active = "1";
                            tooltipProfile = "ToolsToolTipProfile";
@@ -1101,7 +1101,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        variable = "$Cfg_3DView_DragCloneMode";
@@ -2566,7 +2566,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsRolloutProfile_S1";
+                              profile = "ToolsRolloutProfile";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -2631,7 +2631,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        variable = "$ETransformTool::Relative::Rotation";
@@ -2654,7 +2654,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "right";
                                        vertSizing = "bottom";
-                                       profile = "ToolsCheckBoxProfile_S1";
+                                       profile = "ToolsCheckBoxProfile";
                                        visible = "1";
                                        active = "1";
                                        variable = "$ETransformTool::LocalCenter::Rotation";
@@ -5144,7 +5144,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::Active::Rotation";
@@ -5189,7 +5189,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::Relative::Rotation";
@@ -5234,7 +5234,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::LocalCenter::Rotation";
@@ -6125,7 +6125,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::Active::Scale";
@@ -6170,7 +6170,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::Relative::Scale";
@@ -6215,7 +6215,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::LocalCenter::Scale";
@@ -6260,7 +6260,7 @@
                                                 minExtent = "8 2";
                                                 horizSizing = "right";
                                                 vertSizing = "bottom";
-                                                profile = "ToolsCheckBoxProfile_S1";
+                                                profile = "ToolsCheckBoxProfile";
                                                 visible = "1";
                                                 active = "1";
                                                 variable = "$ETransformTool::Proportional::Scale";
@@ -7263,7 +7263,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsCheckBoxProfile_S1";
+                              profile = "ToolsCheckBoxProfile";
                               visible = "1";
                               active = "1";
                               variable = "Lab.CloneDragEnabled";

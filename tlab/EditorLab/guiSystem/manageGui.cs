@@ -23,8 +23,12 @@ function Lab::addGui(%this,%gui,%type,%noHide) {
 		LabExtraGuiSet.add(%gui);
 
 	case "Toolbar":
-		%container = $LabToolbarContainer@%arg1;
+		%container = $LabToolbarContainer;
 		LabToolbarGuiSet.add(%gui);
+	
+	case "SideBar":
+		%container = $LabSideBarContainer;
+		LabSideBarGuiSet.add(%gui);
 
 	case "Dialog":
 		%container = $LabDialogContainer;
@@ -88,6 +92,10 @@ function Lab::detachAllEditorGuis(%this) {
 
 	foreach$(%id in %paletteList)
 		%this.detachEditorGui(%id,true);
+	
+	foreach(%gui in LabSideBarGuiSet)
+		%this.detachEditorGui(%gui);
+	
 
 	%this.resetPluginsBar();
 }

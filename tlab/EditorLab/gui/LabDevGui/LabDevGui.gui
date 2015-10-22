@@ -6725,7 +6725,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiCheckBoxCtrl() {
-                        text = "ToolsCheckboxProfile_L1";
+                        text = "ToolsCheckBoxProfile";
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "0";
@@ -6734,7 +6734,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_L1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -6763,7 +6763,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiCheckBoxCtrl() {
-                        text = "ToolsCheckboxProfile_S1";
+                        text = "ToolsCheckBoxProfile";
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "0";
@@ -6772,7 +6772,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -6801,7 +6801,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiRadioCtrl() {
-                        text = "ToolsRadioProfile_L1";
+                        text = "ToolsRadioProfile";
                         groupNum = "-1";
                         buttonType = "RadioButton";
                         useMouseEvents = "0";
@@ -6810,7 +6810,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsRadioProfile_L1";
+                        profile = "ToolsRadioProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -6906,7 +6906,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiCheckBoxCtrl() {
-                        text = "ToolsCheckboxProfile_L1";
+                        text = "ToolsCheckBoxProfile";
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "0";
@@ -6915,7 +6915,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_L1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "0";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -6944,7 +6944,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiCheckBoxCtrl() {
-                        text = "ToolsCheckboxProfile_S1";
+                        text = "ToolsCheckBoxProfile";
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "0";
@@ -6953,7 +6953,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "0";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -6982,7 +6982,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiRadioCtrl() {
-                        text = "ToolsRadioProfile_L1";
+                        text = "ToolsRadioProfile";
                         groupNum = "-1";
                         buttonType = "RadioButton";
                         useMouseEvents = "0";
@@ -6991,7 +6991,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsRadioProfile_L1";
+                        profile = "ToolsRadioProfile";
                         visible = "1";
                         active = "0";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -7211,7 +7211,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiRolloutCtrl() {
-                        caption = "ToolsRolloutProfile_S1";
+                        caption = "ToolsRolloutProfile";
                         margin = "0 0 0 0";
                         defaultHeight = "40";
                         expanded = "0";
@@ -7223,7 +7223,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsRolloutProfile_S1";
+                        profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";

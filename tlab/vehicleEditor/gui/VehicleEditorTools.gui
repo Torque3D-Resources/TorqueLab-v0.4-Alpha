@@ -822,7 +822,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeLink($ThisControl);";
@@ -1021,7 +1021,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         command = "RoadEditorGui.setNodeLink($ThisControl);";
@@ -1603,7 +1603,7 @@
                            minExtent = "8 2";
                            horizSizing = "right";
                            vertSizing = "bottom";
-                           profile = "ToolsCheckBoxProfile_S1";
+                           profile = "ToolsCheckBoxProfile";
                            visible = "1";
                            active = "1";
                            command = "RoadEditorGui.setNodeLink($ThisControl);";
@@ -1802,7 +1802,7 @@
                         minExtent = "8 2";
                         horizSizing = "left";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile_S1";
+                        profile = "ToolsCheckBoxProfile";
                         visible = "1";
                         active = "1";
                         command = "RoadEditorGui.setNodeLink($ThisControl);";

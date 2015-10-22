@@ -134,3 +134,13 @@ function ECloneTool::validateCopieCount( %this,%value ) {
 	return %value;
 }
 //------------------------------------------------------------------------------
+
+//==============================================================================
+//ETransformTool.resetAll Field TextEditValue Changed
+function ECloneTool::cloneToCtrl( %this,%ctrl ) {
+	%ctrl.add(ECloneTool-->cloneTools.deepClone());
+	$ECloneToolContainers = strAddWord($ECloneToolContainers,%ctrl.getId(),true);
+
+	
+}
+//------------------------------------------------------------------------------

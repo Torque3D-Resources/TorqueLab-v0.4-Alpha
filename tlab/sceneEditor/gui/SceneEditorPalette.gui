@@ -19,7 +19,7 @@
       enabled = "1";
 
    new GuiBitmapButtonCtrl(EWorldEditorNoneModeBtn) {
-      bitmap = "tlab/gui/buttons/palette-assets/Select";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/Select";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -44,7 +44,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl(EWorldEditorMoveModeBtn) {
-      bitmap = "tlab/gui/buttons/palette-assets/ObjectMove";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/ObjectMove";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -69,7 +69,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl(EWorldEditorRotateModeBtn) {
-      bitmap = "tlab/gui/buttons/palette-assets/ObjectRotate";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/ObjectRotate";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -94,7 +94,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl(EWorldEditorScaleModeBtn) {
-      bitmap = "tlab/gui/buttons/palette-assets/ObjectScale";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/ObjectScale";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";

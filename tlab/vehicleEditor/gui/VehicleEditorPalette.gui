@@ -95,7 +95,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorScaleModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeScale";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeScale";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";
@@ -147,7 +147,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorInsertModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeAdd";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeAdd";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";
@@ -173,7 +173,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorRemoveModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeRemove";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRemove";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";

@@ -49,17 +49,16 @@ function SceneEditorTree::onObjectDeleteCompleted( %this ) {
 	if ( %this.undoDeleteList !$= "" )
 		MEDeleteUndoAction::submit( %this.undoDeleteList );
 
-	// Let the world editor know to
-	// clear its selection.
-	EWorldEditor.clearSelection();
-	EWorldEditor.isDirty = true;
+	Scene.onObjectDeleteCompleted();
 }
 
 function SceneEditorTree::onClearSelected(%this) {
-	WorldEditor.clearSelection();
+	Scene.onClearSelected();
+	
 }
 
 function SceneEditorTree::onInspect(%this, %obj) {
+	Scene.onInspect(%obj);
 	SceneInspector.inspect(%obj);
 }
 
@@ -74,7 +73,8 @@ function SceneEditorTree::toggleLock( %this ) {
 }
 
 function SceneEditorTree::onAddSelection(%this, %obj, %isLastSelection) {
-	EWorldEditor.selectObject( %obj );
+	Scene.onAddSelection(%obj, %isLastSelection);
+	//EWorldEditor.selectObject( %obj );
 	%selSize = EWorldEditor.getSelectionSize();
 	%lockCount = EWorldEditor.getSelectionLockCount();
 
@@ -101,13 +101,15 @@ function SceneEditorTree::onRemoveSelection(%this, %obj) {
 	SceneInspector.removeInspect( %obj );
 }
 function SceneEditorTree::onSelect(%this, %obj) {
-	if (%obj.getClassName() $= "SimGroup") {		
+	Scene.onSelect(%obj);
+	
+	/*if (%obj.getClassName() $= "SimGroup") {		
 		SceneEd.setActiveSimGroup(%obj);
 	}
 
 	if (%obj.getClassName() $= "GroundCover") {	
 		SEP_GroundCover.onGroundCoverSelected(%obj);
-	}
+	}*/
 
 	if (!$SceneEditor_AutomaticObjectGroup && %this.autoGroups) {
 		%this.autoGroups = false;
@@ -129,6 +131,8 @@ function SceneEditorTree::onSelect(%this, %obj) {
 }
 
 function SceneEditorTree::onUnselect(%this, %obj) {
+	Scene.onUnselect(%obj);
+	return;
 	if (%obj.getClassName() $= "GroundCover") {		
 		SEP_GroundCover.onGroundCoverUnselected(%obj);
 	}
