@@ -90,7 +90,9 @@ function Lab::syncGuiGridSnap( %this ) {
 	ESnapOptions-->GridSnapButton.setStateOn( EWorldEditor.gridSnap );
 	SceneEditorToolbar-->objectGridSnapBtn.setStateOn( EWorldEditor.gridSnap );
 	ESnapOptions-->NoSnapButton.setStateOn( !EWorldEditor.stickToGround && !EWorldEditor.getSoftSnap() && !EWorldEditor.gridSnap );
+	SceneBuilderToolbar-->WorldEditorGridSizeEdit.setText( EWorldEditor.gridSize );
 	
+
 	devLog("Ended with snap:",EWorldEditor.gridSnap);
 }
 //------------------------------------------------------------------------------

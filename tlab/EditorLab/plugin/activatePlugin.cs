@@ -68,6 +68,7 @@ function EditorPlugin::onActivated( %this,%simple ) {
 		
 	Lab.checkPluginTools();
 
+	SceneBrowser.filterPlugin(%this);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

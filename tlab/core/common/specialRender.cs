@@ -36,8 +36,12 @@
 //   - consoleCircleSegments
 //   - consoleLineWidth
 //------------------------------------------------------------------------------
-
+$SkipRenderSphere = true;
 function SpawnSphere::onEditorRender(%this, %editor, %selected, %expanded) {
+	if ($SkipRenderSphere){
+		//devLog("Skipping Sphere rendering, possible ShapeEditor Crash %editor, %selected, %expanded",%editor, %selected, %expanded);
+		return;
+	}
 	if(%selected $= "true") {
 		%editor.consoleFrameColor = "255 0 0";
 		%editor.consoleFillColor = "0 160 0 95";

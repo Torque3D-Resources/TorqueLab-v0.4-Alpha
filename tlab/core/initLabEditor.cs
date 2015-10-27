@@ -38,7 +38,7 @@ function Lab::initLabEditor( %this ) {
 
 //==============================================================================
 function Lab::initEditorGui( %this ) {
-	newScriptObject("Scene");
+	
 	newScriptObject("LabEditor");
 	newSimSet("LabGuiSet");
 	newSimSet("LabPluginGuiSet");

@@ -3,6 +3,25 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+//==============================================================================
+function SceneEditorDialogs::onPreEditorSave( %this ) {	
+	%c1 = SEP_ScatterSky_Custom-->StackA SPC SEP_ScatterSky_Custom-->StackB;
+	%c1 = %c1 SPC SEP_LegacySkyProperties-->StackA SPC SEP_LegacySkyProperties-->StackB;
+	%c1 = %c1 SPC SEP_CloudLayer-->StackA SPC SEP_CloudLayer-->StackB;
+	foreach$(%ctrl in %c1)
+		%ctrl.clear();
+		
+	if (isObject(SEP_PostFXManager_Clone-->MainContainer))
+		EPostFxManager.moveFromGui();
+	
+	SEP_GroundCoverLayerArray.clear();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function SceneEditorDialogs::onPostEditorSave( %this ) {
+	//EPostFxManager.moveToGui(SEP_PostFXManager_Clone);
+}
+//------------------------------------------------------------------------------
 
 
 //==============================================================================
@@ -65,3 +84,9 @@ function SceneEditorTools::getMeshRootFolder( %this ) {
 	getFolderName("","SceneEditorTools.setMeshRootFolder","art/");
 }
 //------------------------------------------------------------------------------
+function SceneEditorTools::onObjectAdded( %this,%obj ) {
+	//devLog("SceneEditorTools::onObjectAdded:",%obj);
+}
+function SceneEditorTools::onObjectRemoved( %this,%obj ) {
+	//devLog("SceneEditorTools::onObjectRemoved:",%obj);
+}

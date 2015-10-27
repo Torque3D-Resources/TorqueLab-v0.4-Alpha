@@ -27,25 +27,22 @@ singleton GuiControlProfile(ToolsPanelProfile : ToolsDefaultProfile)
 //==============================================================================
 // ToolsPanelDark Profiles
 //==============================================================================
-singleton GuiControlProfile(ToolsPanelDarkA : ToolsPanelProfile)
+singleton GuiControlProfile(ToolsPanelDarkA : ToolsBoxDarkA)
 {
    fontColors[4] = "Fuchsia";
    fontColorLink = "Fuchsia";
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxDarkA.png";
    category = "ToolsContainers";
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelDarkB : ToolsPanelDarkA)
+singleton GuiControlProfile(ToolsPanelDarkB : ToolsBoxDarkB)
 {
    fontColors[4] = "255 0 255 255";
-   fontColorLink = "255 0 255 255";
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxDarkC.png";
+   fontColorLink = "255 0 255 255";  
 };
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsPanelDarkC : ToolsPanelDarkA)
+singleton GuiControlProfile(ToolsPanelDarkC : ToolsBoxDarkC)
 {
    fontColors[4] = "255 0 255 255";
    fontColorLink = "255 0 255 255";
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxDarkC.png";
 };
 //------------------------------------------------------------------------------

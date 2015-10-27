@@ -26,13 +26,13 @@ new GuiStackControl(NavEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "32385";
-      disabledGroup = "32386";
-      EditorContainer = "20317";
+      defaultStack = "30131";
+      disabledGroup = "30132";
+      EditorContainer = "20349";
       editorParent = "EditorGuiToolbarStack";
       plugin = "NavEditor";
       preventReordering = "0";
-      stackLists = "32387";
+      stackLists = "30133";
 
    new GuiContainer() {
       margin = "0 0 0 0";

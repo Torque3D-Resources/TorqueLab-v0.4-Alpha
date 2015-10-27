@@ -75,6 +75,8 @@ function MaterialEditorGui::openFile( %this, %fileType,%defaultFileName ) {
 //==============================================================================
 function MaterialEditorGui::copyMaterials( %this, %copyFrom, %copyTo) {
 	// Make sure we copy and restore the map to.
+	if (!isObject(%copyFrom) || !isObject(%copyTo))
+		return;
 	%mapTo = %copyTo.mapTo;
 	%copyTo.assignFieldsFrom( %copyFrom );
 	%copyTo.mapTo = %mapTo;

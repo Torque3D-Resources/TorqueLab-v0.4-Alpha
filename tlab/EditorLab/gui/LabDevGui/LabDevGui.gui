@@ -901,7 +901,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiTextCtrl() {
-                        text = "ToolsTextBaseA - Sample text - éç@#$%?&*";
+                        text = "ToolsTextColA - Sample text - éç@#$%?&*";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -914,7 +914,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextBaseA";
+                        profile = "ToolsTextColA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -924,7 +924,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiTextCtrl() {
-                        text = "ToolsTextBaseA - Colors \c0000 \c1111 \c2222";
+                        text = "ToolsTextColA - Colors \c0000 \c1111 \c2222";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -937,7 +937,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextBaseA";
+                        profile = "ToolsTextColA";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -947,7 +947,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiTextCtrl() {
-                        text = "ToolsTextBaseA_S1 - Sample text - éç@#$%?&*";
+                        text = "ToolsTextColA_S1 - Sample text - éç@#$%?&*";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -960,7 +960,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextBaseA_S1";
+                        profile = "ToolsTextColA_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -970,7 +970,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiTextCtrl() {
-                        text = "ToolsTextBaseA_S1 - Colors \c0000 \c1111 \c2222";
+                        text = "ToolsTextColA_S1 - Colors \c0000 \c1111 \c2222";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -983,7 +983,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsTextBaseA_S1";
+                        profile = "ToolsTextColA_S1";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -2311,7 +2311,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsBoxTitleBar";
+                        profile = "ToolsBoxTitle";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -2321,7 +2321,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiTextCtrl() {
-                           text = "ToolsBoxTitleBar";
+                           text = "ToolsBoxTitle";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -2356,7 +2356,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsBoxTitleBar_Thin";
+                        profile = "ToolsBoxTitle_Thin";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -2366,7 +2366,7 @@
                         canSaveDynamicFields = "0";
 
                         new GuiTextCtrl() {
-                           text = "ToolsBoxTitleBar_Thin";
+                           text = "ToolsBoxTitle_Thin";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -3730,7 +3730,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -3743,7 +3743,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3753,7 +3753,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -3766,7 +3766,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3776,7 +3776,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA_S1 - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -3789,7 +3789,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -3799,7 +3799,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA_S1 - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -3812,7 +3812,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -4600,7 +4600,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -4613,7 +4613,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -4623,7 +4623,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -4636,7 +4636,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -4646,7 +4646,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA_S1 - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -4659,7 +4659,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -4669,7 +4669,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA_S1 - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -4682,7 +4682,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -5470,7 +5470,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -5483,7 +5483,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -5493,7 +5493,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -5506,7 +5506,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA";
+                              profile = "ToolsTextColA";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -5516,7 +5516,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Sample text - éç@#$%?&*";
+                              text = "ToolsTextColA_S1 - Sample text - éç@#$%?&*";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -5529,7 +5529,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -5539,7 +5539,7 @@
                               canSaveDynamicFields = "0";
                            };
                            new GuiTextCtrl() {
-                              text = "ToolsTextBaseA_S1 - Colors \c0000 \c1111 \c2222";
+                              text = "ToolsTextColA_S1 - Colors \c0000 \c1111 \c2222";
                               maxLength = "1024";
                               margin = "0 0 0 0";
                               padding = "0 0 0 0";
@@ -5552,7 +5552,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsTextBaseA_S1";
+                              profile = "ToolsTextColA_S1";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -7189,7 +7189,7 @@
                         canSaveDynamicFields = "0";
                      };
                      new GuiRolloutCtrl() {
-                        caption = "ToolsRolloutProfile_Alt";
+                        caption = "ToolsRolloutProfile";
                         margin = "0 0 0 0";
                         defaultHeight = "40";
                         expanded = "0";
@@ -7201,7 +7201,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsRolloutProfile_Alt";
+                        profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -7245,7 +7245,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsRolloutTitle";
+                        profile = "ToolsRolloutProfile";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -7678,7 +7678,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7728,7 +7728,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7778,7 +7778,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7828,7 +7828,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7878,7 +7878,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7928,7 +7928,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -7978,7 +7978,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -8028,7 +8028,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -8078,7 +8078,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -8962,7 +8962,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9012,7 +9012,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9329,7 +9329,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9379,7 +9379,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9429,7 +9429,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9479,7 +9479,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9529,7 +9529,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9579,7 +9579,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9629,7 +9629,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9679,7 +9679,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9729,7 +9729,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -9779,7 +9779,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10744,7 +10744,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10794,7 +10794,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10844,7 +10844,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10894,7 +10894,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10944,7 +10944,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -10994,7 +10994,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -11044,7 +11044,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -11094,7 +11094,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -11144,7 +11144,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -11194,7 +11194,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12159,7 +12159,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12209,7 +12209,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12259,7 +12259,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12309,7 +12309,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12359,7 +12359,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12409,7 +12409,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12459,7 +12459,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12509,7 +12509,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -12559,7 +12559,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13497,7 +13497,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13547,7 +13547,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13597,7 +13597,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13647,7 +13647,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13697,7 +13697,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13747,7 +13747,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13797,7 +13797,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13847,7 +13847,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -13897,7 +13897,7 @@
                                           minExtent = "8 2";
                                           horizSizing = "width";
                                           vertSizing = "bottom";
-                                          profile = "ToolsTextBaseA_S1";
+                                          profile = "ToolsTextColA_S1";
                                           visible = "1";
                                           active = "1";
                                           tooltipProfile = "ToolsToolTipProfile";
@@ -14910,7 +14910,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsWindowPanel";
+                     profile = "ToolsWindowDialog";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -15062,7 +15062,7 @@
                                        minExtent = "8 2";
                                        horizSizing = "width";
                                        vertSizing = "bottom";
-                                       profile = "ToolsTextBaseA_S1";
+                                       profile = "ToolsTextColA_S1";
                                        visible = "1";
                                        active = "1";
                                        tooltipProfile = "ToolsToolTipProfile";
@@ -15301,7 +15301,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -15514,7 +15514,7 @@
                               minExtent = "8 2";
                               horizSizing = "right";
                               vertSizing = "bottom";
-                              profile = "ToolsWindowPanel";
+                              profile = "ToolsWindowDialog";
                               visible = "1";
                               active = "1";
                               tooltipProfile = "ToolsToolTipProfile";
@@ -15620,7 +15620,7 @@
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsWindowPanel";
+                        profile = "ToolsWindowDialog";
                         visible = "1";
                         active = "1";
                         tooltipProfile = "ToolsToolTipProfile";
@@ -15744,7 +15744,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsWindowPanel";
+                     profile = "ToolsWindowDialog";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -15903,7 +15903,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsWindowPanel";
+                     profile = "ToolsWindowDialog";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -16012,7 +16012,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -16496,7 +16496,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -16675,7 +16675,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -16725,7 +16725,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -16775,7 +16775,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -16825,7 +16825,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17300,7 +17300,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17350,7 +17350,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17400,7 +17400,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17450,7 +17450,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17500,7 +17500,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17550,7 +17550,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -17600,7 +17600,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -18321,7 +18321,7 @@
                                     minExtent = "8 2";
                                     horizSizing = "width";
                                     vertSizing = "bottom";
-                                    profile = "ToolsTextBaseA_S1";
+                                    profile = "ToolsTextColA_S1";
                                     visible = "1";
                                     active = "1";
                                     tooltipProfile = "ToolsToolTipProfile";
@@ -18489,7 +18489,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -18671,7 +18671,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsBoxTitleBar";
+                     profile = "ToolsBoxTitle";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -18797,7 +18797,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -18808,7 +18808,7 @@
                   columnCount = "2";
 
                new GuiTextCtrl() {
-                  text = "ToolsTextBaseA_S1 - Colors \c0000 \c1111 \c2222";
+                  text = "ToolsTextColA_S1 - Colors \c0000 \c1111 \c2222";
                   maxLength = "1024";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -18821,7 +18821,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextBaseA_S1";
+                  profile = "ToolsTextColA_S1";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -18900,7 +18900,7 @@
                   canSaveDynamicFields = "0";
                };
                new GuiTextCtrl() {
-                  text = "ToolsTextBaseA - Sample text - éç@#$%?&*";
+                  text = "ToolsTextColA - Sample text - éç@#$%?&*";
                   maxLength = "1024";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -18913,7 +18913,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextBaseA";
+                  profile = "ToolsTextColA";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -18923,7 +18923,7 @@
                   canSaveDynamicFields = "0";
                };
                new GuiTextCtrl() {
-                  text = "ToolsTextBaseA - Colors \c0000 \c1111 \c2222";
+                  text = "ToolsTextColA - Colors \c0000 \c1111 \c2222";
                   maxLength = "1024";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -18936,7 +18936,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextBaseA";
+                  profile = "ToolsTextColA";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -18946,7 +18946,7 @@
                   canSaveDynamicFields = "0";
                };
                new GuiTextCtrl() {
-                  text = "ToolsTextBaseA_S1 - Sample text - éç@#$%?&*";
+                  text = "ToolsTextColA_S1 - Sample text - éç@#$%?&*";
                   maxLength = "1024";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -18959,7 +18959,7 @@
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextBaseA_S1";
+                  profile = "ToolsTextColA_S1";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "ToolsToolTipProfile";
@@ -19146,7 +19146,7 @@
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "ToolsBoxTitleBar_Thin";
+                     profile = "ToolsBoxTitle_Thin";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "ToolsToolTipProfile";
@@ -19156,7 +19156,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "ToolsBoxTitleBar_Thin";
+                        text = "ToolsBoxTitle_Thin";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -19201,7 +19201,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "ToolsBoxTitleBar_Thin";
+                        text = "ToolsBoxTitle_Thin";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -19857,7 +19857,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";
@@ -19912,7 +19912,7 @@
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
-               profile = "ToolsWindowPanel";
+               profile = "ToolsWindowDialog";
                visible = "1";
                active = "1";
                tooltipProfile = "ToolsToolTipProfile";

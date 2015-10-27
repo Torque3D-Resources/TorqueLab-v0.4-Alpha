@@ -115,7 +115,9 @@ function MaterialEditorGui::openMapFile( %this, %defaultFileName ) {
 }
 //------------------------------------------------------------------------------
 
+//==============================================================================
 
+//------------------------------------------------------------------------------
 //==============================================================================
 // Per-Layer Material Options
 
@@ -171,6 +173,18 @@ function MaterialEditorGui::updateDetailNormalStrength(%this,%newStrength) {
 	%layer = MaterialEditorGui.currentLayer;
 	%detailStrength = "\"" @ %newStrength @ "\"";
 	MaterialEditorGui.updateActiveMaterial("detailNormalMapStrength[" @ %layer @ "]", %detailStrength);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function MaterialEditorGui::updateDiffuseMap(%this,%action,%texture,%skipAutoCheck) {
+	%layer = MaterialEditorGui.currentLayer;
+	%this.updateTextureMapImage("Diffuse",%texture,%layer,%skipAutoCheck);		
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function MaterialEditorGui::updateNormalMap(%this,%action,%texture,%skipAutoCheck) {
+	%layer = MaterialEditorGui.currentLayer;
+	%this.updateTextureMapImage("Normal",%texture,%layer,%skipAutoCheck);		
 }
 //------------------------------------------------------------------------------
 //==============================================================================

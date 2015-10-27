@@ -21,6 +21,13 @@ function Editor::open(%this) {
 	//EditManager call to set the Editor Enabled
 	%this.editorEnabled();
 	
+	
+	// Push the ActionMaps in the order that we want to have them
+	// before activating an editor plugin, so that if the plugin
+	// installs an ActionMap, it will be highest on the stack.
+	MoveMap.push();
+	EditorMap.push();
+	
 	Lab.setEditor( Lab.currentEditor, true );
 	
 	//Store current content and set EditorGui as content 
@@ -35,6 +42,10 @@ function Editor::open(%this) {
 
 	Lab.EditorLaunchGuiSetup();
 	Lab.onEditorOpen();
+	
+	SceneBrowserTree.currentSet = "";
+	if (EditorSideBar.isOpen)
+		SideBarMainBook.onTabSelected("test",$SideBarMainBook_CurrentPage); //Hack to force reload
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -57,11 +68,7 @@ function EditorGui::onWake( %this ) {
 	if(Canvas.getContent() == GuiEditorGui.getId())
 		return;
 	
-	// Push the ActionMaps in the order that we want to have them
-	// before activating an editor plugin, so that if the plugin
-	// installs an ActionMap, it will be highest on the stack.
-	MoveMap.push();
-	EditorMap.push();
+
 
 	// Active the current editor plugin.
 	if( !Lab.currentEditor.isActivated )
@@ -75,6 +82,8 @@ function EditorGui::onWake( %this ) {
 
 	if( %levelName !$= Lab.levelName )
 		%this.onNewLevelLoaded( %levelName );
+		
+	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -138,6 +147,8 @@ function Lab::onInitialEditorLaunch( %this ) {
 
 	Lab.AddSelectionCallback("ETransformBox.updateSource","Transform");	
 	
+	
+	EVisibilityLayers.init();
 	LabEditor.isInitialized = true;
 }
 //------------------------------------------------------------------------------

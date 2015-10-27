@@ -5,12 +5,7 @@
 //==============================================================================
 
 
-function SceneEditorTools::onObjectAdded( %this,%obj ) {
-	devLog("SceneEditorTools::onObjectAdded:",%obj);
-}
-function SceneEditorTools::onObjectRemoved( %this,%obj ) {
-	devLog("SceneEditorTools::onObjectRemoved:",%obj);
-}
+
 //==============================================================================
 // Scene Editor Params - Used set default settings and build plugins options GUI
 //==============================================================================
@@ -85,8 +80,8 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	if (SceneEditorPlugin.getCfg("DropType") !$= "")
 		EWorldEditor.dropType = %this.getCfg("DropType");
 	
-	SceneEd.initPageBuilder();
-	%this.initAssets();
+	
+SceneEditorTree.myInspector = SceneInspector;
 	SEP_GroundCover.buildLayerSettingGui();
 	//SEP_Creator.initArrayCfg();
 	
@@ -96,6 +91,7 @@ function SceneEditorPlugin::onWorldEditorStartup( %this ) {
 	
 	hide(SEP_ScenePageSettings);
 	SEP_ScenePage.init();
+	
 	
 }
 //------------------------------------------------------------------------------
@@ -112,6 +108,23 @@ function SceneEditorPlugin::onActivated( %this ) {
 	hide(SEP_CreatorSettings);
 	SEP_GroupPage.updateContent();
 
+	%dropMenu = SceneEditorTools-->dropTypeMenu;
+	%dropId = 0;
+	%selDrop = 0;
+	%dropMenu.clear();
+	foreach$(%dropType in $Scene_AllDropTypes){
+		%text = $Scene_DropTypeDisplay[%dropType];
+		if (Scene.dropMode $= %dropType)
+			%selDrop = %dropId;
+		if (%text $= "")
+			continue;
+		%dropMenu.typeId[%dropId] = %dropType;
+		%dropMenu.add("Drop> "@%text,%dropId);
+		%dropId++;
+	}
+	%dropMenu.setSelected(%selDrop);	
+	Scene.dropTypeMenus = strAddWord(Scene.dropTypeMenus,%dropMenu.getId(),true);
+	
 	if (SceneEditorPlugin.getCfg("DropType") !$= "")
 		EWorldEditor.dropType = %this.getCfg("DropType");
 }
@@ -119,7 +132,7 @@ function SceneEditorPlugin::onActivated( %this ) {
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
 function SceneEditorPlugin::onDeactivated( %this,%newPlugin ) {
-	DevLog("SceneEditorPlugin::onDeactivated");
+	
 	if (EVisibilityLayers.currentPresetFile $= "visBuilder" && 1 == 0){
 		EVisibilityLayers.loadPresetFile("default");
 		%this.text = "Set TSStatic-Only Selectable";		
@@ -139,7 +152,7 @@ function SceneEditorPlugin::onPluginCreated( %this ) {
 //==============================================================================
 // Called when the mission file has been saved
 function SceneEditorPlugin::onSaveMission( %this, %file ) {
-	SEP_GroundCover.setNotDirty();è
+	SEP_GroundCover.setNotDirty();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -151,7 +164,6 @@ function SceneEditorPlugin::onExitMission( %this ) {
 //==============================================================================
 // Called when TorqueLab is closed
 function SceneEditorPlugin::onEditorSleep( %this ) {
-	devLog("SceneOnSleep");		
 	%this.setCfg("renameInternal",SceneEditorTree.renameInternal);
 	%this.setCfg("showObjectNames",SceneEditorTree.showObjectNames);
 	%this.setCfg("showInternalNames",SceneEditorTree.showInternalNames);

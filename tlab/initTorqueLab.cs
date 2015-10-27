@@ -37,7 +37,7 @@ function initTorqueLab(%launchEditor) {
 	if ($Pref::WorldEditor::LastPath $= "") {
 		$Pref::WorldEditor::LastPath = getMainDotCsDir();
 	}
-
+	newScriptObject("Scene");
 	$Lab = new ScriptObject(Lab);
 	exec("tlab/core/execScripts.cs");
 	$LabGuiExeced = true;

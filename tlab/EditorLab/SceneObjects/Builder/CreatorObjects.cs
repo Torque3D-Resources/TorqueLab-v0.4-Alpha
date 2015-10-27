@@ -4,23 +4,33 @@
 //------------------------------------------------------------------------------
 // Allow to manage different GUI Styles without conflict
 //==============================================================================
-
+$SceneEditor_DropSinglePosition = "";
 $SceneEditor_AddObjectLastZ = true;
 $SceneEditor_AddObjectCurrentSel = true;
 //==============================================================================
+// CHeck for custom drop setting, if not the WorldEditor will use it dropType
+// When $SceneEd_SkipEditorDrop is true, the WorldEditor dropSelection is skip
+//		and position is set from script
 function Scene::getCreateObjectPosition() {
 	%focusPoint = LocalClientConnection.getControlObject().getLookAtPoint();
 	$SceneEd_SkipEditorDrop = true;	
-	if ($SceneEditor_AddObjectCurrentSel){
-		%curPos = EWorldEditor.getSelectedObject(0).position;
-		devLog("Adding at current pos",%curPos);
-		if (%curPos !$= "")
-			return %curPos;
-	}
-	if( %focusPoint $= "" )
-		return "0 0 0";
+	
+	if ($SceneEditor_DropSinglePosition !$= "")
+		%dropPos = $SceneEditor_DropSinglePosition;
+	else if (Scene.dropMode $= "currentSel")
+		%dropPos = EWorldEditor.getSelectedObject(0).position;
+	//else if( %focusPoint $= "" && strFind(strlwr(EWorldEditor.droptype),"toterrain"))
+	//	%dropPos = "0 0 0";
+	
+	$SceneEditor_DropSinglePosition = "";	
+	devLog("Adding at current pos",%dropPos);
+	if (%dropPos !$= "")
+			return %dropPos;
+	
 	%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );	
-	if ($SceneEditor_AddObjectLastZ){		
+	if (%position.z !$= "" && Scene.dropMode $= "currentSelZ"){
+		%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );	
+	
 		if ($WorldEditor_LastSelZ !$= "")
 			%position.z = $WorldEditor_LastSelZ;
 		devLog("Using last Z:",	$WorldEditor_LastSelZ,"Pos",%position);
@@ -88,6 +98,7 @@ function Scene::createStatic( %this, %file ) {
 		position = %this.getCreateObjectPosition();
 		parentGroup = %addToGroup;
 	};
+	
 	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );
 	

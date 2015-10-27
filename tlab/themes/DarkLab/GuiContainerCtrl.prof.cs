@@ -26,6 +26,15 @@ singleton GuiControlProfile( ToolsBoxDarkA : ToolsDefaultProfile ) {
    fontColorSEL = "255 255 255 255";
 };
 //------------------------------------------------------------------------------
+
+
+singleton GuiControlProfile(ToolsBoxDarkA_Top : ToolsBoxDarkA)
+{
+   bevelColorHL = "Fuchsia";
+   fontColors[0] = "Black";
+   fontColor = "Black";
+   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxProfile.png";
+};
 //==============================================================================
 //ToolsBoxDarkA Style
 singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
@@ -57,6 +66,11 @@ singleton GuiControlProfile( ToolsBoxDarkB : ToolsBoxDarkA ) {
    bevelColorHL = "Magenta";
 };
 //------------------------------------------------------------------------------
+singleton GuiControlProfile(ToolsBoxDarkB_Top : ToolsBoxDarkB)
+{
+   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxProfile.png";
+};
+
 //==============================================================================
 //ToolsBoxDarkA Style
 singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
@@ -81,7 +95,7 @@ singleton GuiControlProfile( ToolsBoxDarkC : ToolsBoxDarkA ) {
 
 singleton GuiControlProfile(ToolsBoxDarkC_Top : ToolsBoxDarkC)
 {
-   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxDarkC";
+   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxProfile";
    fontColors[5] = "Magenta";
    fontColorLinkHL = "Magenta";
 };
@@ -105,13 +119,13 @@ singleton GuiControlProfile( ToolsBoxTitleDark : ToolsDefaultProfile ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-//ToolsBoxTitleBar Style
+//ToolsBoxTitle Style
 //------------------------------------------------------------------------------
-singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
+singleton GuiControlProfile( ToolsBoxTitle : ToolsDefaultProfile ) {
     opaque = false;
     border = -2;
     category = "ToolsContainers";
-    bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxTitleBar.png";
+    bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxTitle.png";
     fontColors[2] = "0 0 0 255";
     fontColorNA = "0 0 0 255";
    fontType = "Gotham Black";
@@ -123,44 +137,14 @@ singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
 };
 //------------------------------------------------------------------------------
 
-singleton GuiControlProfile(ToolsBoxTitleBar_Thin : ToolsBoxTitleBar)
+singleton GuiControlProfile(ToolsBoxTitle_Thin : ToolsBoxTitle)
 {
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxTitleBar_Thin.png";
-};
-//==============================================================================
-// ToolsBoxPanelProfile (Made to go under GuiPanelProfile (GuiPaneCtrl))
-//==============================================================================
-singleton GuiControlProfile(ToolsBoxPanelProfile : ToolsDefaultProfile)
-{
-   bevelColorLL = "255 0 255 255";
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxPanelProfile.png";
-   opaque = "1";
-   fillColor = "2 2 2 255";
-   fillColorHL = "2 2 2 255";
-   fillColorNA = "2 2 2 255";
-   border = "2";
-   borderThickness = "5";
-   fontType = "Gotham Bold";
-   fontSize = "20";
-   fontColors[0] = "254 254 254 255";
-   fontColor = "254 254 254 255";
-   textOffset = "2 6";
-   fontColors[9] = "Fuchsia";
-};
-//------------------------------------------------------------------------------
-
-singleton GuiControlProfile(ToolsBoxDarkB_Top : ToolsBoxDarkB)
-{
-   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxDarkB.png";
+   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxTitleThin.png";
+   hasBitmapArray = "1";
+   fontSize = "14";
 };
 
-singleton GuiControlProfile(ToolsBoxDarkA_Top : ToolsBoxDarkA)
-{
-   bevelColorHL = "Fuchsia";
-   fontColors[0] = "Black";
-   fontColor = "Black";
-   bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiBoxDarkA.png";
-};
+
 
 singleton GuiControlProfile(ToolsBoxLightA : ToolsBoxDarkA)
 {

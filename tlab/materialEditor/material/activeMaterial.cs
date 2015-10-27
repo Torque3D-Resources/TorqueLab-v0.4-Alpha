@@ -41,8 +41,7 @@ function MaterialEditorGui::setActiveMaterial( %this, %material ) {
 		return;
 	}
 
-	if (strFind(%material.getFilename(),"tlab/materialEditor") || %material.getFilename() $= "") {
-		devlog("Changind material filename from:",%material.getFilename(),"To",$Pref::MaterialEditorGui::DefaultMaterialFile);
+	if (strFind(%material.getFilename(),"tlab/materialEditor") || %material.getFilename() $= "") {	
 		%material.setFilename($Pref::MaterialEditorGui::DefaultMaterialFile);
 	}
 	
@@ -81,7 +80,7 @@ function MaterialEditorGui::updateAccuCheckbox(%this, %value)
 {
    MaterialEditorGui.updateActiveMaterial("accuEnabled[" @ MaterialEditorGui.currentLayer @ "]", %value);  
    %mat = MaterialEditorGui.currentMaterial;
-   devLog("Mat:",%mat.getName(),"accuEnabled:",%mat.accuEnabled[MaterialEditorGui.currentLayer]); 
+ 
    MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 
@@ -93,7 +92,7 @@ function MaterialEditorGui::updateMaterialPBR(%this, %propertyField,%value, %isS
 	%isDirty = LabObj.set(%mat,%propertyField,%value,%layer);
 	if (%isDirty)
 		MaterialEditorGui.setMaterialDirty();
-	devLog("Mat:",%mat.getName(),"Field:",%propertyField,"Layer",%layer,"Set to:",%value,"Dirty:",%isDirty);
+	
 	%field = %propertyField@"[" @%layer @ "]";
 	
 	eval("materialEd_previewMaterial." @ %field @ " = " @ %value @ ";");
@@ -134,6 +133,9 @@ function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, 
 		MaterialEditorGui.submitUndo( %action );
 	}
 
+	if (!isObject(materialEd_previewMaterial))
+		MaterialEditorGui.establishMaterials();
+		
 	eval("materialEd_previewMaterial." @ %propertyField @ " = " @ %value @ ";");
 	materialEd_previewMaterial.flush();
 	materialEd_previewMaterial.reload();
@@ -153,7 +155,7 @@ function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, 
 			%normalMap = strreplace(%propertyField,"diffuse","normal");
 			%normalFile = MaterialEditorGui.currentMaterial.getFieldValue(%normalMap);
 			%isFileNormal = isImageFile(%normalFile);
-			devLog("Updating texture map:",%cleanValue,"Current Normal:",%normalFile,"IsFile",%isFileNormal);
+			
 
 			if (!%isFileNormal) {
 				%normalSuffix = MaterialEditorPlugin.getCfg("NormalSuffix");
@@ -173,7 +175,7 @@ function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, 
 			%specMap = strreplace(%propertyField,"diffuse","specular");
 			%specFile = MaterialEditorGui.currentMaterial.getFieldValue(%specMap);
 			%isFileSpec = isImageFile(%specFile);
-			devLog("Updating texture map:",%cleanValue,"Current Specular:",%specFile,"IsFile",%isFileSpec);
+		
 
 			if (!%isFileSpec) {
 				%specSuffix = MaterialEditorPlugin.getCfg("SpecularSuffix");
@@ -182,7 +184,7 @@ function MaterialEditorGui::updateActiveMaterial(%this, %propertyField, %value, 
 				%testSpec = %filePath@"/"@%fileBase@%specSuffix;
 				//%testSpec = strreplace(%testSpec,"\"","");
 				%isFileNew = isImageFile(%testSpec);
-				devLog("TestSpec = ",%testSpec);
+				
 
 				if (%isFileNew)
 					%this.updateTextureMapImage("spec",%testSpec,0);

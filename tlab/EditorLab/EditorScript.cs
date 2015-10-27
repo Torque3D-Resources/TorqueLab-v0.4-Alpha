@@ -54,6 +54,7 @@ function toggleEditor(%make) {
 		canvas.popDialog(EditorLoadingGui);
 		popInstantGroup();
 		%elapsed = stopPrecisionTimer( %timerId );
+		
 		info( "Time spent in toggleEditor() : " @ %elapsed / 1000.0 @ " s" );
 	}
 }

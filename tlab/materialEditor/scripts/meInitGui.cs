@@ -7,6 +7,7 @@
 //==============================================================================
 function MaterialEditorGui::establishMaterials(%this,%forced) {
 	//Cubemap used to preview other cubemaps in the editor.
+	if (!isObject(matEdCubeMapPreviewMat))
 	singleton CubemapData( matEdCubeMapPreviewMat ) {
 		cubeFace[0] = "tlab/materialEditor/assets/cube_xNeg";
 		cubeFace[1] = "tlab/materialEditor/assets/cube_xPos";
@@ -17,15 +18,18 @@ function MaterialEditorGui::establishMaterials(%this,%forced) {
 		parentGroup = "RootGroup";
 	};
 	//Material used to preview other materials in the editor.
+	if (!isObject(materialEd_previewMaterial))
 	singleton Material(materialEd_previewMaterial) {
 		mapTo = "matEd_mappedMat";
 		diffuseMap[0] = "tlab/materialEditor/assets/matEd_mappedMat";
 	};
+	if (!isObject(materialEd_justAlphaMaterial))
 	singleton CustomMaterial( materialEd_justAlphaMaterial ) {
 		mapTo = "matEd_mappedMatB";
 		texture[0] = materialEd_previewMaterial.diffuseMap[0];
 	};
 	//Custom shader to allow the display of just the alpha channel.
+	if (!isObject(materialEd_justAlphaShader))
 	singleton ShaderData( materialEd_justAlphaShader ) {
 		DXVertexShaderFile 	= "shaders/alphaOnlyV.hlsl";
 		DXPixelShaderFile 	= "shaders/alphaOnlyP.hlsl";
@@ -35,7 +39,7 @@ function MaterialEditorGui::establishMaterials(%this,%forced) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorGui::open(%this) {
-	logc("MaterialEditorGui::open(%this)",%this);
+	DevLog("MaterialEditorGui::open(%this)",%this);
 	MaterialEditorGui.establishMaterials();
 	// We hide these specific windows here due too there non-modal nature.
 	// These guis are also pushed onto Canvas, which means they shouldn't be parented

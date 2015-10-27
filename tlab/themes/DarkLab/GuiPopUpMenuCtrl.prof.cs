@@ -25,7 +25,7 @@ singleton GuiControlProfile(ToolsDropdownProfile_Item : ToolsDefaultProfile)
    bevelColorHL = "255 0 255 255";
    fontColors[0] = "0 0 0 255";
    fontColor = "0 0 0 255";
-   category = "GameContainer";
+   category = "Tools";
    justify = "Center";
    textOffset = "4 0";
 };
@@ -44,7 +44,7 @@ singleton GuiControlProfile (ToolsDropdownProfile_List : ToolsDefaultProfile)
    fillColorHL = "180 113 18 169";
    fontColors[2] = "3 206 254 255";
    fontColorNA = "3 206 254 255";
-   profileForChildren = "ToolsDropdownProfile_Item";
+   profileForChildren = "ToolsDropdownBase_Item";
    fillColorSEL = "2 2 2 241";
    fontColors[3] = "15 243 48 255";
    fontColorSEL = "15 243 48 255";
@@ -74,7 +74,7 @@ singleton GuiControlProfile (ToolsDropdownProfile : ToolsDefaultProfile)
    fontColorNA = "248 254 254 255";
    autoSizeWidth = "0";
    autoSizeHeight = "0";
-   fontType = "Lato bold";
+   fontType = "Lato";
    modal = "1";
    fontColors[3] = "5 64 201 255";
    fontColorSEL = "5 64 201 255";
@@ -90,8 +90,8 @@ singleton GuiControlProfile (ToolsDropdownProfile : ToolsDefaultProfile)
 // DropdownBasic Thin Version
 singleton GuiControlProfile(ToolsDropdownProfile_S1 : ToolsDropdownProfile)
 {
-   bitmap = "tlab/themes/DarkLab/assets/element-assets/GuiDropDownProfile.png";
-   fontSize = "14";
+   bitmap = "tlab/themes/DarkLab/assets/element-assets/GuiDropDownProfile_S1.png";
+   fontSize = "13";
    justify = "Left";
    autoSizeHeight = "0";
    fontColors[8] = "Magenta";
@@ -99,6 +99,10 @@ singleton GuiControlProfile(ToolsDropdownProfile_S1 : ToolsDropdownProfile)
    fontColors[2] = "248 254 254 255";
    fontColorNA = "248 254 254 255";
    textOffset = "4 1";
+   fontColors[0] = "229 229 229 255";
+   fontColor = "229 229 229 255";
+   autoSizeWidth = "0";
+   profileForChildren = "ToolsDropdownProfile_List_S1";
 };
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -185,3 +189,18 @@ singleton GuiControlProfile(ToolsDropdownBase_Thin : ToolsDropdownBase)
    bitmap = "tlab/themes/DarkBlue/assets/element-assets/GuiDropdownBase_S1.png";
 };
 //------------------------------------------------------------------------------
+
+singleton GuiControlProfile(ToolsDropdownProfile_List_S1 : ToolsDropdownProfile_List)
+{
+   fontSize = "14";
+   fontType = "Lato";
+   profileForChildren = "ToolsDropdownProfile_Item_S1";
+   autoSizeWidth = "0";
+};
+
+singleton GuiControlProfile(ToolsDropdownProfile_Item_S1 : ToolsDropdownBase_Item)
+{
+   fontType = "Lato";
+   fontSize = "14";
+   autoSizeWidth = "0";
+};

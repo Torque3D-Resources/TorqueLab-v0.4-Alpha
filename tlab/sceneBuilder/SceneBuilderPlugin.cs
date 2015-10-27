@@ -5,12 +5,7 @@
 //==============================================================================
 
 
-function SceneBuilderTools::onObjectAdded( %this,%obj ) {
-	devLog("SceneBuilderTools::onObjectAdded:",%obj);
-}
-function SceneBuilderTools::onObjectRemoved( %this,%obj ) {
-	devLog("SceneBuilderTools::onObjectRemoved:",%obj);
-}
+
 //==============================================================================
 // Scene Editor Params - Used set default settings and build plugins options GUI
 //==============================================================================
@@ -86,8 +81,8 @@ function SceneBuilderPlugin::onWorldEditorStartup( %this ) {
 		EWorldEditor.dropType = %this.getCfg("DropType");
 	
 	SBP.initPageBuilder();
-	%this.initAssets();
-	SBP_GroundCover.buildLayerSettingGui();
+	
+
 	//SBP_Creator.initArrayCfg();
 	
 	ETransformBox.deactivate();
@@ -95,7 +90,8 @@ function SceneBuilderPlugin::onWorldEditorStartup( %this ) {
 	SceneBuilderTools.getToolClones();
 	
 	hide(SBP_ScenePageSettings);
-	SBP_ScenePage.init();
+	
+	
 	
 }
 //------------------------------------------------------------------------------
@@ -117,6 +113,23 @@ function SceneBuilderPlugin::onActivated( %this ) {
 	%button = SBP_CreatorTypeStack.findObjectByInternalName($SBP_CreatorTypeActive,true);
 	if (isObject(%button))
 		%button.performClick();
+		
+	%dropMenu = SceneBuilderTools-->dropTypeMenu;
+	%dropId = 0;
+	%selDrop = 0;
+	%dropMenu.clear();
+	foreach$(%dropType in $Scene_AllDropTypes){
+		%text = $Scene_DropTypeDisplay[%dropType];
+		if (Scene.dropMode $= %dropType)
+			%selDrop = %dropId;
+		if (%text $= "")
+			continue;
+		%dropMenu.typeId[%dropId] = %dropType;
+		%dropMenu.add("Drop> "@%text,%dropId);
+		%dropId++;
+	}
+	%dropMenu.setSelected(%selDrop);	
+	Scene.dropTypeMenus = strAddWord(Scene.dropTypeMenus,%dropMenu.getId(),true);
 
 	if (SceneBuilderPlugin.getCfg("DropType") !$= "")
 		EWorldEditor.dropType = %this.getCfg("DropType");
@@ -124,13 +137,9 @@ function SceneBuilderPlugin::onActivated( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
-function SceneBuilderPlugin::onDeactivated( %this,%newPlugin ) {
-	DevLog("SceneBuilderPlugin::onDeactivated",%newPlugin,%newPlugin.plugin);
-	
-	//Set last Vis preset file manually loaded
-	
+function SceneBuilderPlugin::onDeactivated( %this,%newPlugin ) {	
+	//Set last Vis preset file manually loaded	
 	Parent::onDeactivated( %this );
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -143,7 +152,7 @@ function SceneBuilderPlugin::onPluginCreated( %this ) {
 //==============================================================================
 // Called when the mission file has been saved
 function SceneBuilderPlugin::onSaveMission( %this, %file ) {
-	SBP_GroundCover.setNotDirty();
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -155,7 +164,6 @@ function SceneBuilderPlugin::onExitMission( %this ) {
 //==============================================================================
 // Called when TorqueLab is closed
 function SceneBuilderPlugin::onEditorSleep( %this ) {
-	devLog("SceneOnSleep");		
 	%this.setCfg("renameInternal",SceneBuilderTree.renameInternal);
 	%this.setCfg("showObjectNames",SceneBuilderTree.showObjectNames);
 	%this.setCfg("showInternalNames",SceneBuilderTree.showInternalNames);
@@ -184,8 +192,7 @@ function SceneBuilderPlugin::onEditMenuSelect( %this, %editMenu ) {
 $QuickDeleteMode = true;
 //==============================================================================
 //
-function SceneBuilderPlugin::handleDelete( %this ) {
-	devLog(" SceneBuilderPlugin::handleDelete( %this ) ");
+function SceneBuilderPlugin::handleDelete( %this ) {	
 	// The tree handles deletion and notifies the
 	// world editor to clear its selection.
 	//

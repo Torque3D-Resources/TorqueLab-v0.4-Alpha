@@ -29,15 +29,15 @@ function Lab::openSidebar(%this) {
 	EditorSideBar.isOpen = true;
 	EditorSideBarCtrl.visible = 1;
 	if (EditorFrameContent.lastColumns $= "")
-		EditorFrameContent.lastColumns = "0 150";
+		EditorFrameContent.lastColumns = "0 220";
 		
 	EditorFrameContent.columns = EditorFrameContent.lastColumns;
 	EditorFrameContent.updateSizes();
+	SideBarMainBook.selectPage($SideBarMainBook_CurrentPage);
 }
 //------------------------------------------------------------------------------
 
 function EditorFrameContent::onWake(%this) {	
-	devLog("EditorFrameContent LastColumns",EditorFrameContent.lastColumns,"IsOpen",EditorSideBar.isOpen);
 	if (EditorSideBar.isOpen)	
 		Lab.schedule(500,"openSidebar");
 	else
@@ -47,8 +47,7 @@ function EditorFrameContent::onWake(%this) {
 function EditorFrameContent::onSleep(%this) {	
 	if (EditorSideBar.isOpen){
 		$SideBar_CurentColumns = EditorFrameContent.columns;
-		EditorFrameContent.lastColumns = EditorFrameContent.columns;
-		devLog("Opened EditorFrameContent Columns stored to",$SideBar_CurentColumns);
+		EditorFrameContent.lastColumns = EditorFrameContent.columns;		
 	}
 }
 

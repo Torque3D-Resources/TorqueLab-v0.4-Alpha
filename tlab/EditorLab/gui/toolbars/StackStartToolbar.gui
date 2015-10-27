@@ -10,7 +10,7 @@ new GuiStackControl(StackStartToolbar) {
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
    position = "0 0";
-   extent = "134 32";
+   extent = "102 32";
    minExtent = "4 16";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -26,12 +26,12 @@ new GuiStackControl(StackStartToolbar) {
    canSaveDynamicFields = "1";
       alwaysFirst = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "23217";
-      disabledGroup = "23218";
-      EditorContainer = "20317";
+      defaultStack = "21935";
+      disabledGroup = "21936";
+      EditorContainer = "20349";
       editorParent = "EditorGuiToolbarStack";
       isCommon = "1";
-      stackLists = "23219";
+      stackLists = "21938";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -55,6 +55,38 @@ new GuiStackControl(StackStartToolbar) {
       hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
+
+      new GuiIconButtonCtrl() {
+         buttonMargin = "1 1";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/Settings.png";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         makeIconSquare = "0";
+         textLocation = "Left";
+         textMargin = "4";
+         autoSize = "0";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "1";
+         position = "8 0";
+         extent = "30 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsButtonDark";
+         visible = "1";
+         active = "1";
+         command = "toggleDlg(LabParamsDlg);";
+         tooltipProfile = "ToolsToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         superClass = "ToolbarIcon";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            originalIndex = "1";
+            originalParent = "23214";
+            toolbar = "23212";
+      };
    };
    new GuiStackControl() {
       stackingType = "Horizontal";
@@ -67,7 +99,7 @@ new GuiStackControl(StackStartToolbar) {
       changeChildSizeToFit = "1";
       changeChildPosition = "1";
       position = "0 0";
-      extent = "134 32";
+      extent = "102 32";
       minExtent = "4 16";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -144,7 +176,7 @@ new GuiStackControl(StackStartToolbar) {
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/Settings.png";
+         iconBitmap = "tlab/gui/icons/toolbar-assets/PluginOptions.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -162,7 +194,7 @@ new GuiStackControl(StackStartToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         command = "toggleDlg(LabParamsDlg);";
+         command = "Lab.togglePluginParamUI();";
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -170,12 +202,12 @@ new GuiStackControl(StackStartToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             originalIndex = "1";
-            originalParent = "23168";
-            toolbar = "23217";
+            originalParent = "22867";
+            toolbar = "21935";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/LabSettings.png";
+         iconBitmap = "tlab/gui/icons/toolbar_assets/SceneManager.png";
          iconLocation = "Left";
          sizeIconToButton = "0";
          makeIconSquare = "0";
@@ -193,38 +225,8 @@ new GuiStackControl(StackStartToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         command = "Lab.togglePluginParamUI();";
-         tooltipProfile = "ToolsToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         superClass = "ToolbarIcon";
-         canSave = "1";
-         canSaveDynamicFields = "1";
-            originalIndex = "1";
-            originalParent = "7037";
-            toolbar = "23217";
-      };
-      new GuiIconButtonCtrl() {
-         buttonMargin = "1 1";
-         iconBitmap = "tlab/gui/icons/toolbar_assets/SceneManager.png";
-         iconLocation = "Left";
-         sizeIconToButton = "0";
-         makeIconSquare = "0";
-         textLocation = "Left";
-         textMargin = "4";
-         autoSize = "0";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "1";
-         position = "72 0";
-         extent = "30 32";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ToolsButtonDark";
-         visible = "1";
-         active = "1";
-         command = "ETools.toggleTool(\"SceneManager\");";
+         variable = "ESceneManager.visible";
+         command = "ToggleVisible(ESceneManager);";
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -233,7 +235,7 @@ new GuiStackControl(StackStartToolbar) {
          canSaveDynamicFields = "1";
             originalIndex = "2";
             originalParent = "7046";
-            toolbar = "23217";
+            toolbar = "21935";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "1 1";
@@ -247,7 +249,7 @@ new GuiStackControl(StackStartToolbar) {
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "1";
-         position = "104 0";
+         position = "72 0";
          extent = "30 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -271,7 +273,7 @@ new GuiStackControl(StackStartToolbar) {
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "136 0";
+         position = "104 0";
          extent = "18 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -316,7 +318,7 @@ new GuiStackControl(StackStartToolbar) {
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "136 0";
+      position = "104 0";
       extent = "27 32";
       minExtent = "8 2";
       horizSizing = "right";

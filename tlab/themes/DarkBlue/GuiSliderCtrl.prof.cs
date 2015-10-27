@@ -23,20 +23,3 @@ singleton GuiControlProfile(ToolsSliderProfile : ToolsDefaultProfile)
 };
 //------------------------------------------------------------------------------
 
-//==============================================================================
-// ToolsSliderKnob Style
-//------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsSliderKnob : ToolsDefaultProfile)
-{
-   bitmap = "tlab/themes/DarkBlue/assets/element-assets/GuiSliderAlt.png";
-};
-//------------------------------------------------------------------------------
-
-//==============================================================================
-// ToolsSliderBox Style
-//------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsSliderBox : ToolsDefaultProfile)
-{
-   bitmap = "tlab/themes/DarkBlue/assets/element-assets/GuiSliderBox.png";
-};
-//------------------------------------------------------------------------------

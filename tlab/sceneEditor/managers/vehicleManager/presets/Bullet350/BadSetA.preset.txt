@@ -1,0 +1,33 @@
+shapeFile	art/models/Boost/carModels/Bullet350/carBullet350A.DAE
+superClass	
+wheelDrive	
+engineTorque	12300
+engineBrake	5000
+maxWheelSpeed	67
+brakeTorque	10000
+maxSteeringAngle	0.585
+jetForce	3000
+jetEnergyDrain	2
+minJetEnergy	30
+maxEnergy	100
+massCenter	0 0.5 0
+bodyRestitution	0.54
+bodyFriction	0.55
+integration	8
+mass	200
+drag	0.6
+minImpactSpeed	5
+softImpactSpeed	5
+hardImpactSpeed	15
+contactTol	0.4
+engineSound	
+tireEmitter	
+dustEmitter	
+softImpactSound	
+hardImpactSound	
+cameraRoll	0
+cameraLag	0.3
+cameraDecay	1.25
+cameraOffset	1
+cameraMaxDist	7.8
+cameraMinDist	0.2

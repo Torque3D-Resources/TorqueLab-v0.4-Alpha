@@ -71,7 +71,7 @@ function SEP_ScenePage::findMissionObjectsGroups( %this,%group,%depth ) {
 			continue;
 		}
 		%class = %obj.getClassName();
-	devLog("Checking obj:",%class);
+	
 		%groupFound = false;
 		foreach$(%groupData in $SceneEd_CheckGroups){
 			%list = $SceneEd_GroupObjList[%groupData];

@@ -9,7 +9,7 @@ new GuiStackControl(MaterialEditorToolbar) {
    dynamicPos = "1";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "110 0";
    extent = "40 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,13 +26,13 @@ new GuiStackControl(MaterialEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31340";
-      disabledGroup = "31341";
-      EditorContainer = "20317";
+      defaultStack = "29086";
+      disabledGroup = "29087";
+      EditorContainer = "20349";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MaterialEditor";
       preventReordering = "0";
-      stackLists = "31342";
+      stackLists = "29088";
 
    new GuiContainer() {
       margin = "0 0 0 0";

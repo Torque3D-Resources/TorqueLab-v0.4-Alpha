@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //EVisibilityLayers.updatePresetMenu
-function EVisibilityLayers::updatePresetMenu( %this ) {
+function EVisibilityLayers::updatePresetMenu( %this,%noCallback ) {
 		%searchFolder = "tlab/EditorLab/editorTools/visibilityLayers/presets/*.layers.ucs";
 	//Now go through each files again to add a brush with latest items
 	%menus = EVisibilityLayers_PresetMenu SPC SEP_CreatorTools-->VisibilityPreset SPC SBP_EVisibilityLayers_PresetMenu;
@@ -20,23 +20,31 @@ function EVisibilityLayers::updatePresetMenu( %this ) {
 			if (EVisibilityLayers.currentPresetFile $= %presetName)
 				%selected = %pid;
 		}
-		%menu.setSelected(%selected);
+		%menu.setSelected(%selected,!%noCallback);
 	}	
 }
-function EVisibilityLayers::toggleNewPresetCtrl( %this ) {
-	if (EVisibilityLayers_NewPreset.visible){
-		show(%this-->newPresetButton);
-		EVisibilityLayers_NewPreset.visible = 0;
+function EVisibilityLayers::toggleNewPresetCtrl( %this,%state ) {
+	if (%state $= "")
+		%state = !EVisibilityLayers_NewPreset.visible;
+	
+		
+	if (%state){
+		hide(%this-->newPresetButton);
+		EVisibilityLayers_NewPreset.visible = 1;
 		return;
 	}
-	hide(%this-->newPresetButton);
-		EVisibilityLayers_NewPreset.visible = 1;
+	show(%this-->newPresetButton);
+		EVisibilityLayers_NewPreset.visible = 0;
 }
 
 //EVisibilityLayers.exportPresetSample
-function EVisibilityLayers::savePresetToFile( %this ) {
-	%name = EVisibilityLayers_NewPreset-->presetName.getText();
+function EVisibilityLayers::savePresetToFile( %this,%isNew ) {
+	if (%isNew)
+		%name = EVisibilityLayers_NewPreset-->presetName.getText();
+	else
+		%name = strreplace(EVisibilityLayers.activePreset,"*","");
 	
+	//devLog("Saving Preset:",%name,"IsNew",	%isNew);
 	if (strFind(%name,"[")){		
 		return;
 	}
@@ -45,15 +53,29 @@ function EVisibilityLayers::savePresetToFile( %this ) {
 	%layerExampleObj.internalName = %name;
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
-		eval("%selectable = $" @ %class @ "::isSelectable;");
+		
+		eval("%selectable = $" @ %class @ "::isSelectable;");		
 		eval("%renderable = $" @ %class @ "::isRenderable;");
 		%layerExampleObj.selectable[%class] = %selectable;
 		%layerExampleObj.visible[%class] = %renderable;
 	}
+	for ( %i = 0; %i < %this.array.count(); %i++ ) {
+		%text = "  " @ %this.array.getValue( %i );
+		%val = %this.array.getKey( %i );
+		%var = getWord( %val, 0 );
+		
+		eval("%value = "@%var@";");
+		
+		%formatVar = strreplace(%var,"$","");	
+		%formatVar = strreplace(%formatVar,"::","__");	
+		%formatVar = strreplace(%formatVar,".","_dot_");					
+		%layerExampleObj.visOptions[%formatVar] = %value;
+		
+	}
 	%layerExampleObj.save("tlab/EditorLab/editorTools/visibilityLayers/presets/"@%name@".layers.ucs",0,"%presetLayers = ");
-	%this.toggleNewPresetCtrl();
+	%this.toggleNewPresetCtrl(false);
 	EVisibilityLayers.loadPresetFile(%name);
-	%this.updatePresetMenu();
+	%this.updatePresetMenu(true);
 }
 //EVisibilityLayers.exportPresetSample
 function EVisibilityLayers::exportPresetSample( %this ) {
@@ -77,7 +99,7 @@ function EVisibilityLayers::loadPresetFile( %this,%filename,%noStore ) {
 		return;
 		
 	exec(%file);
-	devLog("Loading Vis file:",%file,"NoStore",%noStore);
+
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
 		
@@ -86,12 +108,29 @@ function EVisibilityLayers::loadPresetFile( %this,%filename,%noStore ) {
 		
 		if (%selectable !$= ""){
 			eval("$" @ %class @ "::isSelectable = \""@%selectable@"\";");
-			info("Class:",%class,"isSelectable set to:",%selectable);
+			//info("Class:",%class,"isSelectable set to:",%selectable);
 		}
 		if (%renderable !$= ""){
 			eval("$" @ %class @ "::isRenderable = \""@%renderable@"\";");
-			info("Class:",%class,"isRenderable set to:",%renderable);
+			//info("Class:",%class,"isRenderable set to:",%renderable);
 		}	
+	}
+	for ( %i = 0; %i < %this.array.count(); %i++ ) {
+		%text = "  " @ %this.array.getValue( %i );
+		%val = %this.array.getKey( %i );
+		%var = getWord( %val, 0 );
+		%formatVar = strreplace(%var,"$","");	
+		%formatVar = strreplace(%formatVar,"::","__");	
+		%formatVar = strreplace(%formatVar,".","_dot_");				
+		
+		%value = %presetLayers.visOptions[%formatVar];
+		if (%value $= "")
+			continue;
+			
+		eval(%var@" = %value;"); 
+		//info("Variable:",%var," set to:",%value);
+		
+		
 	}
 	%presetName = %filename;
 	if (!%noStore){
@@ -104,7 +143,7 @@ function EVisibilityLayers::loadPresetFile( %this,%filename,%noStore ) {
 }
 
 function EVisibilityLayers_Preset::onSelect( %this,%id,%text ) {	
-	devLog("EVisibilityLayers_Preset onSelect",%id,%text);
+	
 	if (	%id $= "0")
 		return;
 	EVisibilityLayers.loadPresetFile(%text);

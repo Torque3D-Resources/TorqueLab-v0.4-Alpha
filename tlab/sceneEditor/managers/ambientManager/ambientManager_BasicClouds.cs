@@ -12,7 +12,7 @@ $BasicClouds::Default_["texture2"] = "art/gfx/skies/clouds/cloud3.png";
 function SEP_AmbientManager::buildBasicCloudsParams( %this ) {
 	%arCfg = createParamsArray("SEP_BasicClouds",SEP_BasicClouds_StockParam);
 	%arCfg.updateFunc = "SEP_AmbientManager.updateBasicCloudsParam";
-	//%arCfg.style = "LabCfgB_304";
+	
 	%arCfg.useNewSystem = true;
 	//%arCfg.arrayOnly = true;
 	//%arCfg.group[%gid++] = "Cloud Layer #1" TAB "Stack StackA";

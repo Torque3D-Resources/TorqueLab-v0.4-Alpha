@@ -237,7 +237,7 @@ singleton GuiControlProfile(ToolsSwatchButtonProfile : ToolsDefaultProfile)
 	fillColorNA = "200 200 200 255";
 	fontSize = "24";
 	textOffset = "16 10";
-	bitmap = "art/gui/Lab/assets/button-assets/GuiButton";
+	bitmap = "tlab/themes/DarkLab/assets/button-assets/GuiButtonAlt.png";
 	hasBitmapArray = "0";
 	fontColors[0] = "253 253 253 255";
 	fontColor = "253 253 253 255";

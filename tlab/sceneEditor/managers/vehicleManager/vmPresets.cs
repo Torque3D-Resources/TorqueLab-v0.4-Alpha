@@ -31,7 +31,7 @@ function sepVM::exportData( %this,%dataType ) {
 		}		
 		%value = %dataMain.getFieldValue(%field);
 		//Change superClass name to not make preset Obj call superclass functions		
-		devLog("Exporting filed:",%field,"Value",%value);
+		
 		
 		%fileWrite.writeline(%field TAB %value);
 	}

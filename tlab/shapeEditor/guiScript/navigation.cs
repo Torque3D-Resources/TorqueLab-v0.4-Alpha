@@ -157,7 +157,7 @@ function ShapeEdSelectWindow::createIcon( %this ) {
 function ShapeEdSelectWindow::addFolderIcon( %this, %text ) {
 	%ctrl = %this.createIcon();
 	%ctrl.altCommand = "ShapeEdSelectWindow.navigateDown( \"" @ %text @ "\" );";
-	%ctrl.iconBitmap = "tlab/gui/icons/default/folder.png";
+	%ctrl.iconBitmap = "tlab/gui/icons/24-assets/folder_open.png";
 	%ctrl.text = %text;
 	%ctrl.tooltip = %text;
 	%ctrl.class = "CreatorFolderIconBtn";

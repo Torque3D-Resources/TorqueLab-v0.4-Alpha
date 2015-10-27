@@ -105,9 +105,9 @@ singleton GuiControlProfile( ToolsBoxTitleDark : ToolsDefaultProfile ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-//ToolsBoxTitleBar Style
+//ToolsBoxTitle Style
 //------------------------------------------------------------------------------
-singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
+singleton GuiControlProfile( ToolsBoxTitle : ToolsDefaultProfile ) {
     opaque = false;
     border = -2;
     category = "ToolsContainers";
@@ -123,30 +123,11 @@ singleton GuiControlProfile( ToolsBoxTitleBar : ToolsDefaultProfile ) {
 };
 //------------------------------------------------------------------------------
 
-singleton GuiControlProfile(ToolsBoxTitleBar_Thin : ToolsBoxTitleBar)
+singleton GuiControlProfile(ToolsBoxTitle_Thin : ToolsBoxTitle)
 {
    bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxTitleBar_Thin.png";
 };
-//==============================================================================
-// ToolsBoxPanelProfile (Made to go under GuiPanelProfile (GuiPaneCtrl))
-//==============================================================================
-singleton GuiControlProfile(ToolsBoxPanelProfile : ToolsDefaultProfile)
-{
-   bevelColorLL = "255 0 255 255";
-   bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiBoxPanelProfile.png";
-   opaque = "1";
-   fillColor = "2 2 2 255";
-   fillColorHL = "2 2 2 255";
-   fillColorNA = "2 2 2 255";
-   border = "2";
-   borderThickness = "5";
-   fontType = "Gotham Bold";
-   fontSize = "20";
-   fontColors[0] = "254 254 254 255";
-   fontColor = "254 254 254 255";
-   textOffset = "2 6";
-   fontColors[9] = "Fuchsia";
-};
+
 //------------------------------------------------------------------------------
 
 singleton GuiControlProfile(ToolsBoxDarkB_Top : ToolsBoxDarkB)

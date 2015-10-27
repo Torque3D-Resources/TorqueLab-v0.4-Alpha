@@ -35,7 +35,7 @@ function CreatorTabBook::onTabSelected( %this, %text, %idx ) {
 //==============================================================================
 // Creator Book Tab Selected
 function SBP_CreatorButton::onClick( %this ) {
-	devLog("SBP_CreatorButton::onClick",%this.internalName);
+	
 	%type = %this.internalName;
 	SBP_Creator.setType(%type,true);
 	
@@ -58,7 +58,7 @@ function SBP_Creator::setType( %this,%type,%fromButton ) {
 		SBP_Creator.navigate( %lastTabAdress );
 	}
 	%visPreset = "SBP_"@%type;
-	devLog("Cretor load preset:",%visPreset);
+
 	if (isFile("tlab/EditorLab/editorTools/visibilityLayers/presets/"@%visPreset@".layers.ucs"))
 		EVisibilityLayers.loadPresetFile(%visPreset,true);
 

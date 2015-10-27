@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %presetLayers = new ScriptObject() {
-   internalName = "EVisibilityLayerPresetExample";
+   internalName = "Default";
    canSave = "1";
    canSaveDynamicFields = "1";
       selectableAccumulationVolume = "1";
@@ -66,6 +66,7 @@
       selectableSFXSpace = "1";
       selectableShapeBase = "1";
       selectableSkyBox = "1";
+      selectableSkyLine = "1";
       selectableSpawnSphere = "1";
       selectableSplash = "1";
       selectableSpotLight = "1";
@@ -147,6 +148,7 @@
       visibleSFXSpace = "1";
       visibleShapeBase = "1";
       visibleSkyBox = "1";
+      visibleSkyLine = "1";
       visibleSpawnSphere = "1";
       visibleSplash = "1";
       visibleSpotLight = "1";
@@ -165,5 +167,33 @@
       visibleWayPoint = "1";
       visibleWheeledVehicle = "1";
       visibleZone = "1";
+      visOptionsAL_BackbufferVisualizeVar = "0";
+      visOptionsAL_ColorBufferShaderVar = "0";
+      visOptionsAL_DepthVisualizeVar = "0";
+      visOptionsAL_LightColorVisualizeVar = "0";
+      visOptionsAL_LightMapShaderVar = "0";
+      visOptionsAL_LightSpecularVisualizeVar = "0";
+      visOptionsAL_MetalMapShaderVar = "0";
+      visOptionsAL_NormalsVisualizeVar = "0";
+      visOptionsAL_RoughMapShaderVar = "0";
+      visOptionsDecals__debugRender = "0";
+      visOptionsEWorldEditor_dot_renderMissionArea = "1";
+      visOptionsgfx__wireframe = "0";
+      visOptionsLight__renderLightFrustums = "0";
+      visOptionsOcclusionVolume__isRenderable = "1";
+      visOptionsPhysicalZone__renderZones = "1";
+      visOptionsPhysicsWorld__render = "0";
+      visOptionsPlayer__renderCollision = "0";
+      visOptionsPortal__isRenderable = "1";
+      visOptionsScene__disableTerrainOcclusion = "0";
+      visOptionsScene__disableZoneCulling = "0";
+      visOptionsScene__lockCull = "0";
+      visOptionsScene__renderBoundingBoxes = "0";
+      visOptionsSFXEmitter__renderEmitters = "1";
+      visOptionsSFXSpace__isRenderable = "1";
+      visOptionsShadows__disable = "0";
+      visOptionsTerrainBlock__debugRender = "0";
+      visOptionsTrigger__renderTriggers = "1";
+      visOptionsZone__isRenderable = "1";
 };
 //--- OBJECT WRITE END ---

@@ -11,7 +11,7 @@
 //ToolsScrollProfile Style - With Default Dark Background
 //------------------------------------------------------------------------------
 singleton GuiControlProfile( ToolsScrollProfile : ToolsDefaultProfile ) {
-	bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiScrollProfile.png";
+	bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiScrollProfile.png";
    opaque = "1";
    fillColor = "34 34 34 255";
    category = "ToolsContainers";

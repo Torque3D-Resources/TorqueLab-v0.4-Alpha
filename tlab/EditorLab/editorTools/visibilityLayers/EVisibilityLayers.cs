@@ -19,7 +19,17 @@ function EVisibilityLayers::toggleVisibility(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EVisibilityLayers::onShow( %this ) {
-	// Create the array if it doesn't already exist.
+
+	
+	
+
+
+	%this.init();
+	%this.updateOptions();
+}
+//==============================================================================
+function EVisibilityLayers::init( %this ) {
+		// Create the array if it doesn't already exist.
 	if ( !isObject( ar_EVisibilityLayers ) )
 		%array = newArrayObject("ar_EVisibilityLayers");
 
@@ -31,16 +41,12 @@ function EVisibilityLayers::onShow( %this ) {
 	%this.classArray = ar_EVisibilityLayersClass;
 	
 	%this.updatePresetMenu();
-
-
 	if(!$EVisibilityLayers_Initialized) {
 		//EVisibilityLayers.position = visibilityToggleBtn.position;
 		%this.initOptions();
 		%this.addClassOptions();
 		$EVisibilityLayers_Initialized = true;
 	}
-
-	%this.updateOptions();
 }
 //------------------------------------------------------------------------------
 function EVisibilityLayers::updateOptions( %this ) {
@@ -87,6 +93,7 @@ function EVisibilityLayers::updateOptions( %this ) {
 }
 
 function EVisibilityLayers::initOptions( %this ) {
+	ar_EVisibilityLayers.empty();
 // Expose stock visibility/debug options.
 	%this.addOption( "Render: Zones", "$Zone::isRenderable", "" );
 	%this.addOption( "Render: Portals", "$Portal::isRenderable", "" );
@@ -98,7 +105,7 @@ function EVisibilityLayers::initOptions( %this ) {
 	%this.addOption( "Render: Sound Spaces", "$SFXSpace::isRenderable", "" );
 	%this.addOption( "Wireframe Mode", "$gfx::wireframe", "" );
 	%this.addOption( "Debug Render: Player Collision", "$Player::renderCollision", "" );
-	%this.addOption( "Debug Render: Terrain", "TerrainBlock::debugRender", "" );
+	%this.addOption( "Debug Render: Terrain", "$TerrainBlock::debugRender", "" );
 	%this.addOption( "Debug Render: Decals", "$Decals::debugRender", "" );
 	%this.addOption( "Debug Render: Light Frustums", "$Light::renderLightFrustums", "" );
 	%this.addOption( "Debug Render: Bounding Boxes", "$Scene::renderBoundingBoxes", "" );

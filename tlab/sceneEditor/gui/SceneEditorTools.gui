@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiFrameSetCtrl(SceneEditorTools) {
    columns = "0";
-   rows = "0 237";
+   rows = "0 236";
    borderWidth = "4";
    borderColor = "0 0 0 0";
    borderEnable = "alwaysOn";
@@ -16,7 +16,7 @@
    anchorLeft = "1";
    anchorRight = "0";
    position = "0 0";
-   extent = "554 820";
+   extent = "281 820";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "20405";
+      EditorContainer = "20440";
       editorParent = "20405";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -65,7 +65,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "554 233";
+      extent = "281 232";
       minExtent = "8 200";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -236,7 +236,7 @@
          anchorLeft = "0";
          anchorRight = "0";
          position = "5 27";
-         extent = "544 199";
+         extent = "271 198";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -262,7 +262,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 19";
-            extent = "544 180";
+            extent = "271 179";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -284,7 +284,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "5 5";
-               extent = "534 20";
+               extent = "261 20";
                minExtent = "8 20";
                horizSizing = "width";
                vertSizing = "height";
@@ -306,7 +306,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "446 20";
+                  extent = "173 20";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -328,7 +328,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "426 2";
+                     position = "153 2";
                      extent = "18 18";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -359,7 +359,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "422 20";
+                     extent = "149 20";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -384,7 +384,7 @@
                   dynamicPos = "0";
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
-                  position = "450 1";
+                  position = "177 1";
                   extent = "84 18";
                   minExtent = "16 16";
                   horizSizing = "left";
@@ -888,7 +888,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 32";
-               extent = "532 142";
+               extent = "259 141";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -923,8 +923,8 @@
                   compareToObjectID = "1";
                   canRenameObjects = "1";
                   renameInternal = "0";
-                  position = "4 -3228";
-                  extent = "302 3456";
+                  position = "4 -166";
+                  extent = "111 1392";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -934,7 +934,7 @@
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
-                  superClass = "EditorTreeView";
+                  superClass = "SceneObjectsTree";
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };
@@ -1886,7 +1886,7 @@
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "ToolsBoxTitleBar";
+         profile = "ToolsBoxTitle";
          visible = "0";
          active = "1";
          tooltipProfile = "ToolsToolTipProfile";
@@ -2071,7 +2071,7 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "493 1";
+         position = "220 1";
          extent = "20 20";
          minExtent = "16 16";
          horizSizing = "left";
@@ -2102,7 +2102,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsButtonHighlight";
+            profile = "GuiDefaultProfile";
             visible = "0";
             active = "1";
             command = "SceneEditorPlugin.toggleBuildMode();";
@@ -2131,7 +2131,7 @@
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
-            profile = "ToolsButtonHighlight";
+            profile = "GuiDefaultProfile";
             visible = "1";
             active = "1";
             command = "LabParamsDlg.openPluginSettings(\"SceneEditorPlugin\");";
@@ -2160,8 +2160,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 237";
-      extent = "554 583";
+      position = "0 236";
+      extent = "281 584";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -2191,7 +2191,7 @@
          anchorLeft = "0";
          anchorRight = "0";
          position = "6 23";
-         extent = "542 553";
+         extent = "269 554";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -2217,7 +2217,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 19";
-            extent = "542 534";
+            extent = "269 535";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -2240,7 +2240,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 8";
-               extent = "526 15";
+               extent = "253 15";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -2270,7 +2270,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 8";
-               extent = "526 477";
+               extent = "253 478";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -2297,7 +2297,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 0";
-                  extent = "516 976";
+                  extent = "243 921";
                   minExtent = "8 8";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -2307,6 +2307,7 @@
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "1";
+                  class = "SceneInspectorBase";
                   superClass = "EditorInspectorBase";
                   canSave = "1";
                   canSaveDynamicFields = "0";
@@ -2329,8 +2330,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "8 493";
-               extent = "526 33";
+               position = "8 494";
+               extent = "253 33";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -2349,7 +2350,7 @@
                   maxChars = "-1";
                   useURLMouseCursor = "0";
                   position = "2 4";
-                  extent = "522 15";
+                  extent = "249 15";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "top";
@@ -2947,7 +2948,7 @@
                               sbUsesNAColor = "0";
                               reverseTextList = "0";
                               bitmapBounds = "16 16";
-                              text = "default";
+                              text = "Select a preset";
                               maxLength = "1024";
                               docking = "Client";
                               margin = "2 2 0 2";
@@ -3514,7 +3515,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 19";
-            extent = "366 692";
+            extent = "286 534";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -3545,7 +3546,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 24";
-               extent = "350 660";
+               extent = "270 502";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -3569,7 +3570,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "2 4";
-                  extent = "346 60";
+                  extent = "266 54";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -3590,7 +3591,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "346 20";
+                     extent = "266 20";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -3632,7 +3633,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 20";
-                     extent = "346 20";
+                     extent = "266 34";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -3645,65 +3646,57 @@
                      canSave = "1";
                      canSaveDynamicFields = "0";
 
-                     new GuiCheckBoxCtrl() {
-                        text = "New object use selection position ";
-                        groupNum = "-1";
-                        buttonType = "ToggleButton";
-                        useMouseEvents = "0";
-                        position = "7 0";
-                        extent = "255 20";
+                     new GuiTextCtrl() {
+                        text = "World objects dropping mode";
+                        maxLength = "1024";
+                        docking = "Top";
+                        margin = "0 0 0 0";
+                        padding = "0 0 0 0";
+                        anchorTop = "1";
+                        anchorBottom = "0";
+                        anchorLeft = "1";
+                        anchorRight = "0";
+                        position = "0 0";
+                        extent = "266 16";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile";
+                        profile = "ToolsTextAlt";
                         visible = "1";
                         active = "1";
-                        variable = "$SceneEditor_AddObjectCurrentSel";
                         tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
-                        isContainer = "0";
+                        isContainer = "1";
                         canSave = "1";
                         canSaveDynamicFields = "0";
                      };
-                  };
-                  new GuiContainer() {
-                     margin = "0 0 0 0";
-                     padding = "0 0 0 0";
-                     anchorTop = "1";
-                     anchorBottom = "0";
-                     anchorLeft = "1";
-                     anchorRight = "0";
-                     position = "0 40";
-                     extent = "346 20";
-                     minExtent = "8 2";
-                     horizSizing = "right";
-                     vertSizing = "bottom";
-                     profile = "ToolsBoxDarkA";
-                     visible = "1";
-                     active = "1";
-                     tooltipProfile = "ToolsToolTipProfile";
-                     hovertime = "1000";
-                     isContainer = "1";
-                     canSave = "1";
-                     canSaveDynamicFields = "0";
-
-                     new GuiCheckBoxCtrl() {
-                        text = "New object use last selection Z";
-                        groupNum = "-1";
-                        buttonType = "ToggleButton";
-                        useMouseEvents = "0";
-                        position = "7 0";
-                        extent = "255 20";
+                     new GuiPopUpMenuCtrl(EWorldEditorDropMenu1) {
+                        maxPopupHeight = "200";
+                        sbUsesNAColor = "0";
+                        reverseTextList = "0";
+                        bitmapBounds = "16 16";
+                        text = "to terrain";
+                        maxLength = "1024";
+                        docking = "Top";
+                        margin = "0 0 0 0";
+                        padding = "0 0 0 0";
+                        anchorTop = "1";
+                        anchorBottom = "0";
+                        anchorLeft = "1";
+                        anchorRight = "0";
+                        position = "0 16";
+                        extent = "266 18";
                         minExtent = "8 2";
                         horizSizing = "right";
                         vertSizing = "bottom";
-                        profile = "ToolsCheckBoxProfile";
+                        profile = "ToolsDropdownProfile_S1";
                         visible = "1";
                         active = "1";
-                        variable = "$SceneEditor_AddObjectLastZ";
                         tooltipProfile = "ToolsToolTipProfile";
                         hovertime = "1000";
                         isContainer = "0";
+                        internalName = "dropTypeMenu";
+                        superClass = "SceneDropTypeMenu";
                         canSave = "1";
                         canSaveDynamicFields = "0";
                      };
@@ -3719,7 +3712,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "8 4";
-               extent = "350 20";
+               extent = "270 20";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -3743,7 +3736,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "350 20";
+                  extent = "270 20";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";

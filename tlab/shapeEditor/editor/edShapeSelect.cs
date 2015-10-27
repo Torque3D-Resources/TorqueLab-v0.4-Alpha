@@ -5,6 +5,57 @@
 //==============================================================================
 
 //==============================================================================
+// Handle a selection in the MissionGroup shape selector
+function ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd ) {
+	devLog("ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd )", %this, %file,%createCmd );
+	ShapeEd.selectFilePath(%file);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Handle a selection in the shape selector list
+function ShapeEd::selectFilePath( %this, %path ) {
+	// Prompt user to save the old shape if it is dirty
+	if ( ShapeEditor.isDirty() ) {
+		%cmd = "ColladaImportDlg.showDialog( \"" @ %path @ "\", \"ShapeEditor.selectShape( \\\"" @ %path @ "\\\", ";
+		LabMsgYesNoCancel( "Shape Modified", "Would you like to save your changes?", %cmd @ "true );\" );", %cmd @ "false );\" );" );
+	} else {
+		%cmd = "ShapeEditor.selectShape( \"" @ %path @ "\", false );";
+		ColladaImportDlg.showDialog( %path, %cmd );
+	}
+}
+
+//------------------------------------------------------------------------------
+//==============================================================================
+// Handle a selection in the MissionGroup shape selector
+function ShapeEditorPlugin::setSelectedObject( %this, %obj ) {
+	devLog("ShapeEditorPlugin::setSelectedObject( %this, %obj )", %this, %obj );
+	
+	%path = ShapeEditor.getObjectShapeFile( %obj );
+
+	if ( %path !$= "" )
+		ShapeEdSelectWindow.onSelect( %path );
+
+	// Set the object type (for required nodes and sequences display)
+	%objClass = %obj.getClassName();
+	%hintId = -1;
+	%count = ShapeHintGroup.getCount();
+
+	for ( %i = 0; %i < %count; %i++ ) {
+		%hint = ShapeHintGroup.getObject( %i );
+
+		if ( %objClass $= %hint.objectType ) {
+			%hintId = %hint;
+			break;
+		} else if ( isMemberOfClass( %objClass, %hint.objectType ) ) {
+			%hintId = %hint;
+		}
+	}
+
+	ShapeEdHintMenu.setSelected( %hintId );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // Select Object Functions
 //==============================================================================
 

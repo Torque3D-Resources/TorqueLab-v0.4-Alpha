@@ -133,7 +133,7 @@ singleton GuiControlProfile(ToolsTextBase_H1_R : ToolsTextBase_H1) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // TextBase Color A Variation  Profiles
-singleton GuiControlProfile(ToolsTextBaseA : ToolsTextBase)
+singleton GuiControlProfile(ToolsTextColA : ToolsTextBase)
 {
    fontColors[0] = "254 201 127 255";
    fontColors[7] = "255 0 255 255";
@@ -142,7 +142,7 @@ singleton GuiControlProfile(ToolsTextBaseA : ToolsTextBase)
 };
 
 
-singleton GuiControlProfile(ToolsTextBaseA_S1 : ToolsTextBaseA)
+singleton GuiControlProfile(ToolsTextColA_S1 : ToolsTextColA)
 {
    fontType = "Gotham Book";
 };

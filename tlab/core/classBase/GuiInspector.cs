@@ -27,6 +27,7 @@
 //---------------------------------------------------------------------------------------------
 
 function EditorInspectorBase::onAdd( %this ) {
+	//Scene.baseInspectors = strAddWord(Scene.baseInspectors,%this.getId(),true); //Move to sceneObjects Inspector
 	if( !isObject( EditorInspectorBaseDatablockFieldPopup ) )
 		new PopupMenu( EditorInspectorBaseDatablockFieldPopup ) {
 		superClass = "MenuBuilder";

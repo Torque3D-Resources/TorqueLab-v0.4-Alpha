@@ -104,6 +104,9 @@ EditorMap.bind( mouse, zaxis, mouseWheelScroll );
 EditorMap.bind( keyboard, "tab", pressButton0 );
 
 EditorMap.bind( keyboard, "w", moveForward );
+EditorMap.bind( keyboard, "s", moveBackward );
+EditorMap.bind( keyboard, "a", moveleft );
+EditorMap.bind( keyboard, "d", moveright );
 
 EditorMap.bind( mouse, "alt zaxis", editorWheelFadeScroll );
 EditorMap.bindCmd( keyboard, "ctrl o", "toggleDlg(LabSettingsDlg);","" );

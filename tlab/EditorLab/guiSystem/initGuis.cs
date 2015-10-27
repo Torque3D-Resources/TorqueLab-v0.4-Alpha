@@ -60,11 +60,28 @@ function Lab::InitialGuiSetup(%this,%pluginName,%displayName,%alwaysEnable) {
 	StackStartToolbar.isCommon = true;
 	StackEndToolbar.isCommon = true;
 	
+	//---------------------------------------------------------------------------
 	EWorldEditorAlignPopup.clear();
 	EWorldEditorAlignPopup.add("World",0);
 	EWorldEditorAlignPopup.add("Object",1);
-	EWorldEditorAlignPopup.setSelected(0);
-	
+	EWorldEditorAlignPopup.setSelected(0);	
+	//---------------------------------------------------------------------------
+	%dropId = 0;
+	%selDrop = 0;
+	EWorldEditorDropMenu.clear();
+	foreach$(%dropType in $Scene_AllDropTypes){
+		%text = $Scene_DropTypeDisplay[%dropType];
+		if (Scene.dropMode $= %dropType)
+			%selDrop = %dropId;
+		if (%text $= "")
+			continue;
+		EWorldEditorDropMenu.typeId[%dropId] = %dropType;
+		EWorldEditorDropMenu.add("Drop> "@%text,%dropId);
+		%dropId++;
+	}
+	EWorldEditorDropMenu.setSelected(%selDrop);	
+	Scene.dropTypeMenus = strAddWord(Scene.dropTypeMenus,EWorldEditorDropMenu.getId(),true);
+	//---------------------------------------------------------------------------
 	// this will brind EToolDlgCameraTypes to front so that it goes over the menubar
 	EditorGui.pushToBack(EToolDlgCameraTypes);
 	EditorGui.pushToBack(VisibilityDropdown);

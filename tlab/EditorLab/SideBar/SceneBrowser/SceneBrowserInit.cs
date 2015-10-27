@@ -7,7 +7,7 @@ $SceneBrowserMenu_ActivePage = 0;
 //==============================================================================
 //FileBrowserTree.initFiles
 function Lab::initSceneBrowser( %this ) {
-	
+	SceneBrowserTree.currentSet = "";
 	SceneBrowserMenu.clear();
 	SceneBrowserMenu.add("Show plugin objects",0);
 	SceneBrowserMenu.add("Show all objects",1);
@@ -15,8 +15,7 @@ function Lab::initSceneBrowser( %this ) {
 	SceneBrowserMenu.setSelected($SceneBrowserMenu_ActivePage);
 	SceneBrowserTree.rebuild();
 }
-function SceneBrowserMenu::onSelect( %this,%id,%text ) {
-	devLog("SceneBrowserMenu::onSelect( %this,%id,%text )",%this,%id,%text );	
+function SceneBrowserMenu::onSelect( %this,%id,%text ) {	
 	$SceneBrowserMenu_ActivePage = %id;
 	switch$(%id){
 		case "2":
@@ -25,6 +24,4 @@ function SceneBrowserMenu::onSelect( %this,%id,%text ) {
 	}
 	
 }
-
-
 

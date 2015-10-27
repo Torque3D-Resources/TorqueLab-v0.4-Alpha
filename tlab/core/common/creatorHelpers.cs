@@ -26,7 +26,7 @@ function genericCreateObject( %class ) {
 	}
 
 	%cmd = "return new " @ %class @ "();";
-	%obj = SEP_Creator.createObject( %cmd );
+	%obj = Scene.createObject( %cmd );
 	// In case the caller wants it.
 	return %obj;
 }

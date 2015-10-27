@@ -3,15 +3,27 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
 //SceneBrowserTree.rebuild
 function SceneBrowserTree::rebuild( %this ) {
-	%this.clear();
-	%this.open(MissionGroup);
+	%this.setRoot();
+}
+
+function SceneBrowserTree::setRoot( %this,%simSet ) {
+	if (%simSet $= "")
+		%simSet = MissionGroup;
+	
+	if (!isObject(%this.currentSet))
+		%this.currentSet = %this;
+		
+	if (%simSet.getId() !$= %this.currentSet.getId()){
+		%this.clear();
+		%this.open(%simSet);
+	}
+	%this.currentSet = %simSet;
 	%this.buildVisibleTree();	
 }
 
-
+/*
 /// @name EditorPlugin Methods
 /// @{
 function SceneBrowserTree::handleRenameObject( %this, %name, %obj ) {
@@ -58,17 +70,29 @@ function SceneBrowserTree::onObjectDeleteCompleted( %this ) {
 	
 }
 function SceneBrowserTree::onClearSelected(%this) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onClearSelected cancelled for filtering");
+		return;
+	}
 	Scene.onClearSelected();
 	
 }
 
 function SceneBrowserTree::onInspect(%this, %obj) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onInspect cancelled for filtering");
+		return;
+	}
 	Scene.onInspect(%obj);
 }
 
 
 
 function SceneBrowserTree::onAddSelection(%this, %obj, %isLastSelection) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onAddSelection cancelled for filtering");
+		return;
+	}
 	Scene.onAddSelection(%obj, %isLastSelection);
 	
 }
@@ -77,10 +101,18 @@ function SceneBrowserTree::onRemoveSelection(%this, %obj) {
 	
 }
 function SceneBrowserTree::onSelect(%this, %obj) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onSelect cancelled for filtering");
+		return;
+	}
 	Scene.onSelect(%obj);	
 }
 
 function SceneBrowserTree::onUnselect(%this, %obj) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onUnselect cancelled for filtering");
+		return;
+	}
 	Scene.onUnselect(%obj);
 	
 }
@@ -90,11 +122,15 @@ function SceneBrowserTree::onDragDropped(%this) {
 	
 }
 
-function SceneEditorTree::onAddGroupSelected(%this, %group) {
+function SceneBrowserTree::onAddGroupSelected(%this, %group) {
+	if (%this.noCallbacks){
+		devLog("SceneBrowserTree::onAddGroupSelected cancelled for filtering");
+		return;
+	}
 	SceneEd.setNewObjectGroup(%group);
 }
 
-function SceneEditorTree::onRightMouseUp( %this, %itemId, %mouse, %obj ) {
-	SceneEd.showSceneTreeItemContext(%this,%itemId, %mouse, %obj );
-	
+function SceneBrowserTree::onRightMouseUp( %this, %itemId, %mouse, %obj ) {
+	Scene.showSceneTreeItemContext(%this,%itemId, %mouse, %obj );	
 }
+*/

@@ -6,8 +6,7 @@
 
 //==============================================================================
 function SceneBuilderTools::onVisible( %this,%state ) {	
-	if (!%state){
-		devLog("SceneBuilderTools is hidden, set default Vis",EVisibilityLayers.currentPresetFile);
+	if (!%state){		
 		EVisibilityLayers.loadPresetFile(EVisibilityLayers.currentPresetFile);
 	}
 }
@@ -42,12 +41,8 @@ function SceneBuilderTools::getToolClones( %this ) {
 	
 	ETransformTool.cloneToCtrl(SBP_ToolsStack);
 	ECloneTool.cloneToCtrl(SBP_CloneToolsStack);
-	return;
-	SBP_ToolsStack.add(ETransformTool-->toolsStack.deepClone());
-	SBP_CloneToolsStack.add(ECloneTool-->cloneTools.deepClone());
-	
-	SBP_ToolsStack.add(ETransformTool-->toolsStack.deepClone());
-	SBP_CloneToolsStack.add(ECloneTool-->cloneTools.deepClone());
+	foreach(%rollout in SBP_ToolsStack-->toolsStack)
+		%rollout.expanded = 0;	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -72,3 +67,9 @@ function SceneBuilderTools::getMeshRootFolder( %this ) {
 	getFolderName("","SceneBuilderTools.setMeshRootFolder","art/");
 }
 //------------------------------------------------------------------------------
+function SceneBuilderTools::onObjectAdded( %this,%obj ) {
+	devLog("SceneBuilderTools::onObjectAdded:",%obj);
+}
+function SceneBuilderTools::onObjectRemoved( %this,%obj ) {
+	devLog("SceneBuilderTools::onObjectRemoved:",%obj);
+}
