@@ -9,7 +9,7 @@
 function FEP_Manager::buildBrushParams( %this ) {
 	%arCfg = createParamsArray("FEP_Brush",FEP_ManagerBrushProperties);
 	%arCfg.updateFunc = "FEP_Manager.updateSimGroupParam";
-	%arCfg.style = "LabCfgB_230";
+	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
 
 	%arCfg.group[%gid++] = "Group settings" TAB "Stack GroupStack";

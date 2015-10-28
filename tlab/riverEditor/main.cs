@@ -53,7 +53,6 @@ function initializeRiverEditor() {
 }
 function execRiverEd(%loadGui) {
 	if (%loadGui) {
-		exec( "tlab/riverEditor/riverEditorProfiles.cs" );
 		exec( "tlab/riverEditor/gui/riverEditorGui.gui" );
 		exec( "tlab/riverEditor/gui/RiverEditorTools.gui" );
 		exec( "tlab/riverEditor/gui/riverEditorToolbar.gui" );

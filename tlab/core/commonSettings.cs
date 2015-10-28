@@ -14,26 +14,32 @@ function Lab::initCommonParams( %this ) {
 //==============================================================================
 //COMMON EDITOR SETTINGS
 	//Binds and inputs
-	%gid = 0;
-	%ar = %this.newParamsArray("Input","Common","",true);
+/*	%gid = 0;
+	%ar = %this.newParamsArray("Input","Common","");
 	%ar.group[%gid++] = "Mouse settings";
-	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "sliderOnly" TAB "range>>0 1.5;;precision>>2" TAB "$Cfg_MouseSpeed" TAB %gid);
-	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "sliderOnly" TAB "range>>0 3.15;;precision>>2" TAB "$Cfg_MouseScrollSpeed" TAB %gid);
-	//General
+	%ar.prefGroup = "$Mouse::";
+	%ar.autoSyncPref = true;
+	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "$Mouse::CameraSpeed" TAB %gid);
+	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "" TAB %gid);
+	*///General
 	%gid = 0;
-	%ar = %this.newParamsArray("General","Common","",true);
+	%ar = %this.newParamsArray("General","Common","",false);
 	%ar.group[%gid++] = "General Lab Editor settings";
 	%ar.setVal("undoLimit",       "40" TAB "undoLimit" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);	
 	%ar.setVal("TorsionPath",       "C:\Program Files (x86)\Torsion" TAB "Path to Torsion" TAB "TextEdit_2l" TAB "" TAB "$Cfg_TorsionPath" TAB %gid);
 	%ar.setVal("useNativeMenu",       "0" TAB "Use the native menu" TAB "Checkbox" TAB "" TAB "Lab.setNativeMenuSystem(**);" TAB %gid);
 	%ar.setVal("newLevelFile",       "tlab/levels/BlankRoom.mis" TAB "newLevelFile" TAB "FileSelect" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("levelsDirectory",       "levels" TAB "levelsDirectory" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	//Camera
 	%gid = 0;
-	%ar = %this.newParamsArray("Camera","Common");
+	%ar = %this.newParamsArray("Camera","Common","");
+	%ar.prefGroup = "$Camera::";
+	%ar.autoSyncPref = true;
+	%ar.generalSyncFunc = "Lab.syncCameraGui();";
 	%ar.group[%gid++] = "Camera views settings";
-	%ar.setVal("cameraSpeed",      "1" TAB "Camera movement speed" TAB "sliderOnly" TAB "range>>0 200;;precision>>0" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("movementSpeed",      "1" TAB "Camera movement speed" TAB "sliderEdit" TAB "range>>0 500;;tickat>>1" TAB "$Camera::movementSpeed"TAB %gid);
+	%ar.setVal("cameraSpeed",      "1" TAB "Camera speed" TAB "SliderEdit" TAB "range>>0 200;;precision>>0" TAB "$Camera::cameraSpeed"TAB %gid);
 	%ar.setVal("CamViewEnabled",       "1" TAB "CamViewEnabled" TAB "CheckBox" TAB "" TAB "ECamViewGui.setState(**);" TAB %gid);
 	%ar.setVal("cameraDisplayMode",       "Standard Camera" TAB "Initial Camera Mode" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("cameraDisplayType",       $EditTsCtrl::DisplayTypePerspective TAB "cameraDisplayType" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
@@ -41,6 +47,32 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("orthoFOV",       "50" TAB "orthoFOV" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("renderOrthoGrid",       "1" TAB "renderOrthoGrid" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
+	%ar.setVal("MouseMoveMultiplier",      "1" TAB "Mouse camera speed scalar" TAB "sliderEdit" TAB "range>>0 5;;tickat>>0.01" TAB "$Camera::MouseMoveMultiplier" TAB %gid);
+	%ar.setVal("MouseScrollMultiplier",      "1" TAB "Mouse camera scroll scalar" TAB "sliderEdit" TAB "range>>0 5;;tickat>>0.01" TAB "$Camera::MouseScrollMultiplier" TAB %gid);
+	
+//==============================================================================
+//Development EDITOR SETTINGS
+
+	//Binds and inputs
+	%gid = 0;
+	%ar = %this.newParamsArray("Console","Development" TAB "Dev","",true);
+	%ar.prefGroup = "$pref::Console::";
+	%ar.autoSyncPref = true;
+	%ar.prefModeOnly = true;
+
+	//%ar.style = "StyleA";
+	%ar.group[%gid++] = "Main editor frame";	
+	%ar.setVal("TraceLogLevel",      "1" TAB "TraceLogLevel" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowNotes",      "1" TAB "ShowNotes" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowInfos",      "1" TAB "ShowInfos" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("DevLogLevel",      "1" TAB "DevLogLevel" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("ShowParamLog",      "1" TAB "ShowParamLog" TAB "Checkbox" TAB "" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseLog",      "0" TAB "MouseLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseDragLog",      "0" TAB "MouseDragLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseDragLogDelay",      "0.8" TAB "MouseDragLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseMoveLog",      "0" TAB "MouseMoveLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
+	%ar.setVal("MouseMoveLogDelay",      "0.8" TAB "MouseMoveLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
+	
 //==============================================================================
 //Interface EDITOR SETTINGS
 $FrameMainSizes = "Thin Normal Large";
@@ -79,7 +111,12 @@ $FrameMainSizes = "Thin Normal Large";
 	%gid = 0;
 	%ar = %this.newParamsArray("GridUnit","WorldEditor");
 	%ar.group[%gid++] = "Editor grids and units settings";
-	%ar.setVal("gridSize",      "1" TAB "Grid size" TAB "SliderEdit" TAB "range>>0 20;;ticks>>79;;snap>>1;;precision>>0" TAB "EWorldEditor.setGridSize(**);" TAB %gid);
+	%ar.prefGroup = "$WEditor::";
+	%ar.autoSyncPref = true;
+	%ar.setVal("gridSize",      "1" TAB "Grid size" TAB "SliderEdit" TAB "range>>0 20;;ticks>>79;;snap>>1;;precision>>0" TAB "EWorldEditor>>Lab.setGridSize(**);" TAB %gid);
+	%ar.setVal("forceToGrid",      "1" TAB "Force object to fit grid" TAB "Checkbox" TAB "" TAB "$WEditor::forceToGrid" TAB %gid);
+	%ar.setVal("gridSystem",      "1" TAB "Base grid system" TAB "dropDown" TAB "fieldList>>Metric \tPower of 2" TAB "" TAB %gid);
+	%ar.setVal("gridStep",      "1" TAB "Grid size steps" TAB "TextEdit" TAB "" TAB "" TAB %gid);
 	//Objects manipulation
 	%gid = 0;
 	%ar = %this.newParamsArray("Objects","WorldEditor");
@@ -91,7 +128,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.setVal("dropType",       "screenCenter" TAB "dropType" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("forceLoadDAE",       "0" TAB "forceLoadDAE" TAB "CheckBox" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("fadeIcons",       "1" TAB "fadeIcons" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
-	%ar.setVal("fadeIconsDist",       "8" TAB "fadeIconsDist" TAB "TextEdit" TAB "EWorldEditor" TAB "" TAB %gid);
+	%ar.setVal("fadeIconsDist",       "8" TAB "fadeIconsDist" TAB "TextEdit"  TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("boundingBoxCollision",       "0" TAB "boundingBoxCollision" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("dropAtScreenCenterScalar",       "1.0" TAB "dropAtScreenCenterScalar" TAB "TextEdit" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("dropAtScreenCenterMax",       "100.0" TAB "dropAtScreenCenterMax" TAB "TextEdit" TAB "EWorldEditor" TAB "" TAB %gid);
@@ -119,13 +156,14 @@ $FrameMainSizes = "Thin Normal Large";
 	%gid = 0;
 	%ar = %this.newParamsArray("AxisGizmo","WorldEditor");
 	%ar.group[%gid++] = "Axis gizmo settings";	
-	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorSlider" TAB "mode>>int" TAB "Lab.setGizmoGridColor(*val*);" TAB %gid);
-	%ar.setVal("gridSize",       "10" TAB "gridSize" TAB "SliderEdit" TAB "range>>0 200" TAB "Lab.setGizmoGridSize(**);" TAB %gid);
+	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorSlider" TAB "mode>>int" TAB "GlobalGizmoProfile>>Lab.setGizmoGridColor(*val*);" TAB %gid);
+	%ar.setVal("gridSize",       "10" TAB "gridSize" TAB "SliderEdit" TAB "range>>0 200" TAB "GlobalGizmoProfile>>Lab.setGizmoGridSize(**);" TAB %gid);
 	%ar.setVal("planeDim",       "500" TAB "planeDim" TAB "SliderEdit" TAB "range>>0 1000" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("screenLength",       "100" TAB "Gizmo size" TAB "SliderEdit" TAB "range>>0 200;;validate>>flen 2" TAB "GlobalGizmoProfile" TAB "flen 1" TAB %gid);
-	%ar.setVal("rotateScalar",       "0.8" TAB "rotateScalar" TAB "SliderEdit" TAB "range>>0 2;;tickAt>>0.01" TAB "Lab.setGizmoScalar(\"rotate\",**);" TAB %gid);
-	%ar.setVal("scaleScalar",       "0.8" TAB "scaleScalar" TAB "SliderEdit" TAB "range>>0 2;;tickAt>>0.01" TAB "Lab.setGizmoScalar(\"scale\",**);" TAB %gid);
-	%ar.setVal("snapToGrid",       "0" TAB "snapToGrid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
+	%ar.setVal("rotateScalar",       "0.8" TAB "rotateScalar" TAB "SliderEdit" TAB "range>>0 2;;tickAt>>0.01" TAB "GlobalGizmoProfile>>Lab.setGizmoScalar(\"rotate\",**);" TAB %gid);
+	%ar.setVal("scaleScalar",       "0.8" TAB "scaleScalar" TAB "SliderEdit" TAB "range>>0 2;;tickAt>>0.01" TAB "GlobalGizmoProfile>>Lab.setGizmoScalar(\"scale\",**);" TAB %gid);
+	%ar.setVal("snapToGrid",       "0" TAB "snapToGrid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile>>Lab.setGridSnap(**);" TAB %gid);
+	%ar.setVal("alwaysRotationSnap",       "0" TAB "Always snap rotation" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("allowSnapRotations",       "0" TAB "allowSnapRotations" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("rotationSnap",       "15" TAB "rotationSnap" TAB "SliderEdit" TAB "range>>0 45;;tickAt 1" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("allowSnapScale",       "0" TAB "allowSnapScale" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);

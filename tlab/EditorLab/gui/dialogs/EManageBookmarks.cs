@@ -300,7 +300,7 @@ function EManageBookmarks::addBookmark( %this, %mark, %index ) {
 			canSave = "1";
 			Visible = "1";
 			Command = "";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			ToolTip = "Go to bookmark";
 			hovertime = "1000";
 			internalName = "goToBookmark";
@@ -309,7 +309,7 @@ function EManageBookmarks::addBookmark( %this, %mark, %index ) {
 		new GuiTextEditCtrl() {
 			class = "EManageBookmarksTextEdit";
 			internalName = "BookmarkName";
-			profile="ToolsTextEditProfile";
+			profile="ToolsTextEdit";
 			HorizSizing = "width";
 			VertSizing = "bottom";
 			position = "22 2";
@@ -334,7 +334,7 @@ function EManageBookmarks::addBookmark( %this, %mark, %index ) {
 			canSave = "1";
 			Visible = "1";
 			Command = "";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			ToolTip = "Delete camera bookmark";
 			hovertime = "1000";
 			internalName = "deleteBookmark";

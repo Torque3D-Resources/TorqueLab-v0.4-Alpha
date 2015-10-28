@@ -27,7 +27,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"None\"; ForestEditorGui.setActiveTool(ForestTools->SelectionTool);";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Select Item (1)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/arrow";
@@ -48,7 +48,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"Move\"; ForestEditorGui.setActiveTool(ForestTools->SelectionTool);";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Move Item (2)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/translate";
@@ -69,7 +69,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"Rotate\"; ForestEditorGui.setActiveTool(ForestTools->SelectionTool);";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Rotate Item (3)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/rotate";
@@ -90,7 +90,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"Scale\"; ForestEditorGui.setActiveTool(ForestTools->SelectionTool);";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Scale Item (4)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/scale";
@@ -111,7 +111,7 @@
       canSave = "1";
       Visible = "1";
       Command = "ForestEditorGui.setActiveTool( ForestTools->BrushTool ); ForestTools->BrushTool.mode = \"Paint\";";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Paint (5)";
       hovertime = "1000";
       bitmap = "tlab/foresteditor/images/paint-forest-btn";
@@ -132,7 +132,7 @@
       canSave = "1";
       Visible = "1";
       Command = "ForestEditorGui.setActiveTool( ForestTools->BrushTool ); ForestTools->BrushTool.mode = \"Erase\";";      
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Erase (6)";
       hovertime = "1000";
       bitmap = "tlab/foresteditor/images/erase-all-btn";
@@ -154,7 +154,7 @@
       canSave = "1";
       Visible = "1";
       Command = "ForestEditorGui.setActiveTool( ForestTools->BrushTool ); ForestTools->BrushTool.mode = \"EraseSelected\";";  
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Erase Selected (7)";
       hovertime = "1000";
       bitmap = "tlab/foresteditor/images/erase-element-btn";

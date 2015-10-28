@@ -1,0 +1,410 @@
+From 66c49e8d48d209f423ec6b40c83f316aea9b9449 Mon Sep 17 00:00:00 2001
+From: Mud-H <marc>
+Date: Fri, 23 Oct 2015 14:54:19 -0400
+Subject: [PATCH] TorqueLab required code changes Part1
+
+---
+ .../environment/editors/guiMeshRoadEditorCtrl.cpp  | 10 ++++
+ .../environment/editors/guiMeshRoadEditorCtrl.h    |  1 +
+ .../environment/editors/guiRiverEditorCtrl.cpp     |  5 ++
+ .../environment/editors/guiRoadEditorCtrl.cpp      |  5 ++
+ Engine/source/forest/editor/forestBrushTool.cpp    | 18 +++++--
+ Engine/source/forest/editor/forestBrushTool.h      |  3 +-
+ Engine/source/gui/editor/guiInspector.cpp          |  4 +-
+ Engine/source/gui/editor/guiMenuBar.cpp            | 21 +++++---
+ Engine/source/gui/worldEditor/gizmo.cpp            |  8 ++-
+ Engine/source/gui/worldEditor/gizmo.h              |  1 +
+ Engine/source/gui/worldEditor/terrainEditor.cpp    | 46 ++++++++++++++++
+ Engine/source/gui/worldEditor/terrainEditor.h      |  1 +
+ Engine/source/gui/worldEditor/worldEditor.cpp      |  3 ++
+ Engine/source/terrain/terrData.h                   |  1 +
+ Engine/source/terrain/terrExport.cpp               | 61 ++++++++++++++++++++++
+ 15 files changed, 174 insertions(+), 14 deletions(-)
+
+diff --git a/Engine/source/environment/editors/guiMeshRoadEditorCtrl.cpp b/Engine/source/environment/editors/guiMeshRoadEditorCtrl.cpp
+index 117b30f..48936f1 100644
+--- a/Engine/source/environment/editors/guiMeshRoadEditorCtrl.cpp
++++ b/Engine/source/environment/editors/guiMeshRoadEditorCtrl.cpp
+@@ -1278,3 +1278,13 @@ DefineConsoleMethod( GuiMeshRoadEditorCtrl, matchTerrainToRoad, void, (), , "" )
+ {
+    object->matchTerrainToRoad();
+ }
++//TorqueLab Added to change node from script
++DefineConsoleMethod(GuiMeshRoadEditorCtrl, setSelectedNode, void, (S32 node), , "")
++{
++	object->setSelectedNode(node);
++}
++DefineConsoleMethod(GuiMeshRoadEditorCtrl, getSelectedNode, S32, (), , "")
++{
++	return object->getSelectedNode();
++}
++//TorqueLab Added to change node from script
+\ No newline at end of file
+diff --git a/Engine/source/environment/editors/guiMeshRoadEditorCtrl.h b/Engine/source/environment/editors/guiMeshRoadEditorCtrl.h
+index 3109c53..9f624f0 100644
+--- a/Engine/source/environment/editors/guiMeshRoadEditorCtrl.h
++++ b/Engine/source/environment/editors/guiMeshRoadEditorCtrl.h
+@@ -92,6 +92,7 @@ class GuiMeshRoadEditorCtrl : public EditTSCtrl
+       void setSelectedRoad( MeshRoad *road );
+       MeshRoad* getSelectedRoad() { return mSelRoad; };
+       void setSelectedNode( S32 node );
++	  S32 getSelectedNode() { return mSelNode; }; //TorqueLab Added for script side NodeManager
+ 
+       F32 getNodeWidth();
+       void setNodeWidth( F32 width );
+diff --git a/Engine/source/environment/editors/guiRiverEditorCtrl.cpp b/Engine/source/environment/editors/guiRiverEditorCtrl.cpp
+index d7f86d1..339c25f 100644
+--- a/Engine/source/environment/editors/guiRiverEditorCtrl.cpp
++++ b/Engine/source/environment/editors/guiRiverEditorCtrl.cpp
+@@ -1479,3 +1479,8 @@ DefineConsoleMethod( GuiRiverEditorCtrl, regenerate, void, (), , "" )
+    if ( river )
+       river->regenerate();
+ }
++//TorqueLab Added to change node from script
++DefineConsoleMethod(GuiRiverEditorCtrl, setSelectedNode, void, (S32 node), , "")
++{
++	object->setSelectedNode(node);
++}
+diff --git a/Engine/source/environment/editors/guiRoadEditorCtrl.cpp b/Engine/source/environment/editors/guiRoadEditorCtrl.cpp
+index 167a5db..ba073fd 100644
+--- a/Engine/source/environment/editors/guiRoadEditorCtrl.cpp
++++ b/Engine/source/environment/editors/guiRoadEditorCtrl.cpp
+@@ -1105,3 +1105,8 @@ DefineConsoleMethod( GuiRoadEditorCtrl, deleteRoad, void, (), , "" )
+ {
+    object->deleteSelectedRoad();
+ }
++//TorqueLab Added to change node from script
++DefineConsoleMethod(GuiRoadEditorCtrl, setSelectedNode, void, (S32 node), , "")
++{
++	object->setSelectedNode(node);
++}
+\ No newline at end of file
+diff --git a/Engine/source/forest/editor/forestBrushTool.cpp b/Engine/source/forest/editor/forestBrushTool.cpp
+index 54a2375..ea5667c 100644
+--- a/Engine/source/forest/editor/forestBrushTool.cpp
++++ b/Engine/source/forest/editor/forestBrushTool.cpp
+@@ -40,7 +40,7 @@
+ #include "math/mRandomDeck.h"
+ #include "math/mRandomSet.h"
+ 
+-
++F32 ForestBrushTool::smGlobalScale = 1.0f; //TorqueLab - Forest global scale Init
+ bool ForestBrushTool::protectedSetSize( void *object, const char *index, const char *data )
+ {
+    ForestBrushTool *tool = static_cast<ForestBrushTool*>( object );
+@@ -122,7 +122,14 @@ void ForestBrushTool::initPersistFields()
+ 
+    Parent::initPersistFields();
+ }
+-
++//TorqueLab - Forest brush tool new console variables
++void ForestBrushTool::consoleInit()
++{
++	//TorqueLab - Forest global scale - Apply global scaling to painted elements
++	Con::addVariable("$Forest::GlobalScale", TypeF32, &ForestBrushTool::smGlobalScale, "For editor use.\n"
++		"@ingroup Editors\n");
++	Parent::consoleInit();
++}
+ bool ForestBrushTool::onAdd()
+ {
+    if ( !Parent::onAdd() )
+@@ -379,7 +386,10 @@ void ForestBrushTool::_paint( const Point3F &point )
+ 
+       randElementSet.add( pElement, pElement->mProbability );
+    }
+-   
++   //TorqueLab - Check forest global scale
++   if (smGlobalScale <= 0.01)
++	   smGlobalScale = 0.01f;
++
+    // Pull elements from the random set until we would theoretically fill
+    // the desired area.
+ 
+@@ -403,6 +413,8 @@ void ForestBrushTool::_paint( const Point3F &point )
+ 
+       areaLeft -= area * 5.0f; // fudge value
+ 
++	  scaleFactor *= smGlobalScale; //TorqueLab - Add forest global scale
++
+       // No room left we are done.
+       //if ( areaLeft < 0.0f )
+       //   break;
+diff --git a/Engine/source/forest/editor/forestBrushTool.h b/Engine/source/forest/editor/forestBrushTool.h
+index 0debad6..5436497 100644
+--- a/Engine/source/forest/editor/forestBrushTool.h
++++ b/Engine/source/forest/editor/forestBrushTool.h
+@@ -64,7 +64,8 @@ public:
+    static void initPersistFields();
+    virtual bool onAdd();
+    virtual void onRemove();
+-
++   static void consoleInit(); //TorqueLab - New console variables
++   static F32 smGlobalScale; //TorqueLab - Forest global scale
+    // ForestTool
+    virtual void on3DMouseDown( const Gui3DMouseEvent &evt );
+    virtual void on3DMouseUp( const Gui3DMouseEvent &evt );
+diff --git a/Engine/source/gui/editor/guiInspector.cpp b/Engine/source/gui/editor/guiInspector.cpp
+index af12b28..c759c28 100644
+--- a/Engine/source/gui/editor/guiInspector.cpp
++++ b/Engine/source/gui/editor/guiInspector.cpp
+@@ -45,7 +45,7 @@ ConsoleDocClass( GuiInspector,
+ //-----------------------------------------------------------------------------
+ 
+ GuiInspector::GuiInspector()
+- : mDividerPos( 0.35f ),
++  : mDividerPos(0.65f), //TorqueLab Adv (0.35f)
+    mDividerMargin( 5 ),
+    mOverDivider( false ),
+    mMovingDivider( false ),
+@@ -69,7 +69,7 @@ void GuiInspector::initPersistFields()
+    addGroup( "Inspector" );
+    
+       addField( "dividerMargin", TypeS32, Offset( mDividerMargin, GuiInspector ) );
+-
++	  addField("dividerPos", TypeF32, Offset(mDividerPos, GuiInspector)); //TorqueLab Adv - Custom Divider Pos
+       addField( "groupFilters", TypeRealString, Offset( mGroupFilters, GuiInspector ), 
+          "Specify groups that should be shown or not. Specifying 'shown' implicitly does 'not show' all other groups. Example string: +name -otherName" );
+ 
+diff --git a/Engine/source/gui/editor/guiMenuBar.cpp b/Engine/source/gui/editor/guiMenuBar.cpp
+index 35189b0..3aaf571 100644
+--- a/Engine/source/gui/editor/guiMenuBar.cpp
++++ b/Engine/source/gui/editor/guiMenuBar.cpp
+@@ -1017,12 +1017,14 @@ GuiMenuBar::MenuItem* GuiMenuBar::findSubmenuItem(MenuItem *menuItem, const char
+ //  Add a menuitem to the given submenu
+ void GuiMenuBar::addSubmenuItem(Menu *menu, MenuItem *submenu, const char *text, U32 id, const char *accelerator, S32 checkGroup)
+ {
+-   // Check that the given menu item supports a submenu
+-   if(submenu && !submenu->isSubmenu)
+-   {
+-      Con::errorf("GuiMenuBar::addSubmenuItem: Attempting to add menuitem '%s' to an invalid submenu",text);
+-	  return;
+-   }
++   // Check that the given menu item supports a submenu//TorqueLab isSubmenu check removed and simply validate the submenu object
++	//if(submenu && !submenu->isSubmenu)
++	if (!submenu)
++	{
++		Con::errorf("GuiMenuBar::addSubmenuItem: Attempting to add menuitem '%s' to an invalid submenu", text);
++		return;
++	}
++	submenu->isSubmenu = true;//TorqueLab => Force isSubmenu to true (hack)
+ 
+    // allocate the new menu item
+    MenuItem *newMenuItem = new MenuItem;
+@@ -1046,6 +1048,13 @@ void GuiMenuBar::addSubmenuItem(Menu *menu, MenuItem *submenu, const char *text,
+    //  Point back to the submenu's menu
+    newMenuItem->submenuParentMenu = menu;
+ 
++   //TorqueLab : Added to make sure there's a menu to add the item
++   if (!submenu->submenu){
++	   Menu *newMenu = sCreateMenu(submenu->text, submenu->id);
++	   submenu->submenu = newMenu;
++   }
++   //TorqueLab end
++
+    // link it into the menu's menu item list
+    MenuItem **walk = &submenu->submenu->firstMenuItem;
+    while(*walk)
+diff --git a/Engine/source/gui/worldEditor/gizmo.cpp b/Engine/source/gui/worldEditor/gizmo.cpp
+index 7ae3251..f3d2543 100644
+--- a/Engine/source/gui/worldEditor/gizmo.cpp
++++ b/Engine/source/gui/worldEditor/gizmo.cpp
+@@ -243,6 +243,7 @@ void GizmoProfile::initPersistFields()
+ 
+    addField( "snapToGrid",          TypeBool,   Offset(snapToGrid, GizmoProfile) );
+    addField( "allowSnapRotations",  TypeBool,   Offset(allowSnapRotations, GizmoProfile) );
++   addField("alwaysRotationSnap", TypeBool, Offset(alwaysRotationSnap, GizmoProfile));//TorqueLab added always snap
+    addField( "rotationSnap",        TypeF32,    Offset(rotationSnap, GizmoProfile) );
+    addField( "allowSnapScale",      TypeBool,   Offset(allowSnapScale, GizmoProfile) );
+    addField( "scaleSnap",           TypeF32,    Offset(scaleSnap, GizmoProfile) );
+@@ -1085,8 +1086,11 @@ void Gizmo::on3DMouseDragged( const Gui3DMouseEvent & event )
+       angle *= 0.02f; // scale down to not require rotate scalar to be microscopic
+ 
+       //
+-      if( mProfile->allowSnapRotations && event.modifier & SI_SHIFT )
+-         angle = mDegToRad( _snapFloat( mRadToDeg( angle ), mProfile->rotationSnap ) );
++      //if( mProfile->allowSnapRotations && event.modifier & SI_SHIFT )
++        // angle = mDegToRad( _snapFloat( mRadToDeg( angle ), mProfile->rotationSnap ) );
++
++	  if (mProfile->allowSnapRotations && (event.modifier & SI_SHIFT || mProfile->alwaysRotationSnap)) //TorqueLab Added always snap option
++		  angle = mDegToRad(_snapFloat(mRadToDeg(angle), mProfile->rotationSnap));
+ 
+       mDeltaAngle = angle - mLastAngle;
+       mLastAngle = angle;         
+diff --git a/Engine/source/gui/worldEditor/gizmo.h b/Engine/source/gui/worldEditor/gizmo.h
+index d33a995..94baecd 100644
+--- a/Engine/source/gui/worldEditor/gizmo.h
++++ b/Engine/source/gui/worldEditor/gizmo.h
+@@ -108,6 +108,7 @@ public:
+    bool allowSnapScale;
+    F32 rotationSnap;
+    bool allowSnapRotations;
++   bool alwaysRotationSnap; //TorqueLab Added always snap
+ 
+    bool renderWhenUsed;
+    bool renderInfoText;
+diff --git a/Engine/source/gui/worldEditor/terrainEditor.cpp b/Engine/source/gui/worldEditor/terrainEditor.cpp
+index 84dbe3c..4c23e8c 100644
+--- a/Engine/source/gui/worldEditor/terrainEditor.cpp
++++ b/Engine/source/gui/worldEditor/terrainEditor.cpp
+@@ -2933,3 +2933,49 @@ DefineEngineMethod( TerrainEditor, autoMaterialLayer, void, (F32 minHeight, F32
+ {
+    object->autoMaterialLayer( minHeight,maxHeight, minSlope, maxSlope, coverage );  
+ }
++//------------------------------------------------------------------------------ 
++/// TorqueLab - Get the active terrain height range
++Point3F TerrainEditor::getHeightRange(bool fullReport)
++{
++	if (!mActiveTerrain)
++		return Point3F(-1.0f, -1.0f, -1.0f);
++	F32 minHeight = 9999.99f;
++	F32 maxHeight = 0.0f;
++	U32 terrBlocks = mActiveTerrain->getBlockSize();
++	for (U32 y = 0; y < terrBlocks; y++)
++	{
++		for (U32 x = 0; x < terrBlocks; x++)
++		{
++			// get info  
++			GridPoint gp;
++			gp.terrainBlock = mActiveTerrain;
++			gp.gridPos.set(x, y);
++
++			//GridInfo gi;
++			//getGridInfo(gp, gi);
++
++
++			Point3F wp;
++			gridToWorld(gp, wp);
++
++			if (wp.z < minHeight)
++				minHeight = wp.z;
++
++			if (wp.z > maxHeight)
++				maxHeight = wp.z;
++		}
++	}
++
++	F32 heightRange = maxHeight - minHeight;
++	return Point3F(heightRange, minHeight, maxHeight);
++}
++DefineEngineMethod(TerrainEditor, getHeightRange, Point3F, (bool fullReport), (false),
++	"Get the height range of active terrain.\n"
++	"@return Return the heightRange (maxHeight - minHeight)."
++	"@param maxHeight Maximum terrain height."
++	"@param minSlope Minimum terrain slope."
++	"@param maxSlope Maximum terrain slope."
++	"@param coverage Terrain coverage amount.")
++{
++	return object->getHeightRange(fullReport);
++}
+\ No newline at end of file
+diff --git a/Engine/source/gui/worldEditor/terrainEditor.h b/Engine/source/gui/worldEditor/terrainEditor.h
+index 1b5d7cc..1e0746e 100644
+--- a/Engine/source/gui/worldEditor/terrainEditor.h
++++ b/Engine/source/gui/worldEditor/terrainEditor.h
+@@ -231,6 +231,7 @@ class TerrainEditor : public EditTSCtrl
+       void onMaterialUndo( TerrainBlock *terr );
+ 
+       void autoMaterialLayer( F32 mMinHeight, F32 mMaxHeight, F32 mMinSlope, F32 mMaxSlope, F32 mCoverage );
++	  Point3F getHeightRange(bool fullReport); //TorqueLab
+ 
+ 	private:	
+ 
+diff --git a/Engine/source/gui/worldEditor/worldEditor.cpp b/Engine/source/gui/worldEditor/worldEditor.cpp
+index 0273ffe..255a57b 100644
+--- a/Engine/source/gui/worldEditor/worldEditor.cpp
++++ b/Engine/source/gui/worldEditor/worldEditor.cpp
+@@ -2232,6 +2232,9 @@ void WorldEditor::on3DMouseDragged(const Gui3DMouseEvent & event)
+             
+             copySelection( mSelected );
+             pasteSelection( false );
++
++			//TorqueLab -> Needed to know a dragCopy happen
++			Con::executef(this, "onDragCopy", mSelected->getIdString());
+          }
+          
+          // Check for grid snap toggle with ALT.
+diff --git a/Engine/source/terrain/terrData.h b/Engine/source/terrain/terrData.h
+index 2982de3..6455019 100644
+--- a/Engine/source/terrain/terrData.h
++++ b/Engine/source/terrain/terrData.h
+@@ -266,6 +266,7 @@ public:
+ #ifdef TORQUE_TOOLS
+    bool exportHeightMap( const UTF8 *filePath, const String &format ) const;
+    bool exportLayerMaps( const UTF8 *filePrefix, const String &format ) const;
++   bool exportSingleLayerMap(S32 layerId, const UTF8 *filePrefix, const String &format) const; //TorqueLab - Export single layer
+ #endif
+ 
+ public:
+diff --git a/Engine/source/terrain/terrExport.cpp b/Engine/source/terrain/terrExport.cpp
+index 8941c8b..6c06556 100644
+--- a/Engine/source/terrain/terrExport.cpp
++++ b/Engine/source/terrain/terrExport.cpp
+@@ -152,4 +152,65 @@ DefineConsoleMethod( TerrainBlock, exportLayerMaps, bool, (const char * filePref
+ 
+    return object->exportLayerMaps( filePrefix, format );
+ }
++//------------------------------------------------------------------------------ 
++/// TorqueLab - Export a single terrain layer map
++bool TerrainBlock::exportSingleLayerMap(S32 layerId, const UTF8 *filePrefix, const String &format) const
++{
++	if (layerId < 0 || layerId >= mFile->mMaterials.size())
++	{
++		Con::errorf("TerrainEditor::exportSingleLayerMap - index out of range!");
++		return false;
++	}
++
++
++	Vector<const U8>::iterator iBits = mFile->mLayerMap.begin();
++
++	GBitmap output(mFile->mSize,
++		mFile->mSize,
++		false,
++		GFXFormatA8);
++
++	// Copy the layer data.
++	U8 *oBits = (U8*)output.getWritableBits();
++	dMemset(oBits, 0, mFile->mSize * mFile->mSize);
++
++	for (S32 y = 0; y < mFile->mSize; y++)
++	{
++		for (S32 x = 0; x < mFile->mSize; x++)
++		{
++			if (*iBits == layerId)
++				*oBits = 0xFF;
++			++iBits;
++			++oBits;
++		}
++	}
++
++	// Whats the full file name for this layer.
++	UTF8 filePath[1024];
++	dSprintf(filePath, 1024, "%s_%d_%s.%s", filePrefix, layerId, mFile->mMaterials[layerId]->getInternalName(), format.c_str());
++
++	FileStream stream;
++	if (!stream.open(filePath, Torque::FS::File::Write))
++	{
++		Con::errorf("TerrainBlock::exportLayerMaps() - Error opening file for writing: %s !", filePath);
++		return false;
++	}
++
++	if (!output.writeBitmap(format, stream))
++	{
++		Con::errorf("TerrainBlock::exportLayerMaps() - Error writing %s: %s !", format.c_str(), filePath);
++		return false;
++	}
++
++
++	return true;
++}
++DefineConsoleMethod(TerrainBlock, exportSingleLayerMap, bool, (S32 layerId, const char * filePrefixStr, const char * format), ("png"), "(string filePrefix, [string format]) - export the terrain block's layer maps to bitmap files (default: png)")
++{
++	UTF8 filePrefix[1024];
++	Con::expandScriptFilename(filePrefix, sizeof(filePrefix), filePrefixStr);
++
++	return object->exportSingleLayerMap(layerId, filePrefix, format);
++}
+ #endif
++
+-- 
+1.9.5.msysgit.0
+

@@ -22,6 +22,47 @@ function LabParamsDlg::rebuildAll( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+//LabParamsDlg.openPluginSettings("MaterialEditorPlugin");
+function LabParamsDlg::openPluginSettings( %this,%pluginObj) {
+	%this.openSettings(%pluginObj.displayName);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//LabParamsDlg.openPluginSettings("MaterialEditorPlugin");
+function LabParamsDlg::toggleSettings( %this,%text) {
+	
+	%id = LabParamsTree.findItemByName(%text);
+	if (%id <= 0)
+		return;
+	%selected = false;
+	if (%id $= LabParamsTree.getSelectedItem())
+		%selected = true;
+	if (!%this.isAwake()){
+		toggleDlg(LabParamsDlg);
+		LabParamsTree.clearSelection();
+		LabParamsTree.selectItem(%id);
+	}else if (%id $= LabParamsTree.getSelectedItem()){
+		toggleDlg(LabParamsDlg);
+	}
+	else {
+		LabParamsTree.clearSelection();
+		LabParamsTree.selectItem(%id);
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+//LabParamsDlg.openSettings("Material Editor");
+function LabParamsDlg::openSettings( %this,%text) {
+	%id = LabParamsTree.findItemByName(%text);
+	if (%id <= 0)
+		return;
+	if (!%this.isAwake())
+		toggleDlg(LabParamsDlg);
+	LabParamsTree.clearSelection();
+	LabParamsTree.selectItem(%id);
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function LabParamsDlg::setSelectedSettings( %this,%treeItemObj ) {
 	if (!isObject(%treeItemObj)) {
 		warnLog("Invalid settings item objects selected:",%treeItemObj);
@@ -110,6 +151,7 @@ function LabParamsTree::expandAllGroups( %this,%buildTree ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function LabParamsTree::onSelect( %this,%itemId ) {	
+	
 	%text = %this.getItemText(%itemId);
 	%value = %this.getItemValue(%itemId);	
 	%itemObj = $LabParamsItemObj[%itemId];

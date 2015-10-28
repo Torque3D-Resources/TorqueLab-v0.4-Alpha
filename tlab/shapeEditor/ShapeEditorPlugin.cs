@@ -60,12 +60,7 @@ function ShapeEditorPlugin::onWorldEditorStartup(%this) {
 		%hint = ShapeHintGroup.getObject(%i);
 		ShapeEdHintMenu.add(%hint.objectType, %hint);
 	}
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-// Called when the Plugin is activated (Active TorqueLab plugin)
-function ShapeEditorPlugin::onActivated(%this) {
-	if ( !%this.isActivated ) {
+	if ( !%this.isGameReady ) {
 		// Activate the Shape Editor
 		// Lab.setEditor( %this, true );
 		// Get editor settings (note the sun angle is not configured in the settings
@@ -95,16 +90,32 @@ function ShapeEditorPlugin::onActivated(%this) {
 		// Customise menu bar
 		%this.oldCamFitCmd = %this.replaceMenuCmd( "Camera", 8, "ShapeEdShapeView.fitToShape();" );
 		%this.oldCamFitOrbitCmd = %this.replaceMenuCmd( "Camera", 9, "ShapeEdShapeView.fitToShape();" );
-		Parent::onActivated(%this);
+		
 	}
-	show(ShapeEdSelectWindow);
-		show(ShapeEdPropWindow);
+	%this.isGameReady = true;
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the Plugin is activated (Active TorqueLab plugin)
+$SimpleActivation = false;
+function ShapeEditorPlugin::onActivated(%this) {
+	
+	//show(ShapeEdSelectWindow);
+		//show(ShapeEdPropWindow);
 	//Assign the Camera fit to the GuiShapeEdPreview
 	Lab.fitCameraGui = ShapeEdShapeView;
 	// Try to start with the shape selected in the world editor
 	ShapeEditor.selectWorldEditorShape();	
 	
 	ShapeEditorPlugin.updateAnimBar();
+	
+	ShapeEd.initCollisionPage();
+	
+	Parent::onActivated(%this,$SimpleActivation);
+	
+	
+	ShapeEditor.setDirty(ShapeEditor.isDirty());
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -149,13 +160,18 @@ function ShapeEditorPlugin::onExitMission( %this ) {
 	ShapeEdUndoManager.clearAll();
 	ShapeEditor.setDirty( false );
 	ShapeEdSequenceList.clear();
-	ShapeEdNodeTreeView.removeItem( 0 );
-	ShapeEdPropWindow.update_onNodeSelectionChanged( -1 );
-	ShapeEdDetailTree.removeItem( 0 );
+	//ShapeEdNodeTreeView.removeItem( 0 );
+	ShapeEd.onNodeSelectionChanged( -1 );
+	ShapeEd_DetailTree.removeItem( 0 );
 	ShapeEdMaterialList.clear();
 	ShapeEdMountWindow-->mountList.clear();
-	ShapeEdThreadWindow-->seqList.clear();
+
 	ShapeEdThreadList.clear();
+	
+	ShapeEd.clearNodeTree();
+	ShapeEdThread_List.clear();
+	ShapeEdThread_SeqList.clear();
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -179,4 +195,11 @@ function ShapeEditorPlugin::replaceMenuCmd(%this, %menuTitle, %id, %newCmd) {
 	%cmd = getField( %menu.item[%id], 2 );
 	%menu.setItemCommand( %id, %newCmd );
 	return %cmd;
+}
+
+
+//==============================================================================
+// Called when the Plugin is activated (Active TorqueLab plugin)
+function ShapeEditorPlugin::preparePlugin(%this) {
+	
 }

@@ -4,37 +4,44 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
-//=============================================================================================
-//    Initialization.
-//=============================================================================================
 
-//---------------------------------------------------------------------------------------------
+//==============================================================================
+// Scene Editor Params - Used set default settings and build plugins options GUI
+//==============================================================================
+//==============================================================================
+// Prepare the default config array for the Scene Editor Plugin
+function DatablockEditorPlugin::initParamsArray( %this,%array ) {
+	
+	%array.group[%groupId++] = "General settings";
+	%array.setVal("excludeClientOnlyDatablocks",       "1" TAB "excludeClientOnlyDatablocks" TAB "Checkbox"  TAB "" TAB "DatablockEditorPlugin" TAB %groupId);
 
-function DatablockEditorPlugin::init( %this ) {
-	%this.update();
-
-	if( !DatablockEditorTree.getItemCount() )
-		%this.populateTrees();
 }
-function DatablockEditorPlugin::update( %this ) {
-	// DatablockEditorInspectorWindow.position = getWord($pref::Video::mode, 0) - 209 SPC getWord(EditorGuiToolbar.extent, 1) + getWord(LabPhysicTreeWindow.extent, 1) - 2;
-	//DatablockEditorTreeWindow.position = getWord($pref::Video::mode, 0) - 209 SPC getWord(EditorGuiToolbar.extent, 1) - 1;
-}
+//------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------
+//==============================================================================
+// Plugin Object Callbacks - Called from TLab plugin management scripts
+//==============================================================================
 
+//==============================================================================
+// Called when TorqueLab is launched for first time
 function DatablockEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
+	DatablockEditorTreeTabBook.selectPage( 0 );
+	
+
 }
-
-//---------------------------------------------------------------------------------------------
-
-function DatablockEditorPlugin::onActivated( %this ) {
-	SceneEditorToolbar.setVisible(false);
-	EditorGui.bringToFront( DatablockEditorPlugin );
-	DatablockEditorTreeWindow.setVisible( true );
-	DatablockEditorInspectorWindow.setVisible( true );
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the Plugin is activated (Active TorqueLab plugin)
+function DatablockEditorPlugin::onActivated( %this ) {	
 	DatablockEditorInspectorWindow.makeFirstResponder( true );
+	
+	DbEd.setSelectedDatablock(DbEd.activeDatablock);
+	
+	if (DbEd.allClasses $= "")
+		DatablockEditorPlugin.buildClassList();
+	if (DbEd.activeClasses $= "")
+		DbEd.selectAllClasses();
 	
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo( "Datablock editor." );
@@ -45,40 +52,43 @@ function DatablockEditorPlugin::onActivated( %this ) {
 	else
 		EditorGuiStatusBar.setSelection( %numSelected @ " datablocks selected" );
 
-	%this.init();
-	// DatablockEditorPlugin.readSettings();
+	if( !DatablockEditorTree.getItemCount() )
+		%this.populateTrees();
 
 	if( EWorldEditor.getSelectionSize() == 1 )
 		%this.onObjectSelected( EWorldEditor.getSelectedObject( 0 ) );
 
+	DbEd.initGui();
 	Parent::onActivated( %this );
+	
+	DbEd_SelectionTabBook.selectPage(0);
 }
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the Plugin is deactivated (active to inactive transition)
+//function DatablockEditorPlugin::onDeactivated( %this ) {}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called from TorqueLab after plugin is initialize to set needed settings
+//function DatablockEditorPlugin::onPluginCreated( %this ) {}
+//------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------
-
-function DatablockEditorPlugin::onDeactivated( %this ) {
-	//DatablockEditorPlugin.writeSettings();
-
-	Parent::onDeactivated(%this);
-}
-
-//---------------------------------------------------------------------------------------------
-
+//==============================================================================
+// Called when the mission file has been saved
+//function DatablockEditorPlugin::onSaveMission( %this, %file ) {}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when the mission file has been saved
 function DatablockEditorPlugin::onExitMission( %this ) {
 	DatablockEditorTree.clear();
 	DatablockEditorInspector.inspect( "" );
 }
-
-//---------------------------------------------------------------------------------------------
-
-function DatablockEditorPlugin::openDatablock( %this, %datablock ) {
-	// EditorGui.setEditor( DatablockEditorPlugin );
-	%this.selectDatablock( %datablock );
-	DatablockEditorTreeTabBook.selectedPage = 0;
-}
-
-//---------------------------------------------------------------------------------------------
-
-function DatablockEditorPlugin::setEditorFunction( %this ) {
-	return true;
-}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Called when TorqueLab is closed
+//function DatablockEditorPlugin::onEditorSleep( %this ) {}
+//------------------------------------------------------------------------------
+//==============================================================================
+//Called when editor is selected from menu
+//function SceneEditorPlugin::onEditMenuSelect( %this, %editMenu ) {}
+//------------------------------------------------------------------------------

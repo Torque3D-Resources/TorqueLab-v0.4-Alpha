@@ -297,7 +297,7 @@ function EObjectSelection::initClassList( %this ) {
 			MinExtent = "8 2";
 			canSave = "0";
 			Visible = "1";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			tooltip = "Include/exclude all " @ %className @ " objects.";
 			text = %text;

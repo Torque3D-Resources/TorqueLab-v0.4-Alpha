@@ -3,7 +3,18 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-
+//==============================================================================
+// Decal Editor Params - Used set default settings and build plugins options GUI
+//==============================================================================
+function DecalEditorPlugin::initParamsArray( %this,%cfgArray ) {
+	$ForestEditorCfg = newScriptObject("ForestEditorCfg");
+	%cfgArray.group[%groupId++] = "General settings";
+	%cfgArray.setVal("DefaultScale",    "1" TAB "DefaultScale" TAB "TextEdit" TAB "" TAB "ForestEditorPlugin" TAB %groupId);
+	
+}
+//==============================================================================
+// Plugin Object Callbacks - Called from TLab plugin management scripts
+//==============================================================================
 function DecalEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
 	//set initial palette setting

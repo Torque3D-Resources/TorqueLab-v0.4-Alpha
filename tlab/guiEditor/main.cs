@@ -5,6 +5,7 @@
 // Create quickly a set of GUI based on a template
 //==============================================================================
 
+//==============================================================================
 function initializeGuiEditor() {
 	echo( " % - Initializing Gui Editor" );
 
@@ -18,20 +19,31 @@ function initializeGuiEditor() {
 
 	// GUIs.
 	execGuiEdit(true);
+	
 }
+//------------------------------------------------------------------------------
+function execGuiLab() {
+	execPattern( "tlab/guiEditor/lab/*.cs" );	
+	execPattern( "tlab/guiEditor/system/*.cs" );
+}
+//==============================================================================
 function execGuiEdit(%execGui,%execMainGui) {
 	
 	if (%execGui) {
 		%execMainGui = true;		
 		exec( "./gui/guiEditorNewGuiDialog.ed.gui" );
 		exec( "./gui/guiEditorPrefsDlg.ed.gui" );
-		exec( "./gui/guiEditorSelectDlg.ed.gui" );
+		//exec( "./gui/guiEditorSelectDlg.ed.gui" );
 		exec( "./gui/EditorChooseGUI.ed.gui" );
 		exec( "./gui/LabWidgetBuilderDlg.gui" );
 		exec( "tlab/guiEditor/gui/GuiEditFieldDuplicator.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateManager.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateEditor.gui" );
+		exec( "tlab/guiEditor/gui/GuiEdTemplateGroup.gui" );
 	}
-	if (%execMainGui){
-		exec( "./gui/guiEditor.ed.gui" );
+	if (%execMainGui){		
+		exec( "tlab/guiEditor/gui/guiEditor.ed.gui" );
+		exec( "tlab/guiEditor/gui/CloneEditorGui.gui" );
 	}
 
 	if (!isObject(GuiEditor)) {
@@ -56,12 +68,13 @@ function execGuiEdit(%execGui,%execMainGui) {
 	exec( "./scripts/EditorChooseGUI.ed.cs" );
 	exec( "./gui/LabWidgetBuilderDlg.cs" );
 	exec( "tlab/guiEditor/scripts/functionControls.cs" );
-	execPattern( "tlab/guiEditor/lab/*.cs" );
-	execPattern( "tlab/guiEditor/menu/*.cs" );
+	execPattern( "tlab/guiEditor/lab/*.cs" );	
 	execPattern( "tlab/guiEditor/system/*.cs" );
+	GuiEd.InitGuiEditor();
 
 }
-
+//------------------------------------------------------------------------------
+//==============================================================================
 function destroyGuiEditor() {
 }
-
+//------------------------------------------------------------------------------

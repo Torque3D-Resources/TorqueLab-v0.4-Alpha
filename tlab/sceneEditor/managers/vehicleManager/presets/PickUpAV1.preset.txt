@@ -1,0 +1,33 @@
+shapeFile	art/models/Cabelas/Vehicle/Pickup/PickupA.DAE
+superClass	
+wheelDrive	
+engineTorque	7190
+engineBrake	2660
+maxWheelSpeed	48
+brakeTorque	4750
+maxSteeringAngle	0.585
+jetForce	3000
+jetEnergyDrain	2
+minJetEnergy	30
+maxEnergy	100
+massCenter	0 0.5 0
+bodyRestitution	0.54
+bodyFriction	0.55
+integration	8
+mass	200
+drag	1.9
+minImpactSpeed	5
+softImpactSpeed	5
+hardImpactSpeed	15
+contactTol	0.4
+engineSound	
+tireEmitter	
+dustEmitter	
+softImpactSound	
+hardImpactSound	
+cameraRoll	0
+cameraLag	0.3
+cameraDecay	1.25
+cameraOffset	1
+cameraMaxDist	7.8
+cameraMinDist	0.2

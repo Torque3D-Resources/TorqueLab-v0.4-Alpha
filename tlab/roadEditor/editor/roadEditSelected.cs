@@ -10,18 +10,19 @@
 //==============================================================================
 function RoadEditorGui::onRoadSelected( %this, %road ) {
 	%this.road = %road;
-RoadManager.currentRoad = %road;
+	RoadManager.currentRoad = %road;
+
 	// Update the materialEditorList
 	if(isObject( %road )) {
 		$Lab::materialEditorList = %road.getId();
 		RoadEditorPlugin.selectedRoad = %road;
 		RoadEditorPlugin.selectedMaterial = %road.Material;
 		RoadEditorToolbar-->changeActiveMaterialBtn.active = 1;
-		
 		//Lab.getDecalRoadNodes();
 	} else
 		%this.noRoadSelected();
-RoadManager.updateRoadData();
+
+	RoadManager.updateRoadData();
 	RoadInspector.inspect( %road );
 	RoadTreeView.buildVisibleTree(true);
 
@@ -34,10 +35,11 @@ RoadManager.updateRoadData();
 //------------------------------------------------------------------------------
 //==============================================================================
 function RoadEditorGui::noRoadSelected( %this ) {
-	%this.clearRoadNodesData();
+	
 	RoadEditorPlugin.selectedRoad = "";
 	RoadEditorPlugin.selectedMaterial = "No road selected";
 	RoadEditorToolbar-->changeActiveMaterialBtn.active = 0;
+	RoadManager.updateRoadData();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -76,7 +78,7 @@ function RoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		return;
 	}
 
-	REP.setCurrentNode(%nodeIdx);
+	
 
 	if ( %nodeIdx == -1 ) {
 		RoadEditorProperties-->position.setActive( false );
@@ -89,6 +91,7 @@ function RoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		RoadEditorProperties-->width.setActive( true );
 		RoadEditorProperties-->width.setValue( %this.getNodeWidth() );
 	}
+
 	RoadManager.onNodeSelected(%nodeIdx);
 }
 //------------------------------------------------------------------------------

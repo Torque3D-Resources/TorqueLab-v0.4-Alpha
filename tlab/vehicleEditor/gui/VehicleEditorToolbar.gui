@@ -17,7 +17,7 @@ new GuiStackControl(VehicleEditorToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "VehicleEditorToolbar";
@@ -26,12 +26,12 @@ new GuiStackControl(VehicleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "16844";
-      disabledGroup = "16845";
-      EditorContainer = "4007";
+      defaultStack = "18863";
+      disabledGroup = "18864";
+      EditorContainer = "4073";
       editorParent = "EditorGuiToolbarStack";
       plugin = "VehicleEditor";
-      stackLists = "16846";
+      stackLists = "18865";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -48,7 +48,7 @@ new GuiStackControl(VehicleEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -74,7 +74,7 @@ new GuiStackControl(VehicleEditorToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "Render modes";
@@ -97,7 +97,7 @@ new GuiStackControl(VehicleEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -115,7 +115,7 @@ new GuiStackControl(VehicleEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -131,7 +131,7 @@ new GuiStackControl(VehicleEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -160,7 +160,7 @@ new GuiStackControl(VehicleEditorToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Spline (Z)";
          hovertime = "1000";
          isContainer = "0";
@@ -188,7 +188,7 @@ new GuiStackControl(VehicleEditorToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Wireframe (X)";
          hovertime = "1000";
          isContainer = "0";
@@ -216,7 +216,7 @@ new GuiStackControl(VehicleEditorToolbar) {
          profile = "ToolsButtonDark";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Show Road Texture (V)";
          hovertime = "1000";
          isContainer = "0";

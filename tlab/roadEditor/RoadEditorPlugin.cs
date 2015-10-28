@@ -44,30 +44,25 @@ function RoadEditorPlugin::onWorldEditorStartup( %this ) {
 function RoadEditorPlugin::onActivated( %this ) {
 	
 	RoadEd_TabBook.selectPage(0);
-	RoadEditorGui.clearRoadNodesData();
+	
 	EWToolsPaletteArray->RoadEditorAddRoadMode.performClick();
-	EditorGui.bringToFront( RoadEditorGui );
-	RoadEditorGui.setVisible( true );
+	EditorGui.bringToFront( RoadEditorGui );	
 	RoadEditorGui.makeFirstResponder( true );
-	RoadEditorToolbar.setVisible( true );
-	RoadEditorOptionsWindow.setVisible( true );
-	RoadEditorTreeWindow.setVisible( true );
+	
 	RoadTreeView.open(ServerDecalRoadSet,true);
 	
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo("Road editor.");
 	EditorGuiStatusBar.setSelection("");
 	RoadEditorGui.prepSelectionMode();
+	RoadManager.updateRoadData();
 	Parent::onActivated(%this);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function RoadEditorPlugin::onDeactivated( %this ) {
 	
-	RoadEditorGui.setVisible( false );
-	RoadEditorToolbar.setVisible( false );
-	RoadEditorOptionsWindow.setVisible( false );
-	RoadEditorTreeWindow.setVisible( false );
+	
 	
 	Parent::onDeactivated(%this);
 }

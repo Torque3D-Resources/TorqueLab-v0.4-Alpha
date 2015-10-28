@@ -20,12 +20,12 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 	// Sync the Thread window sequence selection
 	%row = ShapeEdSequenceList.getSelectedRow();
 
-	if ( ShapeEdThreadWindow-->seqList.getSelectedRow() != ( %row-1 ) ) {
-		ShapeEdThreadWindow-->seqList.setSelectedRow( %row-1 );
+	if ( ShapeEdThread_SeqList.getSelectedRow() != ( %row-1 ) ) {
+		ShapeEdThread_SeqList.setSelectedRow( %row-1 );
 		return;  // selecting a sequence in the Thread window will re-call this function
 	}
 
-	ShapeEdSeqFromMenu.clear();
+	//ShapeEdSeqFromMenu.clear();
 	ShapeEdSequences-->blendSeq.clear();
 	// Clear the trigger list
 	ShapeEdTriggerList.removeAll();
@@ -50,14 +50,14 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 		ShapeEdSequences-->blendFlag.setValue( getField( %blendData, 0 ) );
 		ShapeEdSequences-->priority.setText( ShapeEditor.shape.getSequencePriority( %seqName ) );
 		// 'From' and 'Blend' sequence menus
-		ShapeEdSeqFromMenu.add( "Browse..." );
+		//ShapeEdSeqFromMenu.add( "Browse..." );
 		%count = ShapeEdSequenceList.rowCount();
 
 		for ( %i = 2; %i < %count; %i++ ) { // skip header row and <rootpose>
 			%name = ShapeEdSequenceList.getItemName( %i );
 
 			if ( %name !$= %seqName ) {
-				ShapeEdSeqFromMenu.add( %name );
+				//ShapeEdSeqFromMenu.add( %name );
 				ShapeEdSequences-->blendSeq.add( %name );
 			}
 		}
@@ -103,6 +103,7 @@ function ShapeEdPropWindow::update_onSequenceAdded( %this, %seqName, %oldIndex )
 	// --- MISC ---
 	ShapeEdSelectWindow.updateHints();
 
+	ShapeEd.addSequencePill(%seqName);
 	// --- SEQUENCES TAB ---
 	if ( %oldIndex == -1 ) {
 		// This is a brand new sequence => add it to the list and make it the
@@ -235,8 +236,8 @@ function ShapeEdPropWindow::syncPlaybackDetails( %this ) {
 			%seqFrom = rtrim( getFields( %backupData, 0, 1 ) );
 		}
 
-		ShapeEdSeqFromMenu.setText( %seqFrom );
-		ShapeEdSeqFromMenu.tooltip = ShapeEdSeqFromMenu.getText();   // use tooltip to show long names
+		//ShapeEdSeqFromMenu.setText( %seqFrom );
+		//ShapeEdSeqFromMenu.tooltip = ShapeEdSeqFromMenu.getText();   // use tooltip to show long names
 		ShapeEdSequences-->startFrame.setText( %seqStart );
 		ShapeEdSequences-->endFrame.setText( %seqEnd );
 		%val = ShapeEdSeqSlider.getValue() / getWord( ShapeEdSeqSlider.range, 1 );
@@ -251,8 +252,8 @@ function ShapeEdPropWindow::syncPlaybackDetails( %this ) {
 		// Hide sequence in/out bars
 		ShapeEdAnimWindow-->seqInBar.setVisible( false );
 		ShapeEdAnimWindow-->seqOutBar.setVisible( false );
-		ShapeEdSeqFromMenu.setText( "" );
-		ShapeEdSeqFromMenu.tooltip = "";
+		//ShapeEdSeqFromMenu.setText( "" );
+		//ShapeEdSeqFromMenu.tooltip = "";
 		ShapeEdSequences-->startFrame.setText( 0 );
 		ShapeEdSequences-->endFrame.setText( 0 );
 		ShapeEdSeqSlider.range = "0 1";
@@ -311,7 +312,16 @@ function ShapeEdSequences::onEditSequenceSource( %this, %from ) {
 			ShapeEditor.doEditSeqSource( %seqName, %from, %start, %end );
 	}
 }
+function ShapeEdSequences::onEditName( %this ) {
+	%seqName = ShapeEdSequenceList.getSelectedName();
 
+	if ( %seqName !$= "" ) {
+		%newName = %this-->seqName.getText();
+
+		if ( %newName !$= "" )
+			ShapeEditor.doRenameSequence( %seqName, %newName );
+	}
+}
 function ShapeEdSequences::onToggleCyclic( %this ) {
 	%seqName = ShapeEdSequenceList.getSelectedName();
 
@@ -387,7 +397,7 @@ function ShapeEdSequences::onAddSequence( %this, %name ) {
 
 	if ( %from $= "" ) {
 		// No sequence selected => open dialog to browse for one
-		getLoadFilename( "DSQ Files|*.dsq|COLLADA Files|*.dae|Google Earth Files|*.kmz", %this @ ".onAddSequenceFromBrowse", ShapeEdFromMenu.lastPath );
+		getLoadFilename( "COLLADA Files|*.dae|DSQ Files|*.dsq|Google Earth Files|*.kmz", %this @ ".onAddSequenceFromBrowse", ShapeEdFromMenu.lastPath );
 		return;
 	} else {
 		// Add the new sequence
@@ -444,7 +454,7 @@ function ShapeEdSequenceList::editColumn( %this, %name, %col, %text ) {
 	%id = %this.getRowId( %row );
 
 	if ( %col == 0 )
-		ShapeEdThreadWindow-->seqList.setRowById( %id, %text );   // Sync name in Thread window
+		ShapeEdThread_SeqList.setRowById( %id, %text );   // Sync name in Thread window
 
 	%this.setRowById( %id, %rowText );
 }
@@ -460,7 +470,7 @@ function ShapeEdSequenceList::insertItem( %this, %name, %index ) {
 	%priority = ShapeEditor.shape.getSequencePriority( %name );
 	// Add the item to the Properties and Thread sequence lists
 	%this.seqId++; // use this to keep the row IDs synchronised
-	ShapeEdThreadWindow-->seqList.addRow( %this.seqId, %name, %index-1 );   // no header row
+	ShapeEdThread_SeqList.addRow( %this.seqId, %name, %index-1 );   // no header row
 	return %this.addRow( %this.seqId, %name TAB %cyclic TAB %blend TAB %frameCount TAB %priority, %index );
 }
 
@@ -469,24 +479,24 @@ function ShapeEdSequenceList::removeItem( %this, %name ) {
 
 	if ( %index >= 0 ) {
 		%this.removeRow( %index );
-		ShapeEdThreadWindow-->seqList.removeRow( %index-1 );   // no header row
+		ShapeEdThread_SeqList.removeRow( %index-1 );   // no header row
 	}
 }
 
-function ShapeEdSeqFromMenu::onSelect( %this, %id, %text ) {
+function ShapeEdAnim_SeqPillMenu::onSelect( %this, %id, %text ) {
 	if ( %text $= "Browse..." ) {
 		// Reset menu text
 		%seqName = ShapeEdSequenceList.getSelectedName();
 		%seqFrom = rtrim( getFields( ShapeEditor.getSequenceSource( %seqName ), 0, 1 ) );
 		%this.setText( %seqFrom );
 		// Allow the user to browse for an external source of animation data
-		getLoadFilename( "DSQ Files|*.dsq|COLLADA Files|*.dae|Google Earth Files|*.kmz", %this @ ".onBrowseSelect", %this.lastPath );
+		getLoadFilename( "COLLADA Files|*.dae|DSQ Files|*.dsq|Google Earth Files|*.kmz", %this @ ".onBrowseSelect", %this.lastPath );
 	} else {
 		ShapeEdSequences.onEditSequenceSource( %text );
 	}
 }
 
-function ShapeEdSeqFromMenu::onBrowseSelect( %this, %path ) {
+function ShapeEdAnim_SeqPillMenu::onBrowseSelect( %this, %path ) {
 	%path = makeRelativePath( %path, getMainDotCSDir() );
 	%this.lastPath = %path;
 	%this.setText( %path );

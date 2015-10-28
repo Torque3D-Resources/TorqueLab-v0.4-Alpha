@@ -10,7 +10,7 @@
    MinExtent = "8 2";  
    canSave = "1";  
    Visible = "1";  
-   tooltipprofile = "ToolsGuiToolTipProfile";  
+   tooltipprofile = "ToolsToolTipProfile";  
    hovertime = "1000";  
   
    new GuiWindowCtrl(ProceduralTerrainPainterDescription) {  
@@ -24,7 +24,7 @@
       MinExtent = "8 2";  
       canSave = "1";  
       Visible = "1";  
-      tooltipprofile = "ToolsGuiToolTipProfile";  
+      tooltipprofile = "ToolsToolTipProfile";  
       hovertime = "1000";  
       Margin = "0 0 0 0";  
       Padding = "0 0 0 0";  
@@ -58,7 +58,7 @@
          canSave = "1";  
          Visible = "1";  
          Command = "generateProceduralTerrainMask();";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          text = "Generate";  
          groupNum = "-1";  
@@ -76,7 +76,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -98,7 +98,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -120,7 +120,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -134,7 +134,7 @@
       new GuiTextEditCtrl() {  
          canSaveDynamicFields = "0";  
          isContainer = "0";  
-         Profile = "ToolsTextEditProfile";  
+         Profile = "ToolsTextEdit";  
          HorizSizing = "right";  
          VertSizing = "bottom";  
          Position = "97 35";  
@@ -143,7 +143,7 @@
          canSave = "1";  
          Visible = "1";  
          Variable = "$TPPHeightMin";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -161,7 +161,7 @@
       new GuiTextEditCtrl() {  
          canSaveDynamicFields = "0";  
          isContainer = "0";  
-         Profile = "ToolsTextEditProfile";  
+         Profile = "ToolsTextEdit";  
          HorizSizing = "right";  
          VertSizing = "bottom";  
          Position = "97 60";  
@@ -170,7 +170,7 @@
          canSave = "1";  
          Visible = "1";  
          Variable = "$TPPHeightMax";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -196,7 +196,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -218,7 +218,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -240,7 +240,7 @@
          MinExtent = "8 2";  
          canSave = "1";  
          Visible = "1";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -254,7 +254,7 @@
       new GuiTextEditCtrl() {  
          canSaveDynamicFields = "0";  
          isContainer = "0";  
-         Profile = "ToolsTextEditProfile";  
+         Profile = "ToolsTextEdit";  
          HorizSizing = "right";  
          VertSizing = "bottom";  
          Position = "97 99";  
@@ -263,7 +263,7 @@
          canSave = "1";  
          Visible = "1";  
          Variable = "$TPG_DefaultSlopeMin";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  
@@ -281,7 +281,7 @@
       new GuiTextEditCtrl() {  
          canSaveDynamicFields = "0";  
          isContainer = "0";  
-         Profile = "ToolsTextEditProfile";  
+         Profile = "ToolsTextEdit";  
          HorizSizing = "right";  
          VertSizing = "bottom";  
          Position = "97 124";  
@@ -290,7 +290,7 @@
          canSave = "1";  
          Visible = "1";  
          Variable = "$TPG_DefaultSlopeMax";  
-         tooltipprofile = "ToolsGuiToolTipProfile";  
+         tooltipprofile = "ToolsToolTipProfile";  
          hovertime = "1000";  
          Margin = "0 0 0 0";  
          Padding = "0 0 0 0";  

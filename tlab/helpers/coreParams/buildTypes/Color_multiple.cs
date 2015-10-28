@@ -13,6 +13,12 @@ function buildParamColor( %pData ) {
 	%colorPicker.altCommand = %pData.AltCommand;
 	%colorPicker.internalName = %pData.InternalName;
 	
+	%command = %pData.altCommand;
+	%command = strreplace(%command,"$ThisControl",%colorPicker.getId());
+	%command = strreplace(%command,"syncParamArrayCtrl","syncParamArrayCtrlData");		
+	%colorPicker.updateCommand = %command;
+	
+	
 	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
 	%colorPicker.lockedAlpha = %noAlpha;
 	%colorPicker.noAlpha = %noAlpha;
@@ -135,30 +141,25 @@ function buildParamColorSlider( %pData ) {
 //==============================================================================
 // RPE_DatablockEditor.buildInterface();
 function buildParamColorSliderEdit( %pData ) {
-	%isIntColor = false;
-	if(%pData.Option[%pData.Setting,"mode"] $= "int")
-		%isIntColor = true;
-	%pData.pill-->field.text = %pData.Title;
+	
+		%colorPicker = buildParamColor(%pData);			
+		
+	
+		
+	
 	%alphaSlider = %pData.pill-->slider;
 	//ColorPicker ctrl update
-	%colorPicker = %pData.pill-->colorPicker;
 	%colorPicker.command = %pData.Command;
 	%colorPicker.altCommand = %pData.AltCommand;
 	%colorPicker.internalName = %pData.InternalName;
 	%colorPicker.alphaSlider = %alphaSlider;
-	%checkbox.variable = %pData.Variable;
-	%noAlpha = %pData.Option[%pData.Setting,"noalpha"];
-	%colorPicker.lockedAlpha = %noAlpha;
+	%checkbox.variable = %pData.Variable;	
 	
-	
-
-	if(%pData.Option[%pData.Setting,"mode"] $= "int")
-		%colorPicker.isIntColor = true;
 
 	%alphaSlider.colorPicker = %colorPicker;
 	%alphaSlider.fieldSource = %pData.Setting;
 	%alphaSlider.command = %colorPicker@".AlphaChanged($ThisControl);";
-		%alphaSlider.altCommand = %colorPicker@".AlphaChanged($ThisControl);";
+	%alphaSlider.altCommand = %colorPicker@".AlphaChanged($ThisControl);";
 	
 	if (%isIntColor)
 		%alphaSlider.range = "0 255";
@@ -173,15 +174,12 @@ function buildParamColorSliderEdit( %pData ) {
 	%textEdit.superClass = "GuiColorEditCtrl";
 	%textEdit.isIntColor = %isIntColor;
 	%textEdit.alphaSlider = %alphaSlider;
+	%textEdit.floatLength = %colorPicker.floatLength;
 	
 	%colorPicker.colorEditCtrl = %textEdit;
 	%colorPicker.syncCtrls = %textEdit;
 	
-	%floatLength = %pData.Option[%pData.Setting,"flen"];
-	if (%floatLength > 0){
-		%colorPicker.floatLength = %floatLength;
-		%textEdit.floatLength = %floatLength;
-	}
+	
 	return %colorPicker;
 }
 //------------------------------------------------------------------------------

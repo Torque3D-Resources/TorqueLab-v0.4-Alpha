@@ -48,7 +48,7 @@ function toggleDlg(%dlg) {
 //==============================================================================
 // Content GUI helpers (Canvas.setContent() simplified)
 //------------------------------------------------------------------------------
-$HLab_DefaultGui = "MainMenuGui"; //DefaultGui if invalid GUI called
+$HLab_DefaultGui = $pref::UI::defaultGui; //DefaultGui if invalid GUI called
 //==============================================================================
 //==============================================================================
 // Set canvas content and store previous GUI (Can be specified optionally)

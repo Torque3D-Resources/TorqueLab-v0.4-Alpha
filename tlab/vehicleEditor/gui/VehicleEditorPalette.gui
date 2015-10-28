@@ -8,7 +8,7 @@
    profile = "ToolsBoxDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainEditor";
@@ -35,7 +35,7 @@
 			profile = "ToolsFillDarkA";
 			visible = "1";
 			active = "1";
-			tooltipProfile = "ToolsGuiToolTipProfile";
+			tooltipProfile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			isContainer = "1";
 			canSave = "1";
@@ -60,7 +60,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.prepSelectionMode();";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Select Road (1)";
 				hovertime = "1000";
 				isContainer = "0";
@@ -86,7 +86,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.setMode(\"VehicleEditorMoveMode\");";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Move Point (2)";
 				hovertime = "1000";
 				isContainer = "0";
@@ -95,7 +95,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorScaleModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeScale";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeScale";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";
@@ -112,7 +112,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.setMode(\"VehicleEditorScaleMode\");";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Scale Point (4)";
 				hovertime = "1000";
 				isContainer = "0";
@@ -138,7 +138,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.setMode(\"VehicleEditorAddRoadMode\");";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Create Road (5)";
 				hovertime = "1000";
 				isContainer = "0";
@@ -147,7 +147,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorInsertModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeAdd";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeAdd";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";
@@ -164,7 +164,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.setMode(\"VehicleEditorInsertPointMode\");";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Insert Point (+)";
 				hovertime = "1000";
 				isContainer = "0";
@@ -173,7 +173,7 @@
 				canSaveDynamicFields = "0";
 			};
 			new GuiBitmapButtonCtrl(EVehicleEditorRemoveModeBtn) {
-				bitmap = "tlab/gui/buttons/palette-assets/NodeRemove";
+				bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRemove";
 				bitmapMode = "Stretched";
 				autoFitExtents = "0";
 				useModifiers = "0";
@@ -190,7 +190,7 @@
 				visible = "1";
 				active = "1";
 				command = "VehicleEditorGui.setMode(\"VehicleEditorRemovePointMode\");";
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 				tooltip = "Remove Point (-)";
 				hovertime = "1000";
 				isContainer = "0";

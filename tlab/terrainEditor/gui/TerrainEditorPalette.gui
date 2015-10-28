@@ -8,7 +8,7 @@
    profile = "ToolsBoxDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainEditor";
@@ -19,7 +19,7 @@
       enabled = "1";
 
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainGrab";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainGrab";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -37,7 +37,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( brushAdjustHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Grab Terrain (1)";
       hovertime = "750";
       isContainer = "0";
@@ -46,7 +46,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl(TEPBrush_raiseHeight) {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainRaise";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainRaise";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -64,7 +64,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( raiseHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Raise Height (2)";
       hovertime = "750";
       isContainer = "0";
@@ -73,7 +73,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainLower";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainLower";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -91,7 +91,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( lowerHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Lower Height (3)";
       hovertime = "750";
       isContainer = "0";
@@ -100,7 +100,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/SmoothTerrain";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/SmoothTerrain";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -118,7 +118,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( smoothHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Smooth (4)";
       hovertime = "750";
       isContainer = "0";
@@ -127,7 +127,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainSmoothSlope";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainSmoothSlope";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -145,7 +145,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( smoothSlope );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Smooth Slope (5)";
       hovertime = "750";
       isContainer = "0";
@@ -154,7 +154,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainNoise";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainNoise";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -172,7 +172,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( paintNoise );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Paint Noise (6)";
       hovertime = "750";
       isContainer = "0";
@@ -181,7 +181,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainFlatten";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainFlatten";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -199,7 +199,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( flattenHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Flatten (7)";
       hovertime = "750";
       isContainer = "0";
@@ -208,7 +208,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainSetHeight";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainSetHeight";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -226,7 +226,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( setHeight );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Set Height (8)";
       hovertime = "750";
       isContainer = "0";
@@ -235,7 +235,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainHole";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainHole";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -253,7 +253,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( setEmpty );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Clear Terrain (9)";
       hovertime = "750";
       isContainer = "0";
@@ -262,7 +262,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "tlab/gui/buttons/palette-assets/TerrainHoleFill";
+      bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/TerrainHoleFill";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";
@@ -280,7 +280,7 @@
       visible = "1";
       active = "1";
       command = "ETerrainEditor.switchAction( clearEmpty );";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Restore Terrain (0)";
       hovertime = "750";
       isContainer = "0";

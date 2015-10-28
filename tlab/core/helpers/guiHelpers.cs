@@ -113,15 +113,18 @@ function Lab::setGuisToEditor() {
 function Lab::savePluginGui(%this,%plugin) {
 	//Assemble the GUI
 	%groupCtrl  = %plugin@"_GuiSet";
-
-	foreach(%gui in %groupCtrl) {
-		%parent = %gui.defaultParent;
-
-		if (!isObject(%parent)) continue;
-
-		%parent.add(%gui);
+	if (!isObject(%groupCtrl)){
+		warnLog("Invalid plugin GuiSet in Lab::savePluginGui, tried",%groupCtrl);
 	}
+	else {
+		foreach(%gui in %groupCtrl) {
+			%parent = %gui.defaultParent;
 
+			if (!isObject(%parent)) continue;
+
+			%parent.add(%gui);
+		}
+	}
 	if (!isObject(%parent)) {
 		warnLog("Invalid Parent GUI to save:",%parent);
 		return;

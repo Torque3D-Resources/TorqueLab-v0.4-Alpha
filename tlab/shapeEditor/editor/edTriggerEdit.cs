@@ -31,16 +31,7 @@ function ShapeEdPropWindow::onTriggerSelectionChanged( %this ) {
 	}
 }
 
-function ShapeEdSequences::onEditName( %this ) {
-	%seqName = ShapeEdSequenceList.getSelectedName();
 
-	if ( %seqName !$= "" ) {
-		%newName = %this-->seqName.getText();
-
-		if ( %newName !$= "" )
-			ShapeEditor.doRenameSequence( %seqName, %newName );
-	}
-}
 
 function ShapeEdPropWindow::update_onTriggerAdded( %this, %seqName, %frame, %state ) {
 	// --- SEQUENCES TAB ---

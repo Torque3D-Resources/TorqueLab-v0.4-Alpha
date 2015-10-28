@@ -9,7 +9,7 @@ new GuiStackControl(ConvexEditorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "0";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "110 0";
    extent = "102 32";
    minExtent = "16 16";
    horizSizing = "width";
@@ -17,7 +17,7 @@ new GuiStackControl(ConvexEditorToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "ConvexEditorToolbar";
@@ -26,12 +26,12 @@ new GuiStackControl(ConvexEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11181";
-      disabledGroup = "11182";
-      EditorContainer = "4007";
+      defaultStack = "24872";
+      disabledGroup = "24873";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ConvexEditor";
-      stackLists = "11183";
+      stackLists = "24874";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -48,7 +48,7 @@ new GuiStackControl(ConvexEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -74,7 +74,7 @@ new GuiStackControl(ConvexEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       superClass = "ToolbarContainer";
@@ -96,7 +96,7 @@ new GuiStackControl(ConvexEditorToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -114,7 +114,7 @@ new GuiStackControl(ConvexEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -130,7 +130,7 @@ new GuiStackControl(ConvexEditorToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -160,7 +160,7 @@ new GuiStackControl(ConvexEditorToolbar) {
          visible = "1";
          active = "0";
          command = "ConvexEditorGui.handleDelete();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Delete selection [Disabled] (Delete)";
          hovertime = "1000";
          isContainer = "0";
@@ -189,7 +189,7 @@ new GuiStackControl(ConvexEditorToolbar) {
          visible = "1";
          active = "0";
          command = "ConvexEditorGui.splitSelectedFace();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Split selected face [Disabled]\nUse Ctrl + Rotate instead for more control";
          hovertime = "1000";
          isContainer = "0";
@@ -218,7 +218,7 @@ new GuiStackControl(ConvexEditorToolbar) {
          visible = "1";
          active = "1";
          command = "ConvexEditorGui.createConvexBox();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Create ConvexShape Box\nUse Alt + Click-Drag instead of this for more control of starting placement.";
          hovertime = "1000";
          isContainer = "0";

@@ -3,7 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
-$EPostFx_PresetFolder = "scripts/client/gfx/postFX/presets";
+$EPostFx_PresetFolder = "core/scripts/client/postFX/presets";
 $EPostFx_PresetFileFilter = "Post Effect Presets|*.pfx.cs|*.postfxpreset.cs";
 
 $EPostFx_Fields_General = "ColorCorrectionRamp";

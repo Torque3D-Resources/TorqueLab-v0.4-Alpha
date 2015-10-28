@@ -9,7 +9,7 @@ new GuiStackControl(ForestEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "110 0";
    extent = "568 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -17,7 +17,7 @@ new GuiStackControl(ForestEditToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "11513";
-      disabledGroup = "11514";
-      EditorContainer = "4007";
+      defaultStack = "25184";
+      disabledGroup = "25185";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "11515 11523";
+      stackLists = "25186 25194";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -49,7 +49,7 @@ new GuiStackControl(ForestEditToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -75,7 +75,7 @@ new GuiStackControl(ForestEditToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -98,7 +98,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -116,7 +116,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -132,7 +132,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -162,7 +162,7 @@ new GuiStackControl(ForestEditToolbar) {
          visible = "1";
          active = "1";
          command = "ForestEditorDialogs.toggleDlg(\"BrushManager\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
          isContainer = "0";
@@ -191,7 +191,7 @@ new GuiStackControl(ForestEditToolbar) {
          visible = "1";
          active = "1";
          command = "ForestEditorDialogs.toggleDlg(\"ForestManager\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
          isContainer = "0";
@@ -262,7 +262,7 @@ new GuiStackControl(ForestEditToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -285,7 +285,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -303,7 +303,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -319,7 +319,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -343,7 +343,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "ForestEditorToolsSettings";
@@ -351,7 +351,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "25184";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -370,7 +370,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -386,7 +386,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -398,7 +398,7 @@ new GuiStackControl(ForestEditToolbar) {
             range = "0.1 10";
             ticks = "0";
             snap = "0";
-            value = "1.04";
+            value = "1";
             position = "2 21";
             extent = "115 13";
             minExtent = "8 2";
@@ -408,7 +408,7 @@ new GuiStackControl(ForestEditToolbar) {
             visible = "1";
             active = "1";
             altCommand = "FEP_BrushManager.setGlobalScale($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "globalScaleSlider";
@@ -421,7 +421,7 @@ new GuiStackControl(ForestEditToolbar) {
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "3.4";
+            text = "0.1";
             maxLength = "3";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -434,15 +434,15 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             variable = "$Forest::GlobalScale";
             altCommand = "FEP_BrushManager.setGlobalScale(FEP_BrushManager.setGlobalScale($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "globalScaleEdit";
+            internalName = "GlobalScale";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -462,7 +462,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -470,7 +470,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "25184";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -489,7 +489,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -505,7 +505,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -517,7 +517,7 @@ new GuiStackControl(ForestEditToolbar) {
             range = "0 100";
             ticks = "0";
             snap = "0";
-            value = "20.9524";
+            value = "50";
             position = "2 21";
             extent = "115 13";
             minExtent = "8 2";
@@ -527,7 +527,7 @@ new GuiStackControl(ForestEditToolbar) {
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushHardness($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "slider";
@@ -553,14 +553,14 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushHardness($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "BrushHardness";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -580,7 +580,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -588,7 +588,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "25184";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -607,7 +607,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -623,7 +623,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -650,14 +650,14 @@ new GuiStackControl(ForestEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushPressure($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "brushPressure";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -665,7 +665,7 @@ new GuiStackControl(ForestEditToolbar) {
             range = "0 100";
             ticks = "0";
             snap = "0";
-            value = "100";
+            value = "20";
             position = "2 21";
             extent = "112 13";
             minExtent = "8 2";
@@ -675,7 +675,7 @@ new GuiStackControl(ForestEditToolbar) {
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushPressure($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "slider";
@@ -698,7 +698,7 @@ new GuiStackControl(ForestEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -706,7 +706,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "11513";
+            toolbar = "25184";
 
          new GuiTextCtrl() {
             text = "Tip Size";
@@ -725,7 +725,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -741,7 +741,7 @@ new GuiStackControl(ForestEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -753,7 +753,7 @@ new GuiStackControl(ForestEditToolbar) {
             range = "0 50";
             ticks = "0";
             snap = "0";
-            value = "4.7619";
+            value = "5";
             position = "2 21";
             extent = "115 13";
             minExtent = "8 2";
@@ -763,7 +763,7 @@ new GuiStackControl(ForestEditToolbar) {
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushSize($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "slider";
@@ -784,20 +784,20 @@ new GuiStackControl(ForestEditToolbar) {
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "71 0";
+            position = "72 0";
             extent = "42 19";
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             command = "FEP_BrushManager.setBrushSize($ThisControl);";
             altCommand = "FEP_BrushManager.setBrushSize($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "TextEdit";
+            internalName = "BrushSize";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

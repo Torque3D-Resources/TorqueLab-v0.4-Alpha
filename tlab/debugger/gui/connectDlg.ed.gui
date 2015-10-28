@@ -45,7 +45,7 @@
          text = "IP Address:";
       };
       new GuiTextEditCtrl(DebuggerConnectAddress) {
-         profile = "ToolsTextEditProfile";
+         profile = "ToolsTextEdit";
          horizSizing = "right";
          vertSizing = "bottom";
          position = "20 44";
@@ -73,7 +73,7 @@
          text = "Port:";
       };
       new GuiTextEditCtrl(DebuggerConnectPort) {
-         profile = "ToolsTextEditProfile";
+         profile = "ToolsTextEdit";
          horizSizing = "right";
          vertSizing = "bottom";
          position = "20 84";
@@ -101,7 +101,7 @@
          text = "Password:";
       };
       new GuiTextEditCtrl(DebuggerConnectPassword) {
-         profile = "ToolsTextEditProfile";
+         profile = "ToolsTextEdit";
          horizSizing = "right";
          vertSizing = "bottom";
          position = "20 124";

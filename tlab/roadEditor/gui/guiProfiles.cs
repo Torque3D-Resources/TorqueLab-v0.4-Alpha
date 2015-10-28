@@ -14,13 +14,7 @@ singleton GuiControlProfile( RoadEditorProfile ) {
    fontColorLink = "Fuchsia";
 };
 //------------------------------------------------------------------------------
-//==============================================================================
-singleton GuiControlProfile (GuiSimpleBorderProfile) {
-	opaque = false;
-	border = 1;
-	category = "Editor";
-};
-//------------------------------------------------------------------------------
+
 //==============================================================================
 singleton GuiCursor(RoadEditorMoveCursor) {
 	hotSpot = "4 4";

@@ -12,7 +12,7 @@ function initializeSceneEditor() {
 	execSceneEd(true);
 	
 		//Create the TorqueLab Plugin instance
-	Lab.createPlugin("SceneEditor","Scene Editor",true);
+	Lab.createPlugin("SceneEditor","Scene Editor");
 	
 	//Add the Plugin related GUIs to TorqueLab
 	Lab.addPluginGui("SceneEditor",SceneEditorTools);
@@ -22,6 +22,7 @@ function initializeSceneEditor() {
 
 	Lab.addPluginDlg("SceneEditor",SceneEditorDialogs);
 	SceneEditorPlugin.superClass = "WEditorPlugin";
+	$SceneEd = newScriptObject("SceneEd");
 	$SEPtools = newScriptObject("SEPtools");
 	$SceneObjectGroupSet = newSimSet(SceneObjectGroupSet);
 	$SceneCreator = newScriptObject("SceneCreator");
@@ -34,7 +35,7 @@ function initializeSceneEditor() {
 function execSceneEd(%loadGui) {
 	if (%loadGui) {
 		exec("tlab/sceneEditor/gui/SceneEditorTools.gui");
-		exec("./gui/SceneEditorToolbar.gui" );
+		exec("tlab/sceneEditor/gui/SceneEditorToolbar.gui" );
 		exec("tlab/sceneEditor/gui/SceneEditorPalette.gui" );
 		exec("tlab/sceneEditor/gui/SceneEditorDialogs.gui");
 	}
@@ -42,11 +43,11 @@ function execSceneEd(%loadGui) {
 	exec("tlab/sceneEditor/SceneEditorPlugin.cs");
 	exec("tlab/sceneEditor/SceneEditorToolbar.cs");
 	exec("tlab/sceneEditor/SceneEditorTools.cs");
-	execPattern("tlab/sceneEditor/manager/*.cs");
-	execPattern("tlab/sceneEditor/dialogs/*.cs");
-	execPattern("tlab/sceneEditor/pages/*.cs");
-	execPattern("tlab/sceneEditor/creator/*.cs");
-	execPattern("tlab/sceneEditor/ambientManager/*.cs");
-	execPattern("tlab/sceneEditor/vehicleManager/*.cs");
+	execPattern("tlab/sceneEditor/managers/*.cs");
+	//execPattern("tlab/sceneEditor/dialogs/*.cs");
+	execPattern("tlab/sceneEditor/PageScene/*.cs");
+	execPattern("tlab/sceneEditor/PageCreator/*.cs");
+	//execPattern("tlab/sceneEditor/ambientManager/*.cs");
+	//execPattern("tlab/sceneEditor/vehicleManager/*.cs");
 }
 //------------------------------------------------------------------------------

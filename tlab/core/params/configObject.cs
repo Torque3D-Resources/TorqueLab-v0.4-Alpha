@@ -37,7 +37,9 @@ function EditorPlugin::setCfg( %this,%field,%value,%isDefault ) {
 	LabCfg.beginGroup( %pattern, true );
 	LabCfg.setCfg(%field,%value,%isDefault);
 	LabCfg.endGroup( );
-
+BackupCfg.beginGroup( %pattern, true );
+	BackupCfg.setCfg(%field,%value,%isDefault);
+	BackupCfg.endGroup( );
 	if (%isDefault) return;
 
 	%group = strreplace(%pattern,"/","_");
@@ -57,10 +59,14 @@ function ParamArray::getCfg( %this,%field ) {
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
 function ParamArray::setCfg( %this,%field,%value,%isDefault ) {
-	%pattern = strreplace(%this.groupLink,"_","/");
+	
+	%pattern = strreplace(%this.groupLink,"_","/");	
 	LabCfg.beginGroup( %pattern, true );
 	LabCfg.setCfg(%field,%value,%isDefault);
 	LabCfg.endGroup( );
+	BackupCfg.beginGroup( %pattern, true );
+	BackupCfg.setCfg(%field,%value,%isDefault);
+	BackupCfg.endGroup( );
 
 	if (%isDefault) return;
 
@@ -78,7 +84,15 @@ function LabCfg::setCfg( %this,%field,%value,%isDefault ) {
 		LabCfg.setValue(  %field,%value);
 }
 //------------------------------------------------------------------------------
-
+//==============================================================================
+// Add default setting (Must set beginGroup and endGroup from caller)
+function BackupCfg::setCfg( %this,%field,%value,%isDefault ) {
+	if ( %isDefault )
+		BackupCfg.setDefaultValue(  %field,%value);
+	else
+		BackupCfg.setValue(  %field,%value);
+}
+//------------------------------------------------------------------------------
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
 function Lab::addDefaultSetting( %this,%field, %default ) {
@@ -244,9 +258,9 @@ function LPD_ConfigNameMenu::onSelect( %this,%id,%text ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Add default setting (Must set beginGroup and endGroup from caller)
-function LabCfg::writeBaseConfig( %this,%default ) {
+function LabCfg::writeBaseConfig( %this ) {
 	%cfg = "tlab/core/configs/config.xml";
-	
+	Lab.writeCurrentParamsConfig();
 	LabCfg.file = %cfg;
 	LabCfg.write();
 }

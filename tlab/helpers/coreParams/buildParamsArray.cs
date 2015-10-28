@@ -110,17 +110,18 @@ function buildParamsArray( %array,%syncAfter ) {
 		}
 	
 
-		if (!%baseCtrlClear[%baseCtrl]) {
-			%baseCtrl.clear();
-			%baseCtrlClear[%baseCtrl] = true;
-		}
+		
 
 		if (!isObject(%baseCtrl)) {
 			warnLog("Invalid Params Array Container:",%baseCtrl,"Can't generate the params!");
 			%gid++;
 			continue;
 		}
-
+		
+		if (!%baseCtrlClear[%baseCtrl]) {
+			%baseCtrl.clear();
+			%baseCtrlClear[%baseCtrl] = true;
+		}
 		//======================================================================
 		// Set the stack control in which the group pills will be added
 		//----------------------------------------------------------------------
@@ -191,6 +192,7 @@ function buildParamsArray( %array,%syncAfter ) {
 		%pData = newScriptObject("paramDataHolder");		
 		%pData.Setting = %field;
 		
+		
 		if (%array.noDefaults){			
 			%newdata = "" TAB %data;
 			%array.setVal(%field,%newdata);			
@@ -207,6 +209,13 @@ function buildParamsArray( %array,%syncAfter ) {
 		%pData.Options = getField(%data,%fieldId++);
 		%pData.syncObjs = getField(%data,%fieldId++);
 		%array.syncObjsField = %fieldId;		
+		
+		//Make sure it have a type for building
+		if (%pData.Type $= ""){		
+			%array.noSyncField[%field] = true;
+			continue;
+		}
+		
 		
 		//if (%array.noDefaults)
 			//%pData.Default = getField(%data,%fieldId++);
@@ -277,12 +286,12 @@ function buildParamsArray( %array,%syncAfter ) {
 			}
 
 			if (!isObject(%pData.parentCtrl)) {
-				paramLog("Param skipped due to invalid parent ctrl! Skipped setting=",%pData.Setting);
+				paramLog("Param skipped due to invalid parent ctrl! Skipped setting=",%pData.Setting,%data);
 				continue;
 			}
 		
 			if(!isObject(%pData.Widget)) {
-				paramLog("Couldn't find widget for setting type:",%pData.Type,"This setting building is skipped WidgetSource:",%pData.Widget);
+				paramLog(%pData.Setting,"Couldn't find widget for setting type:",%pData.Type,"This setting building is skipped Widget Style:",%guiStyle);
 				%fid++;
 				continue;
 			}

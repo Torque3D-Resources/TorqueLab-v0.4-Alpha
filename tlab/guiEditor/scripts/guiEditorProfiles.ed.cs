@@ -239,9 +239,9 @@ function GuiEditor::setProfileDirty( %this, %profile, %value, %noCheck ) {
 //---------------------------------------------------------------------------------------------
 
 /// Return true if the given profile name is the default profile for a
-/// GuiControl class or if it's the GuiDefaultProfile.
+/// GuiControl class or if it's the ToolsDefaultProfile.
 function GuiEditor::isDefaultProfile( %this, %name ) {
-	if( %name $= "GuiDefaultProfile" )
+	if( %name $= "ToolsDefaultProfile" )
 		return true;
 
 	if( !endsWith( %name, "Profile" ) )

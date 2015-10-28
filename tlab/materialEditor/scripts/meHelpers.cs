@@ -75,6 +75,8 @@ function MaterialEditorGui::openFile( %this, %fileType,%defaultFileName ) {
 //==============================================================================
 function MaterialEditorGui::copyMaterials( %this, %copyFrom, %copyTo) {
 	// Make sure we copy and restore the map to.
+	if (!isObject(%copyFrom) || !isObject(%copyTo))
+		return;
 	%mapTo = %copyTo.mapTo;
 	%copyTo.assignFieldsFrom( %copyFrom );
 	%copyTo.mapTo = %mapTo;
@@ -220,6 +222,29 @@ function MaterialEditorGui::convertTextureFields(%this) {
 		%specMap = MaterialEditorGui.searchForTexture(MaterialEditorGui.currentMaterial, %specMap);
 		MaterialEditorGui.currentMaterial.specularMap[%specI] = %specMap;
 	}
+	//PBR Script   
+   for(%roughI = 0; %roughI < 4; %roughI++)
+   {
+      %roughMap = MaterialEditorGui.currentMaterial.roughMap[%roughI];      
+      %roughMap = MaterialEditorGui.searchForTexture(MaterialEditorGui.currentMaterial, %roughMap);
+      MaterialEditorGui.currentMaterial.roughMap[%specI] = %roughMap;
+   }
+   
+   for(%aoI = 0; %aoI < 4; %aoI++)
+   {
+      %aoMap = MaterialEditorGui.currentMaterial.aoMap[%aoI];      
+      %aoMap = MaterialEditorGui.searchForTexture(MaterialEditorGui.currentMaterial, %aoMap);
+      MaterialEditorGui.currentMaterial.aoMap[%specI] = %aoMap;
+   }
+   
+   for(%metalI = 0; %metalI < 4; %metalI++)
+   {
+      %metalMap = MaterialEditorGui.currentMaterial.metalMap[%metalI];      
+      %metalMap = MaterialEditorGui.searchForTexture(MaterialEditorGui.currentMaterial, %metalMap);
+      MaterialEditorGui.currentMaterial.metalMap[%metalI] = %metalMap;
+   }
+   //PBR ScriptEnd
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================

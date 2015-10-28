@@ -5,6 +5,57 @@
 //==============================================================================
 
 //==============================================================================
+// Handle a selection in the MissionGroup shape selector
+function ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd ) {
+	devLog("ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd )", %this, %file,%createCmd );
+	ShapeEd.selectFilePath(%file);
+	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Handle a selection in the shape selector list
+function ShapeEd::selectFilePath( %this, %path ) {
+	// Prompt user to save the old shape if it is dirty
+	if ( ShapeEditor.isDirty() ) {
+		%cmd = "ColladaImportDlg.showDialog( \"" @ %path @ "\", \"ShapeEditor.selectShape( \\\"" @ %path @ "\\\", ";
+		LabMsgYesNoCancel( "Shape Modified", "Would you like to save your changes?", %cmd @ "true );\" );", %cmd @ "false );\" );" );
+	} else {
+		%cmd = "ShapeEditor.selectShape( \"" @ %path @ "\", false );";
+		ColladaImportDlg.showDialog( %path, %cmd );
+	}
+}
+
+//------------------------------------------------------------------------------
+//==============================================================================
+// Handle a selection in the MissionGroup shape selector
+function ShapeEditorPlugin::setSelectedObject( %this, %obj ) {
+	devLog("ShapeEditorPlugin::setSelectedObject( %this, %obj )", %this, %obj );
+	
+	%path = ShapeEditor.getObjectShapeFile( %obj );
+
+	if ( %path !$= "" )
+		ShapeEdSelectWindow.onSelect( %path );
+
+	// Set the object type (for required nodes and sequences display)
+	%objClass = %obj.getClassName();
+	%hintId = -1;
+	%count = ShapeHintGroup.getCount();
+
+	for ( %i = 0; %i < %count; %i++ ) {
+		%hint = ShapeHintGroup.getObject( %i );
+
+		if ( %objClass $= %hint.objectType ) {
+			%hintId = %hint;
+			break;
+		} else if ( isMemberOfClass( %objClass, %hint.objectType ) ) {
+			%hintId = %hint;
+		}
+	}
+
+	ShapeEdHintMenu.setSelected( %hintId );
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // Select Object Functions
 //==============================================================================
 
@@ -89,8 +140,8 @@ function ShapeEditor::selectShape( %this, %path, %saveOld ) {
 	// Initialise the editor windows
 	ShapeEdAdvancedWindow.update_onShapeSelectionChanged();
 	ShapeEdMountWindow.update_onShapeSelectionChanged();
-	ShapeEdThreadWindow.update_onShapeSelectionChanged();
-	ShapeEdColWindow.update_onShapeSelectionChanged();
+	ShapeEdThreadViewer.update_onShapeSelectionChanged();
+	ShapeEdCollisions.update_onShapeSelectionChanged();
 	ShapeEdPropWindow.update_onShapeSelectionChanged();
 	ShapeEdShapeView.refreshShape();
 	// Update object type hints
@@ -204,20 +255,21 @@ function ShapeEditor::saveConstructor( %this, %constructor ) {
 // Update the GUI in response to the shape selection changing
 function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 	// --- NODES TAB ---
-	ShapeEdNodeTreeView.removeItem( 0 );
-	%rootId = ShapeEdNodeTreeView.insertItem( 0, "<root>", 0, "" );
+	ShapeEd_NodeTree.removeItem( 0 );
+	%rootId = ShapeEd_NodeTree.insertItem( 0, "<root>", 0, "" );
 	%count = ShapeEditor.shape.getNodeCount();
 
 	for ( %i = 0; %i < %count; %i++ ) {
 		%name = ShapeEditor.shape.getNodeName( %i );
 
 		if ( ShapeEditor.shape.getNodeParentName( %name ) $= "" )
-			ShapeEdNodeTreeView.addNodeTree( %name );
+			ShapeEd_NodeTree.addNodeTree( %name );
 	}
 
-	%this.update_onNodeSelectionChanged( -1 );    // no node selected
+	ShapeEd.onNodeSelectionChanged( -1 );    // no node selected
 	// --- SEQUENCES TAB ---
-
+	
+	ShapeEd_SeqPillStack.clear(); //Clear the new sequence lisitng stack
 	ShapeEdSequenceList.clear();	
 	ShapeEdSequenceList.addRow( -1, "Name" TAB "Cyclic" TAB "Blend" TAB "Frames" TAB "Priority" );
 	ShapeEdSequenceList.setRowActive( -1, false );	
@@ -228,16 +280,18 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		%name = ShapeEditor.shape.getSequenceName( %i );
 
 		// Ignore __backup__ sequences (only used by editor)
-		if ( !startswith( %name, "__backup__" ) )
+		if ( !startswith( %name, "__backup__" ) ){
 			ShapeEdSequenceList.addItem( %name );
+			ShapeEd.addSequencePill(%name);
+		}
 	}
 
-	ShapeEdThreadWindow.onAddThread();        // add thread 0
+	ShapeEdThreadViewer.onAddThread();        // add thread 0
 	// --- DETAILS TAB ---
 	// Add detail levels and meshes to tree
-	ShapeEdDetailTree.clearSelection();
-	ShapeEdDetailTree.removeItem( 0 );
-	%root = ShapeEdDetailTree.insertItem( 0, "<root>", "", "" );
+	ShapeEd_DetailTree.clearSelection();
+	ShapeEd_DetailTree.removeItem( 0 );
+	%root = ShapeEd_DetailTree.insertItem( 0, "<root>", "", "" );
 	%objCount = ShapeEditor.shape.getObjectCount();
 
 	for ( %i = 0; %i < %objCount; %i++ ) {
@@ -246,7 +300,7 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 
 		for ( %j = 0; %j < %meshCount; %j++ ) {
 			%meshName = ShapeEditor.shape.getMeshName( %objName, %j );
-			ShapeEdDetailTree.addMeshEntry( %meshName, 1 );
+			ShapeEd_DetailTree.addMeshEntry( %meshName, 1 );
 		}
 	}
 
@@ -259,5 +313,5 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		ShapeEdDetails-->objectNode.add( ShapeEditor.shape.getNodeName( %i ) );
 
 	// --- MATERIALS TAB ---
-	ShapeEdMaterials.updateMaterialList();
+	ShapeEd.updateMaterialList();
 }

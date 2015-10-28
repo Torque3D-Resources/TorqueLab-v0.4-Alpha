@@ -9,6 +9,10 @@
 function syncParamArray(%paramArray, %keepEmptyValue) {
 	%i = 0;
 
+	if (!isObject(%paramArray)){
+		warnLog("Trying to sync invalid param array named:",%paramArray);
+		return;
+	}
 	for( ; %i < %paramArray.count() ; %i++) {
 		%field = %paramArray.getKey(%i);
 		%paramData = %paramArray.getValue(%i);
@@ -39,8 +43,7 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 		if (%paramArray.autoSyncPref $= "1"||%paramArray.autoSyncPref) {
 			%prefGroup = %paramArray.prefGroup;
-			eval("%value = "@%prefGroup@%fieldClean@";");
-			
+			eval("%value = "@%prefGroup@%fieldClean@";");		
 			if (%value !$= "") {
 				setParamCtrlValue(%ctrl,%value,%field,%paramArray);
 				continue;
@@ -74,14 +77,13 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 
 			//If we got a value, get out of here
 			if (%value !$= "") {				 
-				paramLog(%field,"Param update from Sync Data:",%data,"Value:",%value);
+
 				break;
 				
 			}
 		}
 
 		if (%value $= "" && !%keepEmptyValue){
-			paramLog("Param update from Sync Data:",%data,"Value:",%value);
 			continue;
 		}
 

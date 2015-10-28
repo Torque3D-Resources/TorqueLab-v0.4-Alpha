@@ -4,12 +4,26 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 
+/*
+function ShapeEd::addNewNode( %this, %name ) {
+	if (%name $= "")
+		%name = ShapeEd_AddNodeName.getText();
+		
+	if (%name $= "")	
+		%name = "NewNode";
+	ShapeEdNodes.onAddNode(%name);
+	
+}
+
 //==============================================================================
 // ShapeEditor -> Node Editing 
 //==============================================================================
 
 // Update the GUI in response to the node selection changing
 function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
+	ShapeEd.onNodeSelectionChanged( %id );
+	return;
+	
 	if ( %id > 0 ) {
 		// Enable delete button and edit boxes
 		if ( ShapeEdSeqNodeTabBook.activePage $= "Node" )
@@ -66,6 +80,8 @@ function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
 
 // Update the GUI in response to a node being added
 function ShapeEdPropWindow::update_onNodeAdded( %this, %nodeName, %oldTreeIndex ) {
+	ShapeEd.onNodeAdded( %nodeName, %oldTreeIndex );
+	return;
 	// --- MISC ---
 	ShapeEdShapeView.refreshShape();
 	ShapeEdShapeView.updateNodeTransforms();
@@ -104,6 +120,8 @@ function ShapeEdPropWindow::update_onNodeAdded( %this, %nodeName, %oldTreeIndex 
 
 // Update the GUI in response to a node(s) being removed
 function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount ) {
+	ShapeEd.onNodeRemoved( %nameList, %nameCount );
+	return;
 	// --- MISC ---
 	ShapeEdShapeView.refreshShape();
 	ShapeEdShapeView.updateNodeTransforms();
@@ -132,7 +150,7 @@ function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount )
 		ShapeEdNodeTreeView.removeItem( %id );
 
 		if ( ShapeEdNodeTreeView.getSelectedItem() <= 0 )
-			ShapeEdPropWindow.update_onNodeSelectionChanged( -1 );
+			ShapeEd.onNodeSelectionChanged( -1 );
 	}
 
 	// --- DETAILS TAB ---
@@ -144,6 +162,8 @@ function ShapeEdPropWindow::update_onNodeRemoved( %this, %nameList, %nameCount )
 
 // Update the GUI in response to a node being renamed
 function ShapeEdPropWindow::update_onNodeRenamed( %this, %oldName, %newName ) {
+	ShapeEd.onNodeRenamed( %oldName, %newName );
+	return;
 	// --- MISC ---
 	ShapeEdSelectWindow.updateHints();
 	// --- MOUNT WINDOW ---
@@ -189,6 +209,8 @@ function ShapeEdPropWindow::update_onNodeRenamed( %this, %oldName, %newName ) {
 
 // Update the GUI in response to a node's parent being changed
 function ShapeEdPropWindow::update_onNodeParentChanged( %this, %nodeName ) {
+	ShapeEd.onNodeParentChanged( %nodeName );
+	return;
 	// --- MISC ---
 	ShapeEdShapeView.updateNodeTransforms();
 	// --- NODES TAB ---
@@ -207,6 +229,8 @@ function ShapeEdPropWindow::update_onNodeParentChanged( %this, %nodeName ) {
 }
 
 function ShapeEdPropWindow::update_onNodeTransformChanged( %this, %nodeName ) {
+	ShapeEd.onNodeTransformChanged( %nodeName );
+	return;
 	// Default to the selected node if none is specified
 	if ( %nodeName $= "" ) {
 		%id = ShapeEdNodeTreeView.getSelectedItem();
@@ -264,7 +288,7 @@ function ShapeEdShapeView::onNodeSelected( %this, %index ) {
 			ShapeEdNodeTreeView.selectItem( %id );
 	}
 }
-
+//ShapeEdNodes.onAddNode("Base");
 function ShapeEdNodes::onAddNode( %this, %name ) {
 	// Add a new node, using the currently selected node as the initial parent
 	if ( %name $= "" )
@@ -381,3 +405,4 @@ function ShapeEdShapeView::onEditNodeTransform( %this, %node, %txfm, %gizmoID ) 
 	devLog("ShapeEdShapeView::onEditNodeTransform");
 	ShapeEditor.doEditNodeTransform( %node, %txfm, 1, %gizmoID );
 }
+*/

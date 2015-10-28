@@ -23,7 +23,7 @@ new River() {
    waveMagnitude[1] = "0.2";
    waveMagnitude[2] = "0.2";
    overallWaveMagnitude = "1";
-   rippleTex = "art/water/ripple.dds";
+   rippleTex = "art/textures/water/ripple.dds";
    rippleDir[0] = "0 1";
    rippleDir[1] = "0.707 0.707";
    rippleDir[2] = "0.5 0.86";
@@ -37,7 +37,7 @@ new River() {
    rippleMagnitude[1] = "1";
    rippleMagnitude[2] = "0.3";
    overallRippleMagnitude = "0.1";
-   foamTex = "art/water/foam";
+   foamTex = "art/textures/water/foam";
    foamDir[0] = "1 0";
    foamDir[1] = "0 1";
    foamSpeed[0] = "0";
@@ -62,7 +62,7 @@ new River() {
    waterFogDensityOffset = "1";
    wetDepth = "1.5";
    wetDarkening = "0.2";
-   depthGradientTex = "art/water/depthcolor_ramp";
+   depthGradientTex = "art/textures/water/depthcolor_ramp";
    depthGradientMax = "50";
    distortStartDist = "0.1";
    distortEndDist = "20";

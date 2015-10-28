@@ -151,7 +151,9 @@ function strFindWords(%str,%words,%all) {
 //==============================================================================
 /// Check if the word contain any of the supplied words. Return true if found.
 /// Optional: %all -> If %all is true, must find all words to return true;
-function strFind(%str,%find) {
+function strFind(%str,%find,%allowEmpty) {
+	if (%allowEmpty && %find $= "")
+		return true;
 	//Add a space before string to fix the first char not checked issue
 	%result = strstr(" "@%str,%find);
 	
@@ -334,10 +336,12 @@ function ColorIntToFloat( %color,%length ) {
 //==============================================================================
 // Empty Editor Gui
 function ColorFloatLength(%color,%length) {
+	devLog("Start color float length:",%color,"Length:",%length);
 	%color.r = mFloatLength(%color.r,%length);
 	%color.g = mFloatLength(%color.g,%length);
 	%color.b = mFloatLength(%color.b,%length);
 	%color.a = mFloatLength(%color.a,%length);	
+	devLog("End color float length:",%color);
 	return %color;
 }
 //------------------------------------------------------------------------------

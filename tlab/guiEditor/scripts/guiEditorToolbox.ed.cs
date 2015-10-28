@@ -91,7 +91,7 @@ function GuiEditorToolbox::setViewTypeAlphabetical( %this ) {
 			useMouseEvents = true;
 			className = "GuiEditorToolboxButton";
 			tooltip = %className NL "\n" @ getDescriptionOfClass( %className );
-			tooltipProfile = "ToolsGuiToolTipProfile";
+			tooltipProfile = "ToolsToolTipProfile";
 		};
 		%this.add( %ctrl );
 	}
@@ -164,7 +164,7 @@ function GuiEditorToolbox::setViewTypeCategorized( %this ) {
 				useMouseEvents = true;
 				className = "GuiEditorToolboxButton";
 				tooltip = %className NL "\n" @ getDescriptionOfClass( %className );
-				tooltipProfile = "ToolsGuiToolTipProfile";
+				tooltipProfile = "ToolsToolTipProfile";
 			};
 			%stack.add( %ctrl );
 		}
@@ -202,7 +202,7 @@ function GuiEditorToolbox::getOrCreateRolloutForCategory( %this, %category ) {
 		MinExtent = "8 2";
 		canSave = "1";
 		Visible = "1";
-		tooltipprofile = "ToolsGuiToolTipProfile";
+		tooltipprofile = "ToolsToolTipProfile";
 		hovertime = "1000";
 		canSaveDynamicFields = "0";
 		autoCollapseSiblings = true;
@@ -218,7 +218,7 @@ function GuiEditorToolbox::getOrCreateRolloutForCategory( %this, %category ) {
 			MinExtent = "64 64";
 			canSave = "1";
 			Visible = "1";
-			tooltipprofile = "ToolsGuiToolTipProfile";
+			tooltipprofile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			canSaveDynamicFields = "0";
 			padding = "6 2 4 0";

@@ -8,7 +8,7 @@
 // ShapeEditor -> Threads and Animation
 //==============================================================================
 
-
+/*
 function ShapeEdThreadWindow::onWake( %this ) {
 	%this-->useTransitions.setValue( 1 );
 	%this-->transitionTime.setText( "0.5" );
@@ -285,3 +285,4 @@ function ShapeEdThreadList::onSelect( %this, %row, %text ) {
 
 	SetToggleButtonValue( ShapeEdAnimWindow-->pingpong, ShapeEdShapeView.threadPingPong );
 }
+*/

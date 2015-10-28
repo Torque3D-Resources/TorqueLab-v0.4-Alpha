@@ -12,7 +12,7 @@ function TerrainMaterialDlg::updateMaterialMapping( %this, %terrMat ) {
 	%diffuse = %terrMat.diffuseMap;
 	%texName = fileBase(%diffuse);
 	%mapMat = getMaterialMapping(%texName);
-	devLog("MappedMat for:",%terrMat.internalName," = ", %mapMat);
+	
 	if (isObject(%mapMat)){
 		TerrainMatDlg_MaterialInfo-->matName.text = %mapMat;
 		TerrainMatDlg_MappedInspector.inspect(%mapMat);

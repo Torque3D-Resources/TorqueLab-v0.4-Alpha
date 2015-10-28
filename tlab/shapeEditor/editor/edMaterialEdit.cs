@@ -7,6 +7,7 @@
 //==============================================================================
 // Edit the selected object material
 //==============================================================================
+/*
 
 function ShapeEdMaterials::editSelectedMaterial( %this ) {
 	if ( isObject( %this.selectedMaterial ) ) {
@@ -108,3 +109,4 @@ function ShapeEdMaterials::updateSelectedMaterial( %this, %highlight ) {
 		%this.selectedMaterial.reload();
 	}
 }
+*/

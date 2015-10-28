@@ -25,14 +25,20 @@ EditorMap.bind(keyboard,"delete",EditorGlobalDelete);
 
 //==============================================================================
 function getEditorMouseAdjustAmount(%val) {
+	%adjust = $Camera::MouseMoveMultiplier;
+	if (%adjust $= "")
+		%adjust = 1;
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_MouseSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * %adjust;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function getEditorMouseScrollAdjustAmount(%val) {
+	%adjust = $Camera::MouseScrollMultiplier;
+	if (%adjust $= "")
+		%adjust = 1;
 	// based on a default camera FOV of 90'
-	return(%val * ($cameraFov / 90) * 0.01) * $Cfg_MouseScrollSpeed;
+	return(%val * ($cameraFov / 90) * 0.01) * 22;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -97,6 +103,10 @@ EditorMap.bind( mouse, yaxis, editorPitch );
 EditorMap.bind( mouse, zaxis, mouseWheelScroll );
 EditorMap.bind( keyboard, "tab", pressButton0 );
 
+EditorMap.bind( keyboard, "w", moveForward );
+EditorMap.bind( keyboard, "s", moveBackward );
+EditorMap.bind( keyboard, "a", moveleft );
+EditorMap.bind( keyboard, "d", moveright );
 
 EditorMap.bind( mouse, "alt zaxis", editorWheelFadeScroll );
 EditorMap.bindCmd( keyboard, "ctrl o", "toggleDlg(LabSettingsDlg);","" );

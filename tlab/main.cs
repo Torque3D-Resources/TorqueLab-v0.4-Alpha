@@ -5,9 +5,20 @@
 //==============================================================================
 
 %helpersLab = "tlab/helpers/initHelpers.cs";
+
 if (isFile(%helpersLab))
 	exec(%helpersLab);
 
+//==============================================================================
+//Do TorqueLab should be initialized after main onStart?
+$TorqueLabInitOnStart = false; //Start, Custom, FunctionCall
+//If $TorqueLabInitOnStart is set to false, you need to initialize it manually
+//There's 3 options available for post start initialization
+//1- It will initialized when you press F10 or F11 (Editors toggle binds)
+//2- Add a initTorqueLab(); call anywhere in your scripts
+//3- Use the custom function overide package at bottom (At end of Lab Package)
+//   You simply set the function from which you want TorqueLab to be initialized.
+//------------------------------------------------------------------------------
 
 //==============================================================================
 // TorqueLab Core Global Settings
@@ -15,239 +26,92 @@ if (isFile(%helpersLab))
 // Path to the folder that contains the editors we will load.
 $Lab::resourcePath = "tlab/";
 
+if (isObject($pref::UI::defaultGui))
+	$TLab_defaultGui = $pref::UI::defaultGui;
+else
+	$TLab_defaultGui = "MainMenuGui";
+
 $LabGameMap = "moveMap";
 // Global holding material list for active simobject
 $Lab::materialEditorList = "";
 
 // These must be loaded first, in this order, before anything else is loaded
 $Lab::loadFirst = "sceneEditor";
-$Lab::loadLast = "";
+$Lab::loadLast = "materialLab";
 // These folders must be skipped for initial load
 $LabIgnoreEnableFolderList = "debugger forestEditor levels";
 
+//Load the TorqueLab Main Initialization script.
+exec("tlab/initTorqueLab.cs");
 
-
-//---------------------------------------------------------------------------------------------
-// Tools Package.
-//---------------------------------------------------------------------------------------------
-function EditorIsActive() {
-    return ( isObject(EditorGui) && Canvas.getContent() == EditorGui.getId() );
-}
-
-function GuiEditorIsActive() {
-    return ( isObject(GuiEditorGui) && Canvas.getContent() == GuiEditorGui.getId() );
-}
-
-function loadTorqueLabProfiles( )
-{
-	//------------------------------------------------------------------------------
-	//Start by loading the Gui Profiles
-	exec("tlab/gui/initGuiProfiles.cs");
-	exec( "tlab/EditorLab/gui/core/cursors.ed.cs" );
-//	exec( "tlab/editorClasses/gui/panels/navPanelProfiles.ed.cs" );
-	// Make sure we get editor profiles before any GUI's
-	// BUG: these dialogs are needed earlier in the init sequence, and should be moved to
-	// common, along with the guiProfiles they depend on.
-
-}
 //==============================================================================
-// TorqueLab Package overiding some default functions
+// Lab Package contain overide function that deal with TorqueLab
 //==============================================================================
 package Lab {
-   
-    // Start-up.
-    function onStart() {
-    		//Load the Editor profile before loading the game onStart
-    		loadTorqueLabProfiles();
-    		
-        Parent::onStart();       
-     	 new Settings(EditorSettings) {
-            file = "tlab/settings.xml";
-        };
-        EditorSettings.read();
+	//==============================================================================
+	// onStart() - Called when the application is launched by the engine
+	//------------------------------------------------------------------------------
+	// If $TorqueLabInitOnStart is true, TorqueLab will be loaded at end of onStart
+	// Else, it will bind the editor toggle keys to the init function and TorqueLab
+	// will be initialized when any editor is toggled. It will launch the editor once
+	// initialization is completed. If TLab is loaded manually from elsewhere, those
+	// binds will be overiden with the normal toggle binds.
+	//------------------------------------------------------------------------------
+	function onStart() {
+		if (!$TorqueLabInitOnStart) {
+			Parent::onStart();
+			GlobalActionMap.bindCmd(keyboard,"F10","initTorqueLab(\"Gui\");","");
+			GlobalActionMap.bindCmd(keyboard,"F11","initTorqueLab(\"World\");","");
+			return;
+		}
 
-         new Settings(LabCfg) {
-            file = "tlab/core/configs/config.xml";
-        };
-        
+		Parent::onStart();
+		initTorqueLab();
+	}
+	//------------------------------------------------------------------------------
 
-        info( "Initializing TorqueLab" );
-      
-        // Default file path when saving from the editor (such as prefabs)
-        if ($Pref::WorldEditor::LastPath $= "") {
-            $Pref::WorldEditor::LastPath = getMainDotCsDir();
-        }
+	//==============================================================================
+	// onExit() - Call just before the application is shutted down
+	//------------------------------------------------------------------------------
+	// This will terminated some editor process and make sure everything is deleted
+	//------------------------------------------------------------------------------
+	function onExit() {
+		if( LabEditor.isInitialized )
+			EditorGui.shutdown();
 
-        $Lab = new ScriptObject(Lab);
-       
-        exec("tlab/core/execScripts.cs");
-        $LabGuiExeced = true;
-        // Common GUI stuff.
-        Lab.initLabEditor();
+		// Free all the icon images in the registry.
+		EditorIconRegistry::clear();
 
-        //%toggle = $Scripts::ignoreDSOs;
-        //$Scripts::ignoreDSOs = true;
+		//Call destroy function of all editors
+		for (%i = 0; %i < $editors[count]; %i++) {
+			%destroyFunction = "destroy" @ $editors[%i];
 
-        $ignoredDatablockSet = new SimSet();
+			if( isFunction( %destroyFunction ) )
+				call( %destroyFunction );
+		}
 
-        // fill the list of editors
-        $editors[count] = getWordCount( $Lab::loadFirst );
-        for ( %i = 0; %i < $editors[count]; %i++ ) {
-            $editors[%i] = getWord( $Lab::loadFirst, %i );
-        }
-
-        %pattern = $Lab::resourcePath @ "/*/main.cs";
-        %folder = findFirstFile( %pattern );
-        if ( %folder $= "") {
-            // if we have absolutely no matches for main.cs, we look for main.cs.dso
-            %pattern = $Lab::resourcePath @ "/*/main.cs.dso";
-            %folder = findFirstFile( %pattern );
-        }
-        while ( %folder !$= "" ) {
-            if( filePath( %folder ) !$= "tools" && filePath( %folder ) !$= "tlab" ) { // Skip the actual 'tools' folder...we want the children
-                %folder = filePath( %folder );
-                %editor = fileName( %folder );
-                if ( IsDirectory( %folder ) ) {
-                    // Yes, this sucks and should be done better
-                    if ( strstr( $Lab::loadFirst, %editor ) == -1 ) {
-                        $editors[$editors[count]] = %editor;
-                        $editors[count]++;
-                    }
-                }
-            }
-            %folder = findNextFile( %pattern );
-        }
-
-        // initialize every editor
-
-        %count = $editors[count];
-        //  exec( "./worldEditor/main.cs" );
-        foreach$(%tmpFolder in $LabIgnoreEnableFolderList)
-            $ToolFolder[%tmpFolder] = "1";
-        for ( %i = 0; %i < %count; %i++ ) {
-            eval("%enabledEd = $pref::WorldEditor::"@$editors[%i]@"::Enabled;");
-            if (!%enabledEd && !$ToolFolder[%tmpFolder]) {
-                continue;
-            }
-            if (strFind($Lab::loadLast,$editors[%i])){
-            	%finalLoadList = strAddWord(%finalLoadList,$editors[%i]);
-            	continue;
-        		}
-            exec( "./" @ $editors[%i] @ "/main.cs" );
-
-            %initializeFunction = "initialize" @ $editors[%i];
-            if( isFunction( %initializeFunction ) )
-                call( %initializeFunction );
-        }
-			foreach$(%editor in %finalLoadList){
-				devLog("Loading last editor:",%editor);
-				exec( "./" @ %editor @ "/main.cs" );
-
-            %initializeFunction = "initialize" @ %editor;
-            if( isFunction( %initializeFunction ) )
-                call( %initializeFunction );
-			}
-				
-        // Popuplate the default SimObject icons that
-        // are used by the various editors.
-        EditorIconRegistry::loadFromPath( "tlab/gui/icons/class_assets/" );
-
-        // Load up the tools resources. All the editors are initialized at this point, so
-        // resources can override, redefine, or add functionality.
-        Lab::LoadResources( $Lab::resourcePath );
-
-        //$Scripts::ignoreDSOs = %toggle;
-
-     
-        Lab.pluginInitCompleted();
-    }
-
-    function startToolTime(%tool) {
-        if($toolDataToolCount $= "")
-            $toolDataToolCount = 0;
-
-        if($toolDataToolEntry[%tool] !$= "true") {
-            $toolDataToolEntry[%tool] = "true";
-            $toolDataToolList[$toolDataToolCount] = %tool;
-            $toolDataToolCount++;
-            $toolDataClickCount[%tool] = 0;
-        }
-
-        $toolDataStartTime[%tool] = getSimTime();
-        $toolDataClickCount[%tool]++;
-    }
-
-    function endToolTime(%tool) {
-        %startTime = 0;
-
-        if($toolDataStartTime[%tool] !$= "")
-            %startTime = $toolDataStartTime[%tool];
-
-        if($toolDataTotalTime[%tool] $= "")
-            $toolDataTotalTime[%tool] = 0;
-
-        $toolDataTotalTime[%tool] += getSimTime() - %startTime;
-    }
-
-    function dumpToolData() {
-        %count = $toolDataToolCount;
-        for(%i=0; %i<%count; %i++) {
-            %tool = $toolDataToolList[%i];
-            %totalTime = $toolDataTotalTime[%tool];
-            if(%totalTime $= "")
-                %totalTime = 0;
-            %clickCount = $toolDataClickCount[%tool];
-            echo("---");
-            echo("Tool: " @ %tool);
-            echo("Time (seconds): " @ %totalTime / 1000);
-            echo("Activated: " @ %clickCount);
-            echo("---");
-        }
-    }
-
-    // Shutdown.
-    function onExit() {
-    
-        if( LabEditor.isInitialized )
-            EditorGui.shutdown();
-
-        // Free all the icon images in the registry.
-        EditorIconRegistry::clear();
-
-        // Save any Layouts we might be using
-        //GuiFormManager::SaveLayout(LevelBuilder, Default, User);
-
-        %count = $editors[count];
-        for (%i = 0; %i < %count; %i++) {
-            %destroyFunction = "destroy" @ $editors[%i];
-            if( isFunction( %destroyFunction ) )
-                call( %destroyFunction );
-        }
-
-        // Call Parent.
-        Parent::onExit();
-
-        // write out our settings xml file
-        //EditorSettings.write();
-       
-
-    }
+		// Call Parent.
+		Parent::onExit();
+	}
+	//------------------------------------------------------------------------------
+	//==============================================================================
+	//Custom Overide Function TorqueLab initialization (Example)
+	//------------------------------------------------------------------------------
+	// This is another way to initialize TorqueLab from anywhere, just set the function
+	// information from which you want TLab to be loaded. If you want it to load at start
+	// of the function, simply place initTorqueLab(); before the Parent:: call. The example
+	// will make TorqueLab to load at the end of the StartupGui onWake function.
+	//------------------------------------------------------------------------------
+	// Uncomment and set on which function call you want to load TorqueLab
+	function StartupGui::onWake(%this) {
+		Parent::onWake(%this);
+		//initTorqueLab();
+		schedule(500,0,"initTorqueLab");
+	}
+	//------------------------------------------------------------------------------
 };
-
-function Lab::LoadResources( %path ) {
-    %resourcesPath = %path @ "resources/";
-    %resourcesList = getDirectoryList( %resourcesPath );
-
-    %wordCount = getFieldCount( %resourcesList );
-    for( %i = 0; %i < %wordCount; %i++ ) {
-        %resource = GetField( %resourcesList, %i );
-        if( isFile( %resourcesPath @ %resource @ "/resourceDatabase.cs") )
-            ResourceObject::load( %path, %resource );
-    }
-}
-
-//-----------------------------------------------------------------------------
-// Activate Package.
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+//==============================================================================
+// Activate Package Lab
 activatePackage(Lab);
-
+//------------------------------------------------------------------------------

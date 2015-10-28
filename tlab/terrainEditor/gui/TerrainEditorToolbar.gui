@@ -9,7 +9,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "110 0";
    extent = "618 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -17,7 +17,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
    profile = "ToolsDefaultProfile";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "PluginStack";
@@ -26,13 +26,13 @@ new GuiStackControl(EWTerrainEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "14405";
-      disabledGroup = "14406";
-      EditorContainer = "4007";
+      defaultStack = "31831";
+      disabledGroup = "31832";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainEditor";
       preventReordering = "0";
-      stackLists = "14407 14416 14442";
+      stackLists = "31833 31842 31868";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -49,7 +49,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -75,7 +75,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -98,7 +98,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -116,7 +116,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -132,7 +132,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -162,7 +162,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          visible = "1";
          active = "1";
          command = "ETerrainEditor.toggleBrushType($ThisControl);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Circle Brush (V)";
          hovertime = "1000";
          isContainer = "0";
@@ -192,7 +192,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          visible = "1";
          active = "1";
          command = "ETerrainEditor.toggleBrushType($ThisControl);";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Box Brush (B)";
          hovertime = "1000";
          isContainer = "0";
@@ -222,7 +222,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          visible = "1";
          active = "1";
          command = "TerrainEditorDialogs.toggleDlg(\"BrushManager\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
          isContainer = "0";
@@ -293,7 +293,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -316,7 +316,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -334,7 +334,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -350,7 +350,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -374,7 +374,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -398,7 +398,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -414,7 +414,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -441,11 +441,11 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "Softness";
@@ -456,7 +456,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "50";
+            value = "43";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -466,7 +466,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSoftness($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "softness_slider";
@@ -489,7 +489,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -513,7 +513,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -529,7 +529,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -556,11 +556,11 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "pressure";
@@ -571,7 +571,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "50";
+            value = "43";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -581,7 +581,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushPressure($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "pressure_slider";
@@ -604,7 +604,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          class = "AggregateBox";
@@ -628,7 +628,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -644,7 +644,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -671,11 +671,11 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "size";
@@ -686,7 +686,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             range = "1 40";
             ticks = "0";
             snap = "0";
-            value = "10";
+            value = "8";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -696,7 +696,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             visible = "1";
             active = "1";
             altCommand = "TEP_BrushManager.updateBrushSize($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "size_slider";
@@ -719,10 +719,9 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsBoxDarkA";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
-         superClass = "ToolbarIcon";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -743,7 +742,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsTextBase";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             superClass = "ToolbarChild";
@@ -760,7 +759,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -774,8 +773,8 @@ new GuiStackControl(EWTerrainEditToolbar) {
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "20";
-            maxLength = "3";
+            text = "60";
+            maxLength = "6";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
             anchorTop = "1";
@@ -787,12 +786,12 @@ new GuiStackControl(EWTerrainEditToolbar) {
             minExtent = "8 16";
             horizSizing = "left";
             vertSizing = "bottom";
-            profile = "ToolsTextEditDark";
+            profile = "ToolsTextEdit";
             visible = "1";
             active = "1";
             variable = "ETerrainEditor.setHeightVal";
             altCommand = "TEP_BrushManager.updateSetHeightValue($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "setHeight";
@@ -800,7 +799,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiSliderCtrl() {
-            range = "20 60";
+            range = "0 60";
             ticks = "0";
             snap = "0";
             value = "60";
@@ -814,10 +813,10 @@ new GuiStackControl(EWTerrainEditToolbar) {
             active = "1";
             variable = "ETerrainEditor.setHeightVal";
             altCommand = "TEP_BrushManager.updateSetHeightValue($ThisControl);";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
-            internalName = "setheight_slider";
+            internalName = "SetHeight_slider";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -885,7 +884,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
       profile = "ToolsFillDarkB";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "ToolbarGroup";
@@ -908,7 +907,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          profile = "ToolsFillDarkB";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "GroupDivider";
@@ -926,7 +925,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             canSave = "1";
@@ -942,7 +941,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
             profile = "ToolsDefaultProfile";
             visible = "1";
             active = "1";
-            tooltipProfile = "ToolsGuiToolTipProfile";
+            tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "0";
             internalName = "MouseStart";
@@ -972,7 +971,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          visible = "1";
          active = "1";
          command = "Canvas.pushDialog( TerrainBrushSoftnessCurveDlg );";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
          isContainer = "0";
@@ -1002,7 +1001,7 @@ new GuiStackControl(EWTerrainEditToolbar) {
          visible = "1";
          active = "1";
          command = "Canvas.pushDialog( TerrainManagerGui );";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Changes the softness curve";
          hovertime = "1000";
          isContainer = "0";
