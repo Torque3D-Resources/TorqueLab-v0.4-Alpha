@@ -8,7 +8,7 @@
 function buildParamSlider( %pData ) {
       
 
-%mouseArea = %pData.pill-->mouse;
+			%mouseArea = %pData.pill-->mouse;
 				if (isObject (%mouseArea)) {
 					%mouseArea.infoText = %tooltip;					
 					if (%pData.mouseAreaClass !$="")
@@ -20,17 +20,8 @@ function buildParamSlider( %pData ) {
 
 				//Slider ctrl update
 				%slider = %pData.pill-->slider;
-				%range = %pData.Option[%pData.Setting,"range"];
-				if (%range $="") %range = "0 1";
-				%slider.range = %range;
-				if (isObject(%pData.pill-->minRange)) {
-					%pData.pill-->minRange.text = %range.x;
-					%pData.pill-->minRange.internalName = "";
-				}
-				if (isObject(%pData.pill-->maxRange)) {
-					%pData.pill-->maxRange.text = %range.y;
-					%pData.pill-->maxRange.internalName = "";
-				}
+				%slider = paramSliderOptions(%pData,%slider);
+				
 
 				foreach$(%option in %pData.OptionList[%pData.Setting])
 					eval(%slider@%pData.OptionCmd[%pData.Setting,%option]);
@@ -47,6 +38,8 @@ function buildParamSlider( %pData ) {
 				%slider.hovertime = %tooltipDelay;
 				%pData.pill-->field.tooltip = %tooltip;
 				%pData.pill-->field.hovertime = %tooltipDelay;
+			
+			return %slider;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -72,8 +72,7 @@ function dumpDatablocks(  ) {
 
 //==============================================================================
 function getDatablockClassList( %class ) {
-	foreach( %obj in DatablockSet ) {
-		info(%obj.getName(),%obj.getClassName(  ));
+	foreach( %obj in DatablockSet ) {		
 		if( %obj.getClassName(  ) $= %class ) {
 			%list = strAddWord(%list,%obj.getName());
 		}

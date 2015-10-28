@@ -73,8 +73,13 @@ function SimSet::outputLog(%this, %fields ) {
 //===============================================================================
 function GameGroup::onAdd(%this, %obj ) {
 }
-
+$OKADD = false;
 function SimSet::onObjectAdded(%this, %obj ) {
+	if (!$OKADD)
+		return;
+	devlog("SimSetObjectAdded",%this.getName(),"Obj",%obj.getName());
+	%this.outputlog();
+	%obj.dump();
 	if (%this.isInstantGroup && $Cfg::Dev::ShowInstaGroupLog)
 		info("New object added to instantGroup:",%obj.getName(),"Group is:",%this.getName());
 }

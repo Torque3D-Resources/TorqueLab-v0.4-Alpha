@@ -12,7 +12,8 @@ function newScriptObject( %name, %target,%superClass,%class ) {
 	%obj.superClass = %superClass;
 	if (%class !$= "")
 			%obj.class = %class;
-	eval("$"@%name@" = %obj;");
+	if (%name !$= "")
+		eval("$"@%name@" = %obj;");
 
 	if (isObject(%target))
 		%target.add(%obj);

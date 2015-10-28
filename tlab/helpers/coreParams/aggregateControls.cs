@@ -160,6 +160,78 @@ function AggregateBox::callMethod(%this, %method, %args) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+// AggregateContainer
+//------------------------------------------------------------------------------
+// AggregateContainer is same as AggregateBox but reserver for GuiContainer
+//==============================================================================
+
+//==============================================================================
+// SetValue-> propagates the value to any control that has an internal name.
+function AggregateContainer::setValue(%this, %val, %child) {
+	
+	for(%i = 0; %i < %this.getCount(); %i++) {
+		%obj = %this.getObject(%i);
+		
+		if( %obj == %child )
+			continue;
+      
+      //Skip the object if internalName is in Skip Internal list
+     if(%obj.canAggregate())
+			%obj.setValueSafe(%val);
+	}
+	
+	if (%this.aggregateCtrls !$=""){
+		foreach$(%ctrl in %this.aggregateCtrls){
+			if (!isObject(%ctrl))
+				continue;
+			foreach(%obj in %ctrl){
+				 //Skip the object if internalName is in Skip Internal list
+     			if(%obj.canAggregate())
+					%obj.setValueSafe(%val);
+			}
+		}
+	}
+				
+		
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// getValue-> uses the value of the first control that has an internal name, if it has not cached a value via .setValue
+function AggregateContainer::getValue(%this) {
+	for(%i = 0; %i < %this.getCount(); %i++) {
+		%obj = %this.getObject(%i);
+		if(%obj.canAggregate()) {
+			//error("obj = " @ %obj.getId() @ ", " @ %obj.getName() @ ", " @ %obj.internalName );
+			//error(" value = " @ %obj.getValue());
+			return %obj.getValue();
+		}
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// updateFromChild-> called by child controls to propagate a new value, and to trigger the onAction() callback.
+function AggregateContainer::updateFromChild(%this, %child) {
+	%val = %child.getTypeValue();	
+	
+	%this.setValue(%val, %child);
+	%this.onAction();	
+}
+//------------------------------------------------------------------------------
+// onAction-> here only to prevent console spam warnings.
+function AggregateContainer::onAction(%this) {
+
+}
+//------------------------------------------------------------------------------
+// callMethod-> call a method on all children that have an internalName and that implement the method.
+function AggregateContainer::callMethod(%this, %method, %args) {
+	for(%i = 0; %i < %this.getCount(); %i++) {
+		%obj = %this.getObject(%i);
+		if(%obj.canAggregate() && %obj.isMethod(%method))
+			eval(%obj @ "." @ %method @ "( " @ %args @ " );");
+	}
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 // AggregateVar
 //------------------------------------------------------------------------------
 // AggregateVar use the control variable value instead of direct control value
