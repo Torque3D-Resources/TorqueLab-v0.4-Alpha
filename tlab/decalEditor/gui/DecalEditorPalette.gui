@@ -27,7 +27,7 @@
       canSave = "1";
       Visible = "1";
       Command = "DecalEditorGui.setMode(\"SelectDecalMode\");";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Select Decal (1)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/arrow";
@@ -49,7 +49,7 @@
       canSave = "1";
       Visible = "1";
       Command = "DecalEditorGui.setMode(\"MoveDecalMode\");";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Move Decal (2)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/road-river/move-point";
@@ -70,7 +70,7 @@
       canSave = "1";
       Visible = "1";
       Command = "DecalEditorGui.setMode(\"RotateDecalMode\");";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Rotate Decal (3)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/road-river/rotate-point";
@@ -91,7 +91,7 @@
       canSave = "1";
       Visible = "1";
       Command = "DecalEditorGui.setMode(\"ScaleDecalMode\");";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Scale Decal (4)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/road-river/scale-point";
@@ -112,7 +112,7 @@
       canSave = "1";
       Visible = "1";
       Command = "DecalEditorGui.setMode(\"AddDecalMode\");";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Add Decal (5)";
       hovertime = "1000";
       bitmap = "tlab/decalEditor/images/add-decal";

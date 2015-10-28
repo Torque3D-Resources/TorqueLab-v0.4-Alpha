@@ -24,7 +24,7 @@
    profile = "ToolsWindowProfile";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    tooltipWidth = "500";
    isContainer = "1";
@@ -42,7 +42,7 @@
       profile = "ToolsDefaultProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       tooltipWidth = "500";
       isContainer = "1";
@@ -66,7 +66,7 @@
          profile = "ToolsTextBase";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";
@@ -91,10 +91,10 @@
          minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "bottom";
-         profile = "ToolsTextEditProfile";
+         profile = "ToolsTextEdit";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";
@@ -121,7 +121,7 @@
          active = "1";
          command = "ManageBookmarksContainer.onOK();";
          accelerator = "return";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Create New Camera Bookmark";
          hovertime = "1000";
          tooltipWidth = "500";
@@ -154,7 +154,7 @@
       profile = "ToolsScrollProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       tooltipWidth = "500";
       isContainer = "1";
@@ -180,7 +180,7 @@
          profile = "ToolsDefaultProfile";
          visible = "1";
          active = "1";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          tooltipWidth = "500";
          isContainer = "1";

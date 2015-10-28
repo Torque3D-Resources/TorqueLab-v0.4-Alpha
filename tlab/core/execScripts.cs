@@ -18,12 +18,13 @@ function tlabExecCore( %loadGui ) {
 		execPattern("tlab/core/*.gui");			
 	}
 
-	execPattern("tlab/core/plugin/*.cs");
+	
 	execPattern("tlab/core/helpers/*.cs");
 	execPattern("tlab/core/scripts/*.cs");
 	execPattern("tlab/core/common/*.cs");
 	execPattern("tlab/core/params/*.cs");
-	execPattern("tlab/core/guiManagement/*.cs");
+	execPattern("tlab/core/menubar/*.cs");
+	
 execPattern("tlab/core/guiHelpers/*.cs");
 	
 	
@@ -40,7 +41,7 @@ tlabExecCore(!$LabGuiExeced);
 
 //------------------------------------------------------------------------------
 //Load the Editor Menubar Scripts
-
+/*
 function tlabExecMenubar( %loadGui ) {
 	exec("tlab/EditorLab/menubar/manageMenu.cs");
 	exec("tlab/EditorLab/menubar/defineMenus.cs");
@@ -50,45 +51,41 @@ function tlabExecMenubar( %loadGui ) {
 	exec("tlab/EditorLab/menubar/native/buildNativeMenu.cs");
 	exec("tlab/EditorLab/menubar/native/lightingMenu.cs");
 }
-tlabExecMenubar(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecMenubar");
+//tlabExecMenubar(!$LabGuiExeced);
+%execAll = strAddWord(%execAll,"tlabExecMenubar");*/
 //------------------------------------------------------------------------------
 
 
-//------------------------------------------------------------------------------
-//Load the Editor Main Gui
-
-function tlabExecScene(%loadGui ) {
-	execPattern("tlab/EditorLab/scene/*.cs");
-}
-tlabExecScene(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecScene");
 //------------------------------------------------------------------------------
 //Load the LabGui (Cleaned EditorGui files)
 function tlabExecEditor(%loadGui ) {
+	execPattern("tlab/EditorLab/SceneObjects/*.cs");
 	if (%loadGui) {
-		exec("tlab/EditorLab/editor/gui/EditorGui.gui");
+		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
-		
+		execPattern("tlab/EditorLab/SideBar/*.gui");
+		execPattern("tlab/EditorLab/SceneObjects/*.gui");	
 	}
 
-	exec("tlab/EditorLab/editor/EditorOpen.cs");
-	exec("tlab/EditorLab/editor/EditorClose.cs");
-	exec("tlab/EditorLab/editor/EditorScript.cs");
-
-	exec("tlab/EditorLab/editor/generalFunctions.cs");
-	execPattern("tlab/EditorLab/editor/worldEditor/*.cs");
-	execPattern("tlab/EditorLab/editor/features/*.cs");
+	exec("tlab/EditorLab/EditorOpen.cs");
+	exec("tlab/EditorLab/EditorClose.cs");
+	exec("tlab/EditorLab/EditorScript.cs");
+	exec("tlab/EditorLab/EditorActivate.cs");
+execPattern("tlab/EditorLab/guiSystem/*.cs");
+	execPattern("tlab/EditorLab/worldEditor/*.cs");
+	execPattern("tlab/EditorLab/plugin/*.cs");
+		
+	execPattern("tlab/EditorLab/SideBar/*.cs");
 }
 tlabExecEditor(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecEditor");
 //------------------------------------------------------------------------------
 //Load the Tools scripts (Toolbar and special functions)
-function tlabExecToolbar(%loadGui ) {
+/*function tlabExecToolbar(%loadGui ) {
 	execPattern("tlab/EditorLab/toolbar/*.cs");
 }
 tlabExecToolbar(!$LabGuiExeced);
-%execAll = strAddWord(%execAll,"tlabExecToolbar");
+%execAll = strAddWord(%execAll,"tlabExecToolbar");*/
 
 //------------------------------------------------------------------------------
 //Load the LabGui Ctrl (Cleaned EditorGui files)
@@ -107,7 +104,8 @@ function tlabExecGui(%loadGui ) {
 		exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.gui" );
 		exec("tlab/EditorLab/gui/MaterialSelector/MaterialSelectorDlg.gui");
 		
-		exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui");
+		
+		//exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui"); //Loaded at start
 		exec("tlab/EditorLab/gui/core/simViewDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/colorPicker.ed.gui");
 		exec("tlab/EditorLab/gui/core/scriptEditorDlg.ed.gui");
@@ -117,6 +115,7 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/TLabGameGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
+		
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
@@ -129,6 +128,7 @@ function tlabExecGui(%loadGui ) {
 	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
 	execPattern("tlab/EditorLab/gui/LabDevGui/*.cs");
 	
+	//Don't do a execPattern on the gui/core, some are load individually
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
 

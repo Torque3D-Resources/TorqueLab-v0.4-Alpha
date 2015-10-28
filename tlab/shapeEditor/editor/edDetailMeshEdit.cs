@@ -7,7 +7,7 @@
 //==============================================================================
 // ShapeEditor -> Detail/Mesh Editing
 //==============================================================================
-
+/*
 
 
 function ShapeEdDetails::onWake( %this ) {
@@ -20,10 +20,10 @@ function ShapeEdDetails::onWake( %this ) {
 	%this-->addGeomTo.add( "current detail", 0 );
 	%this-->addGeomTo.add( "new detail", 1 );
 	%this-->addGeomTo.setSelected( 0, false );
-	ShapeEdDetailTree.onDefineIcons();
+	ShapeEd_DetailTree.onDefineIcons();
 }
 
-function ShapeEdDetailTree::onDefineIcons(%this) {
+function ShapeEd_DetailTree::onDefineIcons(%this) {
 	// Set the tree view icon indices and texture paths
 	%this._imageNone = 0;
 	%this._imageHidden = 1;
@@ -34,12 +34,12 @@ function ShapeEdDetailTree::onDefineIcons(%this) {
 
 // Return true if the item in the details tree view is a detail level (false if
 // a mesh)
-function ShapeEdDetailTree::isDetailItem( %this, %id ) {
+function ShapeEd_DetailTree::isDetailItem( %this, %id ) {
 	return ( %this.getParent( %id ) == 1 );
 }
 
 // Get the detail level index from the ID of an item in the details tree view
-function ShapeEdDetailTree::getDetailLevelFromItem( %this, %id ) {
+function ShapeEd_DetailTree::getDetailLevelFromItem( %this, %id ) {
 	if ( %this.isDetailItem( %id ) )
 		%detSize = %this.getItemValue( %id );
 	else
@@ -48,7 +48,7 @@ function ShapeEdDetailTree::getDetailLevelFromItem( %this, %id ) {
 	return ShapeEditor.shape.getDetailLevelIndex( %detSize );
 }
 
-function ShapeEdDetailTree::addMeshEntry( %this, %name, %noSync ) {
+function ShapeEd_DetailTree::addMeshEntry( %this, %name, %noSync ) {
 	// Add new detail level if required
 	%size = getTrailingNumber( %name );
 	%detailID = %this.findItemByValue( %size );
@@ -56,13 +56,13 @@ function ShapeEdDetailTree::addMeshEntry( %this, %name, %noSync ) {
 	if ( %detailID <= 0 ) {
 		%dl = ShapeEditor.shape.getDetailLevelIndex( %size );
 		%detName = ShapeEditor.shape.getDetailLevelName( %dl );
-		%detailID = ShapeEdDetailTree.insertItem( 1, %detName, %size, "" );
+		%detailID = ShapeEd_DetailTree.insertItem( 1, %detName, %size, "" );
 
 		// Sort details by decreasing size
-		for ( %sibling = ShapeEdDetailTree.getPrevSibling( %detailID );
-				( %sibling > 0 ) && ( ShapeEdDetailTree.getItemValue( %sibling ) < %size );
-				%sibling = ShapeEdDetailTree.getPrevSibling( %detailID ) )
-			ShapeEdDetailTree.moveItemUp( %detailID );
+		for ( %sibling = ShapeEd_DetailTree.getPrevSibling( %detailID );
+				( %sibling > 0 ) && ( ShapeEd_DetailTree.getItemValue( %sibling ) < %size );
+				%sibling = ShapeEd_DetailTree.getPrevSibling( %detailID ) )
+			ShapeEd_DetailTree.moveItemUp( %detailID );
 
 		if ( !%noSync )
 			ShapeEdDetails.update_onDetailsChanged();
@@ -71,9 +71,9 @@ function ShapeEdDetailTree::addMeshEntry( %this, %name, %noSync ) {
 	return %this.insertItem( %detailID, %name, "", "" );
 }
 
-function ShapeEdDetailTree::removeMeshEntry( %this, %name, %size ) {
+function ShapeEd_DetailTree::removeMeshEntry( %this, %name, %size ) {
 	%size = getTrailingNumber( %name );
-	%id = ShapeEdDetailTree.findItemByName( %name );
+	%id = ShapeEd_DetailTree.findItemByName( %name );
 
 	if ( ShapeEditor.shape.getDetailLevelIndex( %size ) < 0 ) {
 		// Last mesh of a detail level has been removed => remove the detail level
@@ -91,14 +91,14 @@ function ShapeEdAdvancedWindow::update_onShapeSelectionChanged( %this ) {
 function ShapeEdPropWindow::update_onDetailRenamed( %this, %oldName, %newName ) {
 	// --- DETAILS TAB ---
 	// Rename detail entry
-	%id = ShapeEdDetailTree.findItemByName( %oldName );
+	%id = ShapeEd_DetailTree.findItemByName( %oldName );
 
 	if ( %id > 0 ) {
-		%size = ShapeEdDetailTree.getItemValue( %id );
-		ShapeEdDetailTree.editItem( %id, %newName, %size );
+		%size = ShapeEd_DetailTree.getItemValue( %id );
+		ShapeEd_DetailTree.editItem( %id, %newName, %size );
 
 		// Sync text if item is selected
-		if ( ShapeEdDetailTree.isItemSelected( %id ) &&
+		if ( ShapeEd_DetailTree.isItemSelected( %id ) &&
 				( ShapeEdDetails-->meshName.getText() !$= %newName ) )
 			ShapeEdDetails-->meshName.setText( stripTrailingNumber( %newName ) );
 	}
@@ -117,26 +117,26 @@ function ShapeEdPropWindow::update_onDetailSizeChanged( %this, %oldSize, %newSiz
 
 	// --- DETAILS TAB ---
 	// Update detail entry then resort details by size
-	%id = ShapeEdDetailTree.findItemByValue( %oldSize );
+	%id = ShapeEd_DetailTree.findItemByValue( %oldSize );
 	%detName = ShapeEditor.shape.getDetailLevelName( %dl );
-	ShapeEdDetailTree.editItem( %id, %detName, %newSize );
+	ShapeEd_DetailTree.editItem( %id, %detName, %newSize );
 
-	for ( %sibling = ShapeEdDetailTree.getPrevSibling( %id );
-			( %sibling > 0 ) && ( ShapeEdDetailTree.getItemValue( %sibling ) < %newSize );
-			%sibling = ShapeEdDetailTree.getPrevSibling( %id ) )
-		ShapeEdDetailTree.moveItemUp( %id );
+	for ( %sibling = ShapeEd_DetailTree.getPrevSibling( %id );
+			( %sibling > 0 ) && ( ShapeEd_DetailTree.getItemValue( %sibling ) < %newSize );
+			%sibling = ShapeEd_DetailTree.getPrevSibling( %id ) )
+		ShapeEd_DetailTree.moveItemUp( %id );
 
-	for ( %sibling = ShapeEdDetailTree.getNextSibling( %id );
-			( %sibling > 0 ) && ( ShapeEdDetailTree.getItemValue( %sibling ) > %newSize );
-			%sibling = ShapeEdDetailTree.getNextSibling( %id ) )
-		ShapeEdDetailTree.moveItemDown( %id );
+	for ( %sibling = ShapeEd_DetailTree.getNextSibling( %id );
+			( %sibling > 0 ) && ( ShapeEd_DetailTree.getItemValue( %sibling ) > %newSize );
+			%sibling = ShapeEd_DetailTree.getNextSibling( %id ) )
+		ShapeEd_DetailTree.moveItemDown( %id );
 
 	// Update size values for meshes of this detail
-	for ( %child = ShapeEdDetailTree.getChild( %id );
+	for ( %child = ShapeEd_DetailTree.getChild( %id );
 			%child > 0;
-			%child = ShapeEdDetailTree.getNextSibling( %child ) ) {
-		%meshName = stripTrailingNumber( ShapeEdDetailTree.getItemText( %child ) );
-		ShapeEdDetailTree.editItem( %child, %meshName SPC %newSize, "" );
+			%child = ShapeEd_DetailTree.getNextSibling( %child ) ) {
+		%meshName = stripTrailingNumber( ShapeEd_DetailTree.getItemText( %child ) );
+		ShapeEd_DetailTree.editItem( %child, %meshName SPC %newSize, "" );
 	}
 }
 
@@ -190,13 +190,13 @@ function ShapeEdPropWindow::update_onObjectRenamed( %this, %oldName, %newName ) 
 
 	for ( %i = 0; %i < %count; %i++ ) {
 		%size = getTrailingNumber( ShapeEditor.shape.getMeshName( %newName, %i ) );
-		%id = ShapeEdDetailTree.findItemByName( %oldName SPC %size );
+		%id = ShapeEd_DetailTree.findItemByName( %oldName SPC %size );
 
 		if ( %id > 0 ) {
-			ShapeEdDetailTree.editItem( %id, %newName SPC %size, "" );
+			ShapeEd_DetailTree.editItem( %id, %newName SPC %size, "" );
 
 			// Sync text if item is selected
-			if ( ShapeEdDetailTree.isItemSelected( %id ) &&
+			if ( ShapeEd_DetailTree.isItemSelected( %id ) &&
 					( ShapeEdDetails-->meshName.getText() !$= %newName ) )
 				ShapeEdDetails-->meshName.setText( %newName );
 		}
@@ -219,9 +219,9 @@ function ShapeEdPropWindow::update_onMeshAdded( %this, %meshName ) {
 	}
 
 	// --- DETAILS TAB ---
-	%id = ShapeEdDetailTree.addMeshEntry( %meshName );
-	ShapeEdDetailTree.clearSelection();
-	ShapeEdDetailTree.selectItem( %id );
+	%id = ShapeEd_DetailTree.addMeshEntry( %meshName );
+	ShapeEd_DetailTree.clearSelection();
+	ShapeEd_DetailTree.selectItem( %id );
 }
 
 function ShapeEdPropWindow::update_onMeshSizeChanged( %this, %meshName, %oldSize, %newSize ) {
@@ -229,15 +229,15 @@ function ShapeEdPropWindow::update_onMeshSizeChanged( %this, %meshName, %oldSize
 	ShapeEdShapeView.refreshShape();
 	// --- DETAILS TAB ---
 	// Move the mesh to the new location in the tree
-	%selected = ShapeEdDetailTree.getSelectedItem();
-	%id = ShapeEdDetailTree.findItemByName( %meshName SPC %oldSize );
-	ShapeEdDetailTree.removeMeshEntry( %meshName SPC %oldSize );
-	%newId = ShapeEdDetailTree.addMeshEntry( %meshName SPC %newSize );
+	%selected = ShapeEd_DetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.findItemByName( %meshName SPC %oldSize );
+	ShapeEd_DetailTree.removeMeshEntry( %meshName SPC %oldSize );
+	%newId = ShapeEd_DetailTree.addMeshEntry( %meshName SPC %newSize );
 
 	// Re-select the new entry if it was selected
 	if ( %selected == %id ) {
-		ShapeEdDetailTree.clearSelection();
-		ShapeEdDetailTree.selectItem( %newId );
+		ShapeEd_DetailTree.clearSelection();
+		ShapeEd_DetailTree.selectItem( %newId );
 	}
 }
 
@@ -257,13 +257,13 @@ function ShapeEdPropWindow::update_onMeshRemoved( %this, %meshName ) {
 
 	// --- DETAILS TAB ---
 	// Determine which item to select next
-	%id = ShapeEdDetailTree.findItemByName( %meshName );
+	%id = ShapeEd_DetailTree.findItemByName( %meshName );
 
 	if ( %id > 0 ) {
-		%nextId = ShapeEdDetailTree.getPrevSibling( %id );
+		%nextId = ShapeEd_DetailTree.getPrevSibling( %id );
 
 		if ( %nextId <= 0 ) {
-			%nextId = ShapeEdDetailTree.getNextSibling( %id );
+			%nextId = ShapeEd_DetailTree.getNextSibling( %id );
 
 			if ( %nextId <= 0 )
 				%nextId = 2;
@@ -271,15 +271,15 @@ function ShapeEdPropWindow::update_onMeshRemoved( %this, %meshName ) {
 
 		// Remove the entry from the tree
 		%meshSize = getTrailingNumber( %meshName );
-		ShapeEdDetailTree.removeMeshEntry( %meshName, %meshSize );
+		ShapeEd_DetailTree.removeMeshEntry( %meshName, %meshSize );
 
 		// Change selection if needed
-		if ( ShapeEdDetailTree.getSelectedItem() == -1 )
-			ShapeEdDetailTree.selectItem( %nextId );
+		if ( ShapeEd_DetailTree.getSelectedItem() == -1 )
+			ShapeEd_DetailTree.selectItem( %nextId );
 	}
 }
 
-function ShapeEdDetailTree::onSelect( %this, %id ) {
+function ShapeEd_DetailTree::onSelect( %this, %id ) {
 	%name = %this.getItemText( %id );
 	%baseName = stripTrailingNumber( %name );
 	%size = getTrailingNumber( %name );
@@ -320,17 +320,17 @@ function ShapeEdDetailTree::onSelect( %this, %id ) {
 	}
 }
 
-function ShapeEdDetailTree::onRightMouseUp( %this, %itemId, %mouse ) {
+function ShapeEd_DetailTree::onRightMouseUp( %this, %itemId, %mouse ) {
 	// Open context menu if this is a Mesh item
 	if ( !%this.isDetailItem( %itemId ) ) {
 		if( !isObject( "ShapeEdMeshPopup" ) ) {
 			new PopupMenu( ShapeEdMeshPopup ) {
 				superClass = "MenuBuilder";
 				isPopup = "1";
-				item[ 0 ] = "Hidden" TAB "" TAB "ShapeEdDetailTree.onHideMeshItem( %this._objName, !%this._itemHidden );";
+				item[ 0 ] = "Hidden" TAB "" TAB "ShapeEd_DetailTree.onHideMeshItem( %this._objName, !%this._itemHidden );";
 				item[ 1 ] = "-";
-				item[ 2 ] = "Hide all" TAB "" TAB "ShapeEdDetailTree.onHideMeshItem( \"\", true );";
-				item[ 3 ] = "Show all" TAB "" TAB "ShapeEdDetailTree.onHideMeshItem( \"\", false );";
+				item[ 2 ] = "Hide all" TAB "" TAB "ShapeEd_DetailTree.onHideMeshItem( \"\", true );";
+				item[ 3 ] = "Show all" TAB "" TAB "ShapeEd_DetailTree.onHideMeshItem( \"\", false );";
 			};
 		}
 
@@ -341,7 +341,7 @@ function ShapeEdDetailTree::onRightMouseUp( %this, %itemId, %mouse ) {
 	}
 }
 
-function ShapeEdDetailTree::onHideMeshItem( %this, %objName, %hide ) {
+function ShapeEd_DetailTree::onHideMeshItem( %this, %objName, %hide ) {
 	if ( %hide )
 		%imageId = %this._imageHidden;
 	else
@@ -361,7 +361,7 @@ function ShapeEdDetailTree::onHideMeshItem( %this, %objName, %hide ) {
 
 		for ( %i = 0; %i < %count; %i++ ) {
 			%meshName = ShapeEditor.shape.getMeshName( %objName, %i );
-			%id = ShapeEdDetailTree.findItemByName( %meshName );
+			%id = ShapeEd_DetailTree.findItemByName( %meshName );
 
 			if ( %id > 0 )
 				%this.setItemImages( %id, %imageId, %imageId );
@@ -376,14 +376,14 @@ function ShapeEdShapeView::onDetailChanged( %this ) {
 
 	ShapeEdAdvancedWindow-->detailSize.setText( %this.detailSize );
 	ShapeEdDetails.update_onDetailsChanged();
-	%id = ShapeEdDetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.getSelectedItem();
 
-	if ( ( %id <= 0 ) || ( %this.currentDL != ShapeEdDetailTree.getDetailLevelFromItem( %id ) ) ) {
-		%id = ShapeEdDetailTree.findItemByValue( %this.detailSize );
+	if ( ( %id <= 0 ) || ( %this.currentDL != ShapeEd_DetailTree.getDetailLevelFromItem( %id ) ) ) {
+		%id = ShapeEd_DetailTree.findItemByValue( %this.detailSize );
 
 		if ( %id > 0 ) {
-			ShapeEdDetailTree.clearSelection();
-			ShapeEdDetailTree.selectItem( %id );
+			ShapeEd_DetailTree.clearSelection();
+			ShapeEd_DetailTree.selectItem( %id );
 		}
 	}
 }
@@ -398,10 +398,10 @@ function ShapeEdAdvancedWindow::onEditDetailSize( %this ) {
 function ShapeEdDetails::onEditName( %this ) {
 	%newName = %this-->meshName.getText();
 	// Check if we are renaming a detail or a mesh
-	%id = ShapeEdDetailTree.getSelectedItem();
-	%oldName = ShapeEdDetailTree.getItemText( %id );
+	%id = ShapeEd_DetailTree.getSelectedItem();
+	%oldName = ShapeEd_DetailTree.getItemText( %id );
 
-	if ( ShapeEdDetailTree.isDetailItem( %id ) ) {
+	if ( ShapeEd_DetailTree.isDetailItem( %id ) ) {
 		// Rename the selected detail level
 		%oldSize = getTrailingNumber( %oldName );
 		ShapeEditor.doRenameDetail( %oldName, %newName @ %oldSize );
@@ -414,25 +414,25 @@ function ShapeEdDetails::onEditName( %this ) {
 function ShapeEdDetails::onEditSize( %this ) {
 	%newSize = %this-->meshSize.getText();
 	// Check if we are changing the size for a detail or a mesh
-	%id = ShapeEdDetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.getSelectedItem();
 
-	if ( ShapeEdDetailTree.isDetailItem( %id ) ) {
+	if ( ShapeEd_DetailTree.isDetailItem( %id ) ) {
 		// Change the size of the selected detail level
-		%oldSize = ShapeEdDetailTree.getItemValue( %id );
+		%oldSize = ShapeEd_DetailTree.getItemValue( %id );
 		ShapeEditor.doEditDetailSize( %oldSize, %newSize );
 	} else {
 		// Change the size of the selected mesh
-		%meshName = ShapeEdDetailTree.getItemText( %id );
+		%meshName = ShapeEd_DetailTree.getItemText( %id );
 		ShapeEditor.doEditMeshSize( %meshName, %newSize );
 	}
 }
 
 function ShapeEdDetails::onEditBBType( %this ) {
 	// This command is only valid for meshes (not details)
-	%id = ShapeEdDetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.getSelectedItem();
 
-	if ( !ShapeEdDetailTree.isDetailItem( %id ) ) {
-		%meshName = ShapeEdDetailTree.getItemText( %id );
+	if ( !ShapeEd_DetailTree.isDetailItem( %id ) ) {
+		%meshName = ShapeEd_DetailTree.getItemText( %id );
 		%bbType = ShapeEdDetails-->bbType.getText();
 
 		switch$ ( %bbType ) {
@@ -452,10 +452,10 @@ function ShapeEdDetails::onEditBBType( %this ) {
 
 function ShapeEdDetails::onSetObjectNode( %this ) {
 	// This command is only valid for meshes (not details)
-	%id = ShapeEdDetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.getSelectedItem();
 
-	if ( !ShapeEdDetailTree.isDetailItem( %id ) ) {
-		%meshName = ShapeEdDetailTree.getItemText( %id );
+	if ( !ShapeEd_DetailTree.isDetailItem( %id ) ) {
+		%meshName = ShapeEd_DetailTree.getItemText( %id );
 		%objName = stripTrailingNumber( %meshName );
 		%node = %this-->objectNode.getText();
 
@@ -497,13 +497,13 @@ function ShapeEdDetails::onAddMeshFromFile( %this, %path ) {
 }
 
 function ShapeEdDetails::onDeleteMesh( %this ) {
-	%id = ShapeEdDetailTree.getSelectedItem();
+	%id = ShapeEd_DetailTree.getSelectedItem();
 
-	if ( ShapeEdDetailTree.isDetailItem( %id ) ) {
-		%detSize = ShapeEdDetailTree.getItemValue( %id );
+	if ( ShapeEd_DetailTree.isDetailItem( %id ) ) {
+		%detSize = ShapeEd_DetailTree.getItemValue( %id );
 		ShapeEditor.doRemoveShapeData( "Detail", %detSize );
 	} else {
-		%name = ShapeEdDetailTree.getItemText( %id );
+		%name = ShapeEd_DetailTree.getItemText( %id );
 		ShapeEditor.doRemoveShapeData( "Mesh", %name );
 	}
 }
@@ -597,4 +597,4 @@ function ShapeEditor::addLODFromFile( %this, %dest, %filename, %size, %allowUnma
 	}
 
 	return trim( %meshList );
-}
+}*/

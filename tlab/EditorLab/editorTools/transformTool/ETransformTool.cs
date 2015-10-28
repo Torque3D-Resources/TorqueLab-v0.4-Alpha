@@ -5,7 +5,7 @@
 //==============================================================================
 //EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
 
-$ETransformToolContainers = "ETransformTool SceneEditorTransformTools";
+$ETransformToolContainers = "ETransformTool";
 $ETransformToolEditFields = "PosX PosY PosZ TransX TransY TransZ RotX RotY RotZ RotH RotP RotB ScaleX ScaleY ScaleZ";
 $ETransformTool::Active::Position = false;
 $ETransformTool::Active::Rotation = false;
@@ -63,7 +63,7 @@ function ETransformTool::updateTextEditField( %this,%ctrl ) {
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformEdit::onValidate( %this ) {
-	devLog("ECloneEdit::onValidate");
+
 	ETransformTool.updateTextEditField(%this);
 	
 }
@@ -72,7 +72,7 @@ function ETransformEdit::onValidate( %this ) {
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformCheck::onClick( %this ) {
-	devLog("ETransformCheck::onClick");
+	
 	%value = %this.isStateOn();
 	%field = %this.internalName;
 	devLog(%field," checkbox cliked and set to:",%value);
@@ -104,6 +104,16 @@ function ETransformTool::getSelectionObj( %this ) {
 	return %obj;
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+//ETransformTool.resetAll Field TextEditValue Changed
+function ETransformTool::cloneToCtrl( %this,%ctrl ) {
+	%ctrl.add(ETransformTool-->toolsStack.deepClone());
+	$ETransformToolContainers = strAddWord($ETransformToolContainers,%ctrl.getId(),true);
+
+	
+}
+//------------------------------------------------------------------------------
+
 
 
 /*

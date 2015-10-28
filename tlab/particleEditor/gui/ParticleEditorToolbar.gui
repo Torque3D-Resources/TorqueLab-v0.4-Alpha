@@ -9,7 +9,7 @@ new GuiStackControl(ParticleEditorToolbar) {
    dynamicPos = "1";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "78 0";
+   position = "142 0";
    extent = "84 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -17,7 +17,7 @@ new GuiStackControl(ParticleEditorToolbar) {
    profile = "ToolsFillDarkB";
    visible = "0";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "ParticleEditorToolbar";
@@ -26,9 +26,9 @@ new GuiStackControl(ParticleEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "13096";
-      disabledGroup = "13097";
-      EditorContainer = "4007";
+      defaultStack = "29750";
+      disabledGroup = "29751";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ParticleEditor";
       preventReordering = "0";
@@ -48,7 +48,7 @@ new GuiStackControl(ParticleEditorToolbar) {
       profile = "ToolsDefaultProfile";
       visible = "0";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "DisabledIcons";
@@ -73,7 +73,7 @@ new GuiStackControl(ParticleEditorToolbar) {
       profile = "ToolsButtonProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Plugin toolbar divider";
       hovertime = "750";
       isContainer = "0";
@@ -101,7 +101,7 @@ new GuiStackControl(ParticleEditorToolbar) {
       visible = "1";
       active = "1";
       command = "ParticleEditor.resetEmitterNode();";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Drops Particle Effect in front of the Camera";
       hovertime = "1000";
       isContainer = "0";
@@ -130,7 +130,7 @@ new GuiStackControl(ParticleEditorToolbar) {
       visible = "1";
       active = "1";
       command = "ParticleEditor.updateEmitterNode();";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       tooltip = "Play Particle Effect from Start";
       hovertime = "1000";
       isContainer = "0";

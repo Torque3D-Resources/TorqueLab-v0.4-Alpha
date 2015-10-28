@@ -62,10 +62,9 @@ function RiverManager::selectNode(%this,%nodeId,%noUpdate){
 		return;
 	}
 
-	if (!isObject(RiverEditorGui.River)){
-		warnLog("Can't select a node if no River is selected...");
+	if (!isObject(RiverEditorGui.River))		
 		return;
-	}
+	
 	
 	
 		%this.noNodeUpdate = %noUpdate;

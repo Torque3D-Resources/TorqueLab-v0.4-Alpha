@@ -42,8 +42,10 @@ function Lab::toggleObjectTransform( %this ) {
 
 	if( GlobalGizmoProfile.getFieldValue(alignment) $= "Object" ) {
 		SceneEditorToolbar-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformObject.png");
+		SEP_CreatorTools-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformObject.png");
 	} else {
 		SceneEditorToolbar-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformWorld");
+		SEP_CreatorTools-->objectTransform.setBitmap("tlab/gui/icons/toolbar_assets/TransformWorld");
 	}
 }
 //------------------------------------------------------------------------------
@@ -79,15 +81,19 @@ function SceneEditorPlugin::toggleGridSizeSlider( %this,%sourceObj ) {
 //Canvas.pushDialog(softSnapSizeSliderCtrlContainer);
 	%srcPos = %sourceObj.getRealPosition();
 	%srcPos.y += %sourceObj.extent.y;
-	%range = "0.1 10";
-	%ticks = getTicksFromRange(%range,"0.1");
+	%step = $WEditor::gridStep;
+	if (%step $= "")
+		%step = "0.1";
+	%range = %step SPC "10";
+	
+	%ticks = getTicksFromRange(%range,%step);
 	EOverlay.toggleSlider("2",%srcPos,"range \t "@%range@" \n ticks \t "@%ticks@"\n altCommand \t SceneEditorPlugin.onGridSizeSliderChanged($ThisControl);");
 }
 //------------------------------------------------------------------------------
 function SceneEditorPlugin::onGridSizeSliderChanged(%this,%slider) {
 	%value = mFloatLength(%slider.value,1);
 	EditorGuiToolbarStack-->WorldEditorGridSizeEdit.setText(%value);
-	EWorldEditor.setGridSize(%value );
+	Lab.setGridSize(%value );
 	EWorldEditor.syncGui();
 }
 //------------------------------------------------------------------------------------

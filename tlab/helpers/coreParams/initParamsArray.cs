@@ -5,7 +5,7 @@
 //==============================================================================
 
 $Params::EnableLogs = 0;
-
+$pref::Console::ShowParamLog = 1;
 
 //==============================================================================
 /// Create a ParamsArray Object
@@ -74,7 +74,7 @@ function initParamsArray(%obj,%initFunction) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function paramLog( %log1,%log2,%log3,%log4,%log5,%log6,%log7,%log8,%log9 ) {
-	if (!$Params::EnableLogs)
+	if (!$pref::Console::ShowParamLog)
 		return;
 	
 	info("ParamLog->",%log1,%log2,%log3,%log4,%log5,%log6,%log7,%log8,%log9 );	

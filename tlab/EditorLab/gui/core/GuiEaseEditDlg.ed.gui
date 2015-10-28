@@ -9,7 +9,7 @@
    MinExtent = "8 2";
    canSave = "1";
    Visible = "1";
-   tooltipprofile = "ToolsGuiToolTipProfile";
+   tooltipprofile = "ToolsToolTipProfile";
    hovertime = "1000";
    canSaveDynamicFields = "1";
 
@@ -39,7 +39,7 @@
       MinExtent = "8 2";
       canSave = "1";
       Visible = "1";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       hovertime = "1000";
       internalName = "window";
       canSaveDynamicFields = "0";
@@ -54,7 +54,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
 
@@ -76,7 +76,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -101,7 +101,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "directionList";
             canSaveDynamicFields = "0";
@@ -126,7 +126,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -151,7 +151,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "typeList";
             canSaveDynamicFields = "0";
@@ -176,7 +176,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -198,7 +198,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -221,7 +221,7 @@
             AnchorLeft = "1";
             AnchorRight = "0";
             isContainer = "0";
-            Profile = "ToolsTextEditProfile";
+            Profile = "ToolsTextEdit";
             HorizSizing = "right";
             VertSizing = "bottom";
             Position = "6 93";
@@ -230,7 +230,7 @@
             canSave = "1";
             Visible = "1";
             AltCommand = "GuiEaseEditDlg.onSetParam1( $ThisControl.getValue() );";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "param1Value";
             canSaveDynamicFields = "0";
@@ -254,7 +254,7 @@
             AnchorLeft = "1";
             AnchorRight = "0";
             isContainer = "0";
-            Profile = "ToolsTextEditProfile";
+            Profile = "ToolsTextEdit";
             HorizSizing = "right";
             VertSizing = "bottom";
             Position = "6 128";
@@ -263,7 +263,7 @@
             canSave = "1";
             Visible = "1";
             AltCommand = "GuiEaseEditDlg.onSetParam2( $ThisControl.getValue() );";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "param2Value";
             canSaveDynamicFields = "0";
@@ -284,7 +284,7 @@
          canSave = "1";
          Visible = "1";
          Command = "GuiEaseEditDlg.onOK();";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -303,7 +303,7 @@
          canSave = "1";
          Visible = "1";
          Command = "GuiEaseEditDlg.onCancel();";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
       };
@@ -318,7 +318,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          internalName = "easeView";
          canSaveDynamicFields = "0";

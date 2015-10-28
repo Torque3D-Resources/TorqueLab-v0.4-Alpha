@@ -36,6 +36,7 @@ function ShapeEditor::setDirty( %this, %dirty ) {
 		ShapeEdSelectWindow.text = "Shapes";
 
 	ShapeEdPropWindow-->saveBtn.setActive( %dirty );
+	ShapeEd_MainButtonStack-->saveBtn.setActive( %dirty );
 }
 
 function ShapeEditor::saveChanges( %this ) {
@@ -77,7 +78,7 @@ function ShapeEdSeqNodeTabBook::onTabSelected( %this, %name, %index ) {
 		ShapeEdPropWindow-->newBtn.Command = "";
 		ShapeEdPropWindow-->newBtn.setActive( false );
 		ShapeEdPropWindow-->deleteBtn.ToolTip = "Delete the selected mesh or detail level (cannot be undone)";
-		ShapeEdPropWindow-->deleteBtn.Command = "ShapeEdDetails.onDeleteMesh();";
+		ShapeEdPropWindow-->deleteBtn.Command = "ShapeEd.onDeleteMesh();";
 		ShapeEdPropWindow-->deleteBtn.setActive( true );
 
 	case "Mat":

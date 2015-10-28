@@ -33,17 +33,15 @@ function Lab::cloneGuiEditor(%this) {
 }
 
 function Lab::convertClonedGuiEditor(%this) {
+	if ($InGuiEditor)
+		GuiEd.closeEditor();
 	%fileWrite = getFileWriteObj("tlab/guiEditor/gui/backup/guiEditor.tmp.gui");
 	%fileWrite.writeLine("//--- OBJECT WRITE BEGIN ---");
 	%fileWrite.writeObject(GuiEditorGui, "%guiContent = ");
 	%fileWrite.writeLine("//--- OBJECT WRITE END ---");
 	closeFileObj(%fileWrite);
 
-	if ($InGuiEditor) {
-		%loadEditor = true;
-		Lab.lastGuiEditSource = GuiEditor.lastContent;
-		GuiEditCanvas.quit();
-	}
+	
 	delObj(CloneEditorGui);
 	exec("tlab/guiEditor/gui/CloneEditorGui.gui");
 	delObj(GuiEditorGui);
@@ -86,9 +84,9 @@ function Lab::convertClonedGuiEditor(%this) {
 	exec("tlab/guiEditor/gui/guiEditor.ed.gui");
 	
 	addGuiEditorCtrl();
-	
+	Lab.initMenu(GuiEdMenu);
 	if (%loadEditor)
-		schedule(500,"","GuiEdit");	
+		GuiEd.schedule(500,"launchEditor",true);	
 }
 
 function addGuiEditorCtrl(%reset) {
@@ -110,10 +108,10 @@ function addGuiEditorCtrl(%reset) {
 			minExtent = "8 2";
 			horizSizing = "width";
 			vertSizing = "height";
-			profile = "ToolsTextEditProfile";
+			profile = "ToolsTextEdit";
 			visible = "1";
 			active = "1";
-			tooltipProfile = "ToolsGuiToolTipProfile";
+			tooltipProfile = "ToolsToolTipProfile";
 			hovertime = "1000";
 			isContainer = "0";
 			canSave = "1";

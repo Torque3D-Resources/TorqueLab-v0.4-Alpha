@@ -30,6 +30,8 @@ $MaterialSelector_ThumbSize[6] = "160";
 if (!isObject(MaterialSelectorPerMan))
 	new PersistenceManager(MaterialSelectorPerMan);
 
+if (!isObject(MatEdDlg))
+	newScriptObject("MatEdDlg");
 //------------------------------------------------------------------------------
 if (!isObject(UnlistedMaterials)) {
 	new ArrayObject(UnlistedMaterials);
@@ -43,12 +45,21 @@ if (!isObject(UnlistedMaterials)) {
 }
 
 //------------------------------------------------------------------------------
+function MaterialSelectorOverlay::onWake( %this) {
+	MaterialSelector.setVisible(1);
+}
+
 //==============================================================================
 function MaterialSelector::showDialog( %this, %selectCallback, %returnType) {
 	MatSelector_FilterSamples.visible = false;
 	MatSelector_PageTextSample.visible = false;
 	MatSelector_PageButtonSample.visible = false;
 	MatSelector_MaterialPreviewSample.visible = false;
+	MatEdDlg_Creator.visible = false;
+	MatEdDlg.setListFilterText("");
+	hide(MatSel_SetAsActiveContainer);
+	if (MaterialEditorGui.isAwake())
+		show(MatSel_SetAsActiveContainer);
 	//FIXME Commented because with update it was staying visible inside hidden container and that was causing an issue
 	//if( MaterialSelector.isVisible() )
 	//return;
@@ -96,6 +107,9 @@ function MaterialSelector::showDialogBase( %this, %selectCallback, %returnType, 
 	}
 
 	Canvas.pushDialog(MaterialSelectorOverlay);
+	
+	devLog("Clearing!!!");
+	MatSelector_MaterialsContainer.clear();
 	MaterialSelector.setVisible(1);
 	MaterialSelector.buildStaticFilters();
 	MaterialSelector.selectedMaterial = "";
@@ -104,7 +118,7 @@ function MaterialSelector::showDialogBase( %this, %selectCallback, %returnType, 
 //------------------------------------------------------------------------------
 function MaterialSelector::hideDialog( %this ) {
 	MaterialSelector.breakdown();
-	MaterialSelector.setVisible(0);
+	//MaterialSelector.setVisible(0);
 	Canvas.popDialog(MaterialSelectorOverlay);
 }
 //------------------------------------------------------------------------------

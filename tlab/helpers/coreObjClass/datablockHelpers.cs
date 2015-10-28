@@ -70,3 +70,25 @@ function dumpDatablocks(  ) {
 //------------------------------------------------------------------------------
 
 
+//==============================================================================
+function getDatablockClassList( %class ) {
+	foreach( %obj in DatablockSet ) {
+		info(%obj.getName(),%obj.getClassName(  ));
+		if( %obj.getClassName(  ) $= %class ) {
+			%list = strAddWord(%list,%obj.getName());
+		}
+	}
+	return %list;
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function getRootClassList( %class ) {
+	for( %i = 0; %i < RootGroup.getCount(); %i++ ) {
+		%obj = RootGroup.getObject(%i);		
+		if( %obj.getClassName() $= %class )
+			%list = strAddWord(%list,%obj.getName());	
+	}
+	return %list;
+}
+//------------------------------------------------------------------------------

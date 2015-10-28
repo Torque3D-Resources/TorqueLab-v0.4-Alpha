@@ -9,7 +9,7 @@
    MinExtent = "8 2";
    canSave = "1";
    Visible = "1";
-   tooltipprofile = "ToolsGuiToolTipProfile";
+   tooltipprofile = "ToolsToolTipProfile";
    hovertime = "1000";
    canSaveDynamicFields = "1";
    enabled = "1";
@@ -43,7 +43,7 @@
       MinExtent = "120 130";
       canSave = "1";
       Visible = "1";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       hovertime = "1000";
       internalName = "ManageSFXParametersWindow";
       canSaveDynamicFields = "0";
@@ -58,7 +58,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
 
@@ -80,7 +80,7 @@
             MinExtent = "8 8";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -98,7 +98,7 @@
             AnchorLeft = "1";
             AnchorRight = "0";
             isContainer = "0";
-            Profile = "ToolsTextEditProfile";
+            Profile = "ToolsTextEdit";
             HorizSizing = "width";
             VertSizing = "bottom";
             position = "36 2";
@@ -106,7 +106,7 @@
             MinExtent = "8 8";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "AddSFXParameterName";
             canSaveDynamicFields = "0";
@@ -129,7 +129,7 @@
             Visible = "1";
             Command = "EManageSFXParameters.createNewParameter( EManageSFXParameters-->AddSFXParameterName.getText() );";
             Accelerator = "return";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             ToolTip = "Create New SFX Parameter";
             hovertime = "1000";
             canSaveDynamicFields = "0";
@@ -156,7 +156,7 @@
             canSave = "1";
             Visible = "1";
             Command = "EManageSFXParameters.initList( $ThisControl.getText() );";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "SFXParameterFilter";
             canSaveDynamicFields = "0";
@@ -179,7 +179,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             canSaveDynamicFields = "0";
          };
@@ -208,7 +208,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          canSaveDynamicFields = "0";
 
@@ -229,7 +229,7 @@
             MinExtent = "16 16";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             internalName = "SFXParametersStack";
             canSaveDynamicFields = "0";

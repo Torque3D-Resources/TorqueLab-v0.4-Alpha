@@ -13,11 +13,21 @@ function MaterialEditorPlugin::initParamsArray( %this,%array ) {
 	$MaterialEdCfg = newScriptObject("MaterialEditorCfg");
 	%array.group[%groupId++] = "General settings";
 	%array.setVal("DefaultMaterialFile",       "10" TAB "Default Width" TAB "SliderEdit"  TAB "range>>0 100;;tickAt>>1" TAB "SceneEditorCfg" TAB %groupId);
-	%array.setVal("DiffuseSuffix",       "_n" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("DiffuseSuffix",       "_d" TAB "Default Diffuse suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("AutoAddNormal",       "1" TAB "Auto add normal if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
 	%array.setVal("NormalSuffix",       "_n" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
-	%array.setVal("AutoAddSpecular",       "1" TAB "Auto add normal if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
-	%array.setVal("SpecularSuffix",       "_s" TAB "Default Normal suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoAddSpecular",       "1" TAB "Auto add Specular if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("SpecularSuffix",       "_s" TAB "Default Specular suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoAddSmoothness",       "1" TAB "Auto add Smoothness if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("SmoothnessSuffix",       "_s" TAB "Default Smoothness suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoAddAO",       "1" TAB "Auto add AO if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AOSuffix",       "_s" TAB "Default AO suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoAddMetalness",       "1" TAB "Auto add Metalness if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("MetalnessSuffix",       "_s" TAB "Default Metalness suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("AutoAddComposite",       "1" TAB "Auto add Composite if found" TAB "checkbox"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("CompositeSuffix",       "_s" TAB "Default Composite suffix" TAB "TextEdit"  TAB "" TAB "SceneEditorCfg" TAB %groupId);
+	%array.setVal("PBRenabled",       "1" TAB "Enable PBR Materials" TAB "checkbox"  TAB "" TAB "MatEd" TAB %groupId);
+	%array.setVal("MapModePBR",       "1" TAB "PBR maps mode" TAB "slider"  TAB "range>>0 2;;ticksAt>>1" TAB "MatEd" TAB %groupId);
 }
 
 //==============================================================================
@@ -77,15 +87,15 @@ function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 	//MaterialEditor persistence manager
 	new PersistenceManager(matEd_PersistMan);
 	MaterialEditorGui.establishMaterials();
-	MaterialEditorGui.rows = "0 230";
-	MaterialEditorGui.updateSizes();
+	//MaterialEditorGui.rows = "0 230";
+	//MaterialEditorGui.updateSizes();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function MaterialEditorPlugin::onActivated( %this ) {
-	MaterialEditorGui.rows = "0 230";
-	MaterialEditorGui.updateSizes();
+	//MaterialEditorGui.rows = "0 230";
+	//MaterialEditorGui.updateSizes();
 
 	if($gfx::wireframe) {
 		$wasInWireFrameMode = true;
@@ -106,6 +116,7 @@ function MaterialEditorPlugin::onActivated( %this ) {
 	hide(MEP_CallbackArea);
 	hide(matEd_addCubemapWindow);
 	matEd_addCubemapWindow.setVisible(0);
+	show(MaterialEditorPreviewWindow);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -146,6 +157,8 @@ function MaterialEditorPlugin::onDeactivated( %this ) {
 	SceneEditorToolbar.setVisible( false );
 	
 	Parent::onDeactivated(%this);
+
+	//hide(MaterialEditorPreviewWindow);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

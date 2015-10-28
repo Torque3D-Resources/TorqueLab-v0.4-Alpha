@@ -54,66 +54,7 @@ function MaterialSelector::buildPreviewArray( %this, %material ) {
 			%previewImage =  strreplace( %materialPath, %materialPath, %previewImage );
 	}
 
-	// it may seem goofy why the checkbox can't be instanciated inside the container
-	// reason being its because we need to store the checkbox ctrl in order to make changes
-	// on it later in the function.
-	/*
-	%container = new GuiControl() {
-		profile = "ToolsDefaultProfile";
-		Position = "0 0";
-		Extent = "74 87";
-		HorizSizing = "right";
-		VertSizing = "bottom";
-		isContainer = "1";
-		new GuiTextCtrl() {
-			position = "7 71";
-			profile = "ToolsGuiTextCenterProfile";
-			extent = "64 16";
-			text = %matName;
-		};
-	};
-	%previewButton = new GuiBitmapButtonCtrl() {
-		internalName = %matName;
-		HorizSizing = "right";
-		VertSizing = "bottom";
-		profile = "ToolsButtonProfile";
-		position = "7 4";
-		extent = "64 64";
-		buttonType = "PushButton";
-		bitmap = "";
-		Command = "";
-		text = "Loading...";
-		useStates = false;
-		new GuiBitmapButtonCtrl() {
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			profile = "ToolsButtonProfile";
-			position = "0 0";
-			extent = "64 64";
-			Variable = "";
-			buttonType = "toggleButton";
-			bitmap = "tlab/materialEditor/assets/cubemapBtnBorder";
-			groupNum = "0";
-			text = "";
-		};
-	};
-	%previewBorder = new GuiButtonCtrl() {
-		internalName = %matName@"Border";
-		HorizSizing = "right";
-		VertSizing = "bottom";
-		profile = "ToolsButtonHighlight";
-		position = "3 0";
-		extent = "72 88";
-		Variable = "";
-		buttonType = "toggleButton";
-		tooltip = %matName;
-		Command = "MaterialSelector.updateSelection( $ThisControl.getParent().getObject(1).internalName, $ThisControl.getParent().getObject(1).bitmap );";
-		groupNum = "0";
-		text = "";
-	};
-	*/
-	//%container.add(%previewButton);
-	//%container.add(%previewBorder);
+	
 	%container = cloneObject(MatSelector_MaterialPreviewSample);
 	%container-->text.text = %matName;
 	%previewBorder = %container-->button;
@@ -139,7 +80,6 @@ function MaterialSelector::loadImages( %this, %materialNum ) {
 	%previewButton = MatEdPreviewArray.getKey(%materialNum);
 	%previewImage = MatEdPreviewArray.getValue(%materialNum);
 	%isFile = isImageFile(%previewImage);
-	devLog("Material bitmap is:",%previewImage,"IsFile",%isFile);
 
 	if (%isFile)
 		%previewButton.setBitmap(%previewImage);
@@ -266,15 +206,7 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 	if( %startbracket ) {
 		%control = cloneObject(MatSelector_PageTextSample);
 		%control.text = "...";
-		/*%control =  new GuiTextCtrl() {
-			profile = "ToolsGuiTextCenterProfile";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			position = "0 2";
-			extent = "14 16";
-			MinExtent = "8 8";
-			text = "...";
-		};*/
+		
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
 	}
 
@@ -282,40 +214,11 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 		if( %i != %currentPage ) {
 			%control = cloneObject(MatSelector_PageButtonSample);
 			%control.text = %i+1;
-			/*%control =   new GuiButtonCtrl() {
-				canSaveDynamicFields = "0";
-				Enabled = "1";
-				isContainer = "0";
-				Profile = "ToolsGuiTextCenterProfile";
-				HorizSizing = "right";
-				VertSizing = "bottom";
-				Position = "0 0";
-				Extent = "14 16";
-				MinExtent = "8 8";
-				canSave = "1";
-				isDecoy = "0";
-				Visible = "1";
-				Command = "MaterialSelector.schedule(0, selectPage, " @ %i @ ");";
-				tooltipprofile = "ToolsGuiToolTipProfile";
-				hovertime = "1000";
-				text = %i+1;
-				groupNum = "-1";
-				buttonType = "PushButton";
-				useMouseEvents = "1";
-			};*/
+			
 		} else {
 			%control = cloneObject(MatSelector_PageTextSample);
 			%control.text = %i+1;
-			/*
-			%control =  new GuiTextCtrl() {
-				profile = "ToolsGuiTextBoldCenterProfile";
-				HorizSizing = "right";
-				VertSizing = "bottom";
-				position = "0 2";
-				extent = "14 16";
-				MinExtent = "8 8";
-				text = %i+1;
-			};*/
+			
 		}
 
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
@@ -324,15 +227,7 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 	if( %endbracket ) {
 		%control = cloneObject(MatSelector_PageTextSample);
 		%control.text = "...";
-		/*%control =  new GuiTextCtrl() {
-			profile = "ToolsGuiTextCenterProfile";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			position = "0 2";
-			extent = "14 16";
-			MinExtent = "8 8";
-			text = "...";
-		};*/
+		
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
 	}
 }

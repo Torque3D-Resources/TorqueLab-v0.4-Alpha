@@ -11,7 +11,7 @@ $AutoColor = true;
 // Called when a color is confirmed and colorPicker is closing
 function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {	
 	
-	
+	%this.noFriends = true;
 		
 	//Check if the Picker have an assigned slider for alpha
 	if (isObject(%this.alphaSlider)) {		
@@ -25,7 +25,10 @@ function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {
 		%editColor = %color;
 		if (%this.noAlpha)
 			%editColor = removeWord(%editColor,3);
+			
+		devLog("	doCommonUpdate text edit color",%editColor,"Base",%this.baseColor);
 		%this.colorEditCtrl.setText(%editColor);
+	
 		//%command = %this.colorEditCtrl.command;
 		//strreplace(%command,"$ThisControl",%this.colorEditCtrl.getId());
 		//devLog("About to eval:",%command);
@@ -33,18 +36,20 @@ function GuiColorPickerCtrl::doCommonUpdate(%this,%color,%isPicked) {
 	}
 	
 	if (%isPicked || %this.autoColor){
+		/* Commented to avoid issue with updating textEdit without alpha value
+		
 		if (isObject(%this.colorEditCtrl)) {		
 			%command = %this.colorEditCtrl.altCommand;
 			%command = strreplace(%command,"$ThisControl",%this.colorEditCtrl.getId());		
 			eval(%command);
 			
 		}
-		else {
+		else {*/
 			%command = %this.altCommand;
 			%command = strreplace(%command,"$ThisControl",%this.getId());
 			%command = strreplace(%command,"syncParamArrayCtrl","syncParamArrayCtrlData");		
 			eval(%command);
-		}
+		//}
 		%srcObj = %this.sourceObject;
 		%srcField = %this.sourceField;
 		
@@ -67,7 +72,8 @@ function GuiColorPickerCtrl::ColorPickedI(%this,%color) {
 		%color.a = 255;
 		
 	//Convert the Int Color to float for store as Base Color
-	%baseColor = ColorIntToFloat(%color);		
+	%baseColor = ColorIntToFloat(%color);	
+	devLog("ColorPickedI base:",%baseColor);
 	%this.baseColor = %baseColor;
 	
 	%alpha = mCeil(getWord(%color,3));
@@ -105,7 +111,8 @@ function GuiColorPickerCtrl::ColorPicked(%this,%color) {
 	%baseColor = %color;
 	if (%this.isIntColor)
 		%baseColor = ColorIntToFloat(%color);
-		
+	
+	devLog("ColorPickedF base:",%baseColor);
 	%this.baseColor = %baseColor;
 	if (%this.floatLength > 0 && !%this.isIntColor)
 		%color = ColorFloatLength(%color,%this.floatLength);		
@@ -144,7 +151,7 @@ function GuiColorPickerCtrl::AlphaChanged(%this,%sourceCtrl) {
 	%this.baseColor.a = %alpha;
 	%color = %this.baseColor;
 	%this.updateColor();
-
+	devLog("AlphaChanged updateCommand=",%this.updateCommand);
 	
 	if (%this.updateCommand !$= "")
 		eval(%this.updateCommand);

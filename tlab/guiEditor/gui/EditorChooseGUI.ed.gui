@@ -11,7 +11,7 @@
    MinExtent = "8 8";
    canSave = "1";
    Visible = "1";
-   tooltipprofile = "ToolsGuiToolTipProfile";
+   tooltipprofile = "ToolsToolTipProfile";
    hovertime = "1000";
    bitmap = "art/gui/background";
    useVariable = "0";
@@ -29,7 +29,7 @@
       MinExtent = "8 8";
       canSave = "1";
       Visible = "1";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       hovertime = "1000";
       Margin = "0 0 0 0";
       Padding = "0 0 0 0";
@@ -59,7 +59,7 @@
          MinExtent = "8 8";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          Margin = "0 0 0 0";
          Padding = "0 0 0 0";
@@ -83,7 +83,7 @@
          canSave = "1";
          Visible = "1";
          Command = "GE_ReturnToMainMenu();";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          text = "Play Game";
          groupNum = "-1";
@@ -102,7 +102,7 @@
          MinExtent = "8 2";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          Margin = "0 0 0 0";
          Padding = "0 0 0 0";
@@ -130,7 +130,7 @@
             MinExtent = "8 2";
             canSave = "1";
             Visible = "1";
-            tooltipprofile = "ToolsGuiToolTipProfile";
+            tooltipprofile = "ToolsToolTipProfile";
             hovertime = "1000";
             lineSpacing = "2";
             allowColorChars = "0";
@@ -151,7 +151,7 @@
          canSave = "1";
          Visible = "1";
          Command = "GE_OpenGUIFile();";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          text = "Browse";
          groupNum = "-1";
@@ -170,7 +170,7 @@
          MinExtent = "8 8";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          Margin = "0 0 0 0";
          Padding = "0 0 0 0";
@@ -194,7 +194,7 @@
          canSave = "1";
          Visible = "1";
          Command = "GuiEditorNewGuiDialog.init( \"NewGui\", \"GuiControl\" );" @ "Canvas.pushdialog(GuiEditorNewGuiDialog);";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          text = "New GUI";
          groupNum = "-1";
@@ -213,7 +213,7 @@
          MinExtent = "8 8";
          canSave = "1";
          Visible = "1";
-         tooltipprofile = "ToolsGuiToolTipProfile";
+         tooltipprofile = "ToolsToolTipProfile";
          hovertime = "1000";
          Margin = "0 0 0 0";
          Padding = "0 0 0 0";

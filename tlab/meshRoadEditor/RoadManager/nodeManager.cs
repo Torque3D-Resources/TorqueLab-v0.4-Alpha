@@ -52,16 +52,11 @@ function MRoadManager::updateRoadData(%this){
 $NoNodeUpd = true;
 function MRoadManager::selectNode(%this,%nodeId,%noUpdate){
 	
-	if (!isObject(MeshRoadEditorGui.road)){
-		warnLog("Can't select a node if no road is selected...");
-		return;
-	}
+	if (!isObject(MeshRoadEditorGui.road))		
+		return;	
 	
-	
-		%this.noNodeUpdate = %noUpdate;
-	MeshRoadEditorGui.setSelectedNode(%nodeId);
-	
-		
+	%this.noNodeUpdate = %noUpdate;
+	MeshRoadEditorGui.setSelectedNode(%nodeId);		
 }
 //------------------------------------------------------------------------------
 

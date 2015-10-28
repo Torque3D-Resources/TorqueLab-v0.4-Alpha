@@ -27,7 +27,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"None\";";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Select Arrow (1)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/arrow";
@@ -49,7 +49,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"Move\";";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Move Selection (2)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/translate";
@@ -71,7 +71,7 @@
       canSave = "1";
       Visible = "1";
       Command = "GlobalGizmoProfile.mode = \"Rotate\";";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Rotate Selection (3)";
       hovertime = "1000";
       bitmap = "tlab/gui/icons/default/menubar/rotate";
@@ -93,7 +93,7 @@
       canSave = "1";
       Visible = "1";
       Variable = "ShapeEdShapeView.editSun";
-      tooltipprofile = "ToolsGuiToolTipProfile";
+      tooltipprofile = "ToolsToolTipProfile";
       ToolTip = "Rotate sun";
       hovertime = "1000";
       bitmap = "tlab/shapeEditor/images/sun-btn";

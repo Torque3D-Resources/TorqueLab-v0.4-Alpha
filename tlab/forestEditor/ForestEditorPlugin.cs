@@ -44,11 +44,11 @@ function ForestEditorPlugin::onWorldEditorStartup( %this ) {
 
 	ForestEditMeshTree.open( ForestItemDataSet );
 	ForestEditTabBook.selectPage(0);
-	ForestEditToolbar-->globalScaleEdit.setValue("1");
-	//FEP_ForestManager.init();
-	ForestEditorPlugin.brushPressure = ForestEditorCfg.defaultBrushPressure;
-	FEP_BrushManager.setBrushPressure();
 	
+	FEP_BrushManager.setBrushPressure();
+	FEP_BrushManager.setBrushHardness();
+	FEP_BrushManager.setBrushSize();
+	FEP_BrushManager.setGlobalScale();	
 }
 
 function ForestEditorPlugin::onWorldEditorShutdown( %this ) {
@@ -179,7 +179,7 @@ function ForestEditorPlugin::onNewLevelLoaded( %this, %file ) {
 	
 	if (isObject(theForest) && ForestEditorGui.isMethod("setActiveForest"))
 		ForestEditorGui.setActiveForest(theForest);
-	//FEP_Manager.initBrushData();
+	
 	Parent::onNewLevelLoaded( %this, %file );
 }
 //------------------------------------------------------------------------------
@@ -192,16 +192,13 @@ function ForestEditorPlugin::clearDirty( %this ) {
 	%this.dirty = false;
 }
 
-function ForestEditorPlugin::onSaveMission( %this, %missionFile ) {
-	devLog("ForestEditorPlugin::onSaveMission");
+function ForestEditorPlugin::onSaveMission( %this, %missionFile ) {	
 	ForestDataManager.saveDirty();
 	if (isObject(theForest)){
 		%file = theForest.datafile;
 
 		if (!isFile(%file))
-			%file = filePath(theForest.getFilename())@"/data.forest";
-
-		//%file = strreplace(theForest.getFilename(),".mis",".forest");
+			%file = filePath(theForest.getFilename())@"/data.forest";	
 
 		if (isFile(%file))
 			theForest.saveDataFile(%file);

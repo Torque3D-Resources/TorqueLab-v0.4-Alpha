@@ -8,7 +8,7 @@
    profile = "ToolsBoxDarkB";
    visible = "1";
    active = "1";
-   tooltipProfile = "ToolsGuiToolTipProfile";
+   tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "RoadEditor";
@@ -36,7 +36,7 @@
       profile = "ToolsFillDarkA";
       visible = "1";
       active = "1";
-      tooltipProfile = "ToolsGuiToolTipProfile";
+      tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "RiverEditor";
@@ -44,7 +44,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapButtonCtrl(ERiverEditorSelectModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/Select";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/Select";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -61,7 +61,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.prepSelectionMode();";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Select River (1)";
          hovertime = "1000";
          isContainer = "0";
@@ -70,7 +70,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorMoveModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeMove";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeMove";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -87,7 +87,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorMoveMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Move Point (2)";
          hovertime = "1000";
          isContainer = "0";
@@ -96,7 +96,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorRotateModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeRotate";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRotate";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -113,7 +113,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorRotateMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Rotate Point (3)";
          hovertime = "1000";
          isContainer = "0";
@@ -122,7 +122,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorScaleModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeScale";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeScale";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -139,7 +139,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorScaleMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Scale Point (4)";
          hovertime = "1000";
          isContainer = "0";
@@ -148,7 +148,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorAddModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/AddRiver";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/AddRiver";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -165,7 +165,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorAddRiverMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Create River (5)";
          hovertime = "1000";
          isContainer = "0";
@@ -174,7 +174,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorInsertModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeAdd";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeAdd";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -191,7 +191,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorInsertPointMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Insert Point (+)";
          hovertime = "1000";
          isContainer = "0";
@@ -200,7 +200,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl(ERiverEditorRemoveModeBtn) {
-         bitmap = "tlab/gui/buttons/palette-assets/NodeRemove";
+         bitmap = "tlab/themes/DarkBlue/buttons/palette-assets/NodeRemove";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -217,7 +217,7 @@
          visible = "1";
          active = "1";
          command = "RiverEditorGui.setMode(\"RiverEditorRemovePointMode\");";
-         tooltipProfile = "ToolsGuiToolTipProfile";
+         tooltipProfile = "ToolsToolTipProfile";
          tooltip = "Remove Point (-)";
          hovertime = "1000";
          isContainer = "0";

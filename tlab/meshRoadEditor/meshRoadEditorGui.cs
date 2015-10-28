@@ -12,22 +12,6 @@ $MeshRoad::showRoad = true;
 $MeshRoad::breakAngle = 3.0;
 
 
-
-
-//==============================================================================
-// MeshRoad TreeViewCtrl
-//==============================================================================
-
-//==============================================================================
-function MeshRoadTreeView::onSelect(%this, %obj) {
-	MeshRoadEditorGui.road = %obj;
-	MeshRoadInspector.inspect( %obj );
-
-	if(%obj != MeshRoadEditorGui.getSelectedRoad()) {
-		MeshRoadEditorGui.setSelectedRoad( %obj );
-	}
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorGui::prepSelectionMode( %this ) {
 	%mode = %this.getMode();

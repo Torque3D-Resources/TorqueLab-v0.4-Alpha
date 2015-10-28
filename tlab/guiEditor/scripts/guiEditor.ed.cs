@@ -9,46 +9,7 @@
 //    Activation.
 //=============================================================================================
 
-$InGuiEditor = false;
-$MLAAFxGuiEditorTemp = false;
-//==============================================================================
-function GuiEdit( %loadLast ) {
-	devLog("SHOULDNT HAPPEN ANYMORE!!! --> 	GuiEdit");
-	
-	if (Canvas.isFullscreen()) {
-		LabMsgOK("Windowed Mode Required", "Please switch to windowed mode to access the GUI Editor.");
-		return;
-	}
 
-//   if(%val != 0)
-	//     return;
-
-	if (!$InGuiEditor) {
-		//Store current Content to return to it
-		%initialContent = Canvas.getContent();
-
-		if ( isObject(GuiEditor.forceContent)) {		
-			%initialContent = GuiEditor.forceContent;
-		}
-
-		GuiEditor.initialContent =%initialContent;
-
-		if (($pref::Editor::AutoLoadLastGui || %loadLast)&& isObject(GuiEditor.lastContent))
-			%initialContent = GuiEditor.lastContent;
-
-		GuiEditContent(%initialContent);
-
-		//Temp fix to disable MLAA when in GUI editor
-		if( isObject(MLAAFx) && MLAAFx.isEnabled==true ) {
-			MLAAFx.isEnabled = false;
-			$MLAAFxGuiEditorTemp = true;
-		}
-	} else {
-		Lab.lastGuiEditSource = GuiEditor.lastContent;
-		GuiEditCanvas.quit();
-	}
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 function Lab::toggleAutoLoadLastGui( %content ) {
 	$pref::Editor::AutoLoadLastGui = !$pref::Editor::AutoLoadLastGui;
@@ -56,16 +17,6 @@ function Lab::toggleAutoLoadLastGui( %content ) {
 }
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function GuiEditContent( %content ) {
-	if( !isObject( GuiEditCanvas ) )
-		new GuiControl( GuiEditCanvas, EditorGuiGroup );
-
-	GuiEdMap.push();
-	$InGuiEditor = true;
-	GuiEditor.openForEditing( %content );
-}
-//------------------------------------------------------------------------------
 
 //==============================================================================
 //==============================================================================
@@ -78,71 +29,7 @@ package GuiEditor_BlockDialogs {
 };
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function GuiEditor::openForEditing( %this, %content ) {
-	Canvas.setContent( GuiEditorGui );
 
-	while( GuiEditorContent.getCount() )
-		GuiGroup.add( GuiEditorContent.getObject( 0 ) ); // get rid of anything being edited
-
-	// Clear the current guide set and add the guides
-	// from the control.
-
-	//Mud-H Quick hack to prevent a start script error
-	if (!isObject(%content)) return;
-
-	%this.clearGuides();
-	%this.readGuides( %content );
-	// Enumerate GUIs and put them into the content list.
-	GuiEditorContentList.init();
-	GuiEditorScroll.scrollToTop();
-	activatePackage( GuiEditor_BlockDialogs );
-	GuiEditorContent.add( %content );
-	deactivatePackage( GuiEditor_BlockDialogs );
-	GuiEditorContentList.sort();
-
-	if(%content.getName() $= "")
-		%name = "(unnamed) - " @ %content;
-	else
-		%name = %content.getName() @ " - " @ %content;
-
-	GuiEditorContentList.setText(%name);
-	%this.setContentControl(%content);
-	// Initialize the preview resolution list and select the current
-	// preview resolution.
-	GuiEditorResList.init();
-	%res = %this.previewResolution;
-
-	if( %res $= "" )
-		%res = "1024 768";
-
-	GuiEditorResList.selectFormat( %res );
-	// Initialize the treeview and expand the first level.
-	GuiEditorTreeView.init();
-	GuiEditorTreeView.open( %content );
-	GuiEditorTreeView.expandItem( 1 );
-
-	// Initialize profiles tree.
-
-	if( !GuiEditorProfilesTree.isInitialized ) {
-		GuiEditorProfilesTree.init();
-		GuiEditorProfilesTree.isInitialized = true;
-	}
-
-	// Create profile change manager if we haven't already.
-
-	if( !isObject( GuiEditorProfileChangeManager ) )
-		new SimGroup( GuiEditorProfileChangeManager );
-
-	// clear the undo manager if we're switching controls.
-	if( %this.lastContent != %content )
-		GuiEditor.getUndoManager().clearAll();
-
-	GuiEditor.setFirstResponder();
-	%this.updateUndoMenu();
-	%this.lastContent = %content;
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 //---------------------------------------------------------------------------------------------
 
@@ -374,7 +261,8 @@ function GuiEditor::setPreviewResolution( %this, %width, %height ) {
 
 function GuiEditor::toggleEdgeSnap( %this ) {
 	%this.snapToEdges = !%this.snapToEdges;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, %this.snapToEdges );
+	Lab.checkMenuCodeItem("Gui","snapToEdges",%this.snapToEdges);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, %this.snapToEdges );
 	GuiEditorEdgeSnapping_btn.setStateOn( %this.snapToEdges );
 }
 
@@ -382,7 +270,8 @@ function GuiEditor::toggleEdgeSnap( %this ) {
 
 function GuiEditor::toggleCenterSnap( %this ) {
 	%this.snapToCenters = !%this.snapToCenters;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, %this.snapToCenters );
+	Lab.checkMenuCodeItem("Gui","snapToCenters",%this.snapToCenters);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, %this.snapToCenters );
 	GuiEditorCenterSnapping_btn.setStateOn( %this.snapToCenters );
 }
 
@@ -390,35 +279,40 @@ function GuiEditor::toggleCenterSnap( %this ) {
 
 function GuiEditor::toggleFullBoxSelection( %this ) {
 	%this.fullBoxSelection = !%this.fullBoxSelection;
-	GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, %this.fullBoxSelection );
+	Lab.checkMenuCodeItem("Gui","fullBoxSelection",%this.fullBoxSelection);
+	//GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, %this.fullBoxSelection );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleDrawGuides( %this ) {
 	%this.drawGuides= !%this.drawGuides;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, %this.drawGuides );
+	Lab.checkMenuCodeItem("Gui","drawGuides",%this.drawGuides);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, %this.drawGuides );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleGuideSnap( %this ) {
 	%this.snapToGuides = !%this.snapToGuides;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, %this.snapToGuides );
+	Lab.checkMenuCodeItem("Gui","snapToGuides",%this.snapToGuides);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GUIDESNAP_INDEX, %this.snapToGuides );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleControlSnap( %this ) {
 	%this.snapToControls = !%this.snapToControls;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, %this.snapToControls );
+	Lab.checkMenuCodeItem("Gui","snapToGuides",%this.snapToControls);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CONTROLSNAP_INDEX, %this.snapToControls );
 }
 
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::toggleCanvasSnap( %this ) {
 	%this.snapToCanvas = !%this.snapToCanvas;
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, %this.snapToCanvas );
+	Lab.checkMenuCodeItem("Gui","snapToCanvas",%this.snapToCanvas);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CANVASSNAP_INDEX, %this.snapToCanvas );
 }
 
 //---------------------------------------------------------------------------------------------
@@ -430,8 +324,8 @@ function GuiEditor::toggleGridSnap( %this ) {
 		%this.setSnapToGrid( 0 );
 	else
 		%this.setSnapToGrid( %this.snap2GridSize );
-
-	GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, %this.snap2Grid );
+	Lab.checkMenuCodeItem("Gui","snap2Grid",%this.snap2Grid);
+	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, %this.snap2Grid );
 	GuiEditorSnapCheckBox.setStateOn( %this.snap2Grid );
 }
 
@@ -477,141 +371,6 @@ function GuiEditor::toggleFlagInAllSelectedObjects( %this, %flagFieldName ) {
 
 	GuiEditorInspectFields.onInspectorPostFieldModification();
 	GuiEditorInspectFields.refresh();
-}
-
-//=============================================================================================
-//    Event Handlers.
-//=============================================================================================
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onDelete(%this) {
-	GuiEditorTreeView.update();
-	// clear out the gui inspector.
-	GuiEditorInspectFields.update(0);
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onSelectionMoved( %this, %ctrl ) {
-	GuiEditorInspectFields.update( %ctrl );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onSelectionResized( %this, %ctrl ) {
-	GuiEditorInspectFields.update( %ctrl );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onSelect(%this, %ctrl) {
-	if( !%this.dontSyncTreeViewSelection ) {
-		GuiEditorTreeView.clearSelection();
-		GuiEditorTreeView.addSelection( %ctrl );
-	}
-
-	GuiEditorInspectFields.update( %ctrl );
-	GuiEditorSelectionStatus.setText( "1 Control Selected" );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onAddSelected( %this, %ctrl ) {
-	if( !%this.dontSyncTreeViewSelection ) {
-		GuiEditorTreeView.addSelection( %ctrl );
-		GuiEditorTreeView.scrollVisibleByObjectId( %ctrl );
-	}
-
-	GuiEditorSelectionStatus.setText( %this.getNumSelected() @ " Controls Selected" );
-	// Add to inspection set.
-	GuiEditorInspectFields.addInspect( %ctrl );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onRemoveSelected( %this, %ctrl ) {
-	if( !%this.dontSyncTreeViewSelection )
-		GuiEditorTreeView.removeSelection( %ctrl );
-
-	GuiEditorSelectionStatus.setText( %this.getNumSelected() @ " Controls Selected" );
-	// Remove from inspection set.
-	GuiEditorInspectFields.removeInspect( %ctrl );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onClearSelected( %this ) {
-	if( !%this.dontSyncTreeViewSelection )
-		GuiEditorTreeView.clearSelection();
-
-	GuiEditorInspectFields.update( 0 );
-	GuiEditorSelectionStatus.setText( "" );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onControlDragged( %this, %payload, %position ) {
-	// Make sure we have the right kind of D&D.
-	if( !%payload.parentGroup.isInNamespaceHierarchy( "GuiDragAndDropControlType_GuiControl" ) )
-		return;
-
-	// use the position under the mouse cursor, not the payload position.
-	%position = VectorSub( %position, GuiEditorContent.getGlobalPosition() );
-	%x = getWord( %position, 0 );
-	%y = getWord( %position, 1 );
-	%target = GuiEditor.getContentControl().findHitControl( %x, %y );
-
-	// Make sure the target is a valid parent for our payload.
-
-	while(    ( !%target.isContainer || !%target.acceptsAsChild( %payload ) )
-				 && %target != GuiEditor.getContentControl() )
-		%target = %target.getParent();
-
-	if( %target != %this.getCurrentAddSet() )
-		%this.setCurrentAddSet( %target );
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onControlDropped(%this, %payload, %position) {
-	// Make sure we have the right kind of D&D.
-	if( !%payload.parentGroup.isInNamespaceHierarchy( "GuiDragAndDropControlType_GuiControl" ) )
-		return;
-
-	%pos = %payload.getGlobalPosition();
-	%x = getWord(%pos, 0);
-	%y = getWord(%pos, 1);
-	%this.addNewCtrl(%payload);
-	%payload.setPositionGlobal(%x, %y);
-	%this.setFirstResponder();
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onGainFirstResponder(%this) {
-	%this.enableMenuItems(true);
-	// JCF: don't just turn them all on!
-	// Undo/Redo is only enabled if those actions exist.
-	%this.updateUndoMenu();
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onLoseFirstResponder(%this) {
-	%this.enableMenuItems(false);
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onHierarchyChanged( %this ) {
-	GuiEditorTreeView.update();
-}
-
-//---------------------------------------------------------------------------------------------
-
-function GuiEditor::onMouseModeChange( %this ) {
-	GuiEditorStatusBar.setText( GuiEditorStatusBar.getMouseModeHelp() );
 }
 
 //=============================================================================================

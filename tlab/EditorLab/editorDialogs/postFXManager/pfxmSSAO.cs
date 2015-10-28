@@ -16,7 +16,7 @@ function EPostFxManager::buildParamsSSAO( %this ) {
 	%arCfg.prefGroup = "$SSAOPostFX::";
 	%arCfg.autoSyncPref = "1";
 	%arCfg.group[%gid++] = "General Settings";
-	%arCfg.setVal("enableBloom",       "" TAB "Enable bloom" TAB "Checkbox" TAB "superClass>>EPostFx_EnableSSAOCheckbox" TAB "EPostFxManager" TAB %gid);
+	%arCfg.setVal("enableSSAO",       "" TAB "Enable SSAO" TAB "Checkbox" TAB "superClass>>EPostFx_EnableSSAOCheckbox" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("quality",       "" TAB "Quality" TAB "dropdown_25" TAB "itemList>>$EPostFx_SSAO_QualityList;;syncId>>1" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("overallStrength",       "" TAB "Overall strength" TAB "SliderEdit" TAB "range>>0 50" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("blurDepthTol",       "" TAB "Blur (Softness)" TAB "SliderEdit" TAB "range>>0 0.3" TAB "EPostFxManager" TAB %gid);

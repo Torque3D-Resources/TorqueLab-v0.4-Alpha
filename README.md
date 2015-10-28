@@ -15,13 +15,12 @@ For more informations, visit the official TorqueLab Wiki:
 
 ## Installation
 The installation process have been simplified for v0.4 version. You can simply download the files, delete existing tools/ folder, then paste both tools/ and tlab/ folder provided in the root of your project. Then, if you haven't modified how the default editor are loaded, you should be able to use TorqueLab the same way as the standard editor. (F11 to load TorqueLab from inside a mission, F10 to load the GuiEditor from anywhere.
-https://github.com/NordikLab/TorqueLab/wiki/TorqueLab-required-source-code-changes
+
 #### You need to recompile your project with the required changes added to your source code:
 [Adding required code changes to your project](https://github.com/NordikLab/TorqueLab/wiki/TorqueLab-required-source-code-changes "Info")
 ### Quick Installation
 - Delete default tools/ folder from project root
 - Paste both tlab/ and tools/ folder from the GitHug TorqueLab repository
-- Apply the required code changes to your project source code
 - Compile your project with the source changes ([Info](https://github.com/NordikLab/TorqueLab/wiki/TorqueLab-required-source-code-changes "Info")) 
 - Enjoy TorqueLab editor the same way as default editor (F11 to load TorqueLab from inside a mission, F10 to load the GuiEditor from anywhere)
 

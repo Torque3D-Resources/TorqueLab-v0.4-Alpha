@@ -6,7 +6,7 @@
 
 function initializeConvexEditor() {
 	echo(" % - Initializing Sketch Tool");
-	exec( "./convexEditor.cs" );
+
 	exec( "./gui/convexEditorGui.gui" );
 	exec( "./gui/ConvexEditorTools.gui" );
 	exec( "./gui/convexEditorToolbar.gui" );

@@ -3,6 +3,7 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+$MaterialSelector_SkipTerrainMaterials = true;
 function MaterialSelector::clearFilterArray( %this ) {
 	%filterArray = materialSelector-->filterArray;
 
@@ -10,156 +11,14 @@ function MaterialSelector::clearFilterArray( %this ) {
 		if (%obj.internalName $= "CustomFilter")
 			%deleteList = strAddWord(%deleteList,%obj.getId());
 	}
-
-	devLog("Deleting list:",%deleteList);
-
+	
 	foreach$(%objID  in %deleteList)
 		delObj(%objID);
 }
 //------------------------------------------------------------------------------
+//MaterialSelector.buildStaticFilters();
 function MaterialSelector::buildStaticFilters( %this ) {
-	/*
-	// if you want to add any more containers to staticFilterObjects, here's
-	// where to do it
-	%staticFilterContainer = new GuiControl () {
-		new GuiContainer() {
-			profile = "ToolsDefaultProfile";
-			Position = "0 0";
-			Extent = "128 18";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			isContainer = "1";
-			parentGroup = %filterArray;
-			new GuiContainer() {
-				profile = "ToolsBoxTitleDark";
-				Position = "-1 0";
-				Extent = "128 32";
-				HorizSizing = "right";
-				VertSizing = "bottom";
-				isContainer = "1";
-			};
-			new GuiTextCtrl() {
-				Profile = "ToolsTextBase";
-				position = "5 0";
-				Extent = "118 18";
-				text = "Types";
-			};
-		};
-		new GuiContainer() { // All
-			profile = "ToolsDefaultProfile";
-			Position = "415 191";
-			Extent = "128 18";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			isContainer = "1";
-			parentGroup = %filterArray;
-			new GuiCheckBoxCtrl(MaterialFilterAllArrayCheckbox) {
-				Profile = "ToolsCheckBoxProfile_List";
-				position = "5 2";
-				Extent = "118 18";
-				text = "All";
-				Command = "MaterialSelector.switchStaticFilters(\"MaterialFilterAllArray\");";
-			};
-		};
-		new GuiContainer() { // Mapped
-			profile = "ToolsDefaultProfile";
-			Position = "415 191";
-			Extent = "128 18";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			isContainer = "1";
-			parentGroup = %filterArray;
-			new GuiCheckBoxCtrl(MaterialFilterMappedArrayCheckbox) {
-				Profile = "ToolsCheckBoxProfile_List";
-				position = "5 2";
-				Extent = "118 18";
-				text = "Mapped";
-				Command = "MaterialSelector.switchStaticFilters(\"MaterialFilterMappedArray\");";
-			};
-		};
-		new GuiContainer() { // Unmapped
-			profile = "ToolsDefaultProfile";
-			Position = "415 191";
-			Extent = "128 18";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			isContainer = "1";
-			parentGroup = %filterArray;
-			new GuiCheckBoxCtrl(MaterialFilterUnmappedArrayCheckbox) {
-				Profile = "ToolsCheckBoxProfile_List";
-				position = "5 2";
-				Extent = "118 18";
-				text = "Unmapped";
-				Command = "MaterialSelector.switchStaticFilters(\"MaterialFilterUnmappedArray\");";
-			};
-		};
-		new GuiContainer() {
-			profile = "ToolsDefaultProfile";
-			Position = "0 0";
-			Extent = "128 18";
-			HorizSizing = "right";
-			VertSizing = "bottom";
-			isContainer = "1";
-			parentGroup = %filterArray;
-			new GuiContainer() {
-				profile = "ToolsBoxTitleDark";
-				Position = "-1 0";
-				Extent = "128 32";
-				HorizSizing = "right";
-				VertSizing = "bottom";
-				isContainer = "1";
-			};
-			new GuiTextCtrl() {
-				Profile = "ToolsTextBase";
-				position = "5 0";
-				Extent = "118 18";
-				text = "Tags";
-			};
-			// Create New Tag
-			new GuiBitmapButtonCtrl() {
-				canSaveDynamicFields = "0";
-				Enabled = "1";
-				isContainer = "0";
-				Profile = "ToolsDefaultProfile";
-				HorizSizing = "left";
-				VertSizing = "bottom";
-				position = "105 2";
-				Extent = "15 15";
-				MinExtent = "8 2";
-				canSave = "1";
-				Visible = "1";
-				Command = "MaterialSelector_addFilterWindow.setVisible(1); MaterialSelectorOverlay.pushToBack(MaterialSelector_addFilterWindow);";
-				hovertime = "1000";
-				tooltip = "Create New Tag";
-				bitmap = "tlab/gui/icons/default/new";
-				groupNum = "-1";
-				buttonType = "PushButton";
-				useMouseEvents = "0";
-			};
-			new GuiBitmapButtonCtrl() {
-				canSaveDynamicFields = "0";
-				Enabled = "1";
-				isContainer = "0";
-				Profile = "ToolsDefaultProfile";
-				HorizSizing = "left";
-				VertSizing = "bottom";
-				position = "89 2";
-				Extent = "13 13";
-				MinExtent = "8 2";
-				canSave = "1";
-				Visible = "1";
-				Command = "MaterialSelector.clearMaterialFilters();";
-				hovertime = "1000";
-				tooltip = "Clear Selected Tag";
-				bitmap = "tlab/gui/icons/default/clear-btn";
-				groupNum = "-1";
-				buttonType = "PushButton";
-				useMouseEvents = "0";
-			};
-		};
-	};
-
-	*/
+	
 //	%i = %staticFilterContainer.getCount();
 	//for( ; %i != 0; %i--)
 	//MaterialSelector-->filterArray.addGuiControl(%staticFilterContainer.getObject(0));
@@ -168,6 +27,9 @@ function MaterialSelector::buildStaticFilters( %this ) {
 	//%staticFilterContainer.delete();
 	// Create our category array used in the selector, this code should be taken out
 	// in order to make the material selector agnostic
+	delObj(MaterialFilterAllArray);
+	delObj(MaterialFilterMappedArray);
+	delObj(MaterialFilterUnmappedArray);
 	new ArrayObject(MaterialFilterAllArray);
 	new ArrayObject(MaterialFilterMappedArray);
 	new ArrayObject(MaterialFilterUnmappedArray);
@@ -199,6 +61,9 @@ function MaterialSelector::buildStaticFilters( %this ) {
 
 		// Process regular materials here
 		%material = materialSet.getObject(%i);
+		
+		if (%material.terrainMaterials && $MaterialSelector_SkipTerrainMaterials )
+			continue;
 
 		for( %k = 0; %k < UnlistedMaterials.count(); %k++ ) {
 			%unlistedFound = 0;
@@ -254,6 +119,7 @@ function MaterialSelector::preloadFilter( %this ) {
 //==============================================================================
 // Load the filtered materials (called also when thumbnail count change)
 function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
+	MatSel_ListFilterText.active = 0;
 	// manage schedule array properly
 	if(!isObject(MatEdScheduleArray))
 		new ArrayObject(MatEdScheduleArray);
@@ -317,8 +183,11 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 
 		%start = MaterialSelector.currentPreviewPage * %previewsPerPage;
 
-		for( %i = %start; %i < %start + %previewCount; %i++ )
-			MaterialSelector.buildPreviewArray( %filteredObjectsArray.getValue(%i) );
+		for( %i = %start; %i < %start + %previewCount; %i++ ){
+			%mat = %filteredObjectsArray.getValue(%i);
+			if (strFind(strlwr(%mat.getName()),strlwr(MatEdDlg.filterText),true))
+			MaterialSelector.buildPreviewArray( %mat );
+		}
 
 		%filteredObjectsArray.delete();
 	} else {
@@ -356,11 +225,15 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 		%start = MaterialSelector.currentPreviewPage * %previewsPerPage;
 
 		for( %i = %start; %i < %start + %previewCount; %i++ ) {
-			MaterialSelector.buildPreviewArray( %noTagArray.getValue(%i) );
+			%mat = %noTagArray.getValue(%i);
+			if (strFind(strlwr(%mat.getName()),strlwr(MatEdDlg.filterText),true))
+				MaterialSelector.buildPreviewArray( %mat );
 		}
 	}
 
 	MaterialSelector.loadImages( 0 );
+	
+	MatSel_ListFilterText.active = 1;
 }
 
 //------------------------------------------------------------------------------

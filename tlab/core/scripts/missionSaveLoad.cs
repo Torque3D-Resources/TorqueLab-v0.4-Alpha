@@ -64,11 +64,7 @@ function Lab::SaveMissionDisableWarning(%this) {
 //Generic Save Mission Call, make sure it's possible to save
 function Lab::SaveMission(%this) {
 	// just save the mission without renaming it
-	if(isFunction("getObjectLimit") && MissionGroup.getFullCount() >= getObjectLimit()) {
-		LabMsgOk( "Object Limit Reached", "You have exceeded the object limit of " @ getObjectLimit() @ " for this demo. You can remove objects if you would like to add more." );
-		return;
-	}
-
+	
 	// first check for dirty and read-only files:
 	if((EWorldEditor.isDirty || ETerrainEditor.isMissionDirty) && !isWriteableFileName($Server::MissionFile)) {
 		LabMsgOkCancel("Error", "Mission file \""@ $Server::MissionFile @ "\" is read-only.  Continue?", "Ok", "Stop");
@@ -122,11 +118,7 @@ function Lab::SaveMission(%this) {
 //==============================================================================
 //Generic Save Mission Call, make sure it's possible to save
 function Lab::SaveMissionAs(%this) {
-	if(isFunction("getObjectLimit") && MissionGroup.getFullCount() >= getObjectLimit())
-   {
-      MessageBoxOKBuy( "Object Limit Reached", "You have exceeded the object limit of " @ getObjectLimit() @ " for this demo. You can remove objects if you would like to add more.", "", "Canvas.showPurchaseScreen(\"objectlimit\");" );
-      return;
-   }
+	
    
    if(!$Pref::disableSaving && !isWebDemo())
    {
