@@ -9,7 +9,7 @@ new GuiStackControl(AiDirectorToolbar) {
    dynamicPos = "0";
    changeChildSizeToFit = "1";
    changeChildPosition = "1";
-   position = "142 0";
+   position = "110 0";
    extent = "142 32";
    minExtent = "16 16";
    horizSizing = "right";
@@ -26,12 +26,12 @@ new GuiStackControl(AiDirectorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "25600";
-      disabledGroup = "25601";
-      EditorContainer = "20349";
+      defaultStack = "24810";
+      disabledGroup = "24811";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "AiDirector";
-      stackLists = "25602";
+      stackLists = "24812";
 
    new GuiContainer() {
       margin = "0 0 0 0";

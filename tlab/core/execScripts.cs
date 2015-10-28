@@ -59,6 +59,7 @@ function tlabExecMenubar( %loadGui ) {
 //------------------------------------------------------------------------------
 //Load the LabGui (Cleaned EditorGui files)
 function tlabExecEditor(%loadGui ) {
+	execPattern("tlab/EditorLab/SceneObjects/*.cs");
 	if (%loadGui) {
 		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
@@ -73,7 +74,7 @@ function tlabExecEditor(%loadGui ) {
 execPattern("tlab/EditorLab/guiSystem/*.cs");
 	execPattern("tlab/EditorLab/worldEditor/*.cs");
 	execPattern("tlab/EditorLab/plugin/*.cs");
-	execPattern("tlab/EditorLab/SceneObjects/*.cs");	
+		
 	execPattern("tlab/EditorLab/SideBar/*.cs");
 }
 tlabExecEditor(!$LabGuiExeced);

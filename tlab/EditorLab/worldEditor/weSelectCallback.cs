@@ -6,9 +6,13 @@
 //==============================================================================
 function WorldEditor::onDragCopy( %this, %obj ) {
 	logd("onDragCopy",%this.getSelectionSize());
-	if (!isObject(%obj))
+	/*if (!isObject(%obj))
 		return;
-	%obj.startDrag = %obj.getPosition();
+	if (%obj.isMemberOfClass("SimSet"))
+		%obj = %obj.getObject(0);
+		
+	%obj.startDrag = %obj.getPosition();*/
+	//Store the selection centroid for possible cloning
 	%this.lastCentroidPos = %this.getSelectionCentroid();
 	$DragCopyStarted = true;
 }

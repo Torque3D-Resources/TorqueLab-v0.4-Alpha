@@ -246,14 +246,7 @@ singleton GuiControlProfile(ToolsSwatchButtonProfile : ToolsDefaultProfile)
    borderColor = "100 100 100 255";
    cursorColor = "0 0 0 79";
 };
-//------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsSwatchButtonProfile : GuiSwatchButtonProfile)
-{
-	 category = "Tools";
-   fontColors[2] = "Black";
-   fontColorNA = "Black";
-};
-//------------------------------------------------------------------------------
+
 
 
 

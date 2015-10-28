@@ -12,7 +12,7 @@ function initializeSceneEditor() {
 	execSceneEd(true);
 	
 		//Create the TorqueLab Plugin instance
-	Lab.createPlugin("SceneEditor","Scene Editor",true);
+	Lab.createPlugin("SceneEditor","Scene Editor");
 	
 	//Add the Plugin related GUIs to TorqueLab
 	Lab.addPluginGui("SceneEditor",SceneEditorTools);

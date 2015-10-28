@@ -555,7 +555,7 @@ new GuiWindowCtrl() {
 							internalName = "FlipRBCheckbox";
 							Enabled = "1";
 							isContainer = "0";
-							Profile = "ToolsGuiCheckBoxProfile";
+							Profile = "ToolsCheckBoxProfile";
 							HorizSizing = "right";
 							VertSizing = "bottom";
 							position = "56 34";
@@ -578,7 +578,7 @@ new GuiWindowCtrl() {
 							internalName = "invertSmoothnessCheckbox";
 							Enabled = "1";
 							isContainer = "0";
-							Profile = "ToolsGuiCheckBoxProfile";
+							Profile = "ToolsCheckBoxProfile";
 							HorizSizing = "right";
 							VertSizing = "bottom";
 							position = "56 34";
@@ -2651,7 +2651,7 @@ new GuiWindowCtrl() {
 								internalName = "accuCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "8 7";
@@ -3224,7 +3224,7 @@ new GuiWindowCtrl() {
 								internalName = "glowCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "70 4";
@@ -3247,7 +3247,7 @@ new GuiWindowCtrl() {
 								internalName = "emissiveCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "8 4";
@@ -3355,7 +3355,7 @@ new GuiWindowCtrl() {
 								internalName = "useAnisoCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "8 4";
@@ -3378,7 +3378,7 @@ new GuiWindowCtrl() {
 								internalName = "vertLitCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "8 25";
@@ -3401,7 +3401,7 @@ new GuiWindowCtrl() {
 								internalName = "vertLitCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "113 25";
@@ -3424,7 +3424,7 @@ new GuiWindowCtrl() {
 								internalName = "subSurfaceCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "8 46";
@@ -3978,7 +3978,7 @@ new GuiWindowCtrl() {
 								groupNum = "-1";
 							};
 							new GuiCheckboxCtrl() {
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								internalName = "ScaleAnimation";
 								HorizSizing = "right";
 								VertSizing = "bottom";
@@ -4347,7 +4347,7 @@ new GuiWindowCtrl() {
 								internalName = "alphaTestCheckBox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "3 39";
@@ -4422,7 +4422,7 @@ new GuiWindowCtrl() {
 								internalName = "transZWriteCheckBox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "3 23";
@@ -4445,7 +4445,7 @@ new GuiWindowCtrl() {
 								internalName = "translucentCheckbox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "left";
 								VertSizing = "bottom";
 								position = "89 3";
@@ -4468,7 +4468,7 @@ new GuiWindowCtrl() {
 								internalName = "castShadows";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "3 55";
@@ -4491,7 +4491,7 @@ new GuiWindowCtrl() {
 								internalName = "castDynamicShadows";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "3 70";
@@ -4514,7 +4514,7 @@ new GuiWindowCtrl() {
 								internalName = "doubleSidedCheckBox";
 								Enabled = "1";
 								isContainer = "0";
-								Profile = "ToolsGuiCheckBoxProfile";
+								Profile = "ToolsCheckBoxProfile";
 								HorizSizing = "right";
 								VertSizing = "bottom";
 								position = "105 55";
@@ -4676,7 +4676,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "right";
 								vertSizing = "bottom";
-								profile = "ToolsGuiCheckBoxProfile";
+								profile = "ToolsCheckBoxProfile";
 								visible = "1";
 								active = "1";
 								Command = "MaterialEditorGui.updateActiveMaterial(\"showFootprints\", $ThisControl.getValue());";
@@ -4696,7 +4696,7 @@ new GuiWindowCtrl() {
 								minExtent = "8 2";
 								horizSizing = "right";
 								vertSizing = "bottom";
-								profile = "ToolsGuiCheckBoxProfile";
+								profile = "ToolsCheckBoxProfile";
 								visible = "1";
 								active = "1";
 								Command = "MaterialEditorGui.updateActiveMaterial(\"showDust\", $ThisControl.getValue());";

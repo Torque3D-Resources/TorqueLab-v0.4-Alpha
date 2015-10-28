@@ -26,12 +26,12 @@ new GuiStackControl(MeshRoadEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "30058";
-      disabledGroup = "30059";
-      EditorContainer = "20349";
+      defaultStack = "29269";
+      disabledGroup = "29270";
+      EditorContainer = "20353";
       editorParent = "EditorGuiToolbarStack";
       plugin = "MeshRoadEditor";
-      stackLists = "30060 30069";
+      stackLists = "29271 29280";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -634,7 +634,7 @@ new GuiStackControl(MeshRoadEditorToolbar) {
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "DefaultRoadMaterialTop";
+            text = "RoadTarmacB";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

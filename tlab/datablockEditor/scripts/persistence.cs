@@ -60,6 +60,7 @@ function DatablockEditorPlugin::flagInspectorAsDirty( %this, %dirty ) {
 		DatablockEditorInspectorWindow.text = "Datablock";
 		hide(DbEd_ReloadDataButton);
 	}
+	DbEd_ActiveDbIcons-->saveButton.visible = %dirty;
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiFrameSetCtrl(DatablockEditorTools) {
    columns = "0";
-   rows = "0 368";
+   rows = "0 363";
    borderWidth = "4";
    borderColor = "0 0 0 0";
    borderEnable = "alwaysOn";
@@ -16,7 +16,7 @@
    anchorLeft = "1";
    anchorRight = "0";
    position = "0 0";
-   extent = "280 820";
+   extent = "282 820";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "20001";
+      EditorContainer = "20444";
       editorParent = "4027";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -64,7 +64,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "280 364";
+      extent = "282 359";
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -81,10 +81,10 @@
          tabPosition = "Top";
          tabMargin = "20";
          minTabWidth = "64";
-         tabHeight = "20";
+         tabHeight = "19";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "0";
+         selectedPage = "2";
          frontTabPadding = "0";
          docking = "Client";
          margin = "4 2 3 3";
@@ -93,8 +93,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "11 28";
-         extent = "258 326";
+         position = "6 27";
+         extent = "270 325";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -119,17 +119,18 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 20";
-            extent = "258 306";
+            position = "0 19";
+            extent = "386 412";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxTitleDark";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -142,7 +143,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 2";
-               extent = "250 18";
+               extent = "378 18";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -171,7 +172,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "228 18";
+                  extent = "356 18";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -194,7 +195,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "229 -1";
+                  position = "357 -1";
                   extent = "19 19";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -227,7 +228,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 24";
-               extent = "250 278";
+               extent = "378 384";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -241,13 +242,13 @@
                canSaveDynamicFields = "0";
 
                new GuiTreeViewCtrl(DatablockEditorTree) {
-                  tabSize = "16";
-                  textOffset = "2";
+                  tabSize = "10";
+                  textOffset = "0";
                   fullRowSelect = "1";
-                  itemHeight = "21";
+                  itemHeight = "16";
                   destroyTreeOnSleep = "0";
                   mouseDragging = "0";
-                  multipleSelections = "1";
+                  multipleSelections = "0";
                   deleteObjectAllowed = "1";
                   dragToItemAllowed = "0";
                   clearAllOnSingleSelection = "1";
@@ -262,8 +263,8 @@
                   compareToObjectID = "0";
                   canRenameObjects = "1";
                   renameInternal = "0";
-                  position = "0 -249";
-                  extent = "152 672";
+                  position = "0 0";
+                  extent = "148 656";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -274,7 +275,7 @@
                   hovertime = "1000";
                   isContainer = "1";
                   canSave = "1";
-                  canSaveDynamicFields = "0";
+                  canSaveDynamicFields = "1";
                };
             };
          };
@@ -289,8 +290,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 20";
-            extent = "353 425";
+            position = "0 19";
+            extent = "270 306";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -322,7 +323,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "345 417";
+               extent = "262 298";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -385,19 +386,18 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 20";
-            extent = "353 425";
+            position = "0 19";
+            extent = "270 306";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsBoxTitleDark";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "DatablockEditorCreator";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -410,7 +410,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 2";
-               extent = "345 29";
+               extent = "262 29";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -434,7 +434,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "6 0";
-                  extent = "333 11";
+                  extent = "250 11";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -507,7 +507,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 39";
-               extent = "345 382";
+               extent = "262 263";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";
@@ -525,7 +525,7 @@
                   fitParentWidth = "1";
                   colorBullet = "1";
                   position = "0 0";
-                  extent = "335 1020";
+                  extent = "368 816";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -536,7 +536,7 @@
                   hovertime = "1000";
                   isContainer = "0";
                   canSave = "1";
-                  canSaveDynamicFields = "0";
+                  canSaveDynamicFields = "1";
                };
             };
          };
@@ -551,8 +551,8 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "254 24";
-         extent = "20 20";
+         position = "233 24";
+         extent = "43 20";
          minExtent = "16 16";
          horizSizing = "left";
          vertSizing = "bottom";
@@ -568,7 +568,7 @@
 
          new GuiIconButtonCtrl() {
             buttonMargin = "2 2";
-            iconBitmap = "tlab/gui/icons/tools-assets/file_new.png";
+            iconBitmap = "tlab/gui/icons/24-assets/file_new.png";
             iconLocation = "Left";
             sizeIconToButton = "1";
             makeIconSquare = "0";
@@ -579,12 +579,12 @@
             buttonType = "PushButton";
             useMouseEvents = "0";
             position = "0 0";
-            extent = "20 20";
+            extent = "18 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonDark";
-            visible = "0";
+            visible = "1";
             active = "1";
             command = "DatablockEditorPlugin.createDatablock();";
             tooltipProfile = "ToolsToolTipProfile";
@@ -592,7 +592,6 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "CreateSelection";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
@@ -609,12 +608,12 @@
             buttonType = "PushButton";
             useMouseEvents = "0";
             position = "0 0";
-            extent = "20 20";
+            extent = "18 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonDark";
-            visible = "1";
+            visible = "0";
             active = "1";
             command = "DatablockEditorPlugin.deleteDatablock();";
             tooltipProfile = "ToolsToolTipProfile";
@@ -622,13 +621,43 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "deleteSelection";
+            hidden = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+         new GuiIconButtonCtrl() {
+            buttonMargin = "2 2";
+            iconBitmap = "tlab/gui/icons/24-assets/file_save.png";
+            iconLocation = "Left";
+            sizeIconToButton = "1";
+            makeIconSquare = "0";
+            textLocation = "Left";
+            textMargin = "4";
+            autoSize = "0";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            position = "23 0";
+            extent = "18 18";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsButtonDark";
+            visible = "1";
+            active = "1";
+            command = "DatablockEditorPlugin.createDatablock();";
+            tooltipProfile = "ToolsToolTipProfile";
+            tooltip = "Create new datablock";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "saveSelection";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
       };
    };
    new GuiWindowCtrl(DatablockEditorInspectorWindow) {
-      text = "Datablock *";
+      text = "Datablock";
       resizeWidth = "0";
       resizeHeight = "0";
       canMove = "0";
@@ -644,8 +673,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 368";
-      extent = "280 452";
+      position = "0 363";
+      extent = "282 457";
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -662,7 +691,7 @@
          tabPosition = "Top";
          tabMargin = "20";
          minTabWidth = "64";
-         tabHeight = "20";
+         tabHeight = "19";
          allowReorder = "0";
          defaultPage = "-1";
          selectedPage = "0";
@@ -674,8 +703,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "11 28";
-         extent = "258 414";
+         position = "6 27";
+         extent = "270 423";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -700,8 +729,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 20";
-            extent = "258 394";
+            position = "0 19";
+            extent = "270 404";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -723,7 +752,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "258 394";
+               extent = "270 404";
                minExtent = "64 48";
                horizSizing = "width";
                vertSizing = "height";
@@ -745,7 +774,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "6 4";
-                  extent = "246 20";
+                  extent = "258 20";
                   minExtent = "64 20";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -767,14 +796,14 @@
                      text = "art/datablocks/players/CyberTankPlayerData.cust.cs";
                      maxLength = "1024";
                      docking = "Client";
-                     margin = "1 1 0 44";
+                     margin = "1 1 0 22";
                      padding = "0 0 0 0";
                      anchorTop = "1";
                      anchorBottom = "0";
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 1";
-                     extent = "202 18";
+                     extent = "236 18";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -790,34 +819,6 @@
                   };
                   new GuiIconButtonCtrl() {
                      buttonMargin = "2 2";
-                     iconBitmap = "tlab/gui/icons/24-assets/file_save.png";
-                     iconLocation = "Left";
-                     sizeIconToButton = "1";
-                     makeIconSquare = "0";
-                     textLocation = "Left";
-                     textMargin = "4";
-                     autoSize = "0";
-                     groupNum = "-1";
-                     buttonType = "PushButton";
-                     useMouseEvents = "0";
-                     position = "205 0";
-                     extent = "20 20";
-                     minExtent = "8 2";
-                     horizSizing = "left";
-                     vertSizing = "bottom";
-                     profile = "ToolsButtonProfile";
-                     visible = "1";
-                     active = "1";
-                     command = "DatablockEditorPlugin.save();";
-                     tooltipProfile = "ToolsToolTipProfile";
-                     tooltip = "Save Datablock (ALT S)";
-                     hovertime = "1000";
-                     isContainer = "0";
-                     canSave = "1";
-                     canSaveDynamicFields = "0";
-                  };
-                  new GuiIconButtonCtrl() {
-                     buttonMargin = "2 2";
                      iconBitmap = "tlab/gui/icons/24-assets/file_saveas.png";
                      iconLocation = "Left";
                      sizeIconToButton = "1";
@@ -828,8 +829,8 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "226 0";
-                     extent = "20 20";
+                     position = "238 0";
+                     extent = "18 18";
                      minExtent = "8 2";
                      horizSizing = "left";
                      vertSizing = "bottom";
@@ -855,7 +856,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "6 28";
-                  extent = "246 308";
+                  extent = "258 318";
                   minExtent = "64 64";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -885,7 +886,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "246 308";
+                     extent = "258 318";
                      minExtent = "8 8";
                      horizSizing = "width";
                      vertSizing = "height";
@@ -912,7 +913,7 @@
                         changeChildSizeToFit = "1";
                         changeChildPosition = "1";
                         position = "0 0";
-                        extent = "236 4038";
+                        extent = "248 1811";
                         minExtent = "8 8";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -936,8 +937,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "6 340";
-                  extent = "246 48";
+                  position = "6 350";
+                  extent = "258 48";
                   minExtent = "64 48";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -956,7 +957,7 @@
                      maxChars = "-1";
                      useURLMouseCursor = "0";
                      position = "0 0";
-                     extent = "246 13";
+                     extent = "258 13";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "top";
@@ -983,8 +984,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 20";
-            extent = "258 394";
+            position = "0 19";
+            extent = "270 402";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -1064,7 +1065,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "258 394";
+               extent = "270 402";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -1080,7 +1081,7 @@
                canSaveDynamicFields = "0";
 
                new GuiTextCtrl() {
-                  text = "There\'s no selected datablock";
+                  text = "No predefined settings for: AITurretShapeData";
                   maxLength = "1024";
                   docking = "Top";
                   margin = "0 0 0 0";
@@ -1090,11 +1091,11 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "258 18";
+                  extent = "270 18";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
-                  profile = "ToolsTextBase_H1_C";
+                  profile = "ToolsTextBase_H2_C";
                   visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
@@ -1113,7 +1114,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "8 26";
-                  extent = "242 360";
+                  extent = "254 368";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -1135,7 +1136,7 @@
                      text = "There\'s no predef;ined settings for datablock of this class";
                      useURLMouseCursor = "0";
                      position = "8 2";
-                     extent = "224 120";
+                     extent = "236 105";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1163,25 +1164,53 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "178 24";
-         extent = "97 22";
+         position = "199 24";
+         extent = "81 18";
          minExtent = "16 16";
          horizSizing = "left";
          vertSizing = "bottom";
          profile = "ToolsDefaultProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          command = "DBed.refreshData();";
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "BrushButtonGroup";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
+         new GuiIconButtonCtrl() {
+            buttonMargin = "2 2";
+            iconBitmap = "tlab/gui/icons/24-assets/file_save.png";
+            iconLocation = "Left";
+            sizeIconToButton = "1";
+            makeIconSquare = "0";
+            textLocation = "Left";
+            textMargin = "4";
+            autoSize = "0";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            position = "0 0";
+            extent = "18 18";
+            minExtent = "8 2";
+            horizSizing = "left";
+            vertSizing = "bottom";
+            profile = "ToolsButtonProfile";
+            visible = "1";
+            active = "1";
+            command = "DatablockEditorPlugin.save();";
+            tooltipProfile = "ToolsToolTipProfile";
+            tooltip = "Save Datablock (ALT S)";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "saveButton";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
          new GuiIconButtonCtrl(DbEd_DeepCloneButton) {
-            buttonMargin = "3 3";
+            buttonMargin = "2 2";
             iconBitmap = "tlab/gui/icons/24-assets/clone.png";
             iconLocation = "Left";
             sizeIconToButton = "1";
@@ -1192,8 +1221,8 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "0 0";
-            extent = "22 22";
+            position = "21 0";
+            extent = "18 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1210,7 +1239,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiIconButtonCtrl(DbEd_CloneButton) {
-            buttonMargin = "3 3";
+            buttonMargin = "2 2";
             iconBitmap = "tlab/gui/icons/24-assets/file_new.png";
             iconLocation = "Left";
             sizeIconToButton = "1";
@@ -1221,8 +1250,8 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "25 0";
-            extent = "22 22";
+            position = "42 0";
+            extent = "18 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1239,7 +1268,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiIconButtonCtrl() {
-            buttonMargin = "3 3";
+            buttonMargin = "2 2";
             iconBitmap = "tlab/gui/icons/24-assets/trash.png";
             iconLocation = "Left";
             sizeIconToButton = "1";
@@ -1250,8 +1279,8 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "50 0";
-            extent = "22 22";
+            position = "63 0";
+            extent = "18 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1279,13 +1308,13 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "75 0";
-            extent = "22 22";
+            position = "84 0";
+            extent = "22 18";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "ToolsButtonProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             command = "DbEd.refreshData();";
             tooltipProfile = "ToolsToolTipProfile";
@@ -1293,6 +1322,7 @@
             hovertime = "1000";
             isContainer = "0";
             internalName = "deepCloneSelection";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
          };

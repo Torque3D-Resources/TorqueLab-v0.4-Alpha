@@ -19,7 +19,7 @@ function Scene::registerObjects( %this ) {
 		%this.array = new ArrayObject();
 		%this.array.caseSensitive = true;
 	}
-	
+	%this.array.empty();
 	%this.beginGroup( "Environment" );
 	// Removed Prefab as there doesn't really seem to be a point in creating a blank one
 	//%this.registerMissionObject( "Prefab",              "Prefab" );

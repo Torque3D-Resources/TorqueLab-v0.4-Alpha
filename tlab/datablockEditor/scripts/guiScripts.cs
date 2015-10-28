@@ -23,10 +23,16 @@ function DatablockEditorTreeTabBook::onTabSelected(%this, %text, %id) {
 	case 0:
 		DatablockEditorTreeWindow-->DeleteSelection.visible = true;
 		DatablockEditorTreeWindow-->CreateSelection.visible = false;
+		DatablockEditorTreeWindow-->SaveSelection.visible = false;
 
 	case 1:
 		DatablockEditorTreeWindow-->DeleteSelection.visible = false;
 		DatablockEditorTreeWindow-->CreateSelection.visible = true;
+		DatablockEditorTreeWindow-->SaveSelection.visible = false;
+	case 2:
+		DatablockEditorTreeWindow-->DeleteSelection.visible = false;
+		DatablockEditorTreeWindow-->CreateSelection.visible = false;
+		DatablockEditorTreeWindow-->SaveSelection.visible = true;
 	}
 }
 //------------------------------------------------------------------------------

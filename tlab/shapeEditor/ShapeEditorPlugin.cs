@@ -114,8 +114,8 @@ function ShapeEditorPlugin::onActivated(%this) {
 	Parent::onActivated(%this,$SimpleActivation);
 	
 	
-	
-	
+	ShapeEditor.setDirty(ShapeEditor.isDirty());
+
 }
 //------------------------------------------------------------------------------
 //==============================================================================

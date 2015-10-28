@@ -79,7 +79,7 @@ function Scene::createSimGroup( %this ) {
 	
 
 	
-	%addToGroup = SceneEd.getActiveSimGroup();
+	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new SimGroup() {
 		internalName = getUniqueInternalName( %this.objectGroup.internalName, MissionGroup, true );
 		position = %this.getCreateObjectPosition();
@@ -92,7 +92,7 @@ function Scene::createStatic( %this, %file ) {
 	if ( !$missionRunning )
 		return;
 	
-	%addToGroup = SceneEd.getActiveSimGroup();
+	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new TSStatic() {
 		shapeName = %file;
 		position = %this.getCreateObjectPosition();
@@ -148,7 +148,7 @@ function Scene::createMesh( %this, %file ) {
 	if ( !$missionRunning )
 		return;
 	
-	%addToGroup = SceneEd.getActiveSimGroup();
+	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new TSStatic() {
 		shapeName = %file;
 		position = %this.getCreateObjectPosition();

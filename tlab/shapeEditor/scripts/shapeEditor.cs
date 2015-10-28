@@ -36,6 +36,7 @@ function ShapeEditor::setDirty( %this, %dirty ) {
 		ShapeEdSelectWindow.text = "Shapes";
 
 	ShapeEdPropWindow-->saveBtn.setActive( %dirty );
+	ShapeEd_MainButtonStack-->saveBtn.setActive( %dirty );
 }
 
 function ShapeEditor::saveChanges( %this ) {
