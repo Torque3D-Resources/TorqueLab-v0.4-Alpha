@@ -160,8 +160,7 @@ function isImageFile(%file) {
 	%extension = getWord($TLab_ImageExtensions,%extId);
 
 	while(%extension !$= "") {
-		%testFile = %file @"."@%extension;
-		devLog("Testing image file",%testFile,"IsFile",isFile(%testFile));
+		%testFile = %file @"."@%extension;		
 
 		if (isFile(%testFile))
 			return true;

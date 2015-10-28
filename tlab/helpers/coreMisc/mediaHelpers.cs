@@ -42,8 +42,8 @@ function takeScreenShot( %tiles, %overlap ) {
 	if ($LabNextScreenshotIsPreview)
 		takeLevelScreenShot(%file);
 
-	%name = getScreenShotName();
-
+	%name = $HLab_ScreenshotsFolder@getScreenShotName();
+	
 	if (( $pref::Video::screenShotFormat $= "JPEG" ) || ( $pref::video::screenShotFormat $= "JPG" ))
 		screenShot( %name, "JPEG", %tiles, %overlap );
 	else

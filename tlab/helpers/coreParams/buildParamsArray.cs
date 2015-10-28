@@ -185,7 +185,8 @@ function buildParamsArray( %array,%syncAfter ) {
 	//Field 2 = Type
 	//Field 3 = Options
 	//Field 4 = SyncObjs
-	//Field 5 = groupId
+	//Field 5 = UpdCmd
+	//Field Last = groupId
 	for( %i = 0; %i < %array.count() ; %i++) {
 		%field = %array.getKey(%i);
 		%data = %array.getValue(%i);
@@ -201,14 +202,34 @@ function buildParamsArray( %array,%syncAfter ) {
 		%groupFieldId = getFieldCount(%data) - 1;
 		%fieldId = -1;
 		
+		if (%array.fields $= "")
+			%array.fields = "Default Title Type Options syncObjs";
 		
 		
-		%pData.Default = getField(%data,%fieldId++);
-		%pData.Title = getField(%data,%fieldId++);
-		%pData.Type = getField(%data,%fieldId++);
-		%pData.Options = getField(%data,%fieldId++);
-		%pData.syncObjs = getField(%data,%fieldId++);
-		%array.syncObjsField = %fieldId;		
+			%fid = -1;
+			
+			foreach$(%dataField in %array.fields){
+				%dataValue = getField(%data,%fid++);
+				eval("%pData."@%dataField@" = %dataValue;");					
+			}
+		
+		
+		
+			if(%groupFieldId > 5)
+				%pData.validation = getField(%data,%fieldId++);	
+		//}
+		/*else {		
+			%pData.Default = getField(%data,%fieldId++);
+			%pData.Title = getField(%data,%fieldId++);
+			%pData.Type = getField(%data,%fieldId++);
+			%pData.Options = getField(%data,%fieldId++);
+			%pData.syncObjs = getField(%data,%fieldId++);
+			%array.syncObjsField = %fieldId;	
+			
+			if(%groupFieldId > 5)
+				%pData.validation = getField(%data,%fieldId++);	
+		}
+	*/
 		
 		//Make sure it have a type for building
 		if (%pData.Type $= ""){		
@@ -218,19 +239,22 @@ function buildParamsArray( %array,%syncAfter ) {
 		
 		
 		//if (%array.noDefaults)
-			//%pData.Default = getField(%data,%fieldId++);
+			//%pData.Default = getField(%data,%fieldId++);				
 		
-		
-		if(%groupFieldId > 5)
-			%pData.validation = getField(%data,%fieldId++);
 
 		%pData.srcData = getWord(%pData.syncObjs,0);
 
 		if (%pData.Type $= "None")
 			continue;
 
-		
-		
+		if (strFind(%pData.syncObjs,">>")){
+			%syncFields = strReplace(%pData.syncObjs,">>","\t");
+			%pData.syncObjs = getField(%syncFields,0);
+			%pData.updCmd = getField(%syncFields,1);
+			
+		}
+		%array.syncData[%field] = %pData.syncObjs;
+		%array.updCmd[%field] = %pData.updCmd;
 
 		%pData.Command = %array.common["Command"];
 		%pData.AltCommand = %array.common["AltCommand"];
