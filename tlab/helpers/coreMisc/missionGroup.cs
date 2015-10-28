@@ -10,19 +10,22 @@
 
 //==============================================================================
 // SEP_GroundCover.getMissionGroundCover();
-function getMissionObjectClassList( %class ) {	
-	%list = checkMissionSimGroupForClass(MissionGroup,%class);	
+function getMissionObjectClassList( %classes ) {	
+	
+	%list = checkMissionSimGroupForClass(MissionGroup,%classes);	
 	return %list;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function checkMissionSimGroupForClass(%group,%class ) {
+function checkMissionSimGroupForClass(%group,%classes ) {
 	foreach(%obj in %group) {
-		if (%obj.getClassname() $= %class) {
+		if (strFind(%classes,%obj.getClassname())) {	
+			
 			%list = strAddWord(%list,%obj.getId());
 		} else if (%obj.getClassname() $= "SimGroup") {
-			%listAdd = checkMissionSimGroupForClass(%obj,%class);		
+			
+			%listAdd = checkMissionSimGroupForClass(%obj,%classes);		
 			%list = strAddWord(%list,%listAdd);
 			
 		}

@@ -91,3 +91,15 @@ function ArrayObject::dumpContent(%this) {
 
 }
 //------------------------------------------------------------------------------
+//==============================================================================
+// Dump Array Content
+function ArrayObject::logMove(%this) {
+	%id = %this.moveFirst();
+	while(%id !$= "-1"){
+		%key = %this.getKey(%id);
+		%value = %this.getValue(%id);
+		info("Array dump: Index:",%id,"Key=",%key ,"Value=",%value);
+		%id = %this.moveNext();
+	}
+}
+//------------------------------------------------------------------------------

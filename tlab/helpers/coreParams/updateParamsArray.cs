@@ -88,6 +88,8 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 		eval(%updateFunc@"(%field,%value,%ctrl,%array,%isAltCommand,%arg1,%arg2);");
 		return;
 	}
+	
+	
 
 //===========================================================================
 //Check for data that need to be synced with new value	
@@ -133,21 +135,52 @@ function syncParamArrayCtrlData( %ctrl, %updateFunc,%array,%isAltCommand,%arg1,%
 	// Unless noFriends is specified, try to update agregated friends
 	if (!%ctrl.noFriends)
 		%ctrl.updateFriends();
+	
+	//Param generic sync data function
+	if (%array.generalSyncFunc !$=""){
+		eval(%array.generalSyncFunc);
+	}
 }
 
 //==============================================================================
 // Generic updateRenderer method
 function setParamFieldValue( %array, %field,%value) {
-	%data = %array.getVal(%field);
-	%syncData = getField(%data,4);
+	%syncData = %array.syncData[%field];
+	%updCommand = %array.updCmd[%field];
 	
+	//if no syncData, try with the old system
+	if (%syncData $= ""){
+		%data = %array.getVal(%field);
+		%syncData = getField(%data,4);
+		if (%syncData $= "")
+			paramLog(%array.getName(),"Param have no SyncData ! Field",%field,"SyncData",%syncData);
+		else
+			paramLog(%array.getName(),"Use old syncData system! Field",%field,"SyncData",%syncData);
+	}
+	
+	
+	
+	if (%updCommand !$=""){		
+			if (strFind(%updCommand,"*val*")) {
+				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
+				eval(%command);
+			}
+			//Replace ** occurance with value (Old way)
+			else if (strFind(%updCommand,"**")) {
+				%command = strreplace(%syncData,"**","\""@%value@"\"");
+				eval(%command);
+			}
+	
+	}
 	if (%array.noDirectSync || %syncData $= "") 
 		return false;
 		//Check for a standard global starting with $
 		
 		if (isObject(%syncData)) {
+			
 				%syncData.setFieldValue(%field,%value);
 				//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
+				return;
 			}
 			
 	
@@ -171,11 +204,13 @@ function setParamFieldValue( %array, %field,%value) {
 			if (strFind(%syncData,"*val*")) {
 				%command = strreplace(%syncData,"*val*","\""@%value@"\"");
 				eval(%command);
+				return;
 			}
 			//Replace ** occurance with value (Old way)
 			else if (strFind(%syncData,"**")) {
 				%command = strreplace(%syncData,"**","\""@%value@"\"");
 				eval(%command);
+				return;
 			}
 		}
 		else if (strFind(%syncData,".")) {
@@ -186,6 +221,9 @@ function setParamFieldValue( %array, %field,%value) {
 				//devLog("Obj:",%syncData,"Field",%field,"Value",%value);
 			}
 		}
+		
+	
+	devLog(%array.getName(),"FAILED to update syncData for field:",%field,"Value",%value,"Sync:",%syncData@%syncData@%syncData);
 }
 //==============================================================================
 // Generic updateRenderer method
@@ -255,25 +293,48 @@ function setParamCtrlValue(%ctrl,%value,%field,%paramArray) {
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-function getParamValue(%paramArray,%field,%fromData) {
-	%data = %paramArray.getVal(%field);
+function getParamValue(%paramArray,%field,%fromData) {	
+	
+	%syncData = %paramArray.syncData[%field];
+	
+	
+	
+	
+	//if no syncData, try with the old system
+	if (%syncData $= ""){
+		%data = %paramArray.getVal(%field);
 		%syncData = getField(%data,4);
+	}
+	
 	
 	//If fromData true, we want to get the value using syncdata only
 	if (!%fromData){
 		%container = %paramArray.container;
 		%ctrl = %container.findObjectByInternalName(%field,true);
 		if (isObject(%ctrl)){
+			
 			%value = %ctrl.getTypeValue();		
 			return %value;
 		}
 	}
 	//Skip Direct Sync if specified
+	if (%syncData $=""){
+		paramLog("getParamValue failed with empty SyncData! Param:",%paramArray.getName(),"Field",%field);	
+		return;
+	}
+	
 	if (isObject(%syncData)) {
 		%value = %syncData.getFieldValue(%field);
+		
 		return %value;	
 	}	
 	
+	if (%paramArray.autoSyncPref){
+		eval("%value = "@%paramArray.prefGroup@%field@";");
+		
+		if (%value !$= "")
+			return %value;
+	}
 		//Check for a standard global starting with $
 	if (getSubStr(%syncData,0,1) $= "$") {
 			%lastChar = getSubStr(%syncData,strlen(%syncData)-1,1);
@@ -290,14 +351,20 @@ function getParamValue(%paramArray,%field,%fromData) {
 			return %value;
 	} 
 	
-	if (strFind(%syncData,".")) {
+	
+	if (strFind(%syncData,".") && !strFind(%syncData,";")) {
 		//Check for a standard global starting with $
 		eval("%testObj = "@%syncData@";");
+		
 		if (isObject(%testObj)) {
 			%value = %testObj.getFieldValue(%field);
 			return %value;				
+		} else if (%testObj !$=""){
+			return %testObj;	
 		}
 	}
+	
+	paramLog("Blank value for sync:",%syncData);
 	
 	
 }

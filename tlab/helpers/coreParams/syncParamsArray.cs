@@ -43,15 +43,19 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 		//Ex: PrefGroup: $PrefGroup:: Field: myField  Value: myValue will store myValue in $PrefGroup::myField
 		if (%paramArray.autoSyncPref $= "1"||%paramArray.autoSyncPref) {
 			%prefGroup = %paramArray.prefGroup;
-			eval("%value = "@%prefGroup@%fieldClean@";");		
+			eval("%value = "@%prefGroup@%fieldClean@";");	
+			
 			if (%value !$= "") {
 				setParamCtrlValue(%ctrl,%value,%field,%paramArray);
+				
 				continue;
 			}
 		}
 
 		//---------------------------------------------------------------------------
-		
+		if (%paramArray.syncObjsField $= "")
+			%paramArray.syncObjsField = wordPos(%paramArray.fields,"syncObjs");
+			
 		%syncDataStr = getField(%paramData,%paramArray.syncObjsField);
 		
 
@@ -63,7 +67,8 @@ function syncParamArray(%paramArray, %keepEmptyValue) {
 				//If data is an object, get the value from it
 			eval("%dataObj = "@%data@";");
 			if (isObject(%dataObj)) {	
-				%value = %dataObj.getFieldValue(%field);					
+				%value = %dataObj.getFieldValue(%field);
+				devLog("ISObject=",%value);				
 			}
 			//If data start with $, it might be a full global
 			else if (getSubStr(%data,0,1) $= "$") {
@@ -121,10 +126,16 @@ function syncParamArrayLinks(%paramArray) {
 		}
 
 		//---------------------------------------------------------------------------
-		%syncDataStr = getField(%data,4);
-
-		if (%syncDataStr $= "")
-			continue;
+		
+		%syncData = %paramArray.syncData[%field];
+		%updCommand = %paramArray.updCmd[%field];
+		
+		if (%syncData $= ""){
+			%syncData = getField(%data,4);
+			if (%syncData $= "")
+				continue;
+		}
+		
 
 		//Try each syncData until we get a value
 		foreach$(%data in %syncDataStr) {
