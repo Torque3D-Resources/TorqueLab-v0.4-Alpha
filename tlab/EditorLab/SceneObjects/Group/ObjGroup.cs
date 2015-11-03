@@ -14,16 +14,24 @@ function Scene::setActiveSimGroup( %this, %group ) {
 	if (!%group.isMemberOfClass("SimGroup"))
 		return;
 
-	%this.activeSimGroup = %group;
+	if (Scene.activeSimGroup.getId() $= %group.getId())
+		return;
+	
+	%currentGroup = Scene.activeSimGroup;
+	Scene.treeUnmarkObject(%currentGroup);
+	Scene.activeSimGroup = %group;
 	devLog("setActiveSimGroup END",%group,%this.activeSimGroup);
 	Scene.ActiveGroup = %group;
+	
+	
+	Scene.treeMarkObject(%group);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::getActiveSimGroup( %this) {
 	if (!isObject(%this.activeSimGroup))
 		%this.setActiveSimGroup(MissionGroup);
-	else if (!%this.activeSimGroup.isMemberOfClass(SimGroup))
+	else if (!%this.activeSimGroup.isMemberOfClass("SimGroup"))
 		%this.setActiveSimGroup(MissionGroup);
 
 	return %this.activeSimGroup;
@@ -36,6 +44,7 @@ function Scene::getNewObjectGroup( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::setNewObjectGroup( %this, %group ) {
+	devLog("setNewObjectGroup",%group);
 	if( %this.objectGroup ) {
 		%oldItemId = SceneitorTree.findItemByObjectId( %this.objectGroup );
 

@@ -3,10 +3,14 @@
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
+
+
 //==============================================================================
-//Set a plugin as active (Selected Editor Plugin)
-function LabGuiDev::onWake(%this) {
+function Lab::changePrefabFile(%this,%prefab,%file) {
+	if (!isObject(%prefab))
+		return;
 	
+	LabObj.set(%prefab,"fileName",%file);	
+		
 }
 //------------------------------------------------------------------------------
-GlobalActionMap.bindCmd( keyboard, "ctrl numpad9", "toggleGui(LabGuiDev);","" );

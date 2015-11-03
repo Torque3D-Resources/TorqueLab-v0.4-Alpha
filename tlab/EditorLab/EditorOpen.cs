@@ -83,7 +83,7 @@ function EditorGui::onWake( %this ) {
 	if( %levelName !$= Lab.levelName )
 		%this.onNewLevelLoaded( %levelName );
 		
-	
+	EditorMap.push();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

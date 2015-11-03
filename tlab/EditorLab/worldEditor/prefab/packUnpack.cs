@@ -9,11 +9,14 @@
 //==============================================================================
 //==============================================================================
 // New Create Prefab System using Lab
-function Lab::CreatePrefab(%this) {
+function Lab::CreatePrefab(%this,%file) {
 	// Should this be protected or not?
 	%autoMode = $SceneEd::AutoCreatePrefab;
-
-	if (%autoMode) {
+	
+	if (%file !$= ""){
+		%saveFile = %file;
+	}
+	else if (%autoMode) {
 		%saveFile = %this.GetAutoPrefabFile();
 	} else if ( !$Pref::disableSaving && !isWebDemo() ) {
 		%saveFile = %this.GetPrefabFile();

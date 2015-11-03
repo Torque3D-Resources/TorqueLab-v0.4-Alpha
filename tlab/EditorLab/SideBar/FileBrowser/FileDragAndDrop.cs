@@ -57,6 +57,28 @@ function FileBrowser::checkIconDropMesh( %this,%icon,%droppedOn,%dropPoint) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
+function FileBrowser::checkIconDropPrefab( %this,%icon,%droppedOn,%dropPoint) {
+	devLog(%icon,"Prefab Icon dropped on ctrl:",%droppedOn,%droppedOn.getName());
+	
+	if (%droppedOn.getName() $= "EWorldEditor"){
+		
+		//%worldPos = screenToWorld(%dropPoint);
+		//devLog("Drop point",%dropPoint,"World",%worldPos);
+		//$SceneEditor_DropSinglePosition = %worldPos;
+		eval(%icon.createCmd);
+		
+	}
+	/*else if (%droppedOn.getClassName() $= "GuiShapeEdPreview"){
+		
+		//%worldPos = screenToWorld(%dropPoint);
+		//devLog("Drop point",%dropPoint,"World",%worldPos);
+		//$SceneEditor_DropSinglePosition = %worldPos;
+		ShapeEd.selectFilePath(%icon.fullPath);
+		
+	}*/
+}
+//------------------------------------------------------------------------------
+//==============================================================================
 function FileBrowser::checkIconDropImage( %this,%icon,%droppedOn,%dropPoint) {
 	devLog("Image Icon dropped on ctrl:",%droppedOn,"At Pos",%dropPoint);
 	

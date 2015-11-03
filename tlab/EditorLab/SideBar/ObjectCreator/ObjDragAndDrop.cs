@@ -5,13 +5,13 @@
 //==============================================================================
 
 //==============================================================================
-function ObjectBrowserIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
+function ObjectCreatorIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	if (!isObject(%this)) {
-		devLog("ObjectBrowserIcon class is corrupted! Fix it!");
+		devLog("ObjectCreatorIcon class is corrupted! Fix it!");
 		return;
 	}
 
-	startDragAndDropCtrl(%this,"ObjectBrowserIcon","ObjectBrowser.onIconDropped");
+	startDragAndDropCtrl(%this,"ObjectCreatorIcon","ObjectCreator.onIconDropped");
 	hide(%this);
 	
 }
@@ -23,20 +23,20 @@ function ObjectBrowserIcon::onMouseDragged( %this,%a1,%a2,%a3 ) {
 
 
 //==============================================================================
-function ObjectBrowser::onIconDropped( %this,%droppedOn,%icon,%dropPoint ) {
+function ObjectCreator::onIconDropped( %this,%droppedOn,%icon,%dropPoint ) {
 	%originalIcon = %icon.dragSourceControl;
 	show(%originalIcon);
 	delObj(%icon);
 	
 	devLog(%icon.type,"Icon dropped on ctrl:",%droppedOn,%droppedOn.getName());
 	
-	if (ObjectBrowser.isMethod("checkIconDrop"@%originalIcon.type))
-		eval("ObjectBrowser.checkIconDrop"@%originalIcon.type@"(%originalIcon,%droppedOn,%dropPoint);");
+	if (ObjectCreator.isMethod("checkIconDrop"@%originalIcon.type))
+		eval("ObjectCreator.checkIconDrop"@%originalIcon.type@"(%originalIcon,%droppedOn,%dropPoint);");
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function ObjectBrowser::checkIconDropMissionObject( %this,%icon,%droppedOn,%dropPoint) {
+function ObjectCreator::checkIconDropMissionObject( %this,%icon,%droppedOn,%dropPoint) {
 	devLog(%icon,"MissionObject Icon dropped on ctrl:",%droppedOn,%droppedOn.getName());
 	
 	if (%droppedOn.getName() $= "EWorldEditor"){
@@ -58,7 +58,7 @@ function ObjectBrowser::checkIconDropMissionObject( %this,%icon,%droppedOn,%drop
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::checkIconDropImage( %this,%icon,%droppedOn,%dropPoint) {
+function ObjectCreator::checkIconDropImage( %this,%icon,%droppedOn,%dropPoint) {
 	devLog("Image Icon dropped on ctrl:",%droppedOn,"At Pos",%dropPoint);
 	
 	if (%droppedOn.class $= "MaterialMapCtrl"){

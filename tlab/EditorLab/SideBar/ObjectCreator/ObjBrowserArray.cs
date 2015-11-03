@@ -4,61 +4,61 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-//ObjectBrowser.initFiles
-function ObjectBrowser::initFiles(%this,%path) {
-	%lastAddress = ObjectBrowser.lastAddress;
+//ObjectCreator.initFiles
+function ObjectCreator::initFiles(%this,%path) {
+	%lastAddress = ObjectCreator.lastAddress;
 	if (%lastAddress $= "")
 		%lastAddress = "art";
-	ObjectBrowser.navigate( %lastAddress );
+	ObjectCreator.navigate( %lastAddress );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-//ObjectBrowser.initFiles
-function ObjectBrowser::setViewId(%this,%id,%force) {
+//ObjectCreator.initFiles
+function ObjectCreator::setViewId(%this,%id,%force) {
 	
-	if (ObjectBrowser.currentViewId $= %id && !%force)
+	if (ObjectCreator.currentViewId $= %id && !%force)
 		return;
 	
-	%text = getField($ObjectBrowser_View[%i],%id);
+	%text = getField($ObjectCreator_View[%i],%id);
 		
 	switch$(%id){
 		case "0":
-			%width = (ObjectBrowserArray.extent.x - 10);
+			%width = (ObjectCreatorArray.extent.x - 10);
 		case "1":
-			%width = (ObjectBrowserArray.extent.x - 10) /2;
+			%width = (ObjectCreatorArray.extent.x - 10) /2;
 		case "2":
-			%width = (ObjectBrowserArray.extent.x - 10) /3;
+			%width = (ObjectCreatorArray.extent.x - 10) /3;
 			
 	}
 	if (%width !$= ""){
-		ObjectBrowserArray.colSize = %width;
-		ObjectBrowserArray.refresh();
-		ObjectBrowser.currentViewId = %id;
-		ObjectBrowserViewMenu.setText(getField($ObjectBrowser_View[%id],0));
+		ObjectCreatorArray.colSize = %width;
+		ObjectCreatorArray.refresh();
+		ObjectCreator.currentViewId = %id;
+		ObjectCreatorViewMenu.setText(getField($ObjectCreator_View[%id],0));
 	}
 
 }
 //------------------------------------------------------------------------------
 if ( %this.isList ) {
-		%width = ObjectBrowserArray.extent.x - 6;
-		ObjectBrowserArray.colSize = %width;
+		%width = ObjectCreatorArray.extent.x - 6;
+		ObjectCreatorArray.colSize = %width;
 		%extent = %width SPC "20";
 		//%ctrl.extent = %extent;
 		//%ctrl.autoSize = true;
 	} else {
-		%width = (ObjectBrowserArray.extent.x - 10) /2;
+		%width = (ObjectCreatorArray.extent.x - 10) /2;
 		//%extent = %width SPC "20";
 		//%ctrl.extent = %extent;
-		ObjectBrowserArray.colSize = %width;
+		ObjectCreatorArray.colSize = %width;
 	}
 //==============================================================================
-function ObjectBrowserMenu::onSelect( %this, %id, %text ) {
+function ObjectCreatorMenu::onSelect( %this, %id, %text ) {
 	%split = strreplace( %text, "/", " " );
-	ObjectBrowser.navigate( %split );
+	ObjectCreator.navigate( %split );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::navigateDown( %this, %folder ) {
+function ObjectCreator::navigateDown( %this, %folder ) {
 	if ( %this.address $= "" )
 		%address = %folder;
 	else
@@ -71,7 +71,7 @@ function ObjectBrowser::navigateDown( %this, %folder ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::navigateUp( %this ) {
+function ObjectCreator::navigateUp( %this ) {
 	%count = getWordCount( %this.address );
 
 	if ( %count == 0 )
@@ -88,13 +88,13 @@ function ObjectBrowser::navigateUp( %this ) {
 
 //==============================================================================
 // Navigate through Creator Book Data
-function ObjectBrowser::navigate( %this, %address ) {
-	ObjectBrowserArray.frozen = true;
-	ObjectBrowserArray.clear();
-	ObjectBrowserMenu.clear();
-	show(ObjectBrowserArray);
-	hide(ObjectBrowserIconSrc);
-	%type = ObjectBrowser.objType;
+function ObjectCreator::navigate( %this, %address ) {
+	ObjectCreatorArray.frozen = true;
+	ObjectCreatorArray.clear();
+	ObjectCreatorMenu.clear();
+	show(ObjectCreatorArray);
+	hide(ObjectCreatorIconSrc);
+	%type = ObjectCreator.objType;
 	if (!%this.isMethod("navigate"@%type)||%type $= ""){
 		warnLog("Couldn't find a scene creator navigating function for type:",%type);
 		return;
@@ -102,49 +102,49 @@ function ObjectBrowser::navigate( %this, %address ) {
 	eval("%this.navigate"@%type@"(%address);");
 
 	
-	ObjectBrowser.lastTypeAddress[%type] = %address;
-	ObjectBrowserArray.sort( "alphaIconCompare" );
+	ObjectCreator.lastTypeAddress[%type] = %address;
+	ObjectCreatorArray.sort( "alphaIconCompare" );
 
-	for ( %i = 0; %i < ObjectBrowserArray.getCount(); %i++ ) {
-		ObjectBrowserArray.getObject(%i).autoSize = false;
+	for ( %i = 0; %i < ObjectCreatorArray.getCount(); %i++ ) {
+		ObjectCreatorArray.getObject(%i).autoSize = false;
 	}
-	ObjectBrowser.addFolderUpIcon();
-	%this.setViewId($ObjectBrowser_ViewId);
-	ObjectBrowserArray.refresh();
+	ObjectCreator.addFolderUpIcon();
+	%this.setViewId($ObjectCreator_ViewId);
+	ObjectCreatorArray.refresh();
 	/*if ( %this.isList ) {
-		%width = ObjectBrowserArray.extent.x - 6;
-		ObjectBrowserArray.colSize = %width;
+		%width = ObjectCreatorArray.extent.x - 6;
+		ObjectCreatorArray.colSize = %width;
 		%extent = %width SPC "20";
 		//%ctrl.extent = %extent;
 		//%ctrl.autoSize = true;
 	} else {
-		%width = (ObjectBrowserArray.extent.x - 10) /2;
+		%width = (ObjectCreatorArray.extent.x - 10) /2;
 		//%extent = %width SPC "20";
 		//%ctrl.extent = %extent;
-		ObjectBrowserArray.colSize = %width;
+		ObjectCreatorArray.colSize = %width;
 	}*/
 	
-	//ObjectBrowserArray.frozen = false;
-	//ObjectBrowserArray.refresh();
+	//ObjectCreatorArray.frozen = false;
+	//ObjectCreatorArray.refresh();
 	// Recalculate the array for the parent guiScrollCtrl
-	ObjectBrowserArray.getParent().computeSizes();
+	ObjectCreatorArray.getParent().computeSizes();
 	%this.address = %address;
-	ObjectBrowserMenu.sort();
+	ObjectCreatorMenu.sort();
 	%str = strreplace( %address, " ", "/" );
-	%r = ObjectBrowserMenu.findText( %str );
+	%r = ObjectCreatorMenu.findText( %str );
 
 	if ( %r != -1 )
-		ObjectBrowserMenu.setSelected( %r, false );
+		ObjectCreatorMenu.setSelected( %r, false );
 	else
-		ObjectBrowserMenu.setText( %str );
+		ObjectCreatorMenu.setText( %str );
 
-	ObjectBrowserMenu.tooltip = %str;
+	ObjectCreatorMenu.tooltip = %str;
 }
 
 //------------------------------------------------------------------------------
 //==============================================================================
 // Navigate through Creator Book Data
-function ObjectBrowser::navigateLevel( %this, %address ) {
+function ObjectCreator::navigateLevel( %this, %address ) {
 	// Add groups to popup menu
 	%array = Scene.array;
 	%array.sortk();
@@ -157,7 +157,7 @@ function ObjectBrowser::navigateLevel( %this, %address ) {
 			%group = %array.getKey( %i );
 
 			if ( %group !$= %lastGroup ) {
-				ObjectBrowserMenu.add( %group );
+				ObjectCreatorMenu.add( %group );
 
 				if ( %address $= "" )
 					%this.addFolderIcon( %group );
@@ -177,7 +177,7 @@ function ObjectBrowser::navigateLevel( %this, %address ) {
 }
 //==============================================================================
 // Navigate through Creator Book Data
-function ObjectBrowser::navigateScripted( %this, %address )
+function ObjectCreator::navigateScripted( %this, %address )
 {
 	%category = getWord( %address, 1 );
 	%dataGroup = "DataBlockGroup";
@@ -191,8 +191,8 @@ function ObjectBrowser::navigateScripted( %this, %address )
 			continue;
 
 		// Add category to popup menu if not there already
-		if ( ObjectBrowserMenu.findText( %obj.category ) == -1 )
-			ObjectBrowserMenu.add( %obj.category );
+		if ( ObjectCreatorMenu.findText( %obj.category ) == -1 )
+			ObjectCreatorMenu.add( %obj.category );
 
 		if ( %address $= "" )
 		{
@@ -213,12 +213,12 @@ function ObjectBrowser::navigateScripted( %this, %address )
 	}
 }
 //==============================================================================
-function ObjectBrowser::createIcon( %this ) {
-	%ctrl = cloneObject(ObjectBrowserIconSrc);
+function ObjectCreator::createIcon( %this ) {
+	%ctrl = cloneObject(ObjectCreatorIconSrc);
 	%ctrl.profile = "ToolsButtonArray";
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
-	%ctrl.superClass = "ObjectBrowserIcon";
+	%ctrl.superClass = "ObjectCreatorIcon";
 
 	
 
@@ -226,7 +226,7 @@ function ObjectBrowser::createIcon( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::addFileIcon( %this, %fullPath ) {
+function ObjectCreator::addFileIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
 
@@ -248,26 +248,26 @@ function ObjectBrowser::addFileIcon( %this, %fullPath ) {
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
 	
-	%ctrl.altCommand = "ObjectBrowser.icon"@%type@"Alt($ThisControl);";
+	%ctrl.altCommand = "ObjectCreator.icon"@%type@"Alt($ThisControl);";
 	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
 	%ctrl.type = %type;
-	%ctrl.class = "ObjectBrowserIcon";
-	//%ctrl.superClass = "ObjectBrowserIcon"@%type;
+	%ctrl.class = "ObjectCreatorIcon";
+	//%ctrl.superClass = "ObjectCreatorIcon"@%type;
 	%ctrl.tooltip = %tip;
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
 	
 	%ctrl.fullPath = %fullPath;
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
-//ObjectBrowser.addFolderUpIcon
-function ObjectBrowser::addFolderUpIcon( %this ) {	
+//ObjectCreator.addFolderUpIcon
+function ObjectCreator::addFolderUpIcon( %this ) {	
 		
 	%ctrl = %this.createIcon();
-	%ctrl.command = "ObjectBrowser.navigateUp();";
-	%ctrl.altCommand = "ObjectBrowser.navigateUp();";
+	%ctrl.command = "ObjectCreator.navigateUp();";
+	%ctrl.altCommand = "ObjectCreator.navigateUp();";
 	%ctrl.iconBitmap = "tlab/gui/icons/24-assets/folder_up.png";
 	%ctrl.text = "..";
 	%ctrl.tooltip = "Go to parent folder";
@@ -277,18 +277,18 @@ function ObjectBrowser::addFolderUpIcon( %this ) {
 	//%ctrl.class = "CreatorFolderIconBtn";
 	%ctrl.buttonType = "PushButton";
 	
-	ObjectBrowserArray.addGuiControl( %ctrl );
-	ObjectBrowserArray.bringToFront(%ctrl);
+	ObjectCreatorArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.bringToFront(%ctrl);
 	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function ObjectBrowser::addFolderIcon( %this, %text ) {	
+function ObjectCreator::addFolderIcon( %this, %text ) {	
 		
 	%ctrl = %this.createIcon();
-	%ctrl.command = "ObjectBrowser.iconFolderAlt($ThisControl);";
-	%ctrl.altCommand = "ObjectBrowser.iconFolderAlt($ThisControl);";
+	%ctrl.command = "ObjectCreator.iconFolderAlt($ThisControl);";
+	%ctrl.altCommand = "ObjectCreator.iconFolderAlt($ThisControl);";
 	%ctrl.iconBitmap = "tlab/gui/icons/24-assets/folder_open.png";
 	%ctrl.text = %text;
 	%ctrl.tooltip = %text;
@@ -298,13 +298,13 @@ function ObjectBrowser::addFolderIcon( %this, %text ) {
 	%ctrl.buttonMargin = "6 0";
 	%ctrl.sizeIconToButton = true;
 	%ctrl.makeIconSquare = true;
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::findIconCtrl( %this, %name ) {
-	for ( %i = 0; %i < ObjectBrowserArray.getCount(); %i++ ) {
-		%ctrl = ObjectBrowserArray.getObject( %i );
+function ObjectCreator::findIconCtrl( %this, %name ) {
+	for ( %i = 0; %i < ObjectCreatorArray.getCount(); %i++ ) {
+		%ctrl = ObjectCreatorArray.getObject( %i );
 
 		if ( %ctrl.text $= %name )
 			return %ctrl;
@@ -315,7 +315,7 @@ function ObjectBrowser::findIconCtrl( %this, %name ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function ObjectBrowser::addMissionObjectIcon( %this, %class, %name, %buildfunc ) {
+function ObjectCreator::addMissionObjectIcon( %this, %class, %name, %buildfunc ) {
 	%ctrl = %this.createIcon();
 	// If we don't find a specific function for building an
 	// object then fall back to the stock one
@@ -338,7 +338,7 @@ function ObjectBrowser::addMissionObjectIcon( %this, %class, %name, %buildfunc )
 		%cmd = "ObjectBuilderGui." @ %method @ "();";
 	}
 
-	%ctrl.altCommand = "ObjectBuilderGui.newObjectCallback = \"ObjectBrowser.onFinishCreateObject\"; Scene.createObject( \"" @ %cmd @ "\" );";
+	%ctrl.altCommand = "ObjectBuilderGui.newObjectCallback = \"ObjectCreator.onFinishCreateObject\"; Scene.createObject( \"" @ %cmd @ "\" );";
 	%ctrl.iconBitmap = EditorIconRegistry::findIconByClassName( %class );
 	%ctrl.text = %name;
 	%ctrl.class = "CreatorMissionObjectIconBtn";
@@ -346,11 +346,11 @@ function ObjectBrowser::addMissionObjectIcon( %this, %class, %name, %buildfunc )
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
 	%ctrl.type = "MissionObject";
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::addShapeIcon( %this, %datablock ) {
+function ObjectCreator::addShapeIcon( %this, %datablock ) {
 	%ctrl = %this.createIcon();
 	%name = %datablock.getName();
 	%class = %datablock.getClassName();
@@ -364,11 +364,11 @@ function ObjectBrowser::addShapeIcon( %this, %datablock ) {
 	%ctrl.tooltip = %name;
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::addStaticIcon( %this, %fullPath ) {
+function ObjectCreator::addStaticIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
 	%file = fileBase( %fullPath );
@@ -385,11 +385,11 @@ function ObjectBrowser::addStaticIcon( %this, %fullPath ) {
 	%ctrl.tooltip = %tip;
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ObjectBrowser::addPrefabIcon( %this, %fullPath ) {
+function ObjectCreator::addPrefabIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
 	%file = fileBase( %fullPath );
@@ -405,6 +405,6 @@ function ObjectBrowser::addPrefabIcon( %this, %fullPath ) {
 	%ctrl.tooltip = %tip;
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
-	ObjectBrowserArray.addGuiControl( %ctrl );
+	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------

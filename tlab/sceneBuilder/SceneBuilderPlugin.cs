@@ -189,26 +189,16 @@ function SceneBuilderPlugin::onEditMenuSelect( %this, %editMenu ) {
 //==============================================================================
 // Callbacks Handlers - Called on specific editor actions
 //==============================================================================
-$QuickDeleteMode = true;
+
 //==============================================================================
 //
-function SceneBuilderPlugin::handleDelete( %this ) {	
-	// The tree handles deletion and notifies the
-	// world editor to clear its selection.
-	//
-	// This is because non-SceneObject elements like
-	// SimGroups also need to be destroyed.
-	//
-	// See EditorTree::onObjectDeleteCompleted().
-	if ($QuickDeleteMode){
-		delSelect();
-		return;
-	}
-	
+function SceneBuilderPlugin::handleDelete( %this ) {		
+	devLog("SceneBuilderPlugin::handleDelete");
+	Scene.deleteSelection();
+	return;
 	%selSize = EWorldEditor.getSelectionSize();
-
 	if( %selSize > 0 )
-		SceneBuilderTree.deleteSelection();
+		SceneBuilderTree.deleteSelection();	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

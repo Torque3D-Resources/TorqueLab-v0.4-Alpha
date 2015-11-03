@@ -32,7 +32,26 @@ function Scene::setDropType(%this, %dropType) {
 	
 	Scene.dropMode = %dropType;
 }	
+
+//==============================================================================
+// Set object selected in scene (Trees and WorldEditor)
+//==============================================================================
+
+function Scene::selectObject(%this, %obj,%isLast) {
+	if (%isLast $= "")
+		%isLast = true;
+		EWorldEditor.selectObject(%obj);
+		
+		foreach$(%tree in Scene.sceneTrees)
+			%tree.treeAddSelection(%obj,%isLast);
 	
+		
+}
+
+//==============================================================================
+// Set object selected in scene (Trees and WorldEditor)
+//==============================================================================
+
 function Scene::onSelect(%this, %obj) {
 	if (%obj.getClassName() $= "SimGroup") {		
 		SceneEd.setActiveSimGroup(%obj);
@@ -44,6 +63,15 @@ function Scene::onSelect(%this, %obj) {
 	%plugin = Lab.currentEditor;
 	if (%plugin.isMethod("setSelectedObject"))
 		%plugin.setSelectedObject(%obj);
+	
+	if (%plugin.isMethod("onSelectObject"))
+		%plugin.onSelectObject(%obj);
+		
+	if (%plugin.isMethod("on"@%obj.getClassName()@"Selected"))
+		eval("%plugin.on"@%obj.getClassName()@"Selected(%obj);");
+		
+	
+		
 }
 function Scene::onUnselect(%this, %obj) {
 	if (%obj.getClassName() $= "GroundCover") {		
@@ -51,6 +79,12 @@ function Scene::onUnselect(%this, %obj) {
 	}
 
 	EWorldEditor.unselectObject(%obj);
+	
+	if (%plugin.isMethod("on"@%obj.getClassName()@"Unselected"))
+		eval("%plugin.on"@%obj.getClassName()@"Unselected(%obj);");
+		
+	if (%plugin.isMethod("onUnselectObject"))
+		%plugin.onUnselectObject(%obj);
 }
 
 function Scene::onRemoveSelection(%this, %obj) {
@@ -81,7 +115,7 @@ function Scene::setDirty(%this) {
 //------------------------------------------------------------------------------
 
 
-function Scene::onAddSelection(%this, %obj, %isLastSelection) {	
+function Scene::AddObjectToSelection(%this, %obj, %isLastSelection) {	
 	EWorldEditor.selectObject( %obj );
 	%this.onAddInspect(%obj,%isLastSelection);
 	
@@ -90,3 +124,68 @@ function Scene::onAddSelection(%this, %obj, %isLastSelection) {
 	//else
 		//SceneBrowserInspector.addInspect( %obj, false );
 }
+
+$QuickDeleteMode = "1";
+//==============================================================================
+// Remove selected objects from their group (delete group if empty)
+function Scene::DeleteSelection(%this) {
+	if ($QuickDeleteMode $= "1"){
+		%this.quickDeleteSelection();
+		return;
+	}
+	else if($QuickDeleteMode $= "2"){
+	
+	%selSize = EWorldEditor.getSelectionSize();
+
+	if( %selSize > 0 )
+		SceneEditorTree.deleteSelection();
+		return;
+	}
+	
+	%count = EWorldEditor.getSelectionSize();
+
+	EWorldEditor.clearSelection();
+
+		
+	if (%count <= 0)
+		return;
+	Scene.setDirty();
+	foreach$(%tree in Scene.sceneTrees)
+		%tree.deleteSelection();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Remove selected objects from their group (delete group if empty)
+function Scene::quickDeleteSelection(%this) {	
+	if (!isObject("WorldEditorQuickGroup"))
+		$QuickGroup = newSimSet("WEditorQuickGroup");
+	
+	WEditorQuickGroup.clear();
+	%count = EWorldEditor.getSelectionSize();
+	
+	for( %i=0; %i<%count; %i++) {
+		%obj = EWorldEditor.getSelectedObject( %i );
+		WEditorQuickGroup.add(%obj);		
+	}
+	
+	WEditorQuickGroup.deleteAllObjects();	
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+// Remove selected objects from their group (delete group if empty)
+function delSelect(%this) {	
+	if (!isObject("WorldEditorQuickGroup"))
+		$QuickGroup = newSimSet("WEditorQuickGroup");
+	
+	WEditorQuickGroup.clear();
+	%count = EWorldEditor.getSelectionSize();
+	
+	for( %i=0; %i<%count; %i++) {
+		%obj = EWorldEditor.getSelectedObject( %i );
+		WEditorQuickGroup.add(%obj);		
+	}
+
+	EWorldEditor.clearSelection();
+	WEditorQuickGroup.deleteAllObjects();
+}
+//------------------------------------------------------------------------------

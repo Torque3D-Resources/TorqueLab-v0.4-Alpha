@@ -127,6 +127,8 @@ function SceneEditorPlugin::onActivated( %this ) {
 	
 	if (SceneEditorPlugin.getCfg("DropType") !$= "")
 		EWorldEditor.dropType = %this.getCfg("DropType");
+		
+	SceneEd.initPrefabCreator();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -189,27 +191,12 @@ function SceneEditorPlugin::onEditMenuSelect( %this, %editMenu ) {
 //==============================================================================
 // Callbacks Handlers - Called on specific editor actions
 //==============================================================================
-$QuickDeleteMode = true;
 //==============================================================================
 //
 function SceneEditorPlugin::handleDelete( %this ) {
 	devLog(" SceneEditorPlugin::handleDelete( %this ) ");
-	// The tree handles deletion and notifies the
-	// world editor to clear its selection.
-	//
-	// This is because non-SceneObject elements like
-	// SimGroups also need to be destroyed.
-	//
-	// See EditorTree::onObjectDeleteCompleted().
-	if ($QuickDeleteMode){
-		delSelect();
-		return;
-	}
+	Scene.deleteSelection();
 	
-	%selSize = EWorldEditor.getSelectionSize();
-
-	if( %selSize > 0 )
-		SceneEditorTree.deleteSelection();
 }
 //------------------------------------------------------------------------------
 //==============================================================================

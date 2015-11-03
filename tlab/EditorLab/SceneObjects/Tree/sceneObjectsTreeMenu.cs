@@ -21,13 +21,9 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 	%popup.object = %obj;
 	%id = -1;
 
-	// Handle multi-selection.
-	if( %tree.getSelectedItemsCount() > 1 ) {
-		%popup.addItem(%id++,"Delete" TAB "" TAB "EditorMenuEditDelete();");
-		%popup.addItem(%id++,"Group" TAB "" TAB "EWorldEditor.addSimGroup( true );");
-	}
+	
 	// Open context menu if this is a CameraBookmark
-	else if( %obj.isMemberOfClass( "CameraBookmark" ) ) {
+	if( %obj.isMemberOfClass( "CameraBookmark" ) ) {
 		%popup.addItem(%id++,"Go To Bookmark" TAB "" TAB "EManageBookmarks.jumpToBookmark( %tree.bookmark.getInternalName() );");
 		SceneTreePopup.bookmark = %obj;
 	}
@@ -37,16 +33,22 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 	}
 	// Open context menu if this is a SimGroup
 	else if( %obj.isMemberOfClass( "SimGroup" ) ) {
+		devlog("Creating SimGroup context menu");
 		%popup.addItem(%id++,"Rename" TAB "" TAB "SceneEditorTree.showItemRenameCtrl( SceneEditorTree.findItemByObjectId( %tree.object ) );");
 		%popup.addItem(%id++,"Delete" TAB "" TAB "EWorldEditor.deleteMissionObject( %tree.object );");
 		%popup.addItem(%id++,"Inspect" TAB "" TAB "inspectObject( %tree.object );");
 		%popup.addItem(%id++,"-");
-		%popup.addItem(%id++,"Toggle Lock Children" TAB "" TAB "EWorldEditor.toggleLockChildren( %tree.object );");
-		%popup.addItem(%id++,"Toggle Hide Children" TAB "" TAB "EWorldEditor.toggleHideChildren( %tree.object );");
+		//%popup.addItem(%id++,"Toggle Lock Children" TAB "" TAB "EWorldEditor.toggleLockChildren( %tree.object );");
+		//%popup.addItem(%id++,"Toggle Hide Children" TAB "" TAB "EWorldEditor.toggleHideChildren( %tree.object );");
+		//%popup.addItem(%id++,"-");
+		
+		%popup.addItem(%id++,"Show Childrens" TAB "" TAB "Scene.showGroupChilds( "@%obj@" );");
+		%popup.addItem(%id++,"Hide Childrens" TAB "" TAB "Scene.hideGroupChilds( "@%obj@" );");
+		%popup.addItem(%id++,"Toggle Children Visibility" TAB "" TAB "Scene.toggleHideGroupChilds( "@%obj@" );");
 		%popup.addItem(%id++,"-");
 		%popup.addItem(%id++,"Group" TAB "" TAB "EWorldEditor.addSimGroup( true );");
 		%popup.addItem(%id++,"-");
-		%popup.addItem(%id++,"Add New Objects Here" TAB "" TAB "SEP_Creator.setNewObjectGroup( %tree.object );");
+		%popup.addItem(%id++,"Add New Objects Here" TAB "" TAB "Scene.setNewObjectGroup( %tree.object );");
 		%popup.addItem(%id++,"Add Children to Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %tree.object, false );");
 		%popup.addItem(%id++,"Remove Children from Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %tree.object, true );");
 		%popup.addItem(%id++,"-");
@@ -86,6 +88,11 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 		%haveObjectEntries = true;
 	}
 
+// Handle multi-selection.
+	if( %tree.getSelectedItemsCount() > 1 ) {
+		%popup.addItem(%id++,"Delete Selection" TAB "" TAB "EditorMenuEditDelete();");
+		%popup.addItem(%id++,"Group Selection" TAB "" TAB "EWorldEditor.addSimGroup( true );");
+	}
 	if( %haveObjectEntries ) {
 		%popup.enableItem( 0, %obj.isNameChangeAllowed() && %obj.getName() !$= "MissionGroup" );
 		%popup.enableItem( 1, %obj.getName() !$= "MissionGroup" );

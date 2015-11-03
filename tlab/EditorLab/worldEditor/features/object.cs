@@ -29,24 +29,7 @@ function EditorUnmount() {
 
 
 
-//==============================================================================
-// Remove selected objects from their group (delete group if empty)
-function delSelect(%this) {	
-	if (!isObject("WorldEditorQuickGroup"))
-		$QuickGroup = newSimSet("WEditorQuickGroup");
-	
-	WEditorQuickGroup.clear();
-	%count = EWorldEditor.getSelectionSize();
-	
-	for( %i=0; %i<%count; %i++) {
-		%obj = EWorldEditor.getSelectedObject( %i );
-		WEditorQuickGroup.add(%obj);		
-	}
 
-	EWorldEditor.clearSelection();
-	WEditorQuickGroup.deleteAllObjects();
-}
-//------------------------------------------------------------------------------
 
 //==============================================================================
 // Remove selected objects from their group (delete group if empty)

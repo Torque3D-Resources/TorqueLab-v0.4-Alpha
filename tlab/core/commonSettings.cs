@@ -115,6 +115,7 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.autoSyncPref = true;
 	%ar.setVal("gridSize",      "1" TAB "Grid size" TAB "SliderEdit" TAB "range>>0 20;;ticks>>79;;snap>>1;;precision>>0" TAB "EWorldEditor>>Lab.setGridSize(**);" TAB %gid);
 	%ar.setVal("forceToGrid",      "1" TAB "Force object to fit grid" TAB "Checkbox" TAB "" TAB "$WEditor::forceToGrid" TAB %gid);
+	%ar.setVal("forceToGridNoZ",      "1" TAB "Don't force frid on Z Axis" TAB "Checkbox" TAB "" TAB "$WEditor::forceToGridNoZ" TAB %gid);
 	%ar.setVal("gridSystem",      "1" TAB "Base grid system" TAB "dropDown" TAB "fieldList>>Metric \tPower of 2" TAB "" TAB %gid);
 	%ar.setVal("gridStep",      "1" TAB "Grid size steps" TAB "TextEdit" TAB "" TAB "" TAB %gid);
 	//Objects manipulation

@@ -8,7 +8,7 @@
    anchorLeft = "1";
    anchorRight = "0";
    position = "0 0";
-   extent = "1061 820";
+   extent = "1304 1058";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -21,7 +21,7 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      EditorContainer = "20406";
+      EditorContainer = "20353";
       editorParent = "EditorDialogs";
 
    new GuiWindowCtrl(ECloneTool) {
@@ -1158,7 +1158,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "367 35";
+      position = "936 0";
       extent = "147 62";
       minExtent = "8 2";
       horizSizing = "right";
@@ -1241,11 +1241,12 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "ToolsDefaultProfile";
-         visible = "1";
-         active = "1";
+         visible = "0";
+         active = "0";
          tooltipProfile = "ToolsToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
@@ -2832,7 +2833,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "1061 820";
+      extent = "1304 1058";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -2853,7 +2854,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "782 0";
+         position = "1025 0";
          extent = "279 24";
          minExtent = "8 2";
          horizSizing = "left";
@@ -3198,7 +3199,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "971 0";
+         position = "1214 0";
          extent = "90 65";
          minExtent = "8 2";
          horizSizing = "left";
@@ -4194,6 +4195,37 @@
                      canSaveDynamicFields = "0";
 
                      new GuiIconButtonCtrl() {
+                        buttonMargin = "1 1";
+                        iconBitmap = "tlab/gui/icons/toolbar_assets/Settings.png";
+                        iconLocation = "Left";
+                        sizeIconToButton = "0";
+                        makeIconSquare = "0";
+                        textLocation = "Left";
+                        textMargin = "4";
+                        autoSize = "0";
+                        groupNum = "-1";
+                        buttonType = "PushButton";
+                        useMouseEvents = "1";
+                        position = "0 0";
+                        extent = "30 30";
+                        minExtent = "8 2";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        profile = "ToolsButtonDark";
+                        visible = "1";
+                        active = "1";
+                        command = "toggleDlg(LabParamsDlg);";
+                        tooltipProfile = "ToolsToolTipProfile";
+                        hovertime = "1000";
+                        isContainer = "0";
+                        superClass = "ToolbarIcon";
+                        canSave = "1";
+                        canSaveDynamicFields = "1";
+                           originalIndex = "1";
+                           originalParent = "23214";
+                           toolbar = "23212";
+                     };
+                     new GuiIconButtonCtrl() {
                         buttonMargin = "3 3";
                         iconBitmap = "tlab/gui/icons/toolbar-assets/ManagerPostFx.png";
                         iconLocation = "Center";
@@ -4205,7 +4237,7 @@
                         groupNum = "-1";
                         buttonType = "ToggleButton";
                         useMouseEvents = "1";
-                        position = "0 0";
+                        position = "32 0";
                         extent = "30 30";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -4236,7 +4268,7 @@
                         groupNum = "-1";
                         buttonType = "PushButton";
                         useMouseEvents = "1";
-                        position = "32 0";
+                        position = "64 0";
                         extent = "30 30";
                         minExtent = "8 2";
                         horizSizing = "right";
@@ -5825,7 +5857,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "407 370";
+      position = "528 489";
       extent = "247 79";
       minExtent = "8 2";
       horizSizing = "center";
@@ -14194,15 +14226,16 @@
       horizSizing = "windowRelative";
       vertSizing = "windowRelative";
       profile = "ToolsWindowProfile";
-      visible = "1";
+      visible = "0";
       active = "1";
       tooltipProfile = "ToolsToolTipProfile";
       hovertime = "1000";
       isContainer = "1";
       internalName = "VisibilityLayers";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "1";
-         activePreset = "Select a preset";
+         activePreset = "*SBP_Meshes";
          array = "ar_EVisibilityLayers";
          classArray = "ar_EVisibilityLayersClass";
          currentPresetFile = "NewTestA";
@@ -14455,7 +14488,7 @@
          tabHeight = "19";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "0";
          frontTabPadding = "0";
          docking = "Client";
          margin = "3 1 3 3";
@@ -14496,12 +14529,11 @@
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsFillDarkA";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -14546,7 +14578,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "2 0";
-                  extent = "171 450";
+                  extent = "165 450";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -14566,7 +14598,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 0";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14586,7 +14618,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 16";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14606,7 +14638,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 32";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14626,7 +14658,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 48";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14646,7 +14678,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 64";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14666,7 +14698,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 80";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14686,7 +14718,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 96";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14706,7 +14738,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 112";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14726,7 +14758,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 128";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14746,7 +14778,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 144";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14766,7 +14798,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 160";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14786,7 +14818,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 176";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14806,7 +14838,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 192";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14826,7 +14858,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 208";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14846,7 +14878,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 224";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14867,7 +14899,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 240";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14887,7 +14919,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 256";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14907,7 +14939,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 272";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14927,7 +14959,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 288";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14948,7 +14980,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 304";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14969,7 +15001,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 320";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -14990,7 +15022,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 336";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15011,7 +15043,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 352";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15032,7 +15064,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 368";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15053,7 +15085,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 384";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15073,7 +15105,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 400";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15094,7 +15126,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 416";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15115,7 +15147,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 432";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15200,7 +15232,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "2 0";
-                  extent = "171 1314";
+                  extent = "165 1314";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -15220,7 +15252,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 0";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15242,7 +15274,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 16";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15264,7 +15296,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 32";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15286,7 +15318,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 48";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15308,7 +15340,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 64";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15330,7 +15362,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 80";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15352,7 +15384,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 96";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15374,7 +15406,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 112";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15396,7 +15428,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 128";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15418,7 +15450,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 144";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15440,7 +15472,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 160";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15462,7 +15494,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 176";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15484,7 +15516,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 192";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15506,7 +15538,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 208";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15528,7 +15560,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 224";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15550,7 +15582,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 240";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15572,7 +15604,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 256";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15594,7 +15626,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 272";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15616,7 +15648,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 288";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15638,7 +15670,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 304";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15660,7 +15692,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 320";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15682,7 +15714,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 336";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15704,7 +15736,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 352";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15726,7 +15758,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 368";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15748,7 +15780,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 384";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15770,7 +15802,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 400";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15792,7 +15824,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 416";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15814,7 +15846,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 432";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15836,7 +15868,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 448";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15858,7 +15890,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 464";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15880,7 +15912,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 480";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15902,7 +15934,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 496";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15924,7 +15956,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 512";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15946,7 +15978,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 528";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15968,7 +16000,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 544";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -15990,7 +16022,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 560";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16012,7 +16044,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 576";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16034,7 +16066,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 592";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16056,7 +16088,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 608";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16078,7 +16110,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 624";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16100,7 +16132,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 640";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16122,7 +16154,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 656";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16144,7 +16176,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 672";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16166,7 +16198,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 688";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16188,7 +16220,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 704";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16210,7 +16242,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 720";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16232,7 +16264,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 736";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16254,7 +16286,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 752";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16276,7 +16308,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 768";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16298,7 +16330,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 784";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16320,7 +16352,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 800";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16342,7 +16374,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 816";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16364,7 +16396,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 832";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16386,7 +16418,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 848";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16408,7 +16440,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 864";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16430,7 +16462,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 880";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16452,7 +16484,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 896";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16474,7 +16506,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 912";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16496,7 +16528,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 928";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16518,7 +16550,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 944";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16540,7 +16572,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 960";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16562,7 +16594,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 976";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16584,7 +16616,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 992";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16606,7 +16638,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1008";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16628,7 +16660,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1024";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16650,7 +16682,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1040";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16672,7 +16704,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1056";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16694,7 +16726,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1072";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16716,7 +16748,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1088";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16738,7 +16770,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1104";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16760,7 +16792,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1120";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16782,7 +16814,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1136";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16804,7 +16836,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1152";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16826,7 +16858,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1168";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16848,7 +16880,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1184";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16870,7 +16902,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1200";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16892,7 +16924,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1216";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16914,7 +16946,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1232";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16936,7 +16968,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1248";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16958,7 +16990,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1264";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -16980,7 +17012,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1280";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17002,7 +17034,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1296";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17038,11 +17070,12 @@
             horizSizing = "width";
             vertSizing = "height";
             profile = "ToolsFillDarkA";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "ToolsToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -17087,7 +17120,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "2 0";
-                  extent = "171 1314";
+                  extent = "165 1314";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -17107,7 +17140,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 0";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17129,7 +17162,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 16";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17151,7 +17184,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 32";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17173,7 +17206,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 48";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17195,7 +17228,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 64";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17217,7 +17250,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 80";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17239,7 +17272,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 96";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17261,7 +17294,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 112";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17283,7 +17316,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 128";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17305,7 +17338,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 144";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17327,7 +17360,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 160";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17349,7 +17382,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 176";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17371,7 +17404,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 192";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17393,7 +17426,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 208";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17415,7 +17448,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 224";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17437,7 +17470,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 240";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17459,7 +17492,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 256";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17481,7 +17514,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 272";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17503,7 +17536,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 288";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17525,7 +17558,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 304";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17547,7 +17580,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 320";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17569,7 +17602,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 336";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17591,7 +17624,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 352";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17613,7 +17646,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 368";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17635,7 +17668,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 384";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17657,7 +17690,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 400";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17679,7 +17712,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 416";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17701,7 +17734,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 432";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17723,7 +17756,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 448";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17745,7 +17778,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 464";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17767,7 +17800,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 480";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17789,7 +17822,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 496";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17811,7 +17844,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 512";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17833,7 +17866,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 528";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17855,7 +17888,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 544";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17877,7 +17910,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 560";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17899,7 +17932,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 576";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17921,7 +17954,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 592";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17943,7 +17976,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 608";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17965,7 +17998,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 624";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -17987,7 +18020,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 640";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18009,7 +18042,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 656";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18031,7 +18064,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 672";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18053,7 +18086,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 688";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18075,7 +18108,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 704";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18097,7 +18130,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 720";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18119,7 +18152,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 736";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18141,7 +18174,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 752";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18163,7 +18196,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 768";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18185,7 +18218,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 784";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18207,7 +18240,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 800";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18229,7 +18262,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 816";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18251,7 +18284,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 832";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18273,7 +18306,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 848";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18295,7 +18328,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 864";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18317,7 +18350,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 880";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18339,7 +18372,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 896";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18361,7 +18394,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 912";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18383,7 +18416,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 928";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18405,7 +18438,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 944";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18427,7 +18460,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 960";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18449,7 +18482,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 976";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18471,7 +18504,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 992";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18493,7 +18526,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1008";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18515,7 +18548,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1024";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18537,7 +18570,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1040";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18559,7 +18592,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1056";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18581,7 +18614,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1072";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18603,7 +18636,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1088";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18625,7 +18658,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1104";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18647,7 +18680,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1120";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18669,7 +18702,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1136";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18691,7 +18724,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1152";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18713,7 +18746,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1168";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18735,7 +18768,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1184";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18757,7 +18790,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1200";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18779,7 +18812,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1216";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18801,7 +18834,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1232";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18823,7 +18856,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1248";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18845,7 +18878,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1264";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18867,7 +18900,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1280";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18889,7 +18922,7 @@
                      buttonType = "ToggleButton";
                      useMouseEvents = "0";
                      position = "0 1296";
-                     extent = "171 18";
+                     extent = "165 18";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -18906,6 +18939,240 @@
                      canSaveDynamicFields = "0";
                   };
                };
+            };
+         };
+      };
+   };
+   new GuiWindowCtrl(EMaterialSkinner) {
+      text = "Create a skin material";
+      resizeWidth = "0";
+      resizeHeight = "1";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      canCollapse = "0";
+      closeCommand = "ETools.toggleTool(\"MaterialSkinner\");";
+      edgeSnap = "1";
+      docking = "None";
+      margin = "4 4 4 4";
+      padding = "4 4 4 4";
+      anchorTop = "0";
+      anchorBottom = "0";
+      anchorLeft = "0";
+      anchorRight = "0";
+      position = "375 274";
+      extent = "336 281";
+      minExtent = "161 86";
+      horizSizing = "windowRelative";
+      vertSizing = "windowRelative";
+      profile = "ToolsWindowProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "ToolsToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      internalName = "MaterialSkinner";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+         activePreset = "*SBP_Meshes";
+         array = "ar_EVisibilityLayers";
+         classArray = "ar_EVisibilityLayersClass";
+         currentPresetFile = "NewTestA";
+         isBase = "1";
+         linkedButton = "EVisibilityLayersToolbarButton";
+         mapToEnd = "BkProp_ContShippingA1";
+         skinName = "Ski";
+         tooltipWidth = "500";
+
+      new GuiContainer() {
+         docking = "Top";
+         margin = "4 4 4 4";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "7 27";
+         extent = "322 71";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ToolsBoxTitle";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "ToolsToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiTextCtrl() {
+            text = "Material source informations";
+            maxLength = "1024";
+            docking = "Top";
+            margin = "0 0 6 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "6 0";
+            extent = "316 20";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsTextBase_H2";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+         new GuiContainer() {
+            docking = "Top";
+            margin = "2 2 4 4";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "4 22";
+            extent = "314 18";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsBoxDarkA";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiTextCtrl() {
+               text = "Name:";
+               maxLength = "1024";
+               docking = "Left";
+               margin = "0 0 6 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "6 0";
+               extent = "39 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsTextBase";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "ToolsToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               text = "Name:";
+               maxLength = "1024";
+               docking = "Client";
+               margin = "0 0 6 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "51 0";
+               extent = "263 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsTextFX";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "ToolsToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               internalName = "matSourceName";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
+         new GuiContainer() {
+            docking = "Top";
+            margin = "2 2 4 4";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "0";
+            anchorLeft = "1";
+            anchorRight = "0";
+            position = "4 44";
+            extent = "314 18";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "ToolsBoxDarkA";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "ToolsToolTipProfile";
+            hovertime = "1000";
+            isContainer = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiTextCtrl() {
+               text = "Map to:";
+               maxLength = "1024";
+               docking = "Left";
+               margin = "0 0 6 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "6 0";
+               extent = "39 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsTextBase";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "ToolsToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               text = "baseBkProp_ContShippingA1";
+               maxLength = "1024";
+               docking = "Client";
+               margin = "0 0 6 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "51 0";
+               extent = "263 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "ToolsTextFX";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "ToolsToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               internalName = "matSourceMap";
+               canSave = "1";
+               canSaveDynamicFields = "0";
             };
          };
       };

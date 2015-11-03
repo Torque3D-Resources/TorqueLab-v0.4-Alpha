@@ -74,3 +74,14 @@ function ShapeEditorTools::updateSimplifiedPanels( %this ) {
 	%rows = getWords(ShapeEditorTools.rows,0,1);
 	%this.setRows(%rows);
 }
+
+//==============================================================================
+function ShapeEditorTools::onPreEditorSave( %this ) {		
+	ShapeEd_SeqPillStack.clear();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function ShapeEditorTools::onPostEditorSave( %this ) {
+	//EPostFxManager.moveToGui(SEP_PostFXManager_Clone);
+}
+//------------------------------------------------------------------------------

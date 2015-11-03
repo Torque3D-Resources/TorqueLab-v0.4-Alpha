@@ -131,3 +131,16 @@ function TerrainPainterPlugin::keyboardSetMaterial( %this, %mat) {
 		%ctrl.performClick();
 	}
 }
+
+
+
+//==============================================================================
+function TerrainPainterTools::onPreEditorSave( %this ) {	
+	EPainterStack.clear();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function TerrainPainterTools::onPostEditorSave( %this ) {
+	//EPostFxManager.moveToGui(SEP_PostFXManager_Clone);
+}
+//------------------------------------------------------------------------------

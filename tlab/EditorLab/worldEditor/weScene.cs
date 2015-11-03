@@ -174,6 +174,7 @@ function EWorldEditor::toggleLockChildren( %this, %simGroup ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EWorldEditor::toggleHideChildren( %this, %simGroup ) {
+	devLog("toggleHideChildren",%simGroup);
 	foreach( %child in %simGroup ) {
 		if( %child.isMemberOfClass( "SimGroup" ) )
 			%this.toggleHideChildren( %child );
@@ -187,8 +188,9 @@ function EWorldEditor::toggleHideChildren( %this, %simGroup ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function EWorldEditor::getNewObjectGroup( %this ) {
-	return SEP_Creator.getNewObjectGroup();
+//Called from code to get the group into which new object will be pasted
+function EWorldEditor::getNewObjectGroup( %this ) {	
+	return Scene.getActiveSimGroup();
 }
 //------------------------------------------------------------------------------
 

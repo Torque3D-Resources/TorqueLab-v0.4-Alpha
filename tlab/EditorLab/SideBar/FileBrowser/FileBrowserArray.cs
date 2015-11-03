@@ -94,7 +94,7 @@ function FileBrowser::navigate( %this, %address ) {
 	FileBrowserMenu.clear();
 	show(FileBrowserArray);
 	hide(FileBrowserIconSrc);
-	%searchExts = "*.dts" TAB "*.dae" TAB "*.png" TAB "*.dds" TAB "*.tga";
+	%searchExts = "*.dts" TAB "*.dae" TAB "*.png" TAB "*.dds" TAB "*.tga" TAB "*.prefab";
 	FileBrowser.lastAddress = %address;
 	if ($SEP_Creator_ShowPrefabInMeshes)
 		%searchExts = %searchExts TAB "*.prefab";
@@ -234,13 +234,20 @@ function FileBrowser::createIcon( %this ) {
 function FileBrowser::addFileIcon( %this, %fullPath ) {
 	%ctrl = %this.createIcon();
 	%ext = fileExt( %fullPath );
-
+	%stockExt = strreplace(%ext,".","");
 	if (strFindWords(strlwr(%ext),"dae dts")) {
 		%createCmd = "Scene.createMesh( \"" @ %fullPath @ "\" );";
 		%type = "Mesh";
 		%ctrl.createCmd = %createCmd;
 		
-	} else if (strFindWords(strlwr(%ext),"png tga jpg bmp")) {
+	} 
+	else if (%stockExt $= "prefab") {
+		%createCmd = "Scene.createPrefab( \"" @ %fullPath @ "\" );";
+		%type = "Prefab";
+		%ctrl.createCmd = %createCmd;
+		
+	}
+	else if (strFindWords(strlwr(%ext),"png tga jpg bmp")) {
 		%type = "Image";
 	} else	{
 		%type = "Unknown";
@@ -253,8 +260,13 @@ function FileBrowser::addFileIcon( %this, %fullPath ) {
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
 	
+	%iconBmp = "tlab/gui/icons/default/file-assets/"@%stockExt@".png";
+	if (!isFile(%iconBmp))
+		%iconBmp = "tlab/gui/icons/default/file-assets/default.png";
+		
+	%ctrl.iconBitmap = %iconBmp;
 	%ctrl.altCommand = "FileBrowser.icon"@%type@"Alt($ThisControl);";
-	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
+	//%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
 	%ctrl.type = %type;
 	%ctrl.class = "FileBrowserIcon";

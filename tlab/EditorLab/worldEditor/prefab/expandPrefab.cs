@@ -29,6 +29,7 @@ function Lab::ExpandPrefab(%this,%prefab) {
 		%simGroup.add(%dataObj);		
 	}
 	delObj(%prefab);
+	return true;
 }
 function Lab::CollapsePrefab(%this,%simGroup) {
 	%file = %simGroup.prefabFile;

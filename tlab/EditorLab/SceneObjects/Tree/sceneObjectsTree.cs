@@ -16,6 +16,10 @@ function SceneObjectsTree::onDefineIcons( %this ) {
 	%this.buildIconTable(%icons);
 }
 
+function SceneObjectsTree::onAdd( %this ) {
+	Scene.SceneTrees = strAddWord(Scene.SceneTrees,%this.getId());
+	
+}
 
 /// @name EditorPlugin Methods
 /// @{
@@ -33,7 +37,7 @@ function SceneObjectsTree::handleRenameObject( %this, %name, %obj ) {
 //-----------------------------------------------------------------------------
 
 function SceneObjectsTree::onDeleteSelection( %this ) {
-	%this.undoDeleteList();
+	%this.undoDeleteList = "";
 }
 
 function SceneObjectsTree::onDeleteObject( %this, %object ) {
@@ -42,7 +46,7 @@ function SceneObjectsTree::onDeleteObject( %this, %object ) {
 		return true;
 
 	if( %object == SceneEd.objectGroup )
-		SceneEd.setNewObjectGroup( MissionGroup );
+		Scene.setNewObjectGroup( MissionGroup );
 
 	// Append it to our list.
 	%this.undoDeleteList = %this.undoDeleteList TAB %object;
@@ -91,7 +95,8 @@ function SceneObjectsTree::onAddSelection(%this, %obj, %isLastSelection) {
 		devLog("SceneBrowserTree::onAddSelection cancelled for filtering");
 		return;
 	}
-	Scene.onAddSelection(%obj, %isLastSelection);
+	
+	Scene.AddObjectToSelection(%obj, %isLastSelection);
 	
 }
 function SceneObjectsTree::onRemoveSelection(%this, %obj) {
@@ -109,10 +114,23 @@ function SceneObjectsTree::onSelect(%this, %obj) {
 		devLog("SceneBrowserTree::onSelect cancelled for filtering");
 		return;
 	}
+	if (%obj.getClassName() $= "SimGroup") {
+		
+		Scene.setActiveSimGroup( %obj );
+		%item = %this.findItemByObjectId(%obj.getId());
+		DevLog(%item,"Group slected with child count:",%obj.getCount());
+		%this.expandItem(%item,false);
+	//	Scene.selectObjectGroup(%obj);
+		
+		return;
+	}
+	
+	
+	EWorldEditor.selectObject(%obj);
 	Scene.onSelect(%obj);	
 		if (!$SceneEditor_AutomaticObjectGroup && %this.autoGroups) {
 		%this.autoGroups = false;
-		SceneEd.setNewObjectGroup( MissionGroup );
+		Scene.setNewObjectGroup( MissionGroup );
 		return;
 	}
 
@@ -126,7 +144,7 @@ function SceneObjectsTree::onSelect(%this, %obj) {
 		%objectGroup = MissionGroup;
 	}
 
-	SceneEd.setNewObjectGroup( %objectGroup );
+	Scene.setNewObjectGroup( %objectGroup );
 }
 
 function SceneObjectsTree::onUnselect(%this, %obj) {
@@ -148,7 +166,7 @@ function SceneObjectsTree::onAddGroupSelected(%this, %group) {
 		devLog("SceneBrowserTree::onAddGroupSelected cancelled for filtering");
 		return;
 	}
-	SceneEd.setNewObjectGroup(%group);
+	Scene.setNewObjectGroup(%group);
 }
 
 function SceneObjectsTree::onRightMouseUp( %this, %itemId, %mouse, %obj ) {

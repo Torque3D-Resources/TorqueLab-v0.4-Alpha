@@ -31,7 +31,8 @@ function WorldEditor::forceObjectToGrid( %this, %obj ) {
 		%pos.z = mRound(%pos.z/%multi)*%multi;
 		%transform = setWord(%transform, 0, %pos.x);
 		%transform = setWord(%transform, 1, %pos.y);
-		%transform = setWord(%transform, 2, %pos.z);
+		if (!$WEditor::forceToGridNoZ)
+			%transform = setWord(%transform, 2, %pos.z);
 		%obj.setTransform(%transform);
 		
 	SceneInspector.refresh();
@@ -51,7 +52,8 @@ function WorldEditor::copySelection( %this,%offset, %copies ) {
 		warnLog("There's no selected objects to copy!");
 		return;
 	}
-
+	
+	%addToGroup = Scene.getActiveSimGroup();
 	for (%i=1; %i<=%copies; %i++) {
 		for( %j=0; %j<%count; %j++) {
 			%obj = EWorldEditor.getSelectedObject( %j );
@@ -63,7 +65,7 @@ function WorldEditor::copySelection( %this,%offset, %copies ) {
 			%clone.position.x += %offset.x * %i;
 			%clone.position.y += %offset.y * %i;
 			%clone.position.z += %offset.z * %i;
-			MissionGroup.add(%clone);
+			%addToGroup.add(%clone);
 		}
 	}
 	SceneInspector.refresh();	

@@ -7,7 +7,8 @@
 $SEP_AutoGroupActiveSystem = true;
 //==============================================================================
 function SceneEd::setActiveSimGroup( %this, %group ) {
-	devLog("setActiveSimGroup",%group);
+	devLog("OLD SceneEd::setActiveSimGroup",%group);
+	return;
 	if (!isObject(%group))
 		return;
 
@@ -21,6 +22,8 @@ function SceneEd::setActiveSimGroup( %this, %group ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SceneEd::getActiveSimGroup( %this) {
+	devLog("OLD SceneEd::getActiveSimGroup",%group);
+	return;
 	if (!isObject(%this.activeSimGroup))
 		%this.setActiveSimGroup(MissionGroup);
 	else if (!%this.activeSimGroup.isMemberOfClass(SimGroup))
@@ -31,11 +34,15 @@ function SceneEd::getActiveSimGroup( %this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function SceneEd::getNewObjectGroup( %this ) {
+	devLog("OLD SceneEd::getNewObjectGroup",%group);
+	return;
 	return %this.objectGroup;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SceneEd::setNewObjectGroup( %this, %group ) {
+	devLog("OLD SceneEd::setNewObjectGroup",%group);
+	return;
 	if( %this.objectGroup ) {
 		%oldItemId = SceneEditorTree.findItemByObjectId( %this.objectGroup );
 

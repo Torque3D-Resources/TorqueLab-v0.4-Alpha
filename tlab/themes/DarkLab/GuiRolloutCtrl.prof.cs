@@ -41,6 +41,11 @@ singleton GuiControlProfile(ToolsRolloutProfile_S1 : ToolsRolloutProfile)
    bitmap = "tlab/themes/DarkLab/assets/container-assets/GuiRolloutProfile_S1.png";
    fontColors[4] = "Magenta";
    fontColorLink = "Magenta";
+   fontType = "Lato";
+   fontSize = "14";
+   fontColors[0] = "254 220 152 255";
+   fontColors[9] = "Magenta";
+   fontColor = "254 220 152 255";
 };
 //------------------------------------------------------------------------------
 

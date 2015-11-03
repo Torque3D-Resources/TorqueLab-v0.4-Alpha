@@ -112,7 +112,7 @@ function Scene::createPrefab( %this, %file ) {
 	
 
 	if( !isObject(%this.objectGroup) )
-		SceneEd.setNewObjectGroup( MissionGroup );
+		Scene.setNewObjectGroup( MissionGroup );
 
 	%objId = new Prefab() {
 		filename = %file;
@@ -120,7 +120,10 @@ function Scene::createPrefab( %this, %file ) {
 		parentGroup = %this.objectGroup;
 	};
 	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
-	%this.onObjectCreated( %objId );
+	if( isObject( %objId ) )
+		%this.onFinishCreateObject( %objId );
+		
+	//%this.onObjectCreated( %objId );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -131,7 +134,7 @@ function Scene::createObject( %this, %cmd ) {
 	
 
 	if( !isObject(%this.objectGroup) )
-		SceneEd.setNewObjectGroup( MissionGroup );
+		Scene.setNewObjectGroup( MissionGroup );
 devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 	pushInstantGroup();
 	%objId = eval(%cmd);
