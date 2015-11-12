@@ -39,8 +39,8 @@ function SceneBrowser::filterClasses( %this,%classes ) {
 		foreach$(%obj in %objList)
 			%set.add(%obj);
 		
-		devLog("ObjList added to set:",%objList);
-		%set.outputlog();
+		//devLog("ObjList added to set:",%objList);
+		//%set.outputlog();
 	}
 	
 	SceneBrowserTree.setRoot(%set);

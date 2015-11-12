@@ -86,7 +86,7 @@ function Lab::SaveMission(%this) {
 	}
 
 	// now write the terrain and mission files out:
-
+	Lab.LoadActionProgress("Saving the mission","","The mission is saving, it won't take long","500");
 	if(EWorldEditor.isDirty || ETerrainEditor.isMissionDirty)
 		MissionGroup.save($Server::MissionFile);
 

@@ -61,7 +61,7 @@ function MaterialSelector::buildStaticFilters( %this ) {
 
 		// Process regular materials here
 		%material = materialSet.getObject(%i);
-		
+		devLog("Adding material:",%material,"IsTer",%material.terrainMaterials);
 		if (%material.terrainMaterials && $MaterialSelector_SkipTerrainMaterials )
 			continue;
 
@@ -73,7 +73,7 @@ function MaterialSelector::buildStaticFilters( %this ) {
 				break;
 			}
 		}
-
+		devLog("Adding material:",%material,"IsUnlisted",%unlistedFound);
 		if( %unlistedFound )
 			continue;
 
@@ -143,9 +143,17 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 
 	// changed to accomadate tagging. dig through the array for each tag name,
 	// call unique value, sort, and we have a perfect set of materials
-	if( %staticFilter !$= "" )
+	//if (!isObject(%staticFilter)){
+		//%this.buildStaticFilters();
+		//%staticFilter = MaterialFilterAllArray;
+	//}
+	if (isObject(%staticFilter))
 		MaterialSelector.currentStaticFilter = %staticFilter;
 
+	if (!isObject(MaterialSelector.currentStaticFilter)){
+		devLog("Invalid StaticFilter",MaterialSelector.currentStaticFilter);
+		MaterialSelector.currentStaticFilter = MaterialFilterAllArray;
+	}
 	MaterialSelector.currentFilter = %selectedFilter;
 	%filteredObjectsArray = new ArrayObject();
 	%previewsPerPage = MaterialSelector-->materialPreviewCountPopup.getTextById( MaterialSelector-->materialPreviewCountPopup.getSelected() );

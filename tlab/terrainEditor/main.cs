@@ -24,7 +24,7 @@ function initializeTerrainEditor() {
 	// Terrain Painter Plugin
 	Lab.createPlugin("TerrainPainter","Terrain Painter");
 	Lab.addPluginGui("TerrainPainter",TerrainPainterTools);
-	Lab.addPluginToolbar("TerrainPainter",EWTerrainPainterToolbar);
+	Lab.addPluginToolbar("TerrainPainter",TerrainPainterToolbar);
 	Lab.addPluginPalette("TerrainPainter",TerrainPainterPalette);
 	Lab.addPluginDlg("TerrainPainter",TerrainPainterDialogs);
 	TerrainPainterPlugin.PM = new PersistenceManager();

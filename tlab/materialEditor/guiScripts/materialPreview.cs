@@ -16,7 +16,7 @@ function MaterialEditorGui::updatePreviewObject(%this) {
 
 	case "cube":
 		matEd_quickPreview_Popup.selected = %newModel;
-		matLab_previewObjectView.setModel("tlab/materialEditor/assets/cubePreview.dts");
+		matEd_previewObjectView.setModel("tlab/materialEditor/assets/cubePreview.dts");
 		matEd_previewObjectView.setOrbitDistance(5);
 
 	case "pyramid":

@@ -133,7 +133,7 @@ function PT::physicsDestroyWorld(%this,%worldName) {
 //==============================================================================
 //Returns true if a physics plugin exists and is initialized
 function PT::physicsStartSimulation(%this,%worldName) {
-	physicsStartSimulation(%worldName);
+	Game.physicsStartSimulation(%worldName);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -79,6 +79,11 @@ function MaterialSelector::loadImages( %this, %materialNum ) {
 	// this schedule is here to dynamically load images
 	%previewButton = MatEdPreviewArray.getKey(%materialNum);
 	%previewImage = MatEdPreviewArray.getValue(%materialNum);
+	
+	if( !isObject(%previewButton )){
+		devLog("MatNum",%materialNum,"MaterialSelector invalid preview button",%previewButton);
+		return;
+	}
 	%isFile = isImageFile(%previewImage);
 
 	if (%isFile)

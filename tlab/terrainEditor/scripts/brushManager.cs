@@ -22,7 +22,7 @@ function TEP_BrushManager::onWake( %this ) {
 }
 
 function TEP_BrushManager::init( %this ) {
-	%toolbars = "EWTerrainEditToolbar EWTerrainPainterToolbar";
+	%toolbars = "EWTerrainEditToolbar TerrainPainterToolbar";
 	foreach$(%type in $TEP_BrushManager_Types){
 		%this.brushTypeCtrls[%type] = "";
 		%this.brushTypeSliders[%type] = "";
@@ -32,8 +32,8 @@ function TEP_BrushManager::init( %this ) {
 		%this.brushTypeSliders[%type,"Painter"] = "";
 	}
 	foreach$(%type in $TEP_BrushManager_Types){
-			%edit = EWTerrainPainterToolbar.findObjectByInternalName(%type,true);
-			%slider = EWTerrainPainterToolbar.findObjectByInternalName(%type@"_slider",true);
+			%edit = TerrainPainterToolbar.findObjectByInternalName(%type,true);
+			%slider = TerrainPainterToolbar.findObjectByInternalName(%type@"_slider",true);
 			if (isObject(%edit))
 				%this.brushTypeCtrls[%type,"Painter"] = strAddWord(%this.brushTypeSliders[%type,"Painter"],%edit.getId());
 			if (isObject(%slider))

@@ -53,8 +53,8 @@ function Lab::physicsStartSimulation( %this ) {
 		return;
 	}
 
-	physicsStartSimulation("client");
-	physicsStartSimulation("server");
+	Game.physicsStartSimulation("client");
+	Game.physicsStartSimulation("server");
 	%scale = %this.physicsGetTimeScale();
 	info("Simlutaion start with timescale of:",%scale);
 }
@@ -76,8 +76,8 @@ function Lab::physicsToggleSimulation( %this ) {
 		physicsStopSimulation( "server" );
 	} else {
 		physicsStateText.setText( "Simulation is unpaused." );
-		physicsStartSimulation( "client" );
-		physicsStartSimulation( "server" );
+		Game.physicsStartSimulation( "client" );
+		Game.physicsStartSimulation( "server" );
 	}
 }
 function Lab::physicsSetTimeScale( %this,%scale ) {

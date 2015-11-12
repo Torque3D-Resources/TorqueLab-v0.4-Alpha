@@ -69,6 +69,8 @@ function WorldEditor::onSelect( %this, %obj,%scriptSide ) {
 		%obj.onEditorSelect( %this.getSelectionSize() );
 
 	Lab.currentEditor.onObjectSelected( %obj );
+	
+	Scene.onSelect(%obj);
 	// Inform the camera
 	commandToServer('EditorOrbitCameraSelectChange', %this.getSelectionSize(), %this.getSelectionCentroid());
 	EditorGuiStatusBar.setSelectionObjectsByCount(%this.getSelectionSize());

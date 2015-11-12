@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new GuiStackControl(EWTerrainPainterToolbar) {
+new GuiStackControl(TerrainPainterToolbar) {
    stackingType = "Horizontal";
    horizStacking = "Left to Right";
    vertStacking = "Top to Bottom";
@@ -26,12 +26,12 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31351";
-      disabledGroup = "31352";
-      EditorContainer = "20307";
+      defaultStack = "31270";
+      disabledGroup = "31271";
+      EditorContainer = "20522";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
-      stackLists = "31353 31362 31396";
+      stackLists = "31272 31281 31315";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -172,7 +172,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
             originalIndex = "1";
             originalParent = "13944";
             pluginName = "TerrainPainter";
-            toolbar = "31351";
+            toolbar = "31270";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -233,7 +233,7 @@ new GuiStackControl(EWTerrainPainterToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "TerrainPainter";
-            toolbar = "31351";
+            toolbar = "31270";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -1195,181 +1195,3 @@ new GuiStackControl(EWTerrainPainterToolbar) {
    };
 };
 //--- OBJECT WRITE END ---
-
-function setTerrainEditorMinSlope(%value)
-{
-   %val = ETerrainEditor.setSlopeLimitMinAngle( %value );
-   PaintBrushSlopeControl-->SlopeMinAngle.setValue(mFloatLength( %val, 1 ));
-}
-
-function setTerrainEditorMaxSlope(%value)
-{
-   %val = ETerrainEditor.setSlopeLimitMaxAngle( %value );
-   PaintBrushSlopeControl-->SlopeMaxAngle.setValue(mFloatLength( %val, 1 ));
-}
-
-new GuiMouseEventCtrl(PaintBrushSizeSliderCtrlContainer,EditorGuiGroup) {
-   horizSizing = "right";
-   vertSizing = "bottom";
-   position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
-   visible = "1";
-   helpTag = "0";
-   class = "EditorDropdownSliderContainer";
-   
-   new GuiSliderCtrl() {
-      canSaveDynamicFields = "0";
-      internalName = "slider";
-      isContainer = "0";
-      Profile = "ToolsSliderProfile";
-      HorizSizing = "right";
-      VertSizing = "bottom";
-      position = firstWord(PaintBrushSizeTextEditContainer.position) + firstWord(EWTerrainPainterToolbar.position)+11 SPC 
-         (getWord(PaintBrushSizeTextEditContainer, 1)) + 25;
-      Extent = "112 20";
-      MinExtent = "8 2";
-      canSave = "1";
-      Visible = "1";
-      AltCommand = "PaintBrushSizeTextEditContainer-->textEdit.setValue(mFloatLength( ($ThisControl.getValue()), 2 )); ETerrainEditor.setBrushSize( $ThisControl.value );";
-      range = "1 256";
-      ticks = "0";
-      value = "0";
-   };
-}; 
-
-new GuiMouseEventCtrl(PaintBrushSlopeMinContainer,EditorGuiGroup) {
-   horizSizing = "right";
-   vertSizing = "bottom";
-   position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
-   visible = "1";
-   helpTag = "0";
-   class = "EditorDropdownSliderContainer";
-   
-   new GuiSliderCtrl() {
-      canSaveDynamicFields = "0";
-      internalName = "slider";
-      isContainer = "0";
-      Profile = "ToolsSliderProfile";
-      HorizSizing = "right";
-      VertSizing = "bottom";
-      position = firstWord(PaintBrushSlopeControl.position) + firstWord(EWTerrainPainterToolbar.position)+firstWord(PaintBrushSlopeControl->SlopeMinAngle.position) - 40 SPC
-         (getWord(PaintBrushSlopeControl, 1)) + 25;
-      Extent = "112 20";
-      MinExtent = "8 2";
-      canSave = "1";
-      Visible = "1";
-      AltCommand = "PaintBrushSlopeControl-->SlopeMinAngle.setValue(mFloatLength( ($ThisControl.getValue()), 1 )); ETerrainEditor.setSlopeLimitMinAngle(mFloatLength( ($ThisControl.getValue()), 1 ));TerrainPainterPlugin.validateSlopeMinAngle();";
-      range = "0 89.9";
-      ticks = "0";
-      value = "0";
-   };
-}; 
-
-function PaintBrushSlopeMinContainer::onWake(%this)
-{
-   %this-->slider.setValue(PaintBrushSlopeControl-->SlopeMinAngle.getText());
-}
-
-new GuiMouseEventCtrl(PaintBrushSlopeMaxContainer,EditorGuiGroup) {
-   horizSizing = "right";
-   vertSizing = "bottom";
-   position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
-   visible = "1";
-   helpTag = "0";
-   class = "EditorDropdownSliderContainer";
-   
-   new GuiSliderCtrl() {
-      canSaveDynamicFields = "0";
-      internalName = "slider";
-      isContainer = "0";
-      Profile = "ToolsSliderProfile";
-      HorizSizing = "right";
-      VertSizing = "bottom";
-      position = firstWord(PaintBrushSlopeControl.position) + firstWord(EWTerrainPainterToolbar.position)+firstWord(PaintBrushSlopeControl->SlopeMaxAngle.position) - 40 SPC
-         (getWord(PaintBrushSlopeControl, 1)) + 25;
-      Extent = "112 20";
-      MinExtent = "8 2";
-      canSave = "1";
-      Visible = "1";
-      AltCommand = "PaintBrushSlopeControl-->SlopeMaxAngle.setValue(mFloatLength( ($ThisControl.getValue()), 1 )); ETerrainEditor.setSlopeLimitMaxAngle(mFloatLength( ($ThisControl.getValue()), 1 ));TerrainPainterPlugin.validateSlopeMaxAngle();";
-      range = "0.1 90.0";
-      ticks = "0";
-      value = "0";
-   };
-}; 
-
-function PaintBrushSlopeMaxContainer::onWake(%this)
-{
-   %this-->slider.setValue(PaintBrushSlopeControl-->SlopeMaxAngle.getText());
-}
-
-function PaintBrushSlopeMaxContainer::init(%this)
-{
-   %this-->slider.setValue("90.0");
-}
-
-new GuiMouseEventCtrl(PaintBrushPressureSliderCtrlContainer,EditorGuiGroup) {
-   horizSizing = "right";
-   vertSizing = "bottom";
-   position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
-   visible = "1";
-   helpTag = "0";
-   class = "EditorDropdownSliderContainer";
-   
-   new GuiSliderCtrl() {
-      canSaveDynamicFields = "0";
-      internalName = "slider";
-      isContainer = "0";
-      Profile = "ToolsSliderProfile";
-      HorizSizing = "right";
-      VertSizing = "bottom";
-      position = firstWord(PaintBrushPressureTextEditContainer.position) + firstWord(EWTerrainPainterToolbar.position) SPC 
-         (getWord(PaintBrushPressureTextEditContainer, 1)) + 25;
-      Extent = "112 20";
-      MinExtent = "8 2";
-      canSave = "1";
-      Visible = "1";
-      AltCommand = "PaintBrushPressureTextEditContainer-->textEdit.setValue(mFloatLength( ($ThisControl.getValue()), 2 )); ETerrainEditor.setBrushPressure( $ThisControl.value );";
-      range = "0 1";
-      ticks = "0";
-      value = "0";
-   };
-};
-         
-new GuiMouseEventCtrl(PaintBrushSoftnessSliderCtrlContainer,EditorGuiGroup) {
-   horizSizing = "right";
-   vertSizing = "bottom";
-   position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
-   visible = "1";
-   helpTag = "0";
-   class = "EditorDropdownSliderContainer";
-   
-   new GuiSliderCtrl() {
-      canSaveDynamicFields = "0";
-      internalName = "slider";
-      isContainer = "0";
-      Profile = "ToolsSliderProfile";
-      HorizSizing = "right";
-      VertSizing = "bottom";
-      position = firstWord(PaintBrushSoftnessTextEditContainer.position) + firstWord(EWTerrainPainterToolbar.position) SPC 
-         (getWord(PaintBrushSoftnessTextEditContainer, 1)) + 25;
-      Extent = "112 20";
-      MinExtent = "8 2";
-      canSave = "1";
-      Visible = "1";
-      AltCommand = "PaintBrushSoftnessTextEditContainer-->textEdit.setValue(mFloatLength( ($ThisControl.getValue()), 2 )); ETerrainEditor.setBrushSoftness( $ThisControl.value );";
-      range = "0 1";
-      ticks = "0";
-      value = "0";
-   };
-};
-

@@ -51,6 +51,6 @@ function PhysicsEditorPlugin::onEditorSleep( %this ) {
 	if ( %currentTimeScale == 0.0 )
 		physicsSetTimeScale( 1.0 );
 
-	physicsStartSimulation( "client" );
-	physicsStartSimulation( "server" );
+	Game.physicsStartSimulation( "client" );
+	Game.physicsStartSimulation( "server" );
 }

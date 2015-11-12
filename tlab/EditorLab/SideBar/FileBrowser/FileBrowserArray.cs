@@ -247,7 +247,7 @@ function FileBrowser::addFileIcon( %this, %fullPath ) {
 		%ctrl.createCmd = %createCmd;
 		
 	}
-	else if (strFindWords(strlwr(%ext),"png tga jpg bmp")) {
+	else if (strFindWords(strlwr(%ext),"png tga jpg bmp dds")) {
 		%type = "Image";
 	} else	{
 		%type = "Unknown";

@@ -123,44 +123,7 @@ function ECamViewTool::DragSuccess( %this,%droppedCtrl,%pos) {
 	
 	%this.setPosition(%pos.x,%pos.y);
 	%this.forceInsideCtrl(ECamViewGui);
-	%this.refresh();
+	//%this.refresh();
 	%this.updateGui();
 	
 }
-//==============================================================================
-/*
-function ECamViewToolDrag::onMouseDragged( %this,%a1,%a2,%a3 ) {
-	%parent = %this.parentGroup;
-	%this.viewCtrl.superClass = "";
-	%this.viewCtrl.class = "";
-	%this.viewCtrl.superClass = "EToolCamCtrl";
-	dragAndDropCtrl(%this.viewCtrl);
-	hide(%parent);
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function EToolCamCtrl::DragSuccess( %this,%droppedCtrl,%pos) {
-	show(%this);
-	%realpos = EditorFrameWorld.getRealPosition();
-	%pos.y -= %realPos.y + %this.extent.y/2;
-	%pos.x -= %realPos.x + %this.extent.x/2;
-	%this.position = %pos;
-	%this.forceInsideCtrl(EditorFrameWorld);
-}
-//------------------------------------------------------------------------------
-function EToolCamCtrl::DragSuccess2( %this,%droppedCtrl,%pos) {
-	show(%this);
-	%newPos = %pos;
-	%realpos = %droppedCtrl.getRealPosition();
-	%newPos.y -= %realPos.y + %this.extent.y/2;
-	%newPos.x -= %this.extent.x/2;
-	%this.position = %newPos;
-	devLog("Dropped at:",%newPos,"Original",%pos);
-	// %this.forceInsideCtrl(EditorFrameWorld);
-}
-//==============================================================================
-function EToolCamCtrl::DragFailed( %this,%droppedCtrl,%pos) {
-	devLog("Drag Failed Dropped in:",%droppedCtrl,"at position:",%pos);
-}
-//------------------------------------------------------------------------------
-*/

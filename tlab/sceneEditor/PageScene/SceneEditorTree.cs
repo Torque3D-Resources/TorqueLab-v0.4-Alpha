@@ -19,8 +19,6 @@ function SceneEditorTreeTabBook::onTabSelected( %this ) {
 		SceneTreeWindow-->AddSimGroup.visible = false;
 	}
 }
-
-
 function SceneEditorTree::toggleLock( %this ) {
 	if(  SceneTreeWindow-->LockSelection.command $= "EWorldEditor.lockSelection(true); SceneEditorTree.toggleLock();" ) {
 		SceneTreeWindow-->LockSelection.command = "EWorldEditor.lockSelection(false); SceneEditorTree.toggleLock();";
@@ -28,6 +26,21 @@ function SceneEditorTree::toggleLock( %this ) {
 	} else {
 		SceneTreeWindow-->LockSelection.command = "EWorldEditor.lockSelection(true); SceneEditorTree.toggleLock();";
 		SceneTreeWindow-->DeleteSelection.command = "EditorMenuEditDelete();";
+	}
+}
+
+function SceneEditorTree::onMouseUp( %this,%hitItemId, %mouseClickCount ) {
+	devLog("SceneEditorTree::onMouseUp( %this,%hitItemId, %mouseClickCount )",%hitItemId, %mouseClickCount);
+	%obj = %this.getItemValue(%hitItemId);
+	if (!isObject(%obj))
+		return;
+	switch$(%obj.getClassName()){
+		case "SimGroup":
+			if(%mouseClickCount > 1){		
+			%obj.treeExpanded = !%obj.treeExpanded;
+			%this.expandItem(%hitItemId,%obj.treeExpanded);
+			}
+		
 	}
 }
 

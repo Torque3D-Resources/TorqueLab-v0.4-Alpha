@@ -23,7 +23,7 @@ function SceneEd::onPrefabSelected( %this,%prefab ) {
 }
 function SceneEd::noPrefabSelected( %this ) {	
 	warnLog("SceneEditorPlugin::noPrefabSelected:");
-	
+	return;
 	SceneEd.selectedPrefab = "";
 	SceneEd_PrefabInfoCtrl.visible = 0;
 	SEP_PrefabUnpackIcon.schedule(200,"setVisible",false);

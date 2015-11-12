@@ -24,6 +24,7 @@ function SceneObjectsTree::onAdd( %this ) {
 /// @name EditorPlugin Methods
 /// @{
 function SceneObjectsTree::handleRenameObject( %this, %name, %obj ) {
+	devLog(" SceneObjectsTree::handleRenameObject(",%name, %obj);
 	if (!isObject(%obj))
 		return;
 	
@@ -32,7 +33,16 @@ function SceneObjectsTree::handleRenameObject( %this, %name, %obj ) {
 	info("Group:",%obj,"Is Dirty",%isDirty);
 	
 }
-
+function SceneEditorTree::handleRenameObject( %this, %name, %obj ) {
+	devLog(" SceneEditorTree::handleRenameObject(",%name, %obj);
+	if (!isObject(%obj))
+		return;
+	
+	%field = ( %this.renameInternal ) ? "internalName" : "name";
+	%isDirty = LabObj.set(%obj,%field,%name);
+	info("Group:",%obj,"Is Dirty",%isDirty);
+	
+}
 
 //-----------------------------------------------------------------------------
 
@@ -100,7 +110,7 @@ function SceneObjectsTree::onAddSelection(%this, %obj, %isLastSelection) {
 	
 }
 function SceneObjectsTree::onRemoveSelection(%this, %obj) {
-	Scene.onRemoveSelection(%obj);
+	Scene.unselectObject(%obj,%this);
 	
 	//if (isObject(%this.myInspector)){
 		//devLog("RemoveInspect tree owned inspector",%this.myInspector);
@@ -114,20 +124,24 @@ function SceneObjectsTree::onSelect(%this, %obj) {
 		devLog("SceneBrowserTree::onSelect cancelled for filtering");
 		return;
 	}
+	
 	if (%obj.getClassName() $= "SimGroup") {
 		
-		Scene.setActiveSimGroup( %obj );
+		
 		%item = %this.findItemByObjectId(%obj.getId());
 		DevLog(%item,"Group slected with child count:",%obj.getCount());
-		%this.expandItem(%item,false);
+	//	%this.expandItem(%item,true);
 	//	Scene.selectObjectGroup(%obj);
-		
-		return;
+	
+	
 	}
-	
-	
 	EWorldEditor.selectObject(%obj);
-	Scene.onSelect(%obj);	
+	
+Scene.onSelect(%obj);
+	
+	//EWorldEditor.selectObject(%obj);
+	//Scene.onSelect(%obj);	
+	return;
 		if (!$SceneEditor_AutomaticObjectGroup && %this.autoGroups) {
 		%this.autoGroups = false;
 		Scene.setNewObjectGroup( MissionGroup );
@@ -152,7 +166,7 @@ function SceneObjectsTree::onUnselect(%this, %obj) {
 		devLog("SceneBrowserTree::onUnselect cancelled for filtering");
 		return;
 	}
-	Scene.onUnselect(%obj);
+	Scene.unselectObject(%obj,%this);
 	
 }
 

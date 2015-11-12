@@ -11,6 +11,7 @@ function initTorqueLab(%launchEditor) {
 	if ($TorqueLabLoaded)
 		return;
 	
+	exec( "tlab/myPrefs.cs" );
 	//Load the Editor profile before loading the game onStart (Nooo...)
 	exec("tlab/gui/initGuiProfiles.cs");
 	exec( "tlab/EditorLab/gui/core/cursors.ed.cs" );

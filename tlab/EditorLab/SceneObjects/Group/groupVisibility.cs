@@ -11,7 +11,8 @@ function Scene::hideGroupChilds( %this, %simGroup ) {
 		if( %child.isMemberOfClass( "SimGroup" ) )
 			%this.hideGroupChilds( %child );
 		else if (!%child.hidden)
-			%child.setHidden( true );
+			EWorldEditor.hideObject(%child,true);
+			//%child.setHidden( true );
 	}
 }
 //------------------------------------------------------------------------------
@@ -21,7 +22,8 @@ function Scene::showGroupChilds( %this, %simGroup ) {
 		if( %child.isMemberOfClass( "SimGroup" ) )
 			%this.showGroupChilds( %child );
 		else if (%child.hidden)
-			%child.setHidden( false );
+			EWorldEditor.hideObject(%child,false);
+		//	%child.setHidden( false );
 
 	}
 }

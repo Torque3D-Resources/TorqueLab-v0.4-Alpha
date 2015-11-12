@@ -46,13 +46,13 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 		%popup.addItem(%id++,"Hide Childrens" TAB "" TAB "Scene.hideGroupChilds( "@%obj@" );");
 		%popup.addItem(%id++,"Toggle Children Visibility" TAB "" TAB "Scene.toggleHideGroupChilds( "@%obj@" );");
 		%popup.addItem(%id++,"-");
-		%popup.addItem(%id++,"Group" TAB "" TAB "EWorldEditor.addSimGroup( true );");
+		%popup.addItem(%id++,"Group" TAB "" TAB "Scene.addSimGroup( true );");
 		%popup.addItem(%id++,"-");
 		%popup.addItem(%id++,"Add New Objects Here" TAB "" TAB "Scene.setNewObjectGroup( %tree.object );");
 		%popup.addItem(%id++,"Add Children to Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %tree.object, false );");
 		%popup.addItem(%id++,"Remove Children from Selection" TAB "" TAB "EWorldEditor.selectAllObjectsInSet( %tree.object, true );");
 		%popup.addItem(%id++,"-");
-		%popup.addItem(%id++,"Lock auto-arrange" TAB "" TAB "SceneEd.toggleAutoArrangeGroupLock( %tree.object);");
+		%popup.addItem(%id++,"Lock auto-arrange" TAB "" TAB "SceneEd.toggleAutoArrangeGroupLock("@%obj@");");
 		%popup.autoLockId = %id;
 
 		if (%obj.prefabFile !$= "") {
@@ -79,7 +79,7 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 		%popup.addItem(%id++,"Locked" TAB "" TAB "%this.object.setLocked( !%tree.object.locked ); EWorldEditor.syncGui();");
 		%popup.addItem(%id++,"Hidden" TAB "" TAB "EWorldEditor.hideObject( %tree.object, !%tree.object.hidden ); EWorldEditor.syncGui();");
 		%popup.addItem(%id++,"-");
-		%popup.addItem(%id++,"Group" TAB "" TAB "EWorldEditor.addSimGroup( true );");
+		%popup.addItem(%id++,"Group" TAB "" TAB "Scene.addSimGroup( true );");
 
 		if( %obj.isMemberOfClass( "Prefab" ) ) {
 			%popup.addItem(%id++, "Expand Prefab to group" TAB "" TAB "devlog(\"Expanding\");Lab.ExpandPrefab( "@%obj.getId()@");");
@@ -91,7 +91,7 @@ function Scene::showSceneTreeItemContext( %this,%tree, %itemId, %mouse, %obj ) {
 // Handle multi-selection.
 	if( %tree.getSelectedItemsCount() > 1 ) {
 		%popup.addItem(%id++,"Delete Selection" TAB "" TAB "EditorMenuEditDelete();");
-		%popup.addItem(%id++,"Group Selection" TAB "" TAB "EWorldEditor.addSimGroup( true );");
+		%popup.addItem(%id++,"Group Selection" TAB "" TAB "Scene.addSimGroup( true );");
 	}
 	if( %haveObjectEntries ) {
 		%popup.enableItem( 0, %obj.isNameChangeAllowed() && %obj.getName() !$= "MissionGroup" );

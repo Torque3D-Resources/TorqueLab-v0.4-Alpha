@@ -116,31 +116,31 @@ function EWorldEditor::getGridSize( %this ) {
 
 //==============================================================================
 function toggleSnappingOptions( %var ) {
-	if( SnapToBar->objectSnapDownBtn.getValue() && SnapToBar->objectSnapBtn.getValue() ) {
+	if( SceneEditorToolbar->objectSnapDownBtn.getValue() && SceneEditorToolbar->objectSnapBtn.getValue() ) {
 		if( %var $= "terrain" ) {
 			EWorldEditor.stickToGround = 1;
 			EWorldEditor.setSoftSnap(false);
-			ESnapOptionsTabBook.selectPage(0);
+			ESnapOptions_Book.selectPage(0);
 			SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
 		} else {
 			// soft snapping
 			EWorldEditor.stickToGround = 0;
 			EWorldEditor.setSoftSnap(true);
-			ESnapOptionsTabBook.selectPage(1);
+			ESnapOptions_Book.selectPage(1);
 			SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
 		}
 	} else if( %var $= "terrain" && EWorldEditor.stickToGround == 0 ) {
 		// Terrain Snapping
 		EWorldEditor.stickToGround = 1;
 		EWorldEditor.setSoftSnap(false);
-		ESnapOptionsTabBook.selectPage(0);
+		ESnapOptions_Book.selectPage(0);
 		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(1);
 		SceneEditorToolbar-->objectSnapBtn.setStateOn(0);
 	} else if( %var $= "soft" && EWorldEditor.getSoftSnap() == false ) {
 		// Object Snapping
 		EWorldEditor.stickToGround = 0;
 		EWorldEditor.setSoftSnap(true);
-		ESnapOptionsTabBook.selectPage(1);
+		ESnapOptions_Book.selectPage(1);
 		SceneEditorToolbar-->objectSnapBtn.setStateOn(1);
 		SceneEditorToolbar-->objectSnapDownBtn.setStateOn(0);
 	} else if( %var $= "grid" ) {
@@ -150,8 +150,8 @@ function toggleSnappingOptions( %var ) {
 		EWorldEditor.stickToGround = false;
 		Lab.setGridSnap( false );
 		EWorldEditor.setSoftSnap( false );
-		SnapToBar->objectSnapDownBtn.setStateOn(0);
-		SnapToBar->objectSnapBtn.setStateOn(0);
+		SceneEditorToolbar->objectSnapDownBtn.setStateOn(0);
+		SceneEditorToolbar->objectSnapBtn.setStateOn(0);
 	}
 
 	EWorldEditor.syncGui();

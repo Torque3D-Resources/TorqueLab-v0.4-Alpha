@@ -236,7 +236,7 @@ function SEP_AmbientManager::createBasicClouds(%this) {
          height[2] = "3";        
    byGroup = "0";
       };
-	%group = SceneEd.getActiveSimGroup();
+	%group = Scene.getActiveSimGroup();
 	%group.add(%obj);
 	%obj.setFileName(MissionGroup.getFileName());
 	SEP_BasicCloudsMenu.add(%obj.getName(),%obj.getId());

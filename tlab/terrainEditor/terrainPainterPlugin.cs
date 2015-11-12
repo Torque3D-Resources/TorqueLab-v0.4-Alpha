@@ -69,14 +69,17 @@ function TerrainPainterPlugin::onWorldEditorStartup( %this ) {
 	//TPP_BrushManager.validateBrushSlopeMin(%this.defaultBrushSlopeMin);
 	TPG_Window-->groupName.setText("Default");
 	TPG_Window-->groupFolders.setText("");
+	
+	EPainterStack.clear();
 }
 
 function TerrainPainterPlugin::onActivated( %this ) {
+	
 	Parent::onActivated( %this );
 	if( !isObject( ETerrainMaterialPersistMan ) )
 		new PersistenceManager( ETerrainMaterialPersistMan );
 		
-	EWTerrainPainterToolbar-->ellipse.performClick();// Circle Brush
+	TerrainPainterToolbar-->ellipse.performClick();// Circle Brush
 	
 	EditorGui.bringToFront( ETerrainEditor );
 	ETerrainEditor.setVisible( true );
@@ -84,7 +87,7 @@ function TerrainPainterPlugin::onActivated( %this ) {
 	ETerrainEditor.makeFirstResponder( true );
 	EditorGui-->TerrainPainter.setVisible(true);
 	EditorGui-->TerrainPainterPreview.setVisible(true);
-	EWTerrainPainterToolbar.setVisible(true);
+	TerrainPainterToolbar.setVisible(true);
 	ETerrainEditor.onBrushChanged();
 	EPainter.onActivated();
 	TerrainPainterPlugin.syncBrushInfo();
@@ -111,7 +114,7 @@ function TerrainPainterPlugin::syncBrushInfo( %this ) {
 	PaintBrushSlopeControl-->SlopeMaxAngle.text = ETerrainEditor.getSlopeLimitMaxAngle();
 	PaintBrushPressureTextEditContainer-->textEdit.text = ETerrainEditor.getBrushPressure()*100;
 	%brushType = ETerrainEditor.getBrushType();
-	eval( "EWTerrainPainterToolbar-->" @ %brushType @ ".setStateOn(1);" );
+	eval( "TerrainPainterToolbar-->" @ %brushType @ ".setStateOn(1);" );
 }
 
 

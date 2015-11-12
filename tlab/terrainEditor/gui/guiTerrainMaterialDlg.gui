@@ -13,15 +13,15 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      activeMat = "30768";
+      activeMat = "38402";
       canSaveDirty = "1";
       dirtyMat30768 = "1";
       dirtyMat3721 = "1";
       dirtyMat4133 = "1";
       dirtyMat4135 = "1";
-      folderFilter = "All";
-      matIndex = "0";
-      onApplyCallback = "EPainter_TerrainMaterialUpdateCallback";
+      folderFilter = "Temperate";
+      matIndex = "7";
+      onApplyCallback = "EPainter_TerrainMaterialAddCallback";
       surfaceFilter = "All";
       tooltipWidth = "500";
 
@@ -64,8 +64,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "12 28";
-         extent = "326 759";
+         position = "7 27";
+         extent = "336 763";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -133,7 +133,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 0";
-            extent = "326 75";
+            extent = "336 75";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -157,7 +157,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "4 4";
-               extent = "318 68";
+               extent = "328 68";
                minExtent = "16 16";
                horizSizing = "width";
                vertSizing = "bottom";
@@ -179,7 +179,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 0";
-                  extent = "318 29";
+                  extent = "328 29";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -218,7 +218,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "126 0";
+                     position = "131 0";
                      extent = "65 19";
                      minExtent = "8 2";
                      horizSizing = "center";
@@ -264,7 +264,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "0 31";
-                  extent = "318 37";
+                  extent = "328 37";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -327,7 +327,7 @@
                         sbUsesNAColor = "0";
                         reverseTextList = "0";
                         bitmapBounds = "16 16";
-                        text = "All";
+                        text = "Temperate";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -437,7 +437,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "205 0";
-                     extent = "113 37";
+                     extent = "123 37";
                      minExtent = "8 2";
                      horizSizing = "relative";
                      vertSizing = "bottom";
@@ -488,7 +488,7 @@
                         anchorLeft = "0";
                         anchorRight = "0";
                         position = "0 18";
-                        extent = "113 19";
+                        extent = "123 19";
                         minExtent = "8 2";
                         horizSizing = "width";
                         vertSizing = "bottom";
@@ -516,7 +516,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 79";
-            extent = "326 680";
+            extent = "336 684";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -546,7 +546,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 4";
-               extent = "318 672";
+               extent = "328 676";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -581,8 +581,8 @@
                   compareToObjectID = "1";
                   canRenameObjects = "1";
                   renameInternal = "0";
-                  position = "0 -1050";
-                  extent = "220 1722";
+                  position = "0 0";
+                  extent = "195 336";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -652,8 +652,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "339 28";
-         extent = "297 756";
+         position = "344 27";
+         extent = "297 760";
          minExtent = "8 2";
          horizSizing = "left";
          vertSizing = "height";
@@ -899,7 +899,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "newMaterial";
+                  text = "tp_GrassShort0";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "2 2 2 2";
@@ -978,7 +978,7 @@
                   sinkAllKeyEvents = "0";
                   password = "0";
                   passwordMask = "*";
-                  text = "newMaterial";
+                  text = "art/terrains/Temperate/materials.cs";
                   maxLength = "1024";
                   docking = "Client";
                   margin = "2 2 2 2";
@@ -1023,7 +1023,7 @@
             anchorLeft = "0";
             anchorRight = "0";
             position = "0 86";
-            extent = "297 643";
+            extent = "297 647";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -1047,7 +1047,7 @@
                changeChildSizeToFit = "1";
                changeChildPosition = "1";
                position = "0 0";
-               extent = "276 374";
+               extent = "276 387";
                minExtent = "16 16";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1069,7 +1069,7 @@
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
                   position = "0 0";
-                  extent = "276 25";
+                  extent = "276 21";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1092,7 +1092,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "0 25";
+                     position = "0 21";
                      extent = "276 140";
                      minExtent = "16 16";
                      horizSizing = "right";
@@ -1221,7 +1221,7 @@
                            sinkAllKeyEvents = "0";
                            password = "0";
                            passwordMask = "*";
-                           text = "newMaterial_1";
+                           text = "tp_GrassShort0_1";
                            maxLength = "1024";
                            margin = "0 0 0 0";
                            padding = "0 0 0 0";
@@ -1415,7 +1415,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 29";
+                  position = "0 25";
                   extent = "276 70";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -1577,7 +1577,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "apGrassLux_dif";
+                        text = "GrassShort_B";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1652,7 +1652,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "500";
+                        text = "250";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -1724,7 +1724,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_dif";
+                        bitmap = "art/terrains/Temperate/Grass/GrassShort_B";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 64";
@@ -1750,7 +1750,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 103";
+                  position = "0 99";
                   extent = "276 82";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -1791,7 +1791,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_d1";
+                        bitmap = "art/terrains/Temperate/Grass/GrassShort_D";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 76";
@@ -1957,7 +1957,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "apGrassLux_d1";
+                        text = "GrassShort_D";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2032,7 +2032,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "5";
+                        text = "4";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2085,7 +2085,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "50";
+                        text = "100";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2194,7 +2194,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 189";
+                  position = "0 185";
                   extent = "276 70";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -2235,7 +2235,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/Appalachian/Grass/apGrassLux_n";
+                        bitmap = "art/terrains/Temperate/Grass/GrassShort_N";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 64";
@@ -2401,7 +2401,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "apGrassLux_n";
+                        text = "GrassShort_N";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2476,7 +2476,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "0";
+                        text = "0.0802721";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2509,7 +2509,7 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 263";
+                  position = "0 259";
                   extent = "276 82";
                   minExtent = "8 2";
                   horizSizing = "width";
@@ -2550,7 +2550,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiBitmapCtrl() {
-                        bitmap = "art/terrains/Appalachian/Macros/macGrassLux_m1";
+                        bitmap = "art/terrains/Temperate/Grass/GrassShort_M";
                         wrap = "0";
                         position = "1 1";
                         extent = "64 76";
@@ -2716,7 +2716,7 @@
                      canSaveDynamicFields = "0";
 
                      new GuiTextCtrl() {
-                        text = "macGrassLux_m1";
+                        text = "GrassShort_M";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2791,7 +2791,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "200";
+                        text = "20";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";
@@ -2946,6 +2946,244 @@
                      };
                   };
                };
+               new GuiRolloutCtrl(TMatManager_OptionalSettingRollout) {
+                  caption = "Optional settings";
+                  margin = "0 0 0 0";
+                  defaultHeight = "40";
+                  expanded = "0";
+                  clickCollapse = "1";
+                  hideHeader = "0";
+                  autoCollapseSiblings = "0";
+                  position = "0 345";
+                  extent = "276 17";
+                  minExtent = "8 2";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "ToolsRolloutProfile_S1";
+                  visible = "1";
+                  active = "1";
+                  tooltipProfile = "ToolsToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "1";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+
+                  new GuiStackControl() {
+                     stackingType = "Vertical";
+                     horizStacking = "Left to Right";
+                     vertStacking = "Top to Bottom";
+                     padding = "4";
+                     dynamicSize = "1";
+                     dynamicNonStackExtent = "0";
+                     dynamicPos = "0";
+                     changeChildSizeToFit = "1";
+                     changeChildPosition = "1";
+                     position = "0 17";
+                     extent = "276 114";
+                     minExtent = "16 16";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     profile = "ToolsDefaultProfile";
+                     visible = "0";
+                     active = "1";
+                     tooltipProfile = "ToolsToolTipProfile";
+                     hovertime = "1000";
+                     isContainer = "1";
+                     hidden = "1";
+                     canSave = "1";
+                     canSaveDynamicFields = "0";
+
+                     new GuiContainer() {
+                        docking = "Top";
+                        margin = "4 0 4 4";
+                        padding = "0 0 0 0";
+                        anchorTop = "1";
+                        anchorBottom = "0";
+                        anchorLeft = "1";
+                        anchorRight = "0";
+                        position = "0 0";
+                        extent = "276 114";
+                        minExtent = "8 2";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        profile = "ToolsBoxDarkA";
+                        visible = "1";
+                        active = "1";
+                        tooltipProfile = "ToolsToolTipProfile";
+                        hovertime = "1000";
+                        isContainer = "1";
+                        canSave = "1";
+                        canSaveDynamicFields = "0";
+
+                        new GuiTextCtrl() {
+                           text = "Set for GroundCover layers (Not working yet)";
+                           maxLength = "1024";
+                           docking = "Top";
+                           margin = "0 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "0 0";
+                           extent = "276 15";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsTextBase_H2";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsDefaultProfile";
+                           hovertime = "1000";
+                           isContainer = "0";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+                        };
+                        new GuiContainer() {
+                           docking = "Top";
+                           margin = "4 0 4 4";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "4 19";
+                           extent = "268 20";
+                           minExtent = "8 2";
+                           horizSizing = "right";
+                           vertSizing = "bottom";
+                           profile = "ToolsBoxDarkC";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "1";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+
+                           new GuiTextCtrl() {
+                              text = "Source Material:";
+                              maxLength = "1024";
+                              docking = "Left";
+                              margin = "0 0 0 0";
+                              padding = "0 0 0 0";
+                              anchorTop = "1";
+                              anchorBottom = "0";
+                              anchorLeft = "1";
+                              anchorRight = "0";
+                              position = "0 0";
+                              extent = "92 20";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsTextFX_R";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "ToolsDefaultProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                           new GuiPopUpMenuCtrl(TMatManager_GroundCoverSrcMenu) {
+                              maxPopupHeight = "400";
+                              sbUsesNAColor = "0";
+                              reverseTextList = "0";
+                              bitmap = "tlab/gui/icons/24-assets/edit.png";
+                              bitmapBounds = "16 16";
+                              text = "All";
+                              maxLength = "1024";
+                              docking = "Client";
+                              margin = "0 0 0 0";
+                              padding = "0 0 0 0";
+                              anchorTop = "1";
+                              anchorBottom = "0";
+                              anchorLeft = "1";
+                              anchorRight = "0";
+                              position = "92 0";
+                              extent = "176 20";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsDropdownProfile";
+                              visible = "1";
+                              active = "1";
+                              command = "TerrainMaterialDlg.changeSurfaceFilter();";
+                              tooltipProfile = "ToolsToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "1";
+                              internalName = "groundCoverMaterialSrcMenu";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                        };
+                        new GuiContainer() {
+                           docking = "Top";
+                           margin = "0 0 0 0";
+                           padding = "0 0 0 0";
+                           anchorTop = "1";
+                           anchorBottom = "0";
+                           anchorLeft = "1";
+                           anchorRight = "0";
+                           position = "0 39";
+                           extent = "276 75";
+                           minExtent = "8 2";
+                           horizSizing = "width";
+                           vertSizing = "bottom";
+                           profile = "ToolsBoxDarkB";
+                           visible = "1";
+                           active = "1";
+                           tooltipProfile = "ToolsToolTipProfile";
+                           hovertime = "1000";
+                           isContainer = "1";
+                           internalName = "unmappedCont";
+                           canSave = "1";
+                           canSaveDynamicFields = "0";
+
+                           new GuiCheckBoxCtrl() {
+                              text = "Used for GroundCover layer";
+                              groupNum = "-1";
+                              buttonType = "ToggleButton";
+                              useMouseEvents = "0";
+                              position = "0 -2";
+                              extent = "276 20";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsCheckBoxProfile";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "ToolsToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              internalName = "groundCoverLayerCtrl";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                           new GuiMLTextCtrl() {
+                              lineSpacing = "2";
+                              allowColorChars = "0";
+                              maxChars = "-1";
+                              text = "If true, the material properties can\'t be changed and will always be the same as the source materials.  Usefull for extra layers in GroundCover objects.";
+                              useURLMouseCursor = "0";
+                              position = "5 17";
+                              extent = "264 52";
+                              minExtent = "8 2";
+                              horizSizing = "right";
+                              vertSizing = "bottom";
+                              profile = "ToolsTextBase_S1";
+                              visible = "1";
+                              active = "1";
+                              tooltipProfile = "GuiToolTipProfile";
+                              hovertime = "1000";
+                              isContainer = "0";
+                              canSave = "1";
+                              canSaveDynamicFields = "0";
+                           };
+                        };
+                     };
+                  };
+               };
                new GuiRolloutCtrl(TerrainMatDlg_MaterialInfo) {
                   caption = "Assigned material info";
                   margin = "0 0 0 0";
@@ -2954,8 +3192,8 @@
                   clickCollapse = "1";
                   hideHeader = "0";
                   autoCollapseSiblings = "0";
-                  position = "0 349";
-                  extent = "276 25";
+                  position = "0 366";
+                  extent = "276 21";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2978,7 +3216,7 @@
                      dynamicPos = "0";
                      changeChildSizeToFit = "1";
                      changeChildPosition = "1";
-                     position = "0 25";
+                     position = "0 21";
                      extent = "276 20";
                      minExtent = "16 16";
                      horizSizing = "right";
@@ -3225,7 +3463,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "4 729";
+            position = "4 733";
             extent = "289 23";
             minExtent = "8 2";
             horizSizing = "right";

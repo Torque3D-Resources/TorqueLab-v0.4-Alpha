@@ -47,8 +47,8 @@ function SceneInspectorBase::onInspectorFieldModified( %this, %object, %fieldNam
 		EWorldEditor.invalidateSelectionCentroid();
 	}
 	if (%object.getClassName() $= "LevelInfo"){
-		devLog("onInspectorFieldModified LevelInfo",%field);
-		if (%field $= "LevelEnvMap")
+		devLog("onInspectorFieldModified LevelInfo",%fieldName);
+		if (%fieldName $= "LevelEnvMap")
 			SceneInspectorBase.schedule(500,"envHack",true);
 		
 	}

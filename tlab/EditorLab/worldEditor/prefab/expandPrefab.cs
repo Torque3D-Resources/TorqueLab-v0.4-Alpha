@@ -20,7 +20,7 @@ function Lab::ExpandPrefab(%this,%prefab) {
 	%simGroup.prefabFile = %file;
 	%simGroup.internalName = "fab_"@fileBase(%file);
 	exec(%file);
-	$ThisPrefab.outputlog();
+	//$ThisPrefab.outputlog();
 	foreach(%obj in $ThisPrefab){
 		%dataObj = %obj.deepClone();
 		%dataObj.internalName = fileBase(%obj.shapeName);
@@ -60,7 +60,7 @@ $ThisPrefab = new SimGroup() {
    canSaveDynamicFields = "1";
 
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -82,7 +82,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -104,7 +104,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -126,7 +126,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -148,7 +148,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -170,7 +170,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -192,7 +192,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -214,7 +214,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -236,7 +236,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -258,7 +258,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -280,7 +280,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallATopA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -302,7 +302,7 @@ $ThisPrefab = new SimGroup() {
          byGroup = "0";
    };
    new TSStatic() {
-      shapeName = "art/models/EnemyTrenches/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
+      shapeName = "art/models/EnemyTrenches/Buildings/Bunkers/BunkerSetA/ExtWall/WallA_4u.DAE";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";

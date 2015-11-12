@@ -10,6 +10,7 @@
 //==============================================================================
 function SceneEditorPlugin::onSelectObject( %this,%obj ) {	
 	warnLog("SceneEditorPlugin::onSelectObject:",%obj);
+	SceneEd.setActiveObject(%obj);
 	if (%obj.getClassname() $= "Prefab")
 		SceneEd.onPrefabSelected(%obj);
 	else

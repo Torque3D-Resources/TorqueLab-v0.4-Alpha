@@ -206,7 +206,7 @@ function SEP_AmbientManager::createCloudLayer(%this) {
          windSpeed = "3";
          height = "6";
       };
-	%group = SceneEd.getActiveSimGroup();
+	%group = Scene.getActiveSimGroup();
 	%group.add(%obj);
 	%obj.setFileName(MissionGroup.getFileName());
 	SEP_CloudLayerMenu.add(%obj.getName(),%obj.getId());

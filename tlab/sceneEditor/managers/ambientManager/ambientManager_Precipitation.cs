@@ -64,7 +64,7 @@ function SEP_PrecipitationManager::createPrecipitation(%this) {
 		dataBlock = %this.defaultDatablock;
 	};
 	%precipitation.setFilename(MissionGroup.getFilename());
-	%group = SceneEd.getActiveSimGroup();
+	%group = Scene.getActiveSimGroup();
 	%group.add(%precipitation);
 	SEP_PrecipitationMenu.add(%name,%precipitation.getId());
 	SEP_PrecipitationMenu.setSelected(%precipitation.getId());

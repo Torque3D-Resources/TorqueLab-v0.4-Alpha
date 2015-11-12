@@ -39,7 +39,7 @@ function SEP_GroundCover::createGroundCover( %this ) {
 	
 	
 		
-	%group = SceneEd.getActiveSimGroup();
+	%group = Scene.getActiveSimGroup();
 	if (!isObject(%group))
 		%group = MissionGroup;
 	

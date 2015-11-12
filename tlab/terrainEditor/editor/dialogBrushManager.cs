@@ -31,7 +31,7 @@ function TEP_BrushManager::doBrushOption( %this,%group,%type,%field,%value ) {
 	switch$(%type) {
 	case "range":		
 		%rangeFull = $TEP_BrushManager_[%group,"Range","Min"] SPC $TEP_BrushManager_[%group,"Range","Max"];		
-		%toolbars = "EWTerrainEditToolbar EWTerrainPainterToolbar";
+		%toolbars = "EWTerrainEditToolbar TerrainPainterToolbar";
 		foreach$(%toolbar in %toolbars) {
 			%edit = %toolbar.findObjectByInternalName(%field,true);
 			%slider = %toolbar.findObjectByInternalName(%field@"_slider",true);

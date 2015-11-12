@@ -45,6 +45,14 @@ function ObjectCreatorTypeMenu::onSelect( %this,%id,%text ) {
 	ObjectCreator.navigate( %lastTabAddress );
 }
 
+function ObjectCreatorTypeButton::onClick( %this ) {
+	$ObjectCreator_TypeId = %id;
+	
+	ObjectCreator.objType = %this.internalName;
+	%lastTabAddress = ObjectCreator.lastTypeAdress[%text];
+	ObjectCreator.navigate( %lastTabAddress );
+}
+
 function ObjectCreator::toggleFavorites( %this ) {
 	%currentFavRow = getWord(ObjectCreatorFrameSet.rows,1);
 	if (%currentFavRow $= ""){
