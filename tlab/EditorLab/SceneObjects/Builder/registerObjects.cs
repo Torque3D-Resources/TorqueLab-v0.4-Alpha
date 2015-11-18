@@ -15,10 +15,11 @@ function Scene::endGroup( %this, %group ) {
 //------------------------------------------------------------------------------
 //Scene.registerObjects();
 function Scene::registerObjects( %this ) {
-	if (!isObject(%this.array)){
+	if (!isObject(%this.array)) {
 		%this.array = new ArrayObject();
 		%this.array.caseSensitive = true;
 	}
+
 	%this.array.empty();
 	%this.beginGroup( "Environment" );
 	// Removed Prefab as there doesn't really seem to be a point in creating a blank one
@@ -34,7 +35,7 @@ function Scene::registerObjects( %this ) {
 	%this.registerMissionObject( "SFXEmitter",          "Sound Emitter" );
 	%this.registerMissionObject( "Precipitation" );
 	%this.registerMissionObject( "ParticleEmitterNode", "Particle Emitter" );
-	 %this.registerMissionObject( "RibbonNode", "Ribbon" );
+	%this.registerMissionObject( "RibbonNode", "Ribbon" );
 	// Legacy features. Users should use Ground Cover and the Forest Editor.
 	//%this.registerMissionObject( "fxShapeReplicator",   "Shape Replicator" );
 	//%this.registerMissionObject( "fxFoliageReplicator", "Foliage Replicator" );
@@ -49,6 +50,7 @@ function Scene::registerObjects( %this ) {
 	%this.registerMissionObject( "DustEmitter", "Dust Emitter" );
 	%this.registerMissionObject( "DustSimulation", "Dust Simulation" );
 	%this.registerMissionObject( "DustEffecter", "Dust Effecter" );
+
 	if (%this.isMethod("registerCustomsObjectsGroup"))
 		%this.registerCustomsObjectsGroup("Environment");
 
@@ -72,15 +74,15 @@ function Scene::registerObjects( %this ) {
 	%this.registerMissionObject( "SpawnSphere",  "Observer Spawn Sphere", "ObserverDropPoint" );
 	%this.registerMissionObject( "SFXSpace",      "Sound Space" );
 	%this.registerMissionObject( "OcclusionVolume", "Occlusion Volume" );
-      %this.registerMissionObject( "LightProbeVolume", "Light Probe Volume" );
-      %this.registerMissionObject("NavMesh", "Navigation mesh");
-      %this.registerMissionObject("NavPath", "Path");
-    %this.registerMissionObject("EnvVolume", "Env Volume");   
-       %this.registerMissionObject( "AccumulationVolume", "Accumulation Volume" );
+	%this.registerMissionObject( "LightProbeVolume", "Light Probe Volume" );
+	%this.registerMissionObject("NavMesh", "Navigation mesh");
+	%this.registerMissionObject("NavPath", "Path");
+	%this.registerMissionObject("EnvVolume", "Env Volume");
+	%this.registerMissionObject( "AccumulationVolume", "Accumulation Volume" );
 
-	
 	if (%this.isMethod("registerCustomsObjectsGroup"))
 		%this.registerCustomsObjectsGroup("Level");
+
 	%this.endGroup();
 	// andrewmac: PhysX 3.3
 	%this.beginGroup( "PhysX 3.3" );
@@ -95,7 +97,7 @@ function Scene::registerObjects( %this ) {
 	%this.registerMissionObject( "RenderMeshExample" );
 	%this.registerMissionObject( "RenderShapeExample" );
 	%this.endGroup();
-	
+
 	if (%this.isMethod("registerCustomsGroups"))
 		%this.registerCustomsGroups();
 }

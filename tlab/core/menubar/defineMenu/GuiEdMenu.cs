@@ -20,8 +20,7 @@ function GuiEdMenu::initData(%this) {
 		$LabRedo = "Ctrl Y";
 	}
 
-	%id = -1;	
-	
+	%id = -1;
 	%itemId = -1;
 	$LabMenuGui_[%id++] = "File";
 	$LabMenuItemGui_[%id,%itemId++] = "New Gui..." TAB $LabCmd SPC "N" TAB "GuiEditCanvas.create();";
@@ -64,7 +63,7 @@ function GuiEdMenu::initData(%this) {
 	$LabMenuItemGui_[%id,%itemId++] = "-";
 	$LabMenuItemGui_[%id,%itemId++] = "Grid Size" TAB $LabCmd SPC "," TAB "GuiEditor.showPrefsDialog();";
 	%itemId = -1;
-	$LabMenuGui_[%id++] = "Layout";	
+	$LabMenuGui_[%id++] = "Layout";
 	$LabMenuItemGui_[%id,%itemId++] = "Align Left" TAB $LabCmd SPC "Left" TAB "GuiEditor.Justify(0);";
 	%subId=-1;
 	$LabSubMenuItemGui_[%id,%itemId,%subId++] = "SlowestA" TAB $LabCmd @ "-Shift 1" TAB "5" TAB "$ToggleMe = !$ToggleMe;";
@@ -130,7 +129,6 @@ function GuiEdMenu::initData(%this) {
 	$LabMenuItemGui_[%id,%itemId++] = "-";
 	$LabMenuItemGui_[%id,%itemId++] = "Show Guides>>drawGuides" TAB "" TAB "GuiEditor.toggleDrawGuides();" TAB "GuiEditor.drawGuides;";
 	$LabMenuItemGui_[%id,%itemId++] = "Full box selection>>fullBoxSelection" TAB "" TAB "GuiEditor.toggleFullBoxSelection();" TAB "GuiEditor.fullBoxSelection;";
-	
 	$LabMenuItemGui_[%id,%itemId++] = "Clear Guides" TAB "" TAB "GuiEditor.clearGuides();";
 	%itemId = -1;
 	$LabMenuGui_[%id++] = "Lab Menu";

@@ -23,7 +23,20 @@ function ShapeEdDetails::onWake( %this ) {
 	ShapeEd_DetailTree.onDefineIcons();
 }
 
-
+function ShapeEdDetails::update_onShapeSelectionChanged( %this ) {
+	ShapeEdShapeView.currentDL = 0;
+	ShapeEdShapeView.onDetailChanged();
+}
+function ShapeEdDetails::onEditSize( %this,%newSize ) {
+	%id = ShapeEd_DetailTree.getSelectedItem();
+	if ( !ShapeEd_DetailTree.isDetailItem( %id ) ) {
+		warnLog("Invalid detail item :",%id);
+		return;
+	}
+		// Change the size of the selected detail level
+	%oldSize = ShapeEd_DetailTree.getItemValue( %id );
+	ShapeEditor.doEditDetailSize( %oldSize, %newSize );
+}
 
 
 

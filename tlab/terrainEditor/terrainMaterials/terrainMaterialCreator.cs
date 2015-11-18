@@ -32,7 +32,7 @@ function TerrainMaterialDlg::createMat( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainMaterialDlg::cloneMat( %this, %internalName,%tags,%isGroundCoverMat ) {	
+function TerrainMaterialDlg::cloneMat( %this, %internalName,%tags,%isGroundCoverMat ) {
 	%src = %this.activeMat;
 
 	if (!isObject(%src)) {
@@ -43,7 +43,7 @@ function TerrainMaterialDlg::cloneMat( %this, %internalName,%tags,%isGroundCover
 
 	if (%internalName $= "")
 		%internalName = %src.internalName;
-		
+
 	// Create a unique material name.
 	%matName = getUniqueInternalName( %internalName, TerrainMaterialSet, true );
 	// Create the new material.
@@ -51,27 +51,27 @@ function TerrainMaterialDlg::cloneMat( %this, %internalName,%tags,%isGroundCover
 		internalName = %matName;
 		parentGroup = TerrainMaterialDlgNewGroup;
 	};
-	if ($TerrainMatDlg_CreateFromClone){
+
+	if ($TerrainMatDlg_CreateFromClone) {
 		%newMat.assignFieldsFrom(%src);
+
 		if (%newMat.isGroundCoverMat !$= "")
 			%newMat.isGroundCoverMat = false;
-		if (%isGroundCoverMat)	
+
+		if (%isGroundCoverMat)
 			%newMat.isGroundCoverMat = true;
-	}		
+	}
 
 	%newMat.internalName = %matName;
-	
+
 	if (%tags !$= "")
 		%newMat.customTags = %tags;
-	
 
 	%file = %src.getFileName();
 	%newMat.setFileName( %file );
 	// Mark it as dirty and to be saved in the default location.
-	
 	ETerrainMaterialPersistMan.setDirty( %newMat );
 	ETerrainMaterialPersistMan.saveDirtyObject( %newMat );
-	
 	FilteredTerrainMaterialsSet.add(%newMat);
 	%this.refreshMaterialTree(%newMat);
 	%matLibTree = %this-->matLibTree;
@@ -81,14 +81,13 @@ function TerrainMaterialDlg::cloneMat( %this, %internalName,%tags,%isGroundCover
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainMatNameEdit::onValidate( %this ) {		
+function TerrainMatNameEdit::onValidate( %this ) {
 	%matName = getUniqueInternalName( %this.getText(), TerrainMaterialSet, true );
 	%this.setText(%matName);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TerrainMaterialDlg::advCloneMat( %this ) {		
+function TerrainMaterialDlg::advCloneMat( %this ) {
 	%gui = TerrainMatDlg_Cloning;
 	%name = %gui-->cloneInternalName.getText();
 	%tags = %gui-->cloneTags.getText();
@@ -98,12 +97,13 @@ function TerrainMaterialDlg::advCloneMat( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainMaterialDlg::setCloningSource( %this,%source ) {
-	if (!isObject(%source)){
-			hide(TerrainMatDlg_Cloning);
-			return;
+	if (!isObject(%source)) {
+		hide(TerrainMatDlg_Cloning);
+		return;
 	}
+
 	%gui = TerrainMatDlg_Cloning;
-	show(%gui);	
+	show(%gui);
 	%unique = getUniqueInternalName( %source.internalName@"_1", TerrainMaterialSet, true );
 	%gui-->cloneInternalName.setText(%unique);
 	%gui-->cloneTags.setText(%source.customTags);
@@ -132,14 +132,14 @@ function TerrainMaterialDlg::deleteMat( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainMaterialDlg::setCreateMode( %this,%mode ) {
-	switch$(%mode){
-		case "Clone":
-			$TerrainMatDlg_CreateFromClone = true;
-		
-			TerrainMatDlg_Cloning-->CloneOptions.visible = 1;
-		case "Blank":
+	switch$(%mode) {
+	case "Clone":
+		$TerrainMatDlg_CreateFromClone = true;
+		TerrainMatDlg_Cloning-->CloneOptions.visible = 1;
+
+	case "Blank":
 		$TerrainMatDlg_CreateFromClone = false;
-			TerrainMatDlg_Cloning-->CloneOptions.visible = 0;
+		TerrainMatDlg_Cloning-->CloneOptions.visible = 0;
 	}
 }
 //------------------------------------------------------------------------------

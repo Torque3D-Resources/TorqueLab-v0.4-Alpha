@@ -11,7 +11,7 @@
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneDrag::toggleVisibility( %this ) {
-ETools.toggleTool("CloneTool");
+	ETools.toggleTool("CloneTool");
 	SnapToBar-->snappingSettingsBtn.setStateOn(%this.visible);
 
 	if ( %this.visible  ) {
@@ -38,7 +38,7 @@ function ECloneDrag::onWake( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
-function ECloneDrag::doCopy( %this ) {
+function ECloneDrag::doCopy( %this,%source ) {
 	%copyCount = %this-->copyCount.getValue();
 
 	if (%copyCount > 100)%copyCount = 100;
@@ -46,7 +46,6 @@ function ECloneDrag::doCopy( %this ) {
 	if (%copyCount <= 0) return;
 
 	EWorldEditor.copySelection(%this.copyOffset,%copyCount);
-	
 	ETools.hideTool(CloneDrag);
 	EditorMap.push();
 	//%this.setVisible(false);

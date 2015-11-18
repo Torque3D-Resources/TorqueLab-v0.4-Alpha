@@ -21,7 +21,7 @@ function Lab::toggleControlObject(%this) {
 //==============================================================================
 function Lab::setCameraPlayerMode(%this) {
 	devLog("Lab::setCameraPlayerMode");
-	
+
 	if (!isObject( LocalClientConnection.player)) {
 		warnLog("You don't have a player assigned, set spawnPlayer true to spawn one automatically");
 		return;
@@ -29,8 +29,10 @@ function Lab::setCameraPlayerMode(%this) {
 
 	%player = LocalClientConnection.player;
 	%player.setVelocity("0 0 0");
+
 	if (LocalClientConnection.getControlObject() != LocalClientConnection.player)
 		LocalClientConnection.setControlObject(%player);
+
 	%this.syncCameraGui();
 }
 //------------------------------------------------------------------------------
@@ -100,6 +102,7 @@ function serverCmdDropCameraAtPlayer(%client) {
 function Lab::CycleCameraFlyType(%this,%client) {
 	if (%client $= "")
 		%client = LocalClientConnection;
+
 	if(%client.camera.getMode() $= "Fly") {
 		if(%client.camera.newtonMode == false) { // Fly Camera
 			// Switch to Newton Fly Mode without rotation damping

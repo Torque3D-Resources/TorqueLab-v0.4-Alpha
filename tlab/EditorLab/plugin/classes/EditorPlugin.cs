@@ -27,14 +27,13 @@ function EditorPlugin::setEditorMode( %this,%mode ) {
 // Initial editor initialization and shutdown callbacks
 //==============================================================================
 //==============================================================================
-function EditorPlugin::onWorldEditorStartup( %this ) {	
+function EditorPlugin::onWorldEditorStartup( %this ) {
 	//Get the state of the plugin
 	%this.isEnabled = %this.getCfg("isEnabled");
 	// Add ourselves to the window menu.
 	%accel = Lab.addToEditorsMenu( %this.getName() );
 	// Add ourselves to the ToolsToolbarè
 	%tooltip = %this.toolTip;
-
 //	if (!%this.isHidden)
 	//	Lab.addPluginToBar( %this );
 }
@@ -201,7 +200,6 @@ function EditorPlugin::removeCommonGuiAccess( %this,%gui ) {
 //==============================================================================
 //MaterialEditorPlugin.toggleSettings();
 function EditorPlugin::toggleSettings( %this) {
-	
 	LabParamsDlg.toggleSettings(%this.displayName);
 }
 //------------------------------------------------------------------------------

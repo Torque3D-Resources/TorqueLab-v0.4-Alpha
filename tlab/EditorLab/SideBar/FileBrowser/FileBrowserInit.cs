@@ -13,15 +13,16 @@ $FileBrowser_FavRow = "600";
 //SceneBrowserTree.rebuild
 function Lab::initFileBrowser( %this ) {
 	FileBrowser.initFiles();
-	
 	FileBrowser.currentViewId = "";
 	FileBrowserViewMenu.clear();
 	%i = 0;
-	while($FileBrowser_View[%i] !$= ""){
-		%text = getField($FileBrowser_View[%i],0); 
+
+	while($FileBrowser_View[%i] !$= "") {
+		%text = getField($FileBrowser_View[%i],0);
 		FileBrowserViewMenu.add(%text,%i);
 		%i++;
 	}
+
 	FileBrowser.setViewId($FileBrowser_ViewId);
 	//FileBrowserViewMenu.setSelected($FileBrowser_ViewId);
 }
@@ -32,16 +33,18 @@ function FileBrowserViewMenu::onSelect( %this,%id,%text ) {
 
 function FileBrowser::toggleFavorites( %this ) {
 	%currentFavRow = getWord(FileBrowserFrameSet.rows,1);
-	if (%currentFavRow $= ""){
+
+	if (%currentFavRow $= "") {
 		%lastFavRow = FileBrowser.lastFavRow;
+
 		if (%lastFavRow $= "")
 			%lastFavRow = $FileBrowser_FavRow;
-		
+
 		FileBrowserFrameSet.rows = "0" SPC %lastFavRow;
 	} else {
 		FileBrowser.lastFavRow = %currentFavRow;
-			FileBrowserFrameSet.rows = "0";
+		FileBrowserFrameSet.rows = "0";
 	}
+
 	FileBrowserFrameSet.updateSizes();
-	
 }

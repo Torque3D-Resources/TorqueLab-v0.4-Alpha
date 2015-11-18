@@ -22,36 +22,32 @@ $LabCameraTypesIcon = "tlab/gui/icons/toolbar_assets/ToggleCamera";
 function Lab::setInitialCamera(%this) {
 	logb("Lab::setInitialCamera( %this )");
 	%client = LocalClientConnection;
-	
 	%this.gameControlObject = %client.getControlObject();
-	
 	//Store the current client camera state so we can restore it when exiting
 	Lab.storeClientCameraState(%client);
-	
+
 	//Create a specific Camera Object for editor so we are not changing client camera
-	if (!isObject(%this.editCamera)) {		
+	if (!isObject(%this.editCamera)) {
 		%this.editCamera = spawnObject("Camera", "Observer","LabEditCam");
 		%this.editCamera.scopeToClient(%client);
 		//LocalClientConnection.camera.scopeToClient(LocalClientConnection);
 	}
+
 	MissionCleanup.add(%this.editCamera);
 	//%this.editCamera.scopeToClient(%client);
 	%client.camera = %this.editCamera;
-	
 	%client.setCameraObject(%client.camera);
 	Lab.clientWasControlling = %client.getControlObject();
-	
-	
 	//Check if we use FreeView mode or Player Controlled camera
 	%freeViewMode = Lab.launchInFreeview || !isObject(%client.player) || LocalClientConnection.getControlObject().isMemberOfClass("Camera");
 
-	
 	if (!%freeViewMode) {
 		%this.setCameraPlayerMode();
 		return;
 	}
+
 	if (Lab.launchInFreeview)
-	Lab.currentCameraMode = "Standard Camera";
+		Lab.currentCameraMode = "Standard Camera";
 
 	%pos = %client.player.getPosition();
 
@@ -67,9 +63,9 @@ function Lab::setInitialCamera(%this) {
 function Lab::storeClientCameraState(%this,%client) {
 	Lab.initialControlObject = %client.getControlObject();
 	Lab.initialCameraObject = %client.getCameraObject();
-	
-	if (!isObject(%client.camera)) {	
-		Lab.initialCamera = %client.camera;	
+
+	if (!isObject(%client.camera)) {
+		Lab.initialCamera = %client.camera;
 		Lab.initialCameraControlMode = %client.camera.controlMode;
 		Lab.initialCameraDatablock = %client.camera.dataBlock;
 		Lab.initialCameraPosition = %client.camera.position;
@@ -81,11 +77,12 @@ function Lab::restoreClientCameraState(%this) {
 	%client = LocalClientConnection;
 	%client.setControlObject(Lab.initialControlObject);
 	%client.setCameraObject(Lab.initialCameraObject);
-	if (isObject(%client.camera)) {	
+
+	if (isObject(%client.camera)) {
 		%client.camera = Lab.initialCamera;
 		%client.camera.controlMode = Lab.initialCameraControlMode;
 		%client.camera.dataBlock = Lab.initialCameraDatablock;
-		%client.camera.position = Lab.initialCameraPosition;		
+		%client.camera.position = Lab.initialCameraPosition;
 	}
 }
 //------------------------------------------------------------------------------

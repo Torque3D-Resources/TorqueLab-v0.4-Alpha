@@ -13,28 +13,31 @@ function WorldEditor::forceToGrid( %this, %obj ) {
 	for(%i = 0; %i < %this.getSelectionSize(); %i++) {
 		%obj = %this.getSelectedObject(%i);
 		%this.forceObjectToGrid(%obj);
-	}	
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Force single object to the grid
-function WorldEditor::forceObjectToGrid( %this, %obj ) {	
+function WorldEditor::forceObjectToGrid( %this, %obj ) {
 	%transform = %obj.getTransform();
 	%gridSize = %this.gridSize;
-		%pos = getWords(%transform,0,2);
-		%start = %pos;
-		%multi = %gridSize;
-		if (%multi > 1)
-			%multi = 1;
-		%pos.x = mRound(%pos.x/%multi)*%multi;
-		%pos.y = mRound(%pos.y/%multi)*%multi;
-		%pos.z = mRound(%pos.z/%multi)*%multi;
-		%transform = setWord(%transform, 0, %pos.x);
-		%transform = setWord(%transform, 1, %pos.y);
-		if (!$WEditor::forceToGridNoZ)
-			%transform = setWord(%transform, 2, %pos.z);
-		%obj.setTransform(%transform);
-		
+	%pos = getWords(%transform,0,2);
+	%start = %pos;
+	%multi = %gridSize;
+
+	if (%multi > 1)
+		%multi = 1;
+
+	%pos.x = mRound(%pos.x/%multi)*%multi;
+	%pos.y = mRound(%pos.y/%multi)*%multi;
+	%pos.z = mRound(%pos.z/%multi)*%multi;
+	%transform = setWord(%transform, 0, %pos.x);
+	%transform = setWord(%transform, 1, %pos.y);
+
+	if (!$WEditor::forceToGridNoZ)
+		%transform = setWord(%transform, 2, %pos.z);
+
+	%obj.setTransform(%transform);
 	SceneInspector.refresh();
 }
 //------------------------------------------------------------------------------
@@ -52,8 +55,9 @@ function WorldEditor::copySelection( %this,%offset, %copies ) {
 		warnLog("There's no selected objects to copy!");
 		return;
 	}
-	
+
 	%addToGroup = Scene.getActiveSimGroup();
+
 	for (%i=1; %i<=%copies; %i++) {
 		for( %j=0; %j<%count; %j++) {
 			%obj = EWorldEditor.getSelectedObject( %j );
@@ -68,6 +72,7 @@ function WorldEditor::copySelection( %this,%offset, %copies ) {
 			%addToGroup.add(%clone);
 		}
 	}
-	SceneInspector.refresh();	
+
+	SceneInspector.refresh();
 }
 //------------------------------------------------------------------------------

@@ -83,6 +83,7 @@ function RoadTreeView::onSelect(%this, %obj) {
 	if(%obj != RoadEditorGui.getSelectedRoad()) {
 		RoadEditorGui.setSelectedRoad( %obj );
 	}
+	RoadManager.updateRoadData();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -93,7 +94,7 @@ function RoadDefaultWidthSliderCtrlContainer::onWake(%this) {
 //==============================================================================
 
 function RoadEditorGui::setDefaultMaterial(%this,%matName) {
-	RoadEditorGui.setFieldValue("materialName",%matName);	
+	RoadEditorGui.setFieldValue("materialName",%matName);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -101,9 +102,8 @@ function RoadEditorGui::setDefaultMaterial(%this,%matName) {
 function RoadEditorGui::setActiveMaterial(%this,%matName) {
 	if (!isObject(RoadEditorGui.road))
 		return;
-		
+
 	RoadEditorGui.road.setFieldValue("Material",%matName);
 	RoadInspector.refresh();
-	
 }
 //------------------------------------------------------------------------------

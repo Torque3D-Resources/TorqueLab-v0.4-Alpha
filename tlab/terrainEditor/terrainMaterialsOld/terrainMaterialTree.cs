@@ -21,7 +21,7 @@ function TerrainMaterialDlg::refreshMaterialTree( %this,%selected ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function TerrainMaterialDlg::selectObjectInTree( %this,%matObjectId,%selectFirstIfInvalid ) {	
+function TerrainMaterialDlg::selectObjectInTree( %this,%matObjectId,%selectFirstIfInvalid ) {
 	%matLibTree = %this-->matLibTree;
 	%matLibTree.clearSelection();
 	%item = %matLibTree.findItemByObjectId( %matObjectId );
@@ -40,7 +40,6 @@ function TerrainMaterialDlg::selectObjectInTree( %this,%matObjectId,%selectFirst
 			}
 		}
 	}
-
 }
 //------------------------------------------------------------------------------
 
@@ -55,6 +54,7 @@ function TerrainMaterialTreeCtrl::onUnSelect( %this, %item ) {
 		TerrainMaterialDlg.saveDirtyMaterial( %item );
 	else
 		warnLog("Saving when unselect material is disabled");
+
 	TerrainMaterialDlg.setActiveMaterial( 0 );
 }
 //------------------------------------------------------------------------------
@@ -67,11 +67,9 @@ function TerrainMaterialDlg::initFiltersData( %this ) {
 
 	for(%j=0; %j<getFieldCount($TerrainMaterialFolders); %j++) {
 		%pathBase = getField($TerrainMaterialFolders,%j);
-		
 		%filePathScript = %pathBase@"*.cs";
 
 		for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%filePathScript)) {
-		
 			//get folder
 			%folder = filePath(%file);
 			%folderStr = strreplace(%folder,"/","\t");
@@ -116,7 +114,6 @@ function TerrainMaterialDlg::changeFolderFilter( %this ) {
 	%this.setFilteredMaterialsSet();
 	%matLibTree = %this-->matLibTree;
 	%matLibTree.clearSelection();
-		
 	%item = %matLibTree.findItemByObjectId( %this.activeMat );
 
 	if ( %item $= "-1" ) {
@@ -169,7 +166,7 @@ function TerrainMaterialDlg::applyMaterialFilters( %this ) {
 			}
 		}
 
-		if (!$Cfg_MaterialEditor_ShowGroundCoverMaterial && (%mat.isGroundCoverMat || %mat.isGroundCoverMat $= "1") ) 
+		if (!$Cfg_MaterialEditor_ShowGroundCoverMaterial && (%mat.isGroundCoverMat || %mat.isGroundCoverMat $= "1") )
 			%hideMe = true;
 
 		if (%hideMe) {
@@ -224,9 +221,9 @@ function TerrainMaterialDlg::setFilteredMaterialsSet( %this,%reset ) {
 			}
 		}
 
-		if (!$Cfg_MaterialEditor_ShowGroundCoverMaterial && (%mat.isGroundCoverMat || %mat.isGroundCoverMat $="1") ) 
+		if (!$Cfg_MaterialEditor_ShowGroundCoverMaterial && (%mat.isGroundCoverMat || %mat.isGroundCoverMat $="1") )
 			%hideMe = true;
-			
+
 		if (!%hideMe) {
 			FilteredTerrainMaterialsSet.add(%mat);
 		}

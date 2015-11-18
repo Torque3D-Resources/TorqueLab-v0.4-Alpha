@@ -38,18 +38,20 @@ function Lab::buildProfileSetupData(%this) {
 		%fieldVars = getField(%fieldsData,2);
 		$LabDataType_List = strAddWord($LabDataType_List,%field);
 		$LabDataType_Field[%field] = %type;
-		foreach$(%var in %fieldVars){
+
+		foreach$(%var in %fieldVars) {
 			$LabDataType_List = strAddWord($LabDataType_List,%field@%var);
 			$LabDataType_Field[%field@%var] = %type;
 		}
-
-		
 	}
+
 	devLog("DataTypeList = ",$LabDataType_List);
 	LDG_ProfileSetupTypeMenu.clear();
-	foreach$(%field in $LabDataType_List){
+
+	foreach$(%field in $LabDataType_List) {
 		LDG_ProfileSetupTypeMenu.add(%field,%menuId++);
 	}
+
 	LDG_ProfileSetupTypeMenu.setText("Choose a field type");
 	$LabFontData_FamilyList = "";
 	$LabFontData_List = "";

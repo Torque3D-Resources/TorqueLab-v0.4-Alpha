@@ -62,20 +62,21 @@ function SEP_Creator::addMissionObjectIcon( %this, %class, %name, %buildfunc ) {
 	// object then fall back to the stock one
 	%method = "build" @ %buildfunc;
 	devLog("Method = ",%method);
+
 	if( !ObjectBuilderGui.isMethod( %method ) )
 		%method = "build" @ %class;
-	
+
 	if( !ObjectBuilderGui.isMethod( %method ) )
 		%method = "build" @ %class;
-		
-	if( !ObjectBuilderGui.isMethod( %method ) ){
+
+	if( !ObjectBuilderGui.isMethod( %method ) ) {
 		%func = "build" @ %buildfunc;
+
 		if (isFunction("build" @ %buildfunc))
 			%cmd = "return build" @ %buildfunc @ "();";
 		else
 			%cmd = "return new " @ %class @ "();";
-	}
-	else{
+	} else {
 		%cmd = "ObjectBuilderGui." @ %method @ "();";
 	}
 

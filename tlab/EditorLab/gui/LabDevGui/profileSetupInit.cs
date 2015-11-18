@@ -13,7 +13,6 @@ function Lab::initProfileSetupSystem(%this) {
 	initProfileSetupParams();
 	LDG_ProfilesSetupTree.init();
 	Lab.scanProfilePresetData();
-	
 	$LDG_ProfileSetupLoaded = true;
 }
 
@@ -30,9 +29,12 @@ function Lab::loadProfileSetupDefault(%this) {
 function Lab::loadProfileSetupPreset(%this,%file) {
 	if (%file $= "")
 		%file = "tlab/gui/profiles/profileDefaults.cs";
+
 	devLog("Loading file preset:",%file);
+
 	if (!isFile(%file))
 		return;
+
 	exec(%file);
 	initProfileSetupParams();
 	Lab.applyProfilesSetupData();
@@ -70,51 +72,59 @@ function Lab::getSetupProfilesList(%this) {
 // Profile Setup Preset/Save/Load Functions
 //==============================================================================
 //==============================================================================
-function Lab::scanProfilePresetData(%this) {	
+function Lab::scanProfilePresetData(%this) {
 	LDG_ProfilePresetMenu.clear();
 	%id = 0;
 	%searchFolder = "tlab/gui/profiles/presetData/*.profData.cs";
 	LDG_ProfilePresetMenu.add("[Default Data]",%id);
-	for(%file = findFirstFile(%searchFolder); %file !$= ""; %file = findNextFile(%searchFolder)) {	
+
+	for(%file = findFirstFile(%searchFolder); %file !$= ""; %file = findNextFile(%searchFolder)) {
 		%name = fileBase(%file);
 		%name2 = fileBase(%name);
 		devLog("Name:",%name,"Name2",%name2);
 		LDG_ProfilePresetMenu.add(%name2,%id++);
 	}
+
 	%currentId = LDG_ProfilePresetMenu.findText(Lab.profileSetupPreset);
+
 	if (%currentId $= "-1")
 		%currentId = 0;
-	LDG_ProfilePresetMenu.setSelected(%currentId,true);	
-	
-	
-}	
+
+	LDG_ProfilePresetMenu.setSelected(%currentId,true);
+}
 //------------------------------------------------------------------------------
 //==============================================================================
 function LDG_ProfilePresetMenu::onSelect(%this,%id,%name) {
 	%file = "tlab/gui/profiles/presetData/"@%name@".profData.cs";
-	if (%id $= "0"){
-		%file = "";			
+
+	if (%id $= "0") {
+		%file = "";
 	}
+
 	%this.updateFriends();
+
 	if (%name $= Lab.profileSetupPreset)
 		return;
+
 	Lab.profileSetupPreset = %name;
 	Lab.loadProfileSetupPreset(%file);
-	
 }
-	
+
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::exportProfilePresetData(%this,%name) {	
-	if (%name $= ""){
+function Lab::exportProfilePresetData(%this,%name) {
+	if (%name $= "") {
 		%name = LDG_ProfilePresetNameEdit.getText();
+
 		if (%name $= "")
 			return;
+
 		Lab.profileSetupPreset = %name;
 	}
+
 	%file = "tlab/gui/profiles/presetData/"@%name@".profData.cs";
-	export("$LabColor_*",%file);	
-	export("$LabFont_*",%file,true);	
+	export("$LabColor_*",%file);
+	export("$LabFont_*",%file,true);
 	Lab.scanProfilePresetData();
 }
 //------------------------------------------------------------------------------
@@ -122,9 +132,8 @@ function Lab::exportProfilePresetData(%this,%name) {
 //==============================================================================
 // DEVELOPMENT STUFF
 //==============================================================================
-function exportProfileSetupStuff(%this,%file) {		
+function exportProfileSetupStuff(%this,%file) {
 	%file = "tlab/EditorLab/LabDevGui/fullExportStuff.cs";
-	export("$LabColor*",%file);	
-	export("$LabFont*",%file,true);	
-
+	export("$LabColor*",%file);
+	export("$LabFont*",%file,true);
 }

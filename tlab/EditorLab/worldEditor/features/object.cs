@@ -33,22 +33,23 @@ function EditorUnmount() {
 
 //==============================================================================
 // Remove selected objects from their group (delete group if empty)
-function cloneSelect(%this) {	
+function cloneSelect(%this) {
 	if (!isObject("WorldEditorQuickGroup"))
 		$QuickGroup = newSimSet("WEditorQuickGroup");
-	
+
 	WEditorQuickGroup.clear();
 	%count = EWorldEditor.getSelectionSize();
-	
+
 	for( %i=0; %i<%count; %i++) {
 		%obj = EWorldEditor.getSelectedObject( %i );
-		WEditorQuickGroup.add(%obj.deepClone());		
+		WEditorQuickGroup.add(%obj.deepClone());
 	}
 
 	EWorldEditor.clearSelection();
-	foreach(%obj in WEditorQuickGroup)	
+
+	foreach(%obj in WEditorQuickGroup)
 		EWorldEditor.selectObject(%obj);
-		
+
 	WEditorQuickGroup.clear();
 }
 //------------------------------------------------------------------------------

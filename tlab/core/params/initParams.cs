@@ -13,27 +13,28 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 		warnLog("You need to specify a name for the settings which is unique in this type");
 		return;
 	}
-	
+
 	%name = getField(%nameFlds,0);
 	%nameCode = getField(%nameFlds,1);
+
 	if (%nameCode $= "")
 		%nameCode = %name;
-	
+
 	%group = getField(%groupFlds,0);
 	%groupCode = getField(%groupFlds,1);
+
 	if (%groupCode $= "")
 		%groupCode = %group;
-	
-	
+
 	if (%container $= "")
 		%container = %name@"ParamStack";
 
 	%name = strreplace(%name," ","_");
 	%arrayName = %name;
+
 	if (%useLongName)
 		%arrayName = %groupCode@%nameCode;
-		
-	
+
 	%fullName = %arrayName@"_Param";
 	%array = newArrayObject(%fullName,LabParamsGroup,"ParamArray");
 	%array.internalName = %name;
@@ -44,20 +45,18 @@ function Lab::newParamsArray(%this,%nameFlds,%groupFlds,%cfgObject,%useLongName)
 	%array.syncObjsField = 4;
 	%array.group = %group;
 	%array.useNewSystem = true;
-	
 	%pData.Default = getField(%data,%fieldId++);
-		%pData.Title = getField(%data,%fieldId++);
-		%pData.Type = getField(%data,%fieldId++);
-		%pData.Options = getField(%data,%fieldId++);
-		%pData.syncObjs = getField(%data,%fieldId++);
-	
+	%pData.Title = getField(%data,%fieldId++);
+	%pData.Type = getField(%data,%fieldId++);
+	%pData.Options = getField(%data,%fieldId++);
+	%pData.syncObjs = getField(%data,%fieldId++);
+
 	//If no cfgObject supplied, simply use the new array as object
 	if (!isObject(%cfgObject))
 		%cfgObject = %array;
 
 	%array.cfgObject = %cfgObject;
 	%array.groupLink = %group@"_"@%name;
-
 
 	if (%prefGroup $= "")
 		%prefGroup = %name;

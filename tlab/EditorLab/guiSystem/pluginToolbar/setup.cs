@@ -9,7 +9,7 @@ function Lab::updatePluginsBar(%this,%reset) {
 	if (%reset)
 		%this.resetPluginsBar();
 
-	foreach(%pluginObj in LabPluginGroup) {	
+	foreach(%pluginObj in LabPluginGroup) {
 		Lab.addPluginToBar( %pluginObj );
 	}
 }
@@ -23,7 +23,7 @@ function Lab::resetPluginsBar(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::updatePluginsMenu(%this,%reset) {
-	foreach(%pluginObj in LabPluginGroup) 
+	foreach(%pluginObj in LabPluginGroup)
 		%this.addToEditorsMenu(%pluginObj);
 }
 //------------------------------------------------------------------------------
@@ -33,13 +33,11 @@ function Lab::updatePluginsMenu(%this,%reset) {
 //==============================================================================
 
 //==============================================================================
-function Lab::addPluginToBar( %this, %pluginObj ) {	
+function Lab::addPluginToBar( %this, %pluginObj ) {
 	if (%pluginObj.isHidden)
 		return;
 
 	//First check if the Icon object is in on control
-	
-	
 	%enabled =  %pluginObj.isEnabled;
 	%containerEnabled = ToolsToolbarArray;
 	%containerDisabled = EditorGui-->DisabledPluginsBox;
@@ -66,10 +64,9 @@ function Lab::addPluginToBar( %this, %pluginObj ) {
 
 	%icon = %this.createPluginIcon(%pluginObj);
 
-	if (%enabled){
+	if (%enabled) {
 		ToolsToolbarArray.add(%icon);
-	}
-	else{	
+	} else {
 		EditorGui-->DisabledPluginsBox.add(%icon);
 	}
 
@@ -100,8 +97,9 @@ function Lab::createPluginIcon( %this, %pluginObj ) {
 
 
 //==============================================================================
-function Lab::togglePluginBarSize( %this ) {	
+function Lab::togglePluginBarSize( %this ) {
 	%collapsed = ToolsToolbarArray.isCollapsed;
+
 	if (%collapsed)
 		Lab.expandPluginBar();
 	else
@@ -109,31 +107,35 @@ function Lab::togglePluginBarSize( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::expandPluginBar( %this ) {		
+function Lab::expandPluginBar( %this ) {
 	ToolsToolbarArray.isCollapsed = false;
-	foreach(%icon in ToolsToolbarArray){
+
+	foreach(%icon in ToolsToolbarArray) {
 		%enabled = %icon.pluginObj.isEnabled;
 		%icon.visible = %enabled;
-	}	
-	%this.refreshPluginToolbar();	
+	}
+
+	%this.refreshPluginToolbar();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::collapsePluginBar( %this ) {		
+function Lab::collapsePluginBar( %this ) {
 	ToolsToolbarArray.isCollapsed = true;
-	foreach(%icon in ToolsToolbarArray){
+
+	foreach(%icon in ToolsToolbarArray) {
 		if (%icon.pluginObj.getId() $= Lab.currentEditor.getId())
 			%icon.visible = true;
 		else
-			%icon.visible = false;			
+			%icon.visible = false;
 	}
-	%this.refreshPluginToolbar();	
+
+	%this.refreshPluginToolbar();
 }
 //------------------------------------------------------------------------------
 $PluginToolbarBitmap[0] = "tlab/gui/icons/default/collapse-toolbar";
 $PluginToolbarBitmap[1] = "tlab/gui/icons/default/expand-toolbar";
 //==============================================================================
-function Lab::refreshPluginToolbar( %this ) {	
+function Lab::refreshPluginToolbar( %this ) {
 	%collapsed = ToolsToolbarArray.isCollapsed;
 	ToolsToolbarArray.refresh();
 	EWToolsToolbar.position = "0 -2";
@@ -152,7 +154,6 @@ function Lab::refreshPluginToolbar( %this ) {
 //==============================================================================
 function EWToolsToolbar::reset( %this ) {
 	devLog("EWToolsToolbar::reset is calling expandPluginBar instead");
-	
 	Lab.expandPluginBar();
 	return;
 	%count = ToolsToolbarArray.getCount();
@@ -171,7 +172,6 @@ function EWToolsToolbar::reset( %this ) {
 //==============================================================================
 function EWToolsToolbar::expand( %this, %close ) {
 	devLog("EWToolsToolbar::expand is calling expandPluginBar instead");
-	
 	Lab.expandPluginBar();
 	return;
 	%this.isClosed = !%close;
@@ -181,7 +181,6 @@ function EWToolsToolbar::expand( %this, %close ) {
 //==============================================================================
 function EWToolsToolbar::resize( %this ) {
 	devLog("EWToolsToolbar::resize is calling refreshPluginToolbar instead");
-	
 	Lab.refreshPluginToolbar();
 	return;
 	%this.isClosed = ! %this.isClosed ;
@@ -226,11 +225,12 @@ function EWToolsToolbar::toggleSize( %this, %useDynamics ) {
 		%image = "tlab/gui/icons/default/collapse-toolbar";
 		%count = ToolsToolbarArray.getCount();
 
-		for( %i = 0 ; %i < %count; %i++ ){
+		for( %i = 0 ; %i < %count; %i++ ) {
 			%object = ToolsToolbarArray.getObject(%i);
 			%plugin = %object.pluginObj;
-			%enabled =%plugin.isEnabled;			
+			%enabled =%plugin.isEnabled;
 			%object.setVisible(%enabled);
+
 			if (%enabled)
 				%enableCount++;
 		}

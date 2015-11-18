@@ -8,35 +8,31 @@
 //==============================================================================
 
 
-function NavInspector::inspect(%this, %obj)
-{
-   %name = "";
-   if(isObject(%obj))
-      %name = %obj.getName();
-   else
-      NavFieldInfoControl.setText("");
+function NavInspector::inspect(%this, %obj) {
+	%name = "";
 
-   Parent::inspect(%this, %obj);
+	if(isObject(%obj))
+		%name = %obj.getName();
+	else
+		NavFieldInfoControl.setText("");
+
+	Parent::inspect(%this, %obj);
 }
 
-function NavInspector::onInspectorFieldModified(%this, %object, %fieldName, %arrayIndex, %oldValue, %newValue)
-{
-   // Same work to do as for the regular WorldEditor Inspector.
-   Inspector::onInspectorFieldModified(%this, %object, %fieldName, %arrayIndex, %oldValue, %newValue);
+function NavInspector::onInspectorFieldModified(%this, %object, %fieldName, %arrayIndex, %oldValue, %newValue) {
+	// Same work to do as for the regular WorldEditor Inspector.
+	Inspector::onInspectorFieldModified(%this, %object, %fieldName, %arrayIndex, %oldValue, %newValue);
 }
 
-function NavInspector::onFieldSelected(%this, %fieldName, %fieldTypeStr, %fieldDoc)
-{
-   NavFieldInfoControl.setText("<font:ArialBold:14>" @ %fieldName @ "<font:ArialItalic:14> (" @ %fieldTypeStr @ ") " NL "<font:Arial:14>" @ %fieldDoc);
+function NavInspector::onFieldSelected(%this, %fieldName, %fieldTypeStr, %fieldDoc) {
+	NavFieldInfoControl.setText("<font:ArialBold:14>" @ %fieldName @ "<font:ArialItalic:14> (" @ %fieldTypeStr @ ") " NL "<font:Arial:14>" @ %fieldDoc);
 }
 
-function NavTreeView::onInspect(%this, %obj)
-{
-   NavInspector.inspect(%obj);
+function NavTreeView::onInspect(%this, %obj) {
+	NavInspector.inspect(%obj);
 }
 
-function NavTreeView::onSelect(%this, %obj)
-{
-   NavInspector.inspect(%obj);
-   NavEditorGui.onObjectSelected(%obj);
+function NavTreeView::onSelect(%this, %obj) {
+	NavInspector.inspect(%obj);
+	NavEditorGui.onObjectSelected(%obj);
 }

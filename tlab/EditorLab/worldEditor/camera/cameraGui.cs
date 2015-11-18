@@ -24,65 +24,64 @@ function Lab::syncCameraGui( %this,%forced ) {
 	// Sync projection type
 	%displayType = Lab.currentEditor.editorGui.getDisplayType();
 
-	if (!%displayType) 
+	if (!%displayType)
 		%displayType = 6;
+
 	Lab.checkMenuItem("viewTypeMenu",0,7,%displayType);
 	//Non-Perspective Cameras: (Top, Bottom, Left, Right, Front, Back,Isometric)
 	//Perspective Cameras: Standard Camera - 1st Person Camera -3rd Person Camera - Orbit Camera -Smooth Camera - Smooth Rot Camera
-	
 	EWorldEditorStatusBarCamera.setText($LabCameraDisplayName[%displayType]);
-	
 	//Camera Speed
 	EditorGuiToolbar-->CameraSpeedEdit.setText($Camera::movementSpeed);
 	return;
-	if( %displayType != $EditTSCtrl::DisplayTypePerspective ) {		
-		%this.syncNonPerspectiveCameraGui(%forced);		
+
+	if( %displayType != $EditTSCtrl::DisplayTypePerspective ) {
+		%this.syncNonPerspectiveCameraGui(%forced);
+	} else {
+		%this.syncPerspectiveCameraGui(%forced);
 	}
-	else{		
-		%this.syncPerspectiveCameraGui(%forced);		
-	}
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Sync the camera information on the editor guis
 function Lab::syncNonPerspectiveCameraGui( %this,%forced ) {
 	logb("Lab::syncNonPerspectiveCameraGui( %this,%forced )", %this,%forced );
+
 	switch( %displayType ) {
-		case $EditTSCtrl::DisplayTypeTop:
-			%name = "Top View";
-			%camRot = "0 0 0";
+	case $EditTSCtrl::DisplayTypeTop:
+		%name = "Top View";
+		%camRot = "0 0 0";
 
-		case $EditTSCtrl::DisplayTypeBottom:
-			%name = "Bottom View";
-			%camRot = "3.14159 0 0";
+	case $EditTSCtrl::DisplayTypeBottom:
+		%name = "Bottom View";
+		%camRot = "3.14159 0 0";
 
-		case $EditTSCtrl::DisplayTypeLeft:
-			%name = "Left View";
-			%camRot = "-1.571 0 1.571";
+	case $EditTSCtrl::DisplayTypeLeft:
+		%name = "Left View";
+		%camRot = "-1.571 0 1.571";
 
-		case $EditTSCtrl::DisplayTypeRight:
-			%name = "Right View";
-			%camRot = "-1.571 0 -1.571";
+	case $EditTSCtrl::DisplayTypeRight:
+		%name = "Right View";
+		%camRot = "-1.571 0 -1.571";
 
-		case $EditTSCtrl::DisplayTypeFront:
-			%name = "Front View";
-			%camRot = "-1.571 0 3.14159";
+	case $EditTSCtrl::DisplayTypeFront:
+		%name = "Front View";
+		%camRot = "-1.571 0 3.14159";
 
-		case $EditTSCtrl::DisplayTypeBack:
-			%name = "Back View";
-			%camRot = "-1.571 0 0";
+	case $EditTSCtrl::DisplayTypeBack:
+		%name = "Back View";
+		%camRot = "-1.571 0 0";
 
-		case $EditTSCtrl::DisplayTypeIsometric:
-			%name = "Isometric View";
-			%camRot = "0 0 0";
-		}
+	case $EditTSCtrl::DisplayTypeIsometric:
+		%name = "Isometric View";
+		%camRot = "0 0 0";
+	}
 
-		LocalClientConnection.camera.controlMode = "Fly";
-		LocalClientConnection.camera.setRotation( %camRot );
-		EWorldEditorStatusBarCamera.setText(%name);
-		//EditorGuiStatusBar.setCamera( %name,false );
-		return;
+	LocalClientConnection.camera.controlMode = "Fly";
+	LocalClientConnection.camera.setRotation( %camRot );
+	EWorldEditorStatusBarCamera.setText(%name);
+	//EditorGuiStatusBar.setCamera( %name,false );
+	return;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -90,8 +89,10 @@ function Lab::syncNonPerspectiveCameraGui( %this,%forced ) {
 function Lab::syncPerspectiveCameraGui( %this,%forced ) {
 	logb("Lab::syncPerspectiveCameraGui( %this,%forced )", %this,%forced );
 	%cameraTypesButton = EditorGuiToolbar-->cameraTypes;
-	if (isObject(%cameraTypesButton))	
+
+	if (isObject(%cameraTypesButton))
 		%cameraTypesButton.setBitmap($LabCameraTypesIcon); //Default Toggle Camera Icon
+
 	// Sync camera settings.
 	%flyModeRadioItem = -1;
 
@@ -104,26 +105,22 @@ function Lab::syncPerspectiveCameraGui( %this,%forced ) {
 				//%cameraTypesButton.setBitmap("tlab/gui/icons/default/menubar/smooth-cam-rot");
 				%flyModeRadioItem = 4;
 				%camModeName = "Smooth Rot Camera";
-
 			} else {
 				EditorGui-->NewtonianCamera.setStateOn(true);
 				//%cameraTypesButton.setBitmap("tlab/gui/icons/default/menubar/smooth-cam");
 				%flyModeRadioItem = 3;
 				%camModeName = "Smooth Camera";
-
 			}
 		} else if(%mode $= "EditOrbit") {
 			EditorGui-->OrbitCamera.setStateOn(true);
 			//%cameraTypesButton.setBitmap("tlab/gui/icons/default/menubar/orbit-cam");
 			%flyModeRadioItem = 1;
 			%camModeName = "Orbit Camera";
-
 		} else { // default camera mode
 			//EditorGui-->StandardCamera.setStateOn(true);
 			//%cameraTypesButton.setBitmap("tlab/gui/icons/default/toolbar/camera");
 			%flyModeRadioItem = 0;
 			%camModeName = "Standard Camera";
-
 		}
 
 		//quick way select menu bar options
@@ -138,7 +135,6 @@ function Lab::syncPerspectiveCameraGui( %this,%forced ) {
 		Lab.checkFindItem("Camera",0,1,1);
 		Lab.checkMenuItem("EditorPlayerCameraTypeOptions",0, 2, %flyModeRadioItem);
 		%camModeName = "3rd Person Camera";
-
 	} else if ($isFirstPersonVar) { // if 1st Person
 		EditorGui-->PlayerCamera.setStateOn(true);
 		//%cameraTypesButton.setBitmap("tlab/gui/icons/default/toolbar/player");
@@ -148,8 +144,8 @@ function Lab::syncPerspectiveCameraGui( %this,%forced ) {
 		Lab.checkMenuItem("EditorPlayerCameraTypeOptions",0, 2, %flyModeRadioItem);
 		Lab.checkMenuItem("EditorFreeCameraTypeOptions",0, 4, -1);
 		%camModeName = "1st Person Camera";
-
 	}
+
 	EWorldEditorStatusBarCamera.setText(%camModeName);
 	//EditorGuiStatusBar.setCamera(%camModeName,false);
 }

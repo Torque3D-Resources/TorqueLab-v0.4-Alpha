@@ -17,13 +17,13 @@ function TPG::init(%this) {
 	if ( !isObject( TPG_LayerGroup ) ) {
 		new SimGroup( TPG_LayerGroup  );
 	}
-TPG_Window-->saveGroupButton.active = false;
+
+	TPG_Window-->saveGroupButton.active = false;
 	TPG_StoredValues-->v1.setText("");
 	TPG_StoredValues-->v2.setText("");
 	TPG_StoredValues-->v3.setText("");
 	TPG_StoredValues-->v4.setText("");
 	TPG_StackLayers.clear();
-	
 	$TerrainPaintGeneratorGui_Initialized = true;
 	TPG_StepModeCheckbox.setStateOn(false);
 }

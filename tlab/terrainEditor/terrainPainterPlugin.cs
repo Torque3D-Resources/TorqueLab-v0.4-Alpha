@@ -53,7 +53,6 @@ function TerrainPainterPlugin::onWorldEditorStartup( %this ) {
 
 	%map.bindCmd( keyboard, 0, "TerrainPainterPlugin.keyboardSetMaterial(10);", "" );
 	TerrainPainterPlugin.map = %map;
-	
 	%map = new ActionMap();
 	%map.bindCmd( keyboard, "lalt", "TPG.getCurrentHeight();", "" );// +1 Brush Size
 	%map.bindCmd( keyboard, "ctrl 1", "TPG.getCurrentHeight(1);", "" );// +1 Brush Size
@@ -69,18 +68,16 @@ function TerrainPainterPlugin::onWorldEditorStartup( %this ) {
 	//TPP_BrushManager.validateBrushSlopeMin(%this.defaultBrushSlopeMin);
 	TPG_Window-->groupName.setText("Default");
 	TPG_Window-->groupFolders.setText("");
-	
 	EPainterStack.clear();
 }
 
 function TerrainPainterPlugin::onActivated( %this ) {
-	
 	Parent::onActivated( %this );
+
 	if( !isObject( ETerrainMaterialPersistMan ) )
 		new PersistenceManager( ETerrainMaterialPersistMan );
-		
+
 	TerrainPainterToolbar-->ellipse.performClick();// Circle Brush
-	
 	EditorGui.bringToFront( ETerrainEditor );
 	ETerrainEditor.setVisible( true );
 	ETerrainEditor.attachTerrain();
@@ -92,22 +89,17 @@ function TerrainPainterPlugin::onActivated( %this ) {
 	EPainter.onActivated();
 	TerrainPainterPlugin.syncBrushInfo();
 	EditorGuiStatusBar.setSelection("");
-	
-	
 }
 
 function TerrainPainterPlugin::onDeactivated( %this ) {
 	Parent::onDeactivated( %this );
-	
 	//EditorGui-->TerrainPainter.setVisible(false);
 	//EditorGui-->TerrainPainterPreview.setVisible(false);
 	//EWTerrainPainterToolbar.setVisible(false);
 	//ETerrainEditor.setVisible( false );
 }
 //TerrainPainterPlugin.syncBrushInfo
-function TerrainPainterPlugin::syncBrushInfo( %this ) {	
-	
-	
+function TerrainPainterPlugin::syncBrushInfo( %this ) {
 	// Update gui brush info
 	PaintBrushSizeTextEditContainer-->textEdit.text = getWord(ETerrainEditor.getBrushSize(), 0);
 	PaintBrushSlopeControl-->SlopeMinAngle.text = ETerrainEditor.getSlopeLimitMinAngle();
@@ -138,7 +130,7 @@ function TerrainPainterPlugin::keyboardSetMaterial( %this, %mat) {
 
 
 //==============================================================================
-function TerrainPainterTools::onPreEditorSave( %this ) {	
+function TerrainPainterTools::onPreEditorSave( %this ) {
 	EPainterStack.clear();
 }
 //------------------------------------------------------------------------------

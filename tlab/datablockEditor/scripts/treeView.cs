@@ -7,9 +7,9 @@
 //==============================================================================
 // Add the datablocks to the treeView
 function DatablockEditorPlugin::populateTrees(%this,%classList) {
-	
 	if (DbEd.populatingTree)
 		return;
+
 	// Populate datablock tree.
 	if( %this.excludeClientOnlyDatablocks )
 		%set = DataBlockGroup;
@@ -18,7 +18,7 @@ function DatablockEditorPlugin::populateTrees(%this,%classList) {
 
 	DatablockEditorTree.clear();
 	DbEd.populatingTree = true;
-	
+
 	foreach( %datablock in %set ) {
 		%unlistedFound = false;
 		%id = %datablock.getId();
@@ -31,11 +31,12 @@ function DatablockEditorPlugin::populateTrees(%this,%classList) {
 
 		if( %unlistedFound )
 			continue;
-		if (DbEd.activeClasses !$= "" && getRecordCount(DbEd.activeClasses) < 2){		
+
+		if (DbEd.activeClasses !$= "" && getRecordCount(DbEd.activeClasses) < 2) {
 			if (!strFind(DbEd.activeClasses,%datablock.getClassName()))
 				continue;
 		}
-		
+
 		%this.addExistingItem( %datablock, true );
 	}
 
@@ -70,8 +71,7 @@ function DatablockEditorPlugin::addExistingItem( %this, %datablock, %dontSort ) 
 	// If the datablock is already there, don't
 	// do anything.
 	%id = %tree.findItemByValue( %datablock.getId());
-	
-	
+
 	if( %id)
 		return;
 
@@ -85,6 +85,7 @@ function DatablockEditorPlugin::addExistingItem( %this, %datablock, %dontSort ) 
 	DbEd.dbClassList = strAddWord(DbEd.dbClassList,%class,true);
 	DbEd.dbClassItemIds[%class] = strAddWord(DbEd.dbClassItemIds[%class],%id,true);
 	DbEd.dbClassItemNames[%class] = strAddWord(DbEd.dbClassItems[%class],%name,true);
+
 	if( !%dontSort )
 		DatablockEditorTree.sort( %parentID, false, false, false );
 
@@ -118,21 +119,22 @@ function DatablockEditorPlugin::isExcludedDatablockType( %this, %className ) {
 // DatablockEditorPlugin.buildClassList
 function DatablockEditorPlugin::buildClassList(%this) {
 	%classList = enumerateConsoleClasses( "SimDatablock" );
+
 	foreach$( %datablockClass in %classList ) {
 		DbEd_ActiveClassList.insertItem(%datablockClass,DbEd_ActiveClassList.getCount());
-		DbEd.allClasses = strAddWord(DbEd.allClasses,%datablockClass,true);		
+		DbEd.allClasses = strAddWord(DbEd.allClasses,%datablockClass,true);
 	}
 }
 //==============================================================================
 //DbEd.selectAllClasses();
 function DbEd::selectAllClasses( %this ) {
 	DbEd_ActiveClassList.clearSelection();
-	
-	for(%i=0;%i<DbEd_ActiveClassList.getItemCount();%i++){
+
+	for(%i=0; %i<DbEd_ActiveClassList.getItemCount(); %i++) {
 		DbEd_ActiveClassList.setSelected(%i,true);
-		
 		//DbEd_ActiveClassList.setSelected(3,true);
 	}
+
 	DbEd.allClassesSelected = true;
 	DbEd.activeClasses = DbEd.allClasses;
 }
@@ -140,17 +142,17 @@ function DbEd::selectAllClasses( %this ) {
 //==============================================================================
 //DbEd.refreshTree();
 function DbEd::refreshTree( %this ) {
-	
-	if (!DbEd.allClassesSelected){	
+	if (!DbEd.allClassesSelected) {
 		DbEd.activeClasses = "";
 		%selected = DbEd_ActiveClassList.getSelectedItems();
+
 		foreach$( %id in %selected ) {
 			%text = DbEd_ActiveClassList.getItemText(%id);
 			DbEd.activeClasses = strAddWord(DbEd.activeClasses,%text,true);
 		}
 	}
+
 	DatablockEditorPlugin.populateTrees(DbEd.activeClasses);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

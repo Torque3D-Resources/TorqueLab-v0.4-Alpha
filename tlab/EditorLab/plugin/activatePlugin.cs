@@ -9,43 +9,43 @@
 /// Push Gui's, stuff like that
 function EditorPlugin::onActivated( %this,%simple ) {
 	//if(isDemo())
-		//startToolTime(%this.getName());
-
+	//startToolTime(%this.getName());
 	//Reset some default Plugin values
 	Lab.fitCameraGui = ""; //Used by GuiShapeEdPreview to Fit camera on object
 	//Call the Plugin Object onActivated method if exist
-	
+
 	//%this.activateGui();
-	
 
 	if (%this.no3D)
 		ECamViewGui.setState(false,true);
 	else
 		ECamViewGui.setState($Lab_CamViewEnabled);
 
-	if (!%simple){
-	//Hide all the Guis for all plugins
-	foreach(%gui in LabPluginGuiSet){		
-		%gui.setVisible(false);
+	if (!%simple) {
+		//Hide all the Guis for all plugins
+		foreach(%gui in LabPluginGuiSet) {
+			%gui.setVisible(false);
+		}
 	}
-	
-	}
+
 	EWToolsPaletteContainer.visible = !%this.noPalette;
 
 	//Show only the Gui related to actiavted plugin
-	if (!%simple){
+	if (!%simple) {
 		%pluginGuiSet = %this.plugin@"_GuiSet";
+
 		if (!isObject(%pluginGuiSet))
-			warnLog("Invalid Plugin GuiSet for update in EditorPlugin::onActivated, tried:",%pluginGuiSet);		
+			warnLog("Invalid Plugin GuiSet for update in EditorPlugin::onActivated, tried:",%pluginGuiSet);
 		else
-			foreach(%gui in %pluginGuiSet) {			
+			foreach(%gui in %pluginGuiSet) {
 				//Don't show dialogs
 				if (%gui.isDlg)
 					continue;
-				
+
 				%gui.setVisible(true);
 			}
 	}
+
 	%this.isActivated = true;
 
 	if(isObject(%this.map))
@@ -65,9 +65,8 @@ function EditorPlugin::onActivated( %this,%simple ) {
 
 	if (isObject(%this.dialogs))
 		%this.dialogs.onActivatedDialogs();
-		
-	Lab.checkPluginTools();
 
+	Lab.checkPluginTools();
 	//SceneBrowser.filterPlugin(%this);
 }
 //------------------------------------------------------------------------------

@@ -15,22 +15,17 @@ exec("tlab/core/commonSettings.cs");
 //Load GameLab system (In-Game Editor)
 function tlabExecCore( %loadGui ) {
 	if(%loadGui) {
-		execPattern("tlab/core/*.gui");			
+		execPattern("tlab/core/*.gui");
 	}
 
-	
 	execPattern("tlab/core/helpers/*.cs");
 	execPattern("tlab/core/scripts/*.cs");
 	execPattern("tlab/core/common/*.cs");
 	execPattern("tlab/core/params/*.cs");
 	execPattern("tlab/core/menubar/*.cs");
-	
-execPattern("tlab/core/guiHelpers/*.cs");
-	
-	
-	
+	execPattern("tlab/core/guiHelpers/*.cs");
 	exec("tlab/core/classBase/popupMenu.cs");
-	exec("tlab/core/classBase/guiInspector.cs");	
+	exec("tlab/core/classBase/guiInspector.cs");
 	exec("tlab/core/classBase/Inspector.cs");
 	exec("tlab/core/classBase/guiTreeViewCtrl.cs");
 	exec("tlab/core/classBase/guiSwatchButtonCtrl.cs");
@@ -60,21 +55,21 @@ function tlabExecMenubar( %loadGui ) {
 //Load the LabGui (Cleaned EditorGui files)
 function tlabExecEditor(%loadGui ) {
 	execPattern("tlab/EditorLab/SceneObjects/*.cs");
+
 	if (%loadGui) {
 		exec("tlab/EditorLab/gui/EditorGui.gui");
 		exec("tlab/EditorLab/gui/cursors.cs");
 		execPattern("tlab/EditorLab/SideBar/*.gui");
-		execPattern("tlab/EditorLab/SceneObjects/*.gui");	
+		execPattern("tlab/EditorLab/SceneObjects/*.gui");
 	}
 
 	exec("tlab/EditorLab/EditorOpen.cs");
 	exec("tlab/EditorLab/EditorClose.cs");
 	exec("tlab/EditorLab/EditorScript.cs");
 	exec("tlab/EditorLab/EditorActivate.cs");
-execPattern("tlab/EditorLab/guiSystem/*.cs");
+	execPattern("tlab/EditorLab/guiSystem/*.cs");
 	execPattern("tlab/EditorLab/worldEditor/*.cs");
 	execPattern("tlab/EditorLab/plugin/*.cs");
-		
 	execPattern("tlab/EditorLab/SideBar/*.cs");
 }
 tlabExecEditor(!$LabGuiExeced);
@@ -103,19 +98,15 @@ function tlabExecGui(%loadGui ) {
 		exec("tlab/EditorLab/gui/DlgTimeAdjust.gui");
 		exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.gui" );
 		exec("tlab/EditorLab/gui/MaterialSelector/MaterialSelectorDlg.gui");
-		
-		
 		//exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui"); //Loaded at start
 		exec("tlab/EditorLab/gui/core/simViewDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/colorPicker.ed.gui");
 		exec("tlab/EditorLab/gui/core/scriptEditorDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.gui");
 		exec("tlab/EditorLab/gui/core/uvEditor.ed.gui");
-
 		exec("tlab/EditorLab/gui/TLabGameGui.gui");
 		execPattern("tlab/EditorLab/gui/toolbars/*.gui");
 		execPattern("tlab/EditorLab/gui/LabDevGui/*.gui");
-		
 	}
 
 	exec("tlab/EditorLab/gui/messageBoxes/LabMsgBoxesGui.cs");
@@ -123,15 +114,12 @@ function tlabExecGui(%loadGui ) {
 	exec("tlab/EditorLab/gui/DlgAddFMODProject.cs");
 	exec("tlab/EditorLab/gui/DlgEditorChooseLevel.cs");
 	exec( "tlab/EditorLab/gui/Settings/LabMissionSettingsDlg.cs" );
-	
 	execPattern("tlab/EditorLab/gui/MaterialSelector/*.cs");
 	execPattern("tlab/EditorLab/gui/toolbars/*.cs");
 	execPattern("tlab/EditorLab/gui/LabDevGui/*.cs");
-	
 	//Don't do a execPattern on the gui/core, some are load individually
 	exec("tlab/EditorLab/gui/core/fileDialogBase.ed.cs");
 	exec("tlab/EditorLab/gui/core/GuiEaseEditDlg.ed.cs");
-
 	exec("tlab/EditorLab/gui/TLabGameGui.cs");
 }
 tlabExecGui(!$LabGuiExeced);
@@ -145,7 +133,6 @@ function tlabExecDialogs(%loadGui ) {
 		execPattern("tlab/EditorLab/gui/debugTools/*.gui");
 	}
 
-
 	exec("tlab/EditorLab/gui/commonDialogs.cs");
 	execPattern("tlab/EditorLab/gui/dialogs/*.cs");
 	execPattern("tlab/EditorLab/editorDialogs/*.cs");
@@ -158,10 +145,11 @@ tlabExecDialogs(!$LabGuiExeced);
 //------------------------------------------------------------------------------
 //Old Settings Dialog for temporary references
 function tlabExecTools(%loadGui ) {
-	if (%loadGui) {	
-		execPattern("tlab/EditorLab/editorTools/*.gui");		
-	}	
-	execPattern("tlab/EditorLab/editorTools/*.cs");	
+	if (%loadGui) {
+		execPattern("tlab/EditorLab/editorTools/*.gui");
+	}
+
+	execPattern("tlab/EditorLab/editorTools/*.cs");
 }
 tlabExecTools(!$LabGuiExeced);
 %execAll = strAddWord(%execAll,"tlabExecTools");
@@ -176,9 +164,10 @@ function execTools(%execGui ) {
 
 $TLabExecAllList = %execAll;
 function tlabExec( ) {
-	foreach$(%func in $TLabExecAllList) {		
+	foreach$(%func in $TLabExecAllList) {
 		eval(%func@"();");
 	}
+
 	info("All core TorqueLab scripts executed.");
 }
 

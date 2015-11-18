@@ -11,18 +11,17 @@ function DbEd::setSelectedDatablock( %this,%datablock ) {
 		DbEd_EditorStack.clear();
 		hide(DbEd_EditorScroll);
 		show(DbEd_NoConfigPill);
-		
 		DbEd_NoConfigPill-->titleText.setText("There's no selected datablock");
 		DbEd_NoConfigPill-->infoText.setText("Select a datablock from the Datablocks tree above to see the custom editor which do the same as inspector" SPC
-							"but with a selection of settings and GuiControls adapted to the important datablock settings.");
+														 "but with a selection of settings and GuiControls adapted to the important datablock settings.");
 		return;
 	}
+
 	show(DbEd_ActiveDbIcons);
 	DbEd.activeDatablock = %datablock;
 
 	if (DbEd.isMethod("build"@%datablock.getClassName()@"Params")) {
 		show(DbEd_EditorScroll);
-	
 		eval("DbEd.build"@%datablock.getClassName()@"Params();");
 		hide(DbEd_NoConfigPill);
 	} else {
@@ -118,8 +117,7 @@ function DatablockEditorPlugin::selectDatablock( %this, %datablock, %add, %dontS
 		%fileNameField.setText( "" );
 	}
 
-	DbEd.setSelectedDatablock(%datablock);	
-
+	DbEd.setSelectedDatablock(%datablock);
 	EditorGuiStatusBar.setSelection( %this.getNumSelectedDatablocks() @ " Datablocks Selected" );
 	show(DbEd_ActiveDbIcons);
 }

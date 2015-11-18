@@ -22,3 +22,5 @@ function SceneBrowserTree::setRoot( %this,%simSet ) {
 	%this.currentSet = %simSet;
 	%this.buildVisibleTree();	
 }
+
+

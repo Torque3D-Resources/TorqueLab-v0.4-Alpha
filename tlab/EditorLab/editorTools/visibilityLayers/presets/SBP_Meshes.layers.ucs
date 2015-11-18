@@ -119,7 +119,7 @@
       visibleMissionMarker = "1";
       visibleNavMesh = "0";
       visibleNavPath = "0";
-      visibleOcclusionVolume = "1";
+      visibleOcclusionVolume = "0";
       visibleParticleEmitter = "1";
       visibleParticleEmitterNode = "1";
       visiblePathCamera = "1";
@@ -129,7 +129,7 @@
       visiblePhysicsShape = "1";
       visiblePlayer = "1";
       visiblePointLight = "1";
-      visiblePortal = "1";
+      visiblePortal = "0";
       visiblePrecipitation = "1";
       visiblePrefab = "1";
       visibleProjectile = "1";
@@ -166,7 +166,7 @@
       visibleWaterPlane = "0";
       visibleWayPoint = "0";
       visibleWheeledVehicle = "1";
-      visibleZone = "1";
+      visibleZone = "0";
       visOptionsAL_BackbufferVisualizeVar = "0";
       visOptionsAL_ColorBufferShaderVar = "0";
       visOptionsAL_DepthVisualizeVar = "0";
@@ -180,11 +180,11 @@
       visOptionsEWorldEditor_dot_renderMissionArea = "0";
       visOptionsgfx__wireframe = "0";
       visOptionsLight__renderLightFrustums = "0";
-      visOptionsOcclusionVolume__isRenderable = "1";
+      visOptionsOcclusionVolume__isRenderable = "0";
       visOptionsPhysicalZone__renderZones = "0";
       visOptionsPhysicsWorld__render = "0";
       visOptionsPlayer__renderCollision = "0";
-      visOptionsPortal__isRenderable = "1";
+      visOptionsPortal__isRenderable = "0";
       visOptionsScene__disableTerrainOcclusion = "0";
       visOptionsScene__disableZoneCulling = "0";
       visOptionsScene__lockCull = "0";
@@ -194,6 +194,6 @@
       visOptionsShadows__disable = "0";
       visOptionsTerrainBlock__debugRender = "0";
       visOptionsTrigger__renderTriggers = "1";
-      visOptionsZone__isRenderable = "1";
+      visOptionsZone__isRenderable = "0";
 };
 //--- OBJECT WRITE END ---

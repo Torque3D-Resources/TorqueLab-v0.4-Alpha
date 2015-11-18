@@ -9,10 +9,6 @@
 //==============================================================================
 function WorldEdMenu::initData(%this) {
 	//set up $LabCmd variable so that it matches OS standards
-
-	
-
-	
 	%id = -1;
 	%itemId = -1;
 	$LabMenuWorld_[%id++] = "File";
@@ -55,7 +51,6 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "Lab PostFX Manager" TAB "" TAB "toggleVisible(EPostFxManager);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Copy Tool" TAB "" TAB "toggleDlg(ToolObjectCopyDlg);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle transform box" TAB "" TAB "ETransformBox.toggleBox();";
-	
 	%itemId = -1;
 	$LabMenuWorld_[%id++] = "Object";
 	$LabMenuItemWorld_[%id,%itemId++] = "Lock Selection" TAB $LabCmd @ " L" TAB "EWorldEditor.lockSelection(true); EWorldEditor.syncGui();";
@@ -104,13 +99,12 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "-------------";
 	$LabMenuItemWorld_[%id,%itemId++] = "Open disabled plugins bin" TAB "" TAB "Lab.openDisabledPluginsBin();";
 	$LabMenuItemWorld_[%id,%itemId++] = "Customize Interface" TAB "" TAB "ETools.toggleTool(\"GuiCustomizer\");";
-		$LabMenuItemWorld_[%id,%itemId++] = "----------------------";
+	$LabMenuItemWorld_[%id,%itemId++] = "----------------------";
 	$LabMenuItemWorld_[%id,%itemId++] = "Auto arrange MissionGroup Root" TAB "" TAB "SEP_ScenePage.organizeMissionGroup();";
 	$LabMenuItemWorld_[%id,%itemId++] = "Auto arrange MissionGroup" TAB "" TAB "SEP_ScenePage.organizeMissionGroup(5);";
 	$LabMenuItemWorld_[%id,%itemId++] = "----------------------";
-		$LabMenuItemWorld_[%id,%itemId++] = "Capture current view as level preview" TAB "" TAB "Lab.setCurrentViewAsPreview();";
+	$LabMenuItemWorld_[%id,%itemId++] = "Capture current view as level preview" TAB "" TAB "Lab.setCurrentViewAsPreview();";
 	$LabMenuItemWorld_[%id,%itemId++] = "Set next screenshot as preview" TAB "" TAB "Lab.setNextScreenShotPreview();";
-	
 	%itemId = -1;
 	$LabMenuWorld_[%id++] = "Camera";
 	$LabMenuItemWorld_[%id,%itemId++] = "World Camera";
@@ -157,19 +151,19 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "Editors";
 	$LabMenuEditorSubMenu = %id SPC %itemId;
 	$LabMenuEditorNextId = -1;
-
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle GroundCover Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"GroundCover\");";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle Ambient Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"AmbientManager\");";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle Vehicle Manager" TAB "" TAB "SceneEditorDialogs.toggleDlg(\"VehicleManager\");";
 	$LabMenuItemWorld_[%id,%itemId++] = "Toggle PostFx Manager" TAB "" TAB "ToggleVisible(EPostFxManager);" TAB "EPostFxManager.visible;";
 	$LabMenuItemWorld_[%id,%itemId++] = "-";
 	$LabMenuItemWorld_[%id,%itemId++] = "Open terrain material manager" TAB "" TAB "TerrainMaterialDlg.show();" TAB "TerrainMaterialDlg.visible;";
-	
-	if ( physicsPluginPresent() && isObject(PhysicsToolsToolbar) ){
+
+	if ( physicsPluginPresent() && isObject(PhysicsToolsToolbar) ) {
 		$LabMenuItemWorld_[%id,%itemId++] = "-";
 		$LabMenuItemWorld_[%id,%itemId++] = "Toggle PhysicsTools Toolbar" TAB "" TAB "ToggleVisible(PhysicsToolsToolbar);";
 		$LabMenuItemWorld_[%id,%itemId++] = "Toggle PhysicsTools Overlay" TAB "" TAB "ETools.toggleTool(\"PhysicsTools\");";
 	}
+
 	%itemId = -1;
 	$LabMenuWorld_[%id++] = "View";
 	$LabMenuItemWorld_[%id,%itemId++] = "Visibility Layers" TAB "Alt V" TAB "EVisibilityLayers.toggleVisibility();";
@@ -179,13 +173,11 @@ function WorldEdMenu::initData(%this) {
 	$LabMenuItemWorld_[%id,%itemId++] = "Store plugins order as default" TAB "" TAB "Lab.updatePluginIconOrder(true);";
 	$LabMenuItemWorld_[%id,%itemId++] = "-";
 	$LabMenuItemWorld_[%id,%itemId++] = "Lock Toolbar Drag n Drop" TAB "" TAB "" TAB "$Cfg_LockToolbar = !$Cfg_LockToolbar;";
-	%itemId = -1; 
+	%itemId = -1;
 	$LabMenuWorld_[%id++] = "Help";
 	$LabMenuItemWorld_[%id,%itemId++] = "Online Documentation..." TAB "Alt F1" TAB "gotoWebPage(EWorldEditor.documentationURL);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Offline User Guide..." TAB "" TAB "gotoWebPage(EWorldEditor.documentationLocal);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Offline Reference Guide..." TAB "" TAB "shellexecute(EWorldEditor.documentationReference);";
 	$LabMenuItemWorld_[%id,%itemId++] = "Torque 3D Forums..." TAB "" TAB "gotoWebPage(EWorldEditor.forumURL);";
-
-	
 }
 //------------------------------------------------------------------------------

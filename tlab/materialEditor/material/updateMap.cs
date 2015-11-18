@@ -5,94 +5,101 @@
 //==============================================================================
 $MaterialEditor_AutoUpdateMap = true;
 //==============================================================================
-//Select a texture for a material map type 
-function MaterialEditorGui::CheckAutoUpdateMap( %this,%type, %texture,%layer){
+//Select a texture for a material map type
+function MaterialEditorGui::CheckAutoUpdateMap( %this,%type, %texture,%layer) {
 	if (!$MaterialEditor_AutoUpdateMap)
 		return;
+
 	devLog("CheckAutoUpdateMap Type",%type,"Text",%texture);
 	%fileName = fileBase(%texture);
 	eval("%removeSuffix = SceneEditorCfg.DiffuseSuffix;");
 	%fileName = strReplace(%fileName,%removeSuffix,"");
 	%ext = fileExt(%texture);
 	%folder = filePath(%texture)@"/";
-	
 
-	 
-	if(SceneEditorCfg.AutoAddNormal && %type !$="Normal"){		
+	if(SceneEditorCfg.AutoAddNormal && %type !$="Normal") {
 		%suffix = SceneEditorCfg.NormalSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
-		if (isImageFile(%testFile)){
+
+		if (isImageFile(%testFile)) {
 			devLog("Normal found:",%testFile);
 			%this.updateTextureMapImage("Normal",%testFile,%layer,true);
 		} else {
 			devLog("Normal NOT found:",%testFile);
 		}
 	}
-	if(SceneEditorCfg.AutoAddDiffuse && %type !$="Diffuse"){		
+
+	if(SceneEditorCfg.AutoAddDiffuse && %type !$="Diffuse") {
 		%suffix = SceneEditorCfg.DiffuseSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
-		if (isImageFile(%testFile))			
-			%this.updateTextureMapImage("Diffuse",%testFile,%layer,true);		
-	}	
-	if(SceneEditorCfg.AutoAddSpecular && %type !$="Specular"){		
+
+		if (isImageFile(%testFile))
+			%this.updateTextureMapImage("Diffuse",%testFile,%layer,true);
+	}
+
+	if(SceneEditorCfg.AutoAddSpecular && %type !$="Specular") {
 		%suffix = SceneEditorCfg.SpecularSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
-		if (isImageFile(%testFile))			
-			%this.updateSpecMap(true,%testFile,true);		
+
+		if (isImageFile(%testFile))
+			%this.updateSpecMap(true,%testFile,true);
 	}
-	if(SceneEditorCfg.AutoAddAO && %type !$="AO"){		
+
+	if(SceneEditorCfg.AutoAddAO && %type !$="AO") {
 		%suffix = SceneEditorCfg.AOSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
 		devLog("AO Check:",%testFile);
-		if (isImageFile(%testFile))			
-			%this.updateAoMap(true,%testFile,true);		
-	}	
-	if(SceneEditorCfg.AutoAddSmoothness && %type !$="Smoothness"){		
+
+		if (isImageFile(%testFile))
+			%this.updateAoMap(true,%testFile,true);
+	}
+
+	if(SceneEditorCfg.AutoAddSmoothness && %type !$="Smoothness") {
 		%suffix = SceneEditorCfg.SmoothnessSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
 		devLog("Smoothness Check:",%testFile);
-		if (isImageFile(%testFile))			
-			%this.updateRoughMap(true,%testFile,true);		
-	}	
-	if(SceneEditorCfg.AutoAddMetalness && %type !$="Metalness"){		
+
+		if (isImageFile(%testFile))
+			%this.updateRoughMap(true,%testFile,true);
+	}
+
+	if(SceneEditorCfg.AutoAddMetalness && %type !$="Metalness") {
 		%suffix = SceneEditorCfg.MetalnessSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
 		devLog("Metalness Check:",%testFile);
-		if (isImageFile(%testFile))			
-			%this.updateMetalMap(true,%testFile,true);		
-	}	
-	if(SceneEditorCfg.AutoAddComposite && %type !$="Composite"){		
+
+		if (isImageFile(%testFile))
+			%this.updateMetalMap(true,%testFile,true);
+	}
+
+	if(SceneEditorCfg.AutoAddComposite && %type !$="Composite") {
 		%suffix = SceneEditorCfg.CompositeSuffix;
 		%testFile = %folder @%fileName@%suffix@%ext;
 		devLog("Composite Check:",%testFile);
-		if (isImageFile(%testFile))			
-			%this.updateCompMap(true,%testFile,true);		
-	}				
+
+		if (isImageFile(%testFile))
+			%this.updateCompMap(true,%testFile,true);
+	}
 }
-	
+
 //------------------------------------------------------------------------------
 $MEP_NoTextureImage = "tlab/materialEditor/assets/unavailable";
 //==============================================================================
-//Select a texture for a material map type 
+//Select a texture for a material map type
 function MaterialEditorGui::openMapFile( %this, %defaultFileName ) {
 	logc("MaterialEditorGui::openMapFile", %defaultFileName );
-	
-		%filters = MaterialEditorGui.textureFormats;
-		
-		if (%defaultFileName $= "" || !isFile(%defaultFileName)) {
-			if(MaterialEditorGui.lastTextureFile !$= "")
-				%defaultFileName = MaterialEditorGui.lastTextureFile;
-			else if (isFile($MEP_BaseObjectPath)){
-				%defaultFileName = $MEP_BaseObjectPath;
-			}
-			else
-				%defaultFileName = "art/*.*";
-		}
+	%filters = MaterialEditorGui.textureFormats;
 
-		%defaultPath = MaterialEditorGui.lastTexturePath;
+	if (%defaultFileName $= "" || !isFile(%defaultFileName)) {
+		if(MaterialEditorGui.lastTextureFile !$= "")
+			%defaultFileName = MaterialEditorGui.lastTextureFile;
+		else if (isFile($MEP_BaseObjectPath)) {
+			%defaultFileName = $MEP_BaseObjectPath;
+		} else
+			%defaultFileName = "art/*.*";
+	}
 
-	
-
+	%defaultPath = MaterialEditorGui.lastTexturePath;
 	%dlg = new OpenFileDialog() {
 		Filters        = %filters;
 		DefaultPath    = %defaultPath;
@@ -102,14 +109,13 @@ function MaterialEditorGui::openMapFile( %this, %defaultFileName ) {
 	};
 	%ret = %dlg.Execute();
 
-	if(%ret) {		
+	if(%ret) {
 		MaterialEditorGui.lastTexturePath = filePath( %dlg.FileName );
 		MaterialEditorGui.lastTextureFile = %filename = %dlg.FileName;
-		
 		%dlg.delete();
 		return makeRelativePath( %filename, getMainDotCsDir() );
 	}
-	
+
 	%dlg.delete();
 	return;
 }
@@ -150,6 +156,7 @@ function MaterialEditorGui::updateTextureMapImage( %this, %type, %texture,%layer
 
 	if (!%skipAutoCheck)
 		%this.CheckAutoUpdateMap(%type, %texture,%layer);
+
 	if (isImageFile(%texture))
 		%bitmapCtrl.setBitmap(%texture);
 
@@ -178,13 +185,13 @@ function MaterialEditorGui::updateDetailNormalStrength(%this,%newStrength) {
 //==============================================================================
 function MaterialEditorGui::updateDiffuseMap(%this,%action,%texture,%skipAutoCheck) {
 	%layer = MaterialEditorGui.currentLayer;
-	%this.updateTextureMapImage("Diffuse",%texture,%layer,%skipAutoCheck);		
+	%this.updateTextureMapImage("Diffuse",%texture,%layer,%skipAutoCheck);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MaterialEditorGui::updateNormalMap(%this,%action,%texture,%skipAutoCheck) {
 	%layer = MaterialEditorGui.currentLayer;
-	%this.updateTextureMapImage("Normal",%texture,%layer,%skipAutoCheck);		
+	%this.updateTextureMapImage("Normal",%texture,%layer,%skipAutoCheck);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -198,7 +205,7 @@ function MaterialEditorGui::updateSpecMap(%this,%action,%texture,%skipAutoCheck)
 		if( %texture !$= "" ) {
 			if (!%skipAutoCheck)
 				%this.CheckAutoUpdateMap("Specular", %texture,%layer);
-		
+
 			MaterialEditorGui.updateActiveMaterial("pixelSpecular[" @ MaterialEditorGui.currentLayer @ "]", 0);
 			MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap(%texture);
 			%bitmap = MaterialEditorPropertiesWindow-->specMapDisplayBitmap.bitmap;
@@ -228,13 +235,14 @@ function MaterialEditorGui::updateCompMap(%this,%action,%texture,%skipAutoCheck)
 		if( %texture !$= "" ) {
 			if (!%skipAutoCheck)
 				%this.CheckAutoUpdateMap("Composite", %texture,%layer);
+
 			MaterialEditorGui.updateActiveMaterial("pixelSpecular[" @ MaterialEditorGui.currentLayer @ "]", 0);
 			MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap(%texture);
 			%bitmap = MaterialEditorPropertiesWindow-->compMapDisplayBitmap.bitmap;
 			%bitmap = strreplace(%bitmap,"tlab/materialEditor/scripts/","");
 			MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap(%bitmap);
 			MaterialEditorPropertiesWindow-->compMapNameText.setText(%bitmap);
-				MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap(%bitmap);
 			MaterialEditorPropertiesWindow-->specMapNameText.setText(%bitmap);
 			MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
 		}
@@ -243,105 +251,92 @@ function MaterialEditorGui::updateCompMap(%this,%action,%texture,%skipAutoCheck)
 		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
 		MaterialEditorPropertiesWindow-->specMapNameText.setText("None");
 		MaterialEditorPropertiesWindow-->specMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
-
 		MaterialEditorGui.updateActiveMaterial("specularMap[" @ %layer @ "]","");
 	}
 
 	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
-function MaterialEditorGui::updateRoughMap(%this,%action,%texture,%skipAutoCheck)
-{
-   %layer = MaterialEditorGui.currentLayer;
-   
-   if( %action )
-   {
+function MaterialEditorGui::updateRoughMap(%this,%action,%texture,%skipAutoCheck) {
+	%layer = MaterialEditorGui.currentLayer;
+
+	if( %action ) {
 		if (%texture $= "")
-     	 %texture = MaterialEditorGui.openFile("texture");
-      if( %texture !$= "" )
-      {       
-      	if (!%skipAutoCheck)
-				%this.CheckAutoUpdateMap("Smoothness", %texture,%layer);  
-         MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%texture);
-      
-         %bitmap = MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.bitmap;
-         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
-         MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%bitmap);
-         MaterialEditorPropertiesWindow-->roughMapNameText.setText(%bitmap);
-         MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
-      }
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->roughMapNameText.setText("None");
-      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
-      MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","");
-   }
-   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+			%texture = MaterialEditorGui.openFile("texture");
+
+		if( %texture !$= "" ) {
+			if (!%skipAutoCheck)
+				%this.CheckAutoUpdateMap("Smoothness", %texture,%layer);
+
+			MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%texture);
+			%bitmap = MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.bitmap;
+			%bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+			MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->roughMapNameText.setText(%bitmap);
+			MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+		}
+	} else {
+		MaterialEditorPropertiesWindow-->roughMapNameText.setText("None");
+		MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+		MaterialEditorGui.updateActiveMaterial("roughMap[" @ %layer @ "]","");
+	}
+
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 
-function MaterialEditorGui::updateaoMap(%this,%action,%texture,%skipAutoCheck)
-{
-   %layer = MaterialEditorGui.currentLayer;
-   
-   if( %action )
-   {
+function MaterialEditorGui::updateaoMap(%this,%action,%texture,%skipAutoCheck) {
+	%layer = MaterialEditorGui.currentLayer;
+
+	if( %action ) {
 		if (%texture $= "")
-      	%texture = MaterialEditorGui.openFile("texture");
-      if( %texture !$= "" )
-      {      
-      	if (!%skipAutoCheck)
-				%this.CheckAutoUpdateMap("AO", %texture,%layer);   
-         MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%texture);
-      
-         %bitmap = MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.bitmap;
-         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
-         MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%bitmap);
-         MaterialEditorPropertiesWindow-->aoMapNameText.setText(%bitmap);
-         MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
-      }
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->aoMapNameText.setText("None");
-      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
-      MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","");
-   }
-   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+			%texture = MaterialEditorGui.openFile("texture");
+
+		if( %texture !$= "" ) {
+			if (!%skipAutoCheck)
+				%this.CheckAutoUpdateMap("AO", %texture,%layer);
+
+			MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%texture);
+			%bitmap = MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.bitmap;
+			%bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+			MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->aoMapNameText.setText(%bitmap);
+			MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+		}
+	} else {
+		MaterialEditorPropertiesWindow-->aoMapNameText.setText("None");
+		MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+		MaterialEditorGui.updateActiveMaterial("aoMap[" @ %layer @ "]","");
+	}
+
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 
-function MaterialEditorGui::updatemetalMap(%this,%action,%texture,%skipAutoCheck)
-{
+function MaterialEditorGui::updatemetalMap(%this,%action,%texture,%skipAutoCheck) {
 	devLog("updatemetalMap:",%action,%texture,%skipAutoCheck);
-   %layer = MaterialEditorGui.currentLayer;
-   
-   if( %action )
-   {
-   	if (%texture $= "")
-     	 %texture = MaterialEditorGui.openFile("texture");
-      if( %texture !$= "" )
-      {    
-      	if (!%skipAutoCheck)
-				%this.CheckAutoUpdateMap("Metalness", %texture,%layer);     
-         MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%texture);
-      
-         %bitmap = MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.bitmap;
-         %bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
-         MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%bitmap);
-         MaterialEditorPropertiesWindow-->metalMapNameText.setText(%bitmap);
-         MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
-      }
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->metalMapNameText.setText("None");
-      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
-      MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","");
-   }
-   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+	%layer = MaterialEditorGui.currentLayer;
+
+	if( %action ) {
+		if (%texture $= "")
+			%texture = MaterialEditorGui.openFile("texture");
+
+		if( %texture !$= "" ) {
+			if (!%skipAutoCheck)
+				%this.CheckAutoUpdateMap("Metalness", %texture,%layer);
+
+			MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%texture);
+			%bitmap = MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.bitmap;
+			%bitmap = strreplace(%bitmap,"tools/materialEditor/scripts/","");
+			MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap(%bitmap);
+			MaterialEditorPropertiesWindow-->metalMapNameText.setText(%bitmap);
+			MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","\"" @ %bitmap @ "\"");
+		}
+	} else {
+		MaterialEditorPropertiesWindow-->metalMapNameText.setText("None");
+		MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap($MEP_NoTextureImage);
+		MaterialEditorGui.updateActiveMaterial("metalMap[" @ %layer @ "]","");
+	}
+
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 
 //PBR Script End
@@ -610,41 +605,35 @@ function MaterialEditorGui::updateAmbientColor(%this,%color) {
 //==============================================================================
 //==============================================================================
 // Set PBR Channel in selectors
-function MaterialEditorGui::setRoughChan(%this, %value)
-{
-   MaterialEditorGui.updateActiveMaterial("SmoothnessChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+function MaterialEditorGui::setRoughChan(%this, %value) {
+	MaterialEditorGui.updateActiveMaterial("SmoothnessChan[" @ MaterialEditorGui.currentLayer @ "]", %value);
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
-function MaterialEditorGui::setAOChan(%this, %value)
-{
-   MaterialEditorGui.updateActiveMaterial("aoChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+function MaterialEditorGui::setAOChan(%this, %value) {
+	MaterialEditorGui.updateActiveMaterial("aoChan[" @ MaterialEditorGui.currentLayer @ "]", %value);
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
-function MaterialEditorGui::setMetalChan(%this, %value)
-{
-   MaterialEditorGui.updateActiveMaterial("metalChan[" @ MaterialEditorGui.currentLayer @ "]", %value);   
-   MaterialEditorGui.guiSync( materialEd_previewMaterial );
+function MaterialEditorGui::setMetalChan(%this, %value) {
+	MaterialEditorGui.updateActiveMaterial("metalChan[" @ MaterialEditorGui.currentLayer @ "]", %value);
+	MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Get PBR Channels
-function MaterialEditorGui::getRoughChan(%this, %channel)
-{
-    %guiElement = roughChanBtn @ %channel;
-    %guiElement.setStateOn(true);
+function MaterialEditorGui::getRoughChan(%this, %channel) {
+	%guiElement = roughChanBtn @ %channel;
+	%guiElement.setStateOn(true);
 }
 //------------------------------------------------------------------------------
-function MaterialEditorGui::getAOChan(%this, %channel)
-{
-    %guiElement = AOChanBtn @ %channel;
-    %guiElement.setStateOn(true);
+function MaterialEditorGui::getAOChan(%this, %channel) {
+	%guiElement = AOChanBtn @ %channel;
+	%guiElement.setStateOn(true);
 }
 //------------------------------------------------------------------------------
-function MaterialEditorGui::getMetalChan(%this, %channel)
-{
-    %guiElement = metalChanBtn @ %channel;
-    %guiElement.setStateOn(true);
+function MaterialEditorGui::getMetalChan(%this, %channel) {
+	%guiElement = metalChanBtn @ %channel;
+	%guiElement.setStateOn(true);
 }
 //------------------------------------------------------------------------------

@@ -36,9 +36,6 @@ function MouseStart::onMouseDragged( %this,%a1,%a2,%a3 ) {
 // Start dragging a toolbar icons group
 function MouseBox::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	%group = %this.parentGroup;
-
-	
-
 	Lab.startToolbarDrag(%group,%a1,%a2,%a3);
 }
 //------------------------------------------------------------------------------
@@ -61,17 +58,15 @@ function Lab::startToolbarDrag( %this,%ctrl,%a1,%a2,%a3 ) {
 		return;
 	}
 
-	if (%ctrl.parentGroup.superClass !$= "EToolbarTrashClass"){
+	if (%ctrl.parentGroup.superClass !$= "EToolbarTrashClass") {
 		%ctrl.originalParent = %ctrl.parentGroup;
 		%ctrl.originalIndex = %ctrl.parentGroup.getObjectIndex(%ctrl);
 	}
 
-	if (%ctrl.getClassName() $= "GuiStackControl"){
+	if (%ctrl.getClassName() $= "GuiStackControl") {
 		%callback = "Lab.onToolbarGroupDroppedDefault";
-	}
-	else {
+	} else {
 		%callback = "Lab.onToolbarIconDroppedDefault";
-		
 	}
 
 	startDragAndDropCtrl(%ctrl,"Toolbar",%callback);
@@ -137,17 +132,17 @@ function Lab::addToolbarItemToGroup(%this,%item,%group,%addBefore) {
 				%obj.extent.x = "6";
 		}
 	}
+
 	%original = %this.getTrashedOriginalIcon(%item);
+
 	if (%original.srcIcon !$= "")
 		%original.srcIcon = "";
-	
+
 	%group.add(%original);
 	%group.updateStack();
 	%group.reorderChild(%original,%addBefore);
-	
 	%item.originalParent = %group;
 	%item.originalIndex = %group.getObjectIndex(%original);
-	
 	Lab.setToolbarDirty(true);
 }
 //------------------------------------------------------------------------------

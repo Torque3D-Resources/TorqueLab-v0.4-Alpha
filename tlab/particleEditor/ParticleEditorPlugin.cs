@@ -25,7 +25,6 @@ function ParticleEditorPlugin::onActivated( %this ) {
 	EditorGui.bringToFront( PE_Window);
 	PE_Window.setVisible( true );
 	PE_Window.makeFirstResponder( true );
-	
 	ParticleEditor.resetEmitterNode();
 	// Set the status bar here
 	EditorGuiStatusBar.setInfo( "Particle editor." );

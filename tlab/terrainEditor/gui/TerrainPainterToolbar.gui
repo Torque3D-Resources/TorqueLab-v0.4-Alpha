@@ -15,23 +15,22 @@ new GuiStackControl(TerrainPainterToolbar) {
    horizSizing = "width";
    vertSizing = "bottom";
    profile = "ToolsDefaultProfile";
-   visible = "0";
+   visible = "1";
    active = "1";
    tooltipProfile = "ToolsToolTipProfile";
    hovertime = "1000";
    isContainer = "1";
    internalName = "TerrainPainterToolbar";
    superClass = "ToolbarPluginStack";
-   hidden = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "31270";
-      disabledGroup = "31271";
-      EditorContainer = "20522";
+      defaultStack = "31274";
+      disabledGroup = "31275";
+      EditorContainer = "20547";
       editorParent = "EditorGuiToolbarStack";
       plugin = "TerrainPainter";
-      stackLists = "31272 31281 31315";
+      stackLists = "31276 31285 31319";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -172,7 +171,7 @@ new GuiStackControl(TerrainPainterToolbar) {
             originalIndex = "1";
             originalParent = "13944";
             pluginName = "TerrainPainter";
-            toolbar = "31270";
+            toolbar = "31274";
       };
       new GuiIconButtonCtrl() {
          buttonMargin = "2 2";
@@ -233,7 +232,7 @@ new GuiStackControl(TerrainPainterToolbar) {
          canSave = "1";
          canSaveDynamicFields = "1";
             pluginName = "TerrainPainter";
-            toolbar = "31270";
+            toolbar = "31274";
       };
       new GuiContainer() {
          margin = "0 0 0 0";
@@ -578,7 +577,7 @@ new GuiStackControl(TerrainPainterToolbar) {
             range = "0 90";
             ticks = "0";
             snap = "0";
-            value = "90";
+            value = "18.8";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";
@@ -695,7 +694,7 @@ new GuiStackControl(TerrainPainterToolbar) {
             range = "1 40";
             ticks = "0";
             snap = "0";
-            value = "2";
+            value = "30";
             position = "2 21";
             extent = "101 13";
             minExtent = "8 2";

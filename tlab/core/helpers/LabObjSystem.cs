@@ -20,15 +20,14 @@ function LabObj::inspect(%this,%obj,%doApply) {
 //==============================================================================
 function LabObj::update(%this,%obj,%field,%value,%fieldId) {
 	logd("LabObj::update(%this,%obj,%field,%value,%fieldId)",%obj.getName(),%field,%value,%fieldId);
-	
 	LabInspect.inspect(%obj);
-	
-	if(%obj.isMemberOfClass(ArrayObject)){
+
+	if(%obj.isMemberOfClass(ArrayObject)) {
 		%initialValue = %obj.getVal(%field);
-		%obj.setVal(%field,%value);		
-	}
-	else {
+		%obj.setVal(%field,%value);
+	} else {
 		%initialValue = %obj.getFieldValue(%field);
+
 		if (%field $= "name")
 			LabInspect.setObjectField(%field,%value);
 		else if (%fieldId !$= "")
@@ -163,12 +162,14 @@ function Lab::removeInspect(%this,%obj) {
 //==============================================================================
 //LabObj.saveList($HLabProfile_DirtyGui_ToolsTabBookMain);
 function LabObj::saveProfileList(%this,%list) {
-	foreach$(%obj in %list){
+	foreach$(%obj in %list) {
 		if (!isObject(%obj))
 			continue;
+
 		Lab_PM.setDirty(%obj);
 		devLog(%obj,"added to dirty list");
 	}
-	Lab_PM.saveDirty();	
+
+	Lab_PM.saveDirty();
 }
 //------------------------------------------------------------------------------

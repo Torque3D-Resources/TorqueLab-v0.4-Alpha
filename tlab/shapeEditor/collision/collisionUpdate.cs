@@ -150,7 +150,7 @@ function ActionEditCollision::updateCollision( %this, %type, %target, %depth, %m
 		ShapeEd.onMeshAdded( getField( %meshList, %i ) );
 
 	ShapeEdCollisions.lastColSettings = %type TAB %target TAB %depth TAB %merge TAB
-												  %concavity TAB %maxVerts TAB %boxMax TAB %sphereMax TAB %capsuleMax;
+													%concavity TAB %maxVerts TAB %boxMax TAB %sphereMax TAB %capsuleMax;
 	ShapeEdCollisions.update_onCollisionChanged();
 	return true;
 }

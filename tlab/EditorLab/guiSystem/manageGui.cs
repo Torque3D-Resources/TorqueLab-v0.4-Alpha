@@ -25,7 +25,7 @@ function Lab::addGui(%this,%gui,%type,%noHide) {
 	case "Toolbar":
 		%container = $LabToolbarContainer;
 		LabToolbarGuiSet.add(%gui);
-	
+
 	case "SideBar":
 		%container = $LabSideBarContainer;
 		LabSideBarGuiSet.add(%gui);
@@ -77,7 +77,7 @@ function Lab::initCoreGuis(%this) {
 //==============================================================================
 function Lab::detachAllEditorGuis(%this) {
 	%this.editorGuisDetached = true;
-	
+
 	foreach(%gui in LabGeneratedSet)
 		%this.detachEditorGui(%gui);
 
@@ -92,10 +92,9 @@ function Lab::detachAllEditorGuis(%this) {
 
 	foreach$(%id in %paletteList)
 		%this.detachEditorGui(%id,true);
-	
+
 	foreach(%gui in LabSideBarGuiSet)
 		Lab.attachEditorGui(%gui);
-	
 
 	%this.resetPluginsBar();
 }
@@ -126,13 +125,12 @@ function Lab::attachAllEditorGuis(%this) {
 		return;
 
 	Lab.editorGuisDetached = false;
-	
-	foreach(%gui in EditorDetachedGuis) 
-		%this.attachEditorGui(%gui);	
-	
 
-	//foreach(%gui in LabGuiSet) 
-		//%this.attachEditorGui(%gui);	
+	foreach(%gui in EditorDetachedGuis)
+		%this.attachEditorGui(%gui);
+
+	//foreach(%gui in LabGuiSet)
+	//%this.attachEditorGui(%gui);
 
 	foreach(%item in LabPaletteItemSet) {
 		$LabPalletteArray.add(%item);
@@ -147,10 +145,10 @@ function Lab::attachAllEditorGuis(%this) {
 function Lab::attachEditorGui(%this,%gui,%dontShow) {
 	%gui.parentGroup = %gui.editorParent;
 
-		if (%gui.isCommon)
-			show(%gui);
-		else
-			hide(%gui);
+	if (%gui.isCommon)
+		show(%gui);
+	else
+		hide(%gui);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

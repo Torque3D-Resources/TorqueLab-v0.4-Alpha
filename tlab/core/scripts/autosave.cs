@@ -9,12 +9,15 @@
 // Handle the escape bind
 function scSceneAutoSaveDelayEdit::onValidate( %this ) {
 	%time = %this.getText();
+
 	if (!strIsNumeric(%time))
 		return;
-	
+
 	%newDelay = mFloatLength(%time,1);
+
 	if (%newDelay $= $TLab_AutoSaveDelay)
 		return;
+
 	$TLab_AutoSaveDelay = %newDelay;
 	devLog("Autosaving delay changed to",$TLab_AutoSaveDelay,"minutes");
 	Lab.SetAutoSave();
@@ -30,20 +33,19 @@ function scSceneAutoSaveCheck::onClick( %this ) {
 //==============================================================================
 // Handle the escape bind
 function Lab::SetAutoSave( %this ) {
-	
-	if ($TLab_AutoSaveEnabled){
+	if ($TLab_AutoSaveEnabled) {
 		if ($TLab_AutoSaveDelay $= "" || !strIsNumeric($TLab_AutoSaveDelay))
 			$TLab_AutoSaveDelay = "1";
-		cancel($LabAutoSaveSchedule);	
+
+		cancel($LabAutoSaveSchedule);
 		$LabAutoSaveSchedule = Lab.schedule($TLab_AutoSaveDelay * 60000,"AutoSaveScene");
 		//$LabAutoSaveSchedule = Lab.schedule(Lab.autoSaveDelay * 60000,"AutoSaveScene");
 		devLog("Autosaving enabled! Saving each",$TLab_AutoSaveDelay,"minutes!");
-	}else{
+	} else {
 		//cancel($LabAutoSaveSchedule);
 		//delObj($LabAutoSaveSchedule);
 		devLog("Autosaving disabled");
 	}
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -51,9 +53,9 @@ function Lab::SetAutoSave( %this ) {
 function Lab::AutoSaveScene( %this ) {
 	if (!EditorGui.isAwake())
 		return;
+
 	Lab.SaveMission();
 	devLog("Scene has been autosaved",$TLab_AutoSaveDelay,"minutes!");
 	Lab.SetAutoSave();
-	
 }
 //------------------------------------------------------------------------------

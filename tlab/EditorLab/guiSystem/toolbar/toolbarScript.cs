@@ -272,6 +272,7 @@ function Lab::saveToolbar(%this,%icon,%disabled) {
 function Lab::storePluginsToolbarState(%this) {
 	if (!Lab.toolbarIsDirty)
 		return;
+
 	foreach(%gui in EditorGuiToolbarStack) {
 		%file = %gui.getFilename();
 
@@ -390,8 +391,8 @@ function Lab::resetAllDisabledIcons(%this) {
 // Dragged control dropped in Toolbar Trash Bin
 function Lab::getIconRootStack(%this, %ctrl) {
 	%test = %ctrl;
-	for(%i=0;%i<8;%i++){
-	
+
+	for(%i=0; %i<8; %i++) {
 		%parent = %test.parentGroup;
 		devLog("Test Parent Name = ",%parent.getName());
 
@@ -399,41 +400,42 @@ function Lab::getIconRootStack(%this, %ctrl) {
 			%toolbar = %test;
 			%i = 99;
 		} else
-			%test = %parent;	
+			%test = %parent;
 	}
 
 	if (isObject(%toolbar))
 		return %toolbar;
-	
+
 	return false;
-	
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::updateAllToolbarStacks(%this) {
 	foreach(%gui in EditorGuiToolbarStack) {
-		if (!%gui.isMemberOfClass("GuiStackControl")) 
+		if (!%gui.isMemberOfClass("GuiStackControl"))
 			continue;
-		
+
 		%this.updateToolbarStack(%gui,true);
 	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::updateToolbarStack(%this,%stack,%fixStructure) {	
-		%stack.updateStack();
-		
-		if(!%fixStructure)
-			return;
-		
-		%DisabledGroup = %stack->DisabledIcons;
-		if (isObject(%DisabledGroup)){
-			%stack.bringToFront(%DisabledGroup);
-		}
-		%StackEnd = %stack->StackEnd;
-		if (isObject(%StackEnd)){
-			%stack.pushToBack(%StackEnd);
-		}
+function Lab::updateToolbarStack(%this,%stack,%fixStructure) {
+	%stack.updateStack();
+
+	if(!%fixStructure)
+		return;
+
+	%DisabledGroup = %stack->DisabledIcons;
+
+	if (isObject(%DisabledGroup)) {
+		%stack.bringToFront(%DisabledGroup);
+	}
+
+	%StackEnd = %stack->StackEnd;
+
+	if (isObject(%StackEnd)) {
+		%stack.pushToBack(%StackEnd);
+	}
 }
 //------------------------------------------------------------------------------

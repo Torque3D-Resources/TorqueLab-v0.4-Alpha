@@ -6,7 +6,6 @@
 
 //==============================================================================
 function LabProgressActionGui::onWake(%this) {
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -22,14 +21,16 @@ function Lab::LoadActionProgress(%this,%text,%progressVar,%note,%delayMS) {
 	pushDlg(LabProgressActionGui);
 	LabProgressActionText.setText(%text);
 	LabProgressActionNote.setText(%note);
-	if (%progressVar $= ""){
+
+	if (%progressVar $= "") {
 		LabProgressActionProgress.visible = 0;
-	}else {
+	} else {
 		LabProgressActionProgress.visible = 1;
 		LabProgressActionProgress.setValue(0);
 		LabProgressActionProgress.variable = %progressVar;
 	}
-	if(%delayMS !$= ""){
+
+	if(%delayMS !$= "") {
 		%this.schedule(%delayMS,"ExitActionProgress");
 	}
 }

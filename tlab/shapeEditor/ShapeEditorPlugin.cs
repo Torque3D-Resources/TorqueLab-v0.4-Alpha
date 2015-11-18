@@ -21,12 +21,10 @@ function ShapeEditorPlugin::initParamsArray( %this,%array ) {
 	%array.setVal("RenderCollision",       "0" TAB "RenderCollision" TAB "TextEdit" TAB "" TAB "" TAB %gId);
 	%array.setVal("AdvancedWindowVisible",       "1" TAB "RenderCollision" TAB "TextEdit" TAB "" TAB "" TAB %gId);
 	%array.setVal("AnimationBarVisible",       "1" TAB "RenderCollision" TAB "TextEdit" TAB "" TAB "" TAB %gId);
-	
 	%array.group[%gId++] = "Grid settings";
 	%array.setVal("ShowGrid",       "1" TAB "ShowGrid" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
 	%array.setVal("GridSize",       "0.1" TAB "GridSize" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
 	%array.setVal("GridDimension",       "40 40" TAB "GridDimension" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
-	
 	%array.group[%gId++] = "Sun settings";
 	%array.setVal("SunDiffuseColor",       "255 255 255 255" TAB "SunDiffuseColor" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
 	%array.setVal("SunAmbientColor",       "180 180 180 255" TAB "SunAmbientColor" TAB "TextEdit" TAB "" TAB "ShapeEdShapeView" TAB %gId);
@@ -60,6 +58,7 @@ function ShapeEditorPlugin::onWorldEditorStartup(%this) {
 		%hint = ShapeHintGroup.getObject(%i);
 		ShapeEdHintMenu.add(%hint.objectType, %hint);
 	}
+
 	if ( !%this.isGameReady ) {
 		// Activate the Shape Editor
 		// Lab.setEditor( %this, true );
@@ -81,7 +80,6 @@ function ShapeEditorPlugin::onWorldEditorStartup(%this) {
 		ShapeEdShapeTreeView.buildVisibleTree(true);
 		EditorGui.bringToFront(ShapeEdPreviewGui);
 		EWToolsPaletteArray->WorldEditorMove.performClick();
-		
 		// Switch to the ShapeEditor UndoManager
 		%this.oldUndoMgr = Editor.getUndoManager();
 		Editor.setUndoManager( ShapeEdUndoManager );
@@ -90,8 +88,8 @@ function ShapeEditorPlugin::onWorldEditorStartup(%this) {
 		// Customise menu bar
 		%this.oldCamFitCmd = %this.replaceMenuCmd( "Camera", 8, "ShapeEdShapeView.fitToShape();" );
 		%this.oldCamFitOrbitCmd = %this.replaceMenuCmd( "Camera", 9, "ShapeEdShapeView.fitToShape();" );
-		
 	}
+
 	%this.isGameReady = true;
 }
 //------------------------------------------------------------------------------
@@ -99,23 +97,16 @@ function ShapeEditorPlugin::onWorldEditorStartup(%this) {
 // Called when the Plugin is activated (Active TorqueLab plugin)
 $SimpleActivation = false;
 function ShapeEditorPlugin::onActivated(%this) {
-	
 	//show(ShapeEdSelectWindow);
-		//show(ShapeEdPropWindow);
+	//show(ShapeEdPropWindow);
 	//Assign the Camera fit to the GuiShapeEdPreview
 	Lab.fitCameraGui = ShapeEdShapeView;
 	// Try to start with the shape selected in the world editor
-	ShapeEditor.selectWorldEditorShape();	
-	
+	ShapeEditor.selectWorldEditorShape();
 	ShapeEditorPlugin.updateAnimBar();
-	
 	ShapeEd.initCollisionPage();
-	
 	Parent::onActivated(%this,$SimpleActivation);
-	
-	
 	ShapeEditor.setDirty(ShapeEditor.isDirty());
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -131,7 +122,6 @@ function ShapeEditorPlugin::onDeactivated(%this) {
 	if( EditorGui-->MatEdPropertiesWindow.visible ) {
 		ShapeEdMaterials.editSelectedMaterialEnd( true );
 	}
-
 
 	// Restore the original undo manager
 	Editor.setUndoManager( %this.oldUndoMgr );
@@ -165,13 +155,10 @@ function ShapeEditorPlugin::onExitMission( %this ) {
 	ShapeEd_DetailTree.removeItem( 0 );
 	ShapeEdMaterialList.clear();
 	ShapeEdMountWindow-->mountList.clear();
-
 	ShapeEdThreadList.clear();
-	
 	ShapeEd.clearNodeTree();
 	ShapeEdThread_List.clear();
 	ShapeEdThread_SeqList.clear();
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -201,5 +188,4 @@ function ShapeEditorPlugin::replaceMenuCmd(%this, %menuTitle, %id, %newCmd) {
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function ShapeEditorPlugin::preparePlugin(%this) {
-	
 }

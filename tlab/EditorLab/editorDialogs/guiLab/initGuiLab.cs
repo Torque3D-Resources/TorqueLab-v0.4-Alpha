@@ -1,5 +1,5 @@
 //==============================================================================
-// Lab GuiManager -> Init Lab GUI Manager System 
+// Lab GuiManager -> Init Lab GUI Manager System
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -28,83 +28,80 @@ $GLab_RescanProfilesOnSave = true;
 $GLab_EmbedColorSetInProfile = false;
 //==============================================================================
 // Load the GuiManager scripts and guis if specified
-function initGuiLab(%loadGui){
-	
+function initGuiLab(%loadGui) {
 	GlobalActionMap.bindCmd(keyboard, "f5", "toggleDlg(LabGuiManager);","");
-	
-	  newScriptObject("GLab");
- newScriptObject("LGTools");
- 
- 	$arProfData = newArrayObject("arProfData");
-  exec("tlab/EditorLab/editorDialogs/guiLab/prefs.cs");   
- /*
-	
-  
-   if (%loadGui)
-      exec("tlab/EditorLab/editorDialogs/guiLab/LabGuiManager.gui");
-            
-   exec("tlab/EditorLab/editorDialogs/guiLab/LabGuiManager.cs");   
+	newScriptObject("GLab");
+	newScriptObject("LGTools");
+	$arProfData = newArrayObject("arProfData");
+	exec("tlab/EditorLab/editorDialogs/guiLab/prefs.cs");
+	/*
+
+
+	  if (%loadGui)
+	     exec("tlab/EditorLab/editorDialogs/guiLab/LabGuiManager.gui");
+
+	  exec("tlab/EditorLab/editorDialogs/guiLab/LabGuiManager.cs");
 
 	execPattern("tlab/EditorLab/editorDialogs/guiLab/pageProfile/*.cs");
 	execPattern("tlab/EditorLab/editorDialogs/guiLab/pageStyle/*.cs");
 	execPattern("tlab/EditorLab/editorDialogs/guiLab/pagePreset/*.cs");
 	execPattern("tlab/EditorLab/editorDialogs/guiLab/pageOption/*.cs");
-	
-   execPattern("tlab/EditorLab/editorDialogs/guiLab/profileScripts/*.cs");   
-    execPattern("tlab/EditorLab/editorDialogs/guiLab/profileTools/*.cs");
-     */
-   //GLab.initColorManager();
-   initGuiSystem();
-	
- 
+
+	  execPattern("tlab/EditorLab/editorDialogs/guiLab/profileScripts/*.cs");
+	   execPattern("tlab/EditorLab/editorDialogs/guiLab/profileTools/*.cs");
+	    */
+	//GLab.initColorManager();
+	initGuiSystem();
 }
 //------------------------------------------------------------------------------
-function postGuiLab(){
+function postGuiLab() {
 	GLab.initColorManager(true);
 	scanAllProfileFile();
 }
 
 //==============================================================================
 // Build the Game related Profiles data list
-function initGameProfilesData() {  
-   doGuiGroupAction("GLab_GameProfileMenu","clear()");
-   newSimSet("GameProfileGroup");
-   foreach( %obj in GuiDataGroup ) {       
-      if( !%obj.isMemberOfClass( "GuiControlProfile" ) )
-         continue;
-      
-         %startCat = getSubStr(%obj.category,0,3);
-        
-         if (%startCat !$= "Gam")
-         	 $GLab_IsGameProfile[%obj.getName()] = true;
-			if (strFind(%obj.getName(),"Tools") || strFind(%obj.getName(),"Lab") || %obj.category $= "Tools" || strFind(%obj.getName(),"Inspector"))
-               $GLab_IsToolProfile[%obj.getName()] = true;
-          //  else
-            //   continue; 
-        // }
-            
-      $ProfileDefault["fontSize"] = %obj.fontSize;
-            
-        GameProfileGroup.add( %obj);
-        doGuiGroupAction("GLab_GameProfileMenu","add(\""@%obj.getName()@"\",\""@%obj.getId()@"\")");
-    }       
+function initGameProfilesData() {
+	doGuiGroupAction("GLab_GameProfileMenu","clear()");
+	newSimSet("GameProfileGroup");
+
+	foreach( %obj in GuiDataGroup ) {
+		if( !%obj.isMemberOfClass( "GuiControlProfile" ) )
+			continue;
+
+		%startCat = getSubStr(%obj.category,0,3);
+
+		if (%startCat !$= "Gam")
+			$GLab_IsGameProfile[%obj.getName()] = true;
+
+		if (strFind(%obj.getName(),"Tools") || strFind(%obj.getName(),"Lab") || %obj.category $= "Tools" || strFind(%obj.getName(),"Inspector"))
+			$GLab_IsToolProfile[%obj.getName()] = true;
+
+		//  else
+		//   continue;
+		// }
+		$ProfileDefault["fontSize"] = %obj.fontSize;
+		GameProfileGroup.add( %obj);
+		doGuiGroupAction("GLab_GameProfileMenu","add(\""@%obj.getName()@"\",\""@%obj.getId()@"\")");
+	}
 }
 //------------------------------------------------------------------------------
 
-function initGuiSystem(%check){
-   if (%check && $GuiSystemLoaded)
-      return;
-      if (!isObject(GameProfileGroup)){
-   
-      initGameProfilesData();
-   }
-   if (!$ProfileScanDone){     
-      //scanAllProfileFile();
-   }
-   
-   //GLab.updateColors();
-   $CanvasSize = Canvas.getExtent();
-   $GuiSystemLoaded = true;
+function initGuiSystem(%check) {
+	if (%check && $GuiSystemLoaded)
+		return;
+
+	if (!isObject(GameProfileGroup)) {
+		initGameProfilesData();
+	}
+
+	if (!$ProfileScanDone) {
+		//scanAllProfileFile();
+	}
+
+	//GLab.updateColors();
+	$CanvasSize = Canvas.getExtent();
+	$GuiSystemLoaded = true;
 }
 //Initialize GuiLab now
 initGuiLab(true);

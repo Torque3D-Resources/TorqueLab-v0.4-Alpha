@@ -11,19 +11,17 @@
 //==============================================================================
 function ETransformTool::getDimension( %this,%axis ) {
 	%obj = EWorldEditor.getSelectedObject(0);
-	
-	
+
 	if( !isObject(%obj) ) {
 		// No SceneObjects selected
 		return;
-	}	
+	}
 
 	%size = %obj.getObjectBox();
 	%scale = %obj.getScale();
 	%sizex = (getWord(%size, 3) - getWord(%size, 0)) * getWord(%scale, 0);
 	%sizey = (getWord(%size, 4) - getWord(%size, 1)) * getWord(%scale, 1);
 	%sizez = (getWord(%size, 5) - getWord(%size, 2)) * getWord(%scale, 2);
-	
 	%scale = %obj.scale;
 
 	if (%axis $= "x" || %axis $= "")
@@ -34,12 +32,10 @@ function ETransformTool::getDimension( %this,%axis ) {
 
 	if (%axis $= "z" || %axis $= "")
 		%this.setFieldValueContainers("TransZ",%sizez);
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function ETransformTool::clearTrans( %this,%axis ) {
-
 	if (%axis $= "x" || %axis $= "")
 		%this.setFieldValueContainers("TransX","0");
 
@@ -55,14 +51,15 @@ function ETransformTool::setSelTrans( %this,%axis ) {
 	%transX = %this-->TransX.getText();
 	%transY = %this-->TransY.getText();
 	%transZ = %this-->TransZ.getText();
-	
 	%pos = EWorldEditor.getSelectionCentroid();
-	
 	%pos = "0 0 0";
+
 	if (%axis $= "x" || %axis $= "")
 		%pos.x = %transX;
+
 	if (%axis $= "y" || %axis $= "")
 		%pos.y = %transY;
+
 	if (%axis $= "z" || %axis $= "")
 		%pos.z = %transZ;
 

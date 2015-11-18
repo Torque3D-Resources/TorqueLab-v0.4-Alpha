@@ -9,7 +9,8 @@
 // Rotation Transform Functions
 //==============================================================================
 function ETransformTool::getAbsRotation( %this ,%axis) {
-	%obj = EWorldEditor.getSelectedObject(0);	
+	%obj = EWorldEditor.getSelectedObject(0);
+
 	if( !isObject(%obj) ) {
 		// No SceneObjects selected
 		return;
@@ -17,7 +18,6 @@ function ETransformTool::getAbsRotation( %this ,%axis) {
 
 	%rot = %obj.getEulerRotation();
 	%rot2 = %obj.getRotation();
-	
 	devLog("Euler rotation:",%rot,"Base rotation:",%rot2);
 }
 //==============================================================================
@@ -27,11 +27,12 @@ function ETransformTool::getAbsRotation( %this ,%axis) {
 //Get Current Euler Rotation for type
 function ETransformTool::getRotation( %this ) {
 	%obj = %this.getSelectionObj();
+
 	if (%obj $= "")
-		return;	
-		
+		return;
+
 	%rot = %obj.getEulerRotation();
-	
+
 	if (%axis $= "x" || %axis $= "")
 		%this.setFieldValueContainers("RotX",getWord(%rot, 0));
 
@@ -40,7 +41,6 @@ function ETransformTool::getRotation( %this ) {
 
 	if (%axis $= "z" || %axis $= "")
 		%this.setFieldValueContainers("RotZ",getWord(%rot, 2));
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -48,15 +48,17 @@ function ETransformTool::setSelRotation( %this,%axis ) {
 	%rotX = %this-->RotX.getText();
 	%rotY = %this-->RotY.getText();
 	%rotZ = %this-->RotZ.getText();
-	
 	%rotation = "0 0 0";
+
 	if (%axis $= "x" || %axis $= "")
 		%rotation.x += %rotX;
+
 	if (%axis $= "y" || %axis $= "")
 		%rotation.y += %rotY;
+
 	if (%axis $= "z" || %axis $= "")
 		%rotation.z += %rotZ;
-	
+
 	%relative = %this-->RotRelative.isStateOn();
 	%localCenter = %this-->RotLocalCenter.isStateOn();
 	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
@@ -65,8 +67,7 @@ function ETransformTool::setSelRotation( %this,%axis ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ETransformTool::clearRotation( %this,%axis ) {	
-
+function ETransformTool::clearRotation( %this,%axis ) {
 	if (%axis $= "x" || %axis $= "")
 		%this.setFieldValueContainers("RotX","0");
 
@@ -85,11 +86,12 @@ function ETransformTool::clearRotation( %this,%axis ) {
 //Get Current Euler Rotation for type
 function ETransformTool::getEulerRotation( %this ) {
 	%obj = %this.getSelectionObj();
+
 	if (%obj $= "")
-		return;	
+		return;
 
 	%rot = %obj.getEulerRotation();
-	
+
 	if (%axis $= "h" || %axis $= "")
 		%this.setFieldValueContainers("RotH",getWord(%rot, 0));
 
@@ -97,23 +99,24 @@ function ETransformTool::getEulerRotation( %this ) {
 		%this.setFieldValueContainers("RotP",getWord(%rot, 1));
 
 	if (%axis $= "b" || %axis $= "")
-		%this.setFieldValueContainers("RotB",getWord(%rot, 2));	
-
+		%this.setFieldValueContainers("RotB",getWord(%rot, 2));
 }
 //==============================================================================
 function ETransformTool::setSelEulerRotation( %this,%axis ) {
 	%rotH = %this-->RotH.getText();
 	%rotP = %this-->RotP.getText();
 	%rotB = %this-->RotB.getText();
-	
 	%rotation = "0 0 0";
+
 	if (%axis $= "h" || %axis $= "")
 		%rotation.x += %rotH;
+
 	if (%axis $= "p" || %axis $= "")
 		%rotation.y += %rotP;
+
 	if (%axis $= "b" || %axis $= "")
 		%rotation.z += %rotB;
-	
+
 	%relative = %this-->RotRelative.isStateOn();
 	%localCenter = %this-->RotLocalCenter.isStateOn();
 	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
@@ -121,8 +124,7 @@ function ETransformTool::setSelEulerRotation( %this,%axis ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ETransformTool::clearEulerRotation( %this,%axis ) {	
-
+function ETransformTool::clearEulerRotation( %this,%axis ) {
 	if (%axis $= "h" || %axis $= "")
 		%this.setFieldValueContainers("RotH","0");
 

@@ -54,7 +54,6 @@ function toggleEditor(%make) {
 		canvas.popDialog(EditorLoadingGui);
 		popInstantGroup();
 		%elapsed = stopPrecisionTimer( %timerId );
-		
 		info( "Time spent in toggleEditor() : " @ %elapsed / 1000.0 @ " s" );
 	}
 }
@@ -159,7 +158,7 @@ function EditorGui::onNewLevelLoaded( %this, %levelName ) {
 	new ScriptObject( EditorMissionCleanup ) {
 		parentGroup = "MissionCleanup";
 	};
-	
+
 	foreach(%plugin  in LabPluginGroup)
 		%plugin.onNewLevelLoaded(%levelName);
 }

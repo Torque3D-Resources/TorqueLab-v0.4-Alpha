@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiFrameSetCtrl(ForestEditorTools) {
    columns = "0";
-   rows = "0 278";
+   rows = "0 277";
    borderWidth = "4";
    borderColor = "0 0 0 0";
    borderEnable = "alwaysOn";
@@ -16,7 +16,7 @@
    anchorLeft = "1";
    anchorRight = "0";
    position = "0 0";
-   extent = "357 820";
+   extent = "306 820";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -34,7 +34,7 @@
       currentMeshMode = "EditorShape";
       currentMode = "Material";
       defaultParent = "GuiGroup";
-      EditorContainer = "20408";
+      EditorContainer = "20595";
       editorParent = "4027";
       fileSpec = "Torque Material Files (materials.cs)|materials.cs|All Files (*.*)|*.*|";
       lastMaterial = "1357";
@@ -64,7 +64,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "357 274";
+      extent = "306 273";
       minExtent = "8 24";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -87,7 +87,7 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "328 2";
+         position = "277 2";
          extent = "20 20";
          minExtent = "16 16";
          horizSizing = "left";
@@ -146,7 +146,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "3 27";
-         extent = "351 242";
+         extent = "300 241";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -171,7 +171,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 18";
-            extent = "351 224";
+            extent = "422 304";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -195,7 +195,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "351 22";
+               extent = "422 22";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -217,7 +217,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "333 2";
+                  position = "404 2";
                   extent = "18 18";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -249,7 +249,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "2 2";
-                  extent = "329 18";
+                  extent = "400 18";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -281,7 +281,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 26";
-               extent = "343 194";
+               extent = "414 274";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -317,7 +317,7 @@
                   canRenameObjects = "1";
                   renameInternal = "1";
                   position = "0 0";
-                  extent = "343 42";
+                  extent = "414 231";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -344,7 +344,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 18";
-            extent = "351 224";
+            extent = "300 223";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -367,7 +367,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "0 0";
-               extent = "351 22";
+               extent = "300 22";
                minExtent = "8 2";
                horizSizing = "width";
                vertSizing = "height";
@@ -389,7 +389,7 @@
                   groupNum = "-1";
                   buttonType = "PushButton";
                   useMouseEvents = "0";
-                  position = "333 2";
+                  position = "282 2";
                   extent = "18 18";
                   minExtent = "8 2";
                   horizSizing = "left";
@@ -421,7 +421,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "2 2";
-                  extent = "329 18";
+                  extent = "278 18";
                   minExtent = "8 2";
                   horizSizing = "width";
                   vertSizing = "bottom";
@@ -453,7 +453,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 26";
-               extent = "343 194";
+               extent = "292 193";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -489,7 +489,7 @@
                   canRenameObjects = "1";
                   renameInternal = "1";
                   position = "0 0";
-                  extent = "343 21";
+                  extent = "282 1491";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -516,7 +516,7 @@
          dynamicPos = "0";
          changeChildSizeToFit = "0";
          changeChildPosition = "0";
-         position = "258 24";
+         position = "207 24";
          extent = "89 22";
          minExtent = "16 16";
          horizSizing = "left";
@@ -653,7 +653,7 @@
          dynamicPos = "1";
          changeChildSizeToFit = "1";
          changeChildPosition = "1";
-         position = "255 27";
+         position = "204 27";
          extent = "89 20";
          minExtent = "16 16";
          horizSizing = "left";
@@ -800,8 +800,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 278";
-      extent = "357 542";
+      position = "0 277";
+      extent = "306 543";
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "bottom";
@@ -831,7 +831,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "3 27";
-         extent = "351 510";
+         extent = "300 511";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -904,6 +904,7 @@
                new GuiInspector(ForestEditorInspector) {
                   dividerMargin = "5";
                   dividerPos = "0.65";
+                  groupFilters = "+Media,+Wind";
                   showCustomFields = "0";
                   stackingType = "Vertical";
                   horizStacking = "Left to Right";
@@ -915,7 +916,7 @@
                   changeChildSizeToFit = "1";
                   changeChildPosition = "1";
                   position = "0 0";
-                  extent = "343 18";
+                  extent = "343 278";
                   minExtent = "16 16";
                   horizSizing = "width";
                   vertSizing = "height";
@@ -928,6 +929,7 @@
                   internalName = "Inspector";
                   canSave = "1";
                   canSaveDynamicFields = "0";
+
                };
             };
          };
@@ -943,7 +945,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "0 19";
-            extent = "351 491";
+            extent = "300 492";
             minExtent = "8 2";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -966,7 +968,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "6 6";
-               extent = "339 103";
+               extent = "288 103";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1011,7 +1013,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 26";
-                  extent = "331 31";
+                  extent = "280 31";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1035,7 +1037,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 0";
-                     extent = "331 10";
+                     extent = "280 10";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
@@ -1053,7 +1055,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "311 12";
+                     position = "260 12";
                      extent = "20 19";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -1074,7 +1076,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "art/models/FarmPack/Nature/Grass";
+                     text = "art/models/DarkTerritory/nature/grass";
                      maxLength = "1024";
                      docking = "Client";
                      margin = "0 0 0 22";
@@ -1084,7 +1086,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 13";
-                     extent = "309 18";
+                     extent = "258 18";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1109,7 +1111,7 @@
                   anchorLeft = "1";
                   anchorRight = "0";
                   position = "4 57";
-                  extent = "331 36";
+                  extent = "280 36";
                   minExtent = "8 2";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1158,7 +1160,7 @@
                      dynamicSize = "0";
                      padding = "0 0 0 0";
                      position = "0 31";
-                     extent = "331 64";
+                     extent = "280 64";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1578,7 +1580,7 @@
                      sinkAllKeyEvents = "0";
                      password = "0";
                      passwordMask = "*";
-                     text = "QUickRocks";
+                     text = "DT Grass";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -1587,7 +1589,7 @@
                      anchorLeft = "1";
                      anchorRight = "0";
                      position = "0 14";
-                     extent = "179 19";
+                     extent = "128 19";
                      minExtent = "8 2";
                      horizSizing = "width";
                      vertSizing = "bottom";
@@ -1607,7 +1609,7 @@
                      groupNum = "-1";
                      buttonType = "PushButton";
                      useMouseEvents = "0";
-                     position = "199 6";
+                     position = "148 6";
                      extent = "125 24";
                      minExtent = "8 2";
                      horizSizing = "left";
@@ -1636,7 +1638,7 @@
                   profile = "ToolsButtonProfile_S1";
                   visible = "1";
                   active = "1";
-                  command = "ForestEditorDialogs.toggleDlg(\"ForestManager\");";
+                  command = "ForestEditorDialogs.toggleDlg(\"ForestManager\",\"2\");";
                   tooltipProfile = "ToolsToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
@@ -1653,7 +1655,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "4 115";
-               extent = "343 75";
+               extent = "292 75";
                minExtent = "8 2";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1679,7 +1681,7 @@
                   fillRowFirst = "1";
                   dynamicSize = "0";
                   padding = "0 0 0 0";
-                  position = "42 3";
+                  position = "16 3";
                   extent = "259 71";
                   minExtent = "8 2";
                   horizSizing = "center";
@@ -1745,7 +1747,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "1";
+                        text = "0.8";
                         maxLength = "1024";
                         docking = "Left";
                         margin = "0 0 0 0";
@@ -1776,7 +1778,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "3";
+                        text = "1.2";
                         maxLength = "1024";
                         docking = "Right";
                         margin = "0 0 12 0";
@@ -1994,7 +1996,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "90";
+                        text = "45";
                         maxLength = "1024";
                         docking = "Right";
                         margin = "0 0 12 0";

@@ -10,7 +10,7 @@
 
 
 function ShapeEditorPlugin::toggleAdvancedOptions(%this) {
-	ShapeEditorDialogs.toggleDlg("Advanced",true);
+	ShapeEditorDialogs.toggleDlg("Advanced","",true);
 	ShapeEditorToolbar-->showAdvanced.setStateOn(ShapeEditorDialogs-->Advanced.isVisible());
 }
 

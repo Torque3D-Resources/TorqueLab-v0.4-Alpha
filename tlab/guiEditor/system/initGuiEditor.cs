@@ -13,26 +13,21 @@ $GuiEd_InitCompleted = false;
 //==============================================================================
 // Toggle the GuiEditor( Close if open and open if closed)
 function GuiEd::InitGuiEditor( %this,%force ) {
-	if (!$GuiEd_InitCompleted || %force){
-		//Nothing here for now...		
-	}		
+	if (!$GuiEd_InitCompleted || %force) {
+		//Nothing here for now...
+	}
+
 	// Init the Common stuff
-	GuiEd.initCommonInspector();	
-	
+	GuiEd.initCommonInspector();
 	Lab.initTemplateManager();
-	
-	
 	// Init the GUI Page stuff
 	GuiEd.initGuiTreeView();
 	GuiEdGui_BottomTabBook.selectPage($GuiEdGui_BottomTabPage);
 	GuiEd.initGuiTemplates();
-	
 	// Init the Profile Page stuff
 	GuiEd.initProfileTreeView();
-	
 	// Init the Library Page stuff
-	GuiEd.initLibraryContent();	
-	
+	GuiEd.initLibraryContent();
 	$GuiEd_InitCompleted = true;
 }
 //------------------------------------------------------------------------------

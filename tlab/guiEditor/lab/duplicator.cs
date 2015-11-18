@@ -23,9 +23,9 @@ $GuiEditDuplicator_fields = $GuiEditDuplicator_general_fields SPC $GuiEditDuplic
 function Lab::buildDuplicatorParams(%this) {
 	%srcPill = GuiEdit_DuplicatorFields-->checkboxSample;
 	hide(%srcPill);
-	
-	GuiEdit_DuplicatorFieldsStack_General.clear();	
-	foreach$(%field in $GuiEditDuplicator_general_fields){
+	GuiEdit_DuplicatorFieldsStack_General.clear();
+
+	foreach$(%field in $GuiEditDuplicator_general_fields) {
 		%pill = cloneObject(%srcPill);
 		%check = %pill-->checkbox;
 		%check.text = %field;
@@ -33,8 +33,10 @@ function Lab::buildDuplicatorParams(%this) {
 		%check.variable = "$GuiEditDuplicator_"@%field;
 		GuiEdit_DuplicatorFieldsStack_Individual.add(%pill);
 	}
+
 	GuiEdit_DuplicatorFieldsStack_Individual.clear();
-	foreach$(%field in $GuiEditDuplicator_individual_fields){
+
+	foreach$(%field in $GuiEditDuplicator_individual_fields) {
 		%pill = cloneObject(%srcPill);
 		%check = %pill-->checkbox;
 		%check.text = %field;
@@ -42,42 +44,42 @@ function Lab::buildDuplicatorParams(%this) {
 		%check.variable = "$GuiEditDuplicator_"@%field;
 		GuiEdit_DuplicatorFieldsStack_Individual.add(%pill);
 	}
+
 	return;
-	
 	%arCfg = createParamsArray("GuiEdit_Duplicator",GuiEdit_DuplicatorStack);
 	%arCfg.updateFunc = "Lab.updateGuiEditDuplicatorField";
 	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
-
 	%arCfg.group[%gid++] = "Select fields to copy";
+
 	foreach$(%field in $GuiEditDuplicator_fields)
-		%arCfg.setVal(%field,       "" TAB %field TAB "checkbox_only" TAB "variable>>$GuiEditDuplicator_"@%field TAB "$GuiEditDuplicator_" TAB %gid);	
-	
+		%arCfg.setVal(%field,       "" TAB %field TAB "checkbox_only" TAB "variable>>$GuiEditDuplicator_"@%field TAB "$GuiEditDuplicator_" TAB %gid);
+
 	buildParamsArray(%arCfg,true);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called from the duplicator fields params and nothing to do yet
-function Lab::updateGuiEditDuplicatorField(%this,%field,%value,%ctrl) {	
-	
+function Lab::updateGuiEditDuplicatorField(%this,%field,%value,%ctrl) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Lab.toggleDuplicator();
 function Lab::toggleDuplicator(%this) {
-	toggleDlg(GuiEditFieldDuplicator);	
+	toggleDlg(GuiEditFieldDuplicator);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Lab.toggleDuplicator();
 function Lab::toggleIndividualFields(%this) {
 	%visible = 1;
+
 	if (GuiEdit_DuplicatorScroll_Individual.visible)
 		%visible = 0;
 
 	%extent = $GuiEditDuplicator_extent[%visible];
 	GuiEdit_DuplicatorScroll_Individual.visible = %visible;
-	GuiEditFieldDuplicator-->showIndividuals.setStateOn(%visible);	
+	GuiEditFieldDuplicator-->showIndividuals.setStateOn(%visible);
 	GuiEdit_DuplicatorFields.setExtent(%extent.x,%extent.y);
 }
 //------------------------------------------------------------------------------
@@ -90,7 +92,7 @@ function GEFD_IndividualMouse::onMouseUp(%this,%mod,%point,%clicks) {
 //Lab.toggleDuplicator();
 function Lab::selectAllGeneralFields(%this,%value) {
 	foreach$(%field in $GuiEditDuplicator_general_fields)
-		eval("$GuiEditDuplicator_"@%field@"= "@%value@";");	
+		eval("$GuiEditDuplicator_"@%field@"= "@%value@";");
 }
 //------------------------------------------------------------------------------
 
@@ -103,21 +105,23 @@ function Lab::setDuplicatorSource(%this) {
 //==============================================================================
 function Lab::copyDuplicatorToSelection(%this) {
 	%src = $GuiEditDuplicator_Source;
-	
+
 	if (!isObject(%src))
 		return;
-		
+
 	%selection =  GuiEditor.getSelection();
+
 	foreach(%tgt in %selection) {
-	//while(isObject(%selection.getObject(%i))) {
+		//while(isObject(%selection.getObject(%i))) {
 		//%tgt = %selection.getObject(%i);
-		foreach$(%field in $GuiEditDuplicator_fields){
+		foreach$(%field in $GuiEditDuplicator_fields) {
 			if (!$GuiEditDuplicator_[%field])
 				continue;
-			
-			%srcVal = %src.getFieldValue(%field);			
+
+			%srcVal = %src.getFieldValue(%field);
 			%tgt.setFieldValue(%field,%srcVal);
-		}		
+		}
+
 		%i++;
 	}
 }

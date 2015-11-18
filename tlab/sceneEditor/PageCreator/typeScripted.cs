@@ -6,13 +6,11 @@
 
 //==============================================================================
 // Navigate through Creator Book Data
-function SEP_Creator::navigateScripted( %this, %address )
-{
+function SEP_Creator::navigateScripted( %this, %address ) {
 	%category = getWord( %address, 1 );
 	%dataGroup = "DataBlockGroup";
 
-	for ( %i = 0; %i < %dataGroup.getCount(); %i++ )
-	{
+	for ( %i = 0; %i < %dataGroup.getCount(); %i++ ) {
 		%obj = %dataGroup.getObject(%i);
 		// echo ("Obj: " @ %obj.getName() @ " - " @ %obj.category );
 
@@ -23,17 +21,13 @@ function SEP_Creator::navigateScripted( %this, %address )
 		if ( CreatorPopupMenu.findText( %obj.category ) == -1 )
 			CreatorPopupMenu.add( %obj.category );
 
-		if ( %address $= "" )
-		{
+		if ( %address $= "" ) {
 			%ctrl = %this.findIconCtrl( %obj.category );
 
-			if ( %ctrl == -1 )
-			{
+			if ( %ctrl == -1 ) {
 				%this.addFolderIcon( %obj.category );
 			}
-		}
-		else if ( %address $= %obj.category )
-		{
+		} else if ( %address $= %obj.category ) {
 			%ctrl = %this.findIconCtrl( %obj.getName() );
 
 			if ( %ctrl == -1 )

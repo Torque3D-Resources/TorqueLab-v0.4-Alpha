@@ -10,10 +10,11 @@ function SEP_ScenePage::init( %this ) {
 	SEP_SceneTreeRenameMenu.clear();
 	SEP_SceneTreeRenameMenu.add("Object name",0);
 	SEP_SceneTreeRenameMenu.add("Internal name",1);
-	
 	%selected = SceneEditorTree.renameInternal;
+
 	if (%selected $= "")
 		%selected = "0";
+
 	SEP_SceneTreeRenameMenu.setSelected(%selected);
 }
 //------------------------------------------------------------------------------
@@ -29,8 +30,6 @@ function SEP_ScenePage::setRenameMode( %this,%modeId ) {
 		SceneEditorTree.renameInternal = false;
 	else
 		SceneEditorTree.renameInternal = true;
-		
-	
 }
 //------------------------------------------------------------------------------
 

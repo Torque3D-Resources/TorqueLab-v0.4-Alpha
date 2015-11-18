@@ -10,8 +10,8 @@ function MatEdDlg_Creator::onWake(%this) {
 	%menu = MatEdDlg_CloneMatList;
 	%menu.clear();
 	%menu.add("Blank Material",0);
-	
 	%count = materialSet.getCount();
+
 	for(%i = 0; %i < %count; %i++) {
 		// Process regular materials here
 		%material = materialSet.getObject(%i);
@@ -27,64 +27,60 @@ function MatEdDlg_Creator::onWake(%this) {
 
 		if( %unlistedFound )
 			continue;
-			
+
 		%menu.add(%material.getName(),%material.getId());
-		
-		
-			
 	}
+
 	%selected = 0;
+
 	if (isObject(MaterialSelector.selectedMaterial))
 		%selected = MaterialSelector.selectedMaterial.getId();
-		
-	%menu.setSelected(%selected);	
-	
 
-	
+	%menu.setSelected(%selected);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function MatEdDlg_CloneMatList::onSelect(%this,%id,%name) {
-	if (%id $= "0" || !isObject(%id)){
+	if (%id $= "0" || !isObject(%id)) {
 		%file = $Pref::MaterialSelector::DefaultMaterialFile;
 		%name = "NewMaterial";
-	}
-	else {
+	} else {
 		%file = %id.getFilename();
+
 		if (!isFile(%file))
 			%file = $Pref::MaterialSelector::DefaultMaterialFile;
-		
+
 		%name = %id.getName()@"_clone";
 	}
-	
+
 	MatEdDlg_CloneMatName.setText(%name);
 	MatEdDlg_CloneMatFile.setText(%file);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MatEdDlg::CreateNewMaterialDlg(%this) {
 	%src = MatEdDlg_CloneMatList.getText();
+
 	if (!isObject(%src))
 		%createBlank = true;
-	
+
 	%name = MatEdDlg_CloneMatName.getText();
+
 	if (%name $= "")
 		return;
-	
+
 	%matName = getUniqueName(%name);
-	
-	if (%createBlank){
+
+	if (%createBlank) {
 		new Material(%matName) {
 			diffuseMap[0] = "core/art/warnMat";
 			mapTo = "unmapped_mat";
 			parentGroup = RootGroup;
 		};
 	}
-	
+
 	%file = MatEdDlg_CloneMatFile.getText();
-	
 	%material.setFilename($Pref::MaterialSelector::DefaultMaterialFile);
 	hide(MatEdDlg_Creator);
 }
@@ -92,7 +88,6 @@ function MatEdDlg::CreateNewMaterialDlg(%this) {
 //------------------------------------------------------------------------------
 // this should create a new material pretty nicely
 function MaterialSelector::initNewMaterial( %this,%material ) {
-
 	// add one to All filter
 	MaterialFilterAllArray.add( "", %material.name );
 	MaterialFilterAllArrayCheckbox.setText("All ( " @ MaterialFilterAllArray.count() + 1 @ " ) ");
@@ -160,7 +155,6 @@ function MaterialSelector::initNewMaterial( %this,%material ) {
 		MaterialSelector-->materialSelection.add(%container);
 	}
 
-	
 	// select me
 	MaterialSelector.updateSelection( %material, "art/textures/core/warnMat.png" );
 }

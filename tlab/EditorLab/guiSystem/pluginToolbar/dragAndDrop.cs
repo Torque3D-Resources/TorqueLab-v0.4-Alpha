@@ -31,22 +31,24 @@ function PluginIcon::DragFailed( %this ) {
 function PluginIcon::DragSuccess( %this ) {
 	Lab.updatePluginIconContainer();
 	Lab.closeDisabledPluginsBin(true);
-	
-	if (!%this.pluginObj.isEnabled){
-		warnLog("Disabled plugin icon dropped, set it enabled:",%this.pluginObj.plugin);		
+
+	if (!%this.pluginObj.isEnabled) {
+		warnLog("Disabled plugin icon dropped, set it enabled:",%this.pluginObj.plugin);
 		Lab.enablePlugin(%this.pluginObj);
 	}
+
 	EWToolsToolbar.resize();
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function PluginIconContainer::onControlDropped( %this,%ctrl,%position ) {
 	%originalCtrl = %ctrl.dragSourceControl;
-	if (%originalCtrl.class $= "PluginIconDisabled"){
-		Lab.enablePlugin(	%originalCtrl.pluginObj);			
+
+	if (%originalCtrl.class $= "PluginIconDisabled") {
+		Lab.enablePlugin(	%originalCtrl.pluginObj);
 	}
+
 	if (%ctrl.parentGroup.dropType !$= "PluginIcon") {
 		warnLog("Only plugins icons can be drop in the Plugin Bar");
 		Parent::onControlDropped( %this,%ctrl,%position );
@@ -60,17 +62,18 @@ function PluginIconContainer::onControlDropped( %this,%ctrl,%position ) {
 	delObj(%ctrl);
 	%originalCtrl.DragSuccess();
 	EWToolsToolbar.resize();
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function PluginIcon::onControlDropped( %this,%ctrl,%position ) {
 	%originalCtrl = %ctrl.dragSourceControl;
-	if (%originalCtrl.class $= "PluginIconDisabled"){
+
+	if (%originalCtrl.class $= "PluginIconDisabled") {
 		devLog(" PluginIcon  DisabledIconDropped");
-		Lab.enablePlugin(	%originalCtrl.pluginObj);		
+		Lab.enablePlugin(	%originalCtrl.pluginObj);
 	}
+
 	if (%ctrl.parentGroup.dropType !$= "PluginIcon") {
 		warnLog("Only plugins icons can be drop in the Plugin Bar");
 		return;
@@ -82,10 +85,9 @@ function PluginIcon::onControlDropped( %this,%ctrl,%position ) {
 
 	if (!ToolsToolbarArray.isMember(%originalCtrl))
 		ToolsToolbarArray.add(%originalCtrl);
-	
+
 	ToolsToolbarArray.reorderChild(%originalCtrl,%this);
 	delObj(%ctrl);
-
 	%originalCtrl.DragSuccess();
 	EWToolsToolbar.resize();
 }
@@ -133,19 +135,17 @@ function PluginIconDisabled::DragSuccess( %this ) {
 //==============================================================================
 function DisabledPluginsBox::onControlDropped( %this,%ctrl,%position ) {
 	%originalIcon = %ctrl.dragSourceControl;
-		
+
 	if (%ctrl.parentGroup.dropType !$= "PluginIcon") {
 		warnLog("Only plugins icons can be drop in the Plugin Bar");
 		return;
 	}
-	
+
 	show(%originalIcon);
 	delObj(%trashedIcon);
 	%this.add(%originalIcon);
-	
 	info(%originalIcon.internalName," dropped in DisabledPluginsBox and should be set disabled",%originalIcon.pluginObj);
 	Lab.disablePlugin(%originalIcon.pluginObj);
-	
-	EWToolsToolbar.resize();	
+	EWToolsToolbar.resize();
 }
 //------------------------------------------------------------------------------

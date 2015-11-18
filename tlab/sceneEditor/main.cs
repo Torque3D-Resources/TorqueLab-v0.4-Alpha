@@ -10,16 +10,12 @@ function initializeSceneEditor() {
 	info( "TorqueLab ->","Initializing Scene Editor plugin" );
 	//Load the guis and scripts
 	execSceneEd(true);
-	
-		//Create the TorqueLab Plugin instance
+	//Create the TorqueLab Plugin instance
 	Lab.createPlugin("SceneEditor","Scene Editor");
-	
 	//Add the Plugin related GUIs to TorqueLab
 	Lab.addPluginGui("SceneEditor",SceneEditorTools);
 	Lab.addPluginToolbar("SceneEditor",SceneEditorToolbar);
 	Lab.addPluginPalette("SceneEditor",SceneEditorPalette);
-	
-
 	Lab.addPluginDlg("SceneEditor",SceneEditorDialogs);
 	SceneEditorPlugin.superClass = "WEditorPlugin";
 	$SceneEd = newScriptObject("SceneEd");
@@ -48,6 +44,7 @@ function execSceneEd(%loadGui) {
 	execPattern("tlab/sceneEditor/tools/*.cs");
 	execPattern("tlab/sceneEditor/PageScene/*.cs");
 	execPattern("tlab/sceneEditor/PageCreator/*.cs");
+	execPattern("tlab/sceneEditor/PageCustom/*.cs");
 	//execPattern("tlab/sceneEditor/ambientManager/*.cs");
 	//execPattern("tlab/sceneEditor/vehicleManager/*.cs");
 }

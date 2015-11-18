@@ -30,11 +30,10 @@ function execMEP(%loadGui) {
 		exec("tlab/materialEditor/gui/MaterialEditorToolbar.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorGui.gui");
 		exec("tlab/materialEditor/gui/MaterialEditorDialogs.gui");
-		exec("tlab/materialEditor/gui/MatPbr.gui");
+
 	}
 
 	// Load Client Scripts.
-
 	exec("./MaterialEditorPlugin.cs");
 	execPattern("tlab/materialEditor/scripts/*.cs");
 	execPattern("tlab/materialEditor/scene/*.cs");

@@ -28,9 +28,8 @@ function ForestEditorPlugin::initParamsArray( %this,%cfgArray ) {
 function ForestEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
 	new PersistenceManager( ForestDataManager );
-	
 	FEP_Manager.init();
-	
+
 	if (isObject(theForest) && ForestEditorGui.isMethod("setActiveForest"))
 		ForestEditorGui.setActiveForest(theForest);
 
@@ -39,22 +38,20 @@ function ForestEditorPlugin::onWorldEditorStartup( %this ) {
 
 	if ( !isObject( ForestMeshGroup ) )
 		new SimGroup( ForestMeshGroup );
-		
-	MissionCleanup.add(ForestMeshGroup);
 
+	MissionCleanup.add(ForestMeshGroup);
 	ForestEditMeshTree.open( ForestItemDataSet );
 	ForestEditTabBook.selectPage(0);
-	
 	FEP_BrushManager.setBrushPressure();
 	FEP_BrushManager.setBrushHardness();
 	FEP_BrushManager.setBrushSize();
-	FEP_BrushManager.setGlobalScale();	
+	FEP_BrushManager.setGlobalScale();
 }
 
 function ForestEditorPlugin::onWorldEditorShutdown( %this ) {
 	if ( isObject( ForestBrushGroup ) )
 		ForestBrushGroup.delete();
-	
+
 	if ( isObject( MissionForestBrushGroup ) )
 		MissionForestBrushGroup.delete();
 
@@ -71,11 +68,9 @@ function ForestEditorPlugin::onActivated( %this ) {
 	ForestEditorGui.setVisible( true );
 	ForestEditorGui.makeFirstResponder( true );
 	//ForestEditToolbar.setVisible( true );
-	
 	Parent::onActivated(%this);
 	ForestEditMeshTree.initTree();
 	ForestEditBrushTree.initTree();
-	
 	// Open the Brush tab.
 	ForestEditTabBook.selectPage(0);
 	// Sync the pallete button state
@@ -151,7 +146,6 @@ function ForestEditorPlugin::onActivated( %this ) {
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
 function ForestEditorPlugin::onDeactivated( %this ) {
-	
 	//FEP_Manager.detachMissionBrushData();
 	ForestEditorGui.setVisible( false );
 	ETerrainEditor.setBrushSize( this.previousBrushSize);
@@ -162,7 +156,6 @@ function ForestEditorPlugin::onDeactivated( %this ) {
 
 	// Also take this opportunity to save.
 	ForestDataManager.saveDirty();
-	
 	Parent::onDeactivated(%this);
 }
 //------------------------------------------------------------------------------
@@ -175,11 +168,10 @@ function ForestEditorPlugin::onPluginCreated( %this ) {
 
 //==============================================================================
 // Called when the mission file has been saved
-function ForestEditorPlugin::onNewLevelLoaded( %this, %file ) {	
-	
+function ForestEditorPlugin::onNewLevelLoaded( %this, %file ) {
 	if (isObject(theForest) && ForestEditorGui.isMethod("setActiveForest"))
 		ForestEditorGui.setActiveForest(theForest);
-	
+
 	Parent::onNewLevelLoaded( %this, %file );
 }
 //------------------------------------------------------------------------------
@@ -192,20 +184,20 @@ function ForestEditorPlugin::clearDirty( %this ) {
 	%this.dirty = false;
 }
 
-function ForestEditorPlugin::onSaveMission( %this, %missionFile ) {	
+function ForestEditorPlugin::onSaveMission( %this, %missionFile ) {
 	ForestDataManager.saveDirty();
-	if (isObject(theForest)){
+
+	if (isObject(theForest)) {
 		%file = theForest.datafile;
 
 		if (!isFile(%file))
-			%file = filePath(theForest.getFilename())@"/data.forest";	
+			%file = filePath(theForest.getFilename())@"/data.forest";
 
 		if (isFile(%file))
 			theForest.saveDataFile(%file);
 	}
-		
+
 	FEP_Manager.saveBrushData();
-	
 }
 
 

@@ -7,10 +7,10 @@
 
 function ShapeEdShapeView::onDetailChanged( %this ) {
 	// Update slider
-	if ( mRound( ShapeEdAdvancedWindow-->detailSlider.getValue() ) != %this.currentDL )
-		ShapeEdAdvancedWindow-->detailSlider.setValue( %this.currentDL );
+	if ( mRound( ShapeEdAdv_Details-->detailSlider.getValue() ) != %this.currentDL )
+		ShapeEdAdv_Details-->detailSlider.setValue( %this.currentDL );
 
-	ShapeEdAdvancedWindow-->detailSize.setText( %this.detailSize );
+	ShapeEdAdv_Details-->detailSize.setText( %this.detailSize );
 	ShapeEd.onDetailsChanged();
 	%id = ShapeEd_DetailTree.getSelectedItem();
 
@@ -27,7 +27,7 @@ function ShapeEdShapeView::onDetailChanged( %this ) {
 function ShapeEd::onEditDetailSize( %this ) {
 	// Change the size of the current detail level
 	%oldSize = ShapeEditor.shape.getDetailLevelSize( ShapeEdShapeView.currentDL );
-	%detailSize = ShapeEdAdvancedWindow-->detailSize.getText();
+	%detailSize = ShapeEdAdv_Details-->detailSize.getText();
 	ShapeEditor.doEditDetailSize( %oldSize, %detailSize );
 }
 
@@ -64,7 +64,7 @@ function ShapeEdDetails::onSetObjectNode( %this ) {
 }
 
 //==============================================================================
-// ShapeEditor -> Node Editing 
+// ShapeEditor -> Node Editing
 //==============================================================================
 
 
@@ -74,6 +74,7 @@ function ShapeEd::onDetailRenamed( %this, %oldName, %newName ) {
 	%id = ShapeEd_DetailTree.findItemByName( %oldName );
 
 	if ( %id > 0 ) {
+		
 		%size = ShapeEd_DetailTree.getItemValue( %id );
 		ShapeEd_DetailTree.editItem( %id, %newName, %size );
 
@@ -88,10 +89,10 @@ function ShapeEd::onDetailSizeChanged( %this, %oldSize, %newSize ) {
 	// --- MISC ---
 	ShapeEdShapeView.refreshShape();
 	%dl = ShapeEditor.shape.getDetailLevelIndex( %newSize );
-
-	if ( ShapeEdAdvancedWindow-->detailSize.getText() $= %oldSize ) {
+	devLog("ShapeEd::onDetailSizeChanged( %this, %oldSize, %newSize )",%oldSize, %newSize,"DL",%dl);
+	if ( ShapeEdAdv_Details-->detailSize.getText() $= %oldSize ) {
 		ShapeEdShapeView.currentDL = %dl;
-		ShapeEdAdvancedWindow-->detailSize.setText( %newSize );
+		ShapeEdAdv_Details-->detailSize.setText( %newSize );
 		ShapeEdDetails-->meshSize.setText( %newSize );
 	}
 
@@ -121,28 +122,30 @@ function ShapeEd::onDetailSizeChanged( %this, %oldSize, %newSize ) {
 }
 
 function ShapeEd::onDetailsChanged( %this ) {
+	devLog("ShapeEd::onDetailsChanged");
 	%detailCount = ShapeEditor.shape.getDetailLevelCount();
-	ShapeEdAdvancedWindow-->detailSlider.range = "0" SPC ( %detailCount-1 );
+	ShapeEdAdv_Details-->detailSlider.range = "0" SPC ( %detailCount-1 );
 
 	if ( %detailCount >= 2 )
-		ShapeEdAdvancedWindow-->detailSlider.ticks = %detailCount - 2;
+		ShapeEdAdv_Details-->detailSlider.ticks = %detailCount - 2;
 	else
-		ShapeEdAdvancedWindow-->detailSlider.ticks = 0;
+		ShapeEdAdv_Details-->detailSlider.ticks = 0;
 
 	// Initialise imposter settings
-	ShapeEdAdvancedWindow-->bbUseImposters.setValue( ShapeEditor.shape.getImposterDetailLevel() != -1 );
+	ShapeEdAdv_Details-->bbUseImposters.setValue( ShapeEditor.shape.getImposterDetailLevel() != -1 );
 
 	// Update detail parameters
 	if ( ShapeEdShapeView.currentDL < %detailCount ) {
 		%settings = ShapeEditor.shape.getImposterSettings( ShapeEdShapeView.currentDL );
+		devLog("ShapeEd::onDetailsChanged SETTINGS LIST=",%settings);
 		%isImposter = getWord( %settings, 0 );
-		ShapeEdAdvancedWindow-->imposterInactive.setVisible( !%isImposter );
-		ShapeEdAdvancedWindow-->bbEquatorSteps.setText( getField( %settings, 1 ) );
-		ShapeEdAdvancedWindow-->bbPolarSteps.setText( getField( %settings, 2 ) );
-		ShapeEdAdvancedWindow-->bbDetailLevel.setText( getField( %settings, 3 ) );
-		ShapeEdAdvancedWindow-->bbDimension.setText( getField( %settings, 4 ) );
-		ShapeEdAdvancedWindow-->bbIncludePoles.setValue( getField( %settings, 5 ) );
-		ShapeEdAdvancedWindow-->bbPolarAngle.setText( getField( %settings, 6 ) );
+		//ShapeEdAdv_Details-->imposterInactive.setVisible( !%isImposter );
+		ShapeEdAdv_Details-->bbEquatorSteps.setText( getField( %settings, 1 ) );
+		ShapeEdAdv_Details-->bbPolarSteps.setText( getField( %settings, 2 ) );
+		ShapeEdAdv_Details-->bbDetailLevel.setText( getField( %settings, 3 ) );
+		ShapeEdAdv_Details-->bbDimension.setText( getField( %settings, 4 ) );
+		ShapeEdAdv_Details-->bbIncludePoles.setValue( getField( %settings, 5 ) );
+		ShapeEdAdv_Details-->bbPolarAngle.setText( getField( %settings, 6 ) );
 	}
 }
 

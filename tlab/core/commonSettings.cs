@@ -14,19 +14,19 @@ function Lab::initCommonParams( %this ) {
 //==============================================================================
 //COMMON EDITOR SETTINGS
 	//Binds and inputs
-/*	%gid = 0;
-	%ar = %this.newParamsArray("Input","Common","");
-	%ar.group[%gid++] = "Mouse settings";
-	%ar.prefGroup = "$Mouse::";
-	%ar.autoSyncPref = true;
-	%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "$Mouse::CameraSpeed" TAB %gid);
-	%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "" TAB %gid);
-	*///General
+	/*	%gid = 0;
+		%ar = %this.newParamsArray("Input","Common","");
+		%ar.group[%gid++] = "Mouse settings";
+		%ar.prefGroup = "$Mouse::";
+		%ar.autoSyncPref = true;
+		%ar.setVal("MouseSpeed",      "2.0" TAB "Mouse speed" TAB "SliderEdit" TAB "range>>0 1.5;;precision>>2" TAB "$Mouse::CameraSpeed" TAB %gid);
+		%ar.setVal("MouseScrollSpeed",      "1" TAB "Mouse scroll speed" TAB "SliderEdit" TAB "range>>0 3.15;;precision>>2" TAB "" TAB %gid);
+		*///General
 	%gid = 0;
 	%ar = %this.newParamsArray("General","Common","",false);
 	%ar.group[%gid++] = "General Lab Editor settings";
 	%ar.setVal("undoLimit",       "40" TAB "undoLimit" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
-	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);	
+	%ar.setVal("DefaultPlugin",       "SceneEditorPlugin" TAB "Default Plugin" TAB "TextEdit" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("TorsionPath",       "C:\Program Files (x86)\Torsion" TAB "Path to Torsion" TAB "TextEdit_2l" TAB "" TAB "$Cfg_TorsionPath" TAB %gid);
 	%ar.setVal("useNativeMenu",       "0" TAB "Use the native menu" TAB "Checkbox" TAB "" TAB "Lab.setNativeMenuSystem(**);" TAB %gid);
 	%ar.setVal("newLevelFile",       "tlab/levels/BlankRoom.mis" TAB "newLevelFile" TAB "FileSelect" TAB "" TAB "Lab" TAB %gid);
@@ -49,19 +49,16 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("invertYAxis",       "0" TAB "invertYAxis" TAB "Checkbox" TAB "" TAB "Lab" TAB %gid);
 	%ar.setVal("MouseMoveMultiplier",      "1" TAB "Mouse camera speed scalar" TAB "sliderEdit" TAB "range>>0 5;;tickat>>0.01" TAB "$Camera::MouseMoveMultiplier" TAB %gid);
 	%ar.setVal("MouseScrollMultiplier",      "1" TAB "Mouse camera scroll scalar" TAB "sliderEdit" TAB "range>>0 5;;tickat>>0.01" TAB "$Camera::MouseScrollMultiplier" TAB %gid);
-	
 //==============================================================================
 //Development EDITOR SETTINGS
-
 	//Binds and inputs
 	%gid = 0;
 	%ar = %this.newParamsArray("Console","Development" TAB "Dev","",true);
 	%ar.prefGroup = "$pref::Console::";
 	%ar.autoSyncPref = true;
 	%ar.prefModeOnly = true;
-
 	//%ar.style = "StyleA";
-	%ar.group[%gid++] = "Main editor frame";	
+	%ar.group[%gid++] = "Main editor frame";
 	%ar.setVal("TraceLogLevel",      "1" TAB "TraceLogLevel" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
 	%ar.setVal("ShowNotes",      "1" TAB "ShowNotes" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
 	%ar.setVal("ShowInfos",      "1" TAB "ShowInfos" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
@@ -72,18 +69,16 @@ function Lab::initCommonParams( %this ) {
 	%ar.setVal("MouseDragLogDelay",      "0.8" TAB "MouseDragLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
 	%ar.setVal("MouseMoveLog",      "0" TAB "MouseMoveLog" TAB "SliderEdit" TAB "range>>0 5;;tickat>>1" TAB "$pref::Console::" TAB %gid);
 	%ar.setVal("MouseMoveLogDelay",      "0.8" TAB "MouseMoveLogDelay" TAB "SliderEdit" TAB "range>>0 2;;tickat>>0.1" TAB "$pref::Console::" TAB %gid);
-	
 //==============================================================================
 //Interface EDITOR SETTINGS
-$FrameMainSizes = "Thin Normal Large";
+	$FrameMainSizes = "Thin Normal Large";
 	//Binds and inputs
 	%gid = 0;
 	%ar = %this.newParamsArray("Editor","Interface","",true);
 	%ar.prefGroup = "$LabCfg_EditorUI_";
 	%ar.autoSyncPref = true;
-	
 	//%ar.style = "StyleA";
-	%ar.group[%gid++] = "Main editor frame";	
+	%ar.group[%gid++] = "Main editor frame";
 	%ar.setVal("ToolFrameSize",      "Normal" TAB "Side frame column size" TAB "Dropdown" TAB "itemList>>$FrameMainSizes" TAB "Lab.setEditorToolFrameSize(*val*);" TAB %gid);
 	%ar.setVal("ToolFrameLocked",      "0" TAB "Lock side frame resizing" TAB "Checkbox" TAB "ff>>gg" TAB "Lab.lockEditorToolFrame(*val*);" TAB %gid);
 //==============================================================================
@@ -92,7 +87,6 @@ $FrameMainSizes = "Thin Normal Large";
 	%gid = 0;
 	%ar = %this.newParamsArray("Colors","WorldEditor");
 	%ar.group[%gid++] = "World editor colors settings";
-	
 	%ar.setVal("gridColor",       "102 102 102 100" TAB "gridColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("gridOriginColor",      "255 255 255 100"  TAB "gridOriginColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("gridMinorTickColor",     "51 51 51 100"     TAB "gridMinorTickColor" TAB "ColorSlider" TAB "mode>>int" TAB "EWorldEditor" TAB %gid);
@@ -138,7 +132,6 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.setVal("renderPopupBackground",       "1" TAB "renderPopupBackground" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("renderSelectionBox",       "1" TAB "renderSelectionBox" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
 	%ar.setVal("showMousePopupInfo",       "1" TAB "showMousePopupInfo" TAB "CheckBox" TAB "" TAB "EWorldEditor" TAB %gid);
-	
 	//Misc
 	%gid = 0;
 	%ar = %this.newParamsArray("Misc","WorldEditor");
@@ -156,7 +149,7 @@ $FrameMainSizes = "Thin Normal Large";
 //Gizmo
 	%gid = 0;
 	%ar = %this.newParamsArray("AxisGizmo","WorldEditor");
-	%ar.group[%gid++] = "Axis gizmo settings";	
+	%ar.group[%gid++] = "Axis gizmo settings";
 	%ar.setVal("gridColor",       "102 102 102 100" TAB "Grid color" TAB "ColorSlider" TAB "mode>>int" TAB "GlobalGizmoProfile>>Lab.setGizmoGridColor(*val*);" TAB %gid);
 	%ar.setVal("gridSize",       "10" TAB "gridSize" TAB "SliderEdit" TAB "range>>0 200" TAB "GlobalGizmoProfile>>Lab.setGizmoGridSize(**);" TAB %gid);
 	%ar.setVal("planeDim",       "500" TAB "planeDim" TAB "SliderEdit" TAB "range>>0 1000" TAB "GlobalGizmoProfile" TAB %gid);
@@ -168,16 +161,13 @@ $FrameMainSizes = "Thin Normal Large";
 	%ar.setVal("allowSnapRotations",       "0" TAB "allowSnapRotations" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("rotationSnap",       "15" TAB "rotationSnap" TAB "SliderEdit" TAB "range>>0 45;;tickAt 1" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("allowSnapScale",       "0" TAB "allowSnapScale" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
-	%ar.setVal("scaleSnap",       "15" TAB "scaleSnap" TAB "SliderEdit" TAB "range>>0 2;;tickAt 0.05" TAB "GlobalGizmoProfile" TAB %gid);	
-	
+	%ar.setVal("scaleSnap",       "15" TAB "scaleSnap" TAB "SliderEdit" TAB "range>>0 2;;tickAt 0.05" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderWhenUsed",       "0" TAB "renderWhenUsed" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderInfoText",       "1" TAB "renderInfoText" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderPlane",       "1" TAB "renderPlane" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderPlaneHashes",       "1" TAB "renderPlaneHashes" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderSolid",       "0" TAB "renderSolid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
 	%ar.setVal("renderMoveGrid",       "1" TAB "renderMoveGrid" TAB "Checkbox" TAB "" TAB "GlobalGizmoProfile" TAB %gid);
-	
-	
 }
 //------------------------------------------------------------------------------
 

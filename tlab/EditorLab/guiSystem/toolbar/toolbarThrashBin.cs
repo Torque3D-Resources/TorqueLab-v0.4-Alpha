@@ -10,7 +10,7 @@
 
 //==============================================================================
 // Dragged control dropped in Toolbar Trash Bin
-function EToolbarTrashClass::onControlDropped(%this, %control, %dropPoint) {	
+function EToolbarTrashClass::onControlDropped(%this, %control, %dropPoint) {
 	Lab.checkTrashDroppedCtrl(%control);
 }
 //------------------------------------------------------------------------------
@@ -23,16 +23,16 @@ function Lab::checkTrashDroppedCtrl(%this, %control) {
 	%droppedCtrl = %control.dragSourceControl;
 	Lab.hideDisabledToolbarDropArea(	);
 	show(%droppedCtrl);
+
 	if (%control.dropType !$= "Toolbar") {
-		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);		
+		warnLog("Toolbar thrash dropped invalid droptype ctrl:",%control);
 		return;
 	}
-	
+
 	if (%droppedCtrl.isMemberOfClass("GuiStackControl"))
-		%this.addStackToGuiTrash(%droppedCtrl); 
+		%this.addStackToGuiTrash(%droppedCtrl);
 	else
 		%this.addCtrlToGuiTrash(%droppedCtrl);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -40,14 +40,16 @@ function Lab::checkTrashDroppedCtrl(%this, %control) {
 function Lab::addStackToGuiTrash(%this,%ctrl) {
 	for(%i = %ctrl.getCount()-1; %i >= 0; %i--) {
 		%obj = %ctrl.getObject(%i);
-		
+
 		if (strFindWords(%obj.internalName,"DisabledIcons StackEnd GroupDivider"))
-			continue;		
-		
-		%this.addCtrlToGuiTrash(%obj);	
+			continue;
+
+		%this.addCtrlToGuiTrash(%obj);
 	}
+
 	%stack = %ctrl.toolbar;
 	delObj(%ctrl);
+
 	if (isObject(%stack))
 		Lab.updateToolbarStack(%stack);
 	else
@@ -58,37 +60,35 @@ function Lab::addStackToGuiTrash(%this,%ctrl) {
 // Dragged control dropped in Toolbar Trash Bin
 function Lab::addCtrlToGuiTrash(%this, %ctrl,%alreadyCloned) {
 	Lab.setToolbarDirty(true);
+
 	if (%ctrl.isMemberOfClass("GuiIconButtonCtrl"))
 		%container = EToolbarIconTrash;
 	else
-		%container = EToolbarBoxTrash;	
+		%container = EToolbarBoxTrash;
 
-	if (%alreadyCloned){
-		%container.add(%ctrl);	
+	if (%alreadyCloned) {
+		%container.add(%ctrl);
 		return;
 	}
-	
 
 	%result = Lab.setToolbarCtrlDisabled(%ctrl,"1");
-	if (%result){
+
+	if (%result) {
 		%trashCtrl = %ctrl.deepClone();
 		%trashCtrl.srcIcon = %ctrl;
-	}
-	else
+	} else
 		%trashCtrl = %ctrl;
-	
-	%container.add(%trashCtrl);	
 
-	
+	%container.add(%trashCtrl);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Dragged control dropped in Toolbar Trash Bin
-function Lab::getTrashedOriginalIcon(%this,  %ctrl) {	
+function Lab::getTrashedOriginalIcon(%this,  %ctrl) {
 	//%disabledGroup = %ctrl.toolbar-->DisabledIcons;
 	if (!isObject(%ctrl.srcIcon))
 		return %ctrl;
-	
+
 	devLog(%ctrl,"Original icon found:",%ctrl.srcIcon);
 	%originalIcon = %ctrl.srcIcon;
 	delObj(%ctrl);
@@ -98,31 +98,32 @@ function Lab::getTrashedOriginalIcon(%this,  %ctrl) {
 //==============================================================================
 function Lab::setToolbarCtrlDisabled(%this,%ctrl) {
 	%icon.canSaveDynamicFields = true;
-	
-	if (!isObject( %ctrl.toolbar)){
+
+	if (!isObject( %ctrl.toolbar)) {
 		%toolbar = %this.getIconRootStack(%ctrl);
+
 		if (!isObject(%toolbar))
 			return false;
-		
+
 		%ctrl.toolbar = %toolbar;
 	}
 
 	%disabledGroup = %ctrl.toolbar-->DisabledIcons;
+
 	if (!isObject(%disabledGroup))
 		return false;
-			
+
 	//if (%ctrl.internalName $="")
-		//%ctrl.internalName = getUniqueInternalName(%ctrl.toolbar.getName()@"_Icon",%disabledGroup,true);
-		
+	//%ctrl.internalName = getUniqueInternalName(%ctrl.toolbar.getName()@"_Icon",%disabledGroup,true);
 //	%clone = %ctrl.deepClone();
 //	%clone.srcIcon = %ctrl;
 	%disabledGroup.add(%ctrl);
 	return true;
 	/*
 	return;
-		
-		
-		
+
+
+
 	if (%icon.locked $= %disabled)
 		return;
 
@@ -140,10 +141,11 @@ function Lab::setToolbarCtrlDisabled(%this,%ctrl) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Dragged control dropped in Toolbar Trash Bin
-function Lab::initToolbarTrash(%this,%showAll) {	
+function Lab::initToolbarTrash(%this,%showAll) {
 	EToolbarIconTrash.clear();
 	EToolbarBoxTrash.clear();
-	foreach(%gui in EditorGuiToolbarStack) {		
+
+	foreach(%gui in EditorGuiToolbarStack) {
 		%disabledGroup = %gui-->DisabledIcons;
 
 		if (!isObject(%disabledGroup))
@@ -153,10 +155,12 @@ function Lab::initToolbarTrash(%this,%showAll) {
 			%ctrl = %disabledGroup.getObject(%i);
 			%clone = %ctrl.deepClone();
 			%clone.srcCtrl = %icon;
+
 			if (%showAll)
 				show(%clone);
 			else
 				hide(%clone);
+
 			%this.addCtrlToGuiTrash(%clone,true);
 		}
 	}
@@ -164,21 +168,23 @@ function Lab::initToolbarTrash(%this,%showAll) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Dragged control dropped in Toolbar Trash Bin
-function Lab::setToolbarPluginTrash(%this, %pluginObj) {	
-	
+function Lab::setToolbarPluginTrash(%this, %pluginObj) {
 	for(%i=EToolbarIconTrash.getCount()-1; %i >=0; %i--) {
-			%ctrl = EToolbarIconTrash.getObject(%i);
-			if (%ctrl.pluginName !$= %pluginObj.plugin && %ctrl.pluginName !$= "")
-				hide(%ctrl);
-			else
-				show(%ctrl);				
+		%ctrl = EToolbarIconTrash.getObject(%i);
+
+		if (%ctrl.pluginName !$= %pluginObj.plugin && %ctrl.pluginName !$= "")
+			hide(%ctrl);
+		else
+			show(%ctrl);
 	}
+
 	for(%i=EToolbarBoxTrash.getCount()-1; %i >=0; %i--) {
-			%ctrl = EToolbarBoxTrash.getObject(%i);
-			if (%ctrl.pluginName !$= %pluginObj.plugin && %ctrl.pluginName !$= "")
-				hide(%ctrl);
-			else
-				show(%ctrl);				
-	}	
+		%ctrl = EToolbarBoxTrash.getObject(%i);
+
+		if (%ctrl.pluginName !$= %pluginObj.plugin && %ctrl.pluginName !$= "")
+			hide(%ctrl);
+		else
+			show(%ctrl);
+	}
 }
 //------------------------------------------------------------------------------

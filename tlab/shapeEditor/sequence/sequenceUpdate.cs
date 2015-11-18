@@ -9,7 +9,7 @@ function ShapeEd::onAddSequence( %this, %name ) {
 
 	// Use the currently selected sequence as the base
 	%curSeqName = %this.selectedSequence;
-	
+
 	if ( %curSeqName $= "" ) {
 		// No sequence selected => open dialog to browse for one
 		getLoadFilename( "COLLADA Files|*.dae|DSQ Files|*.dsq|Google Earth Files|*.kmz", %this @ ".onAddSequenceFromBrowse", ShapeEdFromMenu.lastPath );
@@ -20,9 +20,7 @@ function ShapeEd::onAddSequence( %this, %name ) {
 		%start = getField( %sourceData, 2 );
 		%end = getField( %sourceData, 3 );
 		%frameCount = getField( %sourceData, 4 );
-		
 		// Add the new sequence
-		
 		ShapeEditor.doAddSequence( %name, %curSeqName, %start, %end );
 	}
 }
@@ -39,10 +37,9 @@ function ShapeEd::onAddSequenceFromBrowse( %this, %path ) {
 // ShapeEditor Sequence Update -> Name
 //==============================================================================
 //==============================================================================
-function ShapeEd::onEditSequenceName( %this,%seqName,%newName ) {	
-	if ( %seqName !$= "" && %newName !$= "") 	
-			ShapeEditor.doRenameSequence( %seqName, %newName );
-	
+function ShapeEd::onEditSequenceName( %this,%seqName,%newName ) {
+	if ( %seqName !$= "" && %newName !$= "")
+		ShapeEditor.doRenameSequence( %seqName, %newName );
 }
 
 //==============================================================================
@@ -65,7 +62,6 @@ function ShapeEd::onToggleCyclic( %this,%seqName ) {
 //==============================================================================
 function ShapeEd::onEditPriority( %this,%seqName ) {
 	//%seqName = ShapeEdSequenceList.getSelectedName();
-
 	if ( %seqName !$= "" ) {
 		%newPriority = %this-->priority.getText();
 
@@ -88,9 +84,11 @@ function ShapeEd::onEditBlend( %this,%seqName,%pill ) {
 		%oldBlendData = ShapeEditor.shape.getSequenceBlend( %seqName );
 		%oldBlend = getField( %oldBlendData, 0 );
 		%blend = %pill-->blend.isStateOn();
+
 		//%blend = %this-->blendFlag.getValue();
 		if (%blend $= "")
 			%blend = %oldBlend;
+
 		// Ignore changes to the blend reference for non-blend sequences
 		if ( !%oldBlend && !%blend )
 			return;
@@ -137,8 +135,8 @@ function ShapeEd::onEditSequenceSource( %this, %from ,%pill ) {
 	%start = %pill-->frameIn.getText();
 	%end = %pill-->frameOut.getText();
 	%seqName = %pill.seqName;
+
 	if ( ( %start !$= "" ) && ( %end !$= "" ) ) {
-		
 		%oldSource = ShapeEditor.getSequenceSource( %seqName );
 
 		if ( %from $= "" )

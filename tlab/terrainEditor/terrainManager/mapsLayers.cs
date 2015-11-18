@@ -14,7 +14,6 @@ function TMG::refreshMaterialLayersPage(%this) {
 	TMG_PageMaterialLayers-->materialLayersInfo.setText(%info);
 	//Change heightmap mode to current mode, else it will use the default current mode
 	TMG.changeMapFolderMode(TMG_PageMaterialLayers-->mapModeStack-->relative,TMG.mapFolderMode);
-
 	//TMG.updateMaterialLayers();
 }
 //------------------------------------------------------------------------------
@@ -25,7 +24,6 @@ function TMG::scanTextureMapFolder(%this) {
 	TMG.customMapList = "";
 	%folder = TMG.sourceFolder;
 
-	
 	if (!isDirectory(%folder)) {
 		warnLog("Invalid folder specified:",%folder," Make sure the folder exist and contain the images sources");
 		TMG.textureMapList = "Nothing found in scanned folder." TAB "-" TAB "-";
@@ -33,17 +31,20 @@ function TMG::scanTextureMapFolder(%this) {
 	}
 
 	%files = getMultiExtensionFileList(%folder,"png bmp tga jpg");
+
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
 		%file = %folder@getRecord(%files,%i);
 		%file = validatePath(%file);
 		%this.addTextureMap(%file);
 	}
+
 	return;
+
 	if (!isDirectory(TMG.terrainFolder))
 		return;
-		
+
 	%files = getMultiExtensionFileList(TMG.terrainFolder,"png bmp tga jpg");
-		
+
 	for(%i = 0; %i < getRecordCount(%files); %i++) {
 		%file = %folder@getRecord(%files,%i);
 		%file = validatePath(%file);
@@ -95,22 +96,22 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 	%pill.matInternalName = %matInternalName;
 	%pill-->materialName.text = "Material:\c1" SPC %matInternalName;
 
-	if (%isNewMat){
+	if (%isNewMat) {
 		%texture = "Not selected";
 		%file = "\"\"";
-}
-	else {
+	} else {
 		%texture = "Default Alpha Map -\c2"@%layerId@"_"@%matInternalName;
 		%fileName = %terObj.getName()@"_layerMap_"@%layerId@"_"@%matInternalName;
 		%layersMapFolder = TMG.getLayersMapFolder();
-	
-		%file = addFilenameToPath(%layersMapFolder,%fileName@".png");		
+		%file = addFilenameToPath(%layersMapFolder,%fileName@".png");
+
 		if (!isFile(%file))
-			%file = "\"\"";	
-			
+			%file = "\"\"";
+
 		//%texture = %terObj.getName()@"_layerMap_"@%layerId@"_"@%matInternalName;
 		devLog("Layer default map file=",%file,isFile(%file));
 	}
+
 	%file = validatePath(%file);
 	%pill.file = %file;
 	%pill.texture = %texture;
@@ -121,14 +122,15 @@ function TMG::addMaterialLayer(%this,%matInternalName,%layerId,%mapFile,%channel
 	%pill-->removeMapBtn.command = "TMG.removeLayerMap("@%pill@");";
 	%pill-->materialMouse.pill = %pill;
 	%pill-->materialMouse.superClass = "TMG_LayerMaterialMouse";
-	
 	%previewContainer = %pill-->imageButton.parentGroup.parentGroup;
 	%previewContainer.visible = TMG.ShowMapPreview;
 	%bmpFile = %file;
+
 	if (!isFile(%bmpFile))
 		%bmpFile = "tlab/terrainEditor/gui/images/textureMapNotGenerated.png";
+
 	%pill-->imageButton.setBitmap(%bmpFile);
-	
+
 	foreach(%radio in %pill-->channelStack) {
 		%radio.superClass = "TMG_MapChannelRadio";
 		%radio.setStateOn(false);
@@ -150,17 +152,17 @@ function TMG::setMaterialLayerChannel(%this,%layerId,%channel) {
 	}
 
 	switch$(%channel) {
-		case "Red":
-			%channel = "r";
+	case "Red":
+		%channel = "r";
 
-		case "Green":
-			%channel = "g";
+	case "Green":
+		%channel = "g";
 
-		case "Blue":
-			%channel = "b";
+	case "Blue":
+		%channel = "b";
 
-		case "Alpha":
-			%channel = "a";
+	case "Alpha":
+		%channel = "a";
 	}
 
 	eval("%radioCtrl = %pill-->"@%channel@";");
@@ -180,23 +182,22 @@ function TMG::setMaterialLayerChannel(%this,%layerId,%channel) {
 //==============================================================================
 function TMG::updateMaterialLayers(%this) {
 	%terObj = %this.activeTerrain;
-	if (TMG.activeDataUpdated){
+
+	if (TMG.activeDataUpdated) {
 		warnLog("Trying to update layers while data is already updated");
 		return;
 	}
-	
-	if (TMG.autoExportLayerMode !$= "Never" ){
-		eval("%exportPath = TMG."@TMG.autoExportLayerMode@"Folder;");	
+
+	if (TMG.autoExportLayerMode !$= "Never" ) {
+		eval("%exportPath = TMG."@TMG.autoExportLayerMode@"Folder;");
 		devLog("Exporting all layers to path:",%exportPath);
 		%this.exportTerrainLayersToPath(%exportPath);
 	}
+
 	%this.scanTextureMapFolder();
-		
 	TMG_PageMaterialLayers-->heightmapCurrentText.text = TMG.activeHeightmapName;
-	
 	//Update the default HeightMap Map Menu
 	TMG.updateMaterialLayerMenu();
-	
 	hide(TMG_MaterialLayersPill);
 	show(TMG_MaterialLayersStack);
 	TMG_MaterialLayersStack.clear();
@@ -223,14 +224,14 @@ function TMG::updateAllMaterialLayersMenu(%this) {
 //==============================================================================
 function TMG::updateMaterialLayerMenu(%this,%pill) {
 	%terObj = %this.activeTerrain;
-	%this.scanTextureMapFolder();	
+	%this.scanTextureMapFolder();
 	%fullList = TMG.textureMapList;
+
 	//Heightmap Map Menu Update
-	if (%pill $= ""){
+	if (%pill $= "") {
 		%mapMenu = TMG_PageMaterialLayers-->heightMapMenu;
 		%mapMenu.clear();
 		%mid = -1;
-	
 		//%mapMenu.add(%terObj.getName()@"_heightmap.png",0);
 		//%mapMenu.file[0] = "default";
 	}
@@ -238,25 +239,21 @@ function TMG::updateMaterialLayerMenu(%this,%pill) {
 	else {
 		if (!isObject(%pill))
 			return;
-			
+
 		%mapMenu = %pill-->mapMenu;
-		%mapMenu.clear();	
+		%mapMenu.clear();
 		%mapMenu.pill = %pill;
 		%mapMenu.layerId = %pill.layerId;
-	
 		%mapMenu.add(%pill.texture,0);
 		%mapMenu.file[0] = %pill.fileName;
 		%mapMenu.channels[0] = "1";
 		%mapMenu.command = "TMG.selectLayerMapMenu("@%mapMenu@","@%pill.layerId@");";
-		
-		
 
 		if ( getRecordCount(TMG.customMapList) > 0)
 			%fullList = %fullList NL TMG.customMapList;
 	}
-	
+
 	//Common Map Menu Update
-	
 
 	for(%j=0; %j<getRecordCount(%fullList); %j++) {
 		%record = getRecord(%fullList,%j);
@@ -268,23 +265,25 @@ function TMG::updateMaterialLayerMenu(%this,%pill) {
 	}
 
 	%mapMenu.setSelected(0,false);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function TMG::selectLayerMapMenu(%this,%menu,%layerId,%channels) {
-	%pill = %menu.pill;	
+	%pill = %menu.pill;
+
 	if (!isObject(%pill))
 		return;
+
 	%pill.useDefaultLayer = false;
+
 	if (%menu.getSelected() $= "0")
 		%pill.useDefaultLayer = true;
+
 	%terObj = %this.activeTerrain;
 	%layerId = %menu.layerId;
 	%file = %menu.file[%menu.getSelected()];
 	%channels = %menu.channels[%menu.getSelected()];
-	
 	%this.setLayerMapFile(%layerId,%file,%channels);
 }
 //------------------------------------------------------------------------------
@@ -297,8 +296,10 @@ function TMG::setLayerMapFile(%this,%layerId,%file,%channels,%activeChannel,%don
 		warnLog("setLayerMapFile called for invalidPill");
 		return;
 	}
+
 	%file = validatePath(%file);
-	if (!isFile(%file)){
+
+	if (!isFile(%file)) {
 		devLog("InvalidFile:",%file);
 		%file = "Invalid file";
 	}
@@ -331,12 +332,13 @@ function TMG::setLayerMapFile(%this,%layerId,%file,%channels,%activeChannel,%don
 		%set = true;
 	}
 
-	if (%file $= "default" || %dontAdd) {		
+	if (%file $= "default" || %dontAdd) {
 		return;
 	}
+
 	if (isFile(%pill.file))
 		%pill-->imageButton.setBitmap(%pill.file);
-	
+
 	%menu = %pill-->mapMenu;
 	%nextMenuId = %menu.size();
 	%menu.add(%onlyFile,%nextMenuId);
@@ -357,7 +359,7 @@ function TMG_LayerMaterialMouse::onMouseDown(%this,%modifier,%mousePoint,%mouseC
 	}
 }
 //==============================================================================
-function TMG::showLayerMaterialDlg( %this,%pill,%callback ) {	
+function TMG::showLayerMaterialDlg( %this,%pill,%callback ) {
 	if (!isObject(%pill)) {
 		warnLog("Invalid layer to change material");
 		return;
@@ -374,7 +376,7 @@ function TMG::showLayerMaterialDlg( %this,%pill,%callback ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Callback from TerrainMaterialDlg returning selected material info
-function TMG_LayerMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {	
+function TMG_LayerMaterialChangeCallback( %mat, %matIndex, %activeIdx ) {
 	%pill = TMG.changeMaterialPill;
 
 	if (!isObject(%pill)) {

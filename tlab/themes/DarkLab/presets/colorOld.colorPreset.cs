@@ -9,7 +9,7 @@ $Lab["Color","Dark","C"] = "59 76 88";
 
 $Lab["Color","Light","A"] = "127 143 154";
 $Lab["Color","Light","B"] = "101 136 166";
-$Lab["Color","Light","C"] = "101 136 166";	
+$Lab["Color","Light","C"] = "101 136 166";
 
 $Lab["Color","Accent","A"] = "14 151 226";
 $Lab["Color","Accent","B"] = "17 45 58";

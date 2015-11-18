@@ -37,8 +37,10 @@ function MaterialEditorGui::showCubemapEditor(%this) {
 
 	MaterialEditorGui.currentCubemap = "";
 	matEd_cubemapEditor.setVisible(1);
+
 	if (!isObject(matEd_cubemapEdPerMan))
 		new PersistenceManager(matEd_cubemapEdPerMan);
+
 	MaterialEditorGui.setCubemapNotDirty();
 
 	for( %i = 0; %i < RootGroup.getCount(); %i++ ) {

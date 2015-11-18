@@ -26,8 +26,8 @@ function ShapeEdMaterials::editSelectedMaterial( %this ) {
 		MaterialEditorGui.currentObject = $Lab::materialEditorList = %this.tempShape;
 		Lab.setEditor(MaterialEditorPlugin);
 
-		
-		
+
+
 		show(MEP_CallbackArea);
 		MEP_CallbackArea-->callbackButton.text = "Return to ShapeEditor";
 		MEP_CallbackArea-->callbackButton.command = "ShapeEdMaterials.editSelectedMaterialEnd();";
@@ -46,12 +46,12 @@ function ShapeEdMaterials::editSelectedMaterial( %this ) {
 
 		if( %id != -1 )
 			SubMaterialSelector.setSelected( %id );
-			
+
 		Lab.setEditor(MaterialEditorPlugin);
 	}
 }
 
-function ShapeEdMaterials::editSelectedMaterialEnd( %this, %closeEditor ) {	
+function ShapeEdMaterials::editSelectedMaterialEnd( %this, %closeEditor ) {
 	hide(MEP_CallbackArea);
 	Lab.setEditor(ShapeEditorPlugin);
 

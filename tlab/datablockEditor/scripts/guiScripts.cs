@@ -18,7 +18,7 @@ function DbEd::initGui(%this) {
 //==============================================================================
 function DatablockEditorTreeTabBook::onTabSelected(%this, %text, %id) {
 	$DbEd_EditorTreeTabPage = %id;
-	
+
 	switch(%id) {
 	case 0:
 		DatablockEditorTreeWindow-->DeleteSelection.visible = true;
@@ -29,6 +29,7 @@ function DatablockEditorTreeTabBook::onTabSelected(%this, %text, %id) {
 		DatablockEditorTreeWindow-->DeleteSelection.visible = false;
 		DatablockEditorTreeWindow-->CreateSelection.visible = true;
 		DatablockEditorTreeWindow-->SaveSelection.visible = false;
+
 	case 2:
 		DatablockEditorTreeWindow-->DeleteSelection.visible = false;
 		DatablockEditorTreeWindow-->CreateSelection.visible = false;
@@ -39,7 +40,7 @@ function DatablockEditorTreeTabBook::onTabSelected(%this, %text, %id) {
 
 //==============================================================================
 function DbEd_SelectionTabBook::onTabSelected(%this, %text, %id) {
-	$DbEd_SelectionTabPage = %id;	
+	$DbEd_SelectionTabPage = %id;
 }
 //------------------------------------------------------------------------------
 

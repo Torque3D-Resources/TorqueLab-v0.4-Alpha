@@ -7,7 +7,6 @@
 //==============================================================================
 function Lab::setGizmoFieldFromCtrl(%this,%ctrl) {
 	%field = %ctrl.internalName;
-	
 	%value = GlobalGizmoProfile.getFieldValue(%field);
 	%newvalue = %ctrl.getValue();
 	devLog("NewValu =",%ctrl.getValue());
@@ -75,7 +74,7 @@ function Lab::setGizmoGridColor( %this, %color ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function Lab::setGizmoScalar( %this, %mode, %scalar ) {	
+function Lab::setGizmoScalar( %this, %mode, %scalar ) {
 	GlobalGizmoProfile.setFieldValue(%mode@"Scalar",%scalar);
 }
 //------------------------------------------------------------------------------

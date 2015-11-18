@@ -13,30 +13,34 @@ $SceneEditor_AddObjectCurrentSel = true;
 //		and position is set from script
 function Scene::getCreateObjectPosition() {
 	%focusPoint = LocalClientConnection.getControlObject().getLookAtPoint();
-	$SceneEd_SkipEditorDrop = true;	
-	
+	$SceneEd_SkipEditorDrop = true;
+
 	if ($SceneEditor_DropSinglePosition !$= "")
 		%dropPos = $SceneEditor_DropSinglePosition;
 	else if (Scene.dropMode $= "currentSel")
 		%dropPos = EWorldEditor.getSelectedObject(0).position;
+
 	//else if( %focusPoint $= "" && strFind(strlwr(EWorldEditor.droptype),"toterrain"))
 	//	%dropPos = "0 0 0";
-	
-	$SceneEditor_DropSinglePosition = "";	
+	$SceneEditor_DropSinglePosition = "";
 	devLog("Adding at current pos",%dropPos);
+
 	if (%dropPos !$= "")
-			return %dropPos;
-	
-	%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );	
-	if (%position.z !$= "" && Scene.dropMode $= "currentSelZ"){
-		%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );	
-	
+		return %dropPos;
+
+	%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );
+
+	if (%position.z !$= "" && Scene.dropMode $= "currentSelZ") {
+		%position =  getWord( %focusPoint, 1 ) SPC getWord( %focusPoint, 2 ) SPC getWord( %focusPoint, 3 );
+
 		if ($WorldEditor_LastSelZ !$= "")
 			%position.z = $WorldEditor_LastSelZ;
+
 		devLog("Using last Z:",	$WorldEditor_LastSelZ,"Pos",%position);
 		return %position;
 	}
-	$SceneEd_SkipEditorDrop = false;	
+
+	$SceneEd_SkipEditorDrop = false;
 	return %position;
 }
 //------------------------------------------------------------------------------
@@ -49,24 +53,23 @@ function Scene::onObjectCreated( %this, %objId,%noDrop ) {
 	SceneEditorTree.clearSelection();
 	EWorldEditor.clearSelection();
 	EWorldEditor.selectObject( %objId );
+
 	// When we drop the selection don't store undo
 	// state for it... the creation deals with it.
 	if (!%noDrop)
 		EWorldEditor.dropSelection( true );
-	
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::onFinishCreateObject( %this, %objId ) {
-	SceneEd.objectGroup.add( %objId );
+	%activeGroup = Scene.getActiveSimGroup();
+	%activeGroup.add( %objId );
 
 	if( %objId.isMemberOfClass( "SceneObject" ) ) {
 		%objId.position = %this.getCreateObjectPosition();
 		//flush new position
 		%objId.setTransform( %objId.getTransform() );
 	}
-
 	%this.onObjectCreated( %objId );
 }
 //------------------------------------------------------------------------------
@@ -76,9 +79,6 @@ function Scene::createSimGroup( %this ) {
 	if ( !$missionRunning )
 		return;
 
-	
-
-	
 	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new SimGroup() {
 		internalName = getUniqueInternalName( %this.objectGroup.internalName, MissionGroup, true );
@@ -91,25 +91,21 @@ function Scene::createSimGroup( %this ) {
 function Scene::createStatic( %this, %file ) {
 	if ( !$missionRunning )
 		return;
-	
+
 	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new TSStatic() {
 		shapeName = %file;
 		position = %this.getCreateObjectPosition();
 		parentGroup = %addToGroup;
 	};
-	
 	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::createPrefab( %this, %file ) {
 	if ( !$missionRunning )
 		return;
-
-	
 
 	if( !isObject(%this.objectGroup) )
 		Scene.setNewObjectGroup( MissionGroup );
@@ -120,9 +116,10 @@ function Scene::createPrefab( %this, %file ) {
 		parentGroup = %this.objectGroup;
 	};
 	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
+
 	if( isObject( %objId ) )
 		%this.onFinishCreateObject( %objId );
-		
+
 	//%this.onObjectCreated( %objId );
 }
 //------------------------------------------------------------------------------
@@ -131,11 +128,10 @@ function Scene::createObject( %this, %cmd ) {
 	if ( !$missionRunning )
 		return;
 
-	
-
 	if( !isObject(%this.objectGroup) )
 		Scene.setNewObjectGroup( MissionGroup );
-devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
+
+	devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 	pushInstantGroup();
 	%objId = eval(%cmd);
 	popInstantGroup();
@@ -150,7 +146,7 @@ devLog("SkipDrop",$SceneEd_SkipEditorDrop,"Pos",%objId.position);
 function Scene::createMesh( %this, %file ) {
 	if ( !$missionRunning )
 		return;
-	
+
 	%addToGroup = Scene.getActiveSimGroup();
 	%objId = new TSStatic() {
 		shapeName = %file;
@@ -158,6 +154,6 @@ function Scene::createMesh( %this, %file ) {
 		parentGroup = %addToGroup;
 		internalName = fileBase(%file);
 	};
-	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );	
+	%this.onObjectCreated( %objId,$SceneEd_SkipEditorDrop );
 }
 //------------------------------------------------------------------------------

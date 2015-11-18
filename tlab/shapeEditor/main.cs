@@ -19,7 +19,6 @@ function initializeShapeEditor() {
 	Lab.addPluginPalette("ShapeEditor",   ShapeEditorPalette);
 	Lab.addPluginDlg("ShapeEditor",   ShapeEditorDialogs);
 	newScriptObject("ShapeEd");
-	
 	ShapeEditorPlugin.editorGui = ShapeEdShapeView;
 	// Add windows to editor gui
 	%map = new ActionMap();
@@ -56,7 +55,6 @@ function execShapeEd(%loadGui) {
 		exec("tlab/shapeEditor/gui/shapeEditorToolbar.gui");
 		exec("tlab/shapeEditor/gui/shapeEditorPalette.gui");
 		exec("tlab/shapeEditor/gui/ShapeEditorTools.gui");
-		
 	}
 
 	exec("./scripts/shapeEditor.cs");

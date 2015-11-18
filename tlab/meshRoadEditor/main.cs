@@ -8,18 +8,15 @@ singleton GuiControlProfile( MeshRoadEditorProfile ) {
 	opaque = true;
 	fillColor = "192 192 192 192";
 	category = "Editor";
-	};
+};
 function initializeMeshRoadEditor() {
 	echo(" % - Initializing Mesh Road Editor");
 	execMREP(true);
-	
-	
-	
 	Lab.createPlugin("MeshRoadEditor","Mesh Road Editor");
 	Lab.addPluginEditor("MeshRoadEditor",MeshRoadEditorGui);
 	Lab.addPluginGui("MeshRoadEditor",   MeshRoadEditorTools);
 	Lab.addPluginToolbar("MeshRoadEditor",MeshRoadEditorToolbar);
-	Lab.addPluginPalette("MeshRoadEditor",   MeshRoadEditorPalette);	
+	Lab.addPluginPalette("MeshRoadEditor",   MeshRoadEditorPalette);
 	MeshRoadEditorPlugin.editorGui = MeshRoadEditorGui;
 	%map = new ActionMap();
 	%map.bindCmd( keyboard, "backspace", "MeshRoadEditorGui.deleteNode();", "" );
@@ -36,7 +33,6 @@ function initializeMeshRoadEditor() {
 	%map.bindCmd( keyboard, "x", "MeshRoadEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "MeshRoadEditorShowRoadBtn.performClick();", "" );
 	MeshRoadEditorPlugin.map = %map;
-	
 	$MRoadManager = newScriptObject("MRoadManager");
 }
 //------------------------------------------------------------------------------

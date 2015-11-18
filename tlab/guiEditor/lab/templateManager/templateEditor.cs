@@ -7,9 +7,10 @@
 //==============================================================================
 function GuiEdTemplateEditor::onWake(%this) {
 	devLog("GuiEdTemplateEditor::onWake(%this)");
+
 	if (!isObject(GuiEdTemplateGroup))
 		exec( "tlab/guiEditor/gui/GuiEdTemplateGroup.gui" );
-		
+
 	GuiEdTemplateContainer.add(GuiEdTemplateGroup);
 	GuiEdTemplateContainer.bringToFront(GuiEdTemplateGroup);
 
@@ -23,12 +24,12 @@ function GuiEdTemplateEditor::onWake(%this) {
 }
 //==============================================================================
 //==============================================================================
-function GuiEdTemplateEditor::onPreEditorSave(%this) {	
+function GuiEdTemplateEditor::onPreEditorSave(%this) {
 	GuiGroup.add(GuiEdTemplateGroup);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function GuiEdTemplateEditor::onPostEditorSave(%this) {	
+function GuiEdTemplateEditor::onPostEditorSave(%this) {
 	GuiEdTemplateContainer.add(GuiEdTemplateGroup);
 	GuiEdTemplateContainer.bringToFront(GuiEdTemplateGroup);
 }

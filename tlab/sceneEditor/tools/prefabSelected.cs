@@ -10,7 +10,7 @@
 //==============================================================================
 
 
-function SceneEd::onPrefabSelected( %this,%prefab ) {	
+function SceneEd::onPrefabSelected( %this,%prefab ) {
 	warnLog("SceneEditorPlugin::onPrefabSelected:",%prefab);
 	%name = fileBase(%prefab.filename);
 	%path = filePath(%prefab.filename);
@@ -19,31 +19,28 @@ function SceneEd::onPrefabSelected( %this,%prefab ) {
 	SceneEd.selectedPrefab = %prefab;
 	SEP_PrefabUnpackIcon.visible = 1;
 	SceneEd_PrefabInfoCtrl.visible = 1;
-	
 }
-function SceneEd::noPrefabSelected( %this ) {	
+function SceneEd::noPrefabSelected( %this ) {
 	warnLog("SceneEditorPlugin::noPrefabSelected:");
 	return;
 	SceneEd.selectedPrefab = "";
 	SceneEd_PrefabInfoCtrl.visible = 0;
 	SEP_PrefabUnpackIcon.schedule(200,"setVisible",false);
-	
-	
 }
-function ObjectPrefabSelectedName::onValidate( %this ) {	
+function ObjectPrefabSelectedName::onValidate( %this ) {
 	warnLog("Current prefab name changed to:",%this.getText());
-	
 }
 
-function SceneEd::unpackSelectedPrefab( %this ) {	
+function SceneEd::unpackSelectedPrefab( %this ) {
 	warnLog("Current prefab name changed to:",%this.getText());
-	if (!isObject(SceneEd.selectedPrefab)){
+
+	if (!isObject(SceneEd.selectedPrefab)) {
 		SceneEd.noPrefabSelected();
 		return;
 	}
+
 	%success = Lab.ExpandPrefab(SceneEd.selectedPrefab);
+
 	if (%success)
 		SceneEd.noPrefabSelected();
-		
-	
 }

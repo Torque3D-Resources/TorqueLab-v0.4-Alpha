@@ -18,7 +18,6 @@ function MaterialEditorGui::createNewMaterial( %this ) {
 		mapTo = "unmapped_mat";
 		parentGroup = RootGroup;
 	};
-	
 	%material.setFileName(MaterialEditorGui-->selMaterialFile.getText());
 	%action.newMaterial = %material.getId();
 	%action.oldMaterial = MaterialEditorGui.currentMaterial;

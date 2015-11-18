@@ -10,16 +10,12 @@ $TLab::DefaultPlugins = "SceneEditor";
 function Lab::EditorLaunchGuiSetup(%this) {
 	//Lab.attachAllEditorGuis();
 	Lab.closeDisabledPluginsBin();
-	
 	show(EWToolsToolbar);
 	show(EWToolsPaletteContainer);
 	ToolsToolbarArray.reorderChild( ToolsToolbarArray-->SceneEditorPlugin,ToolsToolbarArray.getObject(0));
 	ToolsToolbarArray.refresh();
 	Lab.updateActivePlugins();
-	
-		EditorFrameWorld.pushToBack(EditorFrameTools);
-	
-
+	EditorFrameWorld.pushToBack(EditorFrameTools);
 	EditorGuiToolbarStack.bringToFront(EditorGuiToolbarStack-->FirstToolbarGroup);
 	EditorGuiToolbarStack.pushToBack(EditorGuiToolbarStack-->LastToolbarGroup);
 }
@@ -32,67 +28,63 @@ function Lab::InitialGuiSetup(%this,%pluginName,%displayName,%alwaysEnable) {
 	Lab.updatePluginsBar();
 	Lab.sortPluginsBar(true);
 	ETools.initTools();
-	
 	//Store some dimension for future session update
 	Lab.toolbarHeight = EditorGuiToolbar.y;
 	Lab.pluginBarHeight = EWToolsToolbar.y;
 	Lab.paletteBarWidth = EWToolsPaletteContainer.x;
-	
 	Lab.loadPluginsPalettes();
-	
 	ESnapOptions-->TabBook.selectPage(0);
 	EVisibilityLayers-->TabBook.selectPage(0);
 	//===========================================================================
 	// Add the TorqueLab Universal GUIs to the editor
 	Lab.addGui( EToolOverlayGui ,"Overlay");
-	Lab.addGui( ETools ,"Dialog");	
+	Lab.addGui( ETools ,"Dialog");
 	Lab.addGui( ESceneManager ,"Dialog");
 	Lab.addGui( EManageBookmarks ,"Dialog");
 	Lab.addGui( EManageSFXParameters ,"Dialog");
 	Lab.addGui( ESelectObjects ,"Dialog");
-	Lab.addGui( EPostFxManager ,"EditorDlg");	
+	Lab.addGui( EPostFxManager ,"EditorDlg");
 	Lab.addGui( StackStartToolbar ,"Toolbar",true);
 	Lab.addGui( StackEndToolbar ,"Toolbar",true);
 	Lab.addGui( EditorSideBarCtrl ,"SideBar");
 	$LabSideBarContainer.pushToBack(EditorSideBarToggle);
 	//---------------------------------------------------------------------------
-	
 	StackStartToolbar.isCommon = true;
 	StackEndToolbar.isCommon = true;
-	
 	//---------------------------------------------------------------------------
 	EWorldEditorAlignPopup.clear();
 	EWorldEditorAlignPopup.add("World",0);
 	EWorldEditorAlignPopup.add("Object",1);
-	EWorldEditorAlignPopup.setSelected(0);	
+	EWorldEditorAlignPopup.setSelected(0);
 	//---------------------------------------------------------------------------
 	%dropId = 0;
 	%selDrop = 0;
 	EWorldEditorDropMenu.clear();
-	foreach$(%dropType in $Scene_AllDropTypes){
+
+	foreach$(%dropType in $Scene_AllDropTypes) {
 		%text = $Scene_DropTypeDisplay[%dropType];
+
 		if (Scene.dropMode $= %dropType)
 			%selDrop = %dropId;
+
 		if (%text $= "")
 			continue;
+
 		EWorldEditorDropMenu.typeId[%dropId] = %dropType;
 		EWorldEditorDropMenu.add("Drop> "@%text,%dropId);
 		%dropId++;
 	}
-	EWorldEditorDropMenu.setSelected(%selDrop);	
+
+	EWorldEditorDropMenu.setSelected(%selDrop);
 	Scene.dropTypeMenus = strAddWord(Scene.dropTypeMenus,EWorldEditorDropMenu.getId(),true);
 	//---------------------------------------------------------------------------
 	// this will brind EToolDlgCameraTypes to front so that it goes over the menubar
 	EditorGui.pushToBack(EToolDlgCameraTypes);
 	EditorGui.pushToBack(VisibilityDropdown);
-	
-	
 	Lab.initCoreGuis();
 	Lab.resizeEditorGui();
 	//Lab.initObjectConfigArray(EWorldEditor,"WorldEditor","General");
-	
 	Lab.initAllToolbarGroups();
-	
 	Lab.initToolbarTrash();
 }
 //------------------------------------------------------------------------------

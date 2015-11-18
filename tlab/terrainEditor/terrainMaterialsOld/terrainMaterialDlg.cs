@@ -11,12 +11,12 @@ function TerrainMaterialDlg::show( %this, %matIndex, %terrMat, %onApplyCallback 
 	%this.matIndex = %matIndex;
 	%this.onApplyCallback = %onApplyCallback;
 	%this.selectObjectInTree(%terrMat,true);
-	
 	TMatManager_OptionalSettingRollout.expanded = false;
 	%gcoverMenu = %this-->groundCoverMaterialSrcMenu;
 	%gcoverMenu.clear();
 	%gcoverMenu.add("Select a Source",0);
-	foreach(%mat in TerrainMaterialSet){
+
+	foreach(%mat in TerrainMaterialSet) {
 		%gcoverMenu.add(%mat.internalName,%mat.getId());
 	}
 }
@@ -29,13 +29,11 @@ function TerrainMaterialDlg::showByObjectId( %this, %matObjectId, %onApplyCallba
 	%this.matIndex = -1;
 	%this.onApplyCallback = %onApplyCallback;
 	%this.selectObjectInTree(%matObjectId);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function TerrainMaterialDlg::onWake( %this ) {
-
 	if( !isObject( ETerrainMaterialPersistMan ) )
 		new PersistenceManager( ETerrainMaterialPersistMan );
 
@@ -101,6 +99,7 @@ function TerrainMaterialDlg::dialogApply( %this,%closeDlg ) {
 	%this.saveDirtyMaterial( %this.activeMat );
 	// Save all changes.
 	ETerrainMaterialPersistMan.saveDirty();
+
 	// Delete the snapshot.
 	if( isObject( TerrainMaterialDlgSnapshot ) )
 		TerrainMaterialDlgSnapshot.delete();
@@ -137,10 +136,12 @@ function TerrainMaterialDlg::dialogCancel( %this ) {
 function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName ) {
 	if( $Pref::TerrainEditor::LastPath $= "" )
 		$Pref::TerrainEditor::LastPath = "art/terrains/";
+
 	%defaultFile = %defaultFileName;
+
 	if (!isFile(%defaultFile))
 		%defaultFile = $Pref::TerrainEditor::LastPath;
-	
+
 	if (TerrainPainterTools.defaultTexturesFolder !$= "")
 		%defaultPath = TerrainPainterTools.defaultTexturesFolder;
 	else
@@ -175,11 +176,11 @@ function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName )
 //==============================================================================
 function TMatManager_GroundCoverSrcMenu::onSelect( %this, %matId,%matInternalName ) {
 	%terrMat = %this.activeMat;
+
 	if (!isObject(%matId) || !isObject(%terrMat))
 		return;
-	
+
 	labMsg("Not implemented","This feature have been blocked for now and will need some enhancements to work properly");
-	
 }
 //------------------------------------------------------------------------------
 

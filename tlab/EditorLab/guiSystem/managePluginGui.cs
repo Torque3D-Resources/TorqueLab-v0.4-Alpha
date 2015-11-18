@@ -13,19 +13,20 @@ $LabPlugin::ToolbarPos = "306 0";
 //==============================================================================
 //Reinitialize all plugin data
 function Lab::togglePluginParamUI(%this) {
-	if (LabParamsDlg.isAwake()){
+	if (LabParamsDlg.isAwake()) {
 		popDlg(LabParamsDlg);
 		return;
 	}
+
 	pushDlg(LabParamsDlg);
 	%currentPlugin = Lab.currentEditor.plugin;
 	%id = LabParamsTree.findItemByValue("Plugins_"@%currentPlugin);
-	
+
 	if (%id <= 0)
 		return;
+
 	LabParamsTree.clearSelection();
 	LabParamsTree.selectItem(%id);
-
 }
 //------------------------------------------------------------------------------
 
@@ -64,7 +65,6 @@ function Lab::addPluginGui(%this,%plugin,%gui) {
 	%pluginObj.useTools = true;
 	%pluginObj.toolsGui = %gui;
 	%gui.superClass = "FrameSetPluginTools";
-	
 	/*%pluginFrameSet = %plugin@"_FrameSet";
 
 	if (!isObject(%pluginFrameSet)) {
@@ -107,8 +107,8 @@ function Lab::addPluginPalette(%this,%plugin,%gui) {
 function Lab::updatePluginsMenu(%this) {
 	if (!$Cfg_UseCoreMenubar)
 		Lab.clearSubmenuItems($LabMenuEditorSubMenu.x,$LabMenuEditorSubMenu.y);
-		
-	foreach(%pluginObj in LabPluginGroup) 
+
+	foreach(%pluginObj in LabPluginGroup)
 		%this.addToEditorsMenu(%pluginObj);
 }
 //------------------------------------------------------------------------------
@@ -116,8 +116,10 @@ function Lab::updatePluginsMenu(%this) {
 function Lab::addToEditorsMenu( %this, %pluginObj ) {
 	%displayName = %pluginObj.displayName;
 	%accel = "";
+
 	if (!%pluginObj.isEnabled)
 		return;
+
 	if ($Cfg_UseCoreMenubar) {
 		%windowMenu = Lab.findMenu( "Editors" );
 		%count = %windowMenu.getItemCount();
@@ -152,8 +154,6 @@ function Lab::addToEditorsMenu( %this, %pluginObj ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function Lab::removeFromEditorsMenu( %this,  %pluginObj ) {
-	
-	
 	if (!isObject(%windowMenu))
 		return;
 

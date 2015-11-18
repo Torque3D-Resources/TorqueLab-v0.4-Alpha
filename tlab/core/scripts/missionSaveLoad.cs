@@ -39,6 +39,7 @@ function EditorClearDirty() {
 function Lab::SaveCurrentMission(%this,%saveAs) {
 	%file = MissionGroup.getFilename();
 	%start = getSubStr(%file,0,6);
+
 	if (%start !$= "levels")
 		%saveAs = true;
 
@@ -64,7 +65,7 @@ function Lab::SaveMissionDisableWarning(%this) {
 //Generic Save Mission Call, make sure it's possible to save
 function Lab::SaveMission(%this) {
 	// just save the mission without renaming it
-	
+
 	// first check for dirty and read-only files:
 	if((EWorldEditor.isDirty || ETerrainEditor.isMissionDirty) && !isWriteableFileName($Server::MissionFile)) {
 		LabMsgOkCancel("Error", "Mission file \""@ $Server::MissionFile @ "\" is read-only.  Continue?", "Ok", "Stop");
@@ -87,6 +88,7 @@ function Lab::SaveMission(%this) {
 
 	// now write the terrain and mission files out:
 	Lab.LoadActionProgress("Saving the mission","","The mission is saving, it won't take long","500");
+
 	if(EWorldEditor.isDirty || ETerrainEditor.isMissionDirty)
 		MissionGroup.save($Server::MissionFile);
 
@@ -103,13 +105,10 @@ function Lab::SaveMission(%this) {
 	// Give EditorPlugins a chance to save.
 	for ( %i = 0; %i < EditorPluginSet.getCount(); %i++ ) {
 		%obj = EditorPluginSet.getObject(%i);
-
 		//if ( %obj.isDirty() )
-			%obj.onSaveMission( $Server::MissionFile );
+		%obj.onSaveMission( $Server::MissionFile );
 	}
-	
 
-			
 	EditorClearDirty();
 	EditorGui.saveAs = false;
 	return true;
@@ -118,132 +117,113 @@ function Lab::SaveMission(%this) {
 //==============================================================================
 //Generic Save Mission Call, make sure it's possible to save
 function Lab::SaveMissionAs(%this) {
-	
-   
-   if(!$Pref::disableSaving && !isWebDemo())
-   {
-      // If we didn't get passed a new mission name then
-      // prompt the user for one.
-      if ( %missionName $= "" )
-      {
-         %dlg = new SaveFileDialog()
-         {
-            Filters        = $Pref::WorldEditor::FileSpec;
-            DefaultPath    = EditorSettings.value("LevelInformation/levelsDirectory");
-            ChangePath     = false;
-            OverwritePrompt   = true;
-         };
+	if(!$Pref::disableSaving && !isWebDemo()) {
+		// If we didn't get passed a new mission name then
+		// prompt the user for one.
+		if ( %missionName $= "" ) {
+			%dlg = new SaveFileDialog() {
+				Filters        = $Pref::WorldEditor::FileSpec;
+				DefaultPath    = EditorSettings.value("LevelInformation/levelsDirectory");
+				ChangePath     = false;
+				OverwritePrompt   = true;
+			};
+			%ret = %dlg.Execute();
 
-         %ret = %dlg.Execute();
-         if(%ret)
-         {
-            // Immediately override/set the levelsDirectory
-            EditorSettings.setValue( "LevelInformation/levelsDirectory", collapseFilename(filePath( %dlg.FileName )) );
-            
-            %missionName = %dlg.FileName;
-         }
-         
-         %dlg.delete();
-         
-         if(! %ret)
-            return;
-      }
-                  
-      if( fileExt( %missionName ) !$= ".mis" )
-         %missionName = %missionName @ ".mis";
+			if(%ret) {
+				// Immediately override/set the levelsDirectory
+				EditorSettings.setValue( "LevelInformation/levelsDirectory", collapseFilename(filePath( %dlg.FileName )) );
+				%missionName = %dlg.FileName;
+			}
 
-      EWorldEditor.isDirty = true;
-      %saveMissionFile = $Server::MissionFile;
+			%dlg.delete();
 
-      $Server::MissionFile = %missionName;
+			if(! %ret)
+				return;
+		}
 
+		if( fileExt( %missionName ) !$= ".mis" )
+			%missionName = %missionName @ ".mis";
+
+		EWorldEditor.isDirty = true;
+		%saveMissionFile = $Server::MissionFile;
+		$Server::MissionFile = %missionName;
 		devLog("OldFile:",%saveMissionFile,"NewFile=",%missionName);
-      %copyTerrainsFailed = false;
+		%copyTerrainsFailed = false;
+		// Rename all the terrain files.  Save all previous names so we can
+		// reset them if saving fails.
+		%newMissionName = fileBase(%missionName);
+		%oldMissionName = fileBase(%saveMissionFile);
+		initContainerTypeSearch( $TypeMasks::TerrainObjectType );
+		%savedTerrNames = new ScriptObject();
 
-      // Rename all the terrain files.  Save all previous names so we can
-      // reset them if saving fails.
-      %newMissionName = fileBase(%missionName);
-      %oldMissionName = fileBase(%saveMissionFile);
-      
-      initContainerTypeSearch( $TypeMasks::TerrainObjectType );
-      %savedTerrNames = new ScriptObject();
-      for( %i = 0;; %i ++ )
-      {
-         %terrainObject = containerSearchNext();
-         if( !%terrainObject )
-            break;
+		for( %i = 0;; %i ++ ) {
+			%terrainObject = containerSearchNext();
 
-         %savedTerrNames.array[ %i ] = %terrainObject.terrainFile;
-         
-         %terrainFilePath = makeRelativePath( filePath( %terrainObject.terrainFile ), getMainDotCsDir() );
-         %terrainFileName = fileName( %terrainObject.terrainFile );
-                  
-         // Workaround to have terrains created in an unsaved "New Level..." mission
-         // moved to the correct place.
-         
-         if( EditorGui.saveAs && %terrainFilePath $= "tools/art/terrains" )
-            %terrainFilePath = "art/terrains";
-         
-         // Try and follow the existing naming convention.
-         // If we can't, use systematic terrain file names.
-         if( strstr( %terrainFileName, %oldMissionName ) >= 0 )
-            %terrainFileName = strreplace( %terrainFileName, %oldMissionName, %newMissionName );
-         else
-            %terrainFileName = %newMissionName @ "_" @ %i @ ".ter";
+			if( !%terrainObject )
+				break;
 
-         %newTerrainFile = %terrainFilePath @ "/" @ %terrainFileName;
+			%savedTerrNames.array[ %i ] = %terrainObject.terrainFile;
+			%terrainFilePath = makeRelativePath( filePath( %terrainObject.terrainFile ), getMainDotCsDir() );
+			%terrainFileName = fileName( %terrainObject.terrainFile );
 
-         if (!isWriteableFileName(%newTerrainFile))
-         {
-            if (MessageBox("Error", "Terrain file \""@ %newTerrainFile @ "\" is read-only.  Continue?", "Ok", "Stop") == $MROk)
-               continue;
-            else
-            {
-               %copyTerrainsFailed = true;
-               break;
-            }
-         }
-         
-         if( !%terrainObject.save( %newTerrainFile ) )
-         {
-            error( "Failed to save '" @ %newTerrainFile @ "'" );
-            %copyTerrainsFailed = true;
-            break;
-         }
-         
-         %terrainObject.terrainFile = %newTerrainFile;
-      }
+			// Workaround to have terrains created in an unsaved "New Level..." mission
+			// moved to the correct place.
 
-      ETerrainEditor.isDirty = false;
-      
-      // Save the mission.
-      if(%copyTerrainsFailed || !%this.SaveMission())
-      {
-         // It failed, so restore the mission and terrain filenames.
-         
-         $Server::MissionFile = %saveMissionFile;
+			if( EditorGui.saveAs && %terrainFilePath $= "tools/art/terrains" )
+				%terrainFilePath = "art/terrains";
 
-         initContainerTypeSearch( $TypeMasks::TerrainObjectType );
-         for( %i = 0;; %i ++ )
-         {
-            %terrainObject = containerSearchNext();
-            if( !%terrainObject )
-               break;
-               
-            %terrainObject.terrainFile = %savedTerrNames.array[ %i ];
-         }
-      }
-      else {
-      		%fixPath = makeRelativePath($Server::MissionFile);
-		MissionGroup.setFilename(%fixPath);
-      	
-      }
-      %savedTerrNames.delete();
-   }
-   else
-   {
-      %this.SaveMissionDisableWarning();
-   }
+			// Try and follow the existing naming convention.
+			// If we can't, use systematic terrain file names.
+			if( strstr( %terrainFileName, %oldMissionName ) >= 0 )
+				%terrainFileName = strreplace( %terrainFileName, %oldMissionName, %newMissionName );
+			else
+				%terrainFileName = %newMissionName @ "_" @ %i @ ".ter";
+
+			%newTerrainFile = %terrainFilePath @ "/" @ %terrainFileName;
+
+			if (!isWriteableFileName(%newTerrainFile)) {
+				if (MessageBox("Error", "Terrain file \""@ %newTerrainFile @ "\" is read-only.  Continue?", "Ok", "Stop") == $MROk)
+					continue;
+				else {
+					%copyTerrainsFailed = true;
+					break;
+				}
+			}
+
+			if( !%terrainObject.save( %newTerrainFile ) ) {
+				error( "Failed to save '" @ %newTerrainFile @ "'" );
+				%copyTerrainsFailed = true;
+				break;
+			}
+
+			%terrainObject.terrainFile = %newTerrainFile;
+		}
+
+		ETerrainEditor.isDirty = false;
+
+		// Save the mission.
+		if(%copyTerrainsFailed || !%this.SaveMission()) {
+			// It failed, so restore the mission and terrain filenames.
+			$Server::MissionFile = %saveMissionFile;
+			initContainerTypeSearch( $TypeMasks::TerrainObjectType );
+
+			for( %i = 0;; %i ++ ) {
+				%terrainObject = containerSearchNext();
+
+				if( !%terrainObject )
+					break;
+
+				%terrainObject.terrainFile = %savedTerrNames.array[ %i ];
+			}
+		} else {
+			%fixPath = makeRelativePath($Server::MissionFile);
+			MissionGroup.setFilename(%fixPath);
+		}
+
+		%savedTerrNames.delete();
+	} else {
+		%this.SaveMissionDisableWarning();
+	}
 }
 //------------------------------------------------------------------------------
 
@@ -252,7 +232,7 @@ function EditorOpenMission(%filename) {
 	if( EditorIsDirty() && !isWebDemo() ) {
 		// "EditorSaveBeforeLoad();", "getLoadFilename(\"*.mis\", \"EditorDoLoadMission\");"
 		if(LabMsgOkCancel("Mission Modified", "Would you like to save changes to the current mission \"" @
-							$Server::MissionFile @ "\" before opening a new mission?", SaveDontSave, Question) == $MROk) {
+								$Server::MissionFile @ "\" before opening a new mission?", SaveDontSave, Question) == $MROk) {
 			if(! Lab.SaveMission())
 				return;
 		}
@@ -307,15 +287,14 @@ function EditorOpenMission(%filename) {
 
 function Lab::CreateNewMission( %forceSave,%confirmed ) {
 	devLog("CreateNewMission( %forceSave,%confirmed )",%file,%forceSave,%confirmed );
+
 	if(isWebDemo())
 		return;
-
-	
 
 	if ( EditorIsDirty() && !%confirmed) {
 		error(knob);
 		LabMsgYesNoCancel("Mission Modified", "Would you like to save changes to the current mission \"" @
-									  $Server::MissionFile @ "\" before creating a new mission?", "Lab.CreateNewMission(true,true);","Lab.CreateNewMission(false,true);");
+								$Server::MissionFile @ "\" before creating a new mission?", "Lab.CreateNewMission(true,true);","Lab.CreateNewMission(false,true);");
 		return;
 	}
 

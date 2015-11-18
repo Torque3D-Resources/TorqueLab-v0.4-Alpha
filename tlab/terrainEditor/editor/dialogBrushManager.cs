@@ -29,13 +29,15 @@ function TEP_BrushManager::doBrushOption( %this,%group,%type,%field,%value ) {
 		ETerrainEditor.maxBrushSize = %value;
 
 	switch$(%type) {
-	case "range":		
-		%rangeFull = $TEP_BrushManager_[%group,"Range","Min"] SPC $TEP_BrushManager_[%group,"Range","Max"];		
+	case "range":
+		%rangeFull = $TEP_BrushManager_[%group,"Range","Min"] SPC $TEP_BrushManager_[%group,"Range","Max"];
 		%toolbars = "EWTerrainEditToolbar TerrainPainterToolbar";
+
 		foreach$(%toolbar in %toolbars) {
 			%edit = %toolbar.findObjectByInternalName(%field,true);
 			%slider = %toolbar.findObjectByInternalName(%field@"_slider",true);
-			if (isObject(%slider)){
+
+			if (isObject(%slider)) {
 				%slider.range = %rangeFull;
 				%slider.setValue(%value);
 			}
@@ -48,15 +50,13 @@ function TEP_BrushManager::doBrushOption( %this,%group,%type,%field,%value ) {
 function TEP_BrushManager::brushSetHeightRange( %this,%range ) {
 	$TEP_BrushManager_["SetHeight","Range","Min"] = %range.x;
 	$TEP_BrushManager_["SetHeight","Range","Max"] = %range.y;
-
-	
-	
 	%slider = EWTerrainEditToolbar.findObjectByInternalName("SetHeight_slider",true);
+
 	if (!isObject(%slider))
-		return;	
+		return;
+
 	%slider.range = %range;
 	%value = %slider.getValue();
 	%slider.setValue(%value);
-	
 }
 //------------------------------------------------------------------------------

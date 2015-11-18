@@ -12,7 +12,6 @@ function SceneInspectorBase::onAdd( %this ) {
 
 //==============================================================================
 function SceneInspectorBase::onInspectorFieldModified( %this, %object, %fieldName, %arrayIndex, %oldValue, %newValue ) {
-	
 	// The instant group will try to add our
 	// UndoAction if we don't disable it.
 	pushInstantGroup();
@@ -35,7 +34,7 @@ function SceneInspectorBase::onInspectorFieldModified( %this, %object, %fieldNam
 	// by the inspector code after this method has returned.
 
 	if( %object.isMemberOfClass( "SimDataBlock" ) )
-		%object.schedule( 1, "reloadOnLocalClient" ); 
+		%object.schedule( 1, "reloadOnLocalClient" );
 
 	// Restore the instant group.
 	popInstantGroup();
@@ -46,11 +45,12 @@ function SceneInspectorBase::onInspectorFieldModified( %this, %object, %fieldNam
 	if(EWorldEditor.getSelectionSize() > 0 && (%fieldName $= "position" || %fieldName $= "rotation" || %fieldName $= "scale")) {
 		EWorldEditor.invalidateSelectionCentroid();
 	}
-	if (%object.getClassName() $= "LevelInfo"){
+
+	if (%object.getClassName() $= "LevelInfo") {
 		devLog("onInspectorFieldModified LevelInfo",%fieldName);
+
 		if (%fieldName $= "LevelEnvMap")
 			SceneInspectorBase.schedule(500,"envHack",true);
-		
 	}
 }
 //------------------------------------------------------------------------------
@@ -112,13 +112,12 @@ function SceneInspectorBase::onInspectorPostFieldModification( %this ) {
 
 	%this.currentFieldEditAction = "";
 	EWorldEditor.isDirty = true;
-	
 	%obj = %this.getInspectObject( 0 );
-	if (%obj.getClassName() $= "LevelInfo"){
+
+	if (%obj.getClassName() $= "LevelInfo") {
 		devLog("onInspectorPostFieldModification LevelInfo");
 		%tmpObj = new EnvVolume("TmpEnvVolume");
 		delObj(%tmpObj);
-		
 	}
 }
 //------------------------------------------------------------------------------
@@ -148,8 +147,8 @@ function SceneInspectorBase::inspect( %this, %obj ) {
 		%name = %obj.getName();
 	else
 		SceneFieldInfoControl.setText( "" );
-		
-	if (%obj.getClassName() $= "LevelInfo"){
+
+	if (%obj.getClassName() $= "LevelInfo") {
 		devLog("Inspecting LevelInfo");
 	}
 

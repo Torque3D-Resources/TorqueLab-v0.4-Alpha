@@ -8,15 +8,13 @@ $DATABLOCK_EDITOR_DEFAULT_FILENAME = "art/datablocks/managedDatablocks.cs";
 
 function initializeDatablockEditor() {
 	echo( " - Initializing Datablock Editor" );
-
 	$DbEd = newScriptObject("DbEd");
 	execDBEd(true);
 	// Add ourselves to EditorGui, where all the other tools reside
 	Lab.createPlugin("DatablockEditor");
-	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);	
+	Lab.addPluginGui("DatablockEditor",DatablockEditorTools);
 	DatablockEditorPlugin.superClass = "WEditorPlugin";
 	DatablockEditorPlugin.customPalette = "SceneEditorPalette";
-	
 	new SimSet( UnlistedDatablocks );
 	// create our persistence manager
 	DatablockEditorPlugin.PM = new PersistenceManager();
@@ -29,10 +27,11 @@ function initializeDatablockEditor() {
 
 
 function execDBEd(%loadGui) {
-	if (%loadGui){
+	if (%loadGui) {
 		exec("tlab/datablockEditor/gui/DatablockEditorTools.gui");
 		exec("tlab/datablockEditor/gui/DatablockEditorCreatePrompt.gui");
 	}
+
 	exec( "tlab/datablockEditor/DatablockEditorPlugin.cs" );
 	exec( "tlab/datablockEditor/DatablockEditorParams.cs" );
 	execPattern("tlab/datablockEditor/scripts/*.cs" );

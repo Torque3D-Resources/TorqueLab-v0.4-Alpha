@@ -29,95 +29,94 @@ singleton GuiControlProfile( EditorGuiGenericProfile ) {
 
 
 singleton GuiControlProfile (EditorDefaultProfile) {
-    opaque = true;
-    category = "Editor";
+	opaque = true;
+	category = "Editor";
 };
 
 singleton GuiControlProfile (EditorToolButtonProfile) {
-    opaque = true;
-    border = 2;
-    category = "Editor";
-   bevelColorHL = "Fuchsia";
-   fontColors[0] = "Black";
-   fontColors[9] = "255 0 255 255";
-   fontColor = "Black";
+	opaque = true;
+	border = 2;
+	category = "Editor";
+	bevelColorHL = "Fuchsia";
+	fontColors[0] = "Black";
+	fontColors[9] = "255 0 255 255";
+	fontColor = "Black";
 };
 
 singleton GuiControlProfile (EditorTextProfile) {
-    fontType = "Arial Bold";
-    fontColor = "0 0 0";
-    autoSizeWidth = true;
-    autoSizeHeight = true;
-    category = "Editor";
+	fontType = "Arial Bold";
+	fontColor = "0 0 0";
+	autoSizeWidth = true;
+	autoSizeHeight = true;
+	category = "Editor";
 };
 
 singleton GuiControlProfile (EditorTextProfileWhite) {
-    fontType = "Arial Bold";
-    fontColor = "255 255 255";
-    autoSizeWidth = true;
-    autoSizeHeight = true;
-    category = "Editor";
+	fontType = "Arial Bold";
+	fontColor = "255 255 255";
+	autoSizeWidth = true;
+	autoSizeHeight = true;
+	category = "Editor";
 };
 
 singleton GuiControlProfile (WorldEditorProfile) {
-    canKeyFocus = true;
-    category = "Editor";
-    modal = true;
+	canKeyFocus = true;
+	category = "Editor";
+	modal = true;
 };
 
 singleton GuiControlProfile (EditorScrollProfile) {
-    opaque = true;
-    fillColor = "192 192 192 192";
-    border = 3;
-    borderThickness = 2;
-    borderColor = "0 0 0";
-    bitmap = "tlab/gui/icons/default/scrollBar";
-    hasBitmapArray = true;
-    category = "Editor";
+	opaque = true;
+	fillColor = "192 192 192 192";
+	border = 3;
+	borderThickness = 2;
+	borderColor = "0 0 0";
+	bitmap = "tlab/gui/icons/default/scrollBar";
+	hasBitmapArray = true;
+	category = "Editor";
 };
 
 singleton GuiControlProfile (GuiEditorClassProfile) {
-    opaque = true;
-    fillColor = "232 232 232";
-    border = true;
-    borderColor   = "0 0 0";
-    borderColorHL = "127 127 127";
-    fontColor = "0 0 0";
-    fontColorHL = "50 50 50";
-    fixedExtent = true;
-    justify = "center";
-    bitmap = "tlab/gui/icons/default/scrollBar";
-    hasBitmapArray = true;
-    category = "Editor";
+	opaque = true;
+	fillColor = "232 232 232";
+	border = true;
+	borderColor   = "0 0 0";
+	borderColorHL = "127 127 127";
+	fontColor = "0 0 0";
+	fontColorHL = "50 50 50";
+	fixedExtent = true;
+	justify = "center";
+	bitmap = "tlab/gui/icons/default/scrollBar";
+	hasBitmapArray = true;
+	category = "Editor";
 };
 
 singleton GuiControlProfile( EPainterBitmapProfile ) {
-    opaque = false;
-    border = false;
-    borderColor ="243 242 241";
-    Color ="230 230 230";
-    category = "Editor";
+	opaque = false;
+	border = false;
+	borderColor ="243 242 241";
+	Color ="230 230 230";
+	category = "Editor";
 };
 
 singleton GuiControlProfile( EPainterBorderButtonProfile : ToolsDefaultProfile ) {
-    border = true;
-    borderColor = "0 0 0";
-    borderThickness = 2;
-
-    fontColorHL = "255 0 0";
-    fontColorSEL = "0 0 255";
-    category = "Editor";
-   fontColors[1] = "255 0 0 255";
-   fontColors[3] = "0 0 255 255";
+	border = true;
+	borderColor = "0 0 0";
+	borderThickness = 2;
+	fontColorHL = "255 0 0";
+	fontColorSEL = "0 0 255";
+	category = "Editor";
+	fontColors[1] = "255 0 0 255";
+	fontColors[3] = "0 0 255 255";
 };
 
 singleton GuiControlProfile( EPainterDragDropProfile ) {
-    justify = "center";
-    fontColor = "0 0 0";
-    border = 0;
-    textOffset = "0 0";
-    opaque = true;
-    fillColor = "221 221 221 150";
-    category = "Editor";
+	justify = "center";
+	fontColor = "0 0 0";
+	border = 0;
+	textOffset = "0 0";
+	opaque = true;
+	fillColor = "221 221 221 150";
+	category = "Editor";
 };
 

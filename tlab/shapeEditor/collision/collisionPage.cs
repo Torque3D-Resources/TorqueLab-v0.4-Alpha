@@ -18,7 +18,6 @@ function ShapeEd::initCollisionPage( %this ) {
 	ShapeEdColCreate_TypeMenu.add( "18-DOP" );
 	ShapeEdColCreate_TypeMenu.add( "26-DOP" );
 	ShapeEdColCreate_TypeMenu.add( "Convex Hulls" );
-	
 	ShapeEdColRollout-->colType.clear();
 	ShapeEdColRollout-->colType.add( "Box" );
 	ShapeEdColRollout-->colType.add( "Sphere" );

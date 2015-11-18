@@ -38,7 +38,6 @@ function GuiEditor::onSelect(%this, %ctrl) {
 
 	GuiEditorInspectFields.update( %ctrl );
 	GuiEditorSelectionStatus.setText( "1 Control Selected" );
-	
 	GuiEd.templateTargetChanged(%ctrl);
 }
 
@@ -53,7 +52,6 @@ function GuiEditor::onAddSelected( %this, %ctrl ) {
 	GuiEditorSelectionStatus.setText( %this.getNumSelected() @ " Controls Selected" );
 	// Add to inspection set.
 	GuiEditorInspectFields.addInspect( %ctrl );
-	
 	GuiEd.templateTargetChanged(%ctrl);
 }
 

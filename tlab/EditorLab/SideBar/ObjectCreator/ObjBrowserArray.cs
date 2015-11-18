@@ -7,50 +7,53 @@
 //ObjectCreator.initFiles
 function ObjectCreator::initFiles(%this,%path) {
 	%lastAddress = ObjectCreator.lastAddress;
+
 	if (%lastAddress $= "")
 		%lastAddress = "art";
+
 	ObjectCreator.navigate( %lastAddress );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //ObjectCreator.initFiles
 function ObjectCreator::setViewId(%this,%id,%force) {
-	
 	if (ObjectCreator.currentViewId $= %id && !%force)
 		return;
-	
+
 	%text = getField($ObjectCreator_View[%i],%id);
-		
-	switch$(%id){
-		case "0":
-			%width = (ObjectCreatorArray.extent.x - 10);
-		case "1":
-			%width = (ObjectCreatorArray.extent.x - 10) /2;
-		case "2":
-			%width = (ObjectCreatorArray.extent.x - 10) /3;
-			
+
+	switch$(%id) {
+	case "0":
+		%width = (ObjectCreatorArray.extent.x - 10);
+
+	case "1":
+		%width = (ObjectCreatorArray.extent.x - 10) /2;
+
+	case "2":
+		%width = (ObjectCreatorArray.extent.x - 10) /3;
 	}
-	if (%width !$= ""){
+
+	if (%width !$= "") {
 		ObjectCreatorArray.colSize = %width;
 		ObjectCreatorArray.refresh();
 		ObjectCreator.currentViewId = %id;
 		ObjectCreatorViewMenu.setText(getField($ObjectCreator_View[%id],0));
 	}
-
 }
 //------------------------------------------------------------------------------
 if ( %this.isList ) {
-		%width = ObjectCreatorArray.extent.x - 6;
-		ObjectCreatorArray.colSize = %width;
-		%extent = %width SPC "20";
-		//%ctrl.extent = %extent;
-		//%ctrl.autoSize = true;
-	} else {
-		%width = (ObjectCreatorArray.extent.x - 10) /2;
-		//%extent = %width SPC "20";
-		//%ctrl.extent = %extent;
-		ObjectCreatorArray.colSize = %width;
-	}
+	%width = ObjectCreatorArray.extent.x - 6;
+	ObjectCreatorArray.colSize = %width;
+	%extent = %width SPC "20";
+	//%ctrl.extent = %extent;
+	//%ctrl.autoSize = true;
+} else {
+	%width = (ObjectCreatorArray.extent.x - 10) /2;
+	//%extent = %width SPC "20";
+	//%ctrl.extent = %extent;
+	ObjectCreatorArray.colSize = %width;
+}
+
 //==============================================================================
 function ObjectCreatorMenu::onSelect( %this, %id, %text ) {
 	%split = strreplace( %text, "/", " " );
@@ -95,19 +98,20 @@ function ObjectCreator::navigate( %this, %address ) {
 	show(ObjectCreatorArray);
 	hide(ObjectCreatorIconSrc);
 	%type = ObjectCreator.objType;
-	if (!%this.isMethod("navigate"@%type)||%type $= ""){
+
+	if (!%this.isMethod("navigate"@%type)||%type $= "") {
 		warnLog("Couldn't find a scene creator navigating function for type:",%type);
 		return;
 	}
-	eval("%this.navigate"@%type@"(%address);");
 
-	
+	eval("%this.navigate"@%type@"(%address);");
 	ObjectCreator.lastTypeAddress[%type] = %address;
 	ObjectCreatorArray.sort( "alphaIconCompare" );
 
 	for ( %i = 0; %i < ObjectCreatorArray.getCount(); %i++ ) {
 		ObjectCreatorArray.getObject(%i).autoSize = false;
 	}
+
 	ObjectCreator.addFolderUpIcon();
 	%this.setViewId($ObjectCreator_ViewId);
 	ObjectCreatorArray.refresh();
@@ -123,7 +127,6 @@ function ObjectCreator::navigate( %this, %address ) {
 		//%ctrl.extent = %extent;
 		ObjectCreatorArray.colSize = %width;
 	}*/
-	
 	//ObjectCreatorArray.frozen = false;
 	//ObjectCreatorArray.refresh();
 	// Recalculate the array for the parent guiScrollCtrl
@@ -177,13 +180,11 @@ function ObjectCreator::navigateLevel( %this, %address ) {
 }
 //==============================================================================
 // Navigate through Creator Book Data
-function ObjectCreator::navigateScripted( %this, %address )
-{
+function ObjectCreator::navigateScripted( %this, %address ) {
 	%category = getWord( %address, 1 );
 	%dataGroup = "DataBlockGroup";
 
-	for ( %i = 0; %i < %dataGroup.getCount(); %i++ )
-	{
+	for ( %i = 0; %i < %dataGroup.getCount(); %i++ ) {
 		%obj = %dataGroup.getObject(%i);
 		// echo ("Obj: " @ %obj.getName() @ " - " @ %obj.category );
 
@@ -194,17 +195,13 @@ function ObjectCreator::navigateScripted( %this, %address )
 		if ( ObjectCreatorMenu.findText( %obj.category ) == -1 )
 			ObjectCreatorMenu.add( %obj.category );
 
-		if ( %address $= "" )
-		{
+		if ( %address $= "" ) {
 			%ctrl = %this.findIconCtrl( %obj.category );
 
-			if ( %ctrl == -1 )
-			{
+			if ( %ctrl == -1 ) {
 				%this.addFolderIcon( %obj.category );
 			}
-		}
-		else if ( %address $= %obj.category )
-		{
+		} else if ( %address $= %obj.category ) {
 			%ctrl = %this.findIconCtrl( %obj.getName() );
 
 			if ( %ctrl == -1 )
@@ -219,9 +216,6 @@ function ObjectCreator::createIcon( %this ) {
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
 	%ctrl.superClass = "ObjectCreatorIcon";
-
-	
-
 	return %ctrl;
 }
 //------------------------------------------------------------------------------
@@ -234,7 +228,6 @@ function ObjectCreator::addFileIcon( %this, %fullPath ) {
 		%createCmd = "Scene.createMesh( \"" @ %fullPath @ "\" );";
 		%type = "Mesh";
 		%ctrl.createCmd = %createCmd;
-		
 	} else if (strFindWords(strlwr(%ext),"png tga jpg bmp")) {
 		%type = "Image";
 	} else	{
@@ -247,7 +240,6 @@ function ObjectCreator::addFileIcon( %this, %fullPath ) {
 			 "Size: " @ fileSize( %fullPath ) / 1000.0 SPC "KB" NL
 			 "Date Created: " @ fileCreatedTime( %fullPath ) NL
 			 "Last Modified: " @ fileModifiedTime( %fullPath );
-	
 	%ctrl.altCommand = "ObjectCreator.icon"@%type@"Alt($ThisControl);";
 	%ctrl.iconBitmap = ( ( %ext $= ".dts" ) ? EditorIconRegistry::findIconByClassName( "TSStatic" ) : "tlab/gui/icons/default/iconCollada" );
 	%ctrl.text = %file;
@@ -257,14 +249,12 @@ function ObjectCreator::addFileIcon( %this, %fullPath ) {
 	%ctrl.tooltip = %tip;
 	%ctrl.buttonType = "radioButton";
 	%ctrl.groupNum = "-1";
-	
 	%ctrl.fullPath = %fullPath;
 	ObjectCreatorArray.addGuiControl( %ctrl );
 }
 //------------------------------------------------------------------------------
 //ObjectCreator.addFolderUpIcon
-function ObjectCreator::addFolderUpIcon( %this ) {	
-		
+function ObjectCreator::addFolderUpIcon( %this ) {
 	%ctrl = %this.createIcon();
 	%ctrl.command = "ObjectCreator.navigateUp();";
 	%ctrl.altCommand = "ObjectCreator.navigateUp();";
@@ -276,16 +266,13 @@ function ObjectCreator::addFolderUpIcon( %this ) {
 	%ctrl.makeIconSquare = true;
 	//%ctrl.class = "CreatorFolderIconBtn";
 	%ctrl.buttonType = "PushButton";
-	
 	ObjectCreatorArray.addGuiControl( %ctrl );
 	ObjectCreatorArray.bringToFront(%ctrl);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function ObjectCreator::addFolderIcon( %this, %text ) {	
-		
+function ObjectCreator::addFolderIcon( %this, %text ) {
 	%ctrl = %this.createIcon();
 	%ctrl.command = "ObjectCreator.iconFolderAlt($ThisControl);";
 	%ctrl.altCommand = "ObjectCreator.iconFolderAlt($ThisControl);";
@@ -321,20 +308,21 @@ function ObjectCreator::addMissionObjectIcon( %this, %class, %name, %buildfunc )
 	// object then fall back to the stock one
 	%method = "build" @ %buildfunc;
 	devLog("Method = ",%method);
+
 	if( !ObjectBuilderGui.isMethod( %method ) )
 		%method = "build" @ %class;
-	
+
 	if( !ObjectBuilderGui.isMethod( %method ) )
 		%method = "build" @ %class;
-		
-	if( !ObjectBuilderGui.isMethod( %method ) ){
+
+	if( !ObjectBuilderGui.isMethod( %method ) ) {
 		%func = "build" @ %buildfunc;
+
 		if (isFunction("build" @ %buildfunc))
 			%cmd = "return build" @ %buildfunc @ "();";
 		else
 			%cmd = "return new " @ %class @ "();";
-	}
-	else{
+	} else {
 		%cmd = "ObjectBuilderGui." @ %method @ "();";
 	}
 

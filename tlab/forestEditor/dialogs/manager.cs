@@ -13,7 +13,20 @@ function FEP_Manager::onWake( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function FEP_Manager::init( %this ) {	
+function FEP_Manager::onShow( %this ) {
+	devLog("FEP_Manager::onWake");
+	%contentId = %this.contentId;
+	if (%contentId $= "")
+		%contentId = 0;
+	%this-->TabBook.selectPage(%contentId);
+	%this.loadData();
+	%this-->saveChangesButton.active = ForestDataManager.dirty;
+}
+//------------------------------------------------------------------------------
+
+
+//==============================================================================
+function FEP_Manager::init( %this ) {
 	FEP_Manager.initDataGenerator();
 	FEP_Manager.buildBrushParams();
 	FEP_Manager.initBrushData(true);
@@ -25,8 +38,6 @@ function FEP_Manager::init( %this ) {
 function FEP_Manager::loadData( %this ) {
 	ForestEditBrushTree.initTree();
 	ForestEditMeshTree.initTree();
-	
-
 	%this.dataTree["brush"] = ForestManagerBrushTree;
 	%this.dataTree["item"] = ForestManagerItemTree;
 }

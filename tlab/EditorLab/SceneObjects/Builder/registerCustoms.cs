@@ -4,24 +4,20 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::registerCustomsObjectsGroup( %this,%group ) {
-	
-	switch$(%group){
-		case "Environment":				
-			return;
-		
-		case "Level":			
-			return;
+	switch$(%group) {
+	case "Environment":
+		return;
+
+	case "Level":
+		return;
 	}
-	
 }
 
-function Scene::registerCustomsGroups( %this ) {	
-	
+function Scene::registerCustomsGroups( %this ) {
 }
 
-function ObjectBuilderGui::buildBoostZone(%this)
-{
-   %this.objectClassName = "BoostZone";
-   %this.addField( "BoostZoneBase_A", "TypeFile", "Shape File", "", "*.*");
-   %this.process();
+function ObjectBuilderGui::buildBoostZone(%this) {
+	%this.objectClassName = "BoostZone";
+	%this.addField( "BoostZoneBase_A", "TypeFile", "Shape File", "", "*.*");
+	%this.process();
 }

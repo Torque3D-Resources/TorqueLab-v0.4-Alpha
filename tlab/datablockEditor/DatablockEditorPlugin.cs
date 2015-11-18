@@ -11,10 +11,8 @@
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function DatablockEditorPlugin::initParamsArray( %this,%array ) {
-	
 	%array.group[%groupId++] = "General settings";
 	%array.setVal("excludeClientOnlyDatablocks",       "1" TAB "excludeClientOnlyDatablocks" TAB "Checkbox"  TAB "" TAB "DatablockEditorPlugin" TAB %groupId);
-
 }
 //------------------------------------------------------------------------------
 
@@ -27,22 +25,20 @@ function DatablockEditorPlugin::initParamsArray( %this,%array ) {
 function DatablockEditorPlugin::onWorldEditorStartup( %this ) {
 	Parent::onWorldEditorStartup( %this );
 	DatablockEditorTreeTabBook.selectPage( 0 );
-	
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
-function DatablockEditorPlugin::onActivated( %this ) {	
+function DatablockEditorPlugin::onActivated( %this ) {
 	DatablockEditorInspectorWindow.makeFirstResponder( true );
-	
 	DbEd.setSelectedDatablock(DbEd.activeDatablock);
-	
+
 	if (DbEd.allClasses $= "")
 		DatablockEditorPlugin.buildClassList();
+
 	if (DbEd.activeClasses $= "")
 		DbEd.selectAllClasses();
-	
+
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo( "Datablock editor." );
 	%numSelected = %this.getNumSelectedDatablocks();
@@ -60,7 +56,6 @@ function DatablockEditorPlugin::onActivated( %this ) {
 
 	DbEd.initGui();
 	Parent::onActivated( %this );
-	
 	DbEd_SelectionTabBook.selectPage(0);
 }
 //------------------------------------------------------------------------------

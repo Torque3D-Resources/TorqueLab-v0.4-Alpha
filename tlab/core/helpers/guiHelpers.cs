@@ -6,11 +6,11 @@
 $LabCfg_ContextMenuProfile = "ToolsDropdownProfile";
 
 //==============================================================================
-// MouseEventControl - GuiControl AutoToggler 
+// MouseEventControl - GuiControl AutoToggler
 //==============================================================================
-function LabMouseToggle::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCount){	
-	%target = %this.internalName;	
-	toggleVisible(%target);	
+function LabMouseToggle::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCount) {
+	%target = %this.internalName;
+	toggleVisible(%target);
 }
 //------------------------------------------------------------------------------
 
@@ -19,16 +19,16 @@ function LabMouseToggle::onMouseDown(%this,%modifier,%mousePoint,%mouseClickCoun
 //==============================================================================
 function Lab::createContextMenu(%this,%itemRecords,%show) {
 	devLog("Lab::createContextMenu(%this,%itemRecords,%show,%menu)",%this,%itemRecords,%show,%menu);
-	if (!isObject(%menu)){
-	%menu = new PopupMenu() {
-		superClass = "ContextMenu";
-		isPopup = true;		
-		
-		object = -1;
-		profile = $LabCfg_ContextMenuProfile;
-	};
+
+	if (!isObject(%menu)) {
+		%menu = new PopupMenu() {
+			superClass = "ContextMenu";
+			isPopup = true;
+			object = -1;
+			profile = $LabCfg_ContextMenuProfile;
+		};
 	}
-	
+
 	return %menu;
 }
 //------------------------------------------------------------------------------
@@ -65,6 +65,7 @@ function ContextMenu::onSelectItem(%this, %id, %text) {
 	devLog("ContextMenu::onSelectItem(%this,%id,%text) ",%this,%id,%text);
 	%cmd = getField(%this.item[%id], 2);
 	devLog("ContextMenu::onSelectItem Command ",%cmd);
+
 	if(%cmd !$= "") {
 		eval( %cmd );
 		return true;
@@ -113,10 +114,10 @@ function Lab::setGuisToEditor() {
 function Lab::savePluginGui(%this,%plugin) {
 	//Assemble the GUI
 	%groupCtrl  = %plugin@"_GuiSet";
-	if (!isObject(%groupCtrl)){
+
+	if (!isObject(%groupCtrl)) {
 		warnLog("Invalid plugin GuiSet in Lab::savePluginGui, tried",%groupCtrl);
-	}
-	else {
+	} else {
 		foreach(%gui in %groupCtrl) {
 			%parent = %gui.defaultParent;
 
@@ -125,6 +126,7 @@ function Lab::savePluginGui(%this,%plugin) {
 			%parent.add(%gui);
 		}
 	}
+
 	if (!isObject(%parent)) {
 		warnLog("Invalid Parent GUI to save:",%parent);
 		return;

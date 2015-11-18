@@ -11,12 +11,12 @@
 
 
 function Lab::cloneGuiEditor(%this) {
-	
 	if ($InGuiEditor) {
 		%loadEditor = true;
 		Lab.lastGuiEditSource = GuiEditor.lastContent;
 		GuiEditCanvas.quit();
 	}
+
 	delObj(CloneEditorGui);
 	%cloneEditor = GuiEditorGui.deepClone();
 	%cloneEditor.setName("CloneEditorGui");
@@ -27,21 +27,20 @@ function Lab::cloneGuiEditor(%this) {
 	%fileWrite.writeLine("//--- OBJECT WRITE END ---");
 	closeFileObj(%fileWrite);
 	GuiEditorContentList.init();
-	
+
 	if (%loadEditor)
-		schedule(500,"","GuiEdit");	
+		schedule(500,"","GuiEdit");
 }
 
 function Lab::convertClonedGuiEditor(%this) {
 	if ($InGuiEditor)
 		GuiEd.closeEditor();
+
 	%fileWrite = getFileWriteObj("tlab/guiEditor/gui/backup/guiEditor.tmp.gui");
 	%fileWrite.writeLine("//--- OBJECT WRITE BEGIN ---");
 	%fileWrite.writeObject(GuiEditorGui, "%guiContent = ");
 	%fileWrite.writeLine("//--- OBJECT WRITE END ---");
 	closeFileObj(%fileWrite);
-
-	
 	delObj(CloneEditorGui);
 	exec("tlab/guiEditor/gui/CloneEditorGui.gui");
 	delObj(GuiEditorGui);
@@ -56,7 +55,7 @@ function Lab::convertClonedGuiEditor(%this) {
 
 	while( !%fileRead.isEOF() ) {
 		%line = %fileRead.readLine();
-		
+
 		//new GuiControl(GuiEditorContent2) {
 		if (strFind(%line,"(GuiEd") && !strFind(%line,"(GuiEditorGui")) {
 			%linefields = strreplace(%line,"(","\t");
@@ -73,26 +72,29 @@ function Lab::convertClonedGuiEditor(%this) {
 
 		%finalLine[%id++] = %line;
 	}
-	
+
 	closeFileObj(%fileRead);
 	%fileWrite = getFileWriteObj("tlab/guiEditor/gui/guiEditor.ed.gui");
-	for(%i = 1;%i <=%id;%i++){
+
+	for(%i = 1; %i <=%id; %i++) {
 		%fileWrite.writeLine(%finalLine[%i]);
 	}
+
 	closeFileObj(%fileWrite);
 	delObj(GuiEditorGui);
 	exec("tlab/guiEditor/gui/guiEditor.ed.gui");
-	
 	addGuiEditorCtrl();
 	Lab.initMenu(GuiEdMenu);
+
 	if (%loadEditor)
-		GuiEd.schedule(500,"launchEditor",true);	
+		GuiEd.schedule(500,"launchEditor",true);
 }
 
 function addGuiEditorCtrl(%reset) {
 	if (%reset)
 		delObj(GuiEditor);
-	if (!isObject(GuiEditor)){
+
+	if (!isObject(GuiEditor)) {
 		new GuiEditCtrl(GuiEditor) {
 			snapToControls = "1";
 			snapToGuides = "1";
@@ -118,5 +120,6 @@ function addGuiEditorCtrl(%reset) {
 			canSaveDynamicFields = "0";
 		};
 	}
+
 	GuiEditorRegion.add(GuiEditor);
 }

@@ -1,5 +1,5 @@
 //==============================================================================
-// TorqueLab -> ShapeEditor -> Node Editing 
+// TorqueLab -> ShapeEditor -> Node Editing
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -8,22 +8,22 @@
 function ShapeEd::addNewNode( %this, %name ) {
 	if (%name $= "")
 		%name = ShapeEd_AddNodeName.getText();
-		
-	if (%name $= "")	
+
+	if (%name $= "")
 		%name = "NewNode";
 	ShapeEdNodes.onAddNode(%name);
-	
+
 }
 
 //==============================================================================
-// ShapeEditor -> Node Editing 
+// ShapeEditor -> Node Editing
 //==============================================================================
 
 // Update the GUI in response to the node selection changing
 function ShapeEdPropWindow::update_onNodeSelectionChanged( %this, %id ) {
 	ShapeEd.onNodeSelectionChanged( %id );
 	return;
-	
+
 	if ( %id > 0 ) {
 		// Enable delete button and edit boxes
 		if ( ShapeEdSeqNodeTabBook.activePage $= "Node" )

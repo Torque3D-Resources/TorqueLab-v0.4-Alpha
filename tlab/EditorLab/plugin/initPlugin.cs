@@ -28,21 +28,21 @@ function Lab::createPlugin(%this,%pluginName,%displayName,%alwaysEnable,%isModul
 	%pluginObj = new ScriptObject( %plugName ) {
 		superClass = "EditorPlugin"; //Default to EditorPlugin class
 		editorGui = EWorldEditor; //Default to EWorldEditor
-		editorMode = "World";		
+		editorMode = "World";
 		displayName = %displayName;
 		toolTip = %displayName;
-		alwaysOn = %alwaysEnable;		
+		alwaysOn = %alwaysEnable;
 		useTools = false;
 	};
-	
-	if (%isModule){
+
+	if (%isModule) {
 		%pluginObj.module = %pluginName;
 		return %pluginObj;
 	}
+
 	%pluginObj.plugin = %pluginName;
 	%pluginObj.pluginOrder = %pluginOrder;
 	%pluginObj.shortPlugin = %shortObjName;
-	
 	LabPluginGroup.add(%pluginObj);
 
 	if (strFind($TLab::DefaultPlugins,%pluginName))
@@ -84,19 +84,23 @@ function Lab::initialPluginsSetup(%this) {
 function Lab::initAllPluginConfig(%this) {
 	foreach(%plugin  in LabPluginGroup)
 		%this.initPluginConfig(%plugin);
+		
+	//Now that each plugin config have been loaded, overide the default with user prefs
+	exec( "tlab/myPrefs.cs" );
 }
 //------------------------------------------------------------------------------
 // Initialize the PluginObj configs
-function Lab::initPluginConfig(%this,%pluginObj) {
+function Lab::initPluginConfig(%this,%pluginObj) {	
 	%pluginName = %pluginObj.plugin;
-
+	
+	if (isFile("tlab/"@%pluginName@"/defaults.cs"))
+		exec("tlab/"@%pluginName@"/defaults.cs");
 	//Moving toward new params array system
 	%newArray = Lab.newParamsArray(%pluginName,"Plugins",%pluginObj);
 	%newArray.displayName = %pluginObj.displayName;
 	%pluginObj.paramArray = %newArray;
 	%newArray.pluginObj = %pluginObj;
 	%newArray.paramCallback = "Lab.onParamPluginBuild";
-	
 	//Default plugin settings
 	%newArray.setVal("pluginOrder",      "99" TAB "pluginOrder" TAB "" TAB "" TAB %pluginObj.getName());
 	%newArray.setVal("isEnabled",      "1" TAB "isEnabled" TAB "" TAB "" TAB %pluginObj.getName());
@@ -106,7 +110,7 @@ function Lab::initPluginConfig(%this,%pluginObj) {
 }
 //------------------------------------------------------------------------------
 
-	
+
 //==============================================================================
 // Make the Active Plugins Enabled - Called from Editor::open
 //==============================================================================
@@ -115,8 +119,9 @@ function Lab::initPluginConfig(%this,%pluginObj) {
 function Lab::updateActivePlugins(%this) {
 	foreach(%pluginObj in LabPluginGroup) {
 		%enabled = %pluginObj.getCfg("isEnabled");
-		%pluginObj.setPluginEnable(%enabled,%noMenuUpdate);		
+		%pluginObj.setPluginEnable(%enabled,%noMenuUpdate);
 	}
+
 	Lab.updatePluginsMenu();
 }
 //------------------------------------------------------------------------------
@@ -124,10 +129,11 @@ function Lab::enablePlugin(%this,%pluginObj,%enabled) {
 	if (!isObject(%pluginObj)) {
 		warnLog("Trying to enable invalid plugin:",%pluginObj);
 		return;
-	}	
+	}
+
 	if (%pluginObj.isEnabled)
 		warnLog(%pluginObj.plugin,"The plugin is already enabled...");
-		
+
 	%pluginObj.setPluginEnable(true);
 }
 //------------------------------------------------------------------------------
@@ -137,35 +143,33 @@ function Lab::disablePlugin(%this,%pluginObj) {
 	if (!isObject(%pluginObj)) {
 		warnLog("Trying to enable invalid plugin:",%pluginObj);
 		return;
-	}	
+	}
 
 	if (!%pluginObj.isEnabled)
 		warnLog(%pluginObj.plugin,"The plugin is already disabled...");
-		
+
 	%pluginObj.setPluginEnable(false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function EditorPlugin::setPluginEnable(%this,%enabled,%noMenuUpdate) {
-	
-	if (%this.alwaysOn) 
+	if (%this.alwaysOn)
 		%enabled = "1";
 
-	%name = %this.plugin;	
-
+	%name = %this.plugin;
 	%toolArray = ToolsToolbarArray.findObjectByInternalName(%this.plugin);
 	%toolDisabledArray = EditorGui-->DisabledPluginsBox.findObjectByInternalName(%this.plugin);
-	
+
 	if (%this.isEnabled == %enabled)
 		return;
-		
+
 	%this.isEnabled = %enabled;
+
 	if (isObject(%toolArray))
 		%toolArray.visible = %this.isEnabled;
-		
+
 	//Simply rebuild the editorMenus since the GuiMenuBar is primitive...
 	if (!%noMenuUpdate)
-		Lab.updatePluginsMenu();	
-
+		Lab.updatePluginsMenu();
 }
 //------------------------------------------------------------------------------

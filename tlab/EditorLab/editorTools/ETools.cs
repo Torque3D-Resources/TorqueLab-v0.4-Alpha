@@ -6,10 +6,11 @@
 
 //==============================================================================
 function ETools::initTools(%this) {
-	foreach(%gui in %this){
+	foreach(%gui in %this) {
 		if (%gui.isMethod("initTool"))
 			%gui.initTool();
 	}
+
 	ETransformBoxGui.initTool();
 }
 //------------------------------------------------------------------------------
@@ -20,13 +21,13 @@ function ETools::toggleTool(%this,%tool) {
 		%dlg = %tool;
 	else
 		%dlg = %this.findObjectByInternalName(%tool,true);
-		
-	if (!isObject(%dlg)){
+
+	if (!isObject(%dlg)) {
 		warnLog("Trying to toggle invalid tool:",%tool);
 		return;
 	}
+
 	%this.fitIntoParents();
-	
 	ETools.visible = true;
 
 	if (%dlg.visible) {
@@ -40,14 +41,17 @@ function ETools::toggleTool(%this,%tool) {
 		%this.showTool(%tool);
 		//%dlg.setVisible(true);
 	}
+
 	return;
 	%hideMe = true;
+
 	foreach(%gui in %this)
 		if (%gui.visible)
 			%hideMe = false;
+
 	if (%hideMe)
 		%this.visible = 0;
-	
+
 	if (isObject(%dlg.linkedButton))
 		%dlg.linkedButton.setStateOn(%dlg.visible);
 }
@@ -60,21 +64,23 @@ function ETools::showTool(%this,%tool) {
 	else
 		%dlg = %this.findObjectByInternalName(%tool,true);
 
-	if(!isObject(%dlg)){
+	if(!isObject(%dlg)) {
 		warnLog("Trying to show invalid tools dialog for tool:",%tool,"Dlg",%dlg);
 		return;
 	}
+
 	%this.fitIntoParents();
 	%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+
 	if (isObject(%toggler))
 		%toggler.setStateOn(true);
-	ETools.visible = true;
 
+	ETools.visible = true;
 	%dlg.setVisible(true);
-		
+
 	if (isObject(%dlg.linkedButton))
 		%dlg.linkedButton.setStateOn(true);
-		
+
 	if (%dlg.isMethod("onShow"))
 		%dlg.onShow();
 }
@@ -86,26 +92,25 @@ function ETools::hideTool(%this,%tool) {
 		%dlg = %tool;
 	else
 		%dlg = %this.findObjectByInternalName(%tool,true);
-	
-	
 
-%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+	%toggler = EditorGuiToolbarStack.findObjectByInternalName(%tool@"Toggle",true);
+
 	if (isObject(%toggler))
 		%toggler.setStateOn(false);
 
 	%dlg.setVisible(false);
-	
 	%hideMe = true;
+
 	foreach(%gui in %this)
 		if (%gui.visible)
 			%hideMe = false;
-			
+
 	if (%hideMe)
 		%this.visible = 0;
-		
+
 	if (isObject(%dlg.linkedButton))
 		%dlg.linkedButton.setStateOn(false);
-		
+
 	if (%dlg.isMethod("onHide"))
 		%dlg.onHide();
 }

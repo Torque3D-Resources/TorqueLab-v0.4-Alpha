@@ -7,14 +7,14 @@
 //==============================================================================
 function MaterialEditorGui::prepareActiveObject( %this, %override ) {
 	%obj = $Lab::materialEditorList;
-	
 	$MEP_BaseObjectPath = "";
 	$MEP_BaseObject = "";
-	if (isObject(MaterialEditorGui.currentObject)){
+
+	if (isObject(MaterialEditorGui.currentObject)) {
 		$MEP_BaseObject = MaterialEditorGui.currentObject;
 		$MEP_BaseObjectPath  = MaterialEditorGui.currentObject.shapeName;
 	}
-	
+
 	if( MaterialEditorGui.currentObject == %obj && !%override)
 		return;
 
@@ -28,6 +28,9 @@ function MaterialEditorGui::prepareActiveObject( %this, %override ) {
 		for(%j = 0; %j < MaterialEditorGui.currentObject.getTargetCount(); %j++) {
 			%target = MaterialEditorGui.currentObject.getTargetName(%j);
 			%count = SubMaterialSelector.getCount();
+			if (strFind(%target,"ColorEffectR") && $MatEd_HideColorMaterial)
+				continue;
+				
 			SubMaterialSelector.add(%target);
 		}
 	} else { // Other classes that support materials if possible

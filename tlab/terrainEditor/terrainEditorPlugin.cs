@@ -77,7 +77,6 @@ function TerrainEditorPlugin::onWorldEditorStartup( %this ) {
 	TerrainEditorPlugin.setParam("BrushPressure",TerrainEditorPlugin.defaultBrushPressure);
 	TerrainEditorPlugin.setParam("BrushSoftness",TerrainEditorPlugin.defaultBrushSoftness);
 	TerrainEditorPlugin.setParam("BrushSetHeight",TerrainEditorPlugin.defaultBrushSetHeight);
-	
 	TEP_BrushManager.init();
 }
 
@@ -98,7 +97,6 @@ function TerrainEditorPlugin::onActivated( %this ) {
 	ETerrainEditor.setup();
 	TerrainEditorPlugin.syncBrushInfo();
 	EditorGuiStatusBar.setSelection("");
-	
 }
 
 function TerrainEditorPlugin::onDeactivated( %this ) {
@@ -107,7 +105,6 @@ function TerrainEditorPlugin::onDeactivated( %this ) {
 	EWTerrainEditToolbar.setVisible( false );
 	ETerrainEditor.setVisible( false );
 	Lab.removeDynamicMenu(Lab.terrainMenu);
-	
 }
 
 function TerrainEditorPlugin::syncBrushInfo( %this ) {

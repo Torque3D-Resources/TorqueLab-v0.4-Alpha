@@ -122,6 +122,7 @@ function EditorOpenDeclarationInTorsion( %object ) {
 
 function EditorNewLevel( %file,%forceSave,%confirmed ) {
 	devLog("EditorNewLevel( %file,%forceSave,%confirmed )",%file,%forceSave,%confirmed );
+
 	if(isWebDemo())
 		return;
 
@@ -138,7 +139,7 @@ function EditorNewLevel( %file,%forceSave,%confirmed ) {
 	if ( EditorIsDirty() && !%confirmed) {
 		error(knob);
 		LabMsgYesNoCancel("Mission Modified", "Would you like to save changes to the current mission \"" @
-									  $Server::MissionFile @ "\" before creating a new mission?", "EditorNewLevel("@%file@",true,true)","EditorNewLevel("@%file@",false,true)");
+								$Server::MissionFile @ "\" before creating a new mission?", "EditorNewLevel("@%file@",true,true)","EditorNewLevel("@%file@",false,true)");
 		return;
 	}
 

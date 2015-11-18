@@ -2,6 +2,9 @@
 // TorqueLab ->
 // Copyright (c) 2015 All Right Reserved, http://nordiklab.com/
 //------------------------------------------------------------------------------
+//==============================================================================
+$ShapeEd_HideColorMaterial = true;
 
 
 
+devLog("MAT EDITOR DEFAULT EXECED");

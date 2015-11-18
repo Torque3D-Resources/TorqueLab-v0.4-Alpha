@@ -14,12 +14,12 @@ $TerrainEditor::TextureFileSpec = "Image Files (*.png, *.jpg, *.dds)|*.png;*.jpg
 function ETerrainEditor::saveTerrainToFile( %this,%obj,%file ) {
 	if (!isObject(%obj))
 		return;
+
 	if (%file $= "")
 		%file = addFilenameToPath(filePath(MissionGroup.getFileName()),%obj.getName(),"ter");
-	
+
 	%obj.setFieldValue("terrainFile",%file);
 	%obj.save(%file);
-	
 	devLog("Terrain:",%obj.getName(),"Saved to",%file);
 }
 //------------------------------------------------------------------------------

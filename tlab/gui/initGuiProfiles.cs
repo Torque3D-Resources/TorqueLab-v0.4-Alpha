@@ -16,9 +16,11 @@ exec(%profilesPath@"baseProfiles.cs");
 
 //exec("tlab/gui/profiles/defaultProfiles.cs");
 %filePathScript = %profilesPath@"*.prof.cs";
-for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%filePathScript)) {   
-    exec( %file );
+
+for(%file = findFirstFile(%filePathScript); %file !$= ""; %file = findNextFile(%filePathScript)) {
+	exec( %file );
 }
+
 exec(%profilesPath@"editorProfiles.cs");
 exec(%profilesPath@"inspectorProfiles.cs");
 

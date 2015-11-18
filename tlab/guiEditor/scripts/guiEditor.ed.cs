@@ -52,6 +52,7 @@ function GuiEditor::switchToWorldEditor( %this ) {
 function GuiEditor::enableMenuItems(%this, %val) {
 	if( !isObject( %this.menuBar ) )
 		return;
+
 	%menu = GuiEditCanvas.menuBar->EditMenu.getID();
 	%menu.enableItem( 3, %val ); // cut
 	%menu.enableItem( 4, %val ); // copy
@@ -108,12 +109,13 @@ function GuiEditor::redo(%this) {
 //---------------------------------------------------------------------------------------------
 
 function GuiEditor::updateUndoMenu(%this) {
-	
 	%uman = %this.getUndoManager();
 	%nextUndo = %uman.getNextUndoName();
 	%nextRedo = %uman.getNextRedoName();
+
 	if (!isObject(GuiEditCanvas.menuBar))
 		return;
+
 	%editMenu = GuiEditCanvas.menuBar->editMenu;
 	%editMenu.setItemName( 0, "Undo " @ %nextUndo );
 	%editMenu.setItemName( 1, "Redo " @ %nextRedo );
@@ -324,6 +326,7 @@ function GuiEditor::toggleGridSnap( %this ) {
 		%this.setSnapToGrid( 0 );
 	else
 		%this.setSnapToGrid( %this.snap2GridSize );
+
 	Lab.checkMenuCodeItem("Gui","snap2Grid",%this.snap2Grid);
 	//GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_GRIDSNAP_INDEX, %this.snap2Grid );
 	GuiEditorSnapCheckBox.setStateOn( %this.snap2Grid );
@@ -494,8 +497,10 @@ function GuiEditorTabBook::onWake( %this ) {
 
 function GuiEditorTabBook::onTabSelected( %this, %text, %index ) {
 	%sidebar = GuiEditorSidebar;
+
 	if (!isObject(%sidebar))
 		return;
+
 	%name = %this.getObject( %index ).getInternalName();
 
 	switch$( %name ) {
@@ -609,10 +614,8 @@ function GuiEditorGui::onWake( %this ) {
 
 	if( !GuiEditorToolbox.isInitialized )
 		GuiEditorToolbox.initialize();
-		
-	if (isObject(GuiEditCanvas.menuBar)){
-		
 
+	if (isObject(GuiEditCanvas.menuBar)) {
 		// Set up initial menu toggle states.
 		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_EDGESNAP_INDEX, GuiEditor.snapToEdges );
 		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_CENTERSNAP_INDEX, GuiEditor.snapToCenters );
@@ -623,6 +626,7 @@ function GuiEditorGui::onWake( %this ) {
 		GuiEditCanvas.menuBar->SnapMenu.checkItem( $GUI_EDITOR_MENU_DRAWGUIDES_INDEX, GuiEditor.drawGuides );
 		GuiEditCanvas.menuBar->EditMenu.checkItem( $GUI_EDITOR_MENU_FULLBOXSELECT_INDEX, GuiEditor.fullBoxSelection );
 	}
+
 	// Sync toolbar buttons.
 	GuiEditorSnapCheckBox.setStateOn( GuiEditor.snap2Grid );
 	GuiEditorEdgeSnapping_btn.setStateOn( GuiEditor.snapToEdges );

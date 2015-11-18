@@ -9,7 +9,6 @@
 function ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd ) {
 	devLog("ShapeEditorPlugin::addFileBrowserMesh( %this, %file,%createCmd )", %this, %file,%createCmd );
 	ShapeEd.selectFilePath(%file);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -30,7 +29,6 @@ function ShapeEd::selectFilePath( %this, %path ) {
 // Handle a selection in the MissionGroup shape selector
 function ShapeEditorPlugin::setSelectedObject( %this, %obj ) {
 	devLog("ShapeEditorPlugin::setSelectedObject( %this, %obj )", %this, %obj );
-	
 	%path = ShapeEditor.getObjectShapeFile( %obj );
 
 	if ( %path !$= "" )
@@ -66,23 +64,21 @@ function ShapeEditor::selectWorldEditorShape( %this) {
 
 	for (%i = 0; %i < %count; %i++) {
 		%obj = EWorldEditor.getSelectedObject(%i);
-		%shapeFile = ShapeEditor.getObjectShapeFile(%obj);	
-		//If we have a valid shapefile, make the object the current selection	
-		if (%shapeFile !$= "") {			
-			//if (!isObject(ShapeEditor.shape) || (ShapeEditor.shape.baseShape !$= %shapeFile)) {		
-				//Clear the tree in case and make the current object selected
-				ShapeEdShapeTreeView.clearSelection();			
-				ShapeEdShapeTreeView.onSelect(%obj);
-				
-				//Set the Editor shape				
-				ShapeEditor.selectShape(%shapeFile, ShapeEditor.isDirty());
-				
-				// 'fitToShape' only works after the GUI has been rendered, so force a repaint first
-				Canvas.repaint();
-				ShapeEdShapeView.fitToShape();
-				
-				break; //Only one shape can be selected at a time so leave
-			//}			
+		%shapeFile = ShapeEditor.getObjectShapeFile(%obj);
+
+		//If we have a valid shapefile, make the object the current selection
+		if (%shapeFile !$= "") {
+			//if (!isObject(ShapeEditor.shape) || (ShapeEditor.shape.baseShape !$= %shapeFile)) {
+			//Clear the tree in case and make the current object selected
+			ShapeEdShapeTreeView.clearSelection();
+			ShapeEdShapeTreeView.onSelect(%obj);
+			//Set the Editor shape
+			ShapeEditor.selectShape(%shapeFile, ShapeEditor.isDirty());
+			// 'fitToShape' only works after the GUI has been rendered, so force a repaint first
+			Canvas.repaint();
+			ShapeEdShapeView.fitToShape();
+			break; //Only one shape can be selected at a time so leave
+			//}
 		}
 	}
 }
@@ -104,7 +100,7 @@ function ShapeEdSelectWindow::onSelect( %this, %path ) {
 //==============================================================================
 function ShapeEditor::selectShape( %this, %path, %saveOld ) {
 	ShapeEdShapeView.setModel( "" );
-
+	ShapeEditor.currentFileName = "";
 	if ( %saveOld ) {
 		// Save changes to a TSShapeConstructor script
 		%this.saveChanges();
@@ -121,7 +117,7 @@ function ShapeEditor::selectShape( %this, %path, %saveOld ) {
 		LabMsgOK( "Error", "Failed to load '" @ %path @ "'. Check the console for error messages." );
 		return;
 	}
-
+ShapeEditor.currentFileName = fileBase(%path)@fileExt(%path);
 	ShapeEdShapeView.fitToShape();
 	ShapeEdUndoManager.clearAll();
 	ShapeEditor.setDirty( false );
@@ -136,9 +132,8 @@ function ShapeEditor::selectShape( %this, %path, %saveOld ) {
 			return;
 		}
 	}
-
 	// Initialise the editor windows
-	ShapeEdAdvancedWindow.update_onShapeSelectionChanged();
+	ShapeEdDetails.update_onShapeSelectionChanged();
 	ShapeEdMountWindow.update_onShapeSelectionChanged();
 	ShapeEdThreadViewer.update_onShapeSelectionChanged();
 	ShapeEdCollisions.update_onShapeSelectionChanged();
@@ -178,7 +173,7 @@ function ShapeEdShapeTreeView::onSelect( %this, %obj ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-// Open a Shape file 
+// Open a Shape file
 //==============================================================================
 function ShapeEditorPlugin::openShape( %this, %path, %discardChangesToCurrent ) {
 //    Lab.setEditor( ShapeEditorPlugin );
@@ -197,7 +192,7 @@ function ShapeEditorPlugin::openShape( %this, %path, %discardChangesToCurrent ) 
 //==============================================================================
 /*
 function ShapeEditorPlugin::open(%this, %filename) {
-		
+
 
 	// Select the new shape
 	if (isObject(ShapeEditor.shape) && (ShapeEditor.shape.baseShape $= %filename)) {
@@ -268,11 +263,10 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 
 	ShapeEd.onNodeSelectionChanged( -1 );    // no node selected
 	// --- SEQUENCES TAB ---
-	
 	ShapeEd_SeqPillStack.clear(); //Clear the new sequence lisitng stack
-	ShapeEdSequenceList.clear();	
+	ShapeEdSequenceList.clear();
 	ShapeEdSequenceList.addRow( -1, "Name" TAB "Cyclic" TAB "Blend" TAB "Frames" TAB "Priority" );
-	ShapeEdSequenceList.setRowActive( -1, false );	
+	ShapeEdSequenceList.setRowActive( -1, false );
 	ShapeEdSequenceList.addRow( 0, "<rootpose>" TAB "" TAB "" TAB "" TAB "" );
 	%count = ShapeEditor.shape.getSequenceCount();
 
@@ -280,7 +274,7 @@ function ShapeEdPropWindow::update_onShapeSelectionChanged( %this ) {
 		%name = ShapeEditor.shape.getSequenceName( %i );
 
 		// Ignore __backup__ sequences (only used by editor)
-		if ( !startswith( %name, "__backup__" ) ){
+		if ( !startswith( %name, "__backup__" ) ) {
 			ShapeEdSequenceList.addItem( %name );
 			ShapeEd.addSequencePill(%name);
 		}

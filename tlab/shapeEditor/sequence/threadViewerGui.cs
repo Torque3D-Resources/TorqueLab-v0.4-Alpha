@@ -111,12 +111,12 @@ function ShapeEdThreadViewer::stepBkwd( %this ) {
 	ShapeEdAnimWindow.setKeyframe( mCeil(ShapeEdSeqSlider.getValue() - 1) );
 }
 function ShapeEdThreadViewer::playBkwd( %this ) {
-	ShapeEdAnimWindow.setNoProxySequence(); 
+	ShapeEdAnimWindow.setNoProxySequence();
 	ShapeEdAnimWindow.setThreadDirection( -1 );
 }
 function ShapeEdThreadViewer::playFwd( %this ) {
 	ShapeEdAnimWindow.setNoProxySequence();
-	 ShapeEdAnimWindow.setThreadDirection( 1 );
+	ShapeEdAnimWindow.setThreadDirection( 1 );
 }
 
 function ShapeEdThreadViewer::stepFwd( %this ) {

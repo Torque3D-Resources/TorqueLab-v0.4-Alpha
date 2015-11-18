@@ -12,24 +12,18 @@ function DbEd::buildPlayerDataParams( %this ) {
 	%arCfg.updateFunc = "DbEd.updateParam";
 	%arCfg.style = "StyleA";
 	%arCfg.useNewSystem = true;
-	%arCfg.noDefaults = true;	
+	%arCfg.noDefaults = true;
 	%arCfg.noDirectSync = true;
-	
 	%arCfg.group[%gid++] = "Movement";
 	%arCfg.setVal("runForce",  "runForce" TAB "SliderEdit" TAB "range>>0 1000;;tickAt>>1" TAB "DbEd.activeDatablock" TAB %gid);
 	%arCfg.setVal("maxForwardSpeed",  "maxForwardSpeed" TAB "SliderEdit" TAB "range>>0 10;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
 	%arCfg.setVal("maxBackwardSpeed",  "maxBackwardSpeed" TAB "SliderEdit" TAB "range>>0 10;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
 	%arCfg.setVal("maxSideSpeed",  "maxSideSpeed" TAB "SliderEdit" TAB "range>>0 10;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
-	
 	%arCfg.setVal("runSurfaceAngle",  "runSurfaceAngle" TAB "SliderEdit" TAB "range>>0 90;;tickAt>>1" TAB "DbEd.activeDatablock" TAB %gid);
-	
 	%arCfg.setVal("sprintForce",  "sprintForce" TAB "SliderEdit" TAB "range>>0 1000;;tickAt>>1" TAB "DbEd.activeDatablock" TAB %gid);
 	%arCfg.setVal("maxSprintForwardSpeed",  "maxSprintForwardSpeed" TAB "SliderEdit" TAB "range>>0 20;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
-		%arCfg.setVal("maxSprintBackwardSpeed",  "maxSprintBackwardSpeed" TAB "SliderEdit" TAB "range>>0 20;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
-	%arCfg.setVal("maxSprintSideSpeed",  "maxSprintSideSpeed" TAB "SliderEdit" TAB "range>>0 20;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);	
-
-	
-  
+	%arCfg.setVal("maxSprintBackwardSpeed",  "maxSprintBackwardSpeed" TAB "SliderEdit" TAB "range>>0 20;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
+	%arCfg.setVal("maxSprintSideSpeed",  "maxSprintSideSpeed" TAB "SliderEdit" TAB "range>>0 20;;tickAt>>0.1" TAB "DbEd.activeDatablock" TAB %gid);
 	buildParamsArray(%arCfg,true);
 	DbEd.currentParam = %arCfg;
 }
@@ -42,7 +36,7 @@ function DbEd::buildPlayerDataParams( %this ) {
    maxBackwardSpeed = "6";
    maxSideSpeed = "6";
    runSurfaceAngle = "38";
-   
+
     sprintForce = "4320";
    maxSprintForwardSpeed = "14";
    maxSprintBackwardSpeed = "8";
@@ -66,12 +60,12 @@ pickupRadius = "1";
    firstPersonShadows = "1";
    maxLookAngle = "0.9";
    maxStepHeight = "0.35";
-  
+
    minImpactSpeed = "10";
    minLateralImpactSpeed = "20";
-  
-   
-  
+
+
+
    swimForce = "4320";
    maxUnderwaterForwardSpeed = "8.4";
    maxUnderwaterBackwardSpeed = "7.8";

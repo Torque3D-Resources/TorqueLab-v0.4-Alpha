@@ -7,14 +7,13 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 	// Get the control we should save.
 	if( isObject(%selectedOnly) ) {
 		%currentObject = %selectedOnly;
-	}
-	else if( %selectedOnly ) {
+	} else if( %selectedOnly ) {
 		%selected = GuiEditor.getSelection();
+
 		//EditorGui prevention - Selection name must be same as file name
-		if (GuiEditorContent.getObject( 0 ).getName() $= "EditorGui"){
+		if (GuiEditorContent.getObject( 0 ).getName() $= "EditorGui") {
 			%fileNameMustMatch = %selected.getObject( 0 ).getName();
 		}
-		
 
 		if( !%selected.getCount() )
 			return;
@@ -71,16 +70,17 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 
 	if( !%noPrompt ) {
 		%filename = GuiBuilder::getSaveName( %currentFile );
-		
+
 		if( %filename $= "" )
 			return;
-		if (%fileNameMustMatch !$= "" && %fileNameMustMatch !$= fileBase(%filename)){
+
+		if (%fileNameMustMatch !$= "" && %fileNameMustMatch !$= fileBase(%filename)) {
 			devLog("You are trying to save EditorGui selection to a file not matching the content! Operation aborted! Sel name:",%fileNameMustMatch,"Filename",fileBase(%filename));
 			return;
 		}
 	} else
 		%filename = %currentFile;
-	
+
 	// Save the Gui.
 	if (%currentObject.getName() $= "EditorGui") {
 		info("Calling the specific EditorGui save function");
@@ -91,6 +91,7 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 	if( isWriteableFileName( %filename ) ) {
 		if (%currentObject.isMethod("onPreEditorSave"))
 			%currentObject.onPreEditorSave();
+
 		//
 		// Extract any existent TorqueScript before writing out to disk
 		//
@@ -141,6 +142,7 @@ function GuiEditCanvas::save( %this, %selectedOnly, %noPrompt ) {
 		%fo.delete();
 		%currentObject.setFileName( makeRelativePath( %filename, getMainDotCsDir() ) );
 		GuiEditorStatusBar.print( "Saved file '" @ %currentObject.getFileName() @ "'" );
+
 		if (%currentObject.isMethod("onPostEditorSave"))
 			%currentObject.onPostEditorSave();
 	} else

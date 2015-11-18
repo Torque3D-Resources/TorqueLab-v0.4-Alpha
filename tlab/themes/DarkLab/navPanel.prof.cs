@@ -56,8 +56,8 @@ singleton GuiControlProfile (inspectorStyleRolloutListProfile : NavPanelProfile)
 	bitmap = "tlab/gui/icons/default/panels/inspector-style-rollout-list";
 	category = "Editor";
 	hasBitmapArray = "1";
-   fillColorNA = "White";
-   fontColors[8] = "255 0 255 255";
+	fillColorNA = "White";
+	fontColors[8] = "255 0 255 255";
 };
 singleton GuiControlProfile (inspectorStyleRolloutListProfile : NavPanelProfile) {
 	bitmap = "tlab/gui/icons/default/panels/inspector-style-rollout-list";
@@ -69,8 +69,8 @@ singleton GuiControlProfile (inspectorStyleRolloutInnerProfile : NavPanelProfile
 	fontColors[5] = "Fuchsia";
 	fontColorLinkHL = "Fuchsia";
 	hasBitmapArray = "1";
-   fontColors[4] = "Fuchsia";
-   fontColorLink = "Fuchsia";
+	fontColors[4] = "Fuchsia";
+	fontColorLink = "Fuchsia";
 };
 singleton GuiControlProfile (inspectorStyleRolloutInnerProfile : NavPanelProfile) {
 	bitmap = "tlab/themes/DarkBlue/assets/container-assets/GuiRolloutTitle_S1.png";
@@ -82,11 +82,11 @@ singleton GuiControlProfile (inspectorStyleRolloutInnerProfile : NavPanelProfile
 singleton GuiControlProfile (IconDropdownProfile : NavPanelProfile) {
 	bitmap = "tlab/gui/icons/default/panels/icon-dropdownbar";
 	category = "Editor";
-   fontColors[8] = "255 0 255 255";
+	fontColors[8] = "255 0 255 255";
 };
 singleton GuiControlProfile (IconDropdownProfile : NavPanelProfile) {
 	bitmap = "tlab/gui/icons/default/panels/icon-dropdownbar";
 	category = "Editor";
-   fontColors[7] = "Fuchsia";
-   fontColors[8] = "255 0 255 255";
+	fontColors[7] = "Fuchsia";
+	fontColors[8] = "255 0 255 255";
 };

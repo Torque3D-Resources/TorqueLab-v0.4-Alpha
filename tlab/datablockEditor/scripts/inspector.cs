@@ -41,16 +41,20 @@ function DatablockEditorInspector::onClear( %this ) {
 
 //==============================================================================
 function DbEd::setFilters( %this,%id ) {
-	switch$(%id){
-		case "":
-			DatablockEditorInspector.groupFilters = "";
-		case "0":
-			DatablockEditorInspector.groupFilters = "+Scripting -Object";
-		case "1":
-			DatablockEditorInspector.groupFilters = "-Scripting +Object";
-		case "2":
-			DatablockEditorInspector.groupFilters = "-Scripting +Object";	
+	switch$(%id) {
+	case "":
+		DatablockEditorInspector.groupFilters = "";
+
+	case "0":
+		DatablockEditorInspector.groupFilters = "+Scripting -Object";
+
+	case "1":
+		DatablockEditorInspector.groupFilters = "-Scripting +Object";
+
+	case "2":
+		DatablockEditorInspector.groupFilters = "-Scripting +Object";
 	}
+
 	DatablockEditorInspector.refresh();
 }
 //------------------------------------------------------------------------------

@@ -7,11 +7,8 @@
 
 //==============================================================================
 function initializeNavEditor() {
-	
 	echo(" % - Initializing Nav Editor");
-	
 	execNavEd(true);
-	
 	$NavEd = newScriptObject("NavEd");
 	//exec("./gui/profiles.ed.cs");
 	Lab.createPlugin("NavEditor","Nav Editor");
@@ -27,7 +24,7 @@ function initializeNavEditor() {
 //==============================================================================
 function execNavEd(%loadGui) {
 	if (%loadGui) {
-		// Load MaterialLab Guis		
+		// Load MaterialLab Guis
 		exec("tlab/navEditor/gui/NavEditorConsoleDlg.gui");
 		exec("tlab/navEditor/gui/CreateNewNavMeshDlg.gui");
 		exec("tlab/navEditor/gui/NavEditorToolbar.gui");
@@ -37,7 +34,6 @@ function execNavEd(%loadGui) {
 	}
 
 	// Load Client Scripts.
-
 	exec("./NavEditorPlugin.cs");
 	execPattern("tlab/navEditor/scripts/*.cs");
 	execPattern("tlab/navEditor/editor/*.cs");

@@ -23,7 +23,8 @@ function TEP_BrushManager::onWake( %this ) {
 
 function TEP_BrushManager::init( %this ) {
 	%toolbars = "EWTerrainEditToolbar TerrainPainterToolbar";
-	foreach$(%type in $TEP_BrushManager_Types){
+
+	foreach$(%type in $TEP_BrushManager_Types) {
 		%this.brushTypeCtrls[%type] = "";
 		%this.brushTypeSliders[%type] = "";
 		%this.brushTypeCtrls[%type,"Editor"] = "";
@@ -31,22 +32,27 @@ function TEP_BrushManager::init( %this ) {
 		%this.brushTypeCtrls[%type,"Painter"] = "";
 		%this.brushTypeSliders[%type,"Painter"] = "";
 	}
-	foreach$(%type in $TEP_BrushManager_Types){
-			%edit = TerrainPainterToolbar.findObjectByInternalName(%type,true);
-			%slider = TerrainPainterToolbar.findObjectByInternalName(%type@"_slider",true);
-			if (isObject(%edit))
-				%this.brushTypeCtrls[%type,"Painter"] = strAddWord(%this.brushTypeSliders[%type,"Painter"],%edit.getId());
-			if (isObject(%slider))
-				%this.brushTypeSliders[%type,"Painter"] = strAddWord(%this.brushTypeSliders[%type,"Painter"],%slider.getId());	
-				
-			%edit = EWTerrainEditToolbar.findObjectByInternalName(%type,true);
-			%slider = EWTerrainEditToolbar.findObjectByInternalName(%type@"_slider",true);
-			if (isObject(%edit))
-				%this.brushTypeCtrls[%type,"Editor"] = strAddWord(%this.brushTypeSliders[%type,"Editor"],%edit.getId());
-			if (isObject(%slider))
-				%this.brushTypeSliders[%type,"Editor"] = strAddWord(%this.brushTypeSliders[%type,"Editor"],%slider.getId());	
+
+	foreach$(%type in $TEP_BrushManager_Types) {
+		%edit = TerrainPainterToolbar.findObjectByInternalName(%type,true);
+		%slider = TerrainPainterToolbar.findObjectByInternalName(%type@"_slider",true);
+
+		if (isObject(%edit))
+			%this.brushTypeCtrls[%type,"Painter"] = strAddWord(%this.brushTypeSliders[%type,"Painter"],%edit.getId());
+
+		if (isObject(%slider))
+			%this.brushTypeSliders[%type,"Painter"] = strAddWord(%this.brushTypeSliders[%type,"Painter"],%slider.getId());
+
+		%edit = EWTerrainEditToolbar.findObjectByInternalName(%type,true);
+		%slider = EWTerrainEditToolbar.findObjectByInternalName(%type@"_slider",true);
+
+		if (isObject(%edit))
+			%this.brushTypeCtrls[%type,"Editor"] = strAddWord(%this.brushTypeSliders[%type,"Editor"],%edit.getId());
+
+		if (isObject(%slider))
+			%this.brushTypeSliders[%type,"Editor"] = strAddWord(%this.brushTypeSliders[%type,"Editor"],%slider.getId());
 	}
-		
+
 	/*foreach$(%toolbar in %toolbars) {
 		foreach$(%type in $TEP_BrushManager_Types){
 			%edit = %toolbar.findObjectByInternalName(%type,true);
@@ -54,43 +60,41 @@ function TEP_BrushManager::init( %this ) {
 			if (isObject(%edit))
 				%this.brushTypeCtrls[%type] = strAddWord(%this.brushTypeSliders[%type],%edit.getId());
 			if (isObject(%slider))
-				%this.brushTypeSliders[%type] = strAddWord(%this.brushTypeSliders[%type],%slider.getId());				
+				%this.brushTypeSliders[%type] = strAddWord(%this.brushTypeSliders[%type],%slider.getId());
 		}
 	}*/
-	foreach$(%type in $TEP_BrushManager_Types){
+	foreach$(%type in $TEP_BrushManager_Types) {
 		%this.brushTypeCtrls[%type] = %this.brushTypeCtrls[%type,"Editor"] SPC %this.brushTypeCtrls[%type,"Painter"];
 		%this.brushTypeSliders[%type] = %this.brushTypeSliders[%type,"Editor"] SPC %this.brushTypeSliders[%type,"Painter"];
 	}
-	%this.setDefaultBrush();
 
+	%this.setDefaultBrush();
 }
 
 //==============================================================================
 // Set the size of the brush (in game unit)
 function TEP_BrushManager::setDefaultBrush( %this ) {
-	
-	
-	foreach$(%type in $TEP_BrushManager_Types){
-		%list = TEP_BrushManager.brushTypeCtrls[%type,"Editor"];		
-		foreach$(%ctrl in %list){
-			%cfg = "DefaultBrush"@%type;			
-			
+	foreach$(%type in $TEP_BrushManager_Types) {
+		%list = TEP_BrushManager.brushTypeCtrls[%type,"Editor"];
+
+		foreach$(%ctrl in %list) {
+			%cfg = "DefaultBrush"@%type;
 			%default = TerrainEditorPlugin.getCfg(%cfg);
 			%ctrl.setValue(%default);
-			%ctrl.updateFriends();		
+			%ctrl.updateFriends();
 		}
-	}	
-	
-	foreach$(%type in $TEP_BrushManager_Types){
-		%list = TEP_BrushManager.brushTypeCtrls[%type,"Painter"];		
-		foreach$(%ctrl in %list){
-			%cfg = "DefaultBrush"@%type;			
-			
+	}
+
+	foreach$(%type in $TEP_BrushManager_Types) {
+		%list = TEP_BrushManager.brushTypeCtrls[%type,"Painter"];
+
+		foreach$(%ctrl in %list) {
+			%cfg = "DefaultBrush"@%type;
 			%default = TerrainPainterPlugin.getCfg(%cfg);
 			%ctrl.setValue(%default);
-			%ctrl.updateFriends();		
+			%ctrl.updateFriends();
 		}
-	}	
+	}
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -99,7 +103,6 @@ function TEP_BrushManager::setDefaultBrush( %this ) {
 //==============================================================================
 // Set the size of the brush (in game unit)
 function TEP_BrushManager::updateBrushSize( %this,%ctrl ) {
-	
 	%validValue = %this.validateBrushSize(%ctrl.getValue());
 	%maxBrushSize = getWord(ETerrainEditor.maxBrushSize, 0);
 
@@ -110,6 +113,7 @@ function TEP_BrushManager::updateBrushSize( %this,%ctrl ) {
 		if (%ctrl.range !$= %latestRange)
 			%ctrl.range = %latestRange;
 	}
+
 	%ctrl.setValue(%validValue);
 	%ctrl.updateFriends();
 	Lab.currentEditor.setParam("BrushSize",%validValue);
@@ -124,14 +128,11 @@ function TEP_BrushManager::validateBrushSize( %this,%value ) {
 	%brushSize = mCeil(%value);
 	%brushSize = mClamp(%brushSize,%minBrushSize,%maxBrushSize);
 	ETerrainEditor.setBrushSize(%brushSize);
-
-
 	//Set the validated value to control and update friends if there's any
 	//foreach(%slider in $GuiGroup_TEP_BrushSizeSlider) {
 	//	%slider.setValue(%brushSize);
 	//	%slider.updateFriends();
 	//}
-
 	return %brushSize;
 }
 //------------------------------------------------------------------------------
@@ -141,12 +142,10 @@ function TEP_BrushManager::validateBrushSize( %this,%value ) {
 //==============================================================================
 // Set the pressure of the brush
 function TEP_BrushManager::updateBrushPressure( %this,%ctrl ) {
-	
 	//Convert float to closest integer
 	%brushPressure = %ctrl.getValue();
 	%validValue = %this.validateBrushPressure(%brushPressure);
 	Lab.currentEditor.setParam("BrushPressure",%validValue);
-	
 	%ctrl.setValue(%validValue);
 	%ctrl.updateFriends();
 }
@@ -161,13 +160,11 @@ function TEP_BrushManager::validateBrushPressure( %this,%brushPressure ) {
 	%editorPressure = ETerrainEditor.getBrushPressure();
 	%newPressure = %editorPressure * 100;
 	%formatPressure = mFloatLength(%newPressure,1);
-
 	//Set the validated value to control and update friends if there's any
 	//foreach(%slider in $GuiGroup_TEP_PressureSlider) {
 	//	%slider.setValue(%formatPressure);
 	//	%slider.updateFriends();
 	//}
-
 	return %formatPressure;
 }
 //------------------------------------------------------------------------------
@@ -178,12 +175,10 @@ function TEP_BrushManager::validateBrushPressure( %this,%brushPressure ) {
 //==============================================================================
 // Set the softness of the brush - (Lower = Less effects)
 function TEP_BrushManager::updateBrushSoftness( %this,%ctrl ) {
-	
 	//Convert float to closest integer
 	%brushSoftness = %ctrl.getValue();
-	%validValue = %this.validateBrushSoftness(%brushSoftness);	
-	Lab.currentEditor.setParam("BrushSoftness",%validValue);	
-	
+	%validValue = %this.validateBrushSoftness(%brushSoftness);
+	Lab.currentEditor.setParam("BrushSoftness",%validValue);
 	devLog("BrushSoftness",%validValue);
 	%ctrl.setValue(%validValue);
 	%ctrl.updateFriends();
@@ -199,11 +194,8 @@ function TEP_BrushManager::validateBrushSoftness( %this,%value ) {
 	ETerrainEditor.setBrushSoftness(%clampSoftness);
 	%editorSoftness = ETerrainEditor.getBrushSoftness();
 	%newSoftness = %editorSoftness * 100;
-	%formatSoftness = mFloatLength(%newSoftness,1);	
+	%formatSoftness = mFloatLength(%newSoftness,1);
 	return %formatSoftness;
-	
-
-	
 }
 //------------------------------------------------------------------------------
 
@@ -218,7 +210,7 @@ function TEP_BrushManager::updateSetHeightValue( %this,%ctrl ) {
 
 	if (%validValue $= "")
 		return;
-	
+
 	%ctrl.setValue(%validValue);
 	%ctrl.updateFriends();
 	Lab.currentEditor.setParam("BrushSetHeight",%validValue);
@@ -236,12 +228,11 @@ function TEP_BrushManager::validateBrushSetHeight( %this,%value ) {
 	%value = mFloatLength(%value,2);
 	ETerrainEditor.setHeightVal = %value;
 	return %value;
+
 	foreach(%slider in $GuiGroup_TEP_SetHeightSlider) {
 		%slider.setValue(%value);
 		%slider.updateFriends();
 	}
-
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -266,16 +257,13 @@ function TEP_BrushManager::validateBrushSlopeMin( %this,%value ) {
 	//Force the value into the TerrainEditor code and it will be returned validated
 	%val = ETerrainEditor.setSlopeLimitMinAngle(%value);
 	//Set precision to 1 for gui display
-	
-
 	return %val;
+
 	//Set the validated value to control and update friends if there's any
 	foreach(%slider in $GuiGroup_TPP_Slider_SlopeMin) {
 		%slider.setValue(%formatVal);
 		%slider.updateFriends();
 	}
-
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -287,7 +275,6 @@ function TEP_BrushManager::validateBrushSlopeMin( %this,%value ) {
 function TEP_BrushManager::setSlopeMax( %this,%ctrl ) {
 	%validValue = %this.validateBrushSlopeMax(%ctrl.getValue());
 	Lab.currentEditor.setParam("BrushSlopeMax",%validValue);
-	
 	%formatVal = mFloatLength(%validValue,1);
 	%ctrl.setValue(%formatVal);
 	%ctrl.updateFriends();
@@ -301,6 +288,7 @@ function TEP_BrushManager::validateBrushSlopeMax( %this,%value ) {
 	//Set precision to 1 for gui display
 	%formatVal = mFloatLength(%val,1);
 	return %val;
+
 	//Set the validated value to control and update friends if there's any
 	foreach(%slider in $GuiGroup_TPP_Slider_SlopeMax) {
 		%slider.setValue(%formatVal);

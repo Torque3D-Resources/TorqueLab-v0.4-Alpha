@@ -9,11 +9,11 @@
 //==============================================================================
 //==============================================================================
 singleton GuiControlProfile (ToolsGuiFrameSetProfile) {
-    fillcolor = "255 255 255";
-    borderColor = "246 245 244";
-    border = 1;
-    opaque = true;
-    border = true;
-    category = "Tools";
+	fillcolor = "255 255 255";
+	borderColor = "246 245 244";
+	border = 1;
+	opaque = true;
+	border = true;
+	category = "Tools";
 };
 //------------------------------------------------------------------------------

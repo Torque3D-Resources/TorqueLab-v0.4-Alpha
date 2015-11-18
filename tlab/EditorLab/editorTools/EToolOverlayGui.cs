@@ -40,11 +40,10 @@ function EOverlay::hideDlg(%this,%dlg,%decoyMode) {
 
 //==============================================================================
 function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%startValue) {
-	
-
 	%slider = EToolOverlay-->SliderMouseDlg;
 	%slider.ticks = "";
 	%slider.snap = false;
+
 	if (%options !$= "") {
 		for(%i=0; %i<getRecordCount(%options); %i++) {
 			%record = getRecord(%options,%i);
@@ -54,9 +53,12 @@ function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%startVa
 			%slider.setFieldValue(%field,%value);
 		}
 	}
+
 	if (%slider.ticks > 0)
 		%slider.snap = true;
-%slider.setValue(%startValue);
+
+	%slider.setValue(%startValue);
+
 	if (%topCenterPos !$= "")
 		%slider.topCenterPos = %topCenterPos;
 	else
@@ -71,7 +73,6 @@ function EOverlay::toggleSlider(%this,%decoyMode,%topCenterPos,%options,%startVa
 
 //==============================================================================
 function EToolOverlayGui::toggleTool(%this,%tool,%decoyMode) {
-	
 	%this.pushToBack(%this-->decoyCtrl);
 	%dlg = EToolOverlay.findObjectByInternalName(%tool,true);
 
@@ -109,12 +110,12 @@ function EToolOverlayGui::showTool(%this,%tool) {
 		%dlg.linkedButton.setStateOn(true);
 
 	foreach(%obj in EToolOverlay) {
-		if (%obj.decoyMode $= "") %obj.decoyMode = "0";		
-		hide(%obj);		
+		if (%obj.decoyMode $= "") %obj.decoyMode = "0";
+
+		hide(%obj);
 	}
 
 	%this.fitIntoParents();
-	
 	EToolOverlay.fitIntoParents();
 
 	if (%dlg.topCenterPos !$= "") {
@@ -144,7 +145,7 @@ function EToolOverlayGui::showTool(%this,%tool) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EToolOverlayGui::setDecoy(%this,%dlg) {
-		%decoy = %this-->DecoyCtrl;	
+	%decoy = %this-->DecoyCtrl;
 	%decoy.extent.x = %dlg.extent.x + ($Lab_ToolDecoyMargin *2);
 	%decoy.extent.y = %dlg.extent.y + ($Lab_ToolDecoyMargin *2);
 	%decoy.position.x = %dlg.position.x - $Lab_ToolDecoyMargin;

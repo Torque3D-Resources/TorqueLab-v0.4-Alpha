@@ -30,7 +30,7 @@ function BaseDecalEdAction::undo(%this) {
 }
 
 
-function ActionEditNodeDetails::doit(%this) {	
+function ActionEditNodeDetails::doit(%this) {
 	%count = getWordCount(%this.newTransformData);
 
 	if(%this.instanceId !$= "" && %count == 7) {
@@ -43,12 +43,13 @@ function ActionEditNodeDetails::doit(%this) {
 		DecalEditorGui.selectDecal( %this.instanceId );
 		return true;
 	}
+
 	return false;
 }
 
 function ActionEditNodeDetails::undo(%this) {
 	%count = getWordCount(%this.oldTransformData);
-		
+
 	if(%this.instanceId !$= "" && %count == 7) {
 		%oldPos = getWords(%this.oldTransformData,0,2);
 		%oldTangent = getWords(%this.oldTransformData,3,5);

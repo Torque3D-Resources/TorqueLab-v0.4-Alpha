@@ -11,7 +11,6 @@ function Lab::setCameraMoveSpeedCtrl(%this, %ctrl) {
 	%value = %ctrl.getTypeValue();
 	%this.setCameraMoveSpeed(%value);
 	//%ctrl.updateFriends();
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -20,7 +19,7 @@ function Lab::setCameraMoveSpeed(%this, %speed) {
 	EditorGuiToolbarStack-->CameraSpeedEdit.setText(%speed);
 	//EWorldEditorCameraSpeed.setText( %value );
 	$Camera::movementSpeed = %speed;
-	//EditorGuiToolbarStack-->CameraMoveSpeed.setTypeValue(%value);	
+	//EditorGuiToolbarStack-->CameraMoveSpeed.setTypeValue(%value);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

@@ -89,6 +89,8 @@ function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 	MaterialEditorGui.establishMaterials();
 	//MaterialEditorGui.rows = "0 230";
 	//MaterialEditorGui.updateSizes();
+	
+	MaterialEditorGui.initGui();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -96,7 +98,6 @@ function MaterialEditorPlugin::onWorldEditorStartup( %this ) {
 function MaterialEditorPlugin::onActivated( %this ) {
 	//MaterialEditorGui.rows = "0 230";
 	//MaterialEditorGui.updateSizes();
-
 	if($gfx::wireframe) {
 		$wasInWireFrameMode = true;
 		$gfx::wireframe = false;
@@ -104,14 +105,13 @@ function MaterialEditorPlugin::onActivated( %this ) {
 		$wasInWireFrameMode = false;
 	}
 
-	MaterialEditorGui.initGui();
+	MaterialEditorGui.activateGui();
 	WEditorPlugin.onActivated();
 	MaterialEditorGui-->propertiesOptions.expanded = 0;
 	SceneEditorToolbar.setVisible( true );
 	MaterialEditorGui.currentObject = $Lab::materialEditorList;
 	// Execute the back end scripts that actually do the work.
 	MaterialEditorGui.open();
-	
 	Parent::onActivated(%this);
 	hide(MEP_CallbackArea);
 	hide(matEd_addCubemapWindow);
@@ -126,7 +126,8 @@ function MaterialEditorPlugin::onDeactivated( %this ) {
 		$gfx::wireframe = true;
 
 	WEditorPlugin.onDeactivated();
-		// if we quit, restore with notDirty
+
+	// if we quit, restore with notDirty
 	if(MaterialEditorGui.materialDirty) {
 		//keep on doing this
 		MaterialEditorGui.copyMaterials( notDirtyMaterial, materialEd_previewMaterial );
@@ -153,25 +154,20 @@ function MaterialEditorPlugin::onDeactivated( %this ) {
 	materialEd_justAlphaMaterial.delete();
 	materialEd_justAlphaShader.delete();
 	$MaterialEditor_MaterialsLoaded = false;
-	
 	SceneEditorToolbar.setVisible( false );
-	
 	Parent::onDeactivated(%this);
-
 	//hide(MaterialEditorPreviewWindow);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called from TorqueLab after plugin is initialize to set needed settings
 function MaterialEditorPlugin::onPluginCreated( %this ) {
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Called when the mission file has been saved
 function MaterialEditorPlugin::onSaveMission( %this, %file ) {
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================

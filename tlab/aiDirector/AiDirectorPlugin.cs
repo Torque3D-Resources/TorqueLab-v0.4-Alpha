@@ -12,8 +12,7 @@
 function AiDirectorPlugin::initParamsArray( %this,%array ) {
 	$AiDirectorCfg = newScriptObject("AiDirectorCfg");
 	%array.group[%groupId++] = "General settings";
-	
-	%array.setVal("playSoundWhenDone",       "1" TAB "playSoundWhenDone" TAB "checkbox"  TAB "" TAB "" TAB %groupId);	
+	%array.setVal("playSoundWhenDone",       "1" TAB "playSoundWhenDone" TAB "checkbox"  TAB "" TAB "" TAB %groupId);
 }
 
 //==============================================================================
@@ -37,31 +36,27 @@ function AiDirectorPlugin::onWorldEditorStartup( %this ) {
 //==============================================================================
 // Called when the Plugin is activated (Active TorqueLab plugin)
 function AiDirectorPlugin::onActivated( %this ) {
-	 // Set a global variable so everyone knows we're editing!
-  	ADE.initTools();
+	// Set a global variable so everyone knows we're editing!
+	ADE.initTools();
 	Parent::onActivated(%this);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Called when the Plugin is deactivated (active to inactive transition)
 function AiDirectorPlugin::onDeactivated( %this ) {
-	
 	Parent::onDeactivated(%this);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Called from TorqueLab after plugin is initialize to set needed settings
 function AiDirectorPlugin::onPluginCreated( %this ) {
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 // Called when the mission file has been saved
 function AiDirectorPlugin::onSaveMission( %this, %file ) {
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -76,18 +71,15 @@ function AiDirectorPlugin::onEditMenuSelect( %this, %editMenu ) {
 }
 //------------------------------------------------------------------------------
 
-function AiDirectorPlugin::handleDelete(%this)
-{
-   // Event happens when the user hits 'delete'.
-  // AiDirectorGui.deleteSelected();
+function AiDirectorPlugin::handleDelete(%this) {
+	// Event happens when the user hits 'delete'.
+	// AiDirectorGui.deleteSelected();
 }
 
-function AiDirectorPlugin::handleEscape(%this)
-{
-   return AiDirectorGui.onEscapePressed();  
+function AiDirectorPlugin::handleEscape(%this) {
+	return AiDirectorGui.onEscapePressed();
 }
 
-function AiDirectorPlugin::isDirty(%this)
-{
-   return AiDirectorGui.isDirty;
+function AiDirectorPlugin::isDirty(%this) {
+	return AiDirectorGui.isDirty;
 }

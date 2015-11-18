@@ -24,8 +24,8 @@ singleton GuiControlProfile(GuiShapeEdTextListProfile : ToolsTextBase_List) {
 singleton GuiControlProfile(GuiShapeEdRolloutProfile : GuiInspectorRolloutProfile0) {
 	bitmap = "tlab/gui/icons/default/classImages/rollout";
 	category = "Editor";
-   fontColors[5] = "Magenta";
-   fontColorLinkHL = "Magenta";
+	fontColors[5] = "Magenta";
+	fontColorLinkHL = "Magenta";
 };
 
 singleton GuiControlProfile( GuiShapeEdTransitionSliderProfile ) {

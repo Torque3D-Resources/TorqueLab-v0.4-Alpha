@@ -25,12 +25,12 @@ new GuiStackControl(RiverEditorToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "28888";
-      disabledGroup = "28889";
-      EditorContainer = "20522";
+      defaultStack = "28834";
+      disabledGroup = "28835";
+      EditorContainer = "20547";
       editorParent = "EditorGuiToolbarStack";
       plugin = "RiverEditor";
-      stackLists = "28890 28907";
+      stackLists = "28836 28853";
 
    new GuiContainer() {
       margin = "0 0 0 0";

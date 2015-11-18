@@ -30,21 +30,23 @@ function LabParamsDlg::openPluginSettings( %this,%pluginObj) {
 //==============================================================================
 //LabParamsDlg.openPluginSettings("MaterialEditorPlugin");
 function LabParamsDlg::toggleSettings( %this,%text) {
-	
 	%id = LabParamsTree.findItemByName(%text);
+
 	if (%id <= 0)
 		return;
+
 	%selected = false;
+
 	if (%id $= LabParamsTree.getSelectedItem())
 		%selected = true;
-	if (!%this.isAwake()){
+
+	if (!%this.isAwake()) {
 		toggleDlg(LabParamsDlg);
 		LabParamsTree.clearSelection();
 		LabParamsTree.selectItem(%id);
-	}else if (%id $= LabParamsTree.getSelectedItem()){
+	} else if (%id $= LabParamsTree.getSelectedItem()) {
 		toggleDlg(LabParamsDlg);
-	}
-	else {
+	} else {
 		LabParamsTree.clearSelection();
 		LabParamsTree.selectItem(%id);
 	}
@@ -54,10 +56,13 @@ function LabParamsDlg::toggleSettings( %this,%text) {
 //LabParamsDlg.openSettings("Material Editor");
 function LabParamsDlg::openSettings( %this,%text) {
 	%id = LabParamsTree.findItemByName(%text);
+
 	if (%id <= 0)
 		return;
+
 	if (!%this.isAwake())
 		toggleDlg(LabParamsDlg);
+
 	LabParamsTree.clearSelection();
 	LabParamsTree.selectItem(%id);
 }
@@ -88,7 +93,6 @@ function LabParamsDlg::buildAllParams( %this ) {
 		%paramArray.optContainer = %newContainer;
 		LabParamsTree.addParam(%paramArray);
 		%paramArray.container = %newContainer-->Params_Stack;
-		
 		%paramArray.style = $LabParamsStyle;
 		buildParamsArray(%paramArray);
 		LabParams.syncArray(%paramArray,true);
@@ -144,17 +148,17 @@ function LabParamsTree::rebuildAll( %this ) {
 function LabParamsTree::expandAllGroups( %this,%buildTree ) {
 	foreach$(%id in  LabParamsTree.groupList)
 		LabParamsTree.expandItem(%id);
-	
+
 	if (%buildTree)
 		%this.buildVisibleTree();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LabParamsTree::onSelect( %this,%itemId ) {	
-	
+function LabParamsTree::onSelect( %this,%itemId ) {
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);	
+	%value = %this.getItemValue(%itemId);
 	%itemObj = $LabParamsItemObj[%itemId];
+
 	//devLog("LabParamsTree onSelect:",%itemId,"Text",%text,"Value",%value,"ItemObj",%itemObj);
 	if (isObject(%itemObj)) {
 		LabParamsDlg.setSelectedSettings(%itemObj);
@@ -165,8 +169,8 @@ function LabParamsTree::onSelect( %this,%itemId ) {
 function LabParamsTree::onMouseUp( %this,%itemId,%clicks ) {
 	%itemObj = $LabParamsItemObj[%itemId];
 	%text = %this.getItemText(%itemId);
-	%value = %this.getItemValue(%itemId);	
-	return;	
+	%value = %this.getItemValue(%itemId);
+	return;
 }
 //------------------------------------------------------------------------------
 
@@ -193,7 +197,6 @@ function LabParamsTree::addParam( %this,%paramArray) {
 	%group = %paramArray.group;
 	%link = %paramArray.groupLink;
 	%name = %paramArray.displayName;
-	
 	%parentId = LabParamsTree.addSettingGroup(%group);
 	%itemId = %this.findChildItemByName( %parentID,%name);
 

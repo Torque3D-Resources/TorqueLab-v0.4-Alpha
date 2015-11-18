@@ -13,11 +13,11 @@ function ToggleGuiEdit( %fromGame,%loadLast ) {
 		LabMsgOK("Windowed Mode Required", "Please switch to windowed mode to access the GUI Editor.");
 		return;
 	}
+
 	GuiEditor.forceContent = "";
+
 	//If called from a loaded game or WorldEditor
 	if (%fromGame) {
-		
-
 		if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui ) {
 			if (EditorGui.isAwake()) {
 				GuiEditor.forceContent = EditorGui;
@@ -52,19 +52,16 @@ GlobalActionMap.bindCmd( keyboard, "ctrl f10", "toggleGuiEdit(true,true);","" );
 function GuiEd::launchEditor( %this,%loadLast ) {
 	//Store current Content to return to it
 	%initialContent = Canvas.getContent();
-	
-	
+
 	if (($pref::Editor::AutoLoadLastGui || %loadLast)&& isObject(GuiEd.lastGuiLoaded))
 		%initialContent = GuiEd.lastGuiLoaded;
 	else if ( isObject(GuiEditor.forceContent))
 		%initialContent = GuiEditor.forceContent;
-	
-		
+
 	if (!isObject(%initialContent))
 		%initialContent = Canvas.getContent();
-		
+
 	GuiEditor.initialContent =%initialContent;
-	
 	devLog("Open GUI:",%initialContent);
 	GuiEditContent(%initialContent);
 
@@ -73,7 +70,7 @@ function GuiEd::launchEditor( %this,%loadLast ) {
 		MLAAFx.isEnabled = false;
 		$MLAAFxGuiEditorTemp = true;
 	}
-	
+
 	GuiEdMap.push();
 	//Make sure the TorqueLab loading progress is stopped
 	EditorLoadingGui.endInit();
@@ -112,21 +109,18 @@ function GuiEditContent( %content ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function GuiEditor::openForEditing( %this, %content ) {
-	
 	if (!isObject(%content))
 		return;
-	
+
 	Canvas.setContent( GuiEditorGui );
 	GuiEd.initGuiEditor();
+
 	while( GuiEditorContent.getCount() )
 		GuiGroup.add( GuiEditorContent.getObject( 0 ) ); // get rid of anything being edited
 
 	// Clear the current guide set and add the guides
 	// from the control.
-
 	//Mud-H Quick hack to prevent a start script error
-	
-
 	%this.clearGuides();
 	%this.readGuides( %content );
 	// Enumerate GUIs and put them into the content list.
@@ -176,7 +170,6 @@ function GuiEditor::openForEditing( %this, %content ) {
 	GuiEditor.setFirstResponder();
 	%this.updateUndoMenu();
 	%this.lastContent = %content;
-	
 	GuiEd.lastGuiLoaded = %content;
 }
 //------------------------------------------------------------------------------
@@ -195,11 +188,12 @@ function GuiEditCanvas::quit( %this ) {
 	// we must not delete a window while in its event handler, or we foul the event dispatch mechanism
 	%this.schedule(10, delete);
 	$InGuiEditor = false;
-	
-	if (!isObject(GuiEditor.initialContent)){
+
+	if (!isObject(GuiEditor.initialContent)) {
 		warnLog("Closing the GuiEditor and there's no valid content to load:",GuiEditor.initialContent,"Using default MainMenuGui");
 		GuiEditor.initialContent = $TLab_defaultGui;
 	}
+
 	Canvas.setContent(GuiEditor.initialContent);
 
 	// Canvas.setContent(GuiEditor.lastContent);

@@ -19,11 +19,10 @@ function LabMsgBoxesGui::onWake( %this ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%callback2,%callback3 ) {	
+function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%callback2,%callback3 ) {
 	%buttonData = $LabMsgButtons[%type];
 	%buttonCoord = $LabMsgButtonsCoord[%type];
 	%buttonCount = getFieldCount(%buttonData);
-
 	// LabMsgBoxesGui.callOnChildrenNoRecurse("setVisible",false);
 	pushDlg(LabMsgBoxesGui);
 	%dlg = LabMsgBoxesGui-->dialogBase;
@@ -36,16 +35,16 @@ function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%cal
 	%dlg-->scroll.setExtent(%dlg-->scroll.extent.x, %msgExtent.y+18);
 	%dlgextenty = $LabMsgMargin["Top"] + %msgExtent.y + $LabMsgMargin["Bottom"];
 	%dlg.resize(%dlg.position.x,%dlg.position.y,%dlg.extent.x,%dlgextenty);
+
 	for(%i=0; %i < 3; %i++) {
 		%text = getField(%buttonData,%i);
 		%coord = getField(%buttonCoord,%i);
-		%callBackCmd =  %callback[%i+1];		
-
+		%callBackCmd =  %callback[%i+1];
 		LabMsgBoxesGui.callbacks["button"@%i+1] = %callBackCmd;
 		%button = %dlg.findObjectByInternalName("button"@%i+1,true);
 		%button.text = %text;
-		
-		if (%coord $= "") {		
+
+		if (%coord $= "") {
 			hide(%button);
 		} else {
 			show(%button);
@@ -54,11 +53,10 @@ function LabMsgBoxesGui::showWindow( %this,%type,%title,%message,%callback1,%cal
 			//%button.position.y = %dlg.extent.y - 12 - %button.extent.y;
 		}
 	}
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LabMsgBoxesGui::hideWindow( %this ) {	
+function LabMsgBoxesGui::hideWindow( %this ) {
 	popDlg(LabMsgBoxesGui);
 }
 //------------------------------------------------------------------------------

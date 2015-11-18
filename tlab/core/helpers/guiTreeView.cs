@@ -18,10 +18,11 @@ function EditorTreeView::onDefineIcons( %this ) {
 
 function GuiTreeViewCtrl::handleRenameObject( %this, %name, %obj ) {
 	devLog("GuiTreeViewCtrl::handleRenameObject( %this, %name, %obj )", %this, %name, %obj );
+
 	if (!isObject(%obj))
 		return;
+
 	%inspector = GuiInspector.findByObject( %obj ); // Changed from GuiInspector::findByObject( %obj );
-	
 
 	if( isObject( %inspector ) ) {
 		%field = ( %this.renameInternal ) ? "internalName" : "name";

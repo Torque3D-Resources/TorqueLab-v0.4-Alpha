@@ -6,7 +6,6 @@
 
 function EMissionArea::activateEditor( %this ) {
 	SceneEditorDialogs.showDlg("MissionArea");
-	
 	%ma = getMissionAreaServerObject();
 	EMissionArea.theArea = %ma;
 

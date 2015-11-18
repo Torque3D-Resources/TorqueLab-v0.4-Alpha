@@ -18,7 +18,7 @@ function NewToolbarGroup::onMouseDragged( %this,%a1,%a2,%a3 ) {
 		devLog("ToolbarGroup class is corrupted! Fix it!");
 		return;
 	}
-	
+
 	%group = %this.parentGroup;
 	%group.isNewGroup = true;
 	startDragAndDropCtrl(%group,"Toolbar","Lab.onNewToolbarGroupDropped");
@@ -75,27 +75,27 @@ function Lab::createNewToolbarIconGroup(%this) {
 				internalName = "MouseStart";
 			};
 		};
-		new GuiContainer() {  
-				extent = "18 32";     
-				profile = "ToolsBoxDarkC";   
-				isContainer = "1";
-				internalName = "SubStackEnd";
-				superClass = "SubStackEnd";
-				visible = "0"; 
-
-				new GuiBitmapCtrl() {
-					bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
-					wrap = "0";
-					position = "4 7";
-					extent = "12 16"; 
-					internalName = "SubStackEndImg";  
-					superClass = "SubStackEndImg";     
-				};
-			};			
+		new GuiContainer() {
+			extent = "18 32";
+			profile = "ToolsBoxDarkC";
+			isContainer = "1";
+			internalName = "SubStackEnd";
+			superClass = "SubStackEnd";
+			visible = "0";
+			new GuiBitmapCtrl() {
+				bitmap = "tlab/gui/icons/toolbar-assets/DropLeft.png";
+				wrap = "0";
+				position = "4 7";
+				extent = "12 16";
+				internalName = "SubStackEndImg";
+				superClass = "SubStackEndImg";
+			};
+		};
 	};
-	
 	%name = EGC_NewGroupContainer-->newGroupName.getText();
+
 	if (%name !$= "")
 		%newGroup.internalName = %name;
+
 	return %newGroup;
 }

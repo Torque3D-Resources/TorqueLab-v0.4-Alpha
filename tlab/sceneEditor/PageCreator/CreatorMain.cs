@@ -7,9 +7,7 @@
 function SEP_Creator::init( %this ) {
 	// Just so we can recall this method for testing changes
 	// without restarting.
-	
 	%this.setListView( true );
-	
 	Scene.registerObjects();
 	SEP_Creator.contentCtrl = CreatorIconArray;
 }
@@ -38,13 +36,15 @@ function CreatorTabBook::onTabSelected( %this, %text, %idx ) {
 function SEP_CreatorButton::onClick( %this ) {
 	%type = %this.text;
 
-	if (%type $= "Options"){
+	if (%type $= "Options") {
 		show(CreatorOptionsArray);
 		hide(CreatorIconArray);
 		return;
 	}
+
 	hide(CreatorOptionsArray);
 	show(CreatorIconArray);
+
 	if ( SEP_Creator.isAwake() ) {
 		%lastTabAdress = 	SEP_Creator.lastCreatorAdress[%type];
 		SEP_Creator.tab = %type;
@@ -101,9 +101,11 @@ function SEP_Creator::setDisplayMode( %this,%mode ) {
 //SEP_Creator.setDisplayMode("Detail");
 function SEP_Creator::setIconWidth( %this,%ctrl ) {
 	%width = %ctrl.getValue();
+
 	if (%width < 10 || %width > 300)
 		return;
-		devLog("Width = ",%width);
+
+	devLog("Width = ",%width);
 	CreatorIconArray.setFieldValue("colSize",%width);
 	CreatorIconArray.refresh();
 	%ctrl.updateFriends();
@@ -158,13 +160,13 @@ function SEP_Creator::navigate( %this, %address ) {
 	CreatorIconArray.clear();
 	CreatorPopupMenu.clear();
 	%this.lastCreatorAdress[%this.tab] = %address;
-	
-	if (!%this.isMethod("navigate"@%this.tab)||%this.tab $= ""){
+
+	if (!%this.isMethod("navigate"@%this.tab)||%this.tab $= "") {
 		warnLog("Couldn't find a scene creator navigating function for type:",%this.tab);
 		return;
 	}
-	eval("%this.navigate"@%this.tab@"(%address);");
 
+	eval("%this.navigate"@%this.tab@"(%address);");
 	CreatorIconArray.sort( "alphaIconCompare" );
 
 	for ( %i = 0; %i < CreatorIconArray.getCount(); %i++ ) {

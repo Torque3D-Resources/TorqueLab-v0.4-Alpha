@@ -19,17 +19,12 @@ function EVisibilityLayers::toggleVisibility(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function EVisibilityLayers::onShow( %this ) {
-
-	
-	
-
-
 	%this.init();
 	%this.updateOptions();
 }
 //==============================================================================
 function EVisibilityLayers::init( %this ) {
-		// Create the array if it doesn't already exist.
+	// Create the array if it doesn't already exist.
 	if ( !isObject( ar_EVisibilityLayers ) )
 		%array = newArrayObject("ar_EVisibilityLayers");
 
@@ -39,8 +34,8 @@ function EVisibilityLayers::init( %this ) {
 
 	%this.array = ar_EVisibilityLayers;
 	%this.classArray = ar_EVisibilityLayersClass;
-	
 	%this.updatePresetMenu();
+
 	if(!$EVisibilityLayers_Initialized) {
 		//EVisibilityLayers.position = visibilityToggleBtn.position;
 		%this.initOptions();
@@ -117,16 +112,13 @@ function EVisibilityLayers::initOptions( %this ) {
 	%this.addOption( "Frustum Lock", "$Scene::lockCull", "" );
 	%this.addOption( "Disable Zone Culling", "$Scene::disableZoneCulling", "" );
 	%this.addOption( "Disable Terrain Occlusion", "$Scene::disableTerrainOcclusion", "" );
-	
 	//PBR Script
 	%this.addOption( "Debug Render: Physics World", "$PhysicsWorld::render", "togglePhysicsDebugViz" );
-  
-   %this.addOption( "AL: Environment Light", "$AL_LightMapShaderVar", "toggleLightMapViz" );
-  
-   %this.addOption( "AL: Color Buffer", "$AL_ColorBufferShaderVar", "toggleColorBufferViz" );
-   %this.addOption( "AL: Spec Map(Rough)", "$AL_RoughMapShaderVar", "toggleRoughMapViz");
-   %this.addOption( "AL: Spec Map(Metal)", "$AL_MetalMapShaderVar", "toggleMetalMapViz");
-   %this.addOption( "AL: Backbuffer", "$AL_BackbufferVisualizeVar", "toggleBackbufferViz" );
+	%this.addOption( "AL: Environment Light", "$AL_LightMapShaderVar", "toggleLightMapViz" );
+	%this.addOption( "AL: Color Buffer", "$AL_ColorBufferShaderVar", "toggleColorBufferViz" );
+	%this.addOption( "AL: Spec Map(Rough)", "$AL_RoughMapShaderVar", "toggleRoughMapViz");
+	%this.addOption( "AL: Spec Map(Metal)", "$AL_MetalMapShaderVar", "toggleMetalMapViz");
+	%this.addOption( "AL: Backbuffer", "$AL_BackbufferVisualizeVar", "toggleBackbufferViz" );
 	//PBR Script End
 	$VisibilityOptionsLoaded = true;
 }
@@ -167,7 +159,6 @@ function EVisibilityLayers::addClassOptions( %this ) {
 		%class = %this.classArray.getKey( %i );
 		%visVar = "$" @ %class @ "::isRenderable";
 		%selVar = "$" @ %class @ "::isSelectable";
-		
 		%textLength = strlen( %class );
 		%text = "  " @ %class;
 		// Add visibility toggle.
@@ -193,7 +184,6 @@ function EVisibilityLayers::addClassOptions( %this ) {
 			useMouseEvents = "0";
 			useInactiveState = "0";
 		};
-		
 		//Variable = %visVar;
 		%visList.addGuiControl( %visCheckBox );
 		// Add selectability toggle.
@@ -232,9 +222,9 @@ function EVisibilityLayers::addClassOptions( %this ) {
 //==============================================================================
 
 function EVisibilityLayers::toggleRenderable( %this,%class ) {
-	
 	//eval("$" @ %class @ "::isRenderable = !$"@ %class @ "::isRenderable;");
 	%visVar = "$" @ %class @ "::isRenderable";
+
 	//%selVar = "$" @ %class @ "::isSelectable";
 	if (!%visVar)
 		eval("$" @ %class @ "::isSelectable = \"0\";");
@@ -244,6 +234,7 @@ function EVisibilityLayers::toggleRenderable( %this,%class ) {
 function EVisibilityLayers::toggleSelectable( %this,%class ) {
 	//eval("$" @ %class @ "::isRenderable = !$"@ %class @ "::isRenderable;");
 	%selVar = "$" @ %class @ "::isSelectable";
+
 	if (%selVar)
 		eval("$" @ %class @ "::isRenderable = \"1\";");
-}		
+}

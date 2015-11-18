@@ -10,8 +10,8 @@
 
 
 function ShapeEdPropWindow::onWake( %this ) {
-	ShapeEdTriggerList.triggerId = 1;	
-	ShapeEdTriggerList.clear();	
+	ShapeEdTriggerList.triggerId = 1;
+	ShapeEdTriggerList.clear();
 	ShapeEdTriggerList.addRow( -1, "-1" TAB "Frame" TAB "Trigger" TAB "State" );
 	ShapeEdTriggerList.setRowActive( -1, false );
 }
@@ -102,8 +102,8 @@ function ShapeEdPropWindow::update_onSeqSelectionChanged( %this ) {
 function ShapeEdPropWindow::update_onSequenceAdded( %this, %seqName, %oldIndex ) {
 	// --- MISC ---
 	ShapeEdSelectWindow.updateHints();
-
 	ShapeEd.addSequencePill(%seqName);
+
 	// --- SEQUENCES TAB ---
 	if ( %oldIndex == -1 ) {
 		// This is a brand new sequence => add it to the list and make it the

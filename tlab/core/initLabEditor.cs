@@ -13,7 +13,6 @@ function Lab::initLabEditor( %this ) {
 	new SimGroup(ToolLabGuiGroup);
 	$LabPluginGroup = newSimSet("LabPluginGroup");
 	$LabModuleGroup = newSimSet("LabPluginModGroup");
-	
 	newSimSet( ToolGuiSet );
 	newSimSet( EditorPluginSet );
 	//Create a group to keep track of all objects set
@@ -24,21 +23,16 @@ function Lab::initLabEditor( %this ) {
 		editorGui = EWorldEditor; //Default to EWorldEditor
 		isHidden = true;
 	};
-	
-
 	//Prepare the Settings
 	%this.initEditorGui();
-	
 	//%this.initMenubar();
 	%this.initParamsSystem();
-	
-	 exec("tlab/EditorLab/editorDialogs/guiLab/initGuiLab.cs");
+	exec("tlab/EditorLab/editorDialogs/guiLab/initGuiLab.cs");
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::initEditorGui( %this ) {
-	
 	newScriptObject("LabEditor");
 	newSimSet("LabGuiSet");
 	newSimSet("LabPluginGuiSet");
@@ -54,7 +48,6 @@ function Lab::initEditorGui( %this ) {
 	newSimSet("LabSettingGuiSet");
 	newSimSet("LabEditorDlgSet");
 	newSimSet("EditorDetachedGuis");
-	
 	$LabPalletteContainer = EditorGui-->ToolsPaletteContainer;
 	$LabPalletteArray = EditorGui-->ToolsPaletteArray;
 	$LabPluginsArray = EditorGui-->PluginsArray;
@@ -67,7 +60,6 @@ function Lab::initEditorGui( %this ) {
 	$LabDialogContainer = EditorGui-->ToolsContainer;
 	$LabEditorContainer = EditorGui-->EditorContainer;
 	$LabExtraContainer = EditorGui-->ExtraContainer;
-	
 }
 //------------------------------------------------------------------------------
 
@@ -80,7 +72,6 @@ function Lab::pluginInitCompleted( %this ) {
 	Lab.BuildMenus();
 	Lab.initConfigSystem();
 	Lab.initAllConfigArray();
-	
 }
 //------------------------------------------------------------------------------
 

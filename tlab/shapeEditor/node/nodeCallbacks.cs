@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-// ShapeEditor -> Node Editing 
+// ShapeEditor -> Node Editing
 //==============================================================================
 
 // Update the GUI in response to the node selection changing
@@ -187,7 +187,9 @@ function ShapeEd::onNodeRenamed( %this, %oldName, %newName ) {
 }
 
 // Update the GUI in response to a node's parent being changed
-function ShapeEd::update_onNodeParentChanged( %this, %nodeName ) {
+
+// Update the GUI in response to a node's parent being changed
+function ShapeEd::onNodeParentChanged( %this, %nodeName ) {
 	// --- MISC ---
 	ShapeEdShapeView.updateNodeTransforms();
 	// --- NODES TAB ---
@@ -204,7 +206,6 @@ function ShapeEd::update_onNodeParentChanged( %this, %nodeName ) {
 	if ( %isSelected )
 		ShapeEd_NodeTree.selectItem( ShapeEd_NodeTree.findItemByName( %nodeName ) );
 }
-
 function ShapeEd::onNodeTransformChanged( %this, %nodeName ) {
 	// Default to the selected node if none is specified
 	if ( %nodeName $= "" ) {

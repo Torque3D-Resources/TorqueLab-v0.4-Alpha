@@ -23,6 +23,5 @@ function ShapeEdCollisions::generateMesh( %this ) {
 	%colType = 	ShapeEdColCreate_TypeMenu.getText();
 	%colTarget = 	ShapeEdColCreate_TargetMenu.getText();
 	%this.editCollision();
-	
 }
 //------------------------------------------------------------------------------

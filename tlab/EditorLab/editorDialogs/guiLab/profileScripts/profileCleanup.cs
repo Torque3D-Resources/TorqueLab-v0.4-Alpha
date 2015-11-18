@@ -17,8 +17,8 @@ function GLab::ClearProfileColorType(%this,%type,%profile) {
 
 	if (%fieldList $= "" || !isObject(%profile))
 		return false;
+
 	info("Removing fields:",%fieldList,"From Profile:",%profile);
 	removeProfileField(%profile,%fieldList);
-	
 }
 //------------------------------------------------------------------------------

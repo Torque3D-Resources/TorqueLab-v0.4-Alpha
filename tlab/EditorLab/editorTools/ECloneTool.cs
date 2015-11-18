@@ -13,7 +13,6 @@ $ECloneToolContainers = "ECloneTool";
 function ECloneTool::toggleVisibility( %this ) {
 	ETools.toggleTool("CloneTool");
 
-
 	if ( %this.visible  ) {
 		//%this.selectWindow();
 		%this.setCollapseGroup(false);
@@ -102,7 +101,6 @@ function ECloneTool::resetCurrentOffset( %this,%axis ) {
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneEdit::onValidate( %this ) {
-
 	%value = %this.getText();
 	%field = %this.internalName;
 
@@ -122,8 +120,6 @@ function ECloneEdit::onValidate( %this ) {
 //==============================================================================
 //FONTS -> Change the font to all profile or only those specified in the list
 function ECloneTool::validateCopieCount( %this,%value ) {
-	
-
 	if (!strIsNumeric(%value)) {
 		warnLog("Clone copie count must be a numeric value!");
 		%value = "0";
@@ -140,7 +136,5 @@ function ECloneTool::validateCopieCount( %this,%value ) {
 function ECloneTool::cloneToCtrl( %this,%ctrl ) {
 	%ctrl.add(ECloneTool-->cloneTools.deepClone());
 	$ECloneToolContainers = strAddWord($ECloneToolContainers,%ctrl.getId(),true);
-
-	
 }
 //------------------------------------------------------------------------------

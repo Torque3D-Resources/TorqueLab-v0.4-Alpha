@@ -9,7 +9,6 @@ function ADE::initSpawnPage(%this) {
 	AIManager.getSpawnObjects();
 	ADE_SpawnObjTree.open(MissionBotSpawnSet);
 	ADE_SpawnObjTree.buildVisibleTree();
-	
 	%this.initSpawnSettingsParams();
 }
 //------------------------------------------------------------------------------

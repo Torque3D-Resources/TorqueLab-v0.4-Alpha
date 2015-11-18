@@ -8,6 +8,7 @@
 //==============================================================================
 function WorldEditor::getSelectionLockCount(%this) {
 	%ret = 0;
+
 	for(%i = 0; %i < %this.getSelectionSize(); %i++) {
 		%obj = %this.getSelectedObject(%i);
 
@@ -21,6 +22,7 @@ function WorldEditor::getSelectionLockCount(%this) {
 //==============================================================================
 function WorldEditor::getSelectionHiddenCount(%this) {
 	%ret = 0;
+
 	for(%i = 0; %i < %this.getSelectionSize(); %i++) {
 		%obj = %this.getSelectedObject(%i);
 
@@ -87,6 +89,10 @@ function EWorldEditor::selectAllObjectsInSet( %this, %set, %deselect ) {
 		return;
 
 	foreach( %obj in %set ) {
+		if (%obj.isMemberOfClass("SimSet")){
+			EWorldEditor.selectAllObjectsInSet(%obj,%deselect);
+			continue;
+		}
 		if( %deselect )
 			%this.unselectObject( %obj );
 		else
@@ -175,6 +181,7 @@ function EWorldEditor::toggleLockChildren( %this, %simGroup ) {
 //==============================================================================
 function EWorldEditor::toggleHideChildren( %this, %simGroup ) {
 	devLog("toggleHideChildren",%simGroup);
+
 	foreach( %child in %simGroup ) {
 		if( %child.isMemberOfClass( "SimGroup" ) )
 			%this.toggleHideChildren( %child );
@@ -189,51 +196,11 @@ function EWorldEditor::toggleHideChildren( %this, %simGroup ) {
 
 //==============================================================================
 //Called from code to get the group into which new object will be pasted
-function EWorldEditor::getNewObjectGroup( %this ) {	
+function EWorldEditor::getNewObjectGroup( %this ) {
 	return Scene.getActiveSimGroup();
 }
 //------------------------------------------------------------------------------
 
-//==============================================================================
-function EWorldEditor::convertSelectionToPolyhedralObjects( %this, %className ) {
-	%group = %this.getNewObjectGroup();
-	%undoManager = Editor.getUndoManager();
-	%activeSelection = %this.getActiveSelection();
-
-	while( %activeSelection.getCount() != 0 ) {
-		%oldObject = %activeSelection.getObject( 0 );
-		%newObject = %this.createPolyhedralObject( %className, %oldObject );
-
-		if( isObject( %newObject ) ) {
-			%undoManager.pushCompound( "Convert ConvexShape to " @ %className );
-			%newObject.parentGroup = %oldObject.parentGroup;
-			MECreateUndoAction::submit( %newObject );
-			MEDeleteUndoAction::submit( %oldObject );
-			%undoManager.popCompound();
-		}
-	}
-}
-//------------------------------------------------------------------------------
-//==============================================================================
-function EWorldEditor::convertSelectionToConvexShape( %this ) {
-	%group = %this.getNewObjectGroup();
-	%undoManager = Editor.getUndoManager();
-	%activeSelection = %this.getActiveSelection();
-
-	while( %activeSelection.getCount() != 0 ) {
-		%oldObject = %activeSelection.getObject( 0 );
-		%newObject = %this.createConvexShapeFrom( %oldObject );
-
-		if( isObject( %newObject ) ) {
-			%undoManager.pushCompound( "Convert " @ %oldObject.getClassName() @ " to ConvexShape" );
-			%newObject.parentGroup = %oldObject.parentGroup;
-			MECreateUndoAction::submit( %newObject );
-			MEDeleteUndoAction::submit( %oldObject );
-			%undoManager.popCompound();
-		}
-	}
-}
-//------------------------------------------------------------------------------
 //==============================================================================
 
 function EWorldEditor::areAllSelectedObjectsOfType( %this, %className ) {

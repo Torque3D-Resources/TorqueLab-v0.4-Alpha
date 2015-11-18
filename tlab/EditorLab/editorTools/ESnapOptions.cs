@@ -23,10 +23,11 @@ function ESnapOptions::onShow( %this ) {
 		ESnapOptions_GridSystemMenu.add("Metric",0);
 		ESnapOptions_GridSystemMenu.add("Power of 2",1);
 		%selected = 0;
+
 		if ($WEditor::gridSystem $= "Power of 2")
-			%selected = 1;	
-		
-		ESnapOptions_GridSystemMenu.setSelected(%selected,false);	
+			%selected = 1;
+
+		ESnapOptions_GridSystemMenu.setSelected(%selected,false);
 		//%this.position = %this-->snappingSettingsBtn.position;
 		$ESnapOptions_Initialized = true;
 	}
@@ -50,17 +51,16 @@ function ESnapOptions::hideDialog( %this ) {
 
 //==============================================================================
 function ESnapOptions_GridSystemMenu::onSelect(%this,%id,%text) {
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function ESnapOptions_GridStepEdit::onValidate(%this) {
 	%step = %this.getText();
+
 	if (!strIsNumeric(%step))
 		return;
-		
-	$WEditor::GridStep = %step;	
-	
+
+	$WEditor::GridStep = %step;
 }
 //------------------------------------------------------------------------------
 

@@ -13,7 +13,7 @@ new ActionMap(EditorMap);
 // Editor General bind functions
 //==============================================================================
 
-function EditorGlobalDelete() {	
+function EditorGlobalDelete() {
 	if ( isObject( Lab.currentEditor ) )
 		Lab.currentEditor.handleDelete();
 }
@@ -26,8 +26,10 @@ EditorMap.bind(keyboard,"delete",EditorGlobalDelete);
 //==============================================================================
 function getEditorMouseAdjustAmount(%val) {
 	%adjust = $Camera::MouseMoveMultiplier;
+
 	if (%adjust $= "")
 		%adjust = 1;
+
 	// based on a default camera FOV of 90'
 	return(%val * ($cameraFov / 90) * 0.01) * %adjust;
 }
@@ -35,8 +37,10 @@ function getEditorMouseAdjustAmount(%val) {
 //==============================================================================
 function getEditorMouseScrollAdjustAmount(%val) {
 	%adjust = $Camera::MouseScrollMultiplier;
+
 	if (%adjust $= "")
 		%adjust = 1;
+
 	// based on a default camera FOV of 90'
 	return(%val * ($cameraFov / 90) * 0.01) * 22;
 }

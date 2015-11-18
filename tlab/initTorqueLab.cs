@@ -10,17 +10,15 @@ $TorqueLabLoaded = false;
 function initTorqueLab(%launchEditor) {
 	if ($TorqueLabLoaded)
 		return;
-	
-	exec( "tlab/myPrefs.cs" );
+
+	//exec( "tlab/myPrefs.cs" );
 	//Load the Editor profile before loading the game onStart (Nooo...)
 	exec("tlab/gui/initGuiProfiles.cs");
 	exec( "tlab/EditorLab/gui/core/cursors.ed.cs" );
-	
 	//Start by loading the TorqueLab Loading Progress GUI to use it now
 	exec("tlab/EditorLab/gui/core/EditorLoadingGui.gui");
 	exec("tlab/EditorLab/gui/core/EditorLoadingGui.cs");
 	EditorLoadingGui.startInit();
-	
 	//loadTorqueLabProfiles();
 	new Settings(EditorSettings) {
 		file = "tlab/settings.xml";
@@ -33,11 +31,12 @@ function initTorqueLab(%launchEditor) {
 	new Settings(BackupCfg) {
 		file = "tlab/core/configs/backup.xml";
 	};
-	
+
 	// Default file path when saving from the editor (such as prefabs)
 	if ($Pref::WorldEditor::LastPath $= "") {
 		$Pref::WorldEditor::LastPath = getMainDotCsDir();
 	}
+
 	newScriptObject("Scene");
 	$Lab = new ScriptObject(Lab);
 	exec("tlab/core/execScripts.cs");
@@ -118,10 +117,10 @@ function initTorqueLab(%launchEditor) {
 	// Popuplate the default SimObject icons that
 	// are used by the various editors.
 	EditorIconRegistry::loadFromPath( "tlab/gui/icons/class_assets/" );
-
 	//$Scripts::ignoreDSOs = %toggle;
 	Lab.pluginInitCompleted();
 	$TorqueLabLoaded = true;
+
 	if (%launchEditor $= "Gui")
 		ToggleGuiEdit();
 	else if (%launchEditor $= "World")

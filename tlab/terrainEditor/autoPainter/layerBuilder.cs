@@ -22,7 +22,6 @@ function TerrainPaintGeneratorGui::addNewLayer(%this) {
 //==============================================================================
 function TerrainPaintGeneratorGui::layerSelected(%this,%menu) {
 	%matInternalName = %menu.getText();
-	
 	%matIndex = %menu.getSelected();
 	%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
 	%layer = %menu.layerObj;
@@ -72,55 +71,50 @@ function TerrainPaintGeneratorGui::addLayerPill(%this,%layer,%update) {
 	%layer.activeCtrl.text = "";
 	%layer.activeCtrl.setStateOn(true);
 	TPG_StackLayers.add(%layer.pill);
-	
+
 	//Set terrain layer corresponding to stack order if exist
-	if (%layer.matInternalName $= ""){
+	if (%layer.matInternalName $= "") {
 		%id = TPG_StackLayers.getCount()-1;
+
 		if (%id >= getRecordCount(ETerrainEditor.getMaterials()))
 			%id = 0;
-		
+
 		%layer.matInternalName = getRecord(ETerrainEditor.getMaterials(),%id);
 	}
-		
+
 	%this.updateLayerMaterialMenu(%layer);
-	
+
 	if (%update)
 		%this.updateLayerPill(%layer);
-
 }
 //------------------------------------------------------------------------------
 $CreateMissing = true;
 //==============================================================================
 function TerrainPaintGeneratorGui::updateLayerPill(%this,%layer) {
 	if (!isObject(%layer) || !isObject(%layer.pill)) return;
-	
+
 	%pill = %layer.pill;
-	%menu = %pill-->menuLayers;	
+	%menu = %pill-->menuLayers;
 	%matName = %layer.matInternalName;
-	
-	
-	if (%layer.matInternalName $= ""){
+
+	if (%layer.matInternalName $= "") {
 		warnLog("Invalid layer found:",%layer,"Name set to Unnamed");
-		%layer.matInternalName = "Unnamed";			
+		%layer.matInternalName = "Unnamed";
 	}
+
 	%id = %menu.findText(%layer.matInternalName);
-	
-	
-		
-	if (%id >= 0){		
+
+	if (%id >= 0) {
 		%menu.setSelected(%id);
-	}
-	else {
-		if (!strFind(%layer.matInternalName,"*")){
+	} else {
+		if (!strFind(%layer.matInternalName,"*")) {
 			%layer.matInternalName = "**"@%layer.matInternalName@"**";
 		}
+
 		//The assigned material is not found anymore, put the name between stars to warn
 		%menu.setText(%layer.matInternalName);
 	}
-	
-	
-	
-	
+
 	%layer.pill.layerObj = %layer;
 	%layer.pill-->heightMin.setText(%layer.heightMin);
 	%layer.pill-->heightMax.setText( %layer.heightMax);
@@ -132,27 +126,29 @@ function TerrainPaintGeneratorGui::updateLayerPill(%this,%layer) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainPaintGeneratorGui::updateLayerMaterialMenu(%this,%layer) {
-	TPG_PillSample.setVisible(false);	
-	
+	TPG_PillSample.setVisible(false);
 	%pill = %layer.pill;
 	%menu = %pill-->menuLayers;
-	
-	if (!isObject(%menu)){
+
+	if (!isObject(%menu)) {
 		delObj(%pill);
 		delObj(%layer);
 		return;
 	}
+
 	%mats = ETerrainEditor.getMaterials();
 	%menu.clear();
+
 	//Add all current terrain materials to menu
 	for( %i = 0; %i < getRecordCount( %mats ); %i++ ) {
-		%matInternalName = getRecord( %mats, %i );			
+		%matInternalName = getRecord( %mats, %i );
 		%menu.add(%matInternalName,%i);
-	}	
+	}
 
 	%id = %menu.findText(%layer.matInternalName);
+
 	//If the matInternalName is not found in menu, set as invalid material
-	if (%id $= "-1"){
+	if (%id $= "-1") {
 		%id = 0;
 		%menu.setText("**"@%layer.matInternalName@"**");
 		return;
@@ -160,7 +156,6 @@ function TerrainPaintGeneratorGui::updateLayerMaterialMenu(%this,%layer) {
 
 	%menu.setSelected(%id);
 	return %id;
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -189,7 +184,7 @@ function TerrainPaintGeneratorGui::moveDown(%this, %buttonCtrl) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TPG_PillEdit::onValidate(%this) {	
+function TPG_PillEdit::onValidate(%this) {
 	TPG.validateLayerSetting(%this.internalName,%this.layerObj);
 }
 //------------------------------------------------------------------------------

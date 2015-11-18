@@ -10,7 +10,7 @@ function WorldEditor::onDragCopy( %this, %obj ) {
 		return;
 	if (%obj.isMemberOfClass("SimSet"))
 		%obj = %obj.getObject(0);
-		
+
 	%obj.startDrag = %obj.getPosition();*/
 	//Store the selection centroid for possible cloning
 	%this.lastCentroidPos = %this.getSelectionCentroid();
@@ -20,33 +20,34 @@ function WorldEditor::onDragCopy( %this, %obj ) {
 
 //==============================================================================
 function WorldEditor::onEndDrag( %this, %obj ) {
-	logd("WorldEditor::onEndDrag( %this, %obj )",$Button0Pressed);	
-	
+	logd("WorldEditor::onEndDrag( %this, %obj )",$Button0Pressed);
 	SceneInspector.inspect( %obj );
 	SceneInspector.apply();
 
 	if ($WEditor::forceToGrid)
 		%this.forceToGrid(%obj);
-		
+
 	if (!$DragCopyStarted)
 		return;
-	if (%this.lastMoveOffset !$="" && Lab.CloneDragEnabled && GlobalGizmoProfile.mode $= "move"){			
+
+	if (%this.lastMoveOffset !$="" && Lab.CloneDragEnabled && GlobalGizmoProfile.mode $= "move") {
 		ECloneDrag.copyOffset = %this.lastMoveOffset;
-		ETools.showTool(CloneDrag);	
+		ETools.showTool(CloneDrag);
 	}
-	$DragCopyStarted = false;	
+
+	$DragCopyStarted = false;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function WorldEditor::onSelectionCentroidChanged( %this ) {
 	Scene.setDirty();
-	if (%this.lastCentroidPos !$=""){	
+
+	if (%this.lastCentroidPos !$="") {
 		%offset = VectorSub(%this.getSelectionCentroid(),%this.lastCentroidPos);
 		%this.lastMoveOffset = %offset;
-		
 	}
+
 	%this.lastCentroidPos = %this.getSelectionCentroid();
-	
 	// Inform the camera
 	commandToServer('EditorOrbitCameraSelectChange', %this.getSelectionSize(), %this.getSelectionCentroid());
 	// Refresh inspector.
@@ -55,11 +56,12 @@ function WorldEditor::onSelectionCentroidChanged( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function WorldEditor::onSelect( %this, %obj,%scriptSide ) {
-
 	//Check to tell that the selection is called from a group
 	%obj.byGroup = false;
-	foreach$(%tree in Scene.SceneTrees)		
-			%tree.addSelection( %obj, %i == %count );
+
+	foreach$(%tree in Scene.SceneTrees)
+		%tree.addSelection( %obj, %i == %count );
+
 	//SceneEditorTree.addSelection( %obj );
 	//Store the source Location of Object 0 in case we drag copy
 	_setShadowVizLight( %obj );
@@ -74,15 +76,14 @@ function WorldEditor::onSelect( %this, %obj,%scriptSide ) {
 	EditorGuiStatusBar.setSelectionObjectsByCount(%this.getSelectionSize());
 	// Update the materialEditorList
 	$Lab::materialEditorList = %obj.getId();
+
 	// Used to help the Material Editor( the M.E doesn't utilize its own TS control )
 	// so this dirty extension is used to fake it
 	if ( MaterialEditorPreviewWindow.isVisible() )
 		MaterialEditorGui.prepareActiveObject();
-	
+
 	Lab.DoSelectionCallback("Transform",%this.getSelectedObject(0));
-	
 	$WorldEditor_LastSelZ = %obj.position.z;
-	
 }
 //------------------------------------------------------------------------------
 
@@ -99,14 +100,16 @@ function WorldEditor::onMultiSelect( %this, %set ) {
 			%obj.onEditorSelect( %count );
 
 		%i ++;
-		foreach$(%tree in Scene.SceneTrees)		
+
+		foreach$(%tree in Scene.SceneTrees)
 			%tree.addSelection( %obj, %i == %count );
+
 		Lab.currentEditor.onObjectSelected( %obj );
 	}
 
 	// Inform the camera
 	commandToServer( 'EditorOrbitCameraSelectChange', %count, %this.getSelectionCentroid() );
-	EditorGuiStatusBar.setSelectionObjectsByCount( EWorldEditor.getSelectionSize() );	
+	EditorGuiStatusBar.setSelectionObjectsByCount( EWorldEditor.getSelectionSize() );
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -116,11 +119,12 @@ function WorldEditor::onUnSelect( %this, %obj ) {
 
 	%this.lastCentroidPos = "";
 	%this.lastMoveOffset = "";
-
 	Lab.currentEditor.onObjectDeselected( %obj );
 	SceneInspector.removeInspect( %obj );
-	foreach$(%tree in Scene.SceneTrees)		
-			%tree.removeSelection( %obj );
+
+	foreach$(%tree in Scene.SceneTrees)
+		%tree.removeSelection( %obj );
+
 	//SceneEditorTree.removeSelection(%obj);
 	// Inform the camera
 	commandToServer('EditorOrbitCameraSelectChange', %this.getSelectionSize(), %this.getSelectionCentroid());
@@ -131,17 +135,18 @@ function WorldEditor::onUnSelect( %this, %obj ) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function WorldEditor::onClearSelection( %this ) {	
+function WorldEditor::onClearSelection( %this ) {
 	Lab.currentEditor.onSelectionCleared();
-	foreach$(%tree in Scene.SceneTrees)		
-			%tree.clearSelection(  );
+
+	foreach$(%tree in Scene.SceneTrees)
+		%tree.clearSelection(  );
+
 	//SceneEditorTree.clearSelection();
 	// Inform the camera
 	commandToServer('EditorOrbitCameraSelectChange', %this.getSelectionSize(), %this.getSelectionCentroid());
 	EditorGuiStatusBar.setSelectionObjectsByCount(%this.getSelectionSize());
 	// Call the selection callbacks with no objects
 	Lab.DoSelectionCallback("Transform");
-
 }
 //------------------------------------------------------------------------------
 

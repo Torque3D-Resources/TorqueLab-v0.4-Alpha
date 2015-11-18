@@ -13,13 +13,13 @@
 function Lab::setGridSize( %this, %value,%isSnapping,%gizmoZ ) {
 	if (!strIsNumeric(%value))
 		return;
-		
-	EWorldEditor.gridSize = %value;	
-	
+
+	EWorldEditor.gridSize = %value;
 	%isSnapping = true; //For now, gridSnap and GridSize are always the same
-	if (%isSnapping)	
-		%this.setGizmoGridSize(%value,%gizmoZ,true);		
-	
+
+	if (%isSnapping)
+		%this.setGizmoGridSize(%value,%gizmoZ,true);
+
 	Lab.syncGuiGridSnap();
 }
 //------------------------------------------------------------------------------
@@ -28,27 +28,27 @@ function Lab::incGridSize(%this,%value) {
 	%step = $WEditor::GridStep * %value;
 	%current = EWorldEditor.gridSize;
 	%newsize = %current + %step;
-	Lab.setGridSize(%newsize,true);		
+	Lab.setGridSize(%newsize,true);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function Lab::setGizmoGridSize( %this, %gridSize,%zSnap,%noGuiSync ) {
-	%size = getWord(%gridSize,0);	
+	%size = getWord(%gridSize,0);
 	%gridSizeXYZ = %size SPC %size SPC %size;
-	
+
 	if (%zSnap !$= "" && strIsNumeric(%zSnap))
 		%gridSizeXYZ.z = %zSnap;
-		
+
 	GlobalGizmoProfile.gridSize = %gridSizeXYZ;
-	
+
 	if (!%noGuiSync)
 		Lab.syncGuiGridSnap();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Lab.setGridSize($ThisControl.getValue());
-function Lab::toggleGridSnap( %this ) {			
+function Lab::toggleGridSnap( %this ) {
 	%gridSnap = !EWorldEditor.gridSnap;
 	devLog("toggle grid snap from:",EWorldEditor.gridSnap,"To",%gridSnap);
 	Lab.setGridSnap(!EWorldEditor.gridSnap);
@@ -57,15 +57,13 @@ function Lab::toggleGridSnap( %this ) {
 //==============================================================================
 //Lab.setGridSize($ThisControl.getValue());
 function Lab::setGridSnap( %this, %gridSnapOn ) {
-	
 	//If nothing submitted, WorldEditor gridSnap is already set, just need to sync
 	if (%gridSnapOn !$= "")
 		EWorldEditor.gridSnap = %gridSnapOn;
 	else
-		%gridSnapOn = EWorldEditor.gridSnap;		
-	
+		%gridSnapOn = EWorldEditor.gridSnap;
+
 	Lab.setGizmoGridSnap(%gridSnapOn);
-	
 	Lab.syncGuiGridSnap();
 }
 //------------------------------------------------------------------------------
@@ -79,11 +77,9 @@ function Lab::setGizmoGridSnap( %this, %gridSnapOn ) {
 //==============================================================================
 //==============================================================================
 //Lab.setGridSize($ThisControl.getValue());
-function Lab::syncGuiGridSnap( %this ) {	
+function Lab::syncGuiGridSnap( %this ) {
 	SceneEditorToolbar-->objectSnapBtn.setStateOn( EWorldEditor.getSoftSnap() );
 	//SceneEditorToolbar-->softSnapSizeTextEdit.setText( EWorldEditor.getSoftSnapSize() );
-	
-	
 	SceneEditorToolbar-->WorldEditorGridSizeEdit.setText( EWorldEditor.gridSize );
 	ESnapOptions-->SnapSize.setText( EWorldEditor.getSoftSnapSize() );
 	ESnapOptions-->GridSize.setText(  EWorldEditor.gridSize  );
@@ -91,8 +87,6 @@ function Lab::syncGuiGridSnap( %this ) {
 	SceneEditorToolbar-->objectGridSnapBtn.setStateOn( EWorldEditor.gridSnap );
 	ESnapOptions-->NoSnapButton.setStateOn( !EWorldEditor.stickToGround && !EWorldEditor.getSoftSnap() && !EWorldEditor.gridSnap );
 	SceneBuilderToolbar-->WorldEditorGridSizeEdit.setText( EWorldEditor.gridSize );
-	
-
 	devLog("Ended with snap:",EWorldEditor.gridSnap);
 }
 //------------------------------------------------------------------------------

@@ -27,7 +27,7 @@ function RoadManager::updateRoadData(%this) {
 		if (%nodeWidth $= "" || %nodeWidth $= "-1")
 			break;
 
-		%nodePos = RoadEditorGui.getNodePosition();		
+		%nodePos = RoadEditorGui.getNodePosition();
 		RoadManager.nodeData[%id] = %nodePos TAB %nodeWidth;
 		%id++;
 	}
@@ -53,9 +53,8 @@ function RoadManager::updateRoadData(%this) {
 //------------------------------------------------------------------------------
 $NoNodeUpd = true;
 function RoadManager::selectNode(%this,%nodeId,%noUpdate) {
-	if (!isObject(RoadEditorGui.road)) 
+	if (!isObject(RoadEditorGui.road))
 		return;
-	
 
 	%this.noNodeUpdate = %noUpdate;
 	RoadEditorGui.setSelectedNode(%nodeId);

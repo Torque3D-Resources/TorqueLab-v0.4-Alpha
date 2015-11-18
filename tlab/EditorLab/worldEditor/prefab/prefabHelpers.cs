@@ -9,8 +9,7 @@
 function Lab::changePrefabFile(%this,%prefab,%file) {
 	if (!isObject(%prefab))
 		return;
-	
-	LabObj.set(%prefab,"fileName",%file);	
-		
+
+	LabObj.set(%prefab,"fileName",%file);
 }
 //------------------------------------------------------------------------------

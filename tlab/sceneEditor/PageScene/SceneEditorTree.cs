@@ -6,7 +6,7 @@
 function SceneEditorTree::rebuild( %this ) {
 	%this.clear();
 	%this.open(MissionGroup);
-	%this.buildVisibleTree();	
+	%this.buildVisibleTree();
 }
 function SceneEditorTreeTabBook::onTabSelected( %this ) {
 	if( SceneEditorTreeTabBook.getSelectedPage() == 0) {
@@ -32,15 +32,16 @@ function SceneEditorTree::toggleLock( %this ) {
 function SceneEditorTree::onMouseUp( %this,%hitItemId, %mouseClickCount ) {
 	devLog("SceneEditorTree::onMouseUp( %this,%hitItemId, %mouseClickCount )",%hitItemId, %mouseClickCount);
 	%obj = %this.getItemValue(%hitItemId);
+
 	if (!isObject(%obj))
 		return;
-	switch$(%obj.getClassName()){
-		case "SimGroup":
-			if(%mouseClickCount > 1){		
+
+	switch$(%obj.getClassName()) {
+	case "SimGroup":
+		if(%mouseClickCount > 1) {
 			%obj.treeExpanded = !%obj.treeExpanded;
 			%this.expandItem(%hitItemId,%obj.treeExpanded);
-			}
-		
+		}
 	}
 }
 
@@ -65,9 +66,9 @@ function SceneEditorTree::onAddSelection(%this, %obj, %isLastSelection) {
 		SceneTreeWindow-->DeleteSelection.command = "";
 
 	//if( %isLastSelection )
-		//SceneInspector.addInspect( %obj );
+	//SceneInspector.addInspect( %obj );
 	//else
-		//SceneInspector.addInspect( %obj, false );
+	//SceneInspector.addInspect( %obj, false );
 }
 //------------------------------------------------------------------------------------
 function CameraSpeedDropdownCtrlContainer::onWake(%this) {

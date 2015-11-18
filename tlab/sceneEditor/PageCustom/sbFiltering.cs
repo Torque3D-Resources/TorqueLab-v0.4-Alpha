@@ -14,6 +14,7 @@ $SceneBrowser_PluginClasses["NavEditor"] = "NavMesh";
 $SceneBrowser_PluginClasses["TerrainEditor"] = "TerrainBlock";
 $SceneBrowser_PluginClasses["TerrainPainter"] = "TerrainBlock";
 $SceneBrowser_PluginClasses["ShapeEditor"] = "TSStatic MeshRoad DecalRoad";
+
 //SceneBrowserTree.rebuild
 function SceneBrowser::filterPlugin( %this,%pluginObj ) {
 	if (!isObject(%pluginObj))
@@ -25,7 +26,7 @@ function SceneBrowser::filterPlugin( %this,%pluginObj ) {
 
 
 
-function SceneBrowser::filterClasses( %this,%classes ) {
+function SceneEd::filterClasses( %this,%classes ) {
 	%set = "";
 	if (%classes !$= "" && %classes !$= "All"){
 			%set = SceneBrowserObjSet;
@@ -42,9 +43,10 @@ function SceneBrowser::filterClasses( %this,%classes ) {
 		//devLog("ObjList added to set:",%objList);
 		//%set.outputlog();
 	}
-	
+	SceneBrowserTree.open(SceneBrowserObjSet);
 	SceneBrowserTree.setRoot(%set);
-	
+	SceneBrowserTree.buildVisibleTree();
+	devLog(%set.getCount(),"objects loaded in tree");
 	/* Not Working, need to use a set
 	SceneBrowserTree.noCallbacks = true;
 	for(%i = 1; %i< SceneBrowserTree.getItemCount();%i++){

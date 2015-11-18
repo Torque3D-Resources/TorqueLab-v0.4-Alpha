@@ -10,7 +10,6 @@
 
 function EPainter::onActivated( %this ) {
 	%this.setDisplayModes();
-
 	// Update the layer listing.
 	//%this.updateLayers( %matIndex );
 	// Automagically put us into material paint mode.
@@ -34,11 +33,10 @@ function EPainter::onActivated( %this ) {
 // Update the active material layers list
 function EPainter::setPaintLayer( %this, %matIndex) {
 	%ctrl = EPainterStack.findObjectByInternalName("Layer_"@%matIndex,true);
-	%terrainMat = %ctrl.terrainMat;	
+	%terrainMat = %ctrl.terrainMat;
 	%pill = EPainterStack.getObject(%matIndex);
-
 	%this.updateSelectedLayerList(%ctrl);
-	
+
 	foreach(%ctrl in EPainterStack)
 		%ctrl.isActiveCtrl.visible = 0;
 
@@ -70,17 +68,15 @@ function PainterLayerEdit::onValidate( %this) {
 	devLog("PainterLayerEdit onValidate:: FIELD:",%this.internalName,"Mat:",%this.mat);
 	%this.mat.setFieldValue(%this.internalName,%this.getText());
 	EPainter.setMaterialDirty( %this.mat,%this.nameCtrl );
-	
 	%this.updateFriends();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 // Update the active material layers list
-function PainterLayerSlider::onMouseDragged( %this) {	
+function PainterLayerSlider::onMouseDragged( %this) {
 	%field = strreplace(%this.internalName,"Slider","");
 	%this.mat.setFieldValue(%field,%this.getValue());
 	EPainter.setMaterialDirty( %this.mat,%this.nameCtrl );
-	
 	%this.updateFriends();
 }
 //------------------------------------------------------------------------------
@@ -89,10 +85,9 @@ function PainterLayerSlider::onMouseDragged( %this) {
 function PainterLayerMouse::onMouseDown( %this,%modifier,%pos,%clicks) {
 	logd("PainterLayerMouse onMouseDown::",%modifier,%pos,%clicks);
 
-	if (%clicks > 1){
+	if (%clicks > 1) {
 		eval(%this.altCommand);
-	}
-	else{		
+	} else {
 		eval(%this.command);
 	}
 }
@@ -172,7 +167,6 @@ function PainterLayerMouse::onMouseDragged( %this,%modifier,%pos,%clicks) {
 //==============================================================================
 // Update the active material layers list
 function LayerDropClass::onControlDropped(%this, %control, %dropPoint) {
-	
 	%droppedOnLayer = %this.layerID;
 	%droppedLayer = %control.dragSourceControl.layerID;
 	ETerrainEditor.reorderMaterial(%droppedLayer,%droppedOnLayer);
@@ -184,7 +178,7 @@ function LayerDropClass::onControlDropped(%this, %control, %dropPoint) {
 }
 //==============================================================================
 // Update the active material layers list
-function EPainter::layerDragFailed( %this,%modifier,%pos,%clicks) {	
+function EPainter::layerDragFailed( %this,%modifier,%pos,%clicks) {
 	foreach(%ctrl in EPainterStack)
 		%ctrl.dropLayer.visible = 0;
 }

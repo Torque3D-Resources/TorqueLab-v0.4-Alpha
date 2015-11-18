@@ -10,7 +10,6 @@ function DecalEditorPlugin::initParamsArray( %this,%cfgArray ) {
 	$ForestEditorCfg = newScriptObject("ForestEditorCfg");
 	%cfgArray.group[%groupId++] = "General settings";
 	%cfgArray.setVal("DefaultScale",    "1" TAB "DefaultScale" TAB "TextEdit" TAB "" TAB "ForestEditorPlugin" TAB %groupId);
-	
 }
 //==============================================================================
 // Plugin Object Callbacks - Called from TLab plugin management scripts
@@ -24,7 +23,6 @@ function DecalEditorPlugin::onWorldEditorStartup( %this ) {
 function DecalEditorPlugin::onActivated( %this ) {
 	EditorGui.bringToFront( DecalEditorGui );
 	DecalEditorGui.makeFirstResponder( true );
-	
 	//WORKAROUND: due to the gizmo mode being stored on its profile (which may be shared),
 	//  we may end up with a mismatch between the editor mode and gizmo mode here.
 	//  Reset mode explicitly here to work around this.
@@ -44,7 +42,6 @@ function DecalEditorPlugin::onActivated( %this ) {
 }
 
 function DecalEditorPlugin::onDeactivated( %this ) {
-	
 	// Remember last palette selection
 	%this.paletteSelection = DecalEditorGui.getMode();
 	// Restore the previous Gizmo

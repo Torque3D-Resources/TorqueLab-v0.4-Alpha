@@ -12,6 +12,7 @@ function GLab::showProfileFieldOptions( %this,%field ) {
 		GLab_ActiveFieldRollout.expanded = false;
 		$GLab_SelectedField = "";
 	}
+
 	GLab_ActiveFieldRollout.visible = true;
 	$GLab_SelectedField = %field;
 	%value = %profile.getFieldValue(%field);
@@ -22,7 +23,6 @@ function GLab::showProfileFieldOptions( %this,%field ) {
 
 	if (!%isOwner)
 		%owner = %parent;
-
 	else
 		%owner = %profileName;
 
@@ -62,7 +62,6 @@ function GLab::CreateFieldContextMenu() {
 		item[ 1 ] = "Remove from profile" TAB "" TAB "removeProfileField($GLab_SelectedObject,$GLab_ProfileFieldContext);";
 		item[ 2 ] = "\c2-- Selected Profile Options --";
 		item[ 3 ] = "Remove all fonts colors from profile" TAB "" TAB "GLab.ClearProfileColorType(\"All\",$GLab_SelectedObject);";
-	
 		object = -1;
 	};
 }
@@ -117,6 +116,5 @@ function GLab::setSelectedProfile( %this,%profile ) {
 function GLab::toggleActiveFieldRollout( %this ) {
 	GLab_ActiveFieldRollout.setVisible(!GLab_ActiveFieldRollout.visible);
 	$GLab::ShowActiveFieldRollout = GLab_ActiveFieldRollout.visible;
-
 }
 //------------------------------------------------------------------------------

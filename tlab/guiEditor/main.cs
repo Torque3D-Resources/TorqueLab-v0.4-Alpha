@@ -11,26 +11,22 @@ function initializeGuiEditor() {
 
 	if (!isObject(GuiLab))
 		$GuiLab = new scriptObject("GuiLab");
-	
+
 	$GuiEd = new scriptObject("GuiEd");
-	
 	delObj(GuiEdMap);
 	new ActionMap(GuiEdMap);
-
 	// GUIs.
 	execGuiEdit(true);
-	
 }
 //------------------------------------------------------------------------------
 function execGuiLab() {
-	execPattern( "tlab/guiEditor/lab/*.cs" );	
+	execPattern( "tlab/guiEditor/lab/*.cs" );
 	execPattern( "tlab/guiEditor/system/*.cs" );
 }
 //==============================================================================
 function execGuiEdit(%execGui,%execMainGui) {
-	
 	if (%execGui) {
-		%execMainGui = true;		
+		%execMainGui = true;
 		exec( "./gui/guiEditorNewGuiDialog.ed.gui" );
 		exec( "./gui/guiEditorPrefsDlg.ed.gui" );
 		//exec( "./gui/guiEditorSelectDlg.ed.gui" );
@@ -41,7 +37,8 @@ function execGuiEdit(%execGui,%execMainGui) {
 		exec( "tlab/guiEditor/gui/GuiEdTemplateEditor.gui" );
 		exec( "tlab/guiEditor/gui/GuiEdTemplateGroup.gui" );
 	}
-	if (%execMainGui){		
+
+	if (%execMainGui) {
 		exec( "tlab/guiEditor/gui/guiEditor.ed.gui" );
 		exec( "tlab/guiEditor/gui/CloneEditorGui.gui" );
 	}
@@ -68,10 +65,9 @@ function execGuiEdit(%execGui,%execMainGui) {
 	exec( "./scripts/EditorChooseGUI.ed.cs" );
 	exec( "./gui/LabWidgetBuilderDlg.cs" );
 	exec( "tlab/guiEditor/scripts/functionControls.cs" );
-	execPattern( "tlab/guiEditor/lab/*.cs" );	
+	execPattern( "tlab/guiEditor/lab/*.cs" );
 	execPattern( "tlab/guiEditor/system/*.cs" );
 	GuiEd.InitGuiEditor();
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================

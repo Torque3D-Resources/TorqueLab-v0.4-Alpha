@@ -19,30 +19,28 @@ function ECamViewTool::onWake(%this) {
 //==============================================================================
 function ECamViewGui::onShow(%this) {
 	EditorGuiStatusBar-->camViewBoxState.setStateOn(true);
+
 	if (!isObject(ECamViewGui.currentGui))
 		ECamViewGui.currentGui = ECamViewCompact;
-	
+
 	ECamViewBox.visible = 0;
 	ECamViewCompact.visible = 0;
 	ECamViewGui.currentGui.visible = 1;
 	$Lab_CamViewEnabled = true;
-	
 }
 //==============================================================================
 function ECamViewGui::onHide(%this) {
 	EditorGuiStatusBar-->camViewBoxState.setStateOn(false);
-	
 	ECamViewBox.visible = 0;
 	ECamViewCompact.visible = 0;
 	$Lab_CamViewEnabled = false;
 }
 //==============================================================================
 function ECamViewGui::initTool(%this) {
-	%this.setCompactMode(true);	
+	%this.setCompactMode(true);
 }
 //==============================================================================
 function ECamViewTool::updateGui( %this ) {
-	
 	%this-->stack.updateStack();
 }
 //------------------------------------------------------------------------------
@@ -50,24 +48,23 @@ function ECamViewTool::updateGui( %this ) {
 function ECamViewGui::setState(%this,%isActive) {
 	ECamViewBox.visible = 0;
 	ECamViewCompact.visible = 0;
+
 	if (%isActive && isObject(ECamViewGui.currentGui))	{
 		ECamViewGui.currentGui.visible = 1;
 		ETools.showTool("CamView");
-	}
-	else {
+	} else {
 		ETools.hideTool("CamView");
-	}	
+	}
 }
 //==============================================================================
 function ECamViewGui::setCompactMode(%this,%isCompact) {
 	if (%isCompact)
 		ECamViewGui.currentGui = ECamViewCompact;
-	else 
+	else
 		ECamViewGui.currentGui = ECamViewBox;
-		
+
 	ECamViewBox.visible = !%isCompact;
 	ECamViewCompact.visible = %isCompact;
-	
 }
 //==============================================================================
 function ECamViewToolButton::onClick( %this ) {
@@ -80,13 +77,12 @@ function ECamViewToolButton::onClick( %this ) {
 function ECamViewGui::updateCurrentView(%this) {
 	if (isObject(ECamViewGui.currentGui))	{
 		ECamViewGui.currentGui.updateCurrentView();
-	}	
-	
+	}
 }
 //==============================================================================
 function ECamViewTool::updateCurrentView(%this) {
 	%curCamId = Lab.cameraDisplayType;
-	%text = getWord($LabCameraDisplayName[%curCamId],0);	
+	%text = getWord($LabCameraDisplayName[%curCamId],0);
 
 	if (%text $= "Standard")
 		%text = "3D";
@@ -105,11 +101,12 @@ function ECamViewToolClose::onClick( %this,%a1,%a2,%a3 ) {
 //==============================================================================
 function ECamViewToolDrag::onMouseDragged( %this,%a1,%a2,%a3 ) {
 	%dragCtrl = %this.internalName;
-	if (!isObject(%dragCtrl))
-	{
+
+	if (!isObject(%dragCtrl)) {
 		warnLog("Can't find cam box to drag!",%dragCtrl);
 		return;
 	}
+
 	startDragAndDropCtrl(%dragCtrl);
 	hide(%dragCtrl);
 }
@@ -117,13 +114,11 @@ function ECamViewToolDrag::onMouseDragged( %this,%a1,%a2,%a3 ) {
 //==============================================================================
 function ECamViewTool::DragSuccess( %this,%droppedCtrl,%pos) {
 	show(%this);
-	%realpos = EditorFrameWorld.getRealPosition();	
+	%realpos = EditorFrameWorld.getRealPosition();
 	%pos.x = %pos.x - %this.extent.x/2- %realpos.x;
 	%pos.y = %pos.y - %this.extent.y/2 - %realpos.y;
-	
 	%this.setPosition(%pos.x,%pos.y);
 	%this.forceInsideCtrl(ECamViewGui);
 	//%this.refresh();
 	%this.updateGui();
-	
 }

@@ -10,46 +10,48 @@
 function Lab::ExpandPrefab(%this,%prefab) {
 	DevLog("Expanding prefab:",%prefab);
 	%container = %prefab.parentGroup;
-	if (!isObject(%container)){
+
+	if (!isObject(%container)) {
 		devLog("Invalid container:",%container);
 		%container = MissionGroup;
 	}
+
 	%simGroup = newSimGroup("",%container);
-	
 	%file = %prefab.fileName;
 	%simGroup.prefabFile = %file;
 	%simGroup.internalName = "fab_"@fileBase(%file);
 	exec(%file);
+
 	//$ThisPrefab.outputlog();
-	foreach(%obj in $ThisPrefab){
+	foreach(%obj in $ThisPrefab) {
 		%dataObj = %obj.deepClone();
 		%dataObj.internalName = fileBase(%obj.shapeName);
 		%dataObj.absPos = %dataObj.position;
 		%dataObj.position = VectorAdd(%dataObj.position, %prefab.position);
-		%simGroup.add(%dataObj);		
+		%simGroup.add(%dataObj);
 	}
+
 	delObj(%prefab);
 	return true;
 }
 function Lab::CollapsePrefab(%this,%simGroup) {
 	%file = %simGroup.prefabFile;
+
 	if (%file $= "")
 		return;
-	
+
 	%position = VectorSub(%simGroup.getObject(0).position,%simGroup.getObject(0).absPos);
+
 	foreach(%obj in %simGroup)
 		%obj.position = %obj.absPos;
-		
+
 	%simGroup.save(%file,false,"$ThisPrefab = ");
-	
-	
 	%objId = new Prefab() {
 		filename = %file;
 		position = %position;
 		parentGroup = %simGroup.parentGroup;
 	};
-	delObj(%simGroup);	
-	
+	delObj(%simGroup);
 }
 /*
 Example Prefab File:

@@ -82,10 +82,11 @@ function SceneEditorPlugin::toggleGridSizeSlider( %this,%sourceObj ) {
 	%srcPos = %sourceObj.getRealPosition();
 	%srcPos.y += %sourceObj.extent.y;
 	%step = $WEditor::gridStep;
+
 	if (%step $= "")
 		%step = "0.1";
+
 	%range = %step SPC "10";
-	
 	%ticks = getTicksFromRange(%range,%step);
 	EOverlay.toggleSlider("2",%srcPos,"range \t "@%range@" \n ticks \t "@%ticks@"\n altCommand \t SceneEditorPlugin.onGridSizeSliderChanged($ThisControl);");
 }

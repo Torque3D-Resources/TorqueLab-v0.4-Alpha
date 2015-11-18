@@ -8,7 +8,6 @@
 function initializeRoadEditor() {
 	echo( " - Initializing Road and Path Editor" );
 	execREP(true);
-	
 	Lab.createPlugin("RoadEditor","Road Editor");
 	Lab.addPluginEditor("RoadEditor",RoadEditorGui);
 	Lab.addPluginGui("RoadEditor",RoadEditorTools);
@@ -16,7 +15,6 @@ function initializeRoadEditor() {
 	//Lab.addPluginGui("RoadEditor",RoadEditorTreeWindow);
 	Lab.addPluginToolbar("RoadEditor",RoadEditorToolbar);
 	Lab.addPluginPalette("RoadEditor",   RoadEditorPalette);
-	
 	RoadEditorPlugin.editorGui = RoadEditorGui;
 	$REP = newScriptObject("REP");
 	%map = new ActionMap();
@@ -33,7 +31,6 @@ function initializeRoadEditor() {
 	%map.bindCmd( keyboard, "x", "RoadEditorWireframeBtn.performClick();", "" );
 	%map.bindCmd( keyboard, "v", "RoadEditorShowRoadBtn.performClick();", "" );
 	RoadEditorPlugin.map = %map;
-	
 	$RoadManager = newScriptObject("RoadManager");
 	//RoadEditorPlugin.initSettings();
 }

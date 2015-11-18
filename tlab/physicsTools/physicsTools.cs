@@ -19,7 +19,6 @@ function PT::physicsToggleSimulation(%this) {
 		PT.physicsStartSimulation( "client" );
 		PT.physicsStartSimulation( "server" );
 	}
-
 }
 //------------------------------------------------------------------------------
 
@@ -28,14 +27,18 @@ function PT::physicsToggleSimulation(%this) {
 //==============================================================================
 function PT::setInitialPhysicsState(%this,%startDelay) {
 	%isEnabled = physicsSimulationEnabled();
+
 	if ( %isEnabled ) {
-	//	physicsStateText.setText( "Simulation is paused." );
+		//	physicsStateText.setText( "Simulation is paused." );
 		PT.physicsStopSimulation( "client" );
 		PT.physicsStopSimulation( "server" );
-	} 
+	}
+
 	PT.physicsRestoreState();
+
 	if (%startDelay $= "")
 		return;
+
 	%this.schedule(%startDelay,"doAction","start");
 }
 //------------------------------------------------------------------------------
@@ -44,46 +47,54 @@ function PT::setInitialPhysicsState(%this,%startDelay) {
 // Custom PhysicsTools Functions
 //==============================================================================
 function PT::doAction(%this,%action) {
-	
 	%isEnabled = physicsSimulationEnabled();
-	
-	switch$(%action){
-		case "start":
-			PT.physicsSetTimeScale(1);
-			if (%isEnabled)
-				return;
-			PT.physicsStartSimulation( "client" );
-			PT.physicsStartSimulation( "server" );
-		case "pause":
-			PT.physicsSetTimeScale(0);
-		case "stop":
+
+	switch$(%action) {
+	case "start":
+		PT.physicsSetTimeScale(1);
+
+		if (%isEnabled)
+			return;
+
+		PT.physicsStartSimulation( "client" );
+		PT.physicsStartSimulation( "server" );
+
+	case "pause":
+		PT.physicsSetTimeScale(0);
+
+	case "stop":
 		if (!%isEnabled)
-				return;
-			PT.physicsStopSimulation( "client" );
-			PT.physicsStopSimulation( "server" );
-		case "restart":
-			PT.setInitialPhysicsState(500);
-		case "store":
-			PT.physicsStoreState();
-		case "refresh":
-			PT.setInitialPhysicsState();
+			return;
+
+		PT.physicsStopSimulation( "client" );
+		PT.physicsStopSimulation( "server" );
+
+	case "restart":
+		PT.setInitialPhysicsState(500);
+
+	case "store":
+		PT.physicsStoreState();
+
+	case "refresh":
+		PT.setInitialPhysicsState();
 	}
 }
 //------------------------------------------------------------------------------
-function PhysicsToolsIcon::onClick(%this) {	
+function PhysicsToolsIcon::onClick(%this) {
 	%action = %this.internalName;
-	PT.doAction(%action);	
+	PT.doAction(%action);
 }
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
 function PhysicsToolsSlider::doCommand(%this) {
 	%action = %this.internalName;
-	switch$(%action){
-		case "timeScale":	
-			%scale = mFloatLength(%this.getValue(),1);
-			PT.physicsSetTimeScale(%scale);
-	}		
+
+	switch$(%action) {
+	case "timeScale":
+		%scale = mFloatLength(%this.getValue(),1);
+		PT.physicsSetTimeScale(%scale);
+	}
 }
 //------------------------------------------------------------------------------
 
@@ -195,7 +206,7 @@ function PT::physicsRestoreState(%this) {
 //==============================================================================
 // Get the currently set time scale.
 function PT::physicsDebugDraw(%this,%enable) {
-	 physicsDebugDraw(%enable);
+	physicsDebugDraw(%enable);
 }
 //------------------------------------------------------------------------------
 

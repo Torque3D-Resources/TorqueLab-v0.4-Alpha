@@ -18,30 +18,29 @@ function SceneObjectsTree::onDefineIcons( %this ) {
 
 function SceneObjectsTree::onAdd( %this ) {
 	Scene.SceneTrees = strAddWord(Scene.SceneTrees,%this.getId());
-	
 }
 
 /// @name EditorPlugin Methods
 /// @{
 function SceneObjectsTree::handleRenameObject( %this, %name, %obj ) {
 	devLog(" SceneObjectsTree::handleRenameObject(",%name, %obj);
+
 	if (!isObject(%obj))
 		return;
-	
+
 	%field = ( %this.renameInternal ) ? "internalName" : "name";
 	%isDirty = LabObj.set(%obj,%field,%name);
 	info("Group:",%obj,"Is Dirty",%isDirty);
-	
 }
 function SceneEditorTree::handleRenameObject( %this, %name, %obj ) {
 	devLog(" SceneEditorTree::handleRenameObject(",%name, %obj);
+
 	if (!isObject(%obj))
 		return;
-	
+
 	%field = ( %this.renameInternal ) ? "internalName" : "name";
 	%isDirty = LabObj.set(%obj,%field,%name);
 	info("Group:",%obj,"Is Dirty",%isDirty);
-	
 }
 
 //-----------------------------------------------------------------------------
@@ -71,29 +70,27 @@ function SceneObjectsTree::onObjectDeleteCompleted( %this ) {
 	// the undo if we really deleted something.
 	if ( %this.undoDeleteList !$= "" )
 		MEDeleteUndoAction::submit( %this.undoDeleteList );
-		
-	Scene.onObjectDeleteCompleted();
 
-	
+	Scene.onObjectDeleteCompleted();
 }
 function SceneObjectsTree::onClearSelected(%this) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onClearSelected cancelled for filtering");
 		return;
 	}
+
 	Scene.onClearSelected();
-	
 }
 
 function SceneObjectsTree::onInspect(%this, %obj) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onInspect cancelled for filtering");
 		return;
 	}
-	
+
 	//if (isObject(%this.myInspector)){
-		//devLog("Updating tree owned inspector",%this.myInspector);
-		//%this.myInspector.inspect(%obj);
+	//devLog("Updating tree owned inspector",%this.myInspector);
+	//%this.myInspector.inspect(%obj);
 	//}
 	Scene.onInspect(%obj);
 }
@@ -101,48 +98,41 @@ function SceneObjectsTree::onInspect(%this, %obj) {
 
 
 function SceneObjectsTree::onAddSelection(%this, %obj, %isLastSelection) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onAddSelection cancelled for filtering");
 		return;
 	}
-	
+
 	Scene.AddObjectToSelection(%obj, %isLastSelection);
-	
 }
 function SceneObjectsTree::onRemoveSelection(%this, %obj) {
 	Scene.unselectObject(%obj,%this);
-	
 	//if (isObject(%this.myInspector)){
-		//devLog("RemoveInspect tree owned inspector",%this.myInspector);
-		//%this.myInspector.removeInspect(%obj);
+	//devLog("RemoveInspect tree owned inspector",%this.myInspector);
+	//%this.myInspector.removeInspect(%obj);
 	//}
 //	SceneInspector.removeInspect( %obj );
-	
 }
 function SceneObjectsTree::onSelect(%this, %obj) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onSelect cancelled for filtering");
 		return;
 	}
-	
+
 	if (%obj.getClassName() $= "SimGroup") {
-		
-		
 		%item = %this.findItemByObjectId(%obj.getId());
 		DevLog(%item,"Group slected with child count:",%obj.getCount());
-	//	%this.expandItem(%item,true);
-	//	Scene.selectObjectGroup(%obj);
-	
-	
+		//	%this.expandItem(%item,true);
+		//	Scene.selectObjectGroup(%obj);
 	}
+
 	EWorldEditor.selectObject(%obj);
-	
-Scene.onSelect(%obj);
-	
+	Scene.onSelect(%obj);
 	//EWorldEditor.selectObject(%obj);
-	//Scene.onSelect(%obj);	
+	//Scene.onSelect(%obj);
 	return;
-		if (!$SceneEditor_AutomaticObjectGroup && %this.autoGroups) {
+
+	if (!$SceneEditor_AutomaticObjectGroup && %this.autoGroups) {
 		%this.autoGroups = false;
 		Scene.setNewObjectGroup( MissionGroup );
 		return;
@@ -162,24 +152,24 @@ Scene.onSelect(%obj);
 }
 
 function SceneObjectsTree::onUnselect(%this, %obj) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onUnselect cancelled for filtering");
 		return;
 	}
+
 	Scene.unselectObject(%obj,%this);
-	
 }
 
 function SceneObjectsTree::onDragDropped(%this) {
 	Scene.setDirty();
-	
 }
 
 function SceneObjectsTree::onAddGroupSelected(%this, %group) {
-	if (%this.noCallbacks){
+	if (%this.noCallbacks) {
 		devLog("SceneBrowserTree::onAddGroupSelected cancelled for filtering");
 		return;
 	}
+
 	Scene.setNewObjectGroup(%group);
 }
 

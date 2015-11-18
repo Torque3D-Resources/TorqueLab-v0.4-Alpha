@@ -681,6 +681,7 @@ function ActionRenameDetail::undo( %this ) {
 //------------------------------------------------------------------------------
 // Edit detail size
 function ShapeEditor::doEditDetailSize( %this, %oldSize, %newSize ) {
+	devLog("ShapeEditor::doEditDetailSize %oldSize, %newSize,",%oldSize, %newSize);
 	%action = %this.createAction( ActionEditDetailSize, "Edit detail size" );
 	%action.oldSize = %oldSize;
 	%action.newSize = %newSize;
@@ -970,11 +971,11 @@ function ActionEditImposter::doit( %this ) {
 	ShapeEdWaitGui.hide();
 	// Restore highlight effect
 	ShapeEdMaterials.updateSelectedMaterial( ShapeEdMaterials-->highlightMaterial.getValue() );
-
+	devLog("ActionEditImposter::DoIt: dl =",%dl);
 	if ( %dl != -1 ) {
 		ShapeEdShapeView.refreshShape();
 		ShapeEdShapeView.currentDL = %dl;
-		ShapeEdAdvancedWindow-->detailSize.setText( %this.newSize );
+		ShapeEdAdv_Details-->detailSize.setText( %this.newSize );
 		ShapeEdDetails-->meshSize.setText( %this.newSize );
 		ShapeEd.onDetailsChanged();
 		return true;
@@ -1010,7 +1011,7 @@ function ActionEditImposter::undo( %this ) {
 		if ( %dl != -1 ) {
 			ShapeEdShapeView.refreshShape();
 			ShapeEdShapeView.currentDL = %dl;
-			ShapeEdAdvancedWindow-->detailSize.setText( %this.oldSize );
+			ShapeEdAdv_Details-->detailSize.setText( %this.oldSize );
 			ShapeEdDetails-->meshSize.setText( %this.oldSize );
 		}
 	}
@@ -1054,7 +1055,7 @@ function ActionRemoveImposter::undo( %this ) {
 	if ( %dl != -1 ) {
 		ShapeEdShapeView.refreshShape();
 		ShapeEdShapeView.currentDL = %dl;
-		ShapeEdAdvancedWindow-->detailSize.setText( %this.oldSize );
+		ShapeEdAdv_Details-->detailSize.setText( %this.oldSize );
 		ShapeEdDetails-->meshSize.setText( %this.oldSize );
 		ShapeEd.onDetailsChanged();
 	}

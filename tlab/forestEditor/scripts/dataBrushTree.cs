@@ -118,24 +118,26 @@ function ForestEditBrushTree::onAddSelection( %this, %obj ) {
 	else
 		ForestEditorInspector.inspect( "" );
 }
-function ForestEditBrushTree::onSelect( %this,%item ) {	
-	if (%item.getClassName() $= "SimSet"){				
-		foreach(%obj in %item){
+function ForestEditBrushTree::onSelect( %this,%item ) {
+	if (%item.getClassName() $= "SimSet") {
+		foreach(%obj in %item) {
 			%itemId = %this.findItemByObjectId(%obj);
-			%this.addSelection(%itemId);			
-		}		
+			%this.addSelection(%itemId);
+		}
 	}
 }
 
 
 function ForestEditBrushTree::onDeleteSelection( %this ) {
 	%list = ForestEditBrushTree.getSelectedObjectList();
+
 	foreach(%obj in %list)
 		if (%obj.isCoreSet)
 			%removeList = strAddWord(%removeList,%obj);
+
 	foreach$(%obj in %removeList)
 		%list = strRemoveWord(%obj);
-		
+
 	MEDeleteUndoAction::submit( %list, true );
 	ForestEditorPlugin.dirty = true;
 }

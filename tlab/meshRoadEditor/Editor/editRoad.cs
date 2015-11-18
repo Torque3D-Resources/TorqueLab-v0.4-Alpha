@@ -12,6 +12,7 @@ function MeshRoadEditorGui::onRoadSelected( %this, %road ) {
 	%this.road = %road;
 	devLog("MeshRoadEditorGuionRoadSelected");
 	MRoadManager.currentRoad = %road;
+
 	// Update the materialEditorList
 	if( isObject( %road ) )
 		$Lab::materialEditorList = %road.getId();
@@ -24,7 +25,7 @@ function MeshRoadEditorGui::onRoadSelected( %this, %road ) {
 		%treeId = MeshRoadTreeView.findItemByObjectId( %road );
 		MeshRoadTreeView.selectItem( %treeId );
 	}
-	
+
 	MRoadManager.updateRoadData();
 }
 //------------------------------------------------------------------------------
@@ -49,6 +50,7 @@ function MeshRoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		MeshRoadEditorOptionsWindow-->depth.setActive( true );
 		MeshRoadEditorOptionsWindow-->depth.setValue( %this.getNodeDepth() );
 	}
+
 	MRoadManager.onNodeSelected(%nodeIdx);
 }
 //------------------------------------------------------------------------------
@@ -62,12 +64,10 @@ function MeshRoadEditorGui::onNodeModified( %this, %nodeIdx ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorGui::editNodeDetails( %this ) {
-		
 	%this.setNodePosition( MeshRoadEditorOptionsWindow-->position.getText() );
 	%this.setNodeNormal( MeshRoadEditorOptionsWindow-->normal.getText() );
 	%this.setNodeWidth( MeshRoadEditorOptionsWindow-->width.getText() );
-	%this.setNodeDepth( MeshRoadEditorOptionsWindow-->depth.getText() );	
-	
+	%this.setNodeDepth( MeshRoadEditorOptionsWindow-->depth.getText() );
 }
 //------------------------------------------------------------------------------
 //==============================================================================

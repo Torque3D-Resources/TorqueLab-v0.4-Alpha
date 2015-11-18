@@ -17,19 +17,19 @@ $Scene_DropTypeDisplay["currentSel"] = "at current sel.";
 $Scene_DropTypeDisplay["currentSelZ"] = "at current sel. Z";
 //==============================================================================
 function SceneDropTypeMenu::onSelect(%this, %id,%text) {
-	%dropType = %this.typeId[%id];	
-	Scene.setDropType(%dropType);	
-}	
+	%dropType = %this.typeId[%id];
+	Scene.setDropType(%dropType);
+}
 //------------------------------------------------------------------------------
 //==============================================================================
 function Scene::setDropType(%this, %dropType) {
-	
-	foreach$(%menu in Scene.dropTypeMenus){
+	foreach$(%menu in Scene.dropTypeMenus) {
 		%menu.setText($Scene_DropTypeDisplay[%dropType]);
 	}
+
 	if (strFind($WorldEditor_DropTypes,%dropType))
 		EWorldEditor.dropType = %dropType;
-	
+
 	Scene.dropMode = %dropType;
-}	
+}
 //------------------------------------------------------------------------------

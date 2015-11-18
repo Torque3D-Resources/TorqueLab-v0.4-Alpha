@@ -5,21 +5,16 @@
 // Based on MaterialLab by Dave Calabrese and Travis Vroman of Gaslight Studios
 //==============================================================================
 
-singleton GuiControlProfile(GuiBehaviorTreeViewProfile : ToolsTreeViewProfile)
-{
-   bitmap = "tlab/aiDirector/images/BehaviorTreeView.png";
+singleton GuiControlProfile(GuiBehaviorTreeViewProfile : ToolsTreeViewProfile) {
+	bitmap = "tlab/aiDirector/images/BehaviorTreeView.png";
 };
 //==============================================================================
 function initializeAIDirector() {
-	
 	echo( " % - Initializing AI Director" );
-	
 	execADE(true);
-	
 	// register the class icons
-   EditorIconRegistry::loadFromPath("tlab/aiDirector/images/classIcons/");
+	EditorIconRegistry::loadFromPath("tlab/aiDirector/images/classIcons/");
 	$ADE = newScriptObject("ADE");
-	
 	Lab.createPlugin("AiDirector","AI Director");
 	Lab.addPluginGui("AiDirector",AiDirectorTools);
 	//Lab.addPluginGui("RoadEditor",RoadEditorOptionsWindow);
@@ -42,7 +37,7 @@ function initializeAIDirector() {
 //==============================================================================
 function execADE(%loadGui) {
 	if (%loadGui) {
-		// Load MaterialLab Guis		
+		// Load MaterialLab Guis
 		exec("tlab/aiDirector/gui/BTEditor.gui");
 		exec("tlab/aiDirector/gui/BTEditorCreatePrompt.gui");
 		exec( "tlab/aiDirector/gui/AiDirectorTools.gui" );
@@ -52,8 +47,6 @@ function execADE(%loadGui) {
 	}
 
 	// Load Client Scripts.
-
-   
 	exec("tlab/aiDirector/BTEdMenu.cs");
 	execPattern("tlab/aiDirector/system/*.cs");
 	execPattern("tlab/aiDirector/scripts/*.cs");
@@ -61,7 +54,6 @@ function execADE(%loadGui) {
 	execPattern("tlab/aiDirector/groupMode/*.cs");
 	execPattern("tlab/aiDirector/triggerMode/*.cs");
 	execPattern("tlab/aiDirector/behaviors/*.cs");
-	
 }
 //==============================================================================
 function destroyBehaviorTreeEditor() {
@@ -69,11 +61,10 @@ function destroyBehaviorTreeEditor() {
 //------------------------------------------------------------------------------
 
 
-function reloadBTE()
-{
-   if(isObject(BehaviorTreeEditorGui))
-      BehaviorTreeEditorGui.delete();
-      
-   initializeBehaviorTreeEditor();
+function reloadBTE() {
+	if(isObject(BehaviorTreeEditorGui))
+		BehaviorTreeEditorGui.delete();
+
+	initializeBehaviorTreeEditor();
 }
 

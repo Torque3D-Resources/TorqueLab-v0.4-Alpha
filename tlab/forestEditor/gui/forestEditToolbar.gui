@@ -26,13 +26,13 @@ new GuiStackControl(ForestEditToolbar) {
    canSave = "1";
    canSaveDynamicFields = "1";
       defaultParent = "GuiGroup";
-      defaultStack = "25358";
-      disabledGroup = "25359";
-      EditorContainer = "20522";
+      defaultStack = "25623";
+      disabledGroup = "25624";
+      EditorContainer = "20547";
       editorParent = "EditorGuiToolbarStack";
       plugin = "ForestEditor";
       preventReordering = "0";
-      stackLists = "25360 25368";
+      stackLists = "25625 25633";
 
    new GuiContainer() {
       margin = "0 0 0 0";
@@ -353,7 +353,7 @@ new GuiStackControl(ForestEditToolbar) {
             originalIndex = "1";
             originalParent = "25246";
             pluginName = "ForestEditor";
-            toolbar = "25358";
+            toolbar = "25623";
 
          new GuiTextCtrl() {
             text = "Global scale";
@@ -472,7 +472,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_HardnessBox";
             pluginName = "ForestEditor";
-            toolbar = "25358";
+            toolbar = "25623";
 
          new GuiTextCtrl() {
             text = "Hardness";
@@ -590,7 +590,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_PressureBox";
             pluginName = "ForestEditor";
-            toolbar = "25358";
+            toolbar = "25623";
 
          new GuiTextCtrl() {
             text = "Pressure";
@@ -708,7 +708,7 @@ new GuiStackControl(ForestEditToolbar) {
          canSaveDynamicFields = "1";
             aggregateCtrls = "FET_TipSizeBox";
             pluginName = "ForestEditor";
-            toolbar = "25358";
+            toolbar = "25623";
 
          new GuiTextCtrl() {
             text = "Tip Size";

@@ -76,7 +76,7 @@ function ShapeEditorTools::updateSimplifiedPanels( %this ) {
 }
 
 //==============================================================================
-function ShapeEditorTools::onPreEditorSave( %this ) {		
+function ShapeEditorTools::onPreEditorSave( %this ) {
 	ShapeEd_SeqPillStack.clear();
 }
 //------------------------------------------------------------------------------

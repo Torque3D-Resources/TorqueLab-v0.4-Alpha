@@ -15,12 +15,13 @@ function Lab::sortPluginsBar(%this,%default) {
 		ToolsToolbarArray.sort("sortPluginByDefaultOrder");
 	else
 		ToolsToolbarArray.sort("sortPluginByOrder");
+
 	ToolsToolbarArray.refresh();
 	%this.updatePluginIconOrder();
 }
 //------------------------------------------------------------------------------
 //Compare plugin order A and B and return result
-function sortPluginByOrder(%objA,%objB) {		
+function sortPluginByOrder(%objA,%objB) {
 	if ( %objA.pluginObj.pluginOrder > %objB.pluginObj.pluginOrder)
 		return "1";
 
@@ -31,14 +32,14 @@ function sortPluginByOrder(%objA,%objB) {
 }
 //------------------------------------------------------------------------------
 //Compare plugin order A and B and return result
-function sortPluginByDefaultOrder(%objA,%objB) {	
-		if ( %objA.pluginObj.getCfg("pluginOrderDefault") > %objB.pluginObj.getCfg("pluginOrderDefault"))
-			return "1";
+function sortPluginByDefaultOrder(%objA,%objB) {
+	if ( %objA.pluginObj.getCfg("pluginOrderDefault") > %objB.pluginObj.getCfg("pluginOrderDefault"))
+		return "1";
 
-		if ( %objA.pluginObj.getCfg("pluginOrderDefault") < %objB.pluginObj.getCfg("pluginOrderDefault"))
-			return "-1";
+	if ( %objA.pluginObj.getCfg("pluginOrderDefault") < %objB.pluginObj.getCfg("pluginOrderDefault"))
+		return "-1";
 
-		return "0";	
+	return "0";
 }
 //------------------------------------------------------------------------------
 
@@ -51,11 +52,12 @@ function Lab::updatePluginIconOrder(%this,%isDefault) {
 		%icon = ToolsToolbarArray.getObject(%i);
 		%icon.pluginObj.pluginOrder = %i+1;
 		%curDefault = %icon.pluginObj.getCfg("pluginOrderDefault");
+
 		if (%isDefault || %curDefault $= "")
-			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);	
-					
+			%icon.pluginObj.setCfg("pluginOrderDefault",%icon.pluginObj.pluginOrder);
+
 		if (!%isDefault)
-			%icon.pluginObj.setCfg("pluginOrder",%icon.pluginObj.pluginOrder);			
+			%icon.pluginObj.setCfg("pluginOrder",%icon.pluginObj.pluginOrder);
 	}
 }
 //------------------------------------------------------------------------------

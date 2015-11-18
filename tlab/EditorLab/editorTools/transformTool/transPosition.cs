@@ -41,14 +41,12 @@ function ETransformTool::setSelPosition( %this,%axis ) {
 	%posY = %this-->PosY.getText();
 	%posZ = %this-->PosZ.getText();
 	%position = %posX SPC %posY SPC %posZ;
-	
 	//EWorldEditor.transformSelection(doPosition, point, doRelativePos, doRotate,rotation, doRelativeRot, doRotLocal, scaleType, scale, isRelative,  isLocal );
 	EWorldEditor.transformSelection(true,%position,false,false,"",false,false,   "","",false,false);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function ETransformTool::clearPosition( %this,%axis ) {	
-
+function ETransformTool::clearPosition( %this,%axis ) {
 	if (%axis $= "x" || %axis $= "")
 		%this.setFieldValueContainers("PosX","0");
 

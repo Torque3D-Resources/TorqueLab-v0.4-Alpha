@@ -28,7 +28,7 @@ Find the index of the sequence with the given name.
 example:
    // Check if a given sequence exists in the shape
    if ( %this.getSequenceIndex( \"walk\" ) == -1 )
-      echo( \"Could not find 'walk' sequence\" );  
+      echo( \"Could not find 'walk' sequence\" );
 //-----------------------------------------------------------------------------
 
 //==============================================================================
@@ -42,7 +42,7 @@ Get the name of the indexed sequence.
    %count = %this.getSequenceCount();
    for ( %i = 0; %i < %count; %i++ )
       echo( %i SPC %this.getSequenceName( %i ) );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -64,7 +64,7 @@ TSShapeConstructor.getSequenceSource(name);
    Example:
    // print the source for the walk animation
    "echo( \"walk source:\" SPC getField( %this.getSequenceSource( \"walk\" ), 0 ) );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -75,7 +75,7 @@ TSShapeConstructor.getSequenceFrameCount(name);
    @return number of keyframes in the sequence
    Example:
    "echo( \"Run has \" @ %this.getSequenceFrameCount( \"run\" ) @ \" keyframes\" );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -84,7 +84,7 @@ TSShapeConstructor.getSequencePriority(name);
  "Get the priority setting of the sequence.
    @param name name of the sequence to query
    @return priority value of the sequence )
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -94,7 +94,7 @@ TSShapeConstructor.setSequencePriority(name,priority);
    @param name name of the sequence to modify
    @param priority new priority value
    @return true if successful, false otherwise )
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -108,7 +108,7 @@ TSShapeConstructor.getSequenceGroundSpeed(name);
    Example:
    %speed = VectorLen( getWords( %this.getSequenceGroundSpeed( \"run\" ), 0, 2 ) );
    "   echo( \"Run moves at \" @ %speed @ \" units per frame\" );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -128,7 +128,7 @@ TSShapeConstructor.setSequenceGroundSpeed(name,transSpeed,rotSpeed);
    Example:
    %this.setSequenceGroundSpeed( \"run\", \"5 0 0\" );
    %this.setSequenceGroundSpeed( \"spin\", \"0 0 0\", \"4 0 0\" );
-   
+
 //------------------------------------------------------------------------------
 //==============================================================================
 TSShapeConstructor.getSequenceCyclic(name);
@@ -139,7 +139,7 @@ TSShapeConstructor.getSequenceCyclic(name);
    Example:
    "if ( !%this.getSequenceCyclic( \"ambient\" ) )
    "   error( \"ambient sequence is not cyclic!\" );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -152,7 +152,7 @@ TSShapeConstructor.setSequenceCyclic(name,cyclic);
    Example:
    %this.setSequenceCyclic( \"ambient\", true );
    %this.setSequenceCyclic( \"shoot\", false );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -174,7 +174,7 @@ TSShapeConstructor.getSequenceBlend(name);
    %blendData = %this.getSequenceBlend( \"look\" );
    "if ( getField( %blendData, 0 ) )
    "   echo( \"look is a blend, reference: \" @ getField( %blendData, 1 ) );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -191,7 +191,7 @@ TSShapeConstructor.setSequenceBlend(name,blend,blendSeq,blendFrame);
    @return true if successful, false otherwise
    Example:
    %this.setSequenceBlend( \"look\", true, \"root\", 0 );
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -204,7 +204,7 @@ TSShapeConstructor.renameSequence(oldName,newName);
    @param newName new name of the sequence
    @return true if successful, false otherwise
    Example:
-   %this.renameSequence( \"walking\", \"walk\" );   
+   %this.renameSequence( \"walking\", \"walk\" );
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -236,7 +236,7 @@ TSShapeConstructor.addSequence(source,name,start,end,padRot,padTrans);
    %this.addSequence( \"./player_look.dsq\", \"look\", 0, -1 );     // start to end
    %this.addSequence( \"walk\", \"walk_shortA\", 0, 4 );            // start to frame 4
    %this.addSequence( \"walk\", \"walk_shortB\", 4, -1 );           // frame 4 to end
-   
+
 //------------------------------------------------------------------------------
 
 //==============================================================================
@@ -245,7 +245,7 @@ TSShapeConstructor.removeSequence(name);
 "Remove the sequence from the shape.
    @param name name of the sequence to remove
    @return true if successful, false otherwise )
-   
+
 //------------------------------------------------------------------------------
 
 
@@ -273,8 +273,8 @@ DefineTSShapeConstructorMethod( getTrigger, const char*, ( const char* name, S32
    %count = %this.getTriggerCount( \"back\" );
    "for ( %i = 0; %i < %count; %i++ )
    "   echo( %i SPC %this.getTrigger( \"back\", %i ) );
-   
-{  
+
+{
    // Find the sequence and return the indexed trigger (frame and state)
    GET_SEQUENCE( getTrigger, seq, name, "" );
 
@@ -302,7 +302,7 @@ DefineTSShapeConstructorMethod( addTrigger, bool, ( const char* name, S32 keyfra
    Example:
    %this.addTrigger( \"walk\", 3, 1 );
    %this.addTrigger( \"walk\", 5, -1 );
-   
+
 {
    if ( !mShape->addTrigger( name, keyframe, state ) )
       return false;
@@ -320,7 +320,7 @@ DefineTSShapeConstructorMethod( removeTrigger, bool, ( const char* name, S32 key
    @return true if successful, false otherwise
    Example:
    %this.removeTrigger( \"walk\", 3, 1 );
-   
+
 {
    if ( !mShape->removeTrigger( name, keyframe, state ) )
       return false;

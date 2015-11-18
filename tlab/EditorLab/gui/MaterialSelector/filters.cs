@@ -11,14 +11,13 @@ function MaterialSelector::clearFilterArray( %this ) {
 		if (%obj.internalName $= "CustomFilter")
 			%deleteList = strAddWord(%deleteList,%obj.getId());
 	}
-	
+
 	foreach$(%objID  in %deleteList)
 		delObj(%objID);
 }
 //------------------------------------------------------------------------------
 //MaterialSelector.buildStaticFilters();
 function MaterialSelector::buildStaticFilters( %this ) {
-	
 //	%i = %staticFilterContainer.getCount();
 	//for( ; %i != 0; %i--)
 	//MaterialSelector-->filterArray.addGuiControl(%staticFilterContainer.getObject(0));
@@ -62,6 +61,7 @@ function MaterialSelector::buildStaticFilters( %this ) {
 		// Process regular materials here
 		%material = materialSet.getObject(%i);
 		devLog("Adding material:",%material,"IsTer",%material.terrainMaterials);
+
 		if (%material.terrainMaterials && $MaterialSelector_SkipTerrainMaterials )
 			continue;
 
@@ -73,7 +73,9 @@ function MaterialSelector::buildStaticFilters( %this ) {
 				break;
 			}
 		}
+
 		devLog("Adding material:",%material,"IsUnlisted",%unlistedFound);
+
 		if( %unlistedFound )
 			continue;
 
@@ -120,6 +122,7 @@ function MaterialSelector::preloadFilter( %this ) {
 // Load the filtered materials (called also when thumbnail count change)
 function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 	MatSel_ListFilterText.active = 0;
+
 	// manage schedule array properly
 	if(!isObject(MatEdScheduleArray))
 		new ArrayObject(MatEdScheduleArray);
@@ -144,16 +147,17 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 	// changed to accomadate tagging. dig through the array for each tag name,
 	// call unique value, sort, and we have a perfect set of materials
 	//if (!isObject(%staticFilter)){
-		//%this.buildStaticFilters();
-		//%staticFilter = MaterialFilterAllArray;
+	//%this.buildStaticFilters();
+	//%staticFilter = MaterialFilterAllArray;
 	//}
 	if (isObject(%staticFilter))
 		MaterialSelector.currentStaticFilter = %staticFilter;
 
-	if (!isObject(MaterialSelector.currentStaticFilter)){
+	if (!isObject(MaterialSelector.currentStaticFilter)) {
 		devLog("Invalid StaticFilter",MaterialSelector.currentStaticFilter);
 		MaterialSelector.currentStaticFilter = MaterialFilterAllArray;
 	}
+
 	MaterialSelector.currentFilter = %selectedFilter;
 	%filteredObjectsArray = new ArrayObject();
 	%previewsPerPage = MaterialSelector-->materialPreviewCountPopup.getTextById( MaterialSelector-->materialPreviewCountPopup.getSelected() );
@@ -191,10 +195,11 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 
 		%start = MaterialSelector.currentPreviewPage * %previewsPerPage;
 
-		for( %i = %start; %i < %start + %previewCount; %i++ ){
+		for( %i = %start; %i < %start + %previewCount; %i++ ) {
 			%mat = %filteredObjectsArray.getValue(%i);
+
 			if (strFind(strlwr(%mat.getName()),strlwr(MatEdDlg.filterText),true))
-			MaterialSelector.buildPreviewArray( %mat );
+				MaterialSelector.buildPreviewArray( %mat );
 		}
 
 		%filteredObjectsArray.delete();
@@ -234,13 +239,13 @@ function MaterialSelector::loadFilter( %this, %selectedFilter, %staticFilter ) {
 
 		for( %i = %start; %i < %start + %previewCount; %i++ ) {
 			%mat = %noTagArray.getValue(%i);
+
 			if (strFind(strlwr(%mat.getName()),strlwr(MatEdDlg.filterText),true))
 				MaterialSelector.buildPreviewArray( %mat );
 		}
 	}
 
 	MaterialSelector.loadImages( 0 );
-	
 	MatSel_ListFilterText.active = 1;
 }
 

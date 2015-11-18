@@ -74,16 +74,16 @@ function MeshRoadDefaultDepthSliderCtrlContainer::onWake(%this) {
 
 //==============================================================================
 function MeshRoadEditorGui::setDefaultTopMaterial(%this,%matName) {
-	MeshRoadEditorGui.setFieldValue("topMaterialName",%matName);	
+	MeshRoadEditorGui.setFieldValue("topMaterialName",%matName);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorGui::setDefaultBottomMaterial(%this,%matName) {
-	MeshRoadEditorGui.setFieldValue("bottomMaterialName",%matName);	
+	MeshRoadEditorGui.setFieldValue("bottomMaterialName",%matName);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorGui::setDefaultSideMaterial(%this,%matName) {
-	MeshRoadEditorGui.setFieldValue("sideMaterialName",%matName);	
+	MeshRoadEditorGui.setFieldValue("sideMaterialName",%matName);
 }
 //------------------------------------------------------------------------------

@@ -36,8 +36,6 @@ function EditorExportToCollada() {
 		else
 			EWorldEditor.colladaExportSelection( %exportFile );
 	}
-	
-	
 }
 
 //------------------------------------------------------------------------------

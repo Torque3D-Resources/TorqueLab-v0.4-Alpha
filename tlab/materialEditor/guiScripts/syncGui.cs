@@ -37,9 +37,7 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 	MaterialEditorPropertiesWindow-->transZWriteCheckBox.setValue((%material).translucentZWrite);
 	MaterialEditorPropertiesWindow-->alphaTestCheckBox.setValue((%material).alphaTest);
 	MaterialEditorPropertiesWindow-->castShadows.setValue((%material).castShadows);
-	
 	MaterialEditorPropertiesWindow-->castDynamicShadows.setValue((%material).castDynamicShadows);//PBR Scripts
-
 	MaterialEditorPropertiesWindow-->translucentCheckbox.setValue((%material).translucent);
 
 	switch$((%material).translucentBlendOp) {
@@ -142,9 +140,10 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 		MaterialEditorPropertiesWindow-->toneMapNameText.setText( (%material).toneMap[%layer] );
 		MaterialEditorPropertiesWindow-->toneMapDisplayBitmap.setBitmap( (%material).toneMap[%layer] );
 	}
+
 	//PBR Scripts
 	MaterialEditorPropertiesWindow-->FlipRBCheckbox.setValue((%material).FlipRB[%layer]);
-   MaterialEditorPropertiesWindow-->invertSmoothnessCheckbox.setValue((%material).invertSmoothness[%layer]);
+	MaterialEditorPropertiesWindow-->invertSmoothnessCheckbox.setValue((%material).invertSmoothness[%layer]);
 
 	if((%material).specularMap[%layer] $= "") {
 		MaterialEditorPropertiesWindow-->specMapNameText.setText( "None" );
@@ -157,100 +156,81 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 		MaterialEditorPropertiesWindow-->compMapNameText.setText( (%material).specularMap[%layer] );
 		MaterialEditorPropertiesWindow-->compMapDisplayBitmap.setBitmap( (%material).specularMap[%layer] );
 	}
-	
-	//PBR Script
-	if((%material).roughMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->roughMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->roughMapNameText.setText( (%material).roughMap[%layer] );
-      MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( (%material).roughMap[%layer] );
-   }
-   
-   if((%material).aoMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->aoMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->aoMapNameText.setText( (%material).aoMap[%layer] );
-      MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( (%material).aoMap[%layer] );
-   }
-   
-   if((%material).metalMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->metalMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->metalMapNameText.setText( (%material).metalMap[%layer] );
-      MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( (%material).metalMap[%layer] );
-   }
-   
-   // material damage
-      
-   if((%material).albedoDamageMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage);
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( (%material).albedoDamageMap[%layer] );
-      MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( (%material).albedoDamageMap[%layer] );
-   }
-   
-   if((%material).normalDamageMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
-      MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( (%material).normalDamageMap[%layer] );
-   }
-   
-   if((%material).compositeDamageMap[%layer] $= "") 
-   {
-      MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( "None" );
-      MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
-   }
-   else
-   {
-      MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
-      MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( (%material).compositeDamageMap[%layer] );
-   }
-   
-   MaterialEditorPropertiesWindow-->minDamageTextEdit.setText((%material).minDamage[%layer]);
-   MaterialEditorPropertiesWindow-->minDamageSlider.setValue((%material).minDamage[%layer]);
-	//PBR Script End   
 
+	//PBR Script
+	if((%material).roughMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->roughMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+	} else {
+		MaterialEditorPropertiesWindow-->roughMapNameText.setText( (%material).roughMap[%layer] );
+		MaterialEditorPropertiesWindow-->roughMapDisplayBitmap.setBitmap( (%material).roughMap[%layer] );
+	}
+
+	if((%material).aoMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->aoMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+	} else {
+		MaterialEditorPropertiesWindow-->aoMapNameText.setText( (%material).aoMap[%layer] );
+		MaterialEditorPropertiesWindow-->aoMapDisplayBitmap.setBitmap( (%material).aoMap[%layer] );
+	}
+
+	if((%material).metalMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->metalMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+	} else {
+		MaterialEditorPropertiesWindow-->metalMapNameText.setText( (%material).metalMap[%layer] );
+		MaterialEditorPropertiesWindow-->metalMapDisplayBitmap.setBitmap( (%material).metalMap[%layer] );
+	}
+
+	// material damage
+
+	if((%material).albedoDamageMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage);
+	} else {
+		MaterialEditorPropertiesWindow-->albedoDamageMapNameText.setText( (%material).albedoDamageMap[%layer] );
+		MaterialEditorPropertiesWindow-->albedoDamageMapDisplayBitmap.setBitmap( (%material).albedoDamageMap[%layer] );
+	}
+
+	if((%material).normalDamageMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+	} else {
+		MaterialEditorPropertiesWindow-->normalDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
+		MaterialEditorPropertiesWindow-->normalDamageMapDisplayBitmap.setBitmap( (%material).normalDamageMap[%layer] );
+	}
+
+	if((%material).compositeDamageMap[%layer] $= "") {
+		MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( "None" );
+		MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( $MEP_NoTextureImage );
+	} else {
+		MaterialEditorPropertiesWindow-->compositeDamageMapNameText.setText( (%material).normalDamageMap[%layer] );
+		MaterialEditorPropertiesWindow-->compositeDamageMapDisplayBitmap.setBitmap( (%material).compositeDamageMap[%layer] );
+	}
+
+	MaterialEditorPropertiesWindow-->minDamageTextEdit.setText((%material).minDamage[%layer]);
+	MaterialEditorPropertiesWindow-->minDamageSlider.setValue((%material).minDamage[%layer]);
+	//PBR Script End
 	MaterialEditorPropertiesWindow-->detailScaleTextEdit.setText( getWord((%material).detailScale[%layer], 0) );
 	MaterialEditorPropertiesWindow-->detailNormalStrengthTextEdit.setText( getWord((%material).detailNormalMapStrength[%layer], 0) );
 	MaterialEditorPropertiesWindow-->colorTintSwatch.color = (%material).diffuseColor[%layer];
 	MaterialEditorPropertiesWindow-->specularColorSwatch.color = (%material).specular[%layer];
-	if (!MatEd.PBRenabled){
-	MaterialEditorPropertiesWindow-->specularPowerTextEdit.setText((%material).specularPower[%layer]);
-	MaterialEditorPropertiesWindow-->specularPowerSlider.setValue((%material).specularPower[%layer]);
-	MaterialEditorPropertiesWindow-->specularStrengthTextEdit.setText((%material).specularStrength[%layer]);
-	MaterialEditorPropertiesWindow-->specularStrengthSlider.setValue((%material).specularStrength[%layer]);
-	MaterialEditorPropertiesWindow-->pixelSpecularCheckbox.setValue((%material).pixelSpecular[%layer]);
+
+	if (!MatEd.PBRenabled) {
+		MaterialEditorPropertiesWindow-->specularPowerTextEdit.setText((%material).specularPower[%layer]);
+		MaterialEditorPropertiesWindow-->specularPowerSlider.setValue((%material).specularPower[%layer]);
+		MaterialEditorPropertiesWindow-->specularStrengthTextEdit.setText((%material).specularStrength[%layer]);
+		MaterialEditorPropertiesWindow-->specularStrengthSlider.setValue((%material).specularStrength[%layer]);
+		MaterialEditorPropertiesWindow-->pixelSpecularCheckbox.setValue((%material).pixelSpecular[%layer]);
+	} else {
+		//PBR Script
+		MaterialEditorPropertiesWindow-->SmoothnessTextEdit.setText((%material).Smoothness[%layer]);
+		MaterialEditorPropertiesWindow-->SmoothnessSlider.setValue((%material).Smoothness[%layer]);
+		MaterialEditorPropertiesWindow-->MetalnessTextEdit.setText((%material).Metalness[%layer]);
+		MaterialEditorPropertiesWindow-->MetalnessSlider.setValue((%material).Metalness[%layer]);
+		//PBR Script End
 	}
-	else {
-	
-	//PBR Script
-	MaterialEditorPropertiesWindow-->SmoothnessTextEdit.setText((%material).Smoothness[%layer]);
-   MaterialEditorPropertiesWindow-->SmoothnessSlider.setValue((%material).Smoothness[%layer]);
-   MaterialEditorPropertiesWindow-->MetalnessTextEdit.setText((%material).Metalness[%layer]);
-   MaterialEditorPropertiesWindow-->MetalnessSlider.setValue((%material).Metalness[%layer]);
-	//PBR Script End
-	}
+
 	MaterialEditorPropertiesWindow-->glowCheckbox.setValue((%material).glow[%layer]);
 	MaterialEditorPropertiesWindow-->emissiveCheckbox.setValue((%material).emissive[%layer]);
 	MaterialEditorPropertiesWindow-->parallaxTextEdit.setText((%material).parallaxScale[%layer]);
@@ -321,17 +301,13 @@ function MaterialEditorGui::guiSync( %this, %material ) {
 	MaterialEditorPropertiesWindow-->SequenceTextEditSSS.setText( %numFrames );
 	MaterialEditorPropertiesWindow-->SequenceSliderFPS.setValue( (%material).sequenceFramePerSec[%layer] );
 	MaterialEditorPropertiesWindow-->SequenceSliderSSS.setValue( %numFrames );
-	
-	
 	// Accumulation PBR Script
-   MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);  
-     
-   MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);
-   
-   %this.getRoughChan((%material).SmoothnessChan[%layer]);
-   %this.getAOChan((%material).AOChan[%layer]);
-   %this.getMetalChan((%material).metalChan[%layer]);
-   //PBR Script End
+	MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);
+	MaterialEditorPropertiesWindow-->accuCheckbox.setValue((%material).accuEnabled[%layer]);
+	%this.getRoughChan((%material).SmoothnessChan[%layer]);
+	%this.getAOChan((%material).AOChan[%layer]);
+	%this.getMetalChan((%material).metalChan[%layer]);
+	//PBR Script End
 	%this.preventUndo = false;
 }
 

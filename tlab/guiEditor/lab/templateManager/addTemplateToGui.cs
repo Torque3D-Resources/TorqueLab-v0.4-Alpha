@@ -7,13 +7,15 @@
 
 //==============================================================================
 function TplManager::addTemplateToGui(%this,%tplGui,%addTo) {
-	GuiEd.closeTplPreview();	
+	GuiEd.closeTplPreview();
 	%tplClone = %tplGui.getObject(0).deepClone();
 	show(%tplClone);
 	%tplClone.setName("");
 	%tplClone.templateSrc = %tplGui.getName();
+
 	if (!isObject(%addTo))
 		%addTo = GuiEditor.getCurrentAddSet();
-	%addTo.add(%tplClone);	
+
+	%addTo.add(%tplClone);
 }
 //------------------------------------------------------------------------------

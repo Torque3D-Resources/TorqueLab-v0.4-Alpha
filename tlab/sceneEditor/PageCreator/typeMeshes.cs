@@ -8,10 +8,11 @@ $SEP_Creator_ShowPrefabInMeshes = false;
 //==============================================================================
 // Navigate through Creator Book Data
 function SEP_Creator::navigateMeshes( %this, %address ) {
-	
 	%searchExts = "*.dts" TAB "*.dae" TAB "*.kmz" TAB "*.dif";
+
 	if ($SEP_Creator_ShowPrefabInMeshes)
 		%searchExts = %searchExts TAB "*.prefab";
+
 	%fullPath = findFirstFileMultiExpr(%searchExts );
 
 	if (SceneEditorTools.meshRootFolder !$= "")
@@ -40,8 +41,8 @@ function SEP_Creator::navigateMeshes( %this, %address ) {
 			%fullPath = findNextFileMultiExpr( "*.dts" TAB "*.dae" TAB "*.kmz"  TAB "*.dif" );
 			continue;
 		}
+
 		%ext = fileExt(%fullPath);
-		
 		%dirCount = getWordCount( %splitPath ) - 1;
 		%pathFolders = getWords( %splitPath, 0, %dirCount - 1 );
 		// Add this file's path (parent folders) to the

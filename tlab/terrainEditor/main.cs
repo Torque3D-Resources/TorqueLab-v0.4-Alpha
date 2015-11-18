@@ -6,8 +6,6 @@
 function initializeTerrainEditor() {
 	echo( " - Initializing Terrain Editor" );
 	execTerrainEd(true);
-	
-	
 	//Add the plugin GUI elements
 	//----------------------------------------------
 	// Terrain Editor Plugin
@@ -16,10 +14,7 @@ function initializeTerrainEditor() {
 	Lab.addPluginPalette("TerrainEditor",TerrainEditorPalette);
 	Lab.addPluginDlg("TerrainEditor",TerrainEditorDialogs);
 	TerrainEditorPlugin.PM = new PersistenceManager();
-	TerrainEditorPlugin.setEditorMode("Terrain");	
-	
-	
-	
+	TerrainEditorPlugin.setEditorMode("Terrain");
 	//----------------------------------------------
 	// Terrain Painter Plugin
 	Lab.createPlugin("TerrainPainter","Terrain Painter");
@@ -28,16 +23,13 @@ function initializeTerrainEditor() {
 	Lab.addPluginPalette("TerrainPainter",TerrainPainterPalette);
 	Lab.addPluginDlg("TerrainPainter",TerrainPainterDialogs);
 	TerrainPainterPlugin.PM = new PersistenceManager();
-	TerrainPainterPlugin.setEditorMode("Terrain");	
-	
-	
+	TerrainPainterPlugin.setEditorMode("Terrain");
 	%map = new ActionMap();
 	newSimSet("FilteredTerrainMaterialsSet");
 	TerrainMaterialDlg-->materialFilter.setText("");
 	//Create scriptobject for paint generator
 	$TPG = newScriptObject("TPG");
 	$TMG = newScriptObject("TMG");
-	
 	/*  %map.bindCmd( keyboard, "1", "LabSceneNoneModeBtn.performClick();", "" ); // Select
 	  %map.bindCmd( keyboard, "2", "LabSceneMoveModeBtn.performClick();", "" );   // Move
 	  %map.bindCmd( keyboard, "3", "LabSceneRotateModeBtn.performClick();", "" ); // Rotate
@@ -71,7 +63,6 @@ function execTerrainEd(%loadGui) {
 	exec("tlab/terrainEditor/gui/TerrainImportGui.cs");
 	exec("tlab/terrainEditor/gui/TerrainExportGui.cs");
 	exec("tlab/terrainEditor/gui/TerrainCreatorGui.cs" );
-	
 
 	//----------------------------------------------
 	// Terrain Painter GUIs
@@ -89,9 +80,6 @@ function execTerrainEd(%loadGui) {
 
 	exec("tlab/terrainEditor/terrainPainterPlugin.cs");
 	exec("tlab/terrainEditor/terrainEditorPlugin.cs");
-
-
-
 	execPattern("tlab/terrainEditor/scripts/*.cs");
 	execPattern("tlab/terrainEditor/painter/*.cs");
 	execPattern("tlab/terrainEditor/editor/*.cs");

@@ -25,10 +25,11 @@ function SEP_GroundCover::onSleep( %this ) {
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_GroundCover::createGroundCover( %this ) {
-	if (!isObject($SEP_GroundCoverDefault_["Material"])){			
+	if (!isObject($SEP_GroundCoverDefault_["Material"])) {
 		warnLog("Invalid default material for GroundCover:",$SEP_GroundCoverDefault_["Material"]);
 		return;
 	}
+
 	%name = getUniqueName("envGroundCover");
 	%groundCover = new GroundCover(%name) {
 		Material = $SEP_GroundCoverDefault_["Material"];
@@ -36,19 +37,16 @@ function SEP_GroundCover::createGroundCover( %this ) {
 		dissolveRadius = $SEP_GroundCoverDefault_["dissolveRadius"];
 		shapeCullRadius = $SEP_GroundCoverDefault_["shapeCullRadius"];
 	};
-	
-	
-		
 	%group = Scene.getActiveSimGroup();
+
 	if (!isObject(%group))
 		%group = MissionGroup;
-	
+
 	%groundCover.setFileName(%group.getFilename());
 	%group.add(%groundCover);
 	SEP_GroundCover.onGroundCoverSelected(%groundCover);
 	//SEP_GroundCover.selectedGroundCover = %groundCover;
 	SEP_GroundCover.getMissionGroundCover();
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -69,7 +67,7 @@ function SEP_GroundCover::updateFieldValue( %this,%field,%value,%layerId ) {
 
 	%currentValue = %obj.getFieldValue(%field,%layerId);
 
-	if (%currentValue $= %value) {		
+	if (%currentValue $= %value) {
 		return;
 	}
 
@@ -113,7 +111,6 @@ function SEP_GroundCover::saveData( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_GroundCover::deleteObj( %this ) {
 	%obj = SEP_GroundCover.selectedGroundCover;
-
 	LabMsgOkCancel("Delete selected GroundCover","You are about to delete the current GroundCover:" SPC %obj.getName() @ ". Proceed with GroundCover deletion?","delObj("@%obj.getId()@");");
 }
 //------------------------------------------------------------------------------
@@ -126,14 +123,12 @@ function SEP_GroundCover::rebuildSettings( %this ) {
 
 //==============================================================================
 // SEP_GroundCover.getMissionGroundCover();
-function SEP_GroundCover::getMissionGroundCover( %this ) {	
-
+function SEP_GroundCover::getMissionGroundCover( %this ) {
 	SEP_GroundCover.groundCoverList = Lab.getMissionObjectClassList("GroundCover");
 	SEP_GroundCoverMenu.clear();
 	SEP_GroundCoverMenu.add("None selected",0);
 	%selected = 0;
-	
-		
+
 	foreach$(%obj in SEP_GroundCover.groundCoverList) {
 		SEP_GroundCoverMenu.add(%obj.getName(),%obj.getId());
 
@@ -149,8 +144,9 @@ function SEP_GroundCover::getMissionGroundCover( %this ) {
 // Prepare the default config array for the Scene Editor Plugin
 function SEP_GroundCoverMenu::onSelect( %this,%id,%text ) {
 	logd("SEP_GroundCoverMenu::onSelect( %this,%id,%text )", %this,%id,%text);
+
 	if (isObject(%id))
-	SEP_GroundCover.onGroundCoverSelected(%id);
+		SEP_GroundCover.onGroundCoverSelected(%id);
 }
 //------------------------------------------------------------------------------
 //==============================================================================

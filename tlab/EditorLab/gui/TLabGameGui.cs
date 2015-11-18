@@ -8,18 +8,18 @@ $LabGameMap.bindCmd(keyboard, "ctrl i", "TLabGameGui.toggleCursor();");
 $LabGameMap.bindCmd(keyboard, "ctrl m", "Lab.toggleGameDlg(\"SceneEditorDialogs\",\"AmbientManager\");");
 
 //==============================================================================
-function TLabGameGui::onWake( %this ) {	
+function TLabGameGui::onWake( %this ) {
 	%menu = TLabGameGui-->dialogMenu;
+
 	if (isObject(Lab.currentGameDlg))
 		%menu.setSelected(Lab.currentGameDlg.getId(),false);
 	else
 		%menu.setSelected(0,false);
-	
 }
 
 //------------------------------------------------------------------------------
 //==============================================================================
-function TLabGameGui::onSleep( %this ) {	
+function TLabGameGui::onSleep( %this ) {
 	hideCursor();
 	$LabGameMap.push();
 	//Canvas.schedule(300,"hideCursor");
@@ -27,7 +27,7 @@ function TLabGameGui::onSleep( %this ) {
 }
 
 //------------------------------------------------------------------------------
-	
+
 
 //==============================================================================
 function TLabGameGui::toggleMe( %this ) {
@@ -39,13 +39,13 @@ function TLabGameGui::toggleMe( %this ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function TLabGameGuiDialogMenu::onSelect( %this,%id,%text ) {	
-	if (%id == 0){
+function TLabGameGuiDialogMenu::onSelect( %this,%id,%text ) {
+	if (%id == 0) {
 		TLabGameGui.reset();
 		return;
 	}
+
 	TLabGameGui.showDlg(%id);
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -55,37 +55,41 @@ function TLabGameGuiDialogMenu::onSelect( %this,%id,%text ) {
 //==============================================================================
 function TLabGameGui::getDlgObject( %this,%dlg,%child ) {
 	%dlgCtrl = %dlg;
-	if (%child !$= "" && isObject(%dlg)){
+
+	if (%child !$= "" && isObject(%dlg)) {
 		%dlgCtrl = %dlg.findObjectByInternalName(%child);
-		
+
 		//If not to default parent try with TLabGameGui
 		if (!isObject(%dlgCtrl))
 			%dlgCtrl = %this.findObjectByInternalName(%child);
 	}
+
 	return %dlgCtrl;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 //Set a plugin as active (Selected Editor Plugin)
 function Lab::toggleGameDlg(%this,%dlg,%child) {
-	%dlgCtrl = TLabGameGui.getDlgObject(%dlg,%child );		
+	%dlgCtrl = TLabGameGui.getDlgObject(%dlg,%child );
+
 	if (!isObject(%dlgCtrl))
-		return;	
-	
-	
+		return;
+
 	if (Lab.currentGameDlg $= %dlgCtrl)
 		TLabGameGui.hideDlg(%dlg,%child);
-	else	
+	else
 		TLabGameGui.showDlg(%dlg,%child);
+
 	return;
-	if (isObject(Lab.currentGameDlg)){
+
+	if (isObject(Lab.currentGameDlg)) {
 		Lab.currentGameDlg.editorParent.add(Lab.currentGameDlg);
-		
 	}
+
 	if (%dlgCtrl.isMethod("onActivated"))
 		%dlgCtrl.onActivated();
+
 	%dlgCtrl.editorParent = %dlgCtrl.parentGroup;
-	
 	%pluginName = %dlgCtrl.editorParent.pluginObj.displayName;
 	TLabGameGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
 	TLabGameGui.add(%dlgCtrl);
@@ -98,55 +102,57 @@ function Lab::toggleGameDlg(%this,%dlg,%child) {
 
 
 //==============================================================================
-function TLabGameGui::showDlg( %this,%dlg,%child ) {	
-	%dlgCtrl = %this.getDlgObject(%dlg,%child );	
+function TLabGameGui::showDlg( %this,%dlg,%child ) {
+	%dlgCtrl = %this.getDlgObject(%dlg,%child );
+
 	//If not to default parent try with TLabGameGui
-	if (!isObject(%dlgCtrl)){
+	if (!isObject(%dlgCtrl)) {
 		warnLog("Trying to show invalid GameLab Dialog:",%dlg,%child);
 		return;
-	}	
-	
-	if (isObject(Lab.currentGameDlg)){
-		Lab.currentGameDlg.editorParent.add(Lab.currentGameDlg);		
 	}
-	
+
+	if (isObject(Lab.currentGameDlg)) {
+		Lab.currentGameDlg.editorParent.add(Lab.currentGameDlg);
+	}
+
 	if (%dlgCtrl.isMethod("onActivated"))
 		%dlgCtrl.onActivated();
+
 	%dlgCtrl.editorParent = %dlgCtrl.parentGroup;
-	
 	%pluginName = %dlgCtrl.editorParent.pluginObj.displayName;
 	TLabGameGui-->dialogTitle.text = %pluginName SPC "\c1->\c2" SPC %dlgCtrl.internalName;
 	TLabGameGui.add(%dlgCtrl);
 	Lab.currentGameDlg = %dlgCtrl;
 	%dlgCtrl.visible = 1;
-	
 	%this.lastLoadedDlg = %dlg;
-	
 	pushDlg(TLabGameGui);
 	//TLabGameGui.schedule(300,"toggleCursor",true);
-TLabGameGui.clearChildResponder();
+	TLabGameGui.clearChildResponder();
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TLabGameGui::hideDlg( %this,%dlg,%child ) {
 	%dlgCtrl.editorParent.add(%dlgCtrl);
-		%dlgCtrl.visible = 0;
-		popDlg(TLabGameGui);
-		Lab.currentGameDlg = "";
-	
+	%dlgCtrl.visible = 0;
+	popDlg(TLabGameGui);
+	Lab.currentGameDlg = "";
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TLabGameGui::closeAll( %this ) {
 	Lab.currentGameDlg = "";
-	foreach(%ctrl in 	%this){
+
+	foreach(%ctrl in 	%this) {
 		if (%ctrl.internalName $= "infoContainer")
 			continue;
-		if (isObject(%ctrl.editorParent)){
+
+		if (isObject(%ctrl.editorParent)) {
 			%ctrl.editorParent.add(%ctrl);
 		}
+
 		hide(%ctrl);
 	}
+
 	Canvas.cursorOff();
 	popDlg(%this);
 }
@@ -156,21 +162,19 @@ function TLabGameGui::closeAll( %this ) {
 //==============================================================================
 function TLabGameGui::toggleCursor( %this,%show ) {
 	%button = %this-->toggleCursorButton;
-	%button.text = "Toggle cursor (ctrl + i)";	
+	%button.text = "Toggle cursor (ctrl + i)";
 	%button.active = true;
 
-	if (Canvas.isCursorOn() && !%show){		
-		hideCursor();		
+	if (Canvas.isCursorOn() && !%show) {
+		hideCursor();
+	} else {
+		showCursor();
 	}
-	else{
-		showCursor();	
+
+	if (!Canvas.isCursorOn()) {
+		%this.clearChildResponder();
 	}
-	
-	if (!Canvas.isCursorOn()){
-		%this.clearChildResponder();		
-	}
-		
-	
+
 	$HudCtrl.makeFirstResponder(!Canvas.isCursorOn());
 	TLabGameGui.makeFirstResponder(Canvas.isCursorOn());
 }
@@ -179,20 +183,21 @@ function TLabGameGui::toggleCursor( %this,%show ) {
 //==============================================================================
 function TLabGameGui::setNoCursor( %this,%noCursor ) {
 	TLabGameGui.noCursor = %noCursor;
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TLabGameGui::reset( %this ) {
 	//Make sure all Dlg in TLabGameGui have been returned to editor
-	foreach(%ctrl in TLabGameGui){
+	foreach(%ctrl in TLabGameGui) {
 		if (%ctrl.internalName $= "infoContainer")
 			continue;
-		if (isObject(%ctrl.editorParent)){
+
+		if (isObject(%ctrl.editorParent)) {
 			%ctrl.editorParent.add(%ctrl);
 		}
+
 		hide(%ctrl);
 	}
-	Lab.currentGameDlg = "";
 
+	Lab.currentGameDlg = "";
 }

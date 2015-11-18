@@ -12,16 +12,13 @@ function ShapeEdCollisions::update_onShapeSelectionChanged( %this ) {
 	// Initialise collision mesh target list
 	ShapeEd_CreateColRollout-->colTarget.clear();
 	ShapeEd_CreateColRollout-->colTarget.add( "Bounds" );
-
 	%objCount = ShapeEditor.shape.getObjectCount();
 
-	for ( %i = 0; %i < %objCount; %i++ ){
+	for ( %i = 0; %i < %objCount; %i++ ) {
 		ShapeEd_CreateColRollout-->colTarget.add( ShapeEditor.shape.getObjectName( %i ) );
-	
 	}
 
 	ShapeEd_CreateColRollout-->colTarget.setSelected( %this-->colTarget.findText( "Bounds" ), false );
-
 }
 
 function ShapeEdCollisions::update_onCollisionChanged( %this ) {
@@ -32,10 +29,9 @@ function ShapeEdCollisions::update_onCollisionChanged( %this ) {
 	%targetId = %this-->colTarget.findText( getField( %colData, 1 ) );
 	%this-->colTarget.setSelected( %targetId, false );
 
-
 	if ( %this-->colType.getText() $= "Convex Hulls" ) {
 		show(ShapeEdColCreate_Hull);
-		hide(ShapeEdColCreate_NoHull);		
+		hide(ShapeEdColCreate_NoHull);
 		%this-->hullDepth.setValue( getField( %colData, 2 ) );
 		%this-->hullDepthText.setText( mFloor( %this-->hullDepth.getValue() ) );
 		%this-->hullMergeThreshold.setValue( getField( %colData, 3 ) );
@@ -52,7 +48,7 @@ function ShapeEdCollisions::update_onCollisionChanged( %this ) {
 		%this-->hullMaxCapsuleErrorText.setText( mFloor( %this-->hullMaxCapsuleError.getValue() ) );
 	} else {
 		hide(ShapeEdColCreate_Hull);
-		show(ShapeEdColCreate_NoHull);		
+		show(ShapeEdColCreate_NoHull);
 	}
 }
 

@@ -11,7 +11,6 @@ function EPostFxManager::buildParamsSSAO( %this ) {
 	%arCfg = createParamsArray("EPostFx_SSAO",EPostFxPage_SSAOStack);
 	%arCfg.updateFunc = "EPostFxManager.updateParamSSAO";
 	%arCfg.style = "StyleA";
-	
 	%arCfg.useNewSystem = true;
 	%arCfg.prefGroup = "$SSAOPostFX::";
 	%arCfg.autoSyncPref = "1";
@@ -21,7 +20,6 @@ function EPostFxManager::buildParamsSSAO( %this ) {
 	%arCfg.setVal("overallStrength",       "" TAB "Overall strength" TAB "SliderEdit" TAB "range>>0 50" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("blurDepthTol",       "" TAB "Blur (Softness)" TAB "SliderEdit" TAB "range>>0 0.3" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("blurNormalTol",       "" TAB "Blur (Normal Maps)" TAB "SliderEdit" TAB "range>>0 1" TAB "EPostFxManager" TAB %gid);
-	
 	%arCfg.group[%gid++] = "Near Settings";
 	%arCfg.setVal("sRadius",       "" TAB "Radius" TAB "SliderEdit" TAB "range>>0.001 5" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("sStrength",       "" TAB "Strength" TAB "SliderEdit" TAB "range>>0 20" TAB "EPostFxManager" TAB %gid);
@@ -29,7 +27,6 @@ function EPostFxManager::buildParamsSSAO( %this ) {
 	%arCfg.setVal("sDepthMax",       "" TAB "Depth max." TAB "SliderEdit" TAB "range>>0 50" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("sNormalTol",       "" TAB "Normal Maps" TAB "SliderEdit" TAB "range>>0 2" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("sNormalPow",       "" TAB "Tolerance / Power" TAB "SliderEdit" TAB "range>>0 2" TAB "EPostFxManager" TAB %gid);
-	
 	%arCfg.group[%gid++] = "Far Settings";
 	%arCfg.setVal("lRadius",       "" TAB "Radius" TAB "SliderEdit" TAB "range>>0.001 5" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("lStrength",       "" TAB "Strength" TAB "SliderEdit" TAB "range>>0 20" TAB "EPostFxManager" TAB %gid);
@@ -37,9 +34,6 @@ function EPostFxManager::buildParamsSSAO( %this ) {
 	%arCfg.setVal("lDepthMax",       "" TAB "Depth max." TAB "SliderEdit" TAB "range>>0 5" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("lNormalTol",       "" TAB "Normal Maps" TAB "SliderEdit" TAB "range>>0 2" TAB "EPostFxManager" TAB %gid);
 	%arCfg.setVal("lNormalPow",       "" TAB "Tolerance / Power" TAB "SliderEdit" TAB "range>>0 2" TAB "EPostFxManager" TAB %gid);
-
-
-
 	buildParamsArray(%arCfg,false);
 	%this.SSAOParamArray = %arCfg;
 }
@@ -59,9 +53,8 @@ function EPostFxManager::updateParamSSAO(%this,%field,%value,%ctrl,%arg1,%arg2,%
 
 //==============================================================================
 // Enable/Disable SSAO
-function EPostFx_EnableSSAOCheckbox::onClick(%this)
-{ 
-   EPostFxManager.settingsEffectSetEnabled("SSAO", %this.isStateOn());  
+function EPostFx_EnableSSAOCheckbox::onClick(%this) {
+	EPostFxManager.settingsEffectSetEnabled("SSAO", %this.isStateOn());
 }
 //------------------------------------------------------------------------------
 
@@ -71,9 +64,9 @@ function EPostFx_EnableSSAOCheckbox::onClick(%this)
 //==============================================================================
 //==============================================================================
 // ColorShift Color Picked
-function EPostFx_SSAOQuality::onSelect(%this,%id,%text){
-   if(%id > -1 && %id < 3) {
-      $SSAOPostFx::quality = %id;
-   }  
+function EPostFx_SSAOQuality::onSelect(%this,%id,%text) {
+	if(%id > -1 && %id < 3) {
+		$SSAOPostFx::quality = %id;
+	}
 }
 //------------------------------------------------------------------------------

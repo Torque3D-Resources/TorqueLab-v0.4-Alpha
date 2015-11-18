@@ -33,16 +33,14 @@ function SceneAddSimGroupButton::onCtrlClick( %this ) {
 function SceneEditorPlugin::toggleBuildMode( %this ) {
 	%rowCount = getWordCount(SceneEditorTools.rows);
 
-	if (%rowCount > 1){		
+	if (%rowCount > 1) {
 		SceneEditorTools.lastRows = SceneEditorTools.rows;
-		
 		SceneEditorTools.rows = "0";
 		SceneEditorTools.updateSizes();
-	}
-	else {
+	} else {
 		if (getWordCount(SceneEditorTools.lastRows) <= 1)
 			SceneEditorTools.lastRows = "0 200";
-		
+
 		SceneEditorTools.rows = SceneEditorTools.lastRows;
 		SceneEditorTools.updateSizes();
 	}
@@ -50,13 +48,14 @@ function SceneEditorPlugin::toggleBuildMode( %this ) {
 
 function SceneEd_BuilderSelectableClassButton::onClick( %this ) {
 	devLog("SceneEd_BuilderSelectableClassButton::onClick??");
-	if (EVisibilityLayers.currentPresetFile $= "visBuilder"){
+
+	if (EVisibilityLayers.currentPresetFile $= "visBuilder") {
 		EVisibilityLayers.loadPresetFile("default");
 		%this.text = "Set TSStatic-Only Selectable";
 		return;
 	}
-	
+
 	EVisibilityLayers.loadPresetFile("visBuilder");
-	%this.text = "Set back default selectable class";	
+	%this.text = "Set back default selectable class";
 }
 

@@ -75,7 +75,6 @@ function ETerrainEditor::updateBrushPressure( %this,%ctrl ) {
 	%editorPressure = ETerrainEditor.getBrushPressure();
 	%newPressure = %editorPressure * 100;
 	%formatPressure = mFloatLength(%newPressure,1);
-
 	//Set the validated value to control and update friends if there's any
 	%ctrl.setValue(%formatPressure);
 	%ctrl.updateFriends();
@@ -92,7 +91,6 @@ function ETerrainEditor::updateBrushSoftness( %this,%ctrl ) {
 	%editorSoftness = ETerrainEditor.getBrushSoftness();
 	%newSoftness = %editorSoftness * 100;
 	%formatSoftness = mFloatLength(%newSoftness,1);
-	
 	//Set the validated value to control and update friends if there's any
 	%ctrl.setValue(%formatSoftness);
 	%ctrl.updateFriends();

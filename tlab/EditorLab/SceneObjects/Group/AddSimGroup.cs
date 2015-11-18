@@ -17,7 +17,7 @@ function Scene::addSimGroup( %this, %groupCurrentSelection ) {
 
 	if( !%groupCurrentSelection && isObject( %activeSelection ) && %activeSelection.getCount() > 0 ) {
 		%firstSelectedObject = %activeSelection.getObject( 0 );
-		
+
 		if( %firstSelectedObject.isMemberOfClass( "SimGroup" ) )
 			%parent = %firstSelectedObject;
 		else if( %firstSelectedObject.getId() != MissionGroup.getId() )
@@ -30,13 +30,15 @@ function Scene::addSimGroup( %this, %groupCurrentSelection ) {
 	if( %groupCurrentSelection )
 		Editor.getUndoManager().pushCompound( "Group Selected" );
 
-	%name = 
-	// Create the SimGroup.
+	%name =
+		// Create the SimGroup.
 	%object = new SimGroup() {
 		parentGroup = %parent;
 	};
+
 	if (%activeSelection.getObject( 0 ).internalName !$="")
 		%object.internalName = %activeSelection.getObject( 0 ).internalName;
+
 	MECreateUndoAction::submit( %object );
 
 	// Put selected objects into the group, if requested.

@@ -16,18 +16,18 @@ $ObjectCreator_TypeId = 0;
 //SceneBrowserTree.rebuild
 function Lab::initObjectCreator( %this ) {
 	ObjectCreator.initFiles();
-	
 	ObjectCreator.currentViewId = "";
 	ObjectCreatorViewMenu.clear();
 	%i = 0;
-	while($ObjectCreator_View[%i] !$= ""){
-		%text = getField($ObjectCreator_View[%i],0); 
+
+	while($ObjectCreator_View[%i] !$= "") {
+		%text = getField($ObjectCreator_View[%i],0);
 		ObjectCreatorViewMenu.add(%text,%i);
 		%i++;
 	}
+
 	ObjectCreator.setViewId($ObjectCreator_ViewId);
 	//ObjectCreatorViewMenu.setSelected($ObjectCreator_ViewId);
-	
 	ObjectCreatorTypeMenu.clear();
 	ObjectCreatorTypeMenu.add("Level",0);
 	ObjectCreatorTypeMenu.add("Scripted",1);
@@ -39,7 +39,6 @@ function ObjectCreatorViewMenu::onSelect( %this,%id,%text ) {
 }
 function ObjectCreatorTypeMenu::onSelect( %this,%id,%text ) {
 	$ObjectCreator_TypeId = %id;
-	
 	ObjectCreator.objType = %text;
 	%lastTabAddress = ObjectCreator.lastTypeAdress[%text];
 	ObjectCreator.navigate( %lastTabAddress );
@@ -47,7 +46,6 @@ function ObjectCreatorTypeMenu::onSelect( %this,%id,%text ) {
 
 function ObjectCreatorTypeButton::onClick( %this ) {
 	$ObjectCreator_TypeId = %id;
-	
 	ObjectCreator.objType = %this.internalName;
 	%lastTabAddress = ObjectCreator.lastTypeAdress[%text];
 	ObjectCreator.navigate( %lastTabAddress );
@@ -55,16 +53,18 @@ function ObjectCreatorTypeButton::onClick( %this ) {
 
 function ObjectCreator::toggleFavorites( %this ) {
 	%currentFavRow = getWord(ObjectCreatorFrameSet.rows,1);
-	if (%currentFavRow $= ""){
+
+	if (%currentFavRow $= "") {
 		%lastFavRow = ObjectCreator.lastFavRow;
+
 		if (%lastFavRow $= "")
 			%lastFavRow = $ObjectCreator_FavRow;
-		
+
 		ObjectCreatorFrameSet.rows = "0" SPC %lastFavRow;
 	} else {
 		ObjectCreator.lastFavRow = %currentFavRow;
-			ObjectCreatorFrameSet.rows = "0";
+		ObjectCreatorFrameSet.rows = "0";
 	}
+
 	ObjectCreatorFrameSet.updateSizes();
-	
 }

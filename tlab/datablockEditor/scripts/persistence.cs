@@ -52,14 +52,14 @@ function DatablockEditorPlugin::syncDirtyState( %this ) {
 //==============================================================================
 //-
 function DatablockEditorPlugin::flagInspectorAsDirty( %this, %dirty ) {
-	if( %dirty ){
+	if( %dirty ) {
 		DatablockEditorInspectorWindow.text = "Datablock *";
 		show(DbEd_ReloadDataButton);
-	}
-	else{
+	} else {
 		DatablockEditorInspectorWindow.text = "Datablock";
 		hide(DbEd_ReloadDataButton);
 	}
+
 	DbEd_ActiveDbIcons-->saveButton.visible = %dirty;
 }
 //------------------------------------------------------------------------------
@@ -94,9 +94,9 @@ function DatablockEditorPlugin::showSaveNewFileDialog(%this) {
 //==============================================================================
 function DatablockEditorPlugin::saveNewFileFinish( %this, %newFileName ) {
 	// Clear the first responder to capture any inspector changes
-	
 	%ctrl = canvas.getFirstResponder();
 	%newFileName = makeRelativePath(%newFileName);
+
 	if( isObject(%ctrl) )
 		%ctrl.clearFirstResponder();
 
@@ -128,7 +128,6 @@ function DatablockEditorPlugin::saveNewFileFinish( %this, %newFileName ) {
 //==============================================================================
 function DatablockEditorPlugin::save( %this ) {
 	// Clear the first responder to capture any inspector changes
-	
 	%ctrl = canvas.getFirstResponder();
 
 	if( isObject(%ctrl) )
@@ -137,7 +136,8 @@ function DatablockEditorPlugin::save( %this ) {
 	%tree = DatablockEditorTree;
 	%count = %tree.getSelectedItemsCount();
 	%selected = %tree.getSelectedItemList();
-	if (%count == 1){
+
+	if (%count == 1) {
 		%this.saveSingleData(DbEd.activeDatablock);
 		return;
 	}
@@ -145,9 +145,7 @@ function DatablockEditorPlugin::save( %this ) {
 	for( %i = 0; %i < %count; %i ++ ) {
 		%id = getWord( %selected, %i );
 		%db = %tree.getItemValue( %id );
-		
-		
-		
+
 		if( %this.PM.isDirty( %db ) ) {
 			%this.PM.saveDirtyObject( %db );
 			%this.flagDatablockAsDirty( %db, false );
@@ -159,16 +157,17 @@ function DatablockEditorPlugin::save( %this ) {
 //==============================================================================
 function DatablockEditorPlugin::saveSingleData( %this,%db ) {
 	// Clear the first responder to capture any inspector changes
-	
-	if (DbEd_DatablockNameEdit.getText() !$= %db.getFileName()){
+	if (DbEd_DatablockNameEdit.getText() !$= %db.getFileName()) {
 		devLog(%db.getFileName(),"File changed! Use new:",DbEd_DatablockNameEdit.getText());
 		%oldFileName = %db.getFileName();
+
 		if( %oldFileName !$= "" )
 			%this.PM.removeObjectFromFile( %db, %oldFileName );
+
 		// Save to new file.
 		%this.PM.setDirty( %db, DbEd_DatablockNameEdit.getText() );
 	}
-	
+
 	if( %this.PM.isDirty( %db ) ) {
 		%this.PM.saveDirtyObject( %db );
 		%this.flagDatablockAsDirty( %db, false );

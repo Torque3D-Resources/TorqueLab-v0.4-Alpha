@@ -95,8 +95,10 @@ function SEP_PrecipitationManager::selectPrecipitation(%this,%objId) {
 	logd("SEP_PrecipitationManager::selectPrecipitation(%this,%objId)",%this,%objId);
 	%this.selectedPrecipitation = %objId;
 	%name = %objId.getName();
+
 	if (%name $= "")
 		%name = "Precipitation \c2-\c1 " @ %objId.getId();
+
 	%this.selectedPrecipitationName = %name;
 	//PrecipitationInspector.inspect(%objId);
 	LabObj.inspect(%objId);
@@ -104,7 +106,6 @@ function SEP_PrecipitationManager::selectPrecipitation(%this,%objId) {
 	%this.setDirty();
 	%datablock = %objId.dataBlock;
 	SEP_PrecipitationDataMenu.setSelected(%datablock.getId());
-	
 	%this-->activePrecipitationTitle.text = "Precipitation ->\c2" SPC %name;
 
 	foreach$(%field in SEP_PrecipitationManager.fieldList) {
@@ -129,9 +130,11 @@ function SEP_PrecipitationManager::saveObject(%this) {
 		warnLog("Can't save precipitation because none is selected. Tried wth:",%obj);
 		return;
 	}
+
 	LabObj.save(%obj);
 	%this.setDirty();
 	return;
+
 	if (!SEP_AmbientManager_PM.isDirty(%obj)) {
 		warnLog("Object is not dirty, nothing to save");
 		return;
@@ -146,12 +149,12 @@ function SEP_PrecipitationManager::saveObject(%this) {
 function SEP_PrecipitationManager::setDirty(%this,%isDirty) {
 	logd("SEP_PrecipitationManager::setDirty(%this,%isDirty)",%this,%isDirty);
 	%obj = %this.selectedPrecipitation;
-	if (%isDirty !$= ""){
+
+	if (%isDirty !$= "") {
 		LabObj.setDirty(%obj,%isDirty);
 	}
-	
+
 	%isDirty = LabObj.isDirty(%obj);
-	
 	%this.isDirty = %isDirty;
 	SEP_PrecipitationSaveButton.active = %isDirty;
 }
@@ -168,11 +171,10 @@ function SEP_PrecipitationManager::updateFieldValue(%this,%field,%value) {
 
 	%currentValue = %obj.getFieldValue(%field);
 
-
-	if (%currentValue $= %value) {		
+	if (%currentValue $= %value) {
 		return;
 	}
-	
+
 	LabObj.set(%obj,%field,%value);
 	//PrecipitationInspector.apply();
 	//eval("%obj."@%checkField@" = %value;");
@@ -209,10 +211,10 @@ SEP_PrecipitationManager.dataFieldList = %f1;
 function SEP_PrecipitationManager::saveDatablock(%this) {
 	logd("SEP_PrecipitationManager::updateDataFieldValue(%this,%field,%value)",%this,%field,%value);
 	%data = %this.selectedPrecipitationData;
-	
 	LabObj.save(%data);
 	%this.setDataDirty();
 	return;
+
 	if ( !SEP_AmbientManager_PM.isDirty(%data)) {
 		warnLog("Datablock is not dirty");
 		return;
@@ -234,18 +236,17 @@ function SEP_PrecipitationManager::updateDataFieldValue(%this,%field,%value) {
 
 	%currentValue = %data.getFieldValue(%field);
 
-	if (%currentValue $= %value) {		
+	if (%currentValue $= %value) {
 		return;
 	}
 
-LabObj.set(%data,%field,%value);
-	
+	LabObj.set(%data,%field,%value);
 	%this.setDataDirty();
 	%ctrl = SEP_PrecipitationDataProperties.findObjectByInternalName(%field,true);
 
 	if (isObject(%ctrl))
 		%ctrl.setTypeValue(%value);
-		
+
 	//PrecipitationDataInspector.apply();
 }
 //------------------------------------------------------------------------------
@@ -253,12 +254,12 @@ LabObj.set(%data,%field,%value);
 function SEP_PrecipitationManager::setDataDirty(%this,%isDirty) {
 	logd("SEP_PrecipitationManager::setDataDirty(%this,%isDirty)",%this,%isDirty);
 	%data = %this.selectedPrecipitationData;
-	if (%isDirty !$= ""){
+
+	if (%isDirty !$= "") {
 		LabObj.setDirty(%data,%isDirty);
 	}
-	
-	%isDirty = LabObj.isDirty(%data);	
 
+	%isDirty = LabObj.isDirty(%data);
 	%this.dataIsDirty = %isDirty;
 	SEP_PrecipitationDataSaveButton.active = %isDirty;
 }
@@ -279,6 +280,7 @@ function SEP_PrecipitationManager::selectPrecipitationData(%this,%dataId) {
 	//PrecipitationDataInspector.inspect(%dataId);
 	LabObj.inspect(%dataId);
 	%this.setDataDirty();
+
 	foreach$(%field in SEP_PrecipitationManager.dataFieldList) {
 		%ctrl = SEP_PrecipitationDataProperties.findObjectByInternalName(%field,true);
 
@@ -292,8 +294,6 @@ function SEP_PrecipitationManager::selectPrecipitationData(%this,%dataId) {
 	}
 
 	%this.updateFieldValue("data"@"Block",%this.selectedPrecipitationDataName);
-	
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
@@ -337,26 +337,24 @@ function SEP_PrecipitationManager::applyDataFile( %this,%file ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 // Prepare the default config array for the Scene Editor Plugin
-function SEP_PrecipitationBook::onTabSelected( %this,%text,%index ) {	
-	
+function SEP_PrecipitationBook::onTabSelected( %this,%text,%index ) {
 	$SEP_PrecipitationBook_PageId = %index;
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function SEP_PrecipitationManager::toggleInspectorMode(%this) {
 	logd("SEP_PrecipitationManager::toggleInspectorMode(%this)",%this);
-
 	SEP_PrecipitationManager.inspectorMode = !SEP_PrecipitationManager.inspectorMode;
-	if (SEP_PrecipitationManager.inspectorMode){
+
+	if (SEP_PrecipitationManager.inspectorMode) {
 		SEP_PrecipitationInspectButton.text = "Custom mode";
 		SEP_Precipitation_Custom.visible = 0;
-		SEP_Precipitation_Inspector.visible = 1;		
-	}
-	else {
+		SEP_Precipitation_Inspector.visible = 1;
+	} else {
 		SEP_PrecipitationInspectButton.text = "Inspector mode";
 		SEP_Precipitation_Inspector.visible = 0;
 		SEP_Precipitation_Custom.visible = 1;
-	}	
+	}
 }
 //------------------------------------------------------------------------------
 /*

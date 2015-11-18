@@ -327,6 +327,7 @@ function ColladaImportDlg::onCancel(%this) {
 }
 
 function ColladaImportDlg::onOK(%this) {
+	
 	ColladaImportDlg.exportPrefs();
 	Canvas.popDialog(%this);
 	ColladaImportTreeView.clear();
@@ -383,6 +384,7 @@ function ColladaImportDlg::onOK(%this) {
 
 	// Load the shape (always from the DAE)
 	$collada::forceLoadDAE = true;
+	devLog("Import CMD:",%this.cmd);
 	eval(%this.cmd);
 	$collada::forceLoadDAE = false;
 
@@ -390,6 +392,8 @@ function ColladaImportDlg::onOK(%this) {
 	// to the scene)
 	if (%this-->loadLights.getValue())
 		%this.loadLights();
+
+	
 }
 
 function ColladaImportDlg::loadLights(%this) {
@@ -421,6 +425,7 @@ function updateTSShapeLoadProgressUI(%progress, %msg) {
 	if ( isObject(DlgLoadingLevel) && DlgLoadingLevel.isAwake() ) {
 		%loadProgressCtrl = DlgLoadingLevel-->LoadingProgress;
 		%loadProgressTxtCtrl = DlgLoadingLevel-->LoadingProgressTxt;
+
 		// Save/Restore load progress at the start/end of the import process
 		if ( %progress == 0 ) {
 			ColladaImportProgress.savedProgress = %loadProgressCtrl.getValue();

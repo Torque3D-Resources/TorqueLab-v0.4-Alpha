@@ -7,16 +7,13 @@
 function initializeDecalEditor() {
 	echo(" % - Initializing Decal Editor");
 	$decalDataFile = "art/textures/decals/managedDecalData.cs";
-	
 	execDecalEd(true);
-	
 	Lab.createPlugin("DecalEditor");
 	// Add ourselves to EditorGui, where all the other tools reside
 	Lab.addPluginEditor("DecalEditor",   DecalEditorGui);
 	Lab.addPluginGui("DecalEditor",DecalEditorTools);
 	Lab.addPluginPalette("DecalEditor",   DecalEditorPalette);
 	DecalEditorTabBook.selectPage( 0 );
-	
 	DecalEditorPlugin.editorGui = DecalEditorGui;
 	%map = new ActionMap();
 	%map.bindCmd( keyboard, "5", "EDecalEditorAddDecalBtn.performClick();", "" );
@@ -29,17 +26,15 @@ function initializeDecalEditor() {
 }
 
 function execDecalEd(%loadGui) {
-
-	if (%loadGui){
+	if (%loadGui) {
 		exec( "tlab/decalEditor/gui/decalEditorGui.gui" );
-	exec( "tlab/decalEditor/gui/decalEditorTools.gui" );
-	exec( "tlab/decalEditor/gui/decalEditorPalette.gui" );
+		exec( "tlab/decalEditor/gui/decalEditorTools.gui" );
+		exec( "tlab/decalEditor/gui/decalEditorPalette.gui" );
 	}
-	
+
 	exec( "tlab/decalEditor/decalEditorGui.cs" );
 	exec( "tlab/decalEditor/decalEditorActions.cs" );
 	exec( "tlab/decalEditor/DecalEditorPlugin.cs" );
-
 	execPattern("tlab/decalEditor/instance/*.cs" );
 	execPattern( "tlab/decalEditor/library/*.cs" );
 }

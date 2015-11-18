@@ -17,12 +17,15 @@ function RoadEditorGui::onRoadSelected( %this, %road ) {
 		$Lab::materialEditorList = %road.getId();
 		RoadEditorPlugin.selectedRoad = %road;
 		RoadEditorPlugin.selectedMaterial = %road.Material;
+		$REP_CurrentRoad = RoadEditorPlugin.selectedRoad;
+		
 		RoadEditorToolbar-->changeActiveMaterialBtn.active = 1;
+		
 		//Lab.getDecalRoadNodes();
 	} else
 		%this.noRoadSelected();
 
-	RoadManager.updateRoadData();
+	
 	RoadInspector.inspect( %road );
 	RoadTreeView.buildVisibleTree(true);
 
@@ -35,7 +38,6 @@ function RoadEditorGui::onRoadSelected( %this, %road ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function RoadEditorGui::noRoadSelected( %this ) {
-	
 	RoadEditorPlugin.selectedRoad = "";
 	RoadEditorPlugin.selectedMaterial = "No road selected";
 	RoadEditorToolbar-->changeActiveMaterialBtn.active = 0;
@@ -77,8 +79,6 @@ function RoadEditorGui::onNodeSelected( %this, %nodeIdx ) {
 		warnLog("OnNodeSelected is called from script and no need to update GUI");
 		return;
 	}
-
-	
 
 	if ( %nodeIdx == -1 ) {
 		RoadEditorProperties-->position.setActive( false );
@@ -123,5 +123,27 @@ function RoadEditorGui::onDeleteKey( %this ) {
 	} else {
 		LabMsgOkCancel( "Notice", "Delete selected DecalRoad?", "RoadEditorGui.deleteRoad();", "" );
 	}
+}
+//------------------------------------------------------------------------------
+
+//==============================================================================
+function REP_PropertyEdit::onValidate( %this ) {
+	%road = RoadEditorGui.getSelectedRoad();
+	if ( !isObject( %road ) )
+		return;
+	
+	LabObj.set(%road,%this.internalName,%this.getText());
+	%this.updateFriends();
+}
+//------------------------------------------------------------------------------
+//==============================================================================
+function REP_PropertySlider::onMouseDragged( %this ) {
+	%road = RoadEditorGui.getSelectedRoad();
+	if ( !isObject( %road ) )
+		return;
+	%fields = strreplace(%this.internalName,"_"," ");
+	%field = getWord(%fields,0);
+	LabObj.set(%road,%field,%this.getValue());
+	%this.updateFriends();
 }
 //------------------------------------------------------------------------------

@@ -5,17 +5,18 @@
 //==============================================================================
 
 //==============================================================================
-function Lab::destroyMenu(%this,%type) {	
-	if ($Cfg_UseCoreMenubar){	
+function Lab::destroyMenu(%this,%type) {
+	if ($Cfg_UseCoreMenubar) {
 		return;
 	}
+
 	eval("%menuObj = "@%type@"EdMenu;");
-	Lab.ClearMenus(%menuObj);		
+	Lab.ClearMenus(%menuObj);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function Lab::checkMenuCodeItem(%this,%type,%code,%checked) {	
+function Lab::checkMenuCodeItem(%this,%type,%code,%checked) {
 	%data = $LabMenuCodeIds[%type,%code];
 	devLog("Type",%type,"Code",%code,"checkMenuCodeItem Data",%data,"Checked",%checked);
 }

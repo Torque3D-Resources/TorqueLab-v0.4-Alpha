@@ -30,6 +30,7 @@ function ShapeEd_DetailTree::isDetailItem( %this, %id ) {
 
 // Get the detail level index from the ID of an item in the details tree view
 function ShapeEd_DetailTree::getDetailLevelFromItem( %this, %id ) {
+	devLog("ShapeEd_DetailTree::getDetailLevelFromItem ID:",%id,"IsDetaik",%this.isDetailItem( %id ));
 	if ( %this.isDetailItem( %id ) )
 		%detSize = %this.getItemValue( %id );
 	else

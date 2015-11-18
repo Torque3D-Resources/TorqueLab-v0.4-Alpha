@@ -23,7 +23,7 @@ function EditorLoadingGui::onWake(%this) {
 //==============================================================================
 function EditorLoadingGui::startInit(%this) {
 	canvas.pushDialog( EditorLoadingGui );
-		canvas.repaint();
+	canvas.repaint();
 }
 //------------------------------------------------------------------------------
 

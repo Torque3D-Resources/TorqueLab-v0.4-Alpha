@@ -28,22 +28,23 @@ function LabParams::syncArray( %this,%paramArray,%syncTarget ) {
 // Sync the current profile values into the params objects
 function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget ) {
 	%cfgObj = %paramArray.cfgObject;
+
 	if (%paramArray.noSyncField[%field] )
 		return;
 
-	
-	if (!%paramArray.prefModeOnly && isObject(%cfgObj)){		
-		%value = %cfgObj.getCfg(%field);		
+	if (!%paramArray.prefModeOnly && isObject(%cfgObj)) {
+		%value = %cfgObj.getCfg(%field);
 	}
-	
-	if ( %value $= ""){		
+
+	if ( %value $= "") {
 		%value = getParamValue(%paramArray,%field,true);
-	}	
-		
-	if ( %value $= ""){	
+	}
+
+	if ( %value $= "") {
 		paramLog(%paramArray.getName(),"Cfg Value for field:",%field,"Is Blank!");
 		return;
 	}
+
 	if (%syncTarget)
 		%this.updateParamSyncData(%field,%value,%paramArray);
 
@@ -51,6 +52,7 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 
 	if (isObject(%pill)) {
 		%pillHolder = %pill.findObjectByInternalName(%field,true);
+
 		if (isObject(%pillHolder))
 			%pillHolder.setTypeValue(%value,true);
 		else
@@ -64,7 +66,7 @@ function LabParams::syncParamField( %this,%paramArray,%field,%data,%syncTarget )
 // Sync the current profile values into the params objects
 function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
 	%pill = %paramArray.pill[%field];
-	
+
 	if (isObject(%pill)) {
 		%pillHolder = %pill.findObjectByInternalName(%field,true);
 		%pillHolder.setTypeValue(%value,true);
@@ -76,8 +78,6 @@ function LabParams::setParamPillValue( %this,%field,%value,%paramArray ) {
 
 //==============================================================================
 function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
-
-	
 }
 
 //---------------------------------------------------------------------------
@@ -90,11 +90,11 @@ function LabParams::updateParamSyncData( %this,%field,%value,%paramArray ) {
 
 //==============================================================================
 function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,%arg1,%arg2 ) {
-	
 	if (%paramArray.prefModeOnly)
 		return;
-	%cfgObj = %paramArray.cfgObject;	
-	
+
+	%cfgObj = %paramArray.cfgObject;
+
 	if (isObject(%cfgObj)) {
 		%cfgObj.setCfg(%field,%value);
 	} else {
@@ -107,15 +107,16 @@ function LabParams::updateParamArrayCtrl( %this,%field,%value,%ctrl,%paramArray,
 }
 //------------------------------------------------------------------------------
 function LabParams::updateParamFromCtrl( %this,%ctrl,%field,%value,%paramArray ) {
-	
-	if (!%paramArray.prefModeOnly){		
+	if (!%paramArray.prefModeOnly) {
 		%cfgObj = %paramArray.cfgObject;
+
 		if (isObject(%cfgObj)) {
 			%cfgObj.setCfg(%field,%value);
 		} else {
 			return false;
 		}
 	}
+
 	%ctrl.updateFriends();
 	%this.updateParamSyncData(%field,%value,%paramArray);
 	%this.setParamPillValue(%field,%value,%paramArray);

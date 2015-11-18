@@ -17,34 +17,32 @@
 function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText) {
 	//devLog("LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItemText)",%this,%menuId,%menuText,%menuItemId,%menuItemText);
 	%type = %this.internalName;
-	
 	%callBack =  $LabMenuCallback[%type,%menuId,%menuItemId,%menuItemText];
-	eval(%callBack);	
+	eval(%callBack);
 	%isSubmenu = $LabMenuIsSubMenu[%type,%menuId,%menuItemId,%menuItemText];
+
 	if (%isSubmenu)
 		devLog("This a submenu of",%this.SubMenuText);
-	
 
-	%toggler = $LabMenuToggler[%type,%menuId,%menuItemId,%menuItemText];	
-	if (%toggler !$= ""){
+	%toggler = $LabMenuToggler[%type,%menuId,%menuItemId,%menuItemText];
+
+	if (%toggler !$= "") {
 		eval("%checked = "@%toggler);
-		
+
 		//Lab.setMenuItemBitmap(%menuId,%menuItemId,3);
-		if (%isSubmenu){
-			%newMenuItemId = $LabSubMenuItemId[%type,%menuId,%menuItemId,%menuItemText];			
+		if (%isSubmenu) {
+			%newMenuItemId = $LabSubMenuItemId[%type,%menuId,%menuItemId,%menuItemText];
 			Lab.setSubMenuItemChecked(%this,%menuId,%newMenuItemId,%menuItemText,%checked);
 			return;
 		}
-		
+
 		Lab.setMenuItemChecked(%this,%menuId,%menuItemId,%checked);
-		
+
 		if (!%checked)
 			Lab.setMenuItemBitmap(%this,%menuId,%menuItemId,1);
 		else
 			Lab.setMenuItemBitmap(%this,%menuId,%menuItemId,2);
 	}
-			
-	
 }
 //------------------------------------------------------------------------------
 //Lab.ActiveMenu.setSubMenuItemChecked(6,0,"DatablockEditor",true);
@@ -53,7 +51,7 @@ function LabMenu::onMenuItemSelect(%this,%menuId,%menuText,%menuItemId,%menuItem
 /// Parameters:
 /// menuId 	Index id of the clicked menu
 /// menuText 	Text of the clicked menu
-function LabMenu::onMenuSelect(%this,%menuId,%menuText) {	
+function LabMenu::onMenuSelect(%this,%menuId,%menuText) {
 	//devLog("LabMenu::onMenuSelect(%this,%menuId,%menuText)",%this,%menuId,%menuText);
 	%this.SubMenuText = "";
 }

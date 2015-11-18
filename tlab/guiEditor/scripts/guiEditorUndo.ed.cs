@@ -468,7 +468,7 @@ function GuiEditor::onPreEdit(%this, %selection) {
 }
 
 function GuiEditor::onPostEdit(%this, %selection) {
-	if(!isObject(%this.pendingGenericUndoAction)){
+	if(!isObject(%this.pendingGenericUndoAction)) {
 		error("Error: attempting to complete a GenericUndoAction that hasn't been started!");
 		return;
 	}

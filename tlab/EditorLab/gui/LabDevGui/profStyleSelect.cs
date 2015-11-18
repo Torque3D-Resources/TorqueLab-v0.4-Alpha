@@ -6,66 +6,67 @@
 $LabProfileStyleActive = "";
 
 
-		
+
 //==============================================================================
-function LDG::initProfileStyles( %this ) {	
+function LDG::initProfileStyles( %this ) {
 	%this.updateProfileStylesList();
 }
 //------------------------------------------------------------------------------
 
 
 //==============================================================================
-function LDG::updateProfileStylesList( %this,%profile ) {	
+function LDG::updateProfileStylesList( %this,%profile ) {
 	LDG_ProfileStylesMenu.clear();
 	Lab.scanProfileStyles();
 	LDG_ProfileStylesMenu.add("Default",0);
 	%selected = "0";
-	foreach$(%style in $LabProfileStyles){
+
+	foreach$(%style in $LabProfileStyles) {
 		LDG_ProfileStylesMenu.add(%style,%sId++);
+
 		if ($LabProfileStyleActive $= %style)
 			%selected = %sId;
 	}
-	
+
 	LDG_ProfileStylesMenu.setSelected(%selected,false);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LDG_ProfileStylesMenu::onSelect( %this,%id,%text ) {	
+function LDG_ProfileStylesMenu::onSelect( %this,%id,%text ) {
 	LDG.selectProfileStyle(%text);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LDG::selectProfileStyle( %this,%style,%apply ) {	
+function LDG::selectProfileStyle( %this,%style,%apply ) {
 	$LabProfileStyleActive = %style;
-	LDG_ProfileStylesNameEdit.setText(%style);	
-	
+	LDG_ProfileStylesNameEdit.setText(%style);
 	LDG_ProfileStyleDataTree.init();
 	//if (%apply)
-		Lab.importProfilesStyle(%style);
-	
+	Lab.importProfilesStyle(%style);
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LDG::importProfileStyle( %this,%style ) {	
+function LDG::importProfileStyle( %this,%style ) {
 	if (%style $= "")
 		%style = $LabProfileStyleActive;
+
 	if (%style $= "")
 		return;
-		
-	Lab.importProfilesStyle(%style);	
+
+	Lab.importProfilesStyle(%style);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function LDG::saveProfileStyle( %this,%style ) {	
+function LDG::saveProfileStyle( %this,%style ) {
 	if (%style $= "")
 		%style = LDG_ProfileStylesNameEdit.getText();
+
 	if (%style $= "")
 		return;
-		
+
 	Lab.exportCurrentProfilesStyle(%style);
 	$LabProfileStyleActive = %style;
 	%this.updateProfileStylesList();
@@ -73,7 +74,7 @@ function LDG::saveProfileStyle( %this,%style ) {
 //------------------------------------------------------------------------------
 
 //==============================================================================
-function LDG::saveOriginalProfileFromStyle( %this ) {	
+function LDG::saveOriginalProfileFromStyle( %this ) {
 	Lab.saveAllDirtyProfilesStyle();
 }
 //------------------------------------------------------------------------------
@@ -83,20 +84,18 @@ function LDG::saveOriginalProfileFromStyle( %this ) {
 //==============================================================================
 
 //==============================================================================
-function LDG_ProfileStyleDataTree::init( %this ) {	
-	
+function LDG_ProfileStyleDataTree::init( %this ) {
 	if (!isObject($LabStyleCurrentGroup))
 		return;
-		
-	%this.clear();	
 
+	%this.clear();
 
 	foreach( %obj in $LabStyleCurrentGroup ) {
 		// Create a visible name.
 		%profile = %obj.internalName;
 
 		if( %profile $= "" )
-			continue;		
+			continue;
 
 		%group = %this.findChildItemByName( 0, %profile.category );
 
@@ -111,18 +110,18 @@ function LDG_ProfileStyleDataTree::init( %this ) {
 	%this.schedule(50,"buildVisibleTree");
 }
 //==============================================================================
-function LDG_ProfileStyleDataTree::onSelect( %this,%itemId ) { 	
-   %profile = LDG_ProfileStyleDataTree.getItemText( %itemId );
-   devLog("LDG_ProfileStyleDataTree onSelect Item:",%itemId,"Profile:",%profile);
-   %style = $LabProfileStyleActive;
-   %styleObj = %profile.getName()@"_"@%style@"Style";
-   devLog("StyleObj=",%styleObj);
-   //Check if we click a profile and not a group
-   if (!isObject(%styleObj)){
-   	return;
-   }
-	
-   LDG.editProfileStyle(%styleObj);   
-  
+function LDG_ProfileStyleDataTree::onSelect( %this,%itemId ) {
+	%profile = LDG_ProfileStyleDataTree.getItemText( %itemId );
+	devLog("LDG_ProfileStyleDataTree onSelect Item:",%itemId,"Profile:",%profile);
+	%style = $LabProfileStyleActive;
+	%styleObj = %profile.getName()@"_"@%style@"Style";
+	devLog("StyleObj=",%styleObj);
+
+	//Check if we click a profile and not a group
+	if (!isObject(%styleObj)) {
+		return;
+	}
+
+	LDG.editProfileStyle(%styleObj);
 }
 //------------------------------------------------------------------------------

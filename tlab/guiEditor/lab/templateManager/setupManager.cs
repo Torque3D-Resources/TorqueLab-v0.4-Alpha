@@ -66,10 +66,9 @@ function TplManager::toggleBrowser(%this,%state) {
 		GuiEditContent(GuiEdTemplateEditor);
 		//pushDlg(GuiEdTemplateManager);
 	} else {
-		
 		if (isObject(TplManager.previousGui))
 			TplManager.previousGui = GuiEditor.initialContent;
-			
+
 		GuiEditContent(GuiEditor.preTplContent);
 	}
 

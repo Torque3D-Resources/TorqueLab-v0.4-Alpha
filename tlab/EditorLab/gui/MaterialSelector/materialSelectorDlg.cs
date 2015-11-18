@@ -32,6 +32,7 @@ if (!isObject(MaterialSelectorPerMan))
 
 if (!isObject(MatEdDlg))
 	newScriptObject("MatEdDlg");
+
 //------------------------------------------------------------------------------
 if (!isObject(UnlistedMaterials)) {
 	new ArrayObject(UnlistedMaterials);
@@ -58,8 +59,10 @@ function MaterialSelector::showDialog( %this, %selectCallback, %returnType) {
 	MatEdDlg_Creator.visible = false;
 	MatEdDlg.setListFilterText("");
 	hide(MatSel_SetAsActiveContainer);
+
 	if (MaterialEditorGui.isAwake())
 		show(MatSel_SetAsActiveContainer);
+
 	//FIXME Commented because with update it was staying visible inside hidden container and that was causing an issue
 	//if( MaterialSelector.isVisible() )
 	//return;
@@ -107,7 +110,6 @@ function MaterialSelector::showDialogBase( %this, %selectCallback, %returnType, 
 	}
 
 	Canvas.pushDialog(MaterialSelectorOverlay);
-	
 	devLog("Clearing!!!");
 	MatSelector_MaterialsContainer.clear();
 	MaterialSelector.setVisible(1);

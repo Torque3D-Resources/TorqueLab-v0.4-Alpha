@@ -34,21 +34,21 @@ function DecalEditorTabBook::onTabSelected( %this, %text, %idx ) {
 		%showInstance = true;
 	else
 		%showInstance = false;
+
 	if( %idx == 0) {
-		DecalPreviewWindow.text = "Instance Properties";		
+		DecalPreviewWindow.text = "Instance Properties";
 		DeleteDecalButton.tabSelected = %idx;
 	} else {
-		DecalPreviewWindow.text = "Template Properties";		
+		DecalPreviewWindow.text = "Template Properties";
 		DeleteDecalButton.tabSelected = %idx;
 	}
+
 	DecalEditorTools-->TemplateProperties.setVisible(!%showInstance);
 	DecalEditorTools-->TemplatePreview.setVisible(!%showInstance);
 	DecalEditorWindow-->libraryStack.visible = !%showInstance;
-	
 	DecalEditorTools-->InstanceProperties.setVisible(%showInstance);
 	DecalEditorTools-->InstancePreview.setVisible(%showInstance);
 	DecalEditorWindow-->instanceStack.visible = %showInstance;
-		
 }
 
 

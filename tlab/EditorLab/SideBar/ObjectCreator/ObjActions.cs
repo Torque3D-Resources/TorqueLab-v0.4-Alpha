@@ -17,24 +17,21 @@ function ObjectCreator::iconFolderAlt(%this,%icon) {
 //==============================================================================
 function ObjectCreator::iconMeshAlt(%this,%icon) {
 	devLog("iconMeshAlt",%icon);
+
 	if (Lab.currentEditor.isMethod("addObjectCreatorMesh"))
 		Lab.currentEditor.addObjectCreatorMesh(%icon.fullPath,%icon.createCmd);
 	else if (EWorldEditor.visible)
 		ColladaImportDlg.showDialog(%icon.fullPath,%icon.createCmd);
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function ObjectCreator::iconImageAlt(%this,%icon) {
 	devLog("iconImageAlt",%icon);
-	
-
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function ObjectCreator::iconUnknownAlt(%this,%icon) {
 	devLog("iconUnknownAlt",%icon);
 	info("Unknown file clicked! TorqueLab doesn't compute this file...",%icon.fullPath);
-
 }
 //------------------------------------------------------------------------------

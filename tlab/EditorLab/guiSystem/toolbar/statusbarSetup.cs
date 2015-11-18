@@ -63,7 +63,7 @@ function EditorGuiStatusBar::setCamera( %this, %text,%doUpdate ) {
 		%doUpdate = true;
 
 	%id = EWorldEditorStatusBarCamera.findText( %text );
-	
+
 	if( %id != -1 ) {
 		if ( EWorldEditorStatusBarCamera.getSelected() != %id )
 			EWorldEditorStatusBarCamera.setSelected( %id, %doUpdate );

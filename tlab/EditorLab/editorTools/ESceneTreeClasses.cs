@@ -8,12 +8,11 @@ $ESceneTreeClassesLoaded = 0;
 //FileBrowserTree.initFiles
 
 function ESceneTreeClasses::onShow( %this ) {
-	if ( !isObject( ar_ESceneTreeClasses ) ){
+	if ( !isObject( ar_ESceneTreeClasses ) ) {
 		%this.init();
 	}
-		
-	%this.updatePresetMenu();
 
+	%this.updatePresetMenu();
 
 	if(!$ESceneTreeClassesLoaded) {
 		//EVisibilityLayers.position = visibilityToggleBtn.position;
@@ -21,23 +20,18 @@ function ESceneTreeClasses::onShow( %this ) {
 		%this.addClassOptions();
 		$EVisibilityLayers_Initialized = true;
 	}
-
-
 }
 function ESceneTreeClasses::init( %this ) {
-	
 	if ( !isObject( ar_ESceneTreeClasses ) )
 		%classArray = newArrayObject("ar_ESceneTreeClasses");
 
 	%this.classArray = ar_ESceneTreeClasses;
-	
 	%stack = ESceneTreeClasses-->theClassList;
-	
 	// First clear the stack control.
 	%stack.clear();
-	
 	%classList = enumerateConsoleClasses( "SceneObject" );
 	%classCount = getFieldCount( %classList );
+
 	for ( %i = 0; %i < %classCount; %i++ ) {
 		%className = getField( %classList, %i );
 		%this.classArray.push_back( %className );
@@ -53,8 +47,6 @@ function ESceneTreeClasses::init( %this ) {
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
 		%classVar = "$" @ %class @ "::isShownInTree";
-		
-		
 		%textLength = strlen( %class );
 		%text = "  " @ %class;
 		// Add visibility toggle.
@@ -80,40 +72,39 @@ function ESceneTreeClasses::init( %this ) {
 			useMouseEvents = "0";
 			useInactiveState = "0";
 		};
-		
 		//Variable = %visVar;
 		%stack.addGuiControl( %classCheckBox );
-		
 	}
 
 	$ESceneTreeClassesLoaded = true;
 }
 
 function ESceneTreeClasses::updatePresetMenu( %this ) {
-		%searchFolder = "tlab/EditorLab/editorTools/visibilityLayers/presets/*.layers.ucs";
+	%searchFolder = "tlab/EditorLab/editorTools/visibilityLayers/presets/*.layers.ucs";
 	//Now go through each files again to add a brush with latest items
-	
 	ESceneTreeClasses_PresetMenu.clear();
 	%selected = 0;
 	ESceneTreeClasses_PresetMenu.add("Select a preset",0);
+
 	for(%presetFile = findFirstFile(%searchFolder); %presetFile !$= ""; %presetFile = findNextFile(%searchFolder)) {
 		%presetName = strreplace(fileBase(%presetFile),".layers","");
 		ESceneTreeClasses_PresetMenu.add(%presetName,%pid++);
-		
 	}
+
 	ESceneTreeClasses_PresetMenu.setSelected(%selected);
-	
 }
 
 
 //EVisibilityLayers.exportPresetSample
 function ESceneTreeClasses::exportPresetSample( %this ) {
 	%layerExampleObj = newScriptObject("ESceneTreeClassesPresetExample");
+
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
 		eval("%shown = $" @ %class @ "::isShownInTree;");
-		%layerExampleObj.shown[%class] = %shown;	
+		%layerExampleObj.shown[%class] = %shown;
 	}
+
 	%layerExampleObj.save("tlab/EditorLab/editorTools/sceneTreeClasses/presetExample.classes.ucs",0,"%presetClasses = ");
 }
 
@@ -122,33 +113,31 @@ function ESceneTreeClasses::exportPresetSample( %this ) {
 //EVisibilityLayers.loadPresetFile("visBuilder");
 function ESceneTreeClasses::loadPresetFile( %this,%filename ) {
 	%file = "tlab/EditorLab/editorTools/sceneTreeClasses/presets/"@%filename@".layers.ucs";
-	
+
 	if (!isFile(%file))
 		return;
-		
+
 	exec(%file);
-	
+
 	for ( %i = 0; %i < %this.classArray.count(); %i++ ) {
 		%class = %this.classArray.getKey( %i );
-		
 		%shown = %presetClasses.shown[%class];
-		
-		if (%selectable !$= ""){
+
+		if (%selectable !$= "") {
 			eval("$" @ %class @ "::isShownInTree = \""@%shown@"\";");
 			info("Class:",%class,"isShownInTree set to:",%shown);
 		}
-		
 	}
+
 	ESceneTreeClasses.currentPresetFile = %filename;
-	
 }
 
-function ESceneTreeClasses_Preset::onSelect( %this,%id,%text ) {	
+function ESceneTreeClasses_Preset::onSelect( %this,%id,%text ) {
 	devLog("ESceneTreeClasses_Preset onSelect",%id,%text);
+
 	if (	%id $= "0")
 		return;
+
 	ESceneTreeClasses.loadPresetFile(%text);
-	
-	
 }
 

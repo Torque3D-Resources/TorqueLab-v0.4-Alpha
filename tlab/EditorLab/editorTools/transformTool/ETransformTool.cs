@@ -22,8 +22,8 @@ $ETransformTool::Proportional::Scale = false;
 //==============================================================================
 //ETransformTool.resetAll Field TextEditValue Changed
 function ETransformTool::resetAll( %this,%ctrl ) {
-	foreach$(%field in $ETransformToolEditFields){
-		%ctrl = %this.findObjectByInternalName(%field,true);	
+	foreach$(%field in $ETransformToolEditFields) {
+		%ctrl = %this.findObjectByInternalName(%field,true);
 		%ctrl.setText("0");
 		%this.updateTextEditField(%ctrl);
 	}
@@ -33,7 +33,7 @@ function ETransformTool::resetAll( %this,%ctrl ) {
 //==============================================================================
 //ETransformTool Field TextEditValue Changed
 function ETransformTool::editCommand( %this,%ctrl ) {
-	devLog("ETransformTool::editCommand",%ctrl);	
+	devLog("ETransformTool::editCommand",%ctrl);
 	%this.updateTextEditField(%ctrl);
 }
 //------------------------------------------------------------------------------
@@ -56,23 +56,20 @@ function ETransformTool::updateTextEditField( %this,%ctrl ) {
 			continue;
 
 		%textEdit.setValue(%value);
-	}	
+	}
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformEdit::onValidate( %this ) {
-
 	ETransformTool.updateTextEditField(%this);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 //ETransform tool text edit onValidate
 function ETransformCheck::onClick( %this ) {
-	
 	%value = %this.isStateOn();
 	%field = %this.internalName;
 	devLog(%field," checkbox cliked and set to:",%value);
@@ -97,10 +94,12 @@ function ETransformTool::setFieldValueContainers( %this,%field,%value ) {
 //==============================================================================
 function ETransformTool::getSelectionObj( %this ) {
 	%obj = EWorldEditor.getSelectedObject( 0 );
+
 	if( !isObject(%obj)) {
 		warnLog("No selected object found");
 		return "";
 	}
+
 	return %obj;
 }
 //------------------------------------------------------------------------------
@@ -109,8 +108,6 @@ function ETransformTool::getSelectionObj( %this ) {
 function ETransformTool::cloneToCtrl( %this,%ctrl ) {
 	%ctrl.add(ETransformTool-->toolsStack.deepClone());
 	$ETransformToolContainers = strAddWord($ETransformToolContainers,%ctrl.getId(),true);
-
-	
 }
 //------------------------------------------------------------------------------
 

@@ -14,7 +14,6 @@ function MeshRoadEditorPlugin::onActivated( %this ) {
 	EditorGui.bringToFront( MeshRoadEditorGui );
 	MeshRoadEditorGui.makeFirstResponder( true );
 	MeshRoadTreeView.open(ServerMeshRoadSet,true);
-	
 	// Store this on a dynamic field
 	// in order to restore whatever setting
 	// the user had before.
@@ -25,14 +24,12 @@ function MeshRoadEditorPlugin::onActivated( %this ) {
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo("Mesh road editor.");
 	EditorGuiStatusBar.setSelection("");
-	
 	MRoadManager.Init();
 	Parent::onActivated(%this);
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function MeshRoadEditorPlugin::onDeactivated( %this ) {
-	
 	// Restore the previous Gizmo
 	// alignment settings.
 	Lab.setGizmoAlignment(%this.prevGizmoAlignment);

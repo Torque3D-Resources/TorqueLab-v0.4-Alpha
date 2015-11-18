@@ -6,7 +6,6 @@
 
 function initializeConvexEditor() {
 	echo(" % - Initializing Sketch Tool");
-
 	exec( "./gui/convexEditorGui.gui" );
 	exec( "./gui/ConvexEditorTools.gui" );
 	exec( "./gui/convexEditorToolbar.gui" );
@@ -21,7 +20,6 @@ function initializeConvexEditor() {
 	//Lab.addPluginGui("ConvexEditor",   ConvexEditorTreeWindow);
 	Lab.addPluginToolbar("ConvexEditor",ConvexEditorToolbar);
 	Lab.addPluginPalette("ConvexEditor",   ConvexEditorPalette);
-	
 	ConvexEditorPlugin.editorGui = ConvexEditorGui;
 	// Note that we use the WorldEditor's Toolbar.
 	%map = new ActionMap();

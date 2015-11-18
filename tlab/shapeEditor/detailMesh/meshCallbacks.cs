@@ -4,10 +4,10 @@
 //------------------------------------------------------------------------------
 //==============================================================================
 //==============================================================================
-// ShapeEditor -> Node Editing 
+// ShapeEditor -> Node Editing
 //==============================================================================
 
-function ShapeEd::onAddMeshFromFile( %this, %path ) {
+function ShapeEdDetails::onAddMeshFromFile( %this, %path ) {
 	if ( %path $= "" ) {
 		getLoadFilename( "DTS Files|*.dts|COLLADA Files|*.dae|Google Earth Files|*.kmz", %this @ ".onAddMeshFromFile", ShapeEdDetails.lastPath );
 		return;

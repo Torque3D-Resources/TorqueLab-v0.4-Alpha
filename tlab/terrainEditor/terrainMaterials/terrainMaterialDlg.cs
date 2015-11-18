@@ -11,7 +11,6 @@ function TerrainMaterialDlg::show( %this, %matIndex, %terrMat, %onApplyCallback 
 	%this.matIndex = %matIndex;
 	%this.onApplyCallback = %onApplyCallback;
 	%this.selectObjectInTree(%terrMat,true);
-	
 }
 //------------------------------------------------------------------------------
 
@@ -22,13 +21,11 @@ function TerrainMaterialDlg::showByObjectId( %this, %matObjectId, %onApplyCallba
 	%this.matIndex = -1;
 	%this.onApplyCallback = %onApplyCallback;
 	%this.selectObjectInTree(%matObjectId);
-	
 }
 //------------------------------------------------------------------------------
 
 //==============================================================================
 function TerrainMaterialDlg::onWake( %this ) {
-
 	if( !isObject( ETerrainMaterialPersistMan ) )
 		new PersistenceManager( ETerrainMaterialPersistMan );
 
@@ -94,6 +91,7 @@ function TerrainMaterialDlg::dialogApply( %this,%closeDlg ) {
 	%this.saveDirtyMaterial( %this.activeMat );
 	// Save all changes.
 	ETerrainMaterialPersistMan.saveDirty();
+
 	// Delete the snapshot.
 	if( isObject( TerrainMaterialDlgSnapshot ) )
 		TerrainMaterialDlgSnapshot.delete();
@@ -130,10 +128,12 @@ function TerrainMaterialDlg::dialogCancel( %this ) {
 function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName ) {
 	if( $Pref::TerrainEditor::LastPath $= "" )
 		$Pref::TerrainEditor::LastPath = "art/terrains/";
+
 	%defaultFile = %defaultFileName;
+
 	if (!isFile(%defaultFile))
 		%defaultFile = $Pref::TerrainEditor::LastPath;
-	
+
 	if (TerrainPainterTools.defaultTexturesFolder !$= "")
 		%defaultPath = TerrainPainterTools.defaultTexturesFolder;
 	else

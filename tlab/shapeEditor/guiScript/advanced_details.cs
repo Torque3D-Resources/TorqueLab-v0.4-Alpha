@@ -7,7 +7,7 @@
 // Details functions
 //==============================================================================
 function ShapeEdDetails::onToggleDetails( %this, %useDetails ) {
-	ShapeEdAdvancedWindow-->detailSlider.setActive(%useDetails);	
+	ShapeEdAdv_Details-->detailSlider.setActive(%useDetails);
 	ShapeEdAdv_Details-->levelsInactive.visible = %useDetails;
 }
 
@@ -19,8 +19,8 @@ function ShapeEdDetails::onToggleDetails( %this, %useDetails ) {
 // Toggle details imposters
 function ShapeEdDetails::onToggleImposter( %this, %useImposter ) {
 	%hasImposterDetail = ( ShapeEditor.shape.getImposterDetailLevel() != -1 );
-
 	ShapeEdAdv_Details-->imposterActive.visible = %useImposter;
+
 	if ( %useImposter == %hasImposterDetail )
 		return;
 
@@ -51,12 +51,12 @@ function ShapeEdDetails::onToggleImposter( %this, %useImposter ) {
 function ShapeEdDetails::onEditImposter( %this ) {
 	// Modify the parameters of the current imposter detail level
 	%detailSize = ShapeEditor.shape.getDetailLevelSize( ShapeEdShapeView.currentDL );
-	%bbDimension = ShapeEdAdvancedWindow-->bbDimension.getText();
-	%bbDetailLevel = ShapeEdAdvancedWindow-->bbDetailLevel.getText();
-	%bbEquatorSteps = ShapeEdAdvancedWindow-->bbEquatorSteps.getText();
-	%bbIncludePoles = ShapeEdAdvancedWindow-->bbIncludePoles.getValue();
-	%bbPolarSteps = ShapeEdAdvancedWindow-->bbPolarSteps.getText();
-	%bbPolarAngle = ShapeEdAdvancedWindow-->bbPolarAngle.getText();
+	%bbDimension = ShapeEdAdv_Details-->bbDimension.getText();
+	%bbDetailLevel = ShapeEdAdv_Details-->bbDetailLevel.getText();
+	%bbEquatorSteps = ShapeEdAdv_Details-->bbEquatorSteps.getText();
+	%bbIncludePoles = ShapeEdAdv_Details-->bbIncludePoles.getValue();
+	%bbPolarSteps = ShapeEdAdv_Details-->bbPolarSteps.getText();
+	%bbPolarAngle = ShapeEdAdv_Details-->bbPolarAngle.getText();
 	ShapeEditor.doEditImposter( ShapeEdShapeView.currentDL, %detailSize,
 										 %bbEquatorSteps, %bbPolarSteps, %bbDetailLevel, %bbDimension,
 										 %bbIncludePoles, %bbPolarAngle );

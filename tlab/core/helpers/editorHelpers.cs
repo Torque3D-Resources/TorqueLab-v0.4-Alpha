@@ -12,47 +12,47 @@ function GuiEditorIsActive() {
 }
 
 function startToolTime(%tool) {
-		if($toolDataToolCount $= "")
-			$toolDataToolCount = 0;
+	if($toolDataToolCount $= "")
+		$toolDataToolCount = 0;
 
-		if($toolDataToolEntry[%tool] !$= "true") {
-			$toolDataToolEntry[%tool] = "true";
-			$toolDataToolList[$toolDataToolCount] = %tool;
-			$toolDataToolCount++;
-			$toolDataClickCount[%tool] = 0;
-		}
-
-		$toolDataStartTime[%tool] = getSimTime();
-		$toolDataClickCount[%tool]++;
+	if($toolDataToolEntry[%tool] !$= "true") {
+		$toolDataToolEntry[%tool] = "true";
+		$toolDataToolList[$toolDataToolCount] = %tool;
+		$toolDataToolCount++;
+		$toolDataClickCount[%tool] = 0;
 	}
 
-	function endToolTime(%tool) {
-		%startTime = 0;
+	$toolDataStartTime[%tool] = getSimTime();
+	$toolDataClickCount[%tool]++;
+}
 
-		if($toolDataStartTime[%tool] !$= "")
-			%startTime = $toolDataStartTime[%tool];
+function endToolTime(%tool) {
+	%startTime = 0;
 
-		if($toolDataTotalTime[%tool] $= "")
-			$toolDataTotalTime[%tool] = 0;
+	if($toolDataStartTime[%tool] !$= "")
+		%startTime = $toolDataStartTime[%tool];
 
-		$toolDataTotalTime[%tool] += getSimTime() - %startTime;
+	if($toolDataTotalTime[%tool] $= "")
+		$toolDataTotalTime[%tool] = 0;
+
+	$toolDataTotalTime[%tool] += getSimTime() - %startTime;
+}
+
+function dumpToolData() {
+	%count = $toolDataToolCount;
+
+	for(%i=0; %i<%count; %i++) {
+		%tool = $toolDataToolList[%i];
+		%totalTime = $toolDataTotalTime[%tool];
+
+		if(%totalTime $= "")
+			%totalTime = 0;
+
+		%clickCount = $toolDataClickCount[%tool];
+		echo("---");
+		echo("Tool: " @ %tool);
+		echo("Time (seconds): " @ %totalTime / 1000);
+		echo("Activated: " @ %clickCount);
+		echo("---");
 	}
-
-	function dumpToolData() {
-		%count = $toolDataToolCount;
-
-		for(%i=0; %i<%count; %i++) {
-			%tool = $toolDataToolList[%i];
-			%totalTime = $toolDataTotalTime[%tool];
-
-			if(%totalTime $= "")
-				%totalTime = 0;
-
-			%clickCount = $toolDataClickCount[%tool];
-			echo("---");
-			echo("Tool: " @ %tool);
-			echo("Time (seconds): " @ %totalTime / 1000);
-			echo("Activated: " @ %clickCount);
-			echo("---");
-		}
-	}
+}

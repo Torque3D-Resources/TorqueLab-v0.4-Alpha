@@ -18,15 +18,16 @@ function SceneInspector::envDel( %this ) {
 //------------------------------------------------------------------------------
 function envHack(%autodelete ) {
 	%tmpObj = new EnvVolume("tmpEnvVolume") {
-      AreaEnvMap = "MipCubemap";
-      cubeReflectorDesc = "DefaultCubeDesc";
-      position = "8.21068 19.3464 241.855";
-      rotation = "1 0 0 0";
-      scale = "10 10 10";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
-   if (%autodelete)
+		AreaEnvMap = "MipCubemap";
+		cubeReflectorDesc = "DefaultCubeDesc";
+		position = "8.21068 19.3464 241.855";
+		rotation = "1 0 0 0";
+		scale = "10 10 10";
+		canSave = "1";
+		canSaveDynamicFields = "1";
+	};
+
+	if (%autodelete)
 		SceneInspector.schedule(500,"envDel");
 }
 //------------------------------------------------------------------------------

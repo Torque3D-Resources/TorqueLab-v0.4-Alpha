@@ -14,7 +14,6 @@ function ADE::selectSpawnObject(%this,%obj) {
 
 //==============================================================================
 function ADE_SpawnObjTree::onSelect(%this,%objID) {
-	
 	ADE.selectSpawnObject(%objID);
 }
 //------------------------------------------------------------------------------

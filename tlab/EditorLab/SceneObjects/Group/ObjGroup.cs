@@ -8,6 +8,7 @@ $SEP_AutoGroupActiveSystem = true;
 //==============================================================================
 function Scene::setActiveSimGroup( %this, %group ) {
 	devLog("setActiveSimGroup",%group);
+
 	if (!isObject(%group))
 		return;
 
@@ -16,14 +17,12 @@ function Scene::setActiveSimGroup( %this, %group ) {
 
 	if (Scene.activeSimGroup.getId() $= %group.getId())
 		return;
-	
+
 	%currentGroup = Scene.activeSimGroup;
 	Scene.treeUnmarkObject(%currentGroup);
 	Scene.activeSimGroup = %group;
 	devLog("setActiveSimGroup END",%group,%this.activeSimGroup);
 	Scene.ActiveGroup = %group;
-	
-	
 	Scene.treeMarkObject(%group);
 }
 //------------------------------------------------------------------------------
@@ -45,6 +44,7 @@ function Scene::getNewObjectGroup( %this ) {
 //==============================================================================
 function Scene::setNewObjectGroup( %this, %group ) {
 	devLog("setNewObjectGroup",%group);
+
 	if( %this.objectGroup ) {
 		%oldItemId = SceneitorTree.findItemByObjectId( %this.objectGroup );
 

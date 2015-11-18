@@ -17,9 +17,8 @@
 //==============================================================================
 // ToolsSliderProfile Style
 //------------------------------------------------------------------------------
-singleton GuiControlProfile(ToolsSliderProfile : ToolsDefaultProfile)
-{
-   bitmap = "tlab/themes/DarkBlue/assets/element-assets/GuiSliderProfile.png";
+singleton GuiControlProfile(ToolsSliderProfile : ToolsDefaultProfile) {
+	bitmap = "tlab/themes/DarkBlue/assets/element-assets/GuiSliderProfile.png";
 };
 //------------------------------------------------------------------------------
 

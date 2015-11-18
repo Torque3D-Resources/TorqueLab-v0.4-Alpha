@@ -30,7 +30,6 @@ function initializeRiverEditor() {
 	Lab.addPluginToolbar("RiverEditor",RiverEditorToolbar);
 	Lab.addPluginPalette("RiverEditor",   RiverEditorPalette);
 	Lab.addPluginDlg("RiverEditor",RiverEditorDialogs);
-	
 	RiverEditorPlugin.editorGui = RiverEditorGui;
 	$RiverEd = newScriptObject("RiverEd");
 	%map = new ActionMap();

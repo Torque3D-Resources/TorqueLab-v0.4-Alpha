@@ -11,7 +11,7 @@ $LabCfg_TransformBox_EulerRotation = false;
 function ETransformBoxGui::initTool( %this ) {
 	ETransformBoxGui.fitIntoParents();
 	ETransformBox.position = "2000 0";
-		hide(ETransformBoxSettings);
+	hide(ETransformBoxSettings);
 	ETransformBox.updateGui();
 	hide(ETransformBox);
 }
@@ -143,12 +143,10 @@ function ETransformBox::updatePosition( %this,%axis,%pos ) {
 	}
 
 	%sourceObj = %this.sourceObject;
-	
 	%objRot = getWords(%sourceObj.getTransform(),3,6);
 	%objPos = getWords(%sourceObj.getTransform(),0,2);
 	eval("%objPos."@%axis@" = %pos;");
 	%newTransform = %objPos SPC %objRot;
-	
 	%sourceObj.setTransform(%newTransform);
 }
 //------------------------------------------------------------------------------
@@ -191,10 +189,9 @@ function ETransformBoxDrag::onMouseDragged( %this,%a1,%a2,%a3 ) {
 //==============================================================================
 function ETransformBoxCtrl::DragSuccess( %this,%droppedCtrl,%pos) {
 	show(%this);
-	%realpos = EditorFrameWorld.getRealPosition();	
+	%realpos = EditorFrameWorld.getRealPosition();
 	%pos.x = %pos.x - %this.extent.x/2- %realpos.x;
 	%pos.y = %pos.y - %this.extent.y/2 - %realpos.y;
-	
 	%this.setPosition(%pos.x,%pos.y);
 	//%this.forceInsideCtrl(EditorFrameWorld);
 	%this.refresh();

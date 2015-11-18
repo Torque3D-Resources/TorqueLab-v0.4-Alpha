@@ -42,15 +42,11 @@ function RoadEditorPlugin::onWorldEditorStartup( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function RoadEditorPlugin::onActivated( %this ) {
-	
 	RoadEd_TabBook.selectPage(0);
-	
 	EWToolsPaletteArray->RoadEditorAddRoadMode.performClick();
-	EditorGui.bringToFront( RoadEditorGui );	
+	EditorGui.bringToFront( RoadEditorGui );
 	RoadEditorGui.makeFirstResponder( true );
-	
 	RoadTreeView.open(ServerDecalRoadSet,true);
-	
 	// Set the status bar here until all tool have been hooked up
 	EditorGuiStatusBar.setInfo("Road editor.");
 	EditorGuiStatusBar.setSelection("");
@@ -61,9 +57,6 @@ function RoadEditorPlugin::onActivated( %this ) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function RoadEditorPlugin::onDeactivated( %this ) {
-	
-	
-	
 	Parent::onDeactivated(%this);
 }
 //------------------------------------------------------------------------------

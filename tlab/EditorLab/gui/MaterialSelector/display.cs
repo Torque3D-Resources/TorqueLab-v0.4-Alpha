@@ -54,7 +54,6 @@ function MaterialSelector::buildPreviewArray( %this, %material ) {
 			%previewImage =  strreplace( %materialPath, %materialPath, %previewImage );
 	}
 
-	
 	%container = cloneObject(MatSelector_MaterialPreviewSample);
 	%container-->text.text = %matName;
 	%previewBorder = %container-->button;
@@ -79,11 +78,12 @@ function MaterialSelector::loadImages( %this, %materialNum ) {
 	// this schedule is here to dynamically load images
 	%previewButton = MatEdPreviewArray.getKey(%materialNum);
 	%previewImage = MatEdPreviewArray.getValue(%materialNum);
-	
-	if( !isObject(%previewButton )){
+
+	if( !isObject(%previewButton )) {
 		devLog("MatNum",%materialNum,"MaterialSelector invalid preview button",%previewButton);
 		return;
 	}
+
 	%isFile = isImageFile(%previewImage);
 
 	if (%isFile)
@@ -211,7 +211,6 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 	if( %startbracket ) {
 		%control = cloneObject(MatSelector_PageTextSample);
 		%control.text = "...";
-		
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
 	}
 
@@ -219,11 +218,9 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 		if( %i != %currentPage ) {
 			%control = cloneObject(MatSelector_PageButtonSample);
 			%control.text = %i+1;
-			
 		} else {
 			%control = cloneObject(MatSelector_PageTextSample);
 			%control.text = %i+1;
-			
 		}
 
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
@@ -232,7 +229,6 @@ function MaterialSelector::buildPagesButtons(%this, %currentPage, %totalPages) {
 	if( %endbracket ) {
 		%control = cloneObject(MatSelector_PageTextSample);
 		%control.text = "...";
-		
 		MaterialSelector-->materialPreviewPagesStack.add( %control );
 	}
 }

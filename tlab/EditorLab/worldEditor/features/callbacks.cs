@@ -9,7 +9,7 @@
 //==============================================================================
 //==============================================================================
 // Add a function to call when selecting an object
-function Lab::AddSelectionCallback(%this,%function,%type) {	
+function Lab::AddSelectionCallback(%this,%function,%type) {
 	Lab.selectionCallback[%type] = strAddField(Lab.selectionCallback[%type],%function);
 }
 //------------------------------------------------------------------------------
@@ -18,8 +18,9 @@ function Lab::AddSelectionCallback(%this,%function,%type) {
 function Lab::DoSelectionCallback(%this,%type,%object) {
 	%fields = Lab.selectionCallback[%type];
 	%count = getFieldCount(	%fields);
-	for(%i=0;%i<%count;%i++){
-		%evalFunc = getField(%fields,%i)@"(%object);";		
+
+	for(%i=0; %i<%count; %i++) {
+		%evalFunc = getField(%fields,%i)@"(%object);";
 		eval(getField(%fields,%i)@"(%object);");
 	}
 }

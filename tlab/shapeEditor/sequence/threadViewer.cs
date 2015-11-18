@@ -76,7 +76,6 @@ function ShapeEdThreadViewer::syncPlaybackDetails( %this ) {
 
 // Update the GUI in response to the shape selection changing
 function ShapeEdThreadViewer::update_onShapeSelectionChanged( %this ) {
-	
 	ShapeEdThread_List.clear();
 	ShapeEdThread_SeqList.clear();
 	ShapeEdThread_SeqList.addRow( 0, "<rootpose>" );
@@ -107,6 +106,7 @@ function ShapeEd_ThreadSlider::onMouseDragged( %this ) {
 function ShapeEdShapeView::onThreadPosChanged( %this, %pos, %inTransition ) {
 	// Update sliders
 	%frame = ShapeEdAnimWindow.threadPosToKeyframe( %pos );
+
 	if (isObject(ShapeEdSeqSlider))
 		ShapeEdSeqSlider.setValue( %frame );
 

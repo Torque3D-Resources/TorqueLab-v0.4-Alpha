@@ -160,7 +160,6 @@ function GuiEditor::saveProfile( %this, %profile, %fileName,%forced ) {
 	//Mud-H Modified to work with GUI style system and save changes to the selected style.
 	//If not Style profile object found it will save as usual: GuiEditorProfilesPM.saveDirtyObject( %profile );
 	// saveSingleProfileStyleChanges(%profile);
-	
 	GuiEditorProfilesPM.saveDirtyObject( %profile );
 	// Save the object.
 	// Clear its dirty state.
@@ -210,7 +209,6 @@ function GuiEditor::setProfileDirty( %this, %profile, %value, %noCheck ) {
 
 			// Add the profile to the dirty set.
 			GuiEditorProfilesPM.setDirty( %profile );
-			
 			// Show the item as dirty in the tree.
 			%id = GuiEditorProfilesTree.findItemByValue( %profile.getId() );
 			GuiEditorProfilesTree.editItem( %id, GuiEditorProfilesTree.getItemText( %id ) SPC "*", %profile.getId() );

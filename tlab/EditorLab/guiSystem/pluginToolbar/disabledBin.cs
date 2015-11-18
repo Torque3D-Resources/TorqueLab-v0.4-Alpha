@@ -65,10 +65,9 @@ function Lab::addPluginIconToDisabledBin(%this,%originalIcon,%trashedIcon) {
 	hide(%originalIcon);
 	delObj(%trashedIcon);
 	Lab_DisabledPluginsBox.add(%originalIcon);
-	%originalIcon.class =  "PluginIconDisabled";	
+	%originalIcon.class =  "PluginIconDisabled";
 	info(%originalIcon.internalName," dropped in DisabledPluginsBox and should be set disabled",%originalIcon.pluginObj);
 	Lab.disablePlugin(%originalIcon.pluginObj);
-	
 	EWToolsToolbar.resize();
 }
 //------------------------------------------------------------------------------
@@ -77,10 +76,8 @@ function Lab::addPluginIconToDisabledBin(%this,%originalIcon,%trashedIcon) {
 //==============================================================================
 // Add the various TorqueLab GUIs to the container and set they belong
 function Lab::onToolbarPluginIconDropped(%this,%originalIcon) {
-	
 	Lab.enablePlugin(%originalIcon.pluginObj);
 	EWToolsToolbar.resize();
-	
 }
 //------------------------------------------------------------------------------
 

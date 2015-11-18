@@ -24,16 +24,15 @@ function TerrainPaintGeneratorGui::onWake(%this) {
 		TPG.init();
 
 	TPG_Window-->saveGroupButton.visible = 0;
-	TPG_GenerateProgressWindow.setVisible(false);	
+	TPG_GenerateProgressWindow.setVisible(false);
 	TPG_PillSample.setVisible(false);
-	
 	TPG.checkLayersStackGroup();
+
 	foreach(%layer in TPG_LayerGroup) {
 		%this.updateLayerPill(%layer);
 		%this.updateLayerMaterialMenu(%layer);
-	}	
-	
-	
+	}
+
 	TPG.map.push();
 	Lab.hidePluginTools();
 }
@@ -51,15 +50,16 @@ function TPG::toggleOptions(%this) {
 }
 //------------------------------------------------------------------------------
 //==============================================================================
-function TPG::addTerrainMaterialLayer(%this,%matInternalName) {	
+function TPG::addTerrainMaterialLayer(%this,%matInternalName) {
 	%mat = TerrainMaterialSet.findObjectByInternalName( %matInternalName );
+
 	if (!isObject(%mat))
 		return false;
-		
+
 	ETerrainEditor.addMaterial(%matInternalName);
 	EPainter.updateLayers();
 	ETerrainEditor.updateMaterial(  EPainterStack.getCount(), %mat.getInternalName() );
-	return true;	
+	return true;
 }
 //------------------------------------------------------------------------------
 
@@ -86,12 +86,14 @@ function TerrainPaintGeneratorGui::deleteLayerGroup(%this) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TerrainPaintGeneratorGui::deleteInvalidLayers(%this) {
-	foreach(%pill in TPG_StackLayers){
+	foreach(%pill in TPG_StackLayers) {
 		%layer = %pill.layerObj;
+
 		if (strFind(%layer.matInternalName,"*"))
 			%removeList = strAddWord(%removeList,%layer.getId());
 	}
-	foreach$(%layer in %removeList){
+
+	foreach$(%layer in %removeList) {
 		delObj(%layer.pill);
 		delObj(%layer);
 	}
@@ -107,29 +109,28 @@ function TPG_FieldCopyButton::onClick(%this) {
 	%wordsData = strreplace(%this.internalName,"_"," ");
 	%field = getWord(%wordsData,0);
 	%action = getWord(%wordsData,1);
-	
-	if (%action $= "Copy"){
+
+	if (%action $= "Copy") {
 		TPG.clipBoard = %layer.getFieldValue(%field);
-	} else if (%action $= "Paste"){
+	} else if (%action $= "Paste") {
 		if (TPG.clipBoard $= "")
 			return;
+
 		%layer.setFieldValue(%field,TPG.clipBoard);
 		%ctrl = %pill.findObjectByInternalName(%field,true);
 		%ctrl.setText(TPG.clipBoard);
-		
 	}
-	
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TPG::getCurrentHeight(%this,%id) {
 	%avgHeight = ETerrainEditor.lastAverageHeight;
-	
 	%avgHeight = mFloatLength(%avgHeight,2);
-	TPG.clipBoard = %avgHeight; 
-	
+	TPG.clipBoard = %avgHeight;
+
 	if (%id $= "")
 		return;
+
 	TPG.height[%id] = %avgHeight;
 	$TPG_ValueStore[%id] = %avgHeight;
 	eval("TPG_StoredValues-->v"@%id@".setText(\""@%avgHeight@"\");");
@@ -137,18 +138,18 @@ function TPG::getCurrentHeight(%this,%id) {
 //------------------------------------------------------------------------------
 //==============================================================================
 function TPG::setCurrentHeight(%this,%id) {
-	
 	if (TPG.height[%id] $= "")
 		return;
-	TPG.clipBoard = TPG.height[%id]; 		
+
+	TPG.clipBoard = TPG.height[%id];
 }
 //------------------------------------------------------------------------------
 //==============================================================================
 function TPG::pasteCurrentHeight(%this,%id) {
-	
 	if (TPG.clipBoard $= "")
 		return;
-	TPG.height[%id] = TPG.clipBoard; 
+
+	TPG.height[%id] = TPG.clipBoard;
 	$TPG_ValueStore[%id] = TPG.clipBoard;
 	eval("TPG_StoredValues-->v"@%id@".setText(\""@TPG.clipBoard@"\");");
 }
